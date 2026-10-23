@@ -1,0 +1,161 @@
+{
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.0.1 Safari/605.1.15",
+  "started": "2026-10-22T14:19:59.197Z",
+  "checks": [
+    {
+      "name": "XML: native Parser, Sonderzeichen und fehlerhafte XML",
+      "passed": true
+    },
+    {
+      "name": "XML: historische UTF-16-Kodierung",
+      "passed": true
+    },
+    {
+      "name": "Kodieren: ZIP im echten Module-Worker importieren",
+      "passed": true
+    },
+    {
+      "name": "Kodieren: Scan, DPI und transparente Schablone zeichnen",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: scan.png",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: scan.jpg",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: scan.bmp",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: scan.gif",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: scan.webp",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: scan.tif",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation2.jpg",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation3.jpg",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation4.jpg",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation5.jpg",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation6.jpg",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation7.jpg",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation8.jpg",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation6.png",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation6.webp",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: HTML-Image-Fallback nach Bitmap-Fehler",
+      "passed": true
+    },
+    {
+      "name": "Kodieren: GZip-Ergebnisse mit Code 0 und Kommentar",
+      "passed": true
+    },
+    {
+      "name": "Safari-Ergebnisdateinamen: .result-2 im Worker importieren",
+      "passed": true
+    },
+    {
+      "name": "Codes: Excel-Datei im Browser erzeugen und erneut lesen",
+      "passed": true
+    },
+    {
+      "name": "Booklets: Original-Xlsx zu gültigen Booklet-XML-Dateien",
+      "passed": true
+    },
+    {
+      "name": "Logins: Originalvorlage, Präfixe und Testtaker-XML",
+      "passed": true
+    },
+    {
+      "name": "Word: Originalvorlage 1",
+      "passed": true
+    },
+    {
+      "name": "Word: Originalvorlage 2 mit QR-Code",
+      "passed": true
+    },
+    {
+      "name": "Antworten: CSV und Logs gemeinsam im Worker einlesen",
+      "passed": true
+    },
+    {
+      "name": "Antworten: breite Excel-Datei, Unterformulare rows",
+      "passed": true
+    },
+    {
+      "name": "Antworten: breite Excel-Datei, Unterformulare columns",
+      "passed": true
+    },
+    {
+      "name": "Antworten: breite Excel-Datei, Unterformulare none",
+      "passed": true
+    },
+    {
+      "name": "Antworten: CSV, gruppiertes JSON und Sitzungsberichte",
+      "passed": true
+    },
+    {
+      "name": "SQLite: WASM, Import und Integritätsprüfung",
+      "passed": true
+    },
+    {
+      "name": "SQLite: exportierte Datei erneut öffnen und auswerten",
+      "passed": true
+    },
+    {
+      "name": "Worker: nach Abbruch neu starten und Datenbank wiederherstellen",
+      "passed": true
+    },
+    {
+      "name": "Browser-Speicher: IndexedDB schreiben und wieder lesen",
+      "passed": true
+    },
+    {
+      "name": "Testcenter: Web-Crypto-Challenge und Browser-fetch",
+      "passed": true
+    },
+    {
+      "name": "Reviews: Export mit Kategorien und gültigen Blattnamen",
+      "passed": true
+    }
+  ],
+  "passed": 38,
+  "total": 38,
+  "finished": "2026-10-22T14:20:00.990Z"
+}

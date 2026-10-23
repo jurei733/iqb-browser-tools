@@ -1,4 +1,4 @@
-# IQB-Werkzeuge im Browser · Version 0.2
+# IQB-Werkzeuge im Browser · Version 0.2.1
 
 Portierung der Arbeitsabläufe von **IQB-Kodieren 4.3.0.3** und **itc-ToolBox 3.3.0.2**. Die Anwendung läuft als statische Website mit lokaler Dateiverarbeitung; eine Windows-Installation ist nicht erforderlich.
 
@@ -68,11 +68,15 @@ Die private Sites-Veröffentlichung erfordert beim ersten Zugriff die Anmeldung 
 
 ## Geprüft und verbleibende Nachweise
 
-- **32 automatisierte Prüfungen**: Original-Xlsx und beide Original-DOCX-Vorlagen, historische und aktuelle Kodierjobs, Ergebnisdateien, CSV-Varianten, Antwortkonverter, Zusammenführung, Unterformular-Exporte, mehrfache Sitzungen, Reviews, SQLite-Rundlauf einschließlich Version 1 / eigener Statuswerte / Transaktionsabbruch sowie Testcenter-Verträge mit nachgebildeten Serverantworten.
+- **37 automatisierte Prüfungen**: Original-Xlsx und beide Original-DOCX-Vorlagen, historische und aktuelle Kodierjobs, Ergebnisdateien, CSV-Varianten, Antwortkonverter, Zusammenführung, Unterformular-Exporte, mehrfache Sitzungen, Reviews, SQLite-Rundlauf einschließlich Version 1 / eigener Statuswerte / Transaktionsabbruch sowie Testcenter-Verträge mit nachgebildeten Serverantworten.
 - **Praktisch im integrierten Chromium-Browser auf macOS geprüft**: Jobimport im Worker, Code/Kommentar, Fallliste, Schablone ziehen und drehen, SQLite öffnen und prüfen, Excel erzeugen und herunterladen, QR-DOCX erzeugen und herunterladen, Antwort-/Log-CSV gemeinsam importieren. Tatsächlich heruntergeladene Xlsx und DOCX wurden zusätzlich strukturell geprüft.
+- **38 Browserprüfungen je Browser**: Safari 27.0.1 (WebKit) und Firefox 158.0 (Gecko) auf macOS. Originalvorlagen, Bildformate und EXIF-Ausrichtungen, echte Module-Worker, SQLite/WASM, IndexedDB, sämtliche Antwort-Exportformate, Word mit QR-Codes und Web-Crypto/fetch. Berichte unter `tests/results/`.
+- **Native Browseroberflächen**: Safari und Firefox: Beispieljob öffnen, Code 0 und Kommentar erfassen, Ergebnis- und Codes-Xlsx-Download; gespeicherte Kodierung nach Neuladen wiederherstellen. Firefox zusätzlich SQLite-Datei öffnen, prüfen, auswerten und offline wiederherstellen. Safari ebenfalls offline neu laden und Kodierkommentar in der Fallliste wiederfinden.
 - **Testcenter-Bedienung gegen lokalen Testserver geprüft**: Anmeldung, Arbeitsbereich, Ergebnisgruppe, Antwort-/Log-Abruf bis zur Excel-Datei, Review-Export und Trennen. Die Challenge- und Content-Abläufe sind zusätzlich durch automatisierte Vertragstests abgedeckt.
 - **Offline geprüft**: lokalen Webserver abgeschaltet, Anwendung neu geladen und gespeicherte SQLite-Datenbank einschließlich WASM-Engine wiederhergestellt.
-- **Noch nicht praktisch nachgewiesen**: echte/anonymisierte Originaljobs, Vergleich der Ausgaben mit ausgeführten Windows-Programmen, Verbindung zu einem echten Testcenter, Safari/Firefox/Mobilgeräte und die Betriebssysteminstallation als PWA. Diese Daten beziehungsweise Zugänge standen nicht zur Verfügung.
+- **Noch nicht praktisch nachgewiesen**: echte/anonymisierte Originaljobs, Vergleich der Ausgaben mit ausgeführten Windows-Programmen, Verbindung zu einem echten Testcenter, Mobilgeräte, Windows-/Linux-Systeme und die Betriebssysteminstallation als PWA. Diese Daten beziehungsweise Zugänge standen nicht zur Verfügung.
+
+Browserprüfungen lassen sich mit `node scripts/build-browser-tests.mjs ./work/browser-tests` bauen. Das ausgegebene Verzeichnis über einen lokalen Webserver ausliefern und `/tests/browser.html` in einem echten Browser öffnen. Die Prüfseite wird nicht in die normale Anwendung aufgenommen.
 
 Die Arbeitsabläufe sind implementiert; eine vollständige Gleichwertigkeit für jeden historischen Datenbestand ist damit noch nicht belegt. Der Speicher des Geräts begrenzt Datenmengen. Kodier-ZIP-Dateien sind auf 300 MB entpackte Daten begrenzt, einzelne Scans auf 80 Millionen Pixel; TIFF verwendet wie das Original die erste Seite. Für große Bestände Jobs aufteilen und SQLite-/Ergebnisdateien regelmäßig extern sichern. Private Fenster, das Löschen von Browserdaten und Speicherbereinigung können lokale Stände und Offline-Dateien entfernen.
 
@@ -86,6 +90,12 @@ Die Arbeitsabläufe sind implementiert; eine vollständige Gleichwertigkeit für
 - Booklet-Beschreibungen verwenden die Beschreibungsspalte. Word-Tabellen bleiben erhalten; QR-Bilder sind portable PNG-Dateien.
 - Zufallsfolgen müssen nicht mit Windows übereinstimmen. Gruppen-IDs nutzen wie die ursprüngliche Loginerzeugung Großbuchstaben, ein gemeinsames Suffix und bei Bedarf eine laufende Ergänzung.
 - Der Kodierername wird eingegeben; Windows Active Directory wird nicht vorausgesetzt. TLS-Zertifikatprüfungen werden nicht abgeschaltet.
+
+## Browserkorrekturen in 0.2.1
+
+- Safari und Firefox wenden EXIF-Drehung und Spiegelung trotz `imageOrientation: none` an. Die Dekodierkopie neutralisiert jetzt die Orientierung bei JPEG/WebP; bei PNG wird der optionale eXIf-Block aus dieser Kopie entfernt. Bildkoordinaten, Bereichsrahmen und Schablonen bleiben zusammenhängend. Originaldatei und DPI bleiben unverändert.
+- Wenn `createImageBitmap` einen grundsätzlich unterstützten Bildtyp zurückweist, wird der HTML-Image-Dekoder verwendet.
+- Safari kann bei Namenskollisionen `.result-2` statt `.result` herunterladen. Solche Namen werden nun importiert. Neue Ergebnisdateien erhalten einen Zeitstempel; die Kodier-Dateiauswahl akzeptiert auch historische Safari-Dateinamen.
 
 ## Quellen
 

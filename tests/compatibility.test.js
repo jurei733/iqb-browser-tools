@@ -63,3 +63,10 @@ test('toolbox response JSON preserves person identifiers, alias and status filte
   const data=[{group:'G',login:'L',code:'001',booklets:[{id:'B',units:[{id:'U',alias:'AL_',subforms:[{id:'S',responses:[{id:'v',value:['a','b'],status:'VALUE_CHANGED'},{id:'w',value:'',status:'NOT_REACHED'}]}]}]}]}];
   const rows=T.flattenResponses(data,{ignoreNotReached:true});assert.equal(rows.length,2);assert.equal(rows[1][2],'001');assert.equal(rows[1][7],'AL_v');assert.equal(rows[1][8],'["a","b"]');
 });
+
+test('Safari result suffixes are imported and new names keep .result with unique timestamps',async()=>{
+  const job=await sampleJob();job.cases[0].code='0';const bytes=C.encodeResult(job,'Safari-Test');
+  assert.equal(C.isResultFilename('Beispieljob.result-2'),true);assert.equal(C.isResultFilename('Beispieljob.result-123'),true);assert.equal(C.isResultFilename('wrong.result-backup.txt'),false);
+  const loaded=await C.readCodingFiles([fakeFile('job.zip',zipSync({'Job.xml':strToU8(jobXML),'scans/B01-1_P001.png':new Uint8Array([1])})),fakeFile('Beispieljob.result-2',bytes)]);assert.equal(loaded.results[0].entries[0].code,'0');
+  assert.equal(C.resultFilename('Job:/Test',new Date('2026-10-22T14:00:00.123Z')),'Job__Test_2026-10-22T14-00-00-123Z.result');assert.notEqual(C.resultFilename('Job',new Date(1)),C.resultFilename('Job',new Date(2)));
+});

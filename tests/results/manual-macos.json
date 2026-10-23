@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-22",
+  "platform": "macOS",
+  "safari": "27.0.1",
+  "firefox": "158.0",
+  "manual_checks": {
+    "both": [
+      "Application loads",
+      "Coding ZIP/demo import",
+      "Code 0 and UTF-8 comment",
+      "Result download confirmed by native browser download UI",
+      "Codes.xlsx download confirmed by native browser download UI",
+      "Coding progress restored after reload",
+      "Offline reload with local web server stopped"
+    ],
+    "safari": [
+      "Offline coded-case list retains comment",
+      "Observed .result-2 filename on repeated downloads; recovery covered by browser/Node regression tests"
+    ],
+    "firefox": [
+      "Open SQLite via native file picker",
+      "Integrity check",
+      "Generate wide Excel export",
+      "Restore SQLite and WASM engine offline"
+    ]
+  },
+  "limits": [
+    "No real Testcenter account; fetch and challenge tested using synthetic data",
+    "No iOS/Android or Windows/Linux system tests",
+    "Direct readback from Downloads folder was denied by operating-system permissions; native download UI verified completion"
+  ],
+  "source_sha256": {
+    "src/image.js": "2c24450a2b54e0321bbc82e006dfc413f0382fdaa5c5cbc2cc087fcb969fc385",
+    "src/coding.js": "474dc61ed2d1e1dd1552e5e6d8fce489f8904427a534a4d32a6cfc8e7be79160",
+    "src/docx.js": "424d6024dbdf6b37a98a1c0b8641e7ad72ea8811376486452fc09cb43e552b6d",
+    "src/database.js": "399233826a32545de73f58897b13e525520b41e0f07cf8a61e8b77adbf5b762a",
+    "src/data.worker.js": "016971966255df0e8adb57bed370216740156a95677b179ecdce1f035a90b39c"
+  }
+}

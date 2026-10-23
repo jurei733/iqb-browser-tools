@@ -4,6 +4,8 @@ import {children, descendants, child, attr, value, parseXML, decodeXML, node, do
 const stem = path => path.split('/').at(-1).replace(/\.[^.]*$/, '');
 const area = el => el ? Object.fromEntries(['x','y','w','h'].map(k => [k, Number(attr(el,k,0))])) : null;
 const bool = (el,k,def) => el?.hasAttribute(k) ? /^true$/i.test(attr(el,k)) : def;
+export const isResultFilename=name=>/\.result(?:-\d+)?$/i.test(name);
+export const resultFilename=(label,date=new Date())=>(String(label).replace(/[<>:"/\\|?*\x00-\x1f]/g,'_').slice(0,150)||'Kodierung')+'_'+date.toISOString().replace(/[:.]/g,'-')+'.result';
 export function decodeResult(bytes) {
   const doc = parseXML(decodeXML(bytes[0] === 31 && bytes[1] === 139 ? gunzipSync(bytes) : bytes));
   const root = doc.documentElement;
@@ -70,7 +72,7 @@ export function cycleCode(c,direction){const i=c.variable.codes.findIndex(v=>v.i
 export async function readCodingFiles(files) {
   const bundles=[],results=[],loose=new Map();
   for(const file of files){const bytes=new Uint8Array(await file.arrayBuffer()),filename=(file.webkitRelativePath||file.name).replace(/\\/g,'/');
-    if(/\.result$/i.test(file.name)){results.push(decodeResult(bytes));continue;}
+    if(isResultFilename(file.name)){results.push(decodeResult(bytes));continue;}
     if(/\.zip$/i.test(file.name)&&bytes[0]===80&&bytes[1]===75)bundles.push({name:stem(file.name),zipped:true,entries:new Map(Object.entries(safeUnzip(bytes)).filter(([k])=>!k.endsWith('/')))});
     else loose.set(filename,bytes);
   }
@@ -78,7 +80,7 @@ export async function readCodingFiles(files) {
   const jobs=[],warnings=[],globalTemplates=new Map();
   for(const bundle of bundles)for(const [path,bytes]of bundle.entries)if(/^CT_/i.test(stem(path)))globalTemplates.set(stem(path).slice(3).toUpperCase(),{path,bytes});
   for(const bundle of bundles){const images=[];
-    for(const [path,bytes]of bundle.entries){if(/\.result$/i.test(path)){results.push(decodeResult(bytes));continue;}
+    for(const [path,bytes]of bundle.entries){if(isResultFilename(path)){results.push(decodeResult(bytes));continue;}
       if(/\.(?:png|jpe?g|tiff?|bmp|gif|webp)$/i.test(path)&&!/^CT_/i.test(stem(path))&&!/^Testschablone$/i.test(stem(path)))images.push({path:path.replace(/\\/g,'/'),bytes});}
     for(const [path,bytes]of bundle.entries){if(!/\.xml$/i.test(path))continue;let doc;try{doc=parseXML(decodeXML(bytes));}catch{warnings.push(`${path}: Ungültige XML-Datei übersprungen.`);continue;}
       const root=doc.documentElement,vars=descendants(root,'Variablen')[0];if(!vars)continue;
