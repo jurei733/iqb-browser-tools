@@ -3,7 +3,8 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {peopleFromDTO,responseRecords,splitLog,importCSV} from '../src/data.js';
 import {csvString} from '../src/toolbox.js';
-import {TestcenterClient} from '../src/testcenter.js';
+import {TestcenterClient,solveChallenge} from '../src/testcenter.js';
+import {createHash} from 'node:crypto';
 test('real Testcenter 19.0.1 reports preserve JSON log strings and legacy CSV quoting',async()=>{
   const data=JSON.parse(await readFile(new URL('../demo/testcenter/demo-reports.json',import.meta.url)));
   const people=peopleFromDTO(data.responses,data.logs);
@@ -22,4 +23,11 @@ test('server logout sends the live token and accepts an empty HTTP 205 response'
 test('failed server logout still clears local credentials and reports failure',async()=>{
   const c=new TestcenterClient('http://127.0.0.1:5188',{fetch:async()=>new Response('unavailable',{status:503})});c.token='demo-session';c.workspace=1;
   await assert.rejects(()=>c.logout(),{status:503});assert.equal(c.token,'');assert.equal(c.workspace,null);
+});
+test('bounded challenge batches include their edges and honor cancellation',async()=>{
+  const salt='synthetic-pilot-',number=8193,challenge=createHash('sha256').update(salt+number).digest('hex');
+  assert.equal(await solveChallenge({algorithm:'SHA-256',salt,challenge,maxNumber:number}),number);
+  const controller=new AbortController();let updates=0;
+  await assert.rejects(()=>solveChallenge({algorithm:'SHA256',salt,challenge,maxNumber:number},{signal:controller.signal,onProgress:()=>{updates++;controller.abort();}}),{name:'AbortError'});
+  assert.equal(updates,1);
 });

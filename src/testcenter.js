@@ -10,7 +10,17 @@ export async function solveChallenge(challenge,{signal,onProgress=()=>{}}={}) {
   if(String(challenge.algorithm).toUpperCase().replace(/-/g,'')!=='SHA256')throw new Error('Der Server verwendet einen nicht unterstützten Challenge-Algorithmus.');
   if(!Number.isSafeInteger(Number(challenge.maxNumber))||Number(challenge.maxNumber)<0)throw new Error('Ungültige Challenge-Grenze.');
   const encoder=new TextEncoder(),target=String(challenge.challenge).toLowerCase();
-  for(let n=0;n<=Number(challenge.maxNumber);n++){if(signal?.aborted)throw new DOMException('Abgebrochen','AbortError');const hash=new Uint8Array(await crypto.subtle.digest('SHA-256',encoder.encode(challenge.salt+String(n))));const hex=Array.from(hash,b=>b.toString(16).padStart(2,'0')).join('');if(hex===target)return n;if(n%256===0)onProgress(n/Number(challenge.maxNumber));}
+  const maximum=Number(challenge.maxNumber),batchSize=64;
+  for(let start=0;start<=maximum;start+=batchSize){
+    if(signal?.aborted)throw new DOMException('Abgebrochen','AbortError');
+    // Queue a small bounded batch instead of one native/browser round trip per
+    // candidate. The signed challenge and its inclusive search range are intact.
+    const numbers=Array.from({length:Math.min(batchSize,maximum-start+1)},(_,i)=>start+i);
+    const hashes=await Promise.all(numbers.map(n=>crypto.subtle.digest('SHA-256',encoder.encode(challenge.salt+String(n)))));
+    if(signal?.aborted)throw new DOMException('Abgebrochen','AbortError');
+    for(let i=0;i<hashes.length;i++){const hex=Array.from(new Uint8Array(hashes[i]),b=>b.toString(16).padStart(2,'0')).join('');if(hex===target)return numbers[i];}
+    if(start%256===0)onProgress(Math.min(1,(start+numbers.length)/Math.max(1,maximum)));
+  }
   throw new Error('Die Anmelde-Challenge konnte nicht gelöst werden.');
 }
 export class TestcenterClient {
