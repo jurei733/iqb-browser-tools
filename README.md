@@ -1,4 +1,4 @@
-# IQB-Werkzeuge im Browser · Version 0.2.3
+# IQB-Werkzeuge im Browser · Version 0.2.4
 
 Portierung der Arbeitsabläufe von **IQB-Kodieren 4.3.0.3** und **itc-ToolBox 3.3.0.2**. Die Anwendung läuft als statische Website mit lokaler Dateiverarbeitung; eine Windows-Installation ist nicht erforderlich.
 
@@ -68,7 +68,7 @@ Die private Sites-Veröffentlichung erfordert beim ersten Zugriff die Anmeldung 
 
 ## Geprüft und verbleibende Nachweise
 
-- **50 automatisierte Prüfungen**: Original-Xlsx und beide Original-DOCX-Vorlagen, historische und aktuelle Kodierjobs, Ergebnisdateien, CSV-Varianten, Antwortkonverter, Zusammenführung, Unterformular-Exporte, mehrfache Sitzungen, Reviews, SQLite-Rundlauf einschließlich Version 1 / eigener Statuswerte / Transaktionsabbruch sowie Testcenter-Verträge mit nachgebildeten Serverantworten.
+- **51 automatisierte Prüfungen**: Original-Xlsx und beide Original-DOCX-Vorlagen, historische und aktuelle Kodierjobs, Ergebnisdateien, CSV-Varianten, Antwortkonverter, Zusammenführung, Unterformular-Exporte, mehrfache Sitzungen, Reviews, SQLite-Rundlauf einschließlich Version 1 / eigener Statuswerte / Transaktionsabbruch sowie Testcenter-Verträge mit nachgebildeten Serverantworten.
 - **Praktisch im integrierten Chromium-Browser auf macOS geprüft**: Jobimport im Worker, Code/Kommentar, Fallliste, Schablone ziehen und drehen, SQLite öffnen und prüfen, Excel erzeugen und herunterladen, QR-DOCX erzeugen und herunterladen, Antwort-/Log-CSV gemeinsam importieren. Tatsächlich heruntergeladene Xlsx und DOCX wurden zusätzlich strukturell geprüft.
 - **43 Browserprüfungen je Browser**: Chromium 147, Safari 27.0.1 (WebKit) und Firefox 158.0 (Gecko) auf macOS. Originalvorlagen, unveränderte Windows-Xlsx-Exporte, Bildformate und EXIF-Ausrichtungen, echte Module-Worker, SQLite/WASM, IndexedDB, sämtliche Antwort-Exportformate, Word mit QR-Codes und Web-Crypto/fetch. Berichte unter `tests/results/`.
 - **Native Browseroberflächen in 0.2.1**: Safari und Firefox: Beispieljob öffnen, Code 0 und Kommentar erfassen, Ergebnis- und Codes-Xlsx-Download; gespeicherte Kodierung nach Neuladen wiederherstellen. Firefox zusätzlich SQLite-Datei öffnen, prüfen, auswerten und offline wiederherstellen. Safari ebenfalls offline neu laden und Kodierkommentar in der Fallliste wiederfinden.
@@ -100,6 +100,28 @@ node scripts/compare-windows-files.mjs /pfad/windows-results /pfad/datei-verglei
 `scripts/Run-Windows-Reference.ps1` wiederholt die Originalaufrufe unter x86-Windows-PowerShell mit dem Eingabeordner als `-Root`. Dabei entstehen die Ausgaben unter `inputs/windows-results/`; die Originalprogramme bleiben unverändert.
 
 Die früheren 15 Originalkonverter-Aufrufe unter macOS/.NET 10 bleiben separat dokumentiert. Die Nachweise verwenden synthetische Daten und die Originalvorlagen; sie belegen keine vollständige Gleichwertigkeit für alle historischen Bestände oder einen produktiven Testcenter-Zugang.
+
+## Pilotabläufe und Bedienungskorrekturen in 0.2.4
+
+Ein kleiner technischer Pilot am 23.10.2026 spielt typische Aufträge mit synthetischen Dateien durch. Es haben keine externen Testpersonen teilgenommen. Die manuell beobachteten Probleme wurden in wiederholbare Prüfungen der tatsächlichen Oberfläche übernommen.
+
+- Toolbox-Bereiche behalten ausgewählte Dateien, Eingaben, Optionen und noch nicht heruntergeladene Ausgaben beim Wechsel innerhalb desselben Tabs. Die Inhalte bleiben ausschließlich im Arbeitsspeicher; nach Neuladen müssen Dateien erneut gewählt werden. Nicht abgesendete Kennwörter werden beim Verlassen des Testcenter-Bereichs geleert.
+- Offene Dialoge sperren die Kodier-Tastenkürzel. Pfeiltasten und Ziffern können dadurch keine Fälle oder Codes hinter dem Dialog verändern.
+- Neue Dateien und geänderte Einstellungen entfernen alte Ausgaben. Ein fehlgeschlagener Lauf zeigt dadurch keinen Download des vorherigen erfolgreichen Laufs an.
+- „Alle Gruppen“ folgt der tatsächlichen Auswahl, zeigt bei Teilauswahl einen Zwischenzustand und nennt die Anzahl ausgewählter Gruppen. Ein Einzelgruppen-Export wird gegen die echten Testcenter-Daten geprüft.
+- Während einer Verarbeitung bleiben Bereichswechsel gesperrt. Der Abbruch bleibt bedienbar und erhält die zuvor gesicherte SQLite-Arbeitskopie. Beim Zurückkehren zur Datenbank werden die Zähler aktualisiert, falls ein Testcenter-Import den Bestand ergänzt hat.
+- Die Challenge-Suche verarbeitet höchstens 64 Hash-Prüfungen gleichzeitig. Algorithmus, Signatur und Suchgrenze bleiben gleich; Abbruch und inklusive Randwerte sind geprüft.
+
+**17/17 UI-Prüfungen je Chromium 147, Safari 27.0.1 und Firefox 158.0 bestanden.** Der Prüflauf umfasst 17 Schritte: Kodieren und Original-Ergebnisdatei, Dialog-/Tastaturbedienung, Modulwechsel, Logins/Testtaker-XML, Word mit QR-Codes, CSV mit führenden Nullen und mehrzeiligen Feldern, fehlerhafte Eingaben, Booklets, Antworten/Logs, SQLite samt ungültiger Datei und Wiederverwendung, Abbruch sowie echtes Testcenter mit Einzelgruppen-Export, Import und Abmeldung. Die kombinierte SQLite-Datei enthält fünf synthetische Personen und 34 Antworten. Die Testcenter-Läufe werden je Browser nacheinander ausgeführt, damit Anmeldungen desselben Demo-Administrators nicht gegeneinander arbeiten.
+
+Mit installierten Abhängigkeiten und laufendem lokalen Testcenter:
+
+```sh
+node scripts/build-pilot-tests.mjs ./work/pilot-tests
+python3 scripts/serve-pilot.py ./work/pilot-tests ./work/pilot-results
+```
+
+Dann `http://127.0.0.1:5191/tests/pilot.html` im gewünschten Browser öffnen und „Arbeitsaufträge durchspielen“ anklicken. Die Prüfseite und der Dateisammler werden nicht veröffentlicht. SQLite, Excel, Word und Ergebnisdateien entstehen durch die Produktionsoberfläche; die Prüfseite sammelt die erzeugten Downloads für die Inhaltskontrolle. Die JSON-Berichte stehen zusätzlich unter `tests/results/pilot-*.json`.
 
 ## Echter Testcenter-Integrationslauf in 0.2.3
 

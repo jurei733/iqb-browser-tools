@@ -1,0 +1,95 @@
+{
+  "kind": "Synthetischer UI-Pilot, keine externen Testpersonen",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+  "started": "2026-10-23T15:18:20.071Z",
+  "checks": [
+    {
+      "name": "Kodierauftrag: zwei Antworten mit Kommentar und Code 0 erfassen",
+      "passed": true,
+      "milliseconds": 489
+    },
+    {
+      "name": "Kontrolldialog: Pfeiltasten und Ziffern ändern keine Kodierung im Hintergrund",
+      "passed": true,
+      "milliseconds": 5
+    },
+    {
+      "name": "Ergebnisdownload: beide Codes und Kommentar im Originalformat",
+      "passed": true,
+      "milliseconds": 59
+    },
+    {
+      "name": "Modulwechsel: Kodierung bleibt beim Wechsel zur Toolbox erhalten",
+      "passed": true,
+      "milliseconds": 3
+    },
+    {
+      "name": "Login-Vorbereitung: Datei, Testheft-ID und Optionen über Bereichswechsel erhalten",
+      "passed": true,
+      "milliseconds": 10
+    },
+    {
+      "name": "Login-Dateien erzeugen, XML prüfen und Ausgabe nach Rückkehr herunterladen",
+      "passed": true,
+      "milliseconds": 226
+    },
+    {
+      "name": "Word-Handzettel: erzeugte Login-Xlsx mit QR-Codes weiterverarbeiten",
+      "passed": true,
+      "milliseconds": 117
+    },
+    {
+      "name": "CSV-Auswertung: Kennungen, Code 0 und Zeilenumbrüche erhalten",
+      "passed": true,
+      "milliseconds": 90
+    },
+    {
+      "name": "Fehlerfall: neue fehlerhafte Datei zeigt keinen veralteten Download",
+      "passed": true,
+      "milliseconds": 58
+    },
+    {
+      "name": "Booklets aus Originalvorlage erzeugen und alle XML-Dateien prüfen",
+      "passed": true,
+      "milliseconds": 114
+    },
+    {
+      "name": "Antworten und Logs gemeinsam einlesen und als Excel auswerten",
+      "passed": true,
+      "milliseconds": 109
+    },
+    {
+      "name": "SQLite: neue Arbeitskopie, Import und sichtbare Zähler",
+      "passed": true,
+      "milliseconds": 208
+    },
+    {
+      "name": "SQLite: ungültige Datei beschädigt den aktuellen Bestand nicht",
+      "passed": true,
+      "milliseconds": 157
+    },
+    {
+      "name": "SQLite: Arbeitskopie herunterladen und nach Bereichswechsel erhalten",
+      "passed": true,
+      "milliseconds": 64
+    },
+    {
+      "name": "Laufende Anfrage: Bereichswechsel gesperrt, Abbruch erhält die SQLite-Arbeitskopie",
+      "passed": true,
+      "milliseconds": 308
+    },
+    {
+      "name": "Testcenter: echte Anmeldung, Einzelgruppen-Export und Datenbank ergänzen",
+      "passed": true,
+      "milliseconds": 4451
+    },
+    {
+      "name": "Testcenter: Trennen und Kennwortfeld nach Bereichswechsel leer",
+      "passed": true,
+      "milliseconds": 103
+    }
+  ],
+  "passed": 17,
+  "total": 17,
+  "finished": "2026-10-23T15:18:26.644Z"
+}

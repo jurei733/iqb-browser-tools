@@ -1,0 +1,10 @@
+import {build} from 'vite';
+import {cp,mkdir} from 'node:fs/promises';
+import {fileURLToPath} from 'node:url';
+import {resolve} from 'node:path';
+const out=resolve(process.argv[2]||'work/pilot-tests');
+await build({base:'/',define:{'import.meta.env.PROD':'false'},build:{outDir:out,emptyOutDir:true,rollupOptions:{input:fileURLToPath(new URL('../tests/pilot.html',import.meta.url))}}});
+await mkdir(out+'/pilot-inputs',{recursive:true});
+const inputs=fileURLToPath(new URL('../tests/fixtures/pilot/',import.meta.url));
+await cp(inputs,out+'/pilot-inputs',{recursive:true});
+console.log('Pilot tests:',out+'/tests/pilot.html');

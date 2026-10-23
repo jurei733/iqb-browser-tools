@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-23",
+  "application": "0.2.4",
+  "browser": "Chromium 147, macOS ARM64",
+  "site": "http://127.0.0.1:5190/",
+  "checks": [
+    {
+      "step": "Production version 0.2.4 loaded in normal application",
+      "passed": true
+    },
+    {
+      "step": "Saved coding progress reopened: 2/2 codes and comment restored",
+      "passed": true
+    },
+    {
+      "step": "Case 2: opened coded-case dialog, pressed Left and 1, closed with Escape; case 2 and code 0 unchanged",
+      "passed": true
+    },
+    {
+      "step": "Generated 2800 codes and native Codes.xlsx download marked Done (46.8 KB)",
+      "passed": true
+    },
+    {
+      "step": "Set BOOKLET.SAMPLE-1 and T01_ option, switched to Word and returned; both retained",
+      "passed": true
+    }
+  ],
+  "limits": "Agent-operated synthetic pilot; no external users and no production student/study data. Automated pilot exports validated independently."
+}
