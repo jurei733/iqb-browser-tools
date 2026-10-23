@@ -1,0 +1,7 @@
+services:
+  backend:
+    platform: linux/arm64
+    image: local/testcenter-backend:19.0.1-arm64
+  frontend:
+    platform: linux/arm64
+    image: local/testcenter-frontend:19.0.1-arm64

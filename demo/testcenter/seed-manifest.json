@@ -1,0 +1,49 @@
+{
+  "server": "http://127.0.0.1:5188/api",
+  "version": {
+    "version": "19.0.1"
+  },
+  "workspace": "1",
+  "groups": [
+    "BROWSER_A",
+    "BROWSER_B"
+  ],
+  "people": 2,
+  "units": 4,
+  "responses": 28,
+  "seeded": "2026-10-23T14:42:00.181Z",
+  "sessions": [
+    {
+      "group": "BROWSER_A",
+      "login": "001",
+      "testId": 1
+    },
+    {
+      "group": "BROWSER_B",
+      "login": "002",
+      "testId": 2
+    }
+  ],
+  "resultGroups": [
+    {
+      "groupName": "BROWSER_A",
+      "groupLabel": "Demo A – Umlaute",
+      "bookletsStarted": 1,
+      "numUnitsMin": 2,
+      "numUnitsMax": 2,
+      "numUnitsTotal": 2,
+      "numUnitsAvg": 2,
+      "lastChange": 1792766520
+    },
+    {
+      "groupName": "BROWSER_B",
+      "groupLabel": "Demo B – zweiter Import",
+      "bookletsStarted": 1,
+      "numUnitsMin": 2,
+      "numUnitsMax": 2,
+      "numUnitsTotal": 2,
+      "numUnitsAvg": 2,
+      "lastChange": 1792766521
+    }
+  ]
+}

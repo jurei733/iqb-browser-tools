@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-23",
+  "platform": "macOS ARM64",
+  "browser": "Chromium 147",
+  "applicationVersion": "0.2.3",
+  "testcenterVersion": "19.0.1",
+  "data": "2 synthetic groups, 2 people, 4 units, 28 responses",
+  "checks": [
+    {
+      "step": "Production build at localhost:5190 loaded as version 0.2.3",
+      "passed": true
+    },
+    {
+      "step": "Admin login through normal Toolbox UI with real challenge",
+      "passed": true
+    },
+    {
+      "step": "Both demo groups shown in Sample Workspace",
+      "passed": true
+    },
+    {
+      "step": "Responses and logs fetched and direct Antworten.xlsx generated",
+      "passed": true
+    },
+    {
+      "step": "Direct Excel download marked Done (10.3 KB)",
+      "passed": true
+    },
+    {
+      "step": "Browser database import completed",
+      "passed": true
+    },
+    {
+      "step": "Database UI showed 2 people, 28 responses, 4 units",
+      "passed": true
+    },
+    {
+      "step": "UI integrity check: ok, no foreign keys, duplicates or units errors",
+      "passed": true
+    },
+    {
+      "step": "SQLite download marked Done (64.0 KB)",
+      "passed": true
+    },
+    {
+      "step": "Excel generated from SQLite and download marked Done (10.3 KB)",
+      "passed": true
+    },
+    {
+      "step": "Disconnect returned to empty login form and confirmed server session ended",
+      "passed": true
+    }
+  ],
+  "note": "Exported bytes additionally validated by the automated real-browser pipeline and independent Python SQLite/SpreadsheetML reads. Browser download files were confirmed in native UI; protected Downloads contents were not read."
+}

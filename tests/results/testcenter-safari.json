@@ -1,0 +1,123 @@
+{
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.0.1 Safari/605.1.15",
+  "started": "2026-10-23T14:44:28.842Z",
+  "server": "http://127.0.0.1:5188",
+  "checks": [
+    {
+      "name": "Offizielles Testcenter und aktive Challenge-Anmeldung",
+      "passed": true
+    },
+    {
+      "name": "Arbeitsbereich und beide Demo-Gruppen",
+      "passed": true
+    },
+    {
+      "name": "Gruppenfilter A: eine Person, führende Nullen",
+      "passed": true
+    },
+    {
+      "name": "Gruppenfilter B ohne Vermischung",
+      "passed": true
+    },
+    {
+      "name": "Beide Gruppen: 2 Personen, 4 Units, 28 Antworten",
+      "passed": true
+    },
+    {
+      "name": "Werte, Code 0, große Ganzzahl und Unterformulare verlustfrei",
+      "passed": true
+    },
+    {
+      "name": "Logs: Umlaute, Anführungszeichen und Zeilenumbrüche",
+      "passed": true
+    },
+    {
+      "name": "Original-CSV: ein Kopf, beide Gruppen und identische Antworten",
+      "passed": true
+    },
+    {
+      "name": "Dateien und echte Testheft-Abhängigkeiten",
+      "passed": true
+    },
+    {
+      "name": "Antworten und Logs im echten Module-Worker",
+      "passed": true
+    },
+    {
+      "name": "SQLite/WASM: Daten übernehmen und prüfen",
+      "passed": true
+    },
+    {
+      "name": "Wiederholter Import erzeugt keine Duplikate",
+      "passed": true
+    },
+    {
+      "name": "SQLite-Datei speichern, erneut öffnen und Werte vergleichen",
+      "passed": true
+    },
+    {
+      "name": "Excel direkt und aus SQLite: vier identische Tabellen",
+      "passed": true
+    },
+    {
+      "name": "Sitzungsexport: beide Personen, Millisekunden und Größen",
+      "passed": true
+    },
+    {
+      "name": "Inhalte-ZIP mit Index und Originaldateien",
+      "passed": true
+    },
+    {
+      "name": "Abgelaufener Schlüssel liefert einen verständlichen Fehler",
+      "passed": true
+    },
+    {
+      "name": "Trennen beendet die Sitzung auch auf dem Server",
+      "passed": true
+    }
+  ],
+  "version": {
+    "version": "19.0.1"
+  },
+  "loginMilliseconds": 3439,
+  "bookletSizes": {
+    "BOOKLET.SAMPLE-1": 60853,
+    "BOOKLET.SAMPLE-2": 45409,
+    "BOOKLET.SAMPLE-3": 60801
+  },
+  "database": {
+    "name": "IQB-Testcenter-Output",
+    "version": "2",
+    "created_By": "Testcenter Integration",
+    "created_DateTime": "2026-10-23T14:44:32.898Z",
+    "lastchanged_By": "Testcenter Integration",
+    "lastchanged_DateTime": "2026-10-23T14:44:32.915Z",
+    "number_of_people": "2",
+    "number_of_responses": "28",
+    "has_subforms": "True",
+    "has_codes": "True",
+    "response_status": "{\"0\":\"UNSET\",\"1\":\"NOT_REACHED\",\"2\":\"DISPLAYED\",\"3\":\"VALUE_CHANGED\",\"4\":\"DERIVE_ERROR\",\"5\":\"CODING_COMPLETE\",\"6\":\"NO_CODING\",\"7\":\"INVALID\",\"8\":\"CODING_INCOMPLETE\",\"9\":\"CODING_ERROR\",\"10\":\"PARTLY_DISPLAYED\",\"11\":\"DERIVE_PENDING\",\"12\":\"INTENDED_INCOMPLETE\",\"13\":\"CODE_SELECTION_PENDING\"}",
+    "people": 2,
+    "responses": 28,
+    "booklets": 2,
+    "units": 4,
+    "groups": [
+      {
+        "group": "BROWSER_A",
+        "people": 1
+      },
+      {
+        "group": "BROWSER_B",
+        "people": 1
+      }
+    ],
+    "sizes": {
+      "BOOKLET.SAMPLE-1": 60853,
+      "BOOKLET.SAMPLE-2": 45409,
+      "BOOKLET.SAMPLE-3": 60801
+    }
+  },
+  "passed": 18,
+  "total": 18,
+  "finished": "2026-10-23T14:44:33.559Z"
+}

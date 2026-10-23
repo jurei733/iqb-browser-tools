@@ -1,0 +1,82 @@
+name: iqb-browser-demo
+x-iqb: &iqb
+  platform: linux/amd64
+  restart: unless-stopped
+  logging:
+    options: {max-size: "10m", max-file: "2"}
+services:
+  db:
+    image: postgres:18.4
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: iqb_demo
+      POSTGRES_USER: iqb_demo
+      POSTGRES_PASSWORD: local-demo-database
+    volumes: ["postgres:/var/lib/postgresql"]
+    healthcheck:
+      test: [CMD-SHELL, "pg_isready -U iqb_demo -d iqb_demo -h 127.0.0.1"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+  cache-server:
+    image: redis:8.0-bookworm
+    restart: unless-stopped
+    command: [redis-server, --requirepass, local-demo-cache, --maxmemory, 128mb, --maxmemory-policy, volatile-lru, --save, "", --appendonly, "no"]
+  backend:
+    <<: *iqb
+    image: iqbberlin/testcenter-backend:19.0.1@sha256:abcc547ab79011b8608788485e29ee3353dea240061c99b40711a6707cd0f71e
+    depends_on:
+      db: {condition: service_healthy}
+      cache-server: {condition: service_started}
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_DATABASE: iqb_demo
+      DB_USER: iqb_demo
+      DB_PASSWORD: local-demo-database
+      REDIS_HOST: cache-server
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: local-demo-cache
+      REDIS_CACHE_FILES: "false"
+      BROADCASTER_ENABLED: "true"
+      FILE_SERVER_ENABLED: "true"
+      BRUTE_FORCE_PROTECTION: "admin login person"
+      XML_SCHEMA_VALIDATION: "true"
+      SERVER_KEY: local-demo-only-server-key
+      PASSWORD_SALT: local-demo-only-salt
+      PASSWORD_MIN_LENGTH: 7
+      PASSWORD_PATTERN: "^.*$"
+      REQUIRE_LOGIN_PASSWORD: "false"
+      ADMIN_INIT_PASSWORD: user123
+    volumes:
+      - data:/var/www/testcenter/data
+      - /var/www/testcenter/data/.schemas
+    healthcheck:
+      test: [CMD, curl, -f, http://backend:8080/version]
+      interval: 10s
+      timeout: 15s
+      start_period: 120s
+      retries: 20
+  broadcaster:
+    <<: *iqb
+    image: iqbberlin/testcenter-broadcaster:19.0.1@sha256:7a89ba93f1cc7725d0870d2ad543e7e26ab972763aa01c60c8a7a66da7982ece
+  file-server:
+    <<: *iqb
+    image: iqbberlin/testcenter-file-server:19.0.1@sha256:47e1d205d23e0a07ddb9efeda2ffb1da4428398c7c6740d3d85a8e15c287b3e7
+    environment:
+      REDIS_HOST: cache-server
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: local-demo-cache
+      REDIS_CACHE_FILES: "false"
+    volumes_from: ["backend:ro"]
+    depends_on: [backend, cache-server]
+  frontend:
+    <<: *iqb
+    image: iqbberlin/testcenter-frontend:19.0.1@sha256:d59153e9bd7fbc062dcd3154bdb932156b7d485be28f34d9cc661ca37fbfc02d
+    depends_on:
+      backend: {condition: service_healthy}
+    ports: ["127.0.0.1:8088:8080"]
+    volumes: ["./nginx.conf:/etc/nginx/templates/default.conf.template:ro"]
+volumes:
+  data:
+  postgres:

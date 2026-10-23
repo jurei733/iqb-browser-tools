@@ -1,0 +1,129 @@
+{
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+  "started": "2026-10-23T14:42:21.261Z",
+  "server": "http://127.0.0.1:5188",
+  "checks": [
+    {
+      "name": "Offizielles Testcenter und aktive Challenge-Anmeldung",
+      "passed": true
+    },
+    {
+      "name": "Arbeitsbereich und beide Demo-Gruppen",
+      "passed": true
+    },
+    {
+      "name": "Gruppenfilter A: eine Person, führende Nullen",
+      "passed": true
+    },
+    {
+      "name": "Gruppenfilter B ohne Vermischung",
+      "passed": true
+    },
+    {
+      "name": "Beide Gruppen: 2 Personen, 4 Units, 28 Antworten",
+      "passed": true
+    },
+    {
+      "name": "Werte, Code 0, große Ganzzahl und Unterformulare verlustfrei",
+      "passed": true
+    },
+    {
+      "name": "Logs: Umlaute, Anführungszeichen und Zeilenumbrüche",
+      "passed": false,
+      "error": "[{\"ts\":1792742400000,\"key\":\"status\",\"parameter\":\"running\"},{\"ts\":1792742401200,\"key\":\"LOADCOMPLETE\",\"parameter\":\"{\\\"loadTime\\\":1200,\\\"browser\\\":\\\"Demo Browser\\\",\\\"os\\\":\\\"Platform test\\\",\\\"screen\\\":\\\"1280 x 800\\\"}\"},{\"ts\":1792742401300,\"key\":\"NOTE\",\"parameter\":\"Gr\\\\u00fc\\\\u00dfe; \\\\\\\"Welt\\\\\\\"\\\\nZeile 2\"}]",
+      "stack": "Error: [{\"ts\":1792742400000,\"key\":\"status\",\"parameter\":\"running\"},{\"ts\":1792742401200,\"key\":\"LOADCOMPLETE\",\"parameter\":\"{\\\"loadTime\\\":1200,\\\"browser\\\":\\\"Demo Browser\\\",\\\"os\\\":\\\"Platform test\\\",\\\"screen\\\":\\\"1280 x 800\\\"}\"},{\"ts\":1792742401300,\"key\":\"NOTE\",\"parameter\":\"Gr\\\\u00fc\\\\u00dfe; \\\\\\\"Welt\\\\\\\"\\\\nZeile 2\"}]\n    at re (http://127.0.0.1:5191/assets/testcenter-qoXXfDsA.js:47:17287)\n    at http://127.0.0.1:5191/assets/testcenter-qoXXfDsA.js:48:521\n    at V (http://127.0.0.1:5191/assets/testcenter-qoXXfDsA.js:47:17862)\n    at Re.onclick (http://127.0.0.1:5191/assets/testcenter-qoXXfDsA.js:48:442)"
+    },
+    {
+      "name": "Original-CSV: ein Kopf, beide Gruppen und identische Antworten",
+      "passed": true
+    },
+    {
+      "name": "Dateien und echte Testheft-Abhängigkeiten",
+      "passed": true
+    },
+    {
+      "name": "Antworten und Logs im echten Module-Worker",
+      "passed": true
+    },
+    {
+      "name": "SQLite/WASM: Daten übernehmen und prüfen",
+      "passed": true
+    },
+    {
+      "name": "Wiederholter Import erzeugt keine Duplikate",
+      "passed": true
+    },
+    {
+      "name": "SQLite-Datei speichern, erneut öffnen und Werte vergleichen",
+      "passed": true
+    },
+    {
+      "name": "Excel direkt und aus SQLite: vier identische Tabellen",
+      "passed": true
+    },
+    {
+      "name": "Sitzungsexport: beide Personen, Millisekunden und Größen",
+      "passed": true
+    },
+    {
+      "name": "Inhalte-ZIP mit Index und Originaldateien",
+      "passed": false,
+      "error": "Prüfung fehlgeschlagen",
+      "stack": "Error: Prüfung fehlgeschlagen\n    at re (http://127.0.0.1:5191/assets/testcenter-qoXXfDsA.js:47:17287)\n    at http://127.0.0.1:5191/assets/testcenter-qoXXfDsA.js:50:2445\n    at async V (http://127.0.0.1:5191/assets/testcenter-qoXXfDsA.js:47:17856)\n    at async Re.onclick (http://127.0.0.1:5191/assets/testcenter-qoXXfDsA.js:50:2349)"
+    },
+    {
+      "name": "Abgelaufener Schlüssel liefert einen verständlichen Fehler",
+      "passed": true
+    },
+    {
+      "name": "Trennen beendet die Sitzung auch auf dem Server",
+      "passed": false,
+      "error": "n.logout is not a function",
+      "stack": "TypeError: n.logout is not a function\n    at http://127.0.0.1:5191/assets/testcenter-qoXXfDsA.js:50:2912\n    at V (http://127.0.0.1:5191/assets/testcenter-qoXXfDsA.js:47:17862)\n    at Re.onclick (http://127.0.0.1:5191/assets/testcenter-qoXXfDsA.js:50:2826)"
+    }
+  ],
+  "version": {
+    "version": "19.0.1"
+  },
+  "loginMilliseconds": 6040,
+  "bookletSizes": {
+    "BOOKLET.SAMPLE-1": 60853,
+    "BOOKLET.SAMPLE-2": 45409,
+    "BOOKLET.SAMPLE-3": 60801
+  },
+  "database": {
+    "name": "IQB-Testcenter-Output",
+    "version": "2",
+    "created_By": "Testcenter Integration",
+    "created_DateTime": "2026-10-23T14:42:27.854Z",
+    "lastchanged_By": "Testcenter Integration",
+    "lastchanged_DateTime": "2026-10-23T14:42:27.869Z",
+    "number_of_people": "2",
+    "number_of_responses": "28",
+    "has_subforms": "True",
+    "has_codes": "True",
+    "response_status": "{\"0\":\"UNSET\",\"1\":\"NOT_REACHED\",\"2\":\"DISPLAYED\",\"3\":\"VALUE_CHANGED\",\"4\":\"DERIVE_ERROR\",\"5\":\"CODING_COMPLETE\",\"6\":\"NO_CODING\",\"7\":\"INVALID\",\"8\":\"CODING_INCOMPLETE\",\"9\":\"CODING_ERROR\",\"10\":\"PARTLY_DISPLAYED\",\"11\":\"DERIVE_PENDING\",\"12\":\"INTENDED_INCOMPLETE\",\"13\":\"CODE_SELECTION_PENDING\"}",
+    "people": 2,
+    "responses": 28,
+    "booklets": 2,
+    "units": 4,
+    "groups": [
+      {
+        "group": "BROWSER_A",
+        "people": 1
+      },
+      {
+        "group": "BROWSER_B",
+        "people": 1
+      }
+    ],
+    "sizes": {
+      "BOOKLET.SAMPLE-1": 60853,
+      "BOOKLET.SAMPLE-2": 45409,
+      "BOOKLET.SAMPLE-3": 60801
+    }
+  },
+  "passed": 15,
+  "total": 18,
+  "finished": "2026-10-23T14:42:28.450Z"
+}

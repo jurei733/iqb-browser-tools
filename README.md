@@ -1,4 +1,4 @@
-# IQB-Werkzeuge im Browser · Version 0.2.2
+# IQB-Werkzeuge im Browser · Version 0.2.3
 
 Portierung der Arbeitsabläufe von **IQB-Kodieren 4.3.0.3** und **itc-ToolBox 3.3.0.2**. Die Anwendung läuft als statische Website mit lokaler Dateiverarbeitung; eine Windows-Installation ist nicht erforderlich.
 
@@ -45,9 +45,9 @@ Pfeile links/rechts, Bild auf/ab und Enter: Fall wechseln. Pfeile oben/unten: Co
 
 ## Testcenter verbinden
 
-Die Serveradresse und Administrationszugangsdaten in **Testcenter verbinden** eingeben. Zugangsdaten und AuthToken werden nur im Arbeitsspeicher gehalten und beim Trennen verworfen. Keine Zugangsdaten werden in URL, Local Storage oder Service-Worker-Cache gespeichert.
+Die Serveradresse und Administrationszugangsdaten in **Testcenter verbinden** eingeben. Zugangsdaten und AuthToken werden nur im Arbeitsspeicher gehalten und beim Trennen verworfen. Die Abmeldung beendet die Administrationssitzung zusätzlich auf dem Server; ein Fehler beim serverseitigen Abmelden wird angezeigt. Keine Zugangsdaten werden in URL, Local Storage oder Service-Worker-Cache gespeichert.
 
-Bei verschiedenen Ursprüngen muss der Testcenter-Server CORS für den Ursprung dieser Anwendung erlauben, einschließlich GET/PUT/POST/OPTIONS und der Header `Content-Type` und `AuthToken`. Bei einer HTTPS-Anwendung muss auch das entfernte Testcenter HTTPS verwenden. Alternativ `dist/` auf einem geeigneten Ursprung zusammen mit der API bereitstellen. Eine Browseranwendung kann diese Serverfreigabe nicht selbst umgehen. Es gibt keinen Anmelde- oder Datenproxy.
+Bei verschiedenen Ursprüngen muss der Testcenter-Server CORS für den Ursprung dieser Anwendung erlauben, einschließlich GET/PUT/POST/DELETE/OPTIONS und der Header `Content-Type` und `AuthToken`. Bei einer HTTPS-Anwendung muss auch das entfernte Testcenter HTTPS verwenden. Alternativ `dist/` auf einem geeigneten Ursprung zusammen mit der API bereitstellen. Eine Browseranwendung kann diese Serverfreigabe nicht selbst umgehen. Es gibt keinen Anmelde- oder Datenproxy.
 
 Die Verbindung greift auf die `/api`-Routen der ursprünglichen Toolbox zu. Abweichende oder zukünftige Testcenter-APIs benötigen gegebenenfalls Anpassungen.
 
@@ -68,13 +68,13 @@ Die private Sites-Veröffentlichung erfordert beim ersten Zugriff die Anmeldung 
 
 ## Geprüft und verbleibende Nachweise
 
-- **47 automatisierte Prüfungen**: Original-Xlsx und beide Original-DOCX-Vorlagen, historische und aktuelle Kodierjobs, Ergebnisdateien, CSV-Varianten, Antwortkonverter, Zusammenführung, Unterformular-Exporte, mehrfache Sitzungen, Reviews, SQLite-Rundlauf einschließlich Version 1 / eigener Statuswerte / Transaktionsabbruch sowie Testcenter-Verträge mit nachgebildeten Serverantworten.
+- **50 automatisierte Prüfungen**: Original-Xlsx und beide Original-DOCX-Vorlagen, historische und aktuelle Kodierjobs, Ergebnisdateien, CSV-Varianten, Antwortkonverter, Zusammenführung, Unterformular-Exporte, mehrfache Sitzungen, Reviews, SQLite-Rundlauf einschließlich Version 1 / eigener Statuswerte / Transaktionsabbruch sowie Testcenter-Verträge mit nachgebildeten Serverantworten.
 - **Praktisch im integrierten Chromium-Browser auf macOS geprüft**: Jobimport im Worker, Code/Kommentar, Fallliste, Schablone ziehen und drehen, SQLite öffnen und prüfen, Excel erzeugen und herunterladen, QR-DOCX erzeugen und herunterladen, Antwort-/Log-CSV gemeinsam importieren. Tatsächlich heruntergeladene Xlsx und DOCX wurden zusätzlich strukturell geprüft.
 - **43 Browserprüfungen je Browser**: Chromium 147, Safari 27.0.1 (WebKit) und Firefox 158.0 (Gecko) auf macOS. Originalvorlagen, unveränderte Windows-Xlsx-Exporte, Bildformate und EXIF-Ausrichtungen, echte Module-Worker, SQLite/WASM, IndexedDB, sämtliche Antwort-Exportformate, Word mit QR-Codes und Web-Crypto/fetch. Berichte unter `tests/results/`.
 - **Native Browseroberflächen in 0.2.1**: Safari und Firefox: Beispieljob öffnen, Code 0 und Kommentar erfassen, Ergebnis- und Codes-Xlsx-Download; gespeicherte Kodierung nach Neuladen wiederherstellen. Firefox zusätzlich SQLite-Datei öffnen, prüfen, auswerten und offline wiederherstellen. Safari ebenfalls offline neu laden und Kodierkommentar in der Fallliste wiederfinden.
-- **Testcenter-Bedienung gegen lokalen Testserver geprüft**: Anmeldung, Arbeitsbereich, Ergebnisgruppe, Antwort-/Log-Abruf bis zur Excel-Datei, Review-Export und Trennen. Die Challenge- und Content-Abläufe sind zusätzlich durch automatisierte Vertragstests abgedeckt.
+- **Früherer Test mit nachgebildetem Server**: Anmeldung, Arbeitsbereich, Ergebnisgruppe, Antwort-/Log-Abruf bis zur Excel-Datei, Review-Export und Trennen. Die Challenge- und Content-Abläufe sind zusätzlich durch automatisierte Vertragstests abgedeckt.
 - **Offline geprüft**: lokalen Webserver abgeschaltet, Anwendung neu geladen und gespeicherte SQLite-Datenbank einschließlich WASM-Engine wiederhergestellt.
-- **Noch nicht praktisch nachgewiesen**: echte/anonymisierte Originaljobs, Verbindung zu einem echten Testcenter, Mobilgeräte, Linux-Systeme und Browser unter Windows und die Betriebssysteminstallation als PWA. Diese Daten beziehungsweise Zugänge standen nicht zur Verfügung.
+- **Noch nicht praktisch nachgewiesen**: echte/anonymisierte Originaljobs, produktive Testcenter-Daten, Mobilgeräte, Linux-Systeme und Browser unter Windows und die Betriebssysteminstallation als PWA. Diese Daten beziehungsweise Zugänge standen nicht zur Verfügung.
 
 Browserprüfungen lassen sich mit `node scripts/build-browser-tests.mjs ./work/browser-tests` bauen. Das ausgegebene Verzeichnis über einen lokalen Webserver ausliefern und `/tests/browser.html` in einem echten Browser öffnen. Die Prüfseite wird nicht in die normale Anwendung aufgenommen.
 
@@ -100,6 +100,19 @@ node scripts/compare-windows-files.mjs /pfad/windows-results /pfad/datei-verglei
 `scripts/Run-Windows-Reference.ps1` wiederholt die Originalaufrufe unter x86-Windows-PowerShell mit dem Eingabeordner als `-Root`. Dabei entstehen die Ausgaben unter `inputs/windows-results/`; die Originalprogramme bleiben unverändert.
 
 Die früheren 15 Originalkonverter-Aufrufe unter macOS/.NET 10 bleiben separat dokumentiert. Die Nachweise verwenden synthetische Daten und die Originalvorlagen; sie belegen keine vollständige Gleichwertigkeit für alle historischen Bestände oder einen produktiven Testcenter-Zugang.
+
+## Echter Testcenter-Integrationslauf in 0.2.3
+
+Am 23.10.2026 wurde das unveränderte offizielle Testcenter **19.0.1** lokal mit PostgreSQL und Redis eingerichtet. Zwei synthetische Gruppen mit zwei Personen, vier Units und 28 Antworten wurden über die echten Testpersonen- und Test-APIs angelegt. Der Anmeldeschutz für Administratoren, Logins und Personen blieb aktiv.
+
+- **18/18 Integrationsprüfungen je Browser**: Chrome/Chromium 147, Safari 27.0.1 und Firefox 158.0 unter macOS. Anmeldung mit Challenge, Arbeitsbereich, Gruppenfilter, Antworten/Logs, Original-CSV, Dateien/Abhängigkeiten, Worker, SQLite-Import/Wiederimport/Rundlauf, Excel direkt und aus SQLite, Sitzungsexport, Inhalte-ZIP sowie ungültige und widerrufene Sitzungsschlüssel.
+- Die SQLite-Datei enthält zwei Personen, zwei Testhefte, vier Units, 28 Antworten, sechs Testheft-Logs, zwölf Unit-Logs und zwei Sitzungen. Eine unabhängige Python/SQLite-Prüfung bestätigt Integrität und Fremdschlüssel. Excel enthält die vier Tabellen Antworten, Status, Codes und Scores mit denselben Werten wie der direkte Export.
+- Behoben: Aktuelle Testcenter-Logs werden als JSON-Zeichenketten dekodiert. Umlaute, Anführungszeichen, Backslashes und Zeilenumbrüche bleiben dadurch lesbar und exakt erhalten. Historische CSV-Zitate bleiben unterstützt.
+- Behoben: „Verbindung trennen“ ruft `DELETE /session` auf und verarbeitet die leere HTTP-205-Antwort. Anschließend ist der alte Schlüssel auf dem Server ungültig. Lokale Zugangsdaten werden auch bei einem Netzwerkfehler gelöscht.
+- **Normale Release-Oberfläche zusätzlich geprüft**: reale Anmeldung, beide Gruppen, direkter Excel-Download, Übernahme in die Browserdatenbank, sichtbare Zähler (2/28/4), fehlerfreie Datenbankprüfung, SQLite-Download, Excel aus SQLite und erfolgreiche Abmeldung. Beide Excel-Dateien und die SQLite-Datei wurden in der nativen Downloadliste als abgeschlossen angezeigt.
+- Ein fehlgeschlagener ZIP-Test beruhte auf falscher Groß-/Kleinschreibung im Test: Testcenter normalisiert Dateinamen. Jetzt wird gegen die tatsächlich vom Server gemeldeten Namen geprüft; alle Originaldateien sind enthalten.
+
+Reproduzierbare Einrichtung und Prüflauf: [demo/testcenter/README.md](demo/testcenter/README.md). Die Prüfseiten werden nicht mit der Anwendung veröffentlicht. Berichte stehen unter `tests/results/testcenter-*.json`. Der Vorher-Bericht hält die gefundenen Fehler fest. Dies ersetzt keinen Test mit produktiven Schul-/Studienbeständen.
 
 ## Referenzkorrekturen in 0.2.2
 

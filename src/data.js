@@ -73,7 +73,11 @@ export function splitLog(logentry) {
   let str=String(logentry??''),position=str.indexOf(' : ');if(position<0)position=str.indexOf(' = ');
   if(position<0)return {key:str,parameter:''};
   const result={key:str.slice(0,position),parameter:str.slice(position+3)};
-  if(result.parameter.startsWith('"')&&result.parameter.endsWith('"'))result.parameter=result.parameter.slice(1,-1).replace(/""/g,'"').replace(/\\\\/g,'\\');
+  if(result.parameter.startsWith('"')&&result.parameter.endsWith('"')){
+    // Current Testcenter reports contain JSON-encoded strings, including Unicode
+    // and newline escapes. Older CSV reports used doubled quotation marks.
+    try{result.parameter=JSON.parse(result.parameter);}catch{result.parameter=result.parameter.slice(1,-1).replace(/""/g,'"').replace(/\\\\/g,'\\');}
+  }
   return result;
 }
 export function normalizePeople(input) {
