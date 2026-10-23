@@ -1,11 +1,11 @@
 import {unzipSync, gunzipSync, gzipSync, strFromU8, strToU8} from 'fflate';
-import {children, descendants, child, attr, value, parseXML, node, documentXML, text} from './xml.js';
+import {children, descendants, child, attr, value, parseXML, decodeXML, node, documentXML, text} from './xml.js';
 
 const stem = path => path.split('/').at(-1).replace(/\.[^.]*$/, '');
 const area = el => el ? Object.fromEntries(['x','y','w','h'].map(k => [k, Number(attr(el,k,0))])) : null;
 const bool = (el,k,def) => el?.hasAttribute(k) ? /^true$/i.test(attr(el,k)) : def;
 export function decodeResult(bytes) {
-  const doc = parseXML(strFromU8(bytes[0] === 31 && bytes[1] === 139 ? gunzipSync(bytes) : bytes));
+  const doc = parseXML(decodeXML(bytes[0] === 31 && bytes[1] === 139 ? gunzipSync(bytes) : bytes));
   const root = doc.documentElement;
   if (root.localName !== 'CodingResults' || attr(root,'version') !== '5') throw new Error('Erwartet wird eine CodingResults-Datei in Version 5.');
   const seen = new Set();
@@ -50,69 +50,70 @@ export function safeUnzip(bytes) {
     return true;
   }});
 }
+export function normalizeVariable(v) {
+  const modern=descendants(v,'c'),old=children(v,'Kodierung'),alternate=children(v,'Code');
+  const locations=children(v,'loc').map(l=>({booklet:attr(l,'b'),page:attr(l,'p'),frame:area(child(l,'varframe'))}));
+  if(!locations.length)for(const loc of descendants(v,'Ort')){const m=attr(loc,'seiteID').match(/^(.*)-(\d+)$/);if(m)locations.push({booklet:m[1],page:m[2],frame:null});}
+  return {id:attr(v,'id',attr(v,'bezeichner',attr(v,'name'))),label:attr(v,'lb',attr(v,'aufgbez',value(v,'Label'))),description:value(v,'descr')||value(v,'Allgemeine_kodieranweisung')||value(v,'AllgKodieranw')||value(v,'Position'),
+    codes:modern.length?modern.map(c=>({id:attr(c,'id'),label:attr(c,'lb'),description:c.textContent||'',score:attr(c,'to','0')})):old.length?old.map(c=>({id:value(c,'Wert')||'?',label:value(c,'Bedingung'),description:'',score:attr(c,'bewertung','0')})):alternate.map(c=>({id:attr(c,'kennung','?'),label:c.textContent||'',description:'',score:attr(c,'score','0')})),locations};
+}
+export function adjustFrame(frame,crop=null,dpiX=96,dpiY=96) {
+  if(!frame)return null;const x=frame.x-(crop?.x||0),y=frame.y-(crop?.y||0);
+  return {x:Math.max(0,x)*dpiX/96,y:Math.max(0,y)*dpiY/96,w:Math.max(0,frame.w+Math.min(0,x))*dpiX/96,h:Math.max(0,frame.h+Math.min(0,y))*dpiY/96};
+}
+export function batchCode(job,index,digit) {
+  const current=job.cases[index],cases=job.cases.filter(c=>c.testee===current.testee),matches=cases.map(c=>c.variable.codes.filter(code=>code.id.includes(digit)));
+  if(matches.some(list=>list.length!==1))throw new Error('Der Code ist nicht für alle Variablen dieser Testperson eindeutig. Es wurde nichts geändert.');
+  const advance=!current.code,time=localTimestamp();cases.forEach((c,i)=>{c.code=matches[i][0].id;c.time=time;});const next=job.cases.findIndex(c=>!c.code);return advance&&next>=0?next:index;
+}
+export function cycleCode(c,direction){const i=c.variable.codes.findIndex(v=>v.id===c.code);return c.variable.codes[i<0?0:(i+direction+c.variable.codes.length)%c.variable.codes.length].id;}
 export async function readCodingFiles(files) {
-  const bundles = [], results = [], loose = new Map();
-  for (const file of files) {
-    const bytes = new Uint8Array(await file.arrayBuffer());
-    const filename = file.webkitRelativePath || file.name;
-    if (/\.result$/i.test(file.name)) {results.push(decodeResult(bytes));continue;}
-    if (/\.zip$/i.test(file.name) && bytes[0] === 80 && bytes[1] === 75) {
-      const entries = new Map(Object.entries(safeUnzip(bytes)).filter(([k]) => !k.endsWith('/')));
-      bundles.push({name:stem(file.name),entries});
-    } else loose.set(filename.replace(/\\/g,'/'),bytes);
+  const bundles=[],results=[],loose=new Map();
+  for(const file of files){const bytes=new Uint8Array(await file.arrayBuffer()),filename=(file.webkitRelativePath||file.name).replace(/\\/g,'/');
+    if(/\.result$/i.test(file.name)){results.push(decodeResult(bytes));continue;}
+    if(/\.zip$/i.test(file.name)&&bytes[0]===80&&bytes[1]===75)bundles.push({name:stem(file.name),zipped:true,entries:new Map(Object.entries(safeUnzip(bytes)).filter(([k])=>!k.endsWith('/')))});
+    else loose.set(filename,bytes);
   }
-  if (loose.size) bundles.push({name:'Dateien',entries:loose});
-  const templates = new Map();
-  for (const bundle of bundles) for (const [path,bytes] of bundle.entries) if (/^CT_/i.test(stem(path))) templates.set(stem(path).slice(3).toUpperCase(),{path,bytes});
-  const jobs = [], warnings = [];
-  for (const bundle of bundles) {
-    const images = new Map();
-    for (const [path,bytes] of bundle.entries) {
-      if (/\.(?:png|jpe?g|tiff?|bmp|gif|webp)$/i.test(path) && !/^CT_/i.test(stem(path))) {
-        const key = stem(path).toUpperCase();
-        if (images.has(key)) throw new Error(`Mehrdeutiger Scan-Dateiname: ${stem(path)}. Bitte getrennt importieren.`);
-        images.set(key,{path,bytes});
-      }
-    }
-    for (const [path,bytes] of bundle.entries) {
-      if (!/\.xml$/i.test(path)) continue;
-      const doc = parseXML(strFromU8(bytes));
-      const root = doc.documentElement, vars = descendants(root,'Variablen')[0];
-      if (!vars) continue;
-      const opt = descendants(root,'jobOpts')[0] || descendants(root,'jobOptionen')[0];
-      const settings = {showScore:bool(opt,'showScore',value(opt,'kodanzeigecreditspalte') === 'JA'),enableComments:bool(opt,'enableComments',true),suppressDescription:bool(opt,'suppressDescription',true),anonym:bool(opt,'anonym',false),training:bool(opt,'training',false),coder:attr(opt,'codername'),crop:area(child(opt,'crop'))};
-      const variables = children(vars).map(v => {
-        const old = children(v,'Kodierung');
-        const locations = children(v,'loc').map(l => ({booklet:attr(l,'b'),page:attr(l,'p'),frame:area(child(l,'varframe'))}));
-        if (!locations.length) for (const loc of descendants(v,'Ort')) {
-          const match = attr(loc,'seiteID').match(/^(.*)-(\d+)$/); if(match) locations.push({booklet:match[1],page:match[2],frame:null});
-        }
-        return {id:attr(v,'id',attr(v,'bezeichner')),label:attr(v,'lb',attr(v,'aufgbez')),description:value(v,'descr') || value(v,'Allgemeine_kodieranweisung'),codes:descendants(v,'c').map(c => ({id:attr(c,'id'),label:attr(c,'lb'),description:c.textContent || '',score:attr(c,'to')})).concat(old.map(c => ({id:value(c,'Wert'),label:value(c,'Bedingung'),description:'',score:attr(c,'bewertung')}))),locations};
-      });
-      if (!variables.length || variables.some(v => !v.id || !v.codes.length)) throw new Error(`Die Variablen in ${path} enthalten keine vollständigen Codes.`);
-      if (variables.some(v=>templates.has(v.id.toUpperCase()))) throw new Error(`${path}: Dieser Job verwendet Kodierschablonen. Diese sind in der ersten Browserfassung noch nicht umgesetzt.`);
-      if(settings.training) throw new Error(`${path}: Trainingsjobs werden in dieser Browserfassung noch nicht unterstützt.`);
-      if(descendants(root,'VariablenPaket').length || value(opt,'personenprefix') === 'JA') throw new Error(`${path}: Historische Variablenpakete oder Personenpräfixe sind noch nicht vollständig umgesetzt.`);
-      const explicit = value(root,'Cases').trim().split(/\s+/).filter(Boolean);
-      const people = explicit.length ? explicit : [...new Set([...images.keys()].map(n => n.slice(n.lastIndexOf('_')+1)))];
-      const cases = [];
-      for (const testee of people) for (const variable of variables) {
-        const pages = [];
-        for (const booklet of [...new Set(variable.locations.map(l => l.booklet))]) {
-          for (const loc of variable.locations.filter(l => l.booklet === booklet).sort((a,b) => Number(a.page)-Number(b.page))) {
-            const image = images.get(`${booklet}-${loc.page}_${testee}`.toUpperCase());
-            if (image) pages.push({...image,frame:loc.frame});
+  if(loose.size)bundles.push({name:'Dateien',zipped:false,entries:loose});
+  const jobs=[],warnings=[],globalTemplates=new Map();
+  for(const bundle of bundles)for(const [path,bytes]of bundle.entries)if(/^CT_/i.test(stem(path)))globalTemplates.set(stem(path).slice(3).toUpperCase(),{path,bytes});
+  for(const bundle of bundles){const images=[];
+    for(const [path,bytes]of bundle.entries){if(/\.result$/i.test(path)){results.push(decodeResult(bytes));continue;}
+      if(/\.(?:png|jpe?g|tiff?|bmp|gif|webp)$/i.test(path)&&!/^CT_/i.test(stem(path))&&!/^Testschablone$/i.test(stem(path)))images.push({path:path.replace(/\\/g,'/'),bytes});}
+    for(const [path,bytes]of bundle.entries){if(!/\.xml$/i.test(path))continue;let doc;try{doc=parseXML(decodeXML(bytes));}catch{warnings.push(`${path}: Ungültige XML-Datei übersprungen.`);continue;}
+      const root=doc.documentElement,vars=descendants(root,'Variablen')[0];if(!vars)continue;
+      const legacy=!!descendants(root,'jobOptionen').length,opt=descendants(root,'jobOpts')[0]||descendants(root,'jobOptionen')[0],xmlDir=path.includes('/')?path.slice(0,path.lastIndexOf('/')+1):'';
+      const options={showScore:bool(opt,'showScore',value(opt,'kodanzeigecreditspalte')==='JA'),enableComments:bool(opt,'enableComments',child(opt,'kommentare')?value(opt,'kommentare')==='JA':true),suppressDescription:bool(opt,'suppressDescription',true),anonym:bool(opt,'anonym',false),training:bool(opt,'training',false),coder:attr(opt,'codername',value(opt,'kodierer')),crop:area(child(opt,'crop')),personPrefix:value(opt,'personenprefix')==='JA'};
+      const variables=children(vars).map(normalizeVariable),lookup=new Map(variables.map(v=>[v.id.toUpperCase(),v]));
+      if(!variables.length||variables.some(v=>!v.id||!v.codes.length))throw new Error(`Die Variablen in ${path} enthalten keine vollständigen Codes.`);
+      let packages=[variables];
+      if(legacy){const defs=descendants(root,'VariablenPaket');packages=defs.length?defs.map(p=>children(p,'Variable').map(v=>lookup.get(attr(v,'bezeichner').toUpperCase())).filter(Boolean)):variables.map(v=>[v]);}
+      for(const selected of packages){if(!selected.length)continue;let scope=images;
+        const dirname=p=>p.includes('/')?p.slice(0,p.lastIndexOf('/')):'',folder=(name)=>images.filter(i=>dirname(i.path).toUpperCase()===(xmlDir+name).replace(/\/$/,'').toUpperCase());
+        if(legacy){scope=folder(selected[0].id);if(!scope.length)scope=folder('scans');if(!scope.length)scope=images.filter(i=>dirname(i.path).toUpperCase()===xmlDir.replace(/\/$/,'').toUpperCase());}
+        const normalizedStem=image=>{let name=stem(image.path).toUpperCase();if(options.personPrefix){const i=name.lastIndexOf('_');if(i>=0)name=name.slice(0,i+1)+name.slice(i+5);}return name;};
+        const explicit=(descendants(root,'Cases')[0]?.textContent||'').trim().split(/\s+/).filter(Boolean);
+        if(new Set(explicit).size!==explicit.length)throw new Error(`${path}: Doppelte Testperson in Cases.`);
+        const inferScope=legacy?scope:folder(selected[0].id).length?folder(selected[0].id):images;
+        const people=explicit.length?explicit:[...new Set(inferScope.filter(i=>selected[0].locations.some(l=>normalizedStem(i).startsWith(`${l.booklet}-${l.page}_`.toUpperCase()))).map(i=>normalizedStem(i).slice(normalizedStem(i).lastIndexOf('_')+1)))];
+        const cases=[];
+        for(const testee of people)for(const variable of selected){const pages=[];
+          for(const booklet of [...new Set(variable.locations.map(l=>l.booklet))]){
+            for(const loc of variable.locations.filter(l=>l.booklet===booklet).sort((a,b)=>Number(a.page)-Number(b.page))){const target=`${booklet}-${loc.page}_${testee}`.toUpperCase();let matches=scope.filter(i=>normalizedStem(i)===target);
+              if(!legacy&&matches.length>1){const own=folder(variable.id).filter(i=>normalizedStem(i)===target);if(own.length)matches=own;else{const common=folder('scans').filter(i=>normalizedStem(i)===target);if(common.length)matches=common;}}
+              if(matches.length>1)throw new Error(`Mehrdeutiger Scan-Dateiname ${target} im ausgewählten Job.`);if(matches[0])pages.push({...matches[0],frame:loc.frame});}
+            if(pages.length)break;
           }
-          if (pages.length) break;
+          if(pages.length){let template=globalTemplates.get(variable.id.toUpperCase())||null;
+            if(!template&&!bundle.zipped){const dir=dirname(pages[0].path),candidate=(dir?dir+'/':'')+'Testschablone.png';const entry=[...bundle.entries].find(([p])=>p.toUpperCase()===candidate.toUpperCase());if(entry)template={path:entry[0],bytes:entry[1]};}
+            cases.push({testee,variable,pages,template,code:'',comment:'',time:''});}
         }
-        if (pages.length) cases.push({testee,variable,pages,template:templates.get(variable.id.toUpperCase()) || null,code:'',comment:'',time:''});
+        if(!cases.length){warnings.push(`${path}: Keine passenden Scans gefunden.`);continue;}
+        const label=legacy?`${stem(path)} ${selected.map(v=>v.id).join(' ')}`:`${bundle.name} ${stem(path)}`;
+        const job={id:attr(root,'id'),label,settings:{...options},variables:selected,cases};if(!job.id)throw new Error(`Job-ID fehlt in ${path}.`);jobs.push(job);
       }
-      if (!cases.length) {warnings.push(`${path}: Keine passenden Scans gefunden.`);continue;}
-      const job = {id:attr(root,'id'),label:`${bundle.name} ${stem(path)}`,settings,variables,cases};
-      if (!job.id) throw new Error(`Job-ID fehlt in ${path}.`);
-      jobs.push(job);
     }
   }
-  if (!jobs.length) throw new Error(warnings.join('\n') || 'Keine Kodierjobs gefunden. Erwartet werden Job-XML und passende Scans, zusammen als ZIP oder als Dateien.');
+  if(!jobs.length)throw new Error(warnings.join('\n')||'Keine Kodierjobs gefunden. Erwartet werden Job-XML und passende Scans, zusammen als ZIP oder als Dateien.');
   return {jobs,results,warnings};
 }

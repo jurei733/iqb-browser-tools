@@ -96,15 +96,15 @@ export function loginRows(workbook) {
   const name=named(workbook,'loginsCol.Name'),group=named(workbook,'loginsCol.GroupID'),pw=named(workbook,'loginsCol.Password'),mode=named(workbook,'loginsCol.Mode'),n1=named(workbook,'loginsCol.GroupName1'),n2=named(workbook,'loginsCol.GroupName2');
   return rows(name).map(r=>({name:cell(name,r),group:cell(group,r),password:cell(pw,r),mode:cell(mode,r),name1:cell(n1,r),name2:cell(n2,r)}));
 }
-export function generateLogins(workbook,{length=5,passwordLength=3,monitor=true,prefix=true,suffix=''}={}) {
+export function generateLogins(workbook,{length=5,passwordLength=3,monitor=true,prefix,prefixTestee,prefixReserve,prefixReview,suffix}={}) {
   const name=named(workbook,'groupsCol.Name1'),name2=named(workbook,'groupsCol.Name2'),id=named(workbook,'groupsCol.ID');
   const counts=['NumberTest','NumberPlus','NumberReview'].map(n=>named(workbook,`groupsCol.${n}`));
-  const groups=[],used=new Set();
+  const groups=[],used=new Set(),groupSuffix=suffix??('_'+generateCodes(4,1)[0]);
   for(const r of rows(name)) {
     const numbers=counts.map(c=>Number(cell(c,r)||0));
     if(numbers.some(n=>!Number.isInteger(n)||n<0)||numbers.reduce((a,b)=>a+b,0)>50000)throw new Error('Die Login-Anzahlen müssen ganze Zahlen zwischen 0 und 50000 sein.');
-    let gid=cell(id,r);if(!gid){let i=1;do {gid=`${cell(name,r).replace(/[^\p{L}\p{N}_-]/gu,'_')}_${String(i++).padStart(2,'0')}${suffix}`;}while(used.has(gid));}
-    if(used.has(gid))throw new Error(`Doppelte Gruppen-ID ${gid}.`);used.add(gid);set(id,r,gid);
+    let gid=cell(id,r);if(!gid||used.has(gid)){const upper=(cell(name,r).match(/[A-Z]/g)||[]).join('');let i=1;gid=upper+groupSuffix;while(used.has(gid))gid=upper+(++i)+groupSuffix;}
+    used.add(gid);set(id,r,gid);
     groups.push({id:gid,n1:cell(name,r),n2:cell(name2,r),numbers});
   }
   const total=groups.reduce((n,g)=>n+g.numbers.reduce((a,b)=>a+b,0)+(monitor?1:0),0),codes=generateCodes(length,total);
@@ -118,7 +118,7 @@ export function generateLogins(workbook,{length=5,passwordLength=3,monitor=true,
   for(const g of groups) {
     for(let kind=0;kind<4;kind++)for(let i=0;i<(kind<3?g.numbers[kind]:(monitor?1:0));i++) {
       const modes=['run-hot-return','run-hot-return','run-review','monitor-group'];
-      const prefixes=prefix?[`T${String(i+1).padStart(2,'0')}_`,'EX_','RV_','TL_']:['','','','TL_'];
+      const prefixes=[(prefixTestee??prefix??false)?`T${String(i+1).padStart(2,'0')}_`:'',(prefixReserve??prefix??false)?'RS_':'',(prefixReview??prefix??false)?'RV_':'','TL_'];
       const values=[g.n1,g.n2,g.id,prefixes[kind]+codes[index],passwords.length?passwords[index%passwords.length]:'',modes[kind]];
       refs.forEach((ref,c)=>set(ref,r,values[c]));r++;index++;
     }
@@ -131,7 +131,7 @@ export function testtakerXML(workbook,{booklet='Booklet1',separate=false}={}) {
   for(const row of loginRows(workbook)) {
     if(!row.group)throw new Error('Ein Login enthält keine Gruppen-ID.');
     if(seen.has(row.name))throw new Error(`Doppelter Login ${row.name}.`);seen.add(row.name);
-    if(!['run-hot-return','run-hot-restart','run-demo','run-review','monitor-group','run-trial','run-hot','run-test'].includes(row.mode))throw new Error(`Unbekannter Modus ${row.mode}.`);
+    if(!row.mode.trim())throw new Error(`Der Modus für ${row.name} fehlt.`);
     if(!groups.has(row.group))groups.set(row.group,{label:`${row.name1} - ${row.name2}`,rows:[]});groups.get(row.group).rows.push(row);
   }
   let custom='';const key=named(workbook,'customText.Key',true),val=named(workbook,'customText.Value',true);

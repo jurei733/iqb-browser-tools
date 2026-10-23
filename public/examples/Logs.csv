@@ -1,0 +1,7 @@
+﻿"groupname";"loginname";"code";"bookletname";"unitname";"originalUnitId";"timestamp";"logentry"
+"DEMO";"demo1";"001";"DEMO";"";"MATHE01";"1792663201000";"LOADCOMPLETE : {""browserName"":""Beispielbrowser"",""browserVersion"":""1"",""osName"":""Beispielsystem"",""screenSizeWidth"":1440,""screenSizeHeight"":900,""loadTime"":1000}"
+"DEMO";"demo1";"001";"DEMO";"MATHE_";"MATHE01";"1792663203000";"PAGE : 1"
+"DEMO";"demo2";"002";"DEMO";"";"MATHE01";"1792663201000";"LOADCOMPLETE : {""browserName"":""Beispielbrowser"",""browserVersion"":""1"",""osName"":""Beispielsystem"",""screenSizeWidth"":1440,""screenSizeHeight"":900,""loadTime"":1000}"
+"DEMO";"demo2";"002";"DEMO";"MATHE_";"MATHE01";"1792663203000";"PAGE : 1"
+"DEMO";"demo3";"003";"DEMO";"";"MATHE01";"1792663201000";"LOADCOMPLETE : {""browserName"":""Beispielbrowser"",""browserVersion"":""1"",""osName"":""Beispielsystem"",""screenSizeWidth"":1440,""screenSizeHeight"":900,""loadTime"":1000}"
+"DEMO";"demo3";"003";"DEMO";"MATHE_";"MATHE01";"1792663203000";"PAGE : 1"

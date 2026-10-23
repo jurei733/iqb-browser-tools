@@ -4,6 +4,13 @@ export const descendants = (el, tag) => Array.from(el?.getElementsByTagName(tag)
 export const attr = (el, name, fallback = '') => el?.hasAttribute(name) ? el.getAttribute(name) : fallback;
 export const child = (el, tag) => children(el, tag)[0];
 export const value = (el, tag) => child(el, tag)?.textContent || '';
+export function decodeXML(bytes){
+  let encoding='utf-8';
+  if((bytes[0]===255&&bytes[1]===254)||(bytes[0]===60&&bytes[1]===0))encoding='utf-16le';
+  else if((bytes[0]===254&&bytes[1]===255)||(bytes[0]===0&&bytes[1]===60))encoding='utf-16be';
+  else {const declaration=String.fromCharCode(...bytes.slice(0,200)).match(/<\?xml[^>]*encoding\s*=\s*["']([^"']+)/i);if(declaration)encoding=declaration[1];}
+  try{return new TextDecoder(encoding,{fatal:true}).decode(bytes);}catch{throw new Error(`Die XML-Zeichenkodierung ${encoding} konnte nicht gelesen werden.`);}
+}
 export function parseXML(source) {
   if (/<!DOCTYPE|<!ENTITY/i.test(source)) throw new Error('XML mit Dokumenttyp oder Entitäten wird nicht unterstützt.');
   let errors = [];
