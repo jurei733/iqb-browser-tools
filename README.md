@@ -53,6 +53,15 @@ Die Verbindung greift auf die `/api`-Routen der ursprünglichen Toolbox zu. Abwe
 
 ## Starten und bereitstellen
 
+Repository: [jurei733/iqb-browser-tools](https://github.com/jurei733/iqb-browser-tools). Dies ist eine eigenständige Browser-Portierung; Originalquellen, Versionen und Vergleichsnachweise stehen unten und in `PROVENANCE.json`.
+
+Das private Repository mit einem dafür berechtigten GitHub-Konto klonen:
+
+```sh
+git clone https://github.com/jurei733/iqb-browser-tools.git
+cd iqb-browser-tools
+```
+
 Node.js 22 oder neuer und pnpm 11.25.0:
 
 ```sh
@@ -64,7 +73,7 @@ pnpm build
 
 `dist/` enthält die vollständige Website einschließlich Service Worker, Worker-JavaScript und SQLite-WASM. Auf einem statischen Webserver über HTTPS oder zum lokalen Test über localhost ausliefern; nicht direkt über `file://` öffnen. WASM sollte mit `application/wasm` ausgeliefert werden. `sw.js` darf vom Webserver nicht dauerhaft unverändert zwischengespeichert werden. Bei Bereitstellung unter einer Unteradresse müssen Vite-Basispfad, Vorlagen-/Beispielpfade sowie Manifest und Service-Worker-Scope angepasst werden; dieser Stand ist für den Ursprungspfad `/` gebaut.
 
-Die private Sites-Veröffentlichung erfordert beim ersten Zugriff die Anmeldung des Eigentümers. Für die Verwendung durch weitere Personen ist eine passende Veröffentlichung oder eigene Bereitstellung nötig.
+Das Repository enthält den Quellcode und richtet keine öffentliche Website ein. Die bisherige private Sites-Veröffentlichung ist davon unabhängig. Für andere Personen `dist/` auf einem geeigneten Webserver bereitstellen.
 
 ## Geprüft und verbleibende Nachweise
 

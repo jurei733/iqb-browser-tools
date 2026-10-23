@@ -1,0 +1,12 @@
+* text=auto
+*.js text eol=lf
+*.mjs text eol=lf
+*.py text eol=lf
+*.sh text eol=lf
+*.command text eol=lf
+*.csv -text
+*.xlsx binary
+*.docx binary
+*.sqlite binary
+*.zip binary
+*.result binary
