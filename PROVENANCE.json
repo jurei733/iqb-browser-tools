@@ -1,0 +1,184 @@
+{
+  "source_date": "2026-10-22",
+  "toolbox_git_commit": "7c45553ca246104a59043d6f4194caf5a4b6c039",
+  "decompiler": "ILSpyCmd 11.1.0.9782",
+  "packages": {
+    "itc-ToolBox": {
+      "name": "itc-ToolBox",
+      "manifest_url": "https://www2.iqb.hu-berlin.de/it/dl/itc-ToolBox/Application%20Files/itc-Toolbox_3_3_0_2/itc-Toolbox.exe.manifest",
+      "deployment_sha256": "72a79b7924b1d32d5e77264e26e48573177b7bab6bb33b0e86e7793be1b5f170",
+      "manifest_sha256": "83c67054fea2e75a9732e93db22fd5281b4f25d0e419c711c2306062b5170643",
+      "files": [
+        {
+          "path": "DocumentFormat.OpenXml.dll",
+          "url": "https://www2.iqb.hu-berlin.de/it/dl/itc-ToolBox/Application%20Files/itc-Toolbox_3_3_0_2/DocumentFormat.OpenXml.dll.deploy",
+          "size": 6032816,
+          "sha256": "a1007019ddfb5824607337ecb0446ce9de9b9dcb2f76a529d9e29ebd17ff064d",
+          "manifest_hash_verified": true
+        },
+        {
+          "path": "EntityFramework.dll",
+          "url": "https://www2.iqb.hu-berlin.de/it/dl/itc-ToolBox/Application%20Files/itc-Toolbox_3_3_0_2/EntityFramework.dll.deploy",
+          "size": 4991352,
+          "sha256": "ff42bca704605e187abb45523868b15128d6af1c28ad40a4579d507d34a953b2",
+          "manifest_hash_verified": true
+        },
+        {
+          "path": "EntityFramework.SqlServer.dll",
+          "url": "https://www2.iqb.hu-berlin.de/it/dl/itc-ToolBox/Application%20Files/itc-Toolbox_3_3_0_2/EntityFramework.SqlServer.dll.deploy",
+          "size": 591752,
+          "sha256": "a960dd4d2f0f37b3c09ffb9567c32426b8791310d7eb935c04c819c3d46bd49e",
+          "manifest_hash_verified": true
+        },
+        {
+          "path": "iqblib-components.dll",
+          "url": "https://www2.iqb.hu-berlin.de/it/dl/itc-ToolBox/Application%20Files/itc-Toolbox_3_3_0_2/iqblib-components.dll.deploy",
+          "size": 372736,
+          "sha256": "d2f4153f46e0b44c85f3e66e1bc599fe351f2de68281387ec04ae331f87a6a99",
+          "manifest_hash_verified": true
+        },
+        {
+          "path": "iqblib-openxml.dll",
+          "url": "https://www2.iqb.hu-berlin.de/it/dl/itc-ToolBox/Application%20Files/itc-Toolbox_3_3_0_2/iqblib-openxml.dll.deploy",
+          "size": 55808,
+          "sha256": "cd1b4688606719b82b2d3e0270a56cc3ad0d9b86cbe0b97ef2f80782c6868199",
+          "manifest_hash_verified": true
+        },
+        {
+          "path": "iqblib-windows.dll",
+          "url": "https://www2.iqb.hu-berlin.de/it/dl/itc-ToolBox/Application%20Files/itc-Toolbox_3_3_0_2/iqblib-windows.dll.deploy",
+          "size": 23552,
+          "sha256": "1f916f31f58faedd8e3c41e02d6107f608fb8be615524293a409b5c456c53c80",
+          "manifest_hash_verified": true
+        },
+        {
+          "path": "itc-Toolbox.exe",
+          "url": "https://www2.iqb.hu-berlin.de/it/dl/itc-ToolBox/Application%20Files/itc-Toolbox_3_3_0_2/itc-Toolbox.exe.deploy",
+          "size": 505344,
+          "sha256": "c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1",
+          "manifest_hash_verified": true
+        },
+        {
+          "path": "Newtonsoft.Json.dll",
+          "url": "https://www2.iqb.hu-berlin.de/it/dl/itc-ToolBox/Application%20Files/itc-Toolbox_3_3_0_2/Newtonsoft.Json.dll.deploy",
+          "size": 701992,
+          "sha256": "b624949df8b0e3a6153fdfb730a7c6f4990b6592ee0d922e1788433d276610f3",
+          "manifest_hash_verified": true
+        },
+        {
+          "path": "QRCoder.dll",
+          "url": "https://www2.iqb.hu-berlin.de/it/dl/itc-ToolBox/Application%20Files/itc-Toolbox_3_3_0_2/QRCoder.dll.deploy",
+          "size": 144384,
+          "sha256": "561acfe4b1a14c837b189fb9fc5c6d3e82440184bbde61912de723d62d6368b3",
+          "manifest_hash_verified": true
+        },
+        {
+          "path": "System.Data.SQLite.dll",
+          "url": "https://www2.iqb.hu-berlin.de/it/dl/itc-ToolBox/Application%20Files/itc-Toolbox_3_3_0_2/System.Data.SQLite.dll.deploy",
+          "size": 450232,
+          "sha256": "77dac4e1aa63161d6aff363030a801945d6b8d5b823a6b460b2c2be9ec38d3b7",
+          "manifest_hash_verified": true
+        },
+        {
+          "path": "System.Data.SQLite.EF6.dll",
+          "url": "https://www2.iqb.hu-berlin.de/it/dl/itc-ToolBox/Application%20Files/itc-Toolbox_3_3_0_2/System.Data.SQLite.EF6.dll.deploy",
+          "size": 206520,
+          "sha256": "26c01192714fe51a1917dc4dbf69334c6b5d1d98834b276fef006969ea66ad76",
+          "manifest_hash_verified": true
+        },
+        {
+          "path": "System.Data.SQLite.Linq.dll",
+          "url": "https://www2.iqb.hu-berlin.de/it/dl/itc-ToolBox/Application%20Files/itc-Toolbox_3_3_0_2/System.Data.SQLite.Linq.dll.deploy",
+          "size": 206520,
+          "sha256": "df6c40beaaa4906e72bee12be05d9f83817ea6ca5c56636cf89fa15f15c95c60",
+          "manifest_hash_verified": true
+        },
+        {
+          "path": "YamlDotNet.dll",
+          "url": "https://www2.iqb.hu-berlin.de/it/dl/itc-ToolBox/Application%20Files/itc-Toolbox_3_3_0_2/YamlDotNet.dll.deploy",
+          "size": 222208,
+          "sha256": "f24d57a17849f58239561ba7872f2aa68bf6c80f365a0fcd6aeef06b4440b476",
+          "manifest_hash_verified": true
+        },
+        {
+          "path": "itc-Toolbox.exe.config",
+          "url": "https://www2.iqb.hu-berlin.de/it/dl/itc-ToolBox/Application%20Files/itc-Toolbox_3_3_0_2/itc-Toolbox.exe.config.deploy",
+          "size": 4272,
+          "sha256": "6db885aefa6facbf9b47b10bd18b65d24cf8c8745930f40a8837985b9406e19b",
+          "manifest_hash_verified": true
+        },
+        {
+          "path": "Resources/IQB-Testcenter.ico",
+          "url": "https://www2.iqb.hu-berlin.de/it/dl/itc-ToolBox/Application%20Files/itc-Toolbox_3_3_0_2/Resources/IQB-Testcenter.ico.deploy",
+          "size": 48300,
+          "sha256": "db56ff9df848bbedd9ddb952f2cba07d28a8506c54d81c3c53ad29d6ad4f6756",
+          "manifest_hash_verified": true
+        },
+        {
+          "path": "x64/SQLite.Interop.dll",
+          "url": "https://www2.iqb.hu-berlin.de/it/dl/itc-ToolBox/Application%20Files/itc-Toolbox_3_3_0_2/x64/SQLite.Interop.dll.deploy",
+          "size": 2005688,
+          "sha256": "1111916dc329a13bd627b2cd90c9b2263de9923fd0bb6059c69c52332f360c37",
+          "manifest_hash_verified": true
+        },
+        {
+          "path": "x86/SQLite.Interop.dll",
+          "url": "https://www2.iqb.hu-berlin.de/it/dl/itc-ToolBox/Application%20Files/itc-Toolbox_3_3_0_2/x86/SQLite.Interop.dll.deploy",
+          "size": 1592504,
+          "sha256": "553693b15bda4bbf7788bee09b8bd325ffe4db151686f432194c58e15b9b4f1e",
+          "manifest_hash_verified": true
+        }
+      ]
+    },
+    "IQB-Kodieren": {
+      "name": "IQB-Kodieren",
+      "manifest_url": "https://www2.iqb.hu-berlin.de/it/dl/IQB-Kodieren/Application%20Files/IQB-Kodieren_4_3_0_3/IQB-Kodieren.exe.manifest",
+      "deployment_sha256": "bb33577356724153de0a1ad52a490bdaf33aebce3ce3e0a0d2e3b5f629aa8e0d",
+      "manifest_sha256": "100e9e9193aeabd91b2fff63bcce1ec6b69bb92c1013c19480756aacff36f1f5",
+      "files": [
+        {
+          "path": "Ionic.Zip.dll",
+          "url": "https://www2.iqb.hu-berlin.de/it/dl/IQB-Kodieren/Application%20Files/IQB-Kodieren_4_3_0_3/Ionic.Zip.dll.deploy",
+          "size": 462336,
+          "sha256": "3b3e541682e48f3fd2872f85a06278da2f3e7877ee956da89b90d732a1eaa0bd",
+          "manifest_hash_verified": true
+        },
+        {
+          "path": "IQB-Common.dll",
+          "url": "https://www2.iqb.hu-berlin.de/it/dl/IQB-Kodieren/Application%20Files/IQB-Kodieren_4_3_0_3/IQB-Common.dll.deploy",
+          "size": 495104,
+          "sha256": "4845bf183b80509f743dc87d6e5b211bd5c9757417a9ff08665278f27fda20a6",
+          "manifest_hash_verified": true
+        },
+        {
+          "path": "IQB-Kodieren.exe",
+          "url": "https://www2.iqb.hu-berlin.de/it/dl/IQB-Kodieren/Application%20Files/IQB-Kodieren_4_3_0_3/IQB-Kodieren.exe.deploy",
+          "size": 214016,
+          "sha256": "7b8fdb074669c5e0ba267c2e924b484a322abb32cb733bae2c659b38191d3407",
+          "manifest_hash_verified": true
+        },
+        {
+          "path": "IQB-Scans.dll",
+          "url": "https://www2.iqb.hu-berlin.de/it/dl/IQB-Kodieren/Application%20Files/IQB-Kodieren_4_3_0_3/IQB-Scans.dll.deploy",
+          "size": 629248,
+          "sha256": "a4406fb17aa3f37fa97ff479d0bddb410eb295b39012ddc3c4f7247f505c2434",
+          "manifest_hash_verified": true
+        },
+        {
+          "path": "IQB-Kodieren.exe.config",
+          "url": "https://www2.iqb.hu-berlin.de/it/dl/IQB-Kodieren/Application%20Files/IQB-Kodieren_4_3_0_3/IQB-Kodieren.exe.config.deploy",
+          "size": 1134,
+          "sha256": "c52fc00e61b60210f3040f633bb0cc38370fc6a512bd834a2b1460d35182a258",
+          "manifest_hash_verified": true
+        },
+        {
+          "path": "Resources/IQB-Kodieren.ico",
+          "url": "https://www2.iqb.hu-berlin.de/it/dl/IQB-Kodieren/Application%20Files/IQB-Kodieren_4_3_0_3/Resources/IQB-Kodieren.ico.deploy",
+          "size": 48768,
+          "sha256": "9d3388a7da6338d7d2d36feb7280f65bfc387783108bd4934b093eb9687a4b20",
+          "manifest_hash_verified": true
+        }
+      ]
+    }
+  }
+}
