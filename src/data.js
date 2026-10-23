@@ -1,9 +1,10 @@
 import Excel from 'exceljs';
 import {parseCSV,csvString} from './toolbox.js';
+import {parseJSON,stringifyJSON} from './json.js';
 
 export const STATUS=['UNSET','NOT_REACHED','DISPLAYED','VALUE_CHANGED','DERIVE_ERROR','CODING_COMPLETE','NO_CODING','INVALID','CODING_INCOMPLETE','CODING_ERROR','PARTLY_DISPLAYED','DERIVE_PENDING','INTENDED_INCOMPLETE','CODE_SELECTION_PENDING'];
-export const asText=v=>v===null?'#null#':typeof v==='object'?JSON.stringify(v):String(v??'');
-const json=v=>typeof v==='string'?JSON.parse(v):v;
+export const asText=v=>v===null?'#null#':typeof v==='object'?stringifyJSON(v):String(v??'');
+const json=v=>typeof v==='string'?parseJSON(v):v;
 const key=(...parts)=>JSON.stringify(parts);
 const stable=value=>JSON.stringify(value,(_k,v)=>v&&typeof v==='object'&&!Array.isArray(v)?Object.fromEntries(Object.keys(v).sort().map(k=>[k,v[k]])):v);
 const numeric=v=>Number.isFinite(Number(v))?Number(v):0;
@@ -21,7 +22,7 @@ export function parseChunk(content,type='') {
   const forms=new Map();
   const add=(subform,id,value,status='UNSET',code=0,score=0)=>{
     if(!forms.has(String(subform??'')))forms.set(String(subform??''),[]);
-    forms.get(String(subform??'')).push({id:String(id),value:asText(value),status:String(status||'UNSET'),code:numeric(code),score:numeric(score)});
+    forms.get(String(subform??'')).push({id:String(id),value:typeof value==='boolean'&&type!=='unknown'?(value?'True':'False'):asText(value),status:String(status||'UNSET'),code:numeric(code),score:numeric(score)});
   };
   try {
     let data=json(content);
@@ -35,12 +36,18 @@ export function parseChunk(content,type='') {
       if(!data||typeof data!=='object'||Array.isArray(data))throw new Error('Erwartet wird ein Schlüssel-Wert-Objekt.');
       for(const [id,value]of Object.entries(data)) {
         if(type==='IQBVisualUnitPlayerV2.1.0'&&['responsesGiven','pagesViewed'].includes(id))continue;
-        if(type==='unknown') {const m=id.match(/^(.{2,})_([1-9]\d*)$/);add(m?m[2]:'',m?m[1]:id,value);}
+        if(type==='unknown') {
+          const split=id.lastIndexOf('_'),suffix=id.slice(split+1).trim(),number=/^[+-]?\d+$/.test(suffix)?Number(suffix):0;
+          if(split>1&&number>0&&number<=2147483647) {
+            const form=String(number),variable=id.slice(0,split);
+            if(!forms.get(form)?.some(r=>r.id===variable))add(form,variable,value);
+          }else add('',id,value);
+        }
         else add('',id,value);
       }
     }
   } catch(error) {add('','ERROR',`Konvertierung (${type||'KeyValue'}): ${error.message}`,'ERROR');}
-  return [...forms].map(([id,responses])=>({id,responses}));
+  return [...forms].sort(type==='unknown'?([a],[b])=>a===''?-1:b===''?1:0:()=>0).map(([id,responses])=>({id,responses}));
 }
 function lastState(raw) {
   if(!raw)return [];
@@ -51,7 +58,7 @@ function lastState(raw) {
 export function responseUnit(dto) {
   const unit={id:String(dto.originalUnitId||dto.unitname||''),alias:String(dto.unitname||''),laststate:lastState(dto.laststate),logs:[],subforms:[],chunks:[]};
   let chunks=dto.responses||[];
-  if(typeof chunks==='string'){try{chunks=JSON.parse(chunks);}catch(error){chunks=[{id:'all-error',content:JSON.stringify({ERROR:String(chunks)}),responseType:'?',ts:0}];}}
+  if(typeof chunks==='string'){try{chunks=parseJSON(chunks);}catch(error){chunks=[{id:'all-error',content:JSON.stringify({ERROR:String(chunks)}),responseType:'?',ts:0}];}}
   if(!Array.isArray(chunks))throw new Error('Antwort-Chunks müssen ein Array sein.');
   const latest=new Map();
   for(const ch of [...chunks].sort((a,b)=>numeric(a.ts)-numeric(b.ts))) {
@@ -79,7 +86,7 @@ export function refreshTimes(people) {
 }
 export function peopleFromDTO(responses=[],logs=[]) {
   const people=new Map();
-  function location(d){const pk=key(d.groupname,d.loginname,d.code||'');if(!people.has(pk))people.set(pk,{group:String(d.groupname??''),login:String(d.loginname??''),code:String(d.code??''),booklets:[]});const p=people.get(pk);let b=p.booklets.find(b=>b.id===d.bookletname);if(!b){b={id:String(d.bookletname??''),sessions:[],logs:[],units:[],firstTS:0,lastTS:0};p.booklets.push(b);}return b;}
+  function location(d){const group=String(d.groupname??''),login=String(d.loginname??''),code=String(d.code??''),booklet=String(d.bookletname??''),pk=key(group,login,code);if(!people.has(pk))people.set(pk,{group,login,code,booklets:[]});const p=people.get(pk);let b=p.booklets.find(b=>b.id===booklet);if(!b){b={id:booklet,sessions:[],logs:[],units:[],firstTS:0,lastTS:0};p.booklets.push(b);}return b;}
   for(const d of responses){const b=location(d),u=responseUnit(d);const old=b.units.find(v=>sameUnit(v,u));if(old)mergeUnit(old,u);else b.units.push(u);}
   for(const d of logs){const b=location(d),event={ts:numeric(d.timestamp),...splitLog(d.logentry)};
     if(d.unitname){let u=b.units.find(v=>v.alias===d.unitname&&(!d.originalUnitId||v.id===d.originalUnitId||v.id===v.alias));if(!u){u={id:d.originalUnitId||d.unitname,alias:d.unitname,laststate:[],chunks:[],subforms:[],logs:[]};b.units.push(u);}else if(d.originalUnitId&&u.id===u.alias)u.id=d.originalUnitId;u.logs.push(event);}
@@ -109,7 +116,7 @@ export function mergePeople(...groups) {
 }
 export async function readDataFiles(files,{encoding='utf-8',delimiter='auto'}={}) {
   const batches=[];for(const f of files){const source=typeof f.text==='string'?f.text:new TextDecoder(encoding,{fatal:true}).decode(f.bytes??await f.arrayBuffer());
-    if(/\.json$/i.test(f.name)){const data=JSON.parse(source);if(Array.isArray(data)&&data[0]?.booklets!==undefined)batches.push(normalizePeople(data));else if(Array.isArray(data)&&data[0]?.groupname!==undefined)batches.push(data[0].logentry!==undefined?peopleFromDTO([],data):peopleFromDTO(data));else if(Array.isArray(data)&&!data.length)batches.push([]);else throw new Error(`${f.name}: Unbekanntes JSON-Format.`);}
+    if(/\.json$/i.test(f.name)){const data=parseJSON(source);if(Array.isArray(data)&&data[0]?.booklets!==undefined)batches.push(normalizePeople(data));else if(Array.isArray(data)&&data[0]?.groupname!==undefined)batches.push(data[0].logentry!==undefined?peopleFromDTO([],data):peopleFromDTO(data));else if(Array.isArray(data)&&!data.length)batches.push([]);else throw new Error(`${f.name}: Unbekanntes JSON-Format.`);}
     else batches.push(importCSV(source,delimiter));
   }
   return mergePeople(...batches);

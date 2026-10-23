@@ -1,0 +1,284 @@
+[
+  {
+    "id": "standard-primitives",
+    "method": "setResponsesIqbStandard",
+    "content": [
+      {
+        "id": "text",
+        "value": "001 ä & < > \"",
+        "status": "VALUE_CHANGED",
+        "code": 0,
+        "score": 0
+      },
+      {
+        "id": "number",
+        "value": 12.5,
+        "status": "VALUE_CHANGED",
+        "code": 0,
+        "score": 0
+      },
+      {
+        "id": "yes",
+        "value": true,
+        "status": "VALUE_CHANGED",
+        "code": 0,
+        "score": 0
+      },
+      {
+        "id": "no",
+        "value": false,
+        "status": "VALUE_CHANGED",
+        "code": 0,
+        "score": 0
+      },
+      {
+        "id": "empty",
+        "value": "",
+        "status": "VALUE_CHANGED",
+        "code": 0,
+        "score": 0
+      },
+      {
+        "id": "null",
+        "value": null,
+        "status": "VALUE_CHANGED",
+        "code": 0,
+        "score": 0
+      },
+      {
+        "id": "lines",
+        "value": "a\r\nb\nc",
+        "status": "VALUE_CHANGED",
+        "code": 0,
+        "score": 0
+      }
+    ]
+  },
+  {
+    "id": "aspect-primitives",
+    "method": "setResponsesIqbStandard",
+    "content": [
+      {
+        "id": "text",
+        "value": "001 ä & < > \"",
+        "status": "VALUE_CHANGED",
+        "code": 0,
+        "score": 0
+      },
+      {
+        "id": "number",
+        "value": 12.5,
+        "status": "VALUE_CHANGED",
+        "code": 0,
+        "score": 0
+      },
+      {
+        "id": "yes",
+        "value": true,
+        "status": "VALUE_CHANGED",
+        "code": 0,
+        "score": 0
+      },
+      {
+        "id": "no",
+        "value": false,
+        "status": "VALUE_CHANGED",
+        "code": 0,
+        "score": 0
+      },
+      {
+        "id": "empty",
+        "value": "",
+        "status": "VALUE_CHANGED",
+        "code": 0,
+        "score": 0
+      },
+      {
+        "id": "null",
+        "value": null,
+        "status": "VALUE_CHANGED",
+        "code": 0,
+        "score": 0
+      },
+      {
+        "id": "lines",
+        "value": "a\r\nb\nc",
+        "status": "VALUE_CHANGED",
+        "code": 0,
+        "score": 0
+      }
+    ]
+  },
+  {
+    "id": "abi-primitives",
+    "method": "setResponsesAbi",
+    "content": {
+      "text": "001 ä & < > \"",
+      "number": 12.5,
+      "yes": true,
+      "no": false,
+      "empty": "",
+      "null": null,
+      "lines": "a\r\nb\nc"
+    }
+  },
+  {
+    "id": "dan-primitives",
+    "method": "setResponsesDan",
+    "content": {
+      "text": "001 ä & < > \"",
+      "number": 12.5,
+      "yes": true,
+      "no": false,
+      "empty": "",
+      "null": null,
+      "lines": "a\r\nb\nc"
+    }
+  },
+  {
+    "id": "keyvalue-primitives",
+    "method": "setResponsesKeyValue",
+    "content": {
+      "text": "001 ä & < > \"",
+      "number": 12.5,
+      "yes": true,
+      "no": false,
+      "empty": "",
+      "null": null,
+      "lines": "a\r\nb\nc"
+    }
+  },
+  {
+    "id": "simple-primitives",
+    "method": "setResponsesSimplePlayerLegacy",
+    "content": {
+      "answers": {
+        "text": "001 ä & < > \"",
+        "number": 12.5,
+        "yes": true,
+        "no": false,
+        "empty": "",
+        "null": null,
+        "lines": "a\r\nb\nc"
+      }
+    }
+  },
+  {
+    "id": "standard-array",
+    "method": "setResponsesIqbStandard",
+    "content": [
+      {
+        "id": "array",
+        "value": [
+          1,
+          "001",
+          true,
+          null
+        ]
+      },
+      {
+        "id": "obj",
+        "value": {
+          "a": 1,
+          "b": "ä"
+        }
+      }
+    ]
+  },
+  {
+    "id": "standard-singleton",
+    "method": "setResponsesIqbStandard",
+    "content": {
+      "id": "v",
+      "value": "42",
+      "subform": "1",
+      "status": "CODING_COMPLETE",
+      "code": 0,
+      "score": 2
+    }
+  },
+  {
+    "id": "standard-optional",
+    "method": "setResponsesIqbStandard",
+    "content": [
+      {
+        "id": "v",
+        "value": "x"
+      },
+      {
+        "id": "v",
+        "value": "y",
+        "subform": "02"
+      }
+    ]
+  },
+  {
+    "id": "abi-forms",
+    "method": "setResponsesAbi",
+    "content": {
+      "plain": "p",
+      "ab_1": "a",
+      "ab_01": "b",
+      "ab_2": "c",
+      "a_1": "short",
+      "ab_0": "zero",
+      "ab_-1": "negative"
+    }
+  },
+  {
+    "id": "abi-empty",
+    "method": "setResponsesAbi",
+    "content": {}
+  },
+  {
+    "id": "dan-meta",
+    "method": "setResponsesDan",
+    "content": {
+      "responsesGiven": {
+        "yes": true
+      },
+      "pagesViewed": [
+        1
+      ],
+      "yes": "1",
+      "no": ""
+    }
+  },
+  {
+    "id": "simple-empty",
+    "method": "setResponsesSimplePlayerLegacy",
+    "content": {
+      "meta": {}
+    }
+  },
+  {
+    "id": "standard-large-integers",
+    "method": "setResponsesIqbStandard",
+    "content": [
+      {
+        "id": "large",
+        "value": 9007199254740993
+      },
+      {
+        "id": "negative",
+        "value": -9007199254740993
+      },
+      {
+        "id": "nested",
+        "value": [
+          9007199254740993
+        ]
+      }
+    ]
+  },
+  {
+    "id": "abi-numeric-forms",
+    "method": "setResponsesAbi",
+    "content": {
+      "ab_01": "first",
+      "ab_1": "second",
+      "ab_0002": "third",
+      "ab_2147483648": "out-of-range"
+    }
+  }
+]

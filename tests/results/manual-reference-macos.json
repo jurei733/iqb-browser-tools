@@ -1,0 +1,36 @@
+{
+  "application_version": "0.2.2",
+  "finished": "2026-10-23T13:23:13.890519+00:00",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+  "checks": [
+    {
+      "name": "Production bundle opens the synthetic modern ZIP through the native browser file picker",
+      "passed": true,
+      "job_id": "reference-modern",
+      "cases": 4,
+      "source_sha256": "347366fd304d7abc6aa4d22ccd2dc6890e8e1638089965466a65058d3db573cb"
+    },
+    {
+      "name": "Whitespace True flags show scores and comments; description remains visible",
+      "passed": true
+    },
+    {
+      "name": "Two scans render in the production layout with physical proportions and frame overlays",
+      "passed": true
+    },
+    {
+      "name": "Code zero increments progress to one of four cases and is visibly selected",
+      "passed": true
+    },
+    {
+      "name": "Multiline Unicode comment is entered and local save is confirmed",
+      "passed": true,
+      "comment": "Referenz & Ä\n001"
+    },
+    {
+      "name": "Result download action completes with the application success message",
+      "passed": true,
+      "limit": "Downloaded bytes were not read from the protected Downloads folder; codec compatibility is checked separately with prepared files."
+    }
+  ]
+}

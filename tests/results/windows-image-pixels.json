@@ -1,0 +1,216 @@
+{
+  "method": "Unmodified original WPF decoder -> original PngBitmapEncoder; compare stored dimensions and the same red pixel at (20,20) used in the browser image checks, including all seven JPEG EXIF rotations/mirrors and PNG/WebP orientation 6.",
+  "passed": 19,
+  "total": 19,
+  "checks": [
+    {
+      "name": "anisotropic.bmp.png",
+      "width": 192,
+      "height": 128,
+      "pixel20x20": [
+        255,
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "anisotropic.jpg.png",
+      "width": 192,
+      "height": 128,
+      "pixel20x20": [
+        254,
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "anisotropic.png.png",
+      "width": 192,
+      "height": 128,
+      "pixel20x20": [
+        255,
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "anisotropic.tif.png",
+      "width": 192,
+      "height": 128,
+      "pixel20x20": [
+        255,
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "orientation2.jpg.png",
+      "width": 192,
+      "height": 128,
+      "pixel20x20": [
+        254,
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "orientation3.jpg.png",
+      "width": 192,
+      "height": 128,
+      "pixel20x20": [
+        254,
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "orientation4.jpg.png",
+      "width": 192,
+      "height": 128,
+      "pixel20x20": [
+        254,
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "orientation5.jpg.png",
+      "width": 192,
+      "height": 128,
+      "pixel20x20": [
+        254,
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "orientation6.jpg.png",
+      "width": 192,
+      "height": 128,
+      "pixel20x20": [
+        254,
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "orientation6.png.png",
+      "width": 192,
+      "height": 128,
+      "pixel20x20": [
+        255,
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "orientation6.webp.png",
+      "width": 192,
+      "height": 128,
+      "pixel20x20": [
+        254,
+        1,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "orientation7.jpg.png",
+      "width": 192,
+      "height": 128,
+      "pixel20x20": [
+        254,
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "orientation8.jpg.png",
+      "width": 192,
+      "height": 128,
+      "pixel20x20": [
+        254,
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "scan.bmp.png",
+      "width": 192,
+      "height": 128,
+      "pixel20x20": [
+        255,
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "scan.gif.png",
+      "width": 192,
+      "height": 128,
+      "pixel20x20": [
+        255,
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "scan.jpg.png",
+      "width": 192,
+      "height": 128,
+      "pixel20x20": [
+        254,
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "scan.png.png",
+      "width": 192,
+      "height": 128,
+      "pixel20x20": [
+        255,
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "scan.tif.png",
+      "width": 192,
+      "height": 128,
+      "pixel20x20": [
+        255,
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "name": "scan.webp.png",
+      "width": 192,
+      "height": 128,
+      "pixel20x20": [
+        254,
+        1,
+        0
+      ],
+      "passed": true
+    }
+  ]
+}

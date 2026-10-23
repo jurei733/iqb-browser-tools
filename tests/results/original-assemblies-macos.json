@@ -1,0 +1,650 @@
+{
+  "platform": "macOS 27.0.1",
+  "runtime": ".NET 10.0.13",
+  "results": [
+    {
+      "id": "standard-primitives",
+      "output": [
+        {
+          "id": "",
+          "responses": [
+            {
+              "id": "text",
+              "status": "VALUE_CHANGED",
+              "value": "001 ä & < > \"",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "number",
+              "status": "VALUE_CHANGED",
+              "value": "12,5",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "yes",
+              "status": "VALUE_CHANGED",
+              "value": "True",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "no",
+              "status": "VALUE_CHANGED",
+              "value": "False",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "empty",
+              "status": "VALUE_CHANGED",
+              "value": "",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "null",
+              "status": "VALUE_CHANGED",
+              "value": "#null#",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "lines",
+              "status": "VALUE_CHANGED",
+              "value": "ab\nc",
+              "code": 0,
+              "score": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aspect-primitives",
+      "output": [
+        {
+          "id": "",
+          "responses": [
+            {
+              "id": "text",
+              "status": "VALUE_CHANGED",
+              "value": "001 ä & < > \"",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "number",
+              "status": "VALUE_CHANGED",
+              "value": "12,5",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "yes",
+              "status": "VALUE_CHANGED",
+              "value": "True",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "no",
+              "status": "VALUE_CHANGED",
+              "value": "False",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "empty",
+              "status": "VALUE_CHANGED",
+              "value": "",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "null",
+              "status": "VALUE_CHANGED",
+              "value": "#null#",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "lines",
+              "status": "VALUE_CHANGED",
+              "value": "ab\nc",
+              "code": 0,
+              "score": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "abi-primitives",
+      "output": [
+        {
+          "id": "",
+          "responses": [
+            {
+              "id": "text",
+              "status": "UNSET",
+              "value": "001 ä & < > \"",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "number",
+              "status": "UNSET",
+              "value": "12.5",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "yes",
+              "status": "UNSET",
+              "value": "true",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "no",
+              "status": "UNSET",
+              "value": "false",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "empty",
+              "status": "UNSET",
+              "value": "",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "null",
+              "status": "UNSET",
+              "value": null,
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "lines",
+              "status": "UNSET",
+              "value": "a\r\nb\nc",
+              "code": 0,
+              "score": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dan-primitives",
+      "output": [
+        {
+          "id": "",
+          "responses": [
+            {
+              "id": "text",
+              "status": "UNSET",
+              "value": "001 ä & < > \"",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "number",
+              "status": "UNSET",
+              "value": "12,5",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "yes",
+              "status": "UNSET",
+              "value": "True",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "no",
+              "status": "UNSET",
+              "value": "False",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "empty",
+              "status": "UNSET",
+              "value": "",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "null",
+              "status": "UNSET",
+              "value": "",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "lines",
+              "status": "UNSET",
+              "value": "a\r\nb\nc",
+              "code": 0,
+              "score": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "keyvalue-primitives",
+      "output": [
+        {
+          "id": "",
+          "responses": [
+            {
+              "id": "text",
+              "status": "UNSET",
+              "value": "001 ä & < > \"",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "number",
+              "status": "UNSET",
+              "value": "12.5",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "yes",
+              "status": "UNSET",
+              "value": "True",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "no",
+              "status": "UNSET",
+              "value": "False",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "empty",
+              "status": "UNSET",
+              "value": "",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "null",
+              "status": "UNSET",
+              "value": null,
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "lines",
+              "status": "UNSET",
+              "value": "a\r\nb\nc",
+              "code": 0,
+              "score": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "simple-primitives",
+      "output": [
+        {
+          "id": "",
+          "responses": [
+            {
+              "id": "text",
+              "status": "UNSET",
+              "value": "001 ä & < > \"",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "number",
+              "status": "UNSET",
+              "value": "12.5",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "yes",
+              "status": "UNSET",
+              "value": "True",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "no",
+              "status": "UNSET",
+              "value": "False",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "empty",
+              "status": "UNSET",
+              "value": "",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "null",
+              "status": "UNSET",
+              "value": null,
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "lines",
+              "status": "UNSET",
+              "value": "a\r\nb\nc",
+              "code": 0,
+              "score": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "standard-array",
+      "output": [
+        {
+          "id": "",
+          "responses": [
+            {
+              "id": "array",
+              "status": "UNSET",
+              "value": "[\n  1,\n  \"001\",\n  true,\n  null\n]",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "obj",
+              "status": "UNSET",
+              "value": "{\n  \"a\": 1,\n  \"b\": \"ä\"\n}",
+              "code": 0,
+              "score": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "standard-singleton",
+      "output": [
+        {
+          "id": "1",
+          "responses": [
+            {
+              "id": "v",
+              "status": "CODING_COMPLETE",
+              "value": "42",
+              "code": 0,
+              "score": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "standard-optional",
+      "output": [
+        {
+          "id": "",
+          "responses": [
+            {
+              "id": "v",
+              "status": "UNSET",
+              "value": "x",
+              "code": 0,
+              "score": 0
+            }
+          ]
+        },
+        {
+          "id": "02",
+          "responses": [
+            {
+              "id": "v",
+              "status": "UNSET",
+              "value": "y",
+              "code": 0,
+              "score": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "abi-forms",
+      "output": [
+        {
+          "id": "",
+          "responses": [
+            {
+              "id": "plain",
+              "status": "UNSET",
+              "value": "p",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "a_1",
+              "status": "UNSET",
+              "value": "short",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "ab_0",
+              "status": "UNSET",
+              "value": "zero",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "ab_-1",
+              "status": "UNSET",
+              "value": "negative",
+              "code": 0,
+              "score": 0
+            }
+          ]
+        },
+        {
+          "id": "1",
+          "responses": [
+            {
+              "id": "ab",
+              "status": "UNSET",
+              "value": "a",
+              "code": 0,
+              "score": 0
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "responses": [
+            {
+              "id": "ab",
+              "status": "UNSET",
+              "value": "c",
+              "code": 0,
+              "score": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "abi-empty",
+      "output": []
+    },
+    {
+      "id": "dan-meta",
+      "output": [
+        {
+          "id": "",
+          "responses": [
+            {
+              "id": "yes",
+              "status": "UNSET",
+              "value": "1",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "no",
+              "status": "UNSET",
+              "value": "",
+              "code": 0,
+              "score": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "simple-empty",
+      "output": [
+        {
+          "id": "",
+          "responses": []
+        }
+      ]
+    },
+    {
+      "id": "standard-large-integers",
+      "output": [
+        {
+          "id": "",
+          "responses": [
+            {
+              "id": "large",
+              "status": "UNSET",
+              "value": "9007199254740993",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "negative",
+              "status": "UNSET",
+              "value": "-9007199254740993",
+              "code": 0,
+              "score": 0
+            },
+            {
+              "id": "nested",
+              "status": "UNSET",
+              "value": "[\n  9007199254740993\n]",
+              "code": 0,
+              "score": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "abi-numeric-forms",
+      "output": [
+        {
+          "id": "",
+          "responses": [
+            {
+              "id": "ab_2147483648",
+              "status": "UNSET",
+              "value": "out-of-range",
+              "code": 0,
+              "score": 0
+            }
+          ]
+        },
+        {
+          "id": "1",
+          "responses": [
+            {
+              "id": "ab",
+              "status": "UNSET",
+              "value": "first",
+              "code": 0,
+              "score": 0
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "responses": [
+            {
+              "id": "ab",
+              "status": "UNSET",
+              "value": "third",
+              "code": 0,
+              "score": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "coding-results",
+      "xml": [
+        "<c v=\"V1\" tp=\"001\" tm=\"2026-10-22T10:11:12\" c=\"0\">ä &amp; &lt; &gt; \"\nZeile</c>",
+        "<c v=\"V2\" tp=\"001\" tm=\"2026-10-22T10:11:12\" c=\"\">Nur Kommentar</c>",
+        "<c v=\"V4\" tp=\"001\" tm=\"2026-10-22T10:11:12\" c=\"1\" />"
+      ]
+    },
+    {
+      "id": "coding-options",
+      "output": [
+        {
+          "id": "defaults",
+          "showScore": false,
+          "enableComments": true,
+          "suppressDescription": true,
+          "training": false,
+          "anonym": false,
+          "coder": null,
+          "personPrefix": false
+        },
+        {
+          "id": "whitespace",
+          "showScore": true,
+          "enableComments": true,
+          "suppressDescription": false,
+          "training": true,
+          "anonym": false,
+          "coder": "Ref & Ä",
+          "personPrefix": false
+        },
+        {
+          "id": "legacy",
+          "showScore": true,
+          "enableComments": false,
+          "suppressDescription": true,
+          "training": false,
+          "anonym": false,
+          "coder": null,
+          "personPrefix": true
+        }
+      ]
+    }
+  ],
+  "execution_mode": "Unmodified vendor assembly methods invoked by reflection on macOS. This is not execution under Windows.",
+  "source_sha256": {
+    "itc-ToolBox/itc-Toolbox.exe": "c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1",
+    "IQB-Kodieren/IQB-Kodieren.exe": "7b8fdb074669c5e0ba267c2e924b484a322abb32cb733bae2c659b38191d3407",
+    "IQB-Kodieren/IQB-Scans.dll": "a4406fb17aa3f37fa97ff479d0bddb410eb295b39012ddc3c4f7247f505c2434"
+  }
+}

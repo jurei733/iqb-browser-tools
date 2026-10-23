@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-23",
+  "platform": "Windows 11 ARM64 26300.9457 in UTM 5.0.8",
+  "checks": [
+    {
+      "name": "Unchanged IQB-Kodieren executable opens synthetic modern job from C:\\IQB\\coding",
+      "passed": true
+    },
+    {
+      "name": "Original UI shows four cases, two pages, description, scores and comment field",
+      "passed": true
+    },
+    {
+      "name": "Code zero selected through original keyboard handling",
+      "passed": true
+    },
+    {
+      "name": "Unchanged itc-ToolBox executable starts and shows Input, Output direkt and DB tabs",
+      "passed": true
+    }
+  ],
+  "scope": "UI smoke checks; full exports and file exchange are validated separately by the unmodified original backend functions in original-windows.json and the comparison reports. No live Testcenter or real personal data used."
+}

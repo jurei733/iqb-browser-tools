@@ -1,3 +1,4 @@
+import {parseJSON} from './json.js';
 import {zipSync,strToU8} from 'fflate';
 import {text} from './xml.js';
 import {parseCSV,csvString} from './toolbox.js';
@@ -19,7 +20,7 @@ export class TestcenterClient {
     const headers={Accept:accept};if(body!==undefined)headers['Content-Type']='application/json';if(this.token)headers.AuthToken=this.token;
     let response;try{response=await this.fetch(this.base+path,{method,headers,body:body===undefined?undefined:JSON.stringify(body),signal:this.signal,credentials:'omit',redirect:'error'});}catch(error){if(error.name==='AbortError')throw error;throw new Error('Testcenter nicht erreichbar. Prüfe Adresse und Verbindung. Bei einem anderen Server muss dieser Browserzugriffe von dieser Anwendung erlauben (CORS für Content-Type und AuthToken). Alternativ die Browserfassung auf demselben Server bereitstellen.');}
     if(!response.ok){const message=await response.text();const error=new Error(`Testcenter-Anfrage fehlgeschlagen (HTTP ${response.status}).`);error.status=response.status;error.challengeRequired=response.status===400&&/Challenge|Brute Force/i.test(message);throw error;}
-    if(format==='bytes')return new Uint8Array(await response.arrayBuffer());if(format==='text')return response.text();return response.json();
+    if(format==='bytes')return new Uint8Array(await response.arrayBuffer());if(format==='text')return response.text();return parseJSON(await response.text());
   }
   async login(name,password) {
     this.disconnect();let session;

@@ -15,18 +15,26 @@ export function neutralizeOrientation(source){
 }
 export async function resolution(bytes) {
   const view=new DataView(bytes.buffer,bytes.byteOffset,bytes.byteLength);
+  // BITMAPINFOHEADER and its extensions store independent pixels/metre.
+  // Older OS/2 core headers do not contain resolution fields.
+  if(bytes.length>=54&&bytes[0]===0x42&&bytes[1]===0x4d&&view.getUint32(14,true)>=40){const x=view.getInt32(38,true),y=view.getInt32(42,true);return [x>0?x*.0254:96,y>0?y*.0254:96];}
   if(bytes.length>24&&view.getUint32(0)===0x89504e47){for(let offset=8;offset+12<=bytes.length;){const length=view.getUint32(offset),type=String.fromCharCode(...bytes.slice(offset+4,offset+8));if(offset+12+length>bytes.length)break;if(type==='pHYs'&&length>=9&&bytes[offset+16]===1)return [view.getUint32(offset+8)*.0254,view.getUint32(offset+12)*.0254];offset+=12+length;}}
   if(bytes[0]===255&&bytes[1]===216){try{const meta=await exifr.parse(bytes,{pick:['XResolution','YResolution','ResolutionUnit'],translateValues:false});if(meta?.XResolution&&meta?.YResolution){const factor=meta.ResolutionUnit===3?2.54:1;return [Number(meta.XResolution)*factor,Number(meta.YResolution)*factor];}}catch{}
     for(let offset=2;offset+4<bytes.length;){if(bytes[offset]!==255)break;const marker=bytes[offset+1];if(marker===0xda||marker===0xd9)break;const length=view.getUint16(offset+2);if(length<2||offset+length+2>bytes.length)break;if(marker===0xe0&&length>=16&&String.fromCharCode(...bytes.slice(offset+4,offset+9))==='JFIF\0'){const unit=bytes[offset+11],x=view.getUint16(offset+12),y=view.getUint16(offset+14);if(unit&&x&&y)return [x*(unit===2?2.54:1),y*(unit===2?2.54:1)];}offset+=length+2;}
   }
   return [96,96];
 }
+export function tiffResolution(ifd){
+  const factor=ifd.t296?.[0]===3?2.54:1;
+  const dpi=tag=>{const value=tag?.[0],n=Array.isArray(value)?value[0]/value[1]:Number(value);return Number.isFinite(n)&&n>0?n*factor:96;};
+  return [dpi(ifd.t282),dpi(ifd.t283)];
+}
 export async function decodeCanvas(page) {
   const canvas=document.createElement('canvas');let dpiX=96,dpiY=96;
   if(/\.tiff?$/i.test(page.path)){
     const bytes=page.bytes,buffer=bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.byteLength),ifd=UTIF.decode(buffer)[0];if(!ifd)throw new Error('TIFF enthält kein Bild.');
     if(Number(ifd.t256?.[0])*Number(ifd.t257?.[0])>80000000)throw new Error('Dieser Scan ist zu groß für die Browseransicht.');
-    UTIF.decodeImage(buffer,ifd);canvas.width=ifd.width;canvas.height=ifd.height;canvas.getContext('2d').putImageData(new ImageData(new Uint8ClampedArray(UTIF.toRGBA8(ifd)),ifd.width,ifd.height),0,0);const factor=ifd.t296?.[0]===3?2.54:1;dpiX=(ifd.t282?.[0]||96)*factor;dpiY=(ifd.t283?.[0]||96)*factor;
+    UTIF.decodeImage(buffer,ifd);canvas.width=ifd.width;canvas.height=ifd.height;canvas.getContext('2d').putImageData(new ImageData(new Uint8ClampedArray(UTIF.toRGBA8(ifd)),ifd.width,ifd.height),0,0);[dpiX,dpiY]=tiffResolution(ifd);
   }else{
     const type={png:'image/png',jpg:'image/jpeg',jpeg:'image/jpeg',gif:'image/gif',bmp:'image/bmp',webp:'image/webp'}[page.path.split('.').at(-1).toLowerCase()]||'';
     const blob=new Blob([neutralizeOrientation(page.bytes)],{type});let image;
@@ -34,5 +42,9 @@ export async function decodeCanvas(page) {
     if(!image){const url=URL.createObjectURL(blob);try{image=await new Promise((resolve,reject)=>{const img=new Image();img.onload=()=>resolve(img);img.onerror=()=>reject(new Error('Dieses Bildformat konnte nicht angezeigt werden.'));img.src=url;});}finally{URL.revokeObjectURL(url);}}
     const width=image.width||image.naturalWidth,height=image.height||image.naturalHeight;if(width*height>80000000){image.close?.();throw new Error('Dieser Scan ist zu groß für die Browseransicht.');}canvas.width=width;canvas.height=height;canvas.getContext('2d').drawImage(image,0,0);image.close?.();[dpiX,dpiY]=await resolution(page.bytes);
   }
+  dpiX=Number.isFinite(dpiX)&&dpiX>0?dpiX:96;dpiY=Number.isFinite(dpiY)&&dpiY>0?dpiY:96;
+  // WPF lays out the bitmap in device-independent units. Keep stored pixels
+  // for masks and decoding, but display the physical ratio, also for templates.
+  canvas.style.aspectRatio=`${canvas.width/dpiX} / ${canvas.height/dpiY}`;
   return {canvas,dpiX,dpiY};
 }

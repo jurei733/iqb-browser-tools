@@ -1,0 +1,101 @@
+{
+  "platform": "Microsoft Windows NT 10.0.26300.0",
+  "runtime": "4.0.30319.42000",
+  "checks": [
+    {
+      "name": "API identities: original deserializer retains large numeric logins and code zero as text",
+      "passed": true
+    },
+    {
+      "name": "CodingResults: native export decoded by the browser codec",
+      "passed": true
+    },
+    {
+      "name": "CodingResults: Windows original reads the browser export",
+      "passed": true
+    },
+    {
+      "name": "Kodierjob: flags, variable/person/page matching and crop frame geometry",
+      "passed": true
+    },
+    {
+      "name": "Scans: anisotropic.png physical aspect ratio matches Windows WPF",
+      "passed": true
+    },
+    {
+      "name": "Scans: anisotropic.jpg physical aspect ratio matches Windows WPF",
+      "passed": true
+    },
+    {
+      "name": "Scans: anisotropic.bmp physical aspect ratio matches Windows WPF",
+      "passed": true
+    },
+    {
+      "name": "Scans: anisotropic.tif physical aspect ratio matches Windows WPF",
+      "passed": true
+    },
+    {
+      "name": "Toolbox Excel: none",
+      "passed": true
+    },
+    {
+      "name": "Toolbox Excel: rows",
+      "passed": true
+    },
+    {
+      "name": "Toolbox Excel: columns",
+      "passed": true
+    },
+    {
+      "name": "CSV to Excel: Unicode, quoted comma, empty cells and leading zeroes",
+      "passed": true
+    },
+    {
+      "name": "Reviews: original booklet/unit sheets, category labels and filled content",
+      "passed": true
+    },
+    {
+      "name": "Testtaker XML: original login template preserves groups, logins, modes and custom texts",
+      "passed": true
+    },
+    {
+      "name": "SQLite: browser reads original-created database",
+      "passed": true
+    },
+    {
+      "name": "SQLite: Windows original reads browser-created database",
+      "passed": true
+    },
+    {
+      "name": "Booklets: original Excel template produces equivalent XML",
+      "passed": true
+    },
+    {
+      "name": "Word: original template 1 retains the same filled content",
+      "passed": true
+    },
+    {
+      "name": "Word: original template 2 retains the same filled content",
+      "passed": true
+    },
+    {
+      "name": "CodeFactory: native counts, uniqueness and alternating alphabets",
+      "passed": true
+    }
+  ],
+  "intentionalDifferences": [
+    {
+      "test": "bookletTHETLK.xml",
+      "field": "Description",
+      "original": "IQB Englisch-Test",
+      "browser": "THTBA1",
+      "reason": "Use description column instead of original title-column bug"
+    }
+  ],
+  "normalizations": [
+    "Spreadsheet cells are compared as a rectangular text matrix; omitted cells and empty cells have the same value.",
+    "The optional empty Testlet label is equivalent to an omitted label. ZIP metadata, styles, relationship IDs and XML attribute order are not content differences."
+  ],
+  "passed": 20,
+  "total": 20
+}

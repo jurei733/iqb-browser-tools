@@ -3,7 +3,12 @@ import {children, descendants, child, attr, value, parseXML, decodeXML, node, do
 
 const stem = path => path.split('/').at(-1).replace(/\.[^.]*$/, '');
 const area = el => el ? Object.fromEntries(['x','y','w','h'].map(k => [k, Number(attr(el,k,0))])) : null;
-const bool = (el,k,def) => el?.hasAttribute(k) ? /^true$/i.test(attr(el,k)) : def;
+const bool = (el,k,def) => {
+  if(!el?.hasAttribute(k))return def;
+  const value=attr(el,k).trim();
+  if(!/^(?:true|false)$/i.test(value))throw new Error(`Ungültiger Wahrheitswert für ${k}: ${value}.`);
+  return /^true$/i.test(value);
+};
 export const isResultFilename=name=>/\.result(?:-\d+)?$/i.test(name);
 export const resultFilename=(label,date=new Date())=>(String(label).replace(/[<>:"/\\|?*\x00-\x1f]/g,'_').slice(0,150)||'Kodierung')+'_'+date.toISOString().replace(/[:.]/g,'-')+'.result';
 export function decodeResult(bytes) {

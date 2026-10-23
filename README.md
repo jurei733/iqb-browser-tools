@@ -1,4 +1,4 @@
-# IQB-Werkzeuge im Browser · Version 0.2.1
+# IQB-Werkzeuge im Browser · Version 0.2.2
 
 Portierung der Arbeitsabläufe von **IQB-Kodieren 4.3.0.3** und **itc-ToolBox 3.3.0.2**. Die Anwendung läuft als statische Website mit lokaler Dateiverarbeitung; eine Windows-Installation ist nicht erforderlich.
 
@@ -20,7 +20,7 @@ Alle Beispiele sind erfunden. Die Adresse `testcenter.example.org` ist ein Platz
 | Anwendung / Bereich | Übertragenes Verhalten |
 | --- | --- |
 | Kodierjobs | ZIP, lose Dateien oder Ordner; aktuelle und historische XML-Varianten; Variablenpakete, getrennte Scanordner, Personenpräfixe und alternative Testhefte |
-| Scanansicht | PNG, JPEG, BMP, GIF, WebP und erste TIFF-Seite; TIFF-, PNG-, JPEG-JFIF- und EXIF-Auflösung; crop- und DPI-korrigierte Bereichsrahmen |
+| Scanansicht | PNG, JPEG, BMP, GIF, WebP und erste TIFF-Seite; TIFF-, BMP-, PNG-, JPEG-JFIF- und EXIF-Auflösung; crop- und DPI-korrigierte Bereichsrahmen |
 | Kodierschablonen | CT_VARIABLE-Bilder und lokale Testschablone.png; ausblenden, ziehen, drehen, zurücksetzen; Position je Variable lokal sichern |
 | Kodieren | Codes einschließlich 0, Fall- und Jobkommentare, nächste offene Antwort, Fallliste, freie oder fortlaufende Navigation, Tastatursteuerung und atomare Sammelkodierung je Person |
 | Ergebnisse | GZip-XML im ursprünglichen CodingResults-Format Version 5; Ergebnisse gemeinsam mit dem Job oder nachträglich laden; lokaler Fortschritt in IndexedDB |
@@ -68,17 +68,50 @@ Die private Sites-Veröffentlichung erfordert beim ersten Zugriff die Anmeldung 
 
 ## Geprüft und verbleibende Nachweise
 
-- **37 automatisierte Prüfungen**: Original-Xlsx und beide Original-DOCX-Vorlagen, historische und aktuelle Kodierjobs, Ergebnisdateien, CSV-Varianten, Antwortkonverter, Zusammenführung, Unterformular-Exporte, mehrfache Sitzungen, Reviews, SQLite-Rundlauf einschließlich Version 1 / eigener Statuswerte / Transaktionsabbruch sowie Testcenter-Verträge mit nachgebildeten Serverantworten.
+- **47 automatisierte Prüfungen**: Original-Xlsx und beide Original-DOCX-Vorlagen, historische und aktuelle Kodierjobs, Ergebnisdateien, CSV-Varianten, Antwortkonverter, Zusammenführung, Unterformular-Exporte, mehrfache Sitzungen, Reviews, SQLite-Rundlauf einschließlich Version 1 / eigener Statuswerte / Transaktionsabbruch sowie Testcenter-Verträge mit nachgebildeten Serverantworten.
 - **Praktisch im integrierten Chromium-Browser auf macOS geprüft**: Jobimport im Worker, Code/Kommentar, Fallliste, Schablone ziehen und drehen, SQLite öffnen und prüfen, Excel erzeugen und herunterladen, QR-DOCX erzeugen und herunterladen, Antwort-/Log-CSV gemeinsam importieren. Tatsächlich heruntergeladene Xlsx und DOCX wurden zusätzlich strukturell geprüft.
-- **38 Browserprüfungen je Browser**: Safari 27.0.1 (WebKit) und Firefox 158.0 (Gecko) auf macOS. Originalvorlagen, Bildformate und EXIF-Ausrichtungen, echte Module-Worker, SQLite/WASM, IndexedDB, sämtliche Antwort-Exportformate, Word mit QR-Codes und Web-Crypto/fetch. Berichte unter `tests/results/`.
-- **Native Browseroberflächen**: Safari und Firefox: Beispieljob öffnen, Code 0 und Kommentar erfassen, Ergebnis- und Codes-Xlsx-Download; gespeicherte Kodierung nach Neuladen wiederherstellen. Firefox zusätzlich SQLite-Datei öffnen, prüfen, auswerten und offline wiederherstellen. Safari ebenfalls offline neu laden und Kodierkommentar in der Fallliste wiederfinden.
+- **43 Browserprüfungen je Browser**: Chromium 147, Safari 27.0.1 (WebKit) und Firefox 158.0 (Gecko) auf macOS. Originalvorlagen, unveränderte Windows-Xlsx-Exporte, Bildformate und EXIF-Ausrichtungen, echte Module-Worker, SQLite/WASM, IndexedDB, sämtliche Antwort-Exportformate, Word mit QR-Codes und Web-Crypto/fetch. Berichte unter `tests/results/`.
+- **Native Browseroberflächen in 0.2.1**: Safari und Firefox: Beispieljob öffnen, Code 0 und Kommentar erfassen, Ergebnis- und Codes-Xlsx-Download; gespeicherte Kodierung nach Neuladen wiederherstellen. Firefox zusätzlich SQLite-Datei öffnen, prüfen, auswerten und offline wiederherstellen. Safari ebenfalls offline neu laden und Kodierkommentar in der Fallliste wiederfinden.
 - **Testcenter-Bedienung gegen lokalen Testserver geprüft**: Anmeldung, Arbeitsbereich, Ergebnisgruppe, Antwort-/Log-Abruf bis zur Excel-Datei, Review-Export und Trennen. Die Challenge- und Content-Abläufe sind zusätzlich durch automatisierte Vertragstests abgedeckt.
 - **Offline geprüft**: lokalen Webserver abgeschaltet, Anwendung neu geladen und gespeicherte SQLite-Datenbank einschließlich WASM-Engine wiederhergestellt.
-- **Noch nicht praktisch nachgewiesen**: echte/anonymisierte Originaljobs, Vergleich der Ausgaben mit ausgeführten Windows-Programmen, Verbindung zu einem echten Testcenter, Mobilgeräte, Windows-/Linux-Systeme und die Betriebssysteminstallation als PWA. Diese Daten beziehungsweise Zugänge standen nicht zur Verfügung.
+- **Noch nicht praktisch nachgewiesen**: echte/anonymisierte Originaljobs, Verbindung zu einem echten Testcenter, Mobilgeräte, Linux-Systeme und Browser unter Windows und die Betriebssysteminstallation als PWA. Diese Daten beziehungsweise Zugänge standen nicht zur Verfügung.
 
 Browserprüfungen lassen sich mit `node scripts/build-browser-tests.mjs ./work/browser-tests` bauen. Das ausgegebene Verzeichnis über einen lokalen Webserver ausliefern und `/tests/browser.html` in einem echten Browser öffnen. Die Prüfseite wird nicht in die normale Anwendung aufgenommen.
 
 Die Arbeitsabläufe sind implementiert; eine vollständige Gleichwertigkeit für jeden historischen Datenbestand ist damit noch nicht belegt. Der Speicher des Geräts begrenzt Datenmengen. Kodier-ZIP-Dateien sind auf 300 MB entpackte Daten begrenzt, einzelne Scans auf 80 Millionen Pixel; TIFF verwendet wie das Original die erste Seite. Für große Bestände Jobs aufteilen und SQLite-/Ergebnisdateien regelmäßig extern sichern. Private Fenster, das Löschen von Browserdaten und Speicherbereinigung können lokale Stände und Offline-Dateien entfernen.
+
+## Vergleich mit ausgeführten Windows-Originalen
+
+Am **23.10.2026** wurden die unveränderten Originalassemblies in einer lokalen **Windows-11-ARM64-VM, Build 26300.9457**, mit **.NET Framework (CLR 4.0.30319.42000, Release 533509)** aus einem x86-PowerShell-Prüfprogramm ausgeführt. Die Originalfunktionen wurden per Reflection aufgerufen, einschließlich WPF-Bilddekoder, originaler SQLite-Bibliothek und vollständiger Excel-/Word-Erzeugung. Der Prüfcode übernimmt ausschließlich die SQLite-Providerdeklaration aus der Originalkonfiguration in seinen eigenen Prozess. Die Originalassemblies werden nicht verändert oder neu kompiliert.
+
+- **15/15 Antwortkonverter-Vergleiche bestanden**, einschließlich großer Ganzzahlen, Unterformularnummern, Boolescher Werte und dokumentierter Korrekturen.
+- **20/20 Datei-/Funktionsvergleiche bestanden**: Ergebnisdateien und SQLite in beide Richtungen, Joboptionen/Fallzuordnung/Bereichsrahmen, physische Bildproportionen für PNG/JPEG/BMP/TIFF, drei breite Excel-Varianten, CSV-Xlsx, Reviews, Testtaker- und Booklet-XML, beide originalen Word-Vorlagen sowie Codeanzahlen/Zeichenmengen/Eindeutigkeit.
+- Verglichen werden Inhalte und Struktur. Weggelassene und leere Excel-Zellen sowie das optionale leere Testlet-Label sind gleichwertig; ZIP-Zeitstempel, Formatierung und zufällige Beziehungs-IDs werden nicht als Inhaltsunterschied gewertet. Booklet-Beschreibungen behalten die ausdrücklich dokumentierte Korrektur der ursprünglichen Titelspalten-Verwechslung.
+- **Windows-Oberflächen zusätzlich geöffnet**: IQB-Kodieren mit dem synthetischen Job, vier Fällen, zwei Seiten und Code 0; itc-ToolBox mit ihren Hauptbereichen. Dies ist ein Bedienungsstichprobentest; die Datei- und Exportvergleiche rufen die originalen Backendfunktionen auf.
+- Unveränderte Windows-Ausgaben dienen zusätzlich als kleine Xlsx-Testdateien unter `tests/fixtures/`. Rohbericht mit SHA-256-Hashes und Vergleichsberichte stehen in `tests/results/original-windows.json` und `tests/results/compare-original-windows-*.json`.
+
+Der Referenzdatensatz wird als separates `iqb-windows-referenz.zip` bereitgestellt. Nach dem Entpacken enthalten `inputs/` die identischen Eingaben samt Originalprogrammen und `windows-results/` die tatsächlichen Ausgaben. Mit installierten Projektabhängigkeiten im Quellcodeordner:
+
+```sh
+node scripts/compare-windows-converters.mjs /pfad/windows-results/original-windows.json /pfad/konverter-vergleich.json
+node scripts/compare-windows-files.mjs /pfad/windows-results /pfad/datei-vergleich.json /pfad/inputs
+```
+
+`scripts/Run-Windows-Reference.ps1` wiederholt die Originalaufrufe unter x86-Windows-PowerShell mit dem Eingabeordner als `-Root`. Dabei entstehen die Ausgaben unter `inputs/windows-results/`; die Originalprogramme bleiben unverändert.
+
+Die früheren 15 Originalkonverter-Aufrufe unter macOS/.NET 10 bleiben separat dokumentiert. Die Nachweise verwenden synthetische Daten und die Originalvorlagen; sie belegen keine vollständige Gleichwertigkeit für alle historischen Bestände oder einen produktiven Testcenter-Zugang.
+
+## Referenzkorrekturen in 0.2.2
+
+- Joboptionen wie `showScore=" True "` werden wie im Original mit umgebenden Leerzeichen gelesen. Ungültige Wahrheitswerte lösen eine verständliche Fehlermeldung aus.
+- Der alte Abi-Konverter normalisiert positive 32-Bit-Unterformularnummern (`01` → `1`), behält bei doppelter Variable den ersten Wert und behandelt Nummern außerhalb dieses Bereichs als normalen Variablennamen.
+- Boolesche Antwortwerte verwenden in Standard-, Dan-, Simple- und Schlüssel/Wert-Konvertern die originale Schreibweise `True` / `False`.
+- Große ganze Antwortwerte wie `9007199254740993` bleiben beim Einlesen aus JSON, CSV und API sowie nach Worker-Übertragung, SQLite- und Excel-Export exakt erhalten. JavaScript-Zahlen werden erst nach der Prüfung auf sichere Ganzzahldarstellung verwendet.
+- Numerische API-Kennungen werden vor dem Zusammenführen in Text umgewandelt. Große Login-Kennungen bleiben exakt; der Code `0` bleibt von einem fehlenden Code unterscheidbar.
+- Scan und Kodierschablone verwenden das physische Seitenverhältnis aus horizontaler und vertikaler Auflösung. Unterschiedliche DPI-Werte verzerren damit die Darstellung nicht mehr; Bereichsrahmen behalten ihre Pixelkoordinaten.
+- BMP-Auflösung und rationale TIFF-DPI-Werte werden korrekt gelesen, statt die Darstellung stillschweigend auf 96 DPI zurückzusetzen.
+- Gültige Xlsx-Dateien aus dem ursprünglichen Open-XML-Exporter mit Namespace-Präfixen werden beim Import unterstützt. Eine Dekodierkopie wird anhand der XML-Namensräume normalisiert.
+- Bewusste Unterschiede beim Referenzvergleich: Dezimaltexte bleiben unabhängig von der Systemsprache im JSON-Format, Nullwerte erhalten durchgängig `#null#`, Antwort-Zeilenumbrüche bleiben erhalten und komplexe Antwortwerte verwenden kompakte JSON-Schreibweise.
 
 ## Bewusste Korrekturen gegenüber dem rekonstruierten Original
 
@@ -102,5 +135,5 @@ Die Arbeitsabläufe sind implementiert; eine vollständige Gleichwertigkeit für
 - Toolbox: https://github.com/iqb-berlin/itc-toolbox, Commit `7c45553ca246104a59043d6f4194caf5a4b6c039`.
 - Originalprogramme: https://www2.iqb.hu-berlin.de/it/.
 - ClickOnce-Pakete am 22.10.2026 heruntergeladen; Dateien und SHA256-Prüfsummen in `PROVENANCE.json`, Manifest-Dateihashes beim Download geprüft.
-- IQB-Kodieren, IQB-Scans und IQB-Common mit ILSpyCmd 11.1.0.9782 statisch in lesbares C# und XAML zurückgewonnen. Die Windows-Programme wurden nicht ausgeführt; rekonstruierter Code wurde nicht als Windows-Projekt kompiliert.
+- IQB-Kodieren, IQB-Scans und IQB-Common mit ILSpyCmd 11.1.0.9782 statisch in lesbares C# und XAML zurückgewonnen. Unveränderte Originalfunktionen und vollständige Exportabläufe wurden unter Windows / .NET Framework ausgeführt; die Browserkorrekturen und Nachweise sind oben beschrieben. Rekonstruierter Code wurde nicht als Windows-Projekt kompiliert.
 - Lizenz: `LICENSE`. Diese Browserfassung verwendet keine KI-API und benötigt keinen API-Schlüssel.

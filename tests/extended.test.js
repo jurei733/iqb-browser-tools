@@ -26,7 +26,7 @@ const persons=()=>D.peopleFromDTO([dto()],[log()]);
 
 test('all original response converters retain nulls, arrays, subforms and defaults',()=>{
   assert.deepEqual(D.parseChunk('{"responsesGiven":{},"pagesViewed":{},"v":"x"}','IQBVisualUnitPlayerV2.1.0')[0].responses.map(r=>r.id),['v']);
-  const abi=D.parseChunk('{"var_1":"a","var_2":"b","var_0":"c","plain":"d"}','unknown');assert.deepEqual(abi.map(s=>s.id),['1','2','']);
+  const abi=D.parseChunk('{"var_1":"a","var_2":"b","var_0":"c","plain":"d"}','unknown');assert.deepEqual(abi.map(s=>s.id),['','1','2']);
   assert.equal(D.parseChunk('{"answers":{"v":"001"}}','iqb-simple-player@1.0.0')[0].responses[0].value,'001');
   for(const type of ['iqb-aspect-player@0.1.1','iqb-standard@1.0.0','iqb-standard@1.0','iqb-standard@1.1'])assert.equal(D.parseChunk('{"id":"v","value":null}',type)[0].responses[0].value,'#null#');
   assert.equal(D.parseChunk('[{"id":"v","value":["a","b"],"subform":"1"}]','iqb-standard@1.1')[0].responses[0].value,'["a","b"]');

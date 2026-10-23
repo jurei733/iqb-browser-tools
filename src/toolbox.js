@@ -1,6 +1,6 @@
 import Excel from 'exceljs';
-import {zipSync,strToU8} from 'fflate';
-import {node,text,documentXML} from './xml.js';
+import {zipSync,unzipSync,strToU8,strFromU8} from 'fflate';
+import {node,text,documentXML,parseXML} from './xml.js';
 
 export const LETTERS = 'abcdefghprqstuvxyz';
 export const NUMBERS = '2345679';
@@ -36,7 +36,25 @@ export async function codeWorkbook() {
   for(let i=0;i<2000;i++) sheet.addRow(codes.map(col=>col[i] || ''));
   style(sheet); return new Uint8Array(await workbook.xlsx.writeBuffer());
 }
-export async function loadWorkbook(bytes) {const w=new Excel.Workbook();await w.xlsx.load(bytes);return w;}
+export async function loadWorkbook(bytes) {
+  const entries=unzipSync(bytes instanceof Uint8Array?bytes:new Uint8Array(bytes));let changed=false;
+  // Open XML SDK writes valid prefixed SpreadsheetML (x:workbook, x:row).
+  // ExcelJS expects unprefixed element names. Normalize a decode copy by URI;
+  // retain relationships, extension namespaces, attributes and original bytes.
+  const ns='http://schemas.openxmlformats.org/spreadsheetml/2006/main';
+  for(const [path,data] of Object.entries(entries))if(/^xl\/.*\.xml$/i.test(path)){
+    const source=strFromU8(data);if(!/xmlns:[\w.-]+\s*=\s*["']http:\/\/schemas\.openxmlformats\.org\/spreadsheetml\/2006\/main["']/.test(source))continue;
+    const doc=parseXML(source);let localChange=false;
+    const visit=el=>{
+      let target=el;
+      if(el.namespaceURI===ns&&el.prefix){target=doc.createElementNS(ns,el.localName);for(const a of Array.from(el.attributes))target.setAttributeNS(a.namespaceURI,a.name,a.value);while(el.firstChild)target.appendChild(el.firstChild);el.parentNode.replaceChild(target,el);localChange=true;}
+      for(const child of Array.from(target.childNodes))if(child.nodeType===1)visit(child);
+    };
+    visit(doc.documentElement);
+    if(localChange){if(doc.documentElement.namespaceURI===ns)doc.documentElement.setAttribute('xmlns',ns);entries[path]=strToU8(new XMLSerializer().serializeToString(doc));changed=true;}
+  }
+  const w=new Excel.Workbook();await w.xlsx.load(changed?zipSync(entries):bytes);return w;
+}
 export function named(workbook,name,optional=false) {
   const ref=workbook.definedNames.getRanges(name).ranges[0];
   const match=ref?.match(/^(?:'((?:[^']|'')+)'|([^!]+))!\$?([A-Z]+)\$?(\d+)/);

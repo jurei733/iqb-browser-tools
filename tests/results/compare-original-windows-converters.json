@@ -1,0 +1,130 @@
+{
+  "platform": "Microsoft Windows NT 10.0.26300.0",
+  "runtime": "4.0.30319.42000",
+  "checks": [
+    {
+      "name": "standard-primitives",
+      "passed": true
+    },
+    {
+      "name": "aspect-primitives",
+      "passed": true
+    },
+    {
+      "name": "abi-primitives",
+      "passed": true
+    },
+    {
+      "name": "dan-primitives",
+      "passed": true
+    },
+    {
+      "name": "keyvalue-primitives",
+      "passed": true
+    },
+    {
+      "name": "simple-primitives",
+      "passed": true
+    },
+    {
+      "name": "standard-array",
+      "passed": true
+    },
+    {
+      "name": "standard-singleton",
+      "passed": true
+    },
+    {
+      "name": "standard-optional",
+      "passed": true
+    },
+    {
+      "name": "abi-forms",
+      "passed": true
+    },
+    {
+      "name": "abi-empty",
+      "passed": true
+    },
+    {
+      "name": "dan-meta",
+      "passed": true
+    },
+    {
+      "name": "simple-empty",
+      "passed": true
+    },
+    {
+      "name": "standard-large-integers",
+      "passed": true
+    },
+    {
+      "name": "abi-numeric-forms",
+      "passed": true
+    }
+  ],
+  "intentionalDifferences": [
+    {
+      "test": "standard-primitives",
+      "field": "number",
+      "reason": "Stable JSON decimal separator instead of host culture"
+    },
+    {
+      "test": "standard-primitives",
+      "field": "lines",
+      "reason": "Preserve original answer line breaks"
+    },
+    {
+      "test": "aspect-primitives",
+      "field": "number",
+      "reason": "Stable JSON decimal separator instead of host culture"
+    },
+    {
+      "test": "aspect-primitives",
+      "field": "lines",
+      "reason": "Preserve original answer line breaks"
+    },
+    {
+      "test": "abi-primitives",
+      "field": "null",
+      "reason": "Explicit null marker across all response formats"
+    },
+    {
+      "test": "dan-primitives",
+      "field": "number",
+      "reason": "Stable JSON decimal separator instead of host culture"
+    },
+    {
+      "test": "dan-primitives",
+      "field": "null",
+      "reason": "Explicit null marker across all response formats"
+    },
+    {
+      "test": "keyvalue-primitives",
+      "field": "null",
+      "reason": "Explicit null marker across all response formats"
+    },
+    {
+      "test": "simple-primitives",
+      "field": "null",
+      "reason": "Explicit null marker across all response formats"
+    },
+    {
+      "test": "standard-array",
+      "field": "array",
+      "reason": "Compact equivalent JSON formatting"
+    },
+    {
+      "test": "standard-array",
+      "field": "obj",
+      "reason": "Compact equivalent JSON formatting"
+    },
+    {
+      "test": "standard-large-integers",
+      "field": "nested",
+      "reason": "Compact equivalent JSON formatting"
+    }
+  ],
+  "passed": 15,
+  "total": 15
+}
