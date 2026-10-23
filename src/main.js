@@ -106,7 +106,7 @@ async function runTool(){const button=$('#run-tool');button.disabled=true;try{co
   state.outputs=outputs;$('#outputs').innerHTML=`<div class="success-icon">✓</div><h3>${text(summary)}</h3><div class="download-list">${Object.entries(outputs).map(([name],i)=>`<button data-download="${i}">${text(name)} <span>↓</span></button>`).join('')}</div>${Object.keys(outputs).length>1?'<button id="download-all" class="secondary">Alle Dateien als ZIP herunterladen ↓</button>':''}`;
   document.querySelectorAll('[data-download]').forEach(b=>b.onclick=()=>{const [name,bytes]=Object.entries(outputs)[Number(b.dataset.download)];download(bytes,name);});$('#download-all')?.addEventListener('click',()=>download(Toolbox.archive(outputs),'Toolbox-Export.zip'));notify(summary);
   }finally{button.disabled=false;}}
-document.addEventListener('keydown',e=>{if(state.module!=='coding')return;
+document.addEventListener('keydown',e=>{if(state.module!=='coding'||document.querySelector('dialog[open]'))return;
   if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='o'){e.preventDefault();$('#coding-files')?.click();return;}
   if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='s'){e.preventDefault();if(state.job)$('#export').click();return;}
   if(!state.job)return;
