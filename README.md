@@ -75,6 +75,12 @@ pnpm build
 
 Das Repository enthält den Quellcode und richtet keine öffentliche Website ein. Die bisherige private Sites-Veröffentlichung ist davon unabhängig. Für andere Personen `dist/` auf einem geeigneten Webserver bereitstellen.
 
+## Automatische Prüfungen mit GitHub Actions
+
+Der Workflow [Tests and build](https://github.com/jurei733/iqb-browser-tools/actions/workflows/ci.yml) läuft bei jedem Push auf allen Branches, bei Pull Requests und bei manuellem Start. Auf Ubuntu prüfen Node.js 22 und 24 jeweils `pnpm install --frozen-lockfile`, `pnpm test` und `pnpm build`. Die pnpm-Version stammt aus `package.json`; der Paketcache beschleunigt weitere Läufe. Die verwendeten Actions sind auf vollständige Commit-Prüfsummen festgelegt.
+
+Die CI führt die automatisierten Node-Tests und den vollständigen Produktionsbuild aus. Die separat beschriebenen Browser-, Windows- und Testcenter-Prüfläufe werden bei Bedarf in ihrer jeweiligen Testumgebung wiederholt.
+
 ## Geprüft und verbleibende Nachweise
 
 - **51 automatisierte Prüfungen**: Original-Xlsx und beide Original-DOCX-Vorlagen, historische und aktuelle Kodierjobs, Ergebnisdateien, CSV-Varianten, Antwortkonverter, Zusammenführung, Unterformular-Exporte, mehrfache Sitzungen, Reviews, SQLite-Rundlauf einschließlich Version 1 / eigener Statuswerte / Transaktionsabbruch sowie Testcenter-Verträge mit nachgebildeten Serverantworten.
