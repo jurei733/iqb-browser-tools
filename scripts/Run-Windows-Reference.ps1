@@ -251,8 +251,25 @@ Run-Test 'toolbox-word-original-templates' {
  }
  return ,$files
 }
+Run-Test 'coding-navigation-and-batch' {
+ $jobs=$Scans.GetType('HUBerlin.IQB.Scans.ScanFactory').GetMethod('GetJobDefsFromDirectory').Invoke($null,(Unwrap-Arguments ([object[]]@((Join-Path $Root 'coding')))))
+ $job=@($jobs|Where-Object{$_.ID -eq 'reference-modern'})[0]
+ $caseType=$Code.GetType('HUBerlin.IQB.Kodieren.CaseList')
+ $list=[Activator]::CreateInstance($caseType,(Unwrap-Arguments ([object[]]@($job,(Join-Path $Out 'empty-results-folder')))))
+ $positions=@($list.SelectedCaseNumber)
+ $list.SelectedCaseNumber=100;$positions+= $list.SelectedCaseNumber
+ $list.SelectedCase.Code='0';$list.NextCase();$positions+= $list.SelectedCaseNumber
+ $count=$list.SetVarGroupCode('1');$list.UpdateLastCodedCaseNumber();$list.SelectedCaseNumber=$list.FirstUncodedCaseNumber;$positions+=$list.SelectedCaseNumber
+ $rejected=$list.SetVarGroupCode('8')
+ $list.SetVarGroupCode('0')|Out-Null;$list.UpdateLastCodedCaseNumber();$list.SelectedCaseNumber=100;$positions+=$list.SelectedCaseNumber
+ $list.PreviousCase();$positions+=$list.SelectedCaseNumber
+ $list.SelectedCaseNumber=-1;$positions+=$list.SelectedCaseNumber
+ return @{positions=$positions;batchCount=$count;rejectedCount=$rejected;caseCount=$list.CaseCount;lastCoded=$list.LastCodedCaseNumber;xml=$list.ResultsToXDoc().ToString()}
+}
 $hashes=@{}
 foreach($p in @((Join-Path $ToolPath 'itc-Toolbox.exe'),(Join-Path $CodePath 'IQB-Kodieren.exe'),(Join-Path $CodePath 'IQB-Scans.dll'),(Join-Path $CodePath 'IQB-Common.dll'))){$hashes[[IO.Path]::GetFileName($p)]=(Get-FileHash $p -Algorithm SHA256).Hash.ToLowerInvariant()}
-$report=@{finished=[DateTime]::UtcNow.ToString('o');platform=[Environment]::OSVersion.VersionString;runtime=[Environment]::Version.ToString();architecture=$env:PROCESSOR_ARCHITECTURE;culture=[Threading.Thread]::CurrentThread.CurrentCulture.Name;hashes=$hashes;results=$Results.ToArray()}
+$inputHashes=@{}
+foreach($name in @('browser.result','browser.sqlite','people.json','cases.json','options.json','coding\modern.zip')){$inputHashes[$name]=(Get-FileHash (Join-Path $Root $name) -Algorithm SHA256).Hash.ToLowerInvariant()}
+$report=@{inputHashes=$inputHashes;finished=[DateTime]::UtcNow.ToString('o');platform=[Environment]::OSVersion.VersionString;runtime=[Environment]::Version.ToString();architecture=$env:PROCESSOR_ARCHITECTURE;culture=[Threading.Thread]::CurrentThread.CurrentCulture.Name;hashes=$hashes;results=$Results.ToArray()}
 $report|ConvertTo-Json -Depth 50|Set-Content -Encoding UTF8 (Join-Path $Out 'original-windows.json')
 Write-Host ('Reference run saved: '+$Out)

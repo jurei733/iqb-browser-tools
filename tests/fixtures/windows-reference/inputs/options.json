@@ -1,0 +1,14 @@
+[
+  {
+    "id": "defaults",
+    "xml": "<jobOpts/>"
+  },
+  {
+    "id": "whitespace",
+    "xml": "<jobOpts showScore=\" True \" enableComments=\" True \" suppressDescription=\" False \" training=\"True\" codername=\"Ref &amp; Ä\"/>"
+  },
+  {
+    "id": "legacy",
+    "xml": "<jobOptionen><personenprefix>JA</personenprefix><kommentare>NEIN</kommentare><kodanzeigecreditspalte>JA</kodanzeigecreditspalte></jobOptionen>"
+  }
+]

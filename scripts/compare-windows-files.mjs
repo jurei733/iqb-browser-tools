@@ -89,4 +89,20 @@ for(const n of [1,2])await check('Word: original template '+n+' retains the same
 await check('CodeFactory: native counts, uniqueness and alternating alphabets',()=>{
  const data=record('toolbox-code-factory');assert.equal(data.length,4);for(const [i,n]of [100,200,500,2000].entries()){const row=data[i];assert.equal(row.count,n);assert.equal(row.distinct,n);assert.ok(row.codes.every(s=>[...s].every((c,j)=>(j%2?T.NUMBERS:T.LETTERS).includes(c))));}
 });
+await check('Coding navigation: first open case, boundaries and atomic person batch match Windows',async()=>{
+ const original=record('coding-navigation-and-batch');
+ const bytes=await readFile(join(inputRoot,'coding','modern.zip'));
+ const {jobs:[job]}=await C.readCodingFiles([{name:'modern.zip',arrayBuffer:async()=>bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.byteLength)}]);
+ let index=C.initialCaseIndex(job);const positions=[index+1];
+ index=C.navigationIndex(job,100);positions.push(index+1);
+ job.cases[index].code='0';index=C.navigationIndex(job,index+1);positions.push(index+1);
+ const batchCount=job.cases.filter(c=>c.testee===job.cases[index].testee).length;
+ index=C.batchCode(job,index,'1');positions.push(index+1);
+ const before=job.cases.map(c=>c.code);assert.throws(()=>C.batchCode(job,index,'8'),/eindeutig/);assert.deepEqual(job.cases.map(c=>c.code),before);
+ C.batchCode(job,index,'0');index=C.navigationIndex(job,100);positions.push(index+1);
+ index=C.navigationIndex(job,index-1);positions.push(index+1);
+ index=C.navigationIndex(job,-1);positions.push(index+1);
+ assert.deepEqual(positions,original.positions);assert.equal(batchCount,original.batchCount);assert.equal(original.rejectedCount,0);assert.equal(job.cases.length,original.caseCount);
+ assert.deepEqual(job.cases.map(c=>c.code),C.decodeResult(new TextEncoder().encode(original.xml)).entries.map(e=>e.code));
+});
 report.passed=report.checks.filter(c=>c.passed).length;report.total=report.checks.length;await writeFile(reportPath,JSON.stringify(report,null,2));console.log(report.passed+'/'+report.total,'file comparisons passed');for(const c of report.checks)if(!c.passed)console.log(c.name,c.error);if(report.passed!==report.total)process.exitCode=1;

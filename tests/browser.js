@@ -67,4 +67,30 @@ check('Große Antwortzahlen: API, Module-Worker, JSON, SQLite und Excel ohne Run
  await task('new-db');await task('db-import',{files:[file('large.json',strToU8(raw))]});const saved=await task('db-save');await task('open-db',{bytes:saved});
  const workbook=await T.loadWorkbook(await task('db-export',{format:'xlsx',options:{subformMode:'rows'}}));assert(workbook.getWorksheet('Antworten').getCell(2,4).text==='9007199254740993');
 });
+let auditFrame;
+const auditDoc=()=>auditFrame.contentDocument;
+const waitAudit=async predicate=>{const start=Date.now();while(!predicate()){if(Date.now()-start>20000)throw new Error('Oberfläche antwortet nicht rechtzeitig.');await new Promise(r=>setTimeout(r,30));}};
+const auditClick=selector=>{const el=auditDoc().querySelector(selector);assert(el,'Fehlendes Bedienelement '+selector);el.click();};
+const auditSet=(selector,value)=>{const el=auditDoc().querySelector(selector);assert(el);el.value=value;el.dispatchEvent(new Event(el.tagName==='SELECT'?'change':'input',{bubbles:true}));};
+check('Funktionsmatrix Oberfläche: Joboptionen, fortlaufende Navigation, Rahmen und Zoom',async()=>{
+ auditFrame=document.createElement('iframe');auditFrame.width='100%';auditFrame.height='800';auditFrame.src='/';document.body.append(auditFrame);await waitAudit(()=>auditDoc()?.querySelector('#coding-files'));
+ const runId=Date.now();const xml=id=>`<CodingJob id="matrix-${id}-${runId}"><jobOpts showScore="false" enableComments="false" suppressDescription="true" anonym="true"/><Variablen><v id="V"><descr>HIDDEN DESCRIPTION</descr><c id="0" to="0"/><c id="1" to="1"/><loc b="B" p="1"><varframe x="1" y="1" w="10" h="10"/></loc></v></Variablen><Cases>001 002 003</Cases></CodingJob>`;
+ const scan=await get('/fixtures/scan.png'),entries={'a.xml':strToU8(xml('a')),'b.xml':strToU8(xml('b'))};for(const person of ['001','002','003'])entries[`B-1_${person}.png`]=scan;
+ const transfer=new DataTransfer();transfer.items.add(new File([zipSync(entries)],'matrix.zip'));const input=auditDoc().querySelector('#coding-files');input.files=transfer.files;input.dispatchEvent(new Event('change',{bubbles:true}));await waitAudit(()=>auditDoc().querySelector('#case-number'));
+ assert(!auditDoc().querySelector('#free-nav').checked);assert(!auditDoc().querySelector('#comment'));assert(!auditDoc().querySelector('.description'));assert(!auditDoc().querySelector('.code-option small'));assert(auditDoc().querySelector('.coding-panel .muted').textContent==='Testperson anonymisiert');
+ auditSet('#case-number','3');auditDoc().querySelector('#case-number').dispatchEvent(new Event('change',{bubbles:true}));assert(auditDoc().querySelector('#case-number').value==='1');
+ await waitAudit(()=>auditDoc().querySelector('.scan-frame'));auditClick('#frame');await waitAudit(()=>!auditDoc().querySelector('.scan-frame'));auditSet('#zoom','150');await waitAudit(()=>auditDoc().querySelector('.scan-page')?.style.width==='150%');
+});
+check('Funktionsmatrix Oberfläche: Code 0, sortierte Fallliste, richtiger Sprung und Dialog-Tastensperre',async()=>{
+ auditClick('[data-code="1"]');await waitAudit(()=>auditDoc().querySelector('[data-code="1"]')?.getAttribute('aria-pressed')==='true');auditClick('#next');assert(auditDoc().querySelector('#case-number').value==='2');
+ auditClick('[data-code="0"]');await waitAudit(()=>auditDoc().querySelector('[data-code="0"]')?.getAttribute('aria-pressed')==='true');auditClick('#coded-list');auditSet('#case-sort','code');assert(auditDoc().querySelector('.case-list button').dataset.case==='1');auditSet('#case-direction','desc');assert(auditDoc().querySelector('.case-list button').dataset.case==='0');
+ auditDoc().querySelector('#close-cases').dispatchEvent(new KeyboardEvent('keydown',{key:'ArrowRight',bubbles:true}));assert(auditDoc().querySelector('#case-number').value==='2');auditClick('[data-case="0"]');assert(auditDoc().querySelector('#case-number').value==='1');
+ auditClick('#next');auditClick('#next');assert(auditDoc().querySelector('#case-number').value==='3');auditClick('[data-code="1"]');await waitAudit(()=>auditDoc().querySelector('.progress')?.textContent.includes('3 von 3'));
+});
+check('Funktionsmatrix Oberfläche: Jobwechsel erhält Fortschritt und vollständig kodierte Jobs öffnen am letzten Fall',async()=>{
+ auditSet('#coder','Matrix-Test');const details=auditDoc().querySelector('#global-comment').closest('details');details.open=true;auditSet('#global-comment','Job A & Kommentar');
+ auditSet('#jobs','1');await waitAudit(()=>auditDoc().querySelector('#case-number')?.value==='1');assert(auditDoc().querySelector('#global-comment').value==='');
+ auditSet('#jobs','0');await waitAudit(()=>auditDoc().querySelector('#case-number')?.value==='3');assert(auditDoc().querySelector('#global-comment').value==='Job A & Kommentar');assert(auditDoc().querySelector('#jobs option').textContent.includes('3/3'));
+ auditFrame.remove();
+});
 $('#run').onclick=async()=>{const button=$('#run');button.disabled=true;$('#results').replaceChildren();const report={userAgent:navigator.userAgent,started:new Date().toISOString(),checks:[]};let passed=0;for(const {name,fn}of checks){$('#status').textContent=name;const li=document.createElement('li');try{await fn();passed++;li.className='ok';li.textContent='✓ '+name;report.checks.push({name,passed:true});}catch(e){li.className='fail';li.textContent='✗ '+name+' — '+e.message;report.checks.push({name,passed:false,error:e.message,stack:e.stack});}$('#results').append(li);}report.passed=passed;report.total=checks.length;report.finished=new Date().toISOString();$('#status').textContent=`${passed} / ${checks.length} erfolgreich`;$('#download').href=URL.createObjectURL(new Blob([JSON.stringify(report,null,2)],{type:'application/json'}));$('#download').download='Browser-Pruefbericht.json';$('#download').hidden=false;try{await fetch('/__report__',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(report)});}catch{}button.disabled=false;};

@@ -1,0 +1,215 @@
+{
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+  "started": "2026-10-30T23:05:53.563Z",
+  "checks": [
+    {
+      "name": "XML: native Parser, Sonderzeichen und fehlerhafte XML",
+      "passed": true
+    },
+    {
+      "name": "XML: historische UTF-16-Kodierung",
+      "passed": true
+    },
+    {
+      "name": "Kodieren: ZIP im echten Module-Worker importieren",
+      "passed": true
+    },
+    {
+      "name": "Kodieren: Scan, DPI und transparente Schablone zeichnen",
+      "passed": true
+    },
+    {
+      "name": "Kodieren: unterschiedliche X/Y-DPI behalten die physischen Scan- und Schablonenproportionen",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: scan.png",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: scan.jpg",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: scan.bmp",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: scan.gif",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: scan.webp",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: scan.tif",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation2.jpg",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation3.jpg",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation4.jpg",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation5.jpg",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation6.jpg",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation7.jpg",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation8.jpg",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation6.png",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation6.webp",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: HTML-Image-Fallback nach Bitmap-Fehler",
+      "passed": true
+    },
+    {
+      "name": "Kodieren: GZip-Ergebnisse mit Code 0 und Kommentar",
+      "passed": true
+    },
+    {
+      "name": "Safari-Ergebnisdateinamen: .result-2 im Worker importieren",
+      "passed": true
+    },
+    {
+      "name": "Codes: Excel-Datei im Browser erzeugen und erneut lesen",
+      "passed": true
+    },
+    {
+      "name": "Booklets: Original-Xlsx zu gültigen Booklet-XML-Dateien",
+      "passed": true
+    },
+    {
+      "name": "Windows-Originalexport: SpreadsheetML mit Namespace-Präfix und führenden Nullen einlesen",
+      "passed": true
+    },
+    {
+      "name": "Logins: Originalvorlage, Präfixe und Testtaker-XML",
+      "passed": true
+    },
+    {
+      "name": "Word: Originalvorlage 1",
+      "passed": true
+    },
+    {
+      "name": "Word: Originalvorlage 2 mit QR-Code",
+      "passed": true
+    },
+    {
+      "name": "Antworten: CSV und Logs gemeinsam im Worker einlesen",
+      "passed": true
+    },
+    {
+      "name": "Antworten: breite Excel-Datei, Unterformulare rows",
+      "passed": true
+    },
+    {
+      "name": "Antworten: breite Excel-Datei, Unterformulare columns",
+      "passed": true
+    },
+    {
+      "name": "Antworten: breite Excel-Datei, Unterformulare none",
+      "passed": true
+    },
+    {
+      "name": "Antworten: CSV, gruppiertes JSON und Sitzungsberichte",
+      "passed": true
+    },
+    {
+      "name": "SQLite: WASM, Import und Integritätsprüfung",
+      "passed": true
+    },
+    {
+      "name": "SQLite: exportierte Datei erneut öffnen und auswerten",
+      "passed": true
+    },
+    {
+      "name": "Worker: nach Abbruch neu starten und Datenbank wiederherstellen",
+      "passed": true
+    },
+    {
+      "name": "Browser-Speicher: IndexedDB schreiben und wieder lesen",
+      "passed": true
+    },
+    {
+      "name": "Testcenter: Web-Crypto-Challenge und Browser-fetch",
+      "passed": true
+    },
+    {
+      "name": "Reviews: Export mit Kategorien und gültigen Blattnamen",
+      "passed": true
+    },
+    {
+      "name": "Kodieroptionen: Leerzeichen bei True und False im Worker",
+      "passed": true
+    },
+    {
+      "name": "Antwortkonverter: alte numerische Unterformulare und Boolean-Schreibweise",
+      "passed": true
+    },
+    {
+      "name": "Große Antwortzahlen: API, Module-Worker, JSON, SQLite und Excel ohne Rundung",
+      "passed": true
+    },
+    {
+      "name": "Funktionsmatrix Oberfläche: Joboptionen, fortlaufende Navigation, Rahmen und Zoom",
+      "passed": true
+    },
+    {
+      "name": "Funktionsmatrix Oberfläche: Code 0, sortierte Fallliste, richtiger Sprung und Dialog-Tastensperre",
+      "passed": true
+    },
+    {
+      "name": "Funktionsmatrix Oberfläche: Jobwechsel erhält Fortschritt und vollständig kodierte Jobs öffnen am letzten Fall",
+      "passed": true
+    }
+  ],
+  "passed": 46,
+  "total": 46,
+  "finished": "2026-10-30T23:05:55.316Z",
+  "applicationFiles": {
+    "src/coding-box-database.js": "d54d0aa57592c52adfa651f98c129c1ef5e1cdc13f077cfc46f2998467bbdd15",
+    "src/coding.js": "9c0ccbc5bde5de24c8e19203e3e263250345d0954a6dd2c981ca4cc83313d1da",
+    "src/data.js": "1f5306d8eb2963c7f065e0bc18c115219431fc4a71840a11c43f306b41ae6d0b",
+    "src/data.worker.js": "e3e48e3416d86102bc670b30f7e68c8b08368d25e7e9e731199453b27d76c040",
+    "src/database-view.js": "03b59ffda3421667de61055284a0f5bde57e3b9e943ce303e5e27f7ee8a8d93e",
+    "src/database.js": "4cb942f7901c7d56801dc161362f8f080922833b7ac7d3422f8bcbdc85b6fa38",
+    "src/docx.js": "424d6024dbdf6b37a98a1c0b8641e7ad72ea8811376486452fc09cb43e552b6d",
+    "src/extended-ui.js": "5097918ccefa3814717c046d29bdd184c61a5b33c2870671ac0ac7fa3504cd77",
+    "src/image.js": "dc64dbaa232f29908ec70ec5a15eeaa8a28e2dd5048713a87c82cde4068a8ba2",
+    "src/json.js": "a0074e5e42877c08aea5217894076953d817b89978a5705aadda598ac41865e4",
+    "src/main.js": "ab07f5e0b43f0e6dda80651b560548bc2f0c9a4d9b3e47758d24a15dd17b29c2",
+    "src/schema.js": "afefd38dd58b1a9257dd010d2e4608ab530526346568fc0dc64726172c90a61d",
+    "src/style.css": "d5193c1c870fd15b871315e3621de3eef2ca3e4619ddca26dfceb28d108bcf73",
+    "src/testcenter.js": "c6ec30c15639685d4838b90399b40a01f28c1da3bc10a234c9e236944e8f5746",
+    "src/toolbox.js": "f6c7fdb2d0d24d28ad6cc4d6954744a5617eaa092fbd999586f9952a074d6c6f",
+    "src/vendor.js": "a978d03a177b68b7308b21ec07b258028248717bb237d3b72921e4425f40678f",
+    "src/worker-client.js": "5cba53db6957c7215844dd74fc3045a340b1b4d2611f7cb7d2ccc496042be7e0",
+    "src/workspace-ui.js": "69a9c90d29c836a9000c3129de88489226aa5c175b958302e2b0891bb59d36d9",
+    "src/xml.js": "8a40475596f0371ed57b79d31304937f85d965caf87897d602460221a5929c1e"
+  },
+  "scope": "43 module checks and 3 workflows of the actual built UI; synthetic data. Native browser on macOS. No fresh real-Testcenter end-to-end run in this audit."
+}

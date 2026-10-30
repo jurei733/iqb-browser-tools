@@ -1,0 +1,254 @@
+[
+  {
+    "group": "DEMO",
+    "login": "demo1",
+    "code": "001",
+    "booklets": [
+      {
+        "id": "DEMO",
+        "sessions": [
+          {
+            "ts": 1792663201000,
+            "loadCompleteMS": 1000,
+            "browser": "Beispielbrowser 1",
+            "os": "Beispielsystem",
+            "screen": "1440 x 900"
+          }
+        ],
+        "logs": [
+          {
+            "ts": 1792663201000,
+            "key": "LOADCOMPLETE",
+            "parameter": "{\"browserName\":\"Beispielbrowser\",\"browserVersion\":\"1\",\"osName\":\"Beispielsystem\",\"screenSizeWidth\":1440,\"screenSizeHeight\":900,\"loadTime\":1000}"
+          }
+        ],
+        "units": [
+          {
+            "id": "MATHE01",
+            "alias": "MATHE_",
+            "laststate": [
+              {
+                "key": "currentPage",
+                "value": "1"
+              }
+            ],
+            "logs": [
+              {
+                "ts": 1792663203000,
+                "key": "PAGE",
+                "parameter": "1"
+              }
+            ],
+            "subforms": [
+              {
+                "id": "",
+                "responses": [
+                  {
+                    "id": "summe",
+                    "value": "13",
+                    "status": "CODING_COMPLETE",
+                    "code": 1,
+                    "score": 1
+                  }
+                ]
+              },
+              {
+                "id": "1",
+                "responses": [
+                  {
+                    "id": "begruendung",
+                    "value": "8 + 5 = 13",
+                    "status": "VALUE_CHANGED",
+                    "code": 0,
+                    "score": 0
+                  }
+                ]
+              }
+            ],
+            "chunks": [
+              {
+                "id": "all",
+                "type": "iqb-standard@1.1",
+                "ts": "1792663206000",
+                "variables": [
+                  "summe",
+                  "1##begruendung"
+                ]
+              }
+            ]
+          }
+        ],
+        "firstTS": 1792663201000,
+        "lastTS": 1792663206000
+      }
+    ]
+  },
+  {
+    "group": "DEMO",
+    "login": "demo2",
+    "code": "002",
+    "booklets": [
+      {
+        "id": "DEMO",
+        "sessions": [
+          {
+            "ts": 1792663201000,
+            "loadCompleteMS": 1000,
+            "browser": "Beispielbrowser 1",
+            "os": "Beispielsystem",
+            "screen": "1440 x 900"
+          }
+        ],
+        "logs": [
+          {
+            "ts": 1792663201000,
+            "key": "LOADCOMPLETE",
+            "parameter": "{\"browserName\":\"Beispielbrowser\",\"browserVersion\":\"1\",\"osName\":\"Beispielsystem\",\"screenSizeWidth\":1440,\"screenSizeHeight\":900,\"loadTime\":1000}"
+          }
+        ],
+        "units": [
+          {
+            "id": "MATHE01",
+            "alias": "MATHE_",
+            "laststate": [
+              {
+                "key": "currentPage",
+                "value": "1"
+              }
+            ],
+            "logs": [
+              {
+                "ts": 1792663203000,
+                "key": "PAGE",
+                "parameter": "1"
+              }
+            ],
+            "subforms": [
+              {
+                "id": "",
+                "responses": [
+                  {
+                    "id": "summe",
+                    "value": "12",
+                    "status": "CODING_COMPLETE",
+                    "code": 0,
+                    "score": 0
+                  }
+                ]
+              },
+              {
+                "id": "1",
+                "responses": [
+                  {
+                    "id": "begruendung",
+                    "value": "#null#",
+                    "status": "VALUE_CHANGED",
+                    "code": 0,
+                    "score": 0
+                  }
+                ]
+              }
+            ],
+            "chunks": [
+              {
+                "id": "all",
+                "type": "iqb-standard@1.1",
+                "ts": "1792663207000",
+                "variables": [
+                  "summe",
+                  "1##begruendung"
+                ]
+              }
+            ]
+          }
+        ],
+        "firstTS": 1792663201000,
+        "lastTS": 1792663207000
+      }
+    ]
+  },
+  {
+    "group": "DEMO",
+    "login": "demo3",
+    "code": "003",
+    "booklets": [
+      {
+        "id": "DEMO",
+        "sessions": [
+          {
+            "ts": 1792663201000,
+            "loadCompleteMS": 1000,
+            "browser": "Beispielbrowser 1",
+            "os": "Beispielsystem",
+            "screen": "1440 x 900"
+          }
+        ],
+        "logs": [
+          {
+            "ts": 1792663201000,
+            "key": "LOADCOMPLETE",
+            "parameter": "{\"browserName\":\"Beispielbrowser\",\"browserVersion\":\"1\",\"osName\":\"Beispielsystem\",\"screenSizeWidth\":1440,\"screenSizeHeight\":900,\"loadTime\":1000}"
+          }
+        ],
+        "units": [
+          {
+            "id": "MATHE01",
+            "alias": "MATHE_",
+            "laststate": [
+              {
+                "key": "currentPage",
+                "value": "1"
+              }
+            ],
+            "logs": [
+              {
+                "ts": 1792663203000,
+                "key": "PAGE",
+                "parameter": "1"
+              }
+            ],
+            "subforms": [
+              {
+                "id": "",
+                "responses": [
+                  {
+                    "id": "summe",
+                    "value": "13",
+                    "status": "CODING_COMPLETE",
+                    "code": 1,
+                    "score": 1
+                  }
+                ]
+              },
+              {
+                "id": "1",
+                "responses": [
+                  {
+                    "id": "begruendung",
+                    "value": "8 + 5 = 13",
+                    "status": "VALUE_CHANGED",
+                    "code": 0,
+                    "score": 0
+                  }
+                ]
+              }
+            ],
+            "chunks": [
+              {
+                "id": "all",
+                "type": "iqb-standard@1.1",
+                "ts": "1792663208000",
+                "variables": [
+                  "summe",
+                  "1##begruendung"
+                ]
+              }
+            ]
+          }
+        ],
+        "firstTS": 1792663201000,
+        "lastTS": 1792663208000
+      }
+    ]
+  }
+]
