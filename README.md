@@ -81,7 +81,7 @@ Der Workflow [Tests and build](https://github.com/jurei733/iqb-browser-tools/act
 
 Zusätzlich laufen drei unabhängige Playwright-Jobs mit Chromium, Firefox und WebKit auf Linux. Jeder Browser führt die vorhandenen Kompatibilitätsprüfungen und sieben Arbeitsabläufe der gebauten Produktionsoberfläche aus: Kodieren und Ergebnisdownload, Schablonen, Logins und QR-Word, CSV mit Fehlerfällen, Codes und Booklets, Antworten/SQLite samt Offline-Wiederherstellung sowie Testcenter-Gruppenauswahl und Bereichswechsel. Die Testcenter-API wird in diesen Oberflächentests mit synthetischen Antworten nachgebildet. Die separat beschriebenen Windows- und echten Testcenter-Prüfläufe werden in ihrer jeweiligen Testumgebung wiederholt. Playwright-WebKit ersetzt keinen zusätzlichen Test mit Safari auf Apple-Geräten.
 
-HTML-/JSON-Berichte und die erzeugten synthetischen Dateien stehen pro Browser 14 Tage als Actions-Artefakte bereit. Bei Fehlern werden außerdem Screenshots und Traces aufbewahrt; fehlgeschlagene Prüfungen werden nicht durch automatische Wiederholungen verdeckt.
+Der Lauf zeigt Ergebnisse und Fehler direkt in der Job-Zusammenfassung und im Protokoll. Zusätzlich werden HTML-/JSON-Berichte und die erzeugten synthetischen Dateien pro Browser für 14 Tage als Actions-Artefakte hochgeladen; bei Fehlern kommen Screenshots und Traces hinzu. Wenn GitHub den Upload etwa wegen einer vollen Speicherquote ablehnt, meldet der Workflow dies als Warnung. Der Status der eigentlichen Tests bleibt verbindlich; fehlgeschlagene Prüfungen werden nicht durch automatische Wiederholungen verdeckt.
 
 Lokal mit installierten Projektabhängigkeiten:
 
