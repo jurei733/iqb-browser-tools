@@ -60,6 +60,8 @@ test('coding: keyboard, modal guard, result download and stored progress',async(
   await page.reload();
   await page.locator('#demo').click();
   await expect(page.locator('.progress')).toContainText('2 von 2');
+  await expect(page.locator('#case-number')).toHaveValue('2');
+  await page.locator('#previous').click();
   await expect(page.locator('#comment')).toHaveValue('Grüße & Code 1');
 });
 

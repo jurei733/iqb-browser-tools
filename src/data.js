@@ -138,6 +138,7 @@ export const longTable=(people,opts)=>[LONG_HEADERS,...responseRecords(people,op
 export const longCSV=(people,opts)=>csvString(longTable(people,opts));
 const style=s=>{s.views=[{state:'frozen',xSplit:3,ySplit:1}];s.getRow(1).font={bold:true,color:{argb:'FFFFFFFF'}};s.getRow(1).fill={type:'pattern',pattern:'solid',fgColor:{argb:'FF142952'}};s.columns.forEach(c=>c.width=22);};
 export async function wideWorkbook(people,{subformMode='rows',values=true,status=true,codes=true,scores=true,ignoreDisplayed=false,ignoreNotReached=false}={}) {
+  if(![values,status,codes,scores].some(Boolean))throw new Error('Bitte mindestens eine Excel-Ausgabe wählen: Antworten, Status, Codes oder Scores.');
   const workbook=new Excel.Workbook(),records=responseRecords(people,{ignoreDisplayed,ignoreNotReached});
   if(!records.length)throw new Error('Keine Antworten für den Export vorhanden.');
   if(!['none','rows','columns'].includes(subformMode))throw new Error('Unbekannter Unterformular-Modus.');

@@ -74,6 +74,20 @@ export function batchCode(job,index,digit) {
   const advance=!current.code,time=localTimestamp();cases.forEach((c,i)=>{c.code=matches[i][0].id;c.time=time;});const next=job.cases.findIndex(c=>!c.code);return advance&&next>=0?next:index;
 }
 export function cycleCode(c,direction){const i=c.variable.codes.findIndex(v=>v.id===c.code);return c.variable.codes[i<0?0:(i+direction+c.variable.codes.length)%c.variable.codes.length].id;}
+export function initialCaseIndex(job){const first=job.cases.findIndex(c=>!c.code);return first<0?Math.max(0,job.cases.length-1):first;}
+export function navigationIndex(job,index,{free=false}={}){
+  const maximum=free?job.cases.length-1:initialCaseIndex(job);
+  return Math.max(0,Math.min(maximum,Number.isFinite(index)?Math.trunc(index):0));
+}
+export function codedCases(job,{sortBy='number',direction='asc'}={}){
+  if(!['number','variable','code','comment'].includes(sortBy)||!['asc','desc'].includes(direction))throw new Error('Ungültige Sortierung der Fallliste.');
+  const rows=job.cases.map((c,i)=>({c,i})).filter(({c})=>c.code||c.comment),sign=direction==='desc'?-1:1;
+  return rows.sort((a,b)=>{
+    const av=sortBy==='number'?a.i:sortBy==='variable'?a.c.variable.id:a.c[sortBy]||'',bv=sortBy==='number'?b.i:sortBy==='variable'?b.c.variable.id:b.c[sortBy]||'';
+    const compared=sortBy==='number'?av-bv:String(av).localeCompare(String(bv),'de');
+    return sign*compared||a.i-b.i;
+  });
+}
 export async function readCodingFiles(files) {
   const bundles=[],results=[],loose=new Map();
   for(const file of files){const bytes=new Uint8Array(await file.arrayBuffer()),filename=(file.webkitRelativePath||file.name).replace(/\\/g,'/');
