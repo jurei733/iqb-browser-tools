@@ -12,10 +12,11 @@ const fixture=name=>fileURLToPath(new URL('../fixtures/pilot/'+name,import.meta.
 const example=name=>fileURLToPath(new URL('../../public/examples/'+name,import.meta.url));
 const template=name=>fileURLToPath(new URL('../../public/templates/'+name,import.meta.url));
 const test=base.extend({
-  page: async({page}, use)=>{
+  page: async({page}, use, testInfo)=>{
     const errors=[];
     page.on('pageerror', error=>errors.push(error.message));
     await use(page);
+    if(testInfo.status!==testInfo.expectedStatus)console.log('Application notice:',await page.locator('#notice').textContent().catch(()=>''));
     expect(errors, 'Unhandled browser errors').toEqual([]);
   }
 });
@@ -92,7 +93,7 @@ test('Toolbox: retain login inputs and downloads, then create QR Word handouts',
   await page.locator('#run-tool').click();await done(page);
   const xml=strFromU8(await download(page,'[data-download]:has-text("xml")',testInfo));
   const doc=new DOMParser().parseFromString(xml,'application/xml');
-  expect([...doc.getElementsByTagName('Booklet')].map(el=>el.textContent)).toEqual(expect.arrayContaining(['BOOKLET.CI']));
+  expect(Array.from(doc.getElementsByTagName('Booklet'),el=>el.textContent)).toEqual(expect.arrayContaining(['BOOKLET.CI']));
   await tool(page,'docx');await tool(page,'logins');
   const logins=await download(page,'[data-download]:has-text("xlsx")',testInfo);
   expect((await loadWorkbook(logins)).worksheets.length).toBeGreaterThan(0);
@@ -170,10 +171,14 @@ test('Toolbox: answers, SQLite exports, rejected database and offline recovery',
   }finally{await context.setOffline(false);}
 });
 
+test.describe('Testcenter with a synthetic API',()=>{
+// Browser-level routing must see API requests rather than a service worker's
+// outgoing requests. The separate offline test exercises the real worker.
+test.use({serviceWorkers:'block'});
 test('Testcenter: group selection and workspace changes cannot export stale groups',async({page},testInfo)=>{
   // API responses are synthetic; this tests browser fetch and the production UI,
   // independently of the separately maintained live Testcenter installation.
-  let releaseGroups,startedGroups;
+  let releaseGroups,startedGroups,failGroups=false,secondWorkspaceRequests=0;
   const heldGroups=new Promise(resolve=>releaseGroups=resolve);
   const requestedGroups=new Promise(resolve=>startedGroups=resolve);
   await page.route('**/api/**',async route=>{
@@ -181,7 +186,7 @@ test('Testcenter: group selection and workspace changes cannot export stale grou
     if(path==='/api/session/admin')return route.fulfill({json:{token:'synthetic-ci-session',access:{workspaceAdmin:['1','2']}}});
     if(path==='/api/session')return route.fulfill({status:205,body:''});
     if(path==='/api/workspace/1'||path==='/api/workspace/2')return route.fulfill({json:{name:'Workspace '+path.at(-1)}});
-    if(path==='/api/workspace/2/results'){startedGroups();await heldGroups;return route.fulfill({json:[{groupName:'SECOND',groupLabel:'New group'}]});}
+    if(path==='/api/workspace/2/results'){secondWorkspaceRequests++;startedGroups();await heldGroups;return failGroups?route.fulfill({status:503,body:'Synthetic unavailable workspace'}):route.fulfill({json:[{groupName:'SECOND',groupLabel:'New group'}]});}
     if(path==='/api/workspace/1/results')return route.fulfill({json:[{groupName:'FIRST',groupLabel:'First group'},{groupName:'OTHER',groupLabel:'Other group'}]});
     if(path.includes('/report/'))return route.fulfill({json:[]});
     return route.fulfill({status:404,body:'Unexpected mock API path'});
@@ -205,8 +210,18 @@ test('Testcenter: group selection and workspace changes cannot export stale grou
   await done(page);await expect(page.locator('#tc-groups')).toContainText('New group');
   await expect(page.locator('#tc-groups')).not.toContainText('First group');
   await expect(page.locator('#tc-selection')).toHaveText('1 von 1 Gruppen ausgewählt.');
+  // Failed group discovery must keep the workspace ID and groups together.
+  await page.locator('#tc-workspace').selectOption('1');await done(page);
+  failGroups=true;
+  await page.locator('#tc-workspace').selectOption('2');await done(page);
+  await expect(page.locator('#notice')).toContainText('HTTP 503');
+  await expect(page.locator('#tc-workspace')).toHaveValue('1');
+  await expect(page.locator('#tc-groups')).toContainText('First group');
+  await expect(page.locator('#tc-data')).toBeEnabled();
+  expect(secondWorkspaceRequests).toBe(2);
   await page.locator('#tc-disconnect').click();await done(page);
   await expect(page.locator('#tc-login')).toBeVisible();
   await page.locator('#tc-password').fill('unsent-synthetic');await tool(page,'codes');await tool(page,'testcenter');
   await expect(page.locator('#tc-password')).toHaveValue('');
+});
 });

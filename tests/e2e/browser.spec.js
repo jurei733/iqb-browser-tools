@@ -9,6 +9,7 @@ test('original templates, image decoders, workers, exports and browser storage',
   const reported=page.waitForRequest(r=>r.method()==='POST'&&new URL(r.url()).pathname==='/__report__');
   await page.locator('#run').click();
   const report=(await reported).postDataJSON();
+  console.log(`Browser compatibility: ${report.passed}/${report.total} passed`);
   await testInfo.attach('browser-compatibility.json', {body: JSON.stringify(report,null,2), contentType:'application/json'});
   expect(report.total).toBeGreaterThanOrEqual(43);
   expect(report.checks.filter(c=>!c.passed)).toEqual([]);
