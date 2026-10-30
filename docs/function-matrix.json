@@ -1,0 +1,2808 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-31",
+  "windowsVersions": {
+    "IQB-Kodieren": "4.3.0.3",
+    "itc-ToolBox": "3.3.0.2"
+  },
+  "scope": "Erreichbare Nutzerfunktionen der beiden Originalprogramme; ergänzende Dateiformate, Tastaturpfade und Datenverarbeitung. Bibliothekseditoren anderer Programme und deaktivierte Entwicklungsfunktionen sind ausdrücklich ausgenommen. Keine Aussage über alle möglichen Eingabedaten oder internen Codepfade.",
+  "features": [
+    {
+      "id": "K-01",
+      "app": "IQB-Kodieren",
+      "function": "Jobverzeichnis, ZIP und lose Dateien öffnen",
+      "original": {
+        "path": "scans/ScanFactory.cs",
+        "anchor": "GetJobDefsFromDirectory",
+        "line": 223,
+        "sha256": "2ab9129636e99d3bf21a8105d92d6d277e35730c14c63e18c75a2eb0532c9578"
+      },
+      "implementation": [
+        "src/coding.js",
+        "src/main.js"
+      ],
+      "assessment": "implemented",
+      "note": "Dateiauswahl ersetzt den dauerhaften Windows-Verzeichnispfad.",
+      "acceptance": "Jobverzeichnis, ZIP und lose Dateien öffnen.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/compatibility.test.js",
+          "pattern": "job matching uses"
+        },
+        {
+          "kind": "browser",
+          "pattern": "ZIP im echten"
+        }
+      ]
+    },
+    {
+      "id": "K-02",
+      "app": "IQB-Kodieren",
+      "function": "Mehrere Jobs auswählen und Fortschritt anzeigen",
+      "original": {
+        "path": "coding/MainWindow.xaml.cs",
+        "anchor": "CBJobs_SelectionChanged",
+        "line": 71,
+        "sha256": "05098ca438c3738f0a8d2e2bf7325bd7157e8965089ede984583afe3dda56003"
+      },
+      "implementation": [
+        "src/main.js"
+      ],
+      "assessment": "implemented",
+      "note": "Jobauswahl zeigt jetzt kodierte Fälle/Gesamtzahl je Job.",
+      "acceptance": "Mehrere Jobs auswählen und Fortschritt anzeigen.",
+      "evidence": [
+        {
+          "kind": "browser",
+          "pattern": "Jobwechsel erhält"
+        }
+      ]
+    },
+    {
+      "id": "K-03",
+      "app": "IQB-Kodieren",
+      "function": "Historische Jobs und Variablenpakete",
+      "original": {
+        "path": "scans/ScanFactory.cs",
+        "anchor": "GetJobDefsFromDirectory",
+        "line": 223,
+        "sha256": "2ab9129636e99d3bf21a8105d92d6d277e35730c14c63e18c75a2eb0532c9578"
+      },
+      "implementation": [
+        "src/coding.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Historische Jobs und Variablenpakete.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "legacy coding packages"
+        }
+      ]
+    },
+    {
+      "id": "K-04",
+      "app": "IQB-Kodieren",
+      "function": "Personenpräfixe und getrennte Scanordner",
+      "original": {
+        "path": "scans/ScanFactory.cs",
+        "anchor": "GetJobDefsFromDirectory",
+        "line": 223,
+        "sha256": "2ab9129636e99d3bf21a8105d92d6d277e35730c14c63e18c75a2eb0532c9578"
+      },
+      "implementation": [
+        "src/coding.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Personenpräfixe und getrennte Scanordner.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "legacy coding packages"
+        },
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "duplicate basenames"
+        }
+      ]
+    },
+    {
+      "id": "K-05",
+      "app": "IQB-Kodieren",
+      "function": "Personen, Variablen, alternative Testhefte und Seiten zuordnen",
+      "original": {
+        "path": "scans/ScanFactory.cs",
+        "anchor": "GetJobDefsFromDirectory",
+        "line": 223,
+        "sha256": "2ab9129636e99d3bf21a8105d92d6d277e35730c14c63e18c75a2eb0532c9578"
+      },
+      "implementation": [
+        "src/coding.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Personen, Variablen, alternative Testhefte und Seiten zuordnen.",
+      "evidence": [
+        {
+          "kind": "windows-files",
+          "pattern": "Kodierjob: flags"
+        },
+        {
+          "kind": "node",
+          "file": "tests/compatibility.test.js",
+          "pattern": "job matching uses"
+        }
+      ]
+    },
+    {
+      "id": "K-06",
+      "app": "IQB-Kodieren",
+      "function": "Score-Spalte durch Joboption steuern",
+      "original": {
+        "path": "scans/jobOptions.cs",
+        "anchor": "showScore",
+        "line": 15,
+        "sha256": "c8bb7d1e2fa319489c8060ca731b2fde84e8670e450fdd144bdcb7e45aabdb5e"
+      },
+      "implementation": [
+        "src/coding.js",
+        "src/main.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Score-Spalte durch Joboption steuern.",
+      "evidence": [
+        {
+          "kind": "windows-files",
+          "pattern": "Kodierjob: flags"
+        },
+        {
+          "kind": "browser",
+          "pattern": "Joboptionen, fortlaufende"
+        }
+      ]
+    },
+    {
+      "id": "K-07",
+      "app": "IQB-Kodieren",
+      "function": "Allgemeine Kodieranweisung ein-/ausblenden",
+      "original": {
+        "path": "scans/jobOptions.cs",
+        "anchor": "suppressDescription",
+        "line": 17,
+        "sha256": "c8bb7d1e2fa319489c8060ca731b2fde84e8670e450fdd144bdcb7e45aabdb5e"
+      },
+      "implementation": [
+        "src/coding.js",
+        "src/main.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Allgemeine Kodieranweisung ein-/ausblenden.",
+      "evidence": [
+        {
+          "kind": "windows-files",
+          "pattern": "Kodierjob: flags"
+        },
+        {
+          "kind": "browser",
+          "pattern": "Joboptionen, fortlaufende"
+        }
+      ]
+    },
+    {
+      "id": "K-08",
+      "app": "IQB-Kodieren",
+      "function": "Fallkommentar durch Joboption sperren",
+      "original": {
+        "path": "scans/jobOptions.cs",
+        "anchor": "enableComments",
+        "line": 23,
+        "sha256": "c8bb7d1e2fa319489c8060ca731b2fde84e8670e450fdd144bdcb7e45aabdb5e"
+      },
+      "implementation": [
+        "src/coding.js",
+        "src/main.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Fallkommentar durch Joboption sperren.",
+      "evidence": [
+        {
+          "kind": "windows-files",
+          "pattern": "Kodierjob: flags"
+        },
+        {
+          "kind": "browser",
+          "pattern": "Joboptionen, fortlaufende"
+        }
+      ]
+    },
+    {
+      "id": "K-09",
+      "app": "IQB-Kodieren",
+      "function": "Testpersonen anonymisiert anzeigen",
+      "original": {
+        "path": "scans/jobOptions.cs",
+        "anchor": "anonym",
+        "line": 19,
+        "sha256": "c8bb7d1e2fa319489c8060ca731b2fde84e8670e450fdd144bdcb7e45aabdb5e"
+      },
+      "implementation": [
+        "src/main.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Testpersonen anonymisiert anzeigen.",
+      "evidence": [
+        {
+          "kind": "browser",
+          "pattern": "Joboptionen, fortlaufende"
+        }
+      ]
+    },
+    {
+      "id": "K-10",
+      "app": "IQB-Kodieren",
+      "function": "Training-Flag einlesen",
+      "original": {
+        "path": "scans/jobOptions.cs",
+        "anchor": "training",
+        "line": 21,
+        "sha256": "c8bb7d1e2fa319489c8060ca731b2fde84e8670e450fdd144bdcb7e45aabdb5e"
+      },
+      "implementation": [
+        "src/coding.js"
+      ],
+      "assessment": "implemented",
+      "note": "Im rekonstruierten Programm wurde kein gesonderter Trainingsablauf gefunden; kein erfundener Trainingsmodus.",
+      "acceptance": "Training-Flag einlesen.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "legacy coding packages"
+        }
+      ]
+    },
+    {
+      "id": "K-11",
+      "app": "IQB-Kodieren",
+      "function": "Kodierername eintragen und ändern",
+      "original": {
+        "path": "coding/MainWindow.xaml.cs",
+        "anchor": "ChangeCoderName",
+        "line": 256,
+        "sha256": "05098ca438c3738f0a8d2e2bf7325bd7157e8965089ede984583afe3dda56003"
+      },
+      "implementation": [
+        "src/main.js"
+      ],
+      "assessment": "difference",
+      "note": "Manuelle Eingabe; keine automatische Ermittlung über Windows Active Directory.",
+      "acceptance": "Kodierername eintragen und ändern.",
+      "evidence": [
+        {
+          "kind": "browser",
+          "pattern": "Jobwechsel erhält"
+        }
+      ]
+    },
+    {
+      "id": "K-12",
+      "app": "IQB-Kodieren",
+      "function": "Codes per Maus und eindeutiger Ziffer vergeben",
+      "original": {
+        "path": "coding/MainWindow.xaml.cs",
+        "anchor": "Me_KeyUp",
+        "line": 105,
+        "sha256": "05098ca438c3738f0a8d2e2bf7325bd7157e8965089ede984583afe3dda56003"
+      },
+      "implementation": [
+        "src/coding.js",
+        "src/main.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Codes per Maus und eindeutiger Ziffer vergeben.",
+      "evidence": [
+        {
+          "kind": "browser",
+          "pattern": "Code 0, sortierte Fallliste"
+        },
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "coding crop and DPI"
+        }
+      ]
+    },
+    {
+      "id": "K-13",
+      "app": "IQB-Kodieren",
+      "function": "Code 0 und Codewechsel mit Pfeil oben/unten",
+      "original": {
+        "path": "coding/CodeListUserControl.xaml.cs",
+        "anchor": "SetCode",
+        "line": 114,
+        "sha256": "7cbdc1cf6b74aca0fbbc3ea5d27fdf32be2e0e71aa69ee6aee04bb7298d886e9"
+      },
+      "implementation": [
+        "src/coding.js",
+        "src/main.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Code 0 und Codewechsel mit Pfeil oben/unten.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "coding crop and DPI"
+        },
+        {
+          "kind": "browser",
+          "pattern": "Code 0, sortierte Fallliste"
+        }
+      ]
+    },
+    {
+      "id": "K-14",
+      "app": "IQB-Kodieren",
+      "function": "Sammelkodierung je Person mit Strg+Ziffer atomar",
+      "original": {
+        "path": "coding/CaseList.cs",
+        "anchor": "SetVarGroupCode",
+        "line": 229,
+        "sha256": "fb3816a0c2d3bdbb0950e703d3379e707a5ed25073a6b62f3dac3fdbc5c62f8b"
+      },
+      "implementation": [
+        "src/coding.js",
+        "src/main.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Sammelkodierung je Person mit Strg+Ziffer atomar.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "coding crop and DPI"
+        },
+        {
+          "kind": "windows-files",
+          "pattern": "Coding navigation:"
+        }
+      ]
+    },
+    {
+      "id": "K-15",
+      "app": "IQB-Kodieren",
+      "function": "Fallkommentar und Zeitstempel sichern",
+      "original": {
+        "path": "coding/Coding.cs",
+        "anchor": "Comment",
+        "line": 18,
+        "sha256": "f69bddc1b9a1af2662a8a7e6942a59f577eb64e180cfd44b1b635aa4741eb029"
+      },
+      "implementation": [
+        "src/coding.js",
+        "src/main.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Fallkommentar und Zeitstempel sichern.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/compatibility.test.js",
+          "pattern": "CodingResults v5"
+        },
+        {
+          "kind": "browser",
+          "pattern": "GZip-Ergebnisse"
+        }
+      ]
+    },
+    {
+      "id": "K-16",
+      "app": "IQB-Kodieren",
+      "function": "Jobkommentar und F4",
+      "original": {
+        "path": "coding/MainWindow.xaml.cs",
+        "anchor": "HandleGlobalCommentExecuted",
+        "line": 179,
+        "sha256": "05098ca438c3738f0a8d2e2bf7325bd7157e8965089ede984583afe3dda56003"
+      },
+      "implementation": [
+        "src/main.js"
+      ],
+      "assessment": "implemented",
+      "note": "Browser sichert lokal, Windows schreibt direkt die Ergebnisdatei.",
+      "acceptance": "Jobkommentar und F4.",
+      "evidence": [
+        {
+          "kind": "browser",
+          "pattern": "Jobwechsel erhält"
+        },
+        {
+          "kind": "node",
+          "file": "tests/compatibility.test.js",
+          "pattern": "CodingResults v5"
+        }
+      ]
+    },
+    {
+      "id": "K-17",
+      "app": "IQB-Kodieren",
+      "function": "Vorwärts/rückwärts, Enter und Bildtasten",
+      "original": {
+        "path": "coding/MainWindow.xaml.cs",
+        "anchor": "HandleNextPageExecuted",
+        "line": 171,
+        "sha256": "05098ca438c3738f0a8d2e2bf7325bd7157e8965089ede984583afe3dda56003"
+      },
+      "implementation": [
+        "src/coding.js",
+        "src/main.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Vorwärts/rückwärts, Enter und Bildtasten.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/function-matrix.test.js",
+          "pattern": "sequential navigation"
+        },
+        {
+          "kind": "browser",
+          "pattern": "Code 0, sortierte Fallliste"
+        },
+        {
+          "kind": "windows-files",
+          "pattern": "Coding navigation:"
+        }
+      ]
+    },
+    {
+      "id": "K-18",
+      "app": "IQB-Kodieren",
+      "function": "Fortlaufende Navigation bis zum ersten offenen Fall",
+      "original": {
+        "path": "coding/CaseList.cs",
+        "anchor": "SelectedCaseNumber",
+        "line": 80,
+        "sha256": "fb3816a0c2d3bdbb0950e703d3379e707a5ed25073a6b62f3dac3fdbc5c62f8b"
+      },
+      "implementation": [
+        "src/coding.js",
+        "src/main.js"
+      ],
+      "assessment": "implemented",
+      "note": "Beim Audit korrigiert: nun Standard; freie Navigation bleibt ausdrücklich zuschaltbar.",
+      "acceptance": "Fortlaufende Navigation bis zum ersten offenen Fall.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/function-matrix.test.js",
+          "pattern": "sequential navigation"
+        },
+        {
+          "kind": "browser",
+          "pattern": "Joboptionen, fortlaufende"
+        },
+        {
+          "kind": "windows-files",
+          "pattern": "Coding navigation:"
+        }
+      ]
+    },
+    {
+      "id": "K-19",
+      "app": "IQB-Kodieren",
+      "function": "Vollständig kodierten Job am letzten Fall fortsetzen",
+      "original": {
+        "path": "coding/CaseList.cs",
+        "anchor": "_SelectedCaseNumber = _LastCodedCaseNumber",
+        "line": 416,
+        "sha256": "fb3816a0c2d3bdbb0950e703d3379e707a5ed25073a6b62f3dac3fdbc5c62f8b"
+      },
+      "implementation": [
+        "src/coding.js",
+        "src/main.js"
+      ],
+      "assessment": "implemented",
+      "note": "Beim Audit korrigiert; zuvor wurde Fall 1 geöffnet.",
+      "acceptance": "Vollständig kodierten Job am letzten Fall fortsetzen.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/function-matrix.test.js",
+          "pattern": "sequential navigation"
+        },
+        {
+          "kind": "browser",
+          "pattern": "vollständig kodierte Jobs"
+        }
+      ]
+    },
+    {
+      "id": "K-20",
+      "app": "IQB-Kodieren",
+      "function": "F3-Fallliste: Nummer, Variable, Code, Kommentar",
+      "original": {
+        "path": "coding/MainWindow.xaml.cs",
+        "anchor": "HandleGoToPageExecuted",
+        "line": 167,
+        "sha256": "05098ca438c3738f0a8d2e2bf7325bd7157e8965089ede984583afe3dda56003"
+      },
+      "implementation": [
+        "src/main.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "F3-Fallliste: Nummer, Variable, Code, Kommentar.",
+      "evidence": [
+        {
+          "kind": "browser",
+          "pattern": "Code 0, sortierte Fallliste"
+        }
+      ]
+    },
+    {
+      "id": "K-21",
+      "app": "IQB-Kodieren",
+      "function": "Fallliste nach Originalspalten sortieren und korrekt springen",
+      "original": {
+        "path": "coding/CaseNavigateDialog.xaml",
+        "anchor": "SortMemberPath",
+        "line": 23,
+        "sha256": "a1bfdf68d9c0beb5be0563e7428c41f1068043da1a69fea21a8301b810e5b4a9"
+      },
+      "implementation": [
+        "src/coding.js",
+        "src/main.js"
+      ],
+      "assessment": "implemented",
+      "note": "Beim Audit ergänzt; Sortierung verändert die tatsächliche Fallnummer nicht.",
+      "acceptance": "Fallliste nach Originalspalten sortieren und korrekt springen.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/function-matrix.test.js",
+          "pattern": "case list sorts"
+        },
+        {
+          "kind": "browser",
+          "pattern": "Code 0, sortierte Fallliste"
+        }
+      ]
+    },
+    {
+      "id": "K-22",
+      "app": "IQB-Kodieren",
+      "function": "Scans mit physischen DPI-Proportionen anzeigen",
+      "original": {
+        "path": "scans/PageImageSetShowControl.xaml.cs",
+        "anchor": "RePaint",
+        "line": 266,
+        "sha256": "41e5587e75c73d142473206ef072ba31da3eed47ac42889a7bfdefa5e8cef533"
+      },
+      "implementation": [
+        "src/image.js",
+        "src/main.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Scans mit physischen DPI-Proportionen anzeigen.",
+      "evidence": [
+        {
+          "kind": "windows-files",
+          "pattern": "physical aspect ratio"
+        },
+        {
+          "kind": "node",
+          "file": "tests/image.test.js",
+          "pattern": "physical resolutions"
+        }
+      ]
+    },
+    {
+      "id": "K-23",
+      "app": "IQB-Kodieren",
+      "function": "Bilddekoder PNG/JPEG/BMP/GIF/TIFF und erste TIFF-Seite",
+      "original": {
+        "path": "scans/PageImageFS.cs",
+        "anchor": "GetScanImage",
+        "line": 10,
+        "sha256": "af481d9624e7ca188a0f3a60ae0930256a661e194a09de646c10cdb6c00b6dc9"
+      },
+      "implementation": [
+        "src/image.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Bilddekoder PNG/JPEG/BMP/GIF/TIFF und erste TIFF-Seite.",
+      "evidence": [
+        {
+          "kind": "browser",
+          "pattern": "Bilddekoder"
+        },
+        {
+          "kind": "windows-files",
+          "pattern": "Scans:"
+        }
+      ]
+    },
+    {
+      "id": "K-24",
+      "app": "IQB-Kodieren",
+      "function": "Crop- und DPI-korrigierte Bereichsrahmen",
+      "original": {
+        "path": "scans/ScanFactory.cs",
+        "anchor": "GetJobDefsFromDirectory",
+        "line": 223,
+        "sha256": "2ab9129636e99d3bf21a8105d92d6d277e35730c14c63e18c75a2eb0532c9578"
+      },
+      "implementation": [
+        "src/coding.js",
+        "src/main.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Crop- und DPI-korrigierte Bereichsrahmen.",
+      "evidence": [
+        {
+          "kind": "windows-files",
+          "pattern": "crop frame geometry"
+        },
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "coding crop and DPI"
+        }
+      ]
+    },
+    {
+      "id": "K-25",
+      "app": "IQB-Kodieren",
+      "function": "Bereichsrahmen ein-/ausblenden",
+      "original": {
+        "path": "scans/PageImageSetShowControl.xaml.cs",
+        "anchor": "ToBtnFrame",
+        "line": 97,
+        "sha256": "41e5587e75c73d142473206ef072ba31da3eed47ac42889a7bfdefa5e8cef533"
+      },
+      "implementation": [
+        "src/main.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Bereichsrahmen ein-/ausblenden.",
+      "evidence": [
+        {
+          "kind": "browser",
+          "pattern": "Joboptionen, fortlaufende"
+        }
+      ]
+    },
+    {
+      "id": "K-26",
+      "app": "IQB-Kodieren",
+      "function": "Scan-Zoom und 100-Prozent-Tastenkürzel",
+      "original": {
+        "path": "scans/PageImageSetShowControl.xaml.cs",
+        "anchor": "HandleZoom100Executed",
+        "line": 408,
+        "sha256": "41e5587e75c73d142473206ef072ba31da3eed47ac42889a7bfdefa5e8cef533"
+      },
+      "implementation": [
+        "src/main.js"
+      ],
+      "assessment": "difference",
+      "note": "Browser 25–300 % relativ zur verfügbaren Breite; Windows verwendet einen WPF-Skalierungsfaktor mit dynamischer Untergrenze. Keine pixelgleiche 100-%-Ansicht behauptet.",
+      "acceptance": "Scan-Zoom und 100-Prozent-Tastenkürzel.",
+      "evidence": [
+        {
+          "kind": "browser",
+          "pattern": "Joboptionen, fortlaufende"
+        }
+      ]
+    },
+    {
+      "id": "K-27",
+      "app": "IQB-Kodieren",
+      "function": "Scan durch Ziehen verschieben",
+      "original": {
+        "path": "scans/PageImageSetShowControl.xaml.cs",
+        "anchor": "IGCanvas_MouseMove",
+        "line": 132,
+        "sha256": "41e5587e75c73d142473206ef072ba31da3eed47ac42889a7bfdefa5e8cef533"
+      },
+      "implementation": [
+        "src/main.js"
+      ],
+      "assessment": "missing",
+      "note": "Native Scrollleisten sind vorhanden; Ziehen zum Verschieben des Scan-Viewports ist noch nicht übertragen.",
+      "acceptance": "Einen mehrseitigen Scan auf 200 % zoomen, im Scan ziehen und horizontale/vertikale Scrollposition mit Windows vergleichen. Browser besitzt dafür derzeit keinen Handler.",
+      "evidence": []
+    },
+    {
+      "id": "K-28",
+      "app": "IQB-Kodieren",
+      "function": "Kodierschablone laden und darstellen",
+      "original": {
+        "path": "scans/PageImageSetShowControl.xaml.cs",
+        "anchor": "CodingTemplate",
+        "line": 367,
+        "sha256": "41e5587e75c73d142473206ef072ba31da3eed47ac42889a7bfdefa5e8cef533"
+      },
+      "implementation": [
+        "src/coding.js",
+        "src/main.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Kodierschablone laden und darstellen.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "legacy coding packages"
+        },
+        {
+          "kind": "browser",
+          "pattern": "transparente Schablone"
+        }
+      ]
+    },
+    {
+      "id": "K-29",
+      "app": "IQB-Kodieren",
+      "function": "Schablone begrenzt verschieben und mit Umschalt drehen",
+      "original": {
+        "path": "scans/MovingTemplateCanvas.cs",
+        "anchor": "Me_MouseMove",
+        "line": 62,
+        "sha256": "6b38b36cfa1160bde9038fdcd43e66bcd7f685add1ba7a4f9fb02b47dd00a061"
+      },
+      "implementation": [
+        "src/main.js"
+      ],
+      "assessment": "partial",
+      "note": "Implementiert; bisherige UI-Stichprobe liegt vor. Rotation/Begrenzung werden nicht auf jeden WPF-Ereignisfall direkt verglichen.",
+      "acceptance": "Schablone an alle vier Scanränder ziehen; Umschalt-Ziehen wiederholt nach oben/unten; Winkel und Begrenzung auf gleichen DPI-Scans mit Windows vergleichen.",
+      "evidence": []
+    },
+    {
+      "id": "K-30",
+      "app": "IQB-Kodieren",
+      "function": "Schablonenposition beim Fallwechsel behalten",
+      "original": {
+        "path": "scans/PageImageSetShowControl.xaml.cs",
+        "anchor": "TemplatePositionLeft",
+        "line": 35,
+        "sha256": "41e5587e75c73d142473206ef072ba31da3eed47ac42889a7bfdefa5e8cef533"
+      },
+      "implementation": [
+        "src/main.js"
+      ],
+      "assessment": "difference",
+      "note": "Browser speichert je Variable einschließlich Rotation; Windows bindet gemeinsame statische Position. Ein eigener direkter Positionsvergleich fehlt.",
+      "acceptance": "Schablone in Variable A verschieben, zu B und zurück wechseln; gemeinsame Windows-Position gegen getrennte Browserpositionen protokollieren.",
+      "evidence": []
+    },
+    {
+      "id": "K-31",
+      "app": "IQB-Kodieren",
+      "function": "Original-Ergebnisdateien Version 5 lesen",
+      "original": {
+        "path": "coding/CaseList.cs",
+        "anchor": "ZipXDocFromFile",
+        "line": 278,
+        "sha256": "fb3816a0c2d3bdbb0950e703d3379e707a5ed25073a6b62f3dac3fdbc5c62f8b"
+      },
+      "implementation": [
+        "src/coding.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Original-Ergebnisdateien Version 5 lesen.",
+      "evidence": [
+        {
+          "kind": "windows-files",
+          "pattern": "native export decoded"
+        },
+        {
+          "kind": "node",
+          "file": "tests/compatibility.test.js",
+          "pattern": "CodingResults v5"
+        }
+      ]
+    },
+    {
+      "id": "K-32",
+      "app": "IQB-Kodieren",
+      "function": "Original-Ergebnisdateien schreiben und mit Windows öffnen",
+      "original": {
+        "path": "coding/CaseList.cs",
+        "anchor": "ResultsToXDoc",
+        "line": 431,
+        "sha256": "fb3816a0c2d3bdbb0950e703d3379e707a5ed25073a6b62f3dac3fdbc5c62f8b"
+      },
+      "implementation": [
+        "src/coding.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Original-Ergebnisdateien schreiben und mit Windows öffnen.",
+      "evidence": [
+        {
+          "kind": "windows-files",
+          "pattern": "Windows original reads the browser export"
+        }
+      ]
+    },
+    {
+      "id": "K-33",
+      "app": "IQB-Kodieren",
+      "function": "Ergebnisse beim Joböffnen bzw. nachträglich übernehmen",
+      "original": {
+        "path": "coding/CaseList.cs",
+        "anchor": "GetFiles(\"*.result\")",
+        "line": 273,
+        "sha256": "fb3816a0c2d3bdbb0950e703d3379e707a5ed25073a6b62f3dac3fdbc5c62f8b"
+      },
+      "implementation": [
+        "src/coding.js",
+        "src/main.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Ergebnisse beim Joböffnen bzw. nachträglich übernehmen.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/compatibility.test.js",
+          "pattern": "results reject"
+        },
+        {
+          "kind": "browser",
+          "pattern": "GZip-Ergebnisse"
+        }
+      ]
+    },
+    {
+      "id": "K-34",
+      "app": "IQB-Kodieren",
+      "function": "Ergebnis nach leerer Person weiter exportieren",
+      "original": {
+        "path": "coding/CaseList.cs",
+        "anchor": "ResultsToXDoc",
+        "line": 431,
+        "sha256": "fb3816a0c2d3bdbb0950e703d3379e707a5ed25073a6b62f3dac3fdbc5c62f8b"
+      },
+      "implementation": [
+        "src/coding.js"
+      ],
+      "assessment": "difference",
+      "note": "Original bricht beim ersten vollständig leeren Personenblock ab; Browser erhält spätere Kodierungen.",
+      "acceptance": "Ergebnis nach leerer Person weiter exportieren.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/compatibility.test.js",
+          "pattern": "results export contains later"
+        }
+      ]
+    },
+    {
+      "id": "K-35",
+      "app": "IQB-Kodieren",
+      "function": "Speichern automatisch / Strg+S",
+      "original": {
+        "path": "coding/MainWindow.xaml.cs",
+        "anchor": "HandleSaveExecuted",
+        "line": 163,
+        "sha256": "05098ca438c3738f0a8d2e2bf7325bd7157e8965089ede984583afe3dda56003"
+      },
+      "implementation": [
+        "src/main.js"
+      ],
+      "assessment": "difference",
+      "note": "IndexedDB sichert lokal; Strg/Cmd+S lädt eine unabhängige Datei herunter. Kein stilles Überschreiben im Jobverzeichnis.",
+      "acceptance": "Speichern automatisch / Strg+S.",
+      "evidence": [
+        {
+          "kind": "browser",
+          "pattern": "GZip-Ergebnisse"
+        }
+      ]
+    },
+    {
+      "id": "K-36",
+      "app": "IQB-Kodieren",
+      "function": "Programmhilfe / F1",
+      "original": {
+        "path": "coding/MainWindow.xaml.cs",
+        "anchor": "HandleHelpExecuted",
+        "line": 161,
+        "sha256": "05098ca438c3738f0a8d2e2bf7325bd7157e8965089ede984583afe3dda56003"
+      },
+      "implementation": [
+        "src/main.js"
+      ],
+      "assessment": "partial",
+      "note": "Funktionsumfang und Quellen als Browserdialog vorhanden. Originale CHM-Themen, Lizenz-/Versionsdialog und F1-Zuordnung sind nicht identisch übertragen.",
+      "acceptance": "F1 und Hilfe-Schaltfläche aus Hauptfenster und Fallliste öffnen; verfügbare Original-Hilfethemen mit Browserdialog vergleichen.",
+      "evidence": []
+    },
+    {
+      "id": "K-37",
+      "app": "IQB-Kodieren",
+      "function": "Ende des Jobs optisch signalisieren",
+      "original": {
+        "path": "scans/PageImageSetShowControl.xaml.cs",
+        "anchor": "AnimateLastPage",
+        "line": 251,
+        "sha256": "41e5587e75c73d142473206ef072ba31da3eed47ac42889a7bfdefa5e8cef533"
+      },
+      "implementation": [
+        "src/main.js"
+      ],
+      "assessment": "difference",
+      "note": "Browser deaktiviert Weiter und zeigt den Fortschritt; die einsekündige Windows-Animation wird nicht nachgebildet.",
+      "acceptance": "Ende des Jobs optisch signalisieren.",
+      "evidence": []
+    },
+    {
+      "id": "K-38",
+      "app": "IQB-Kodieren",
+      "function": "Ausschnitt in Zwischenablage kopieren",
+      "original": {
+        "path": "scans/PageImageSetShowControl.xaml.cs",
+        "anchor": "HandleCopy2ClipboardCanExecute",
+        "line": 247,
+        "sha256": "41e5587e75c73d142473206ef072ba31da3eed47ac42889a7bfdefa5e8cef533"
+      },
+      "implementation": [
+        "src/main.js"
+      ],
+      "assessment": "excluded",
+      "note": "Funktion der gemeinsamen Scanbibliothek; EnableCopyToClipboard ist in IQB-Kodieren nicht aktiviert und die Schaltfläche ausgeblendet. Kein aktiver Original-Arbeitsauftrag.",
+      "acceptance": "Ausschnitt in Zwischenablage kopieren.",
+      "evidence": []
+    },
+    {
+      "id": "T-01",
+      "app": "itc-ToolBox",
+      "function": "Vier Code-Spalten mit Originalanzahlen und Alphabeten",
+      "original": {
+        "path": "toolbox/itc-input/CodeFactory.vb",
+        "anchor": "GetNewCodeList",
+        "line": 15,
+        "sha256": "22a79a09246874e437dabc868a8268c8ede87a70de02165ab30bfa04f660db55"
+      },
+      "implementation": [
+        "src/toolbox.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Vier Code-Spalten mit Originalanzahlen und Alphabeten.",
+      "evidence": [
+        {
+          "kind": "windows-files",
+          "pattern": "CodeFactory:"
+        },
+        {
+          "kind": "node",
+          "file": "tests/compatibility.test.js",
+          "pattern": "Codes.xlsx uses"
+        }
+      ]
+    },
+    {
+      "id": "T-02",
+      "app": "itc-ToolBox",
+      "function": "Eindeutige Codes ohne Wiederholung erzeugen",
+      "original": {
+        "path": "toolbox/itc-input/CodeFactory.vb",
+        "anchor": "GetNewCodeList",
+        "line": 15,
+        "sha256": "22a79a09246874e437dabc868a8268c8ede87a70de02165ab30bfa04f660db55"
+      },
+      "implementation": [
+        "src/toolbox.js"
+      ],
+      "assessment": "difference",
+      "note": "Web Crypto statt Windows-Zufall; gültige Menge/Anzahl, keine identische Zufallsfolge.",
+      "acceptance": "Eindeutige Codes ohne Wiederholung erzeugen.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/compatibility.test.js",
+          "pattern": "code alphabets and capacity"
+        }
+      ]
+    },
+    {
+      "id": "T-03",
+      "app": "itc-ToolBox",
+      "function": "Booklets: benannte Excel-Zellen lesen",
+      "original": {
+        "path": "toolbox/itc-input/BookletXlsxDialog.xaml.vb",
+        "anchor": "GetDefinedNameValue",
+        "line": 104,
+        "sha256": "149c45c6e26d656794f3cdffabb6dd1b84582c12bbd5d70613e471e7b45b8758"
+      },
+      "implementation": [
+        "src/toolbox.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Booklets: benannte Excel-Zellen lesen.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/compatibility.test.js",
+          "pattern": "original Booklet"
+        }
+      ]
+    },
+    {
+      "id": "T-04",
+      "app": "itc-ToolBox",
+      "function": "Booklets: Units/Blöcke und Referenzen prüfen",
+      "original": {
+        "path": "toolbox/itc-input/BookletXlsxDialog.xaml.vb",
+        "anchor": "fatal_error",
+        "line": 131,
+        "sha256": "149c45c6e26d656794f3cdffabb6dd1b84582c12bbd5d70613e471e7b45b8758"
+      },
+      "implementation": [
+        "src/toolbox.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Booklets: Units/Blöcke und Referenzen prüfen.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/function-matrix.test.js",
+          "pattern": "Booklet validation"
+        }
+      ]
+    },
+    {
+      "id": "T-05",
+      "app": "itc-ToolBox",
+      "function": "Booklets: Startcodes, Nummerierung und Zeitbegrenzungen",
+      "original": {
+        "path": "toolbox/itc-input/BookletXlsxDialog.xaml.vb",
+        "anchor": "CodeToEnter",
+        "line": 434,
+        "sha256": "149c45c6e26d656794f3cdffabb6dd1b84582c12bbd5d70613e471e7b45b8758"
+      },
+      "implementation": [
+        "src/toolbox.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Booklets: Startcodes, Nummerierung und Zeitbegrenzungen.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/compatibility.test.js",
+          "pattern": "original Booklet"
+        }
+      ]
+    },
+    {
+      "id": "T-06",
+      "app": "itc-ToolBox",
+      "function": "Booklets: Metadaten und mehrere XML-Dateien",
+      "original": {
+        "path": "toolbox/itc-input/BookletXlsxDialog.xaml.vb",
+        "anchor": "XMLBookletFiles",
+        "line": 123,
+        "sha256": "149c45c6e26d656794f3cdffabb6dd1b84582c12bbd5d70613e471e7b45b8758"
+      },
+      "implementation": [
+        "src/toolbox.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Booklets: Metadaten und mehrere XML-Dateien.",
+      "evidence": [
+        {
+          "kind": "windows-files",
+          "pattern": "Booklets:"
+        }
+      ]
+    },
+    {
+      "id": "T-07",
+      "app": "itc-ToolBox",
+      "function": "Booklet-Beschreibung aus Beschreibungsspalte",
+      "original": {
+        "path": "toolbox/itc-input/BookletXlsxDialog.xaml.vb",
+        "anchor": "bookletsCol.Description",
+        "line": 241,
+        "sha256": "149c45c6e26d656794f3cdffabb6dd1b84582c12bbd5d70613e471e7b45b8758"
+      },
+      "implementation": [
+        "src/toolbox.js"
+      ],
+      "assessment": "difference",
+      "note": "Bewusste Korrektur: Original liest hier die Titelspalte. Vergleich normalisiert ausschließlich diese dokumentierte Abweichung.",
+      "acceptance": "Booklet-Beschreibung aus Beschreibungsspalte.",
+      "evidence": [
+        {
+          "kind": "windows-files",
+          "pattern": "Booklets:"
+        }
+      ]
+    },
+    {
+      "id": "T-08",
+      "app": "itc-ToolBox",
+      "function": "Login-Vorlage und Test-/Reserve-/Review-Anzahlen",
+      "original": {
+        "path": "toolbox/itc-input/LoginsTemplateXlsxDialog.xaml.vb",
+        "anchor": "groupsCol.NumberTest",
+        "line": 236,
+        "sha256": "5b1b8d6b68fac18cc9520cf55ba2afddd07bbf20db4cb0d2fc4166a78d6ec752"
+      },
+      "implementation": [
+        "src/toolbox.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Login-Vorlage und Test-/Reserve-/Review-Anzahlen.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/compatibility.test.js",
+          "pattern": "original Login template"
+        }
+      ]
+    },
+    {
+      "id": "T-09",
+      "app": "itc-ToolBox",
+      "function": "Logins neu erzeugen oder vorhandene behalten",
+      "original": {
+        "path": "toolbox/itc-input/LoginsTemplateXlsxDialog.xaml.vb",
+        "anchor": "renewLogins",
+        "line": 13,
+        "sha256": "5b1b8d6b68fac18cc9520cf55ba2afddd07bbf20db4cb0d2fc4166a78d6ec752"
+      },
+      "implementation": [
+        "src/toolbox.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Logins neu erzeugen oder vorhandene behalten.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/compatibility.test.js",
+          "pattern": "original Login template"
+        }
+      ]
+    },
+    {
+      "id": "T-10",
+      "app": "itc-ToolBox",
+      "function": "Login- und Kennwortlänge, Kennwort optional",
+      "original": {
+        "path": "toolbox/itc-input/LoginsTemplateXlsxDialog.xaml.vb",
+        "anchor": "passwordLength",
+        "line": 16,
+        "sha256": "5b1b8d6b68fac18cc9520cf55ba2afddd07bbf20db4cb0d2fc4166a78d6ec752"
+      },
+      "implementation": [
+        "src/toolbox.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Login- und Kennwortlänge, Kennwort optional.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/function-matrix.test.js",
+          "pattern": "login generation honors"
+        }
+      ]
+    },
+    {
+      "id": "T-11",
+      "app": "itc-ToolBox",
+      "function": "Testleitung pro Gruppe optional",
+      "original": {
+        "path": "toolbox/itc-input/LoginsTemplateXlsxDialog.xaml.vb",
+        "anchor": "addProctor",
+        "line": 17,
+        "sha256": "5b1b8d6b68fac18cc9520cf55ba2afddd07bbf20db4cb0d2fc4166a78d6ec752"
+      },
+      "implementation": [
+        "src/toolbox.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Testleitung pro Gruppe optional.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/function-matrix.test.js",
+          "pattern": "login generation honors"
+        },
+        {
+          "kind": "node",
+          "file": "tests/compatibility.test.js",
+          "pattern": "original Login template"
+        }
+      ]
+    },
+    {
+      "id": "T-12",
+      "app": "itc-ToolBox",
+      "function": "Unabhängige Test-/Reserve-/Review-Präfixe",
+      "original": {
+        "path": "toolbox/itc-input/LoginsTemplateXlsxDialog.xaml.vb",
+        "anchor": "addPrefixTestee",
+        "line": 18,
+        "sha256": "5b1b8d6b68fac18cc9520cf55ba2afddd07bbf20db4cb0d2fc4166a78d6ec752"
+      },
+      "implementation": [
+        "src/toolbox.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Unabhängige Test-/Reserve-/Review-Präfixe.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "individual login prefixes"
+        },
+        {
+          "kind": "node",
+          "file": "tests/function-matrix.test.js",
+          "pattern": "login generation honors"
+        }
+      ]
+    },
+    {
+      "id": "T-13",
+      "app": "itc-ToolBox",
+      "function": "Gruppen-IDs mit gemeinsamem Suffix und Kollisionsauflösung",
+      "original": {
+        "path": "toolbox/itc-input/LoginsTemplateXlsxDialog.xaml.vb",
+        "anchor": "groupsCol.ID",
+        "line": 239,
+        "sha256": "5b1b8d6b68fac18cc9520cf55ba2afddd07bbf20db4cb0d2fc4166a78d6ec752"
+      },
+      "implementation": [
+        "src/toolbox.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Gruppen-IDs mit gemeinsamem Suffix und Kollisionsauflösung.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "individual login prefixes"
+        }
+      ]
+    },
+    {
+      "id": "T-14",
+      "app": "itc-ToolBox",
+      "function": "Bearbeitete Login-Xlsx ausgeben",
+      "original": {
+        "path": "toolbox/itc-input/LoginsTemplateXlsxDialog.xaml.vb",
+        "anchor": "Process2_bw_DoWork",
+        "line": 316,
+        "sha256": "5b1b8d6b68fac18cc9520cf55ba2afddd07bbf20db4cb0d2fc4166a78d6ec752"
+      },
+      "implementation": [
+        "src/toolbox.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Bearbeitete Login-Xlsx ausgeben.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/compatibility.test.js",
+          "pattern": "original Login template"
+        },
+        {
+          "kind": "browser",
+          "pattern": "Login"
+        }
+      ]
+    },
+    {
+      "id": "T-15",
+      "app": "itc-ToolBox",
+      "function": "Testtaker-XML mit Modi, Booklet und eigenen Texten",
+      "original": {
+        "path": "toolbox/itc-input/LoginsTemplateXlsxDialog.xaml.vb",
+        "anchor": "CustomText",
+        "line": 565,
+        "sha256": "5b1b8d6b68fac18cc9520cf55ba2afddd07bbf20db4cb0d2fc4166a78d6ec752"
+      },
+      "implementation": [
+        "src/toolbox.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Testtaker-XML mit Modi, Booklet und eigenen Texten.",
+      "evidence": [
+        {
+          "kind": "windows-files",
+          "pattern": "Testtaker XML:"
+        },
+        {
+          "kind": "node",
+          "file": "tests/function-matrix.test.js",
+          "pattern": "Testtaker join"
+        }
+      ]
+    },
+    {
+      "id": "T-16",
+      "app": "itc-ToolBox",
+      "function": "Eine Testtaker-Datei insgesamt oder je Gruppe",
+      "original": {
+        "path": "toolbox/itc-input/LoginsTemplateXlsxDialog.xaml.vb",
+        "anchor": "separateXmlFiles",
+        "line": 22,
+        "sha256": "5b1b8d6b68fac18cc9520cf55ba2afddd07bbf20db4cb0d2fc4166a78d6ec752"
+      },
+      "implementation": [
+        "src/toolbox.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Eine Testtaker-Datei insgesamt oder je Gruppe.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/function-matrix.test.js",
+          "pattern": "Testtaker join"
+        }
+      ]
+    },
+    {
+      "id": "T-17",
+      "app": "itc-ToolBox",
+      "function": "XML-Ausgabe abschalten",
+      "original": {
+        "path": "toolbox/itc-input/LoginsTemplateXlsxDialog.xaml.vb",
+        "anchor": "generateXml",
+        "line": 14,
+        "sha256": "5b1b8d6b68fac18cc9520cf55ba2afddd07bbf20db4cb0d2fc4166a78d6ec752"
+      },
+      "implementation": [
+        "src/main.js"
+      ],
+      "assessment": "partial",
+      "note": "Checkbox implementiert; bisher kein eigenständiger Oberflächentest für ausgeschaltete XML-Ausgabe.",
+      "acceptance": "Vorhandene Logins mit ausgeschaltetem Neuerzeugen und ausgeschalteter XML-Ausgabe verarbeiten: ausschließlich Xlsx, unveränderte Namen/Modi, keine XML-Datei.",
+      "evidence": []
+    },
+    {
+      "id": "T-18",
+      "app": "itc-ToolBox",
+      "function": "Word: beide Originalvorlagen und alle acht Tags",
+      "original": {
+        "path": "toolbox/itc-input/LoginsXlsxToDocxDialog.xaml.vb",
+        "anchor": "replaceText",
+        "line": 333,
+        "sha256": "375f5fd09aa8daa528422a24291827784b24bfeb0aead40f782e5fe785421311"
+      },
+      "implementation": [
+        "src/docx.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Word: beide Originalvorlagen und alle acht Tags.",
+      "evidence": [
+        {
+          "kind": "windows-files",
+          "pattern": "Word:"
+        },
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "both original Word"
+        }
+      ]
+    },
+    {
+      "id": "T-19",
+      "app": "itc-ToolBox",
+      "function": "Word: eigene Vorlage und unveränderte Tabellenstruktur",
+      "original": {
+        "path": "toolbox/itc-input/LoginsXlsxToDocxDialog.xaml.vb",
+        "anchor": "SelectTemplateFile_Click",
+        "line": 192,
+        "sha256": "375f5fd09aa8daa528422a24291827784b24bfeb0aead40f782e5fe785421311"
+      },
+      "implementation": [
+        "src/docx.js"
+      ],
+      "assessment": "difference",
+      "note": "Browser erhält komplette Tabellenblöcke; Original wiederholt nur Paragraphen.",
+      "acceptance": "Word: eigene Vorlage und unveränderte Tabellenstruktur.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "custom DOCX table"
+        }
+      ]
+    },
+    {
+      "id": "T-20",
+      "app": "itc-ToolBox",
+      "function": "Word: http/https-Adresse und Login-Link",
+      "original": {
+        "path": "toolbox/itc-input/LoginsXlsxToDocxDialog.xaml.vb",
+        "anchor": "getUrl",
+        "line": 364,
+        "sha256": "375f5fd09aa8daa528422a24291827784b24bfeb0aead40f782e5fe785421311"
+      },
+      "implementation": [
+        "src/docx.js"
+      ],
+      "assessment": "difference",
+      "note": "Browser normalisiert abschließende Schrägstriche und kodiert Login-Sonderzeichen.",
+      "acceptance": "Word: http/https-Adresse und Login-Link.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "both original Word"
+        }
+      ]
+    },
+    {
+      "id": "T-21",
+      "app": "itc-ToolBox",
+      "function": "Word: QR-Bild je Login",
+      "original": {
+        "path": "toolbox/itc-input/LoginsXlsxToDocxDialog.xaml.vb",
+        "anchor": "link-qr",
+        "line": 371,
+        "sha256": "375f5fd09aa8daa528422a24291827784b24bfeb0aead40f782e5fe785421311"
+      },
+      "implementation": [
+        "src/docx.js"
+      ],
+      "assessment": "difference",
+      "note": "Portable PNG statt originalem BMP; QR-Inhalt und Dokumentbeziehungen geprüft, keine identischen Bildbytes.",
+      "acceptance": "Word: QR-Bild je Login.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "both original Word"
+        },
+        {
+          "kind": "browser",
+          "pattern": "Word"
+        }
+      ]
+    },
+    {
+      "id": "T-22",
+      "app": "itc-ToolBox",
+      "function": "Verarbeitungsmeldungen in Texteditor übernehmen",
+      "original": {
+        "path": "toolbox/itc-input/BookletXlsxDialog.xaml.vb",
+        "anchor": "BtnEditor_Click",
+        "line": 387,
+        "sha256": "149c45c6e26d656794f3cdffabb6dd1b84582c12bbd5d70613e471e7b45b8758"
+      },
+      "implementation": [
+        "src/main.js"
+      ],
+      "assessment": "missing",
+      "note": "Browser zeigt Meldungen an, bietet noch keinen vollständigen Diagnosebericht als Textdownload.",
+      "acceptance": "Fehlerhafte Booklet- und Login-Vorlagen einlesen; sämtliche Meldungen einschließlich Warnungen als Text ausgeben. Im Browser fehlt die entsprechende Ausgabeaktion.",
+      "evidence": []
+    },
+    {
+      "id": "T-23",
+      "app": "itc-ToolBox",
+      "function": "SysCheck-CSV in Excel umwandeln",
+      "original": {
+        "path": "toolbox/itc-output/transformCsv2Xlsx.vb",
+        "anchor": "ToXlsx",
+        "line": 39,
+        "sha256": "e5ec29d98898000e4e42ce6a83475dc125ed615afd4026ceff353d80e681eccc"
+      },
+      "implementation": [
+        "src/toolbox.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "SysCheck-CSV in Excel umwandeln.",
+      "evidence": [
+        {
+          "kind": "windows-files",
+          "pattern": "CSV to Excel:"
+        },
+        {
+          "kind": "node",
+          "file": "tests/compatibility.test.js",
+          "pattern": "CSV preserves"
+        }
+      ]
+    },
+    {
+      "id": "T-24",
+      "app": "itc-ToolBox",
+      "function": "Antwort-CSV historisch 11-spaltig, 2019, 2024",
+      "original": {
+        "path": "toolbox/itc-output/classes/ClassesResponses.vb",
+        "anchor": "ResponsesFileFirstLineLegacy",
+        "line": 11,
+        "sha256": "58583f8edeb000e6766a7e5b08dd976a668730241d1329b4db043c82b9d18c92"
+      },
+      "implementation": [
+        "src/data.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Antwort-CSV historisch 11-spaltig, 2019, 2024.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "legacy 11-column"
+        }
+      ]
+    },
+    {
+      "id": "T-25",
+      "app": "itc-ToolBox",
+      "function": "Toolbox-JSON und rohe Antwort-/Log-Berichte einlesen",
+      "original": {
+        "path": "toolbox/itc-output/JsonReadWrite.vb",
+        "anchor": "ReadFull",
+        "line": 34,
+        "sha256": "9ab98a1e2e9c62c29751835dc5a8d93a4bdb4b4ae0df47168db35cd4b62ebd37"
+      },
+      "implementation": [
+        "src/data.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Toolbox-JSON und rohe Antwort-/Log-Berichte einlesen.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "responses and logs merge"
+        },
+        {
+          "kind": "browser",
+          "pattern": "Antworten"
+        }
+      ]
+    },
+    {
+      "id": "T-26",
+      "app": "itc-ToolBox",
+      "function": "Antworten allein, Logs allein oder beide auswählen",
+      "original": {
+        "path": "toolbox/itc-output/read/readJsonFilesDialog.xaml.vb",
+        "anchor": "readResponses",
+        "line": 3,
+        "sha256": "58315779d19ef41398e9c17830c9a088af1bc57e1df10e18bcf5188b9fb11dca"
+      },
+      "implementation": [
+        "src/extended-ui.js"
+      ],
+      "assessment": "excluded",
+      "note": "Dialog im Quellcode vorhanden, aber aus der ausgelieferten MainWindow-XAML nicht erreichbar. Aktive Datenbankimporte lesen vollständige Daten; kein zusätzlicher historischer Dialog behauptet.",
+      "acceptance": "Antworten allein, Logs allein oder beide auswählen.",
+      "evidence": []
+    },
+    {
+      "id": "T-27",
+      "app": "itc-ToolBox",
+      "function": "Standard-/Aspect-Antwortkonverter",
+      "original": {
+        "path": "toolbox/itc-output/classes/ClassesResponses.vb",
+        "anchor": "Class UnitLineDataResponses",
+        "line": 88,
+        "sha256": "58583f8edeb000e6766a7e5b08dd976a668730241d1329b4db043c82b9d18c92"
+      },
+      "implementation": [
+        "src/data.js"
+      ],
+      "assessment": "implemented",
+      "note": "Dokumentierte Normalisierungen für Nullwerte, JSON-Whitespace, Dezimaltrennzeichen und Zeilenumbrüche beachten.",
+      "acceptance": "Standard-/Aspect-Antwortkonverter.",
+      "evidence": [
+        {
+          "kind": "windows-converters",
+          "pattern": "standard-"
+        },
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "all original response converters"
+        }
+      ]
+    },
+    {
+      "id": "T-28",
+      "app": "itc-ToolBox",
+      "function": "Abi-Unterformulare und Default-Antworten",
+      "original": {
+        "path": "toolbox/itc-output/classes/ClassesResponses.vb",
+        "anchor": "Class UnitLineDataResponses",
+        "line": 88,
+        "sha256": "58583f8edeb000e6766a7e5b08dd976a668730241d1329b4db043c82b9d18c92"
+      },
+      "implementation": [
+        "src/data.js"
+      ],
+      "assessment": "implemented",
+      "note": "Dokumentierte Normalisierungen für Nullwerte, JSON-Whitespace, Dezimaltrennzeichen und Zeilenumbrüche beachten.",
+      "acceptance": "Abi-Unterformulare und Default-Antworten.",
+      "evidence": [
+        {
+          "kind": "windows-converters",
+          "pattern": "abi-"
+        },
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "all original response converters"
+        }
+      ]
+    },
+    {
+      "id": "T-29",
+      "app": "itc-ToolBox",
+      "function": "Dan-Konverter und Meta-Angaben",
+      "original": {
+        "path": "toolbox/itc-output/classes/ClassesResponses.vb",
+        "anchor": "Class UnitLineDataResponses",
+        "line": 88,
+        "sha256": "58583f8edeb000e6766a7e5b08dd976a668730241d1329b4db043c82b9d18c92"
+      },
+      "implementation": [
+        "src/data.js"
+      ],
+      "assessment": "implemented",
+      "note": "Dokumentierte Normalisierungen für Nullwerte, JSON-Whitespace, Dezimaltrennzeichen und Zeilenumbrüche beachten.",
+      "acceptance": "Dan-Konverter und Meta-Angaben.",
+      "evidence": [
+        {
+          "kind": "windows-converters",
+          "pattern": "dan-"
+        },
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "all original response converters"
+        }
+      ]
+    },
+    {
+      "id": "T-30",
+      "app": "itc-ToolBox",
+      "function": "Schlüssel/Wert- und Simple-Konverter",
+      "original": {
+        "path": "toolbox/itc-output/classes/ClassesResponses.vb",
+        "anchor": "Class UnitLineDataResponses",
+        "line": 88,
+        "sha256": "58583f8edeb000e6766a7e5b08dd976a668730241d1329b4db043c82b9d18c92"
+      },
+      "implementation": [
+        "src/data.js"
+      ],
+      "assessment": "implemented",
+      "note": "Dokumentierte Normalisierungen für Nullwerte, JSON-Whitespace, Dezimaltrennzeichen und Zeilenumbrüche beachten.",
+      "acceptance": "Schlüssel/Wert- und Simple-Konverter.",
+      "evidence": [
+        {
+          "kind": "windows-converters",
+          "pattern": "keyvalue-|simple-"
+        },
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "all original response converters"
+        }
+      ]
+    },
+    {
+      "id": "T-31",
+      "app": "itc-ToolBox",
+      "function": "Antworten zeitlich zusammenführen, Identitäten erhalten",
+      "original": {
+        "path": "toolbox/itc-output/globalOutputStore.vb",
+        "anchor": "Class globalOutputStore",
+        "line": 1,
+        "sha256": "c3eeba80fa7c950a508cdc7ffd309f7db0e4a00b975937d0bb994017d7d6a8b6"
+      },
+      "implementation": [
+        "src/data.js"
+      ],
+      "assessment": "difference",
+      "note": "Jüngster Zeitstempel und kollisionsfreie Tupel statt fehleranfälliger Verkettung; alle Logs bleiben erhalten.",
+      "acceptance": "Antworten zeitlich zusammenführen, Identitäten erhalten.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "responses and logs merge"
+        }
+      ]
+    },
+    {
+      "id": "T-32",
+      "app": "itc-ToolBox",
+      "function": "Breites Excel: Unterformulare ignorieren",
+      "original": {
+        "path": "toolbox/itc-output/write/WriteOutputToXlsx.vb",
+        "anchor": "Public Shared Sub Write",
+        "line": 24,
+        "sha256": "ec9665d1a83e09eb3a7ba6c887d1a0f3a07c635a8c9147679b4e587cdade227f"
+      },
+      "implementation": [
+        "src/data.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Breites Excel: Unterformulare ignorieren.",
+      "evidence": [
+        {
+          "kind": "windows-files",
+          "pattern": "Toolbox Excel: none"
+        }
+      ]
+    },
+    {
+      "id": "T-33",
+      "app": "itc-ToolBox",
+      "function": "Breites Excel: Unterformulare als Zeilen",
+      "original": {
+        "path": "toolbox/itc-output/write/WriteOutputToXlsx.vb",
+        "anchor": "Public Shared Sub Write",
+        "line": 24,
+        "sha256": "ec9665d1a83e09eb3a7ba6c887d1a0f3a07c635a8c9147679b4e587cdade227f"
+      },
+      "implementation": [
+        "src/data.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Breites Excel: Unterformulare als Zeilen.",
+      "evidence": [
+        {
+          "kind": "windows-files",
+          "pattern": "Toolbox Excel: rows"
+        }
+      ]
+    },
+    {
+      "id": "T-34",
+      "app": "itc-ToolBox",
+      "function": "Breites Excel: Unterformulare als Spalten",
+      "original": {
+        "path": "toolbox/itc-output/write/WriteOutputToXlsx.vb",
+        "anchor": "Public Shared Sub Write",
+        "line": 24,
+        "sha256": "ec9665d1a83e09eb3a7ba6c887d1a0f3a07c635a8c9147679b4e587cdade227f"
+      },
+      "implementation": [
+        "src/data.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Breites Excel: Unterformulare als Spalten.",
+      "evidence": [
+        {
+          "kind": "windows-files",
+          "pattern": "Toolbox Excel: columns"
+        }
+      ]
+    },
+    {
+      "id": "T-35",
+      "app": "itc-ToolBox",
+      "function": "Excel: Antworten/Status/Codes/Scores einzeln auswählen",
+      "original": {
+        "path": "toolbox/itc-output/write/ToXlsxDialog.xaml",
+        "anchor": "ChBValues",
+        "line": 30,
+        "sha256": "6a89b4b6aabd35bfb3342e46308c2695a09404f68b660bd4f46dadcded0cc70e"
+      },
+      "implementation": [
+        "src/data.js"
+      ],
+      "assessment": "implemented",
+      "note": "Beim Audit korrigiert: ohne ausgewähltes Ausgabeblatt verständlicher Fehler statt leerer Excel-Datei.",
+      "acceptance": "Excel: Antworten/Status/Codes/Scores einzeln auswählen.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/function-matrix.test.js",
+          "pattern": "every Excel sheet toggle"
+        }
+      ]
+    },
+    {
+      "id": "T-36",
+      "app": "itc-ToolBox",
+      "function": "Status DISPLAYED / NOT_REACHED auslassen",
+      "original": {
+        "path": "toolbox/itc-output/JsonReadWrite.vb",
+        "anchor": "ReadResponsesOnly",
+        "line": 56,
+        "sha256": "9ab98a1e2e9c62c29751835dc5a8d93a4bdb4b4ae0df47168db35cd4b62ebd37"
+      },
+      "implementation": [
+        "src/data.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Status DISPLAYED / NOT_REACHED auslassen.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/function-matrix.test.js",
+          "pattern": "every Excel sheet toggle"
+        }
+      ]
+    },
+    {
+      "id": "T-37",
+      "app": "itc-ToolBox",
+      "function": "Antworten als CSV-Langformat exportieren",
+      "original": {
+        "path": "toolbox/itc-output/write/ToCsvDialog.xaml.vb",
+        "anchor": "Class ToCsvDialog",
+        "line": 6,
+        "sha256": "eace22dcf8a14f65cc894a213ecb8a5cf0f6e29f85af249f09a43e54d92d7c2f"
+      },
+      "implementation": [
+        "src/data.js"
+      ],
+      "assessment": "difference",
+      "note": "CSV-Zitate korrekt maskiert; Datumstexte explizit ISO-UTC. Nullkodierungen bleiben im erweiterten Datenmodell von 0 unterscheidbar.",
+      "acceptance": "Antworten als CSV-Langformat exportieren.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "long and multi-session"
+        }
+      ]
+    },
+    {
+      "id": "T-38",
+      "app": "itc-ToolBox",
+      "function": "Sitzungsberichte mit Gerät, Zeiten und Ladegeschwindigkeit",
+      "original": {
+        "path": "toolbox/services/SQLiteConnector.vb",
+        "anchor": "getSessionReports",
+        "line": 590,
+        "sha256": "e21a2238300975ebae24e4262a14da3eec1dc44471c67c2a22178364fc0b21ea"
+      },
+      "implementation": [
+        "src/data.js"
+      ],
+      "assessment": "difference",
+      "note": "Mehrere Sitzungen werden ausgegeben; Millisekunden und Mbit/s korrigiert. Originalfehler werden nicht reproduziert.",
+      "acceptance": "Sitzungsberichte mit Gerät, Zeiten und Ladegeschwindigkeit.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "long and multi-session"
+        }
+      ]
+    },
+    {
+      "id": "T-39",
+      "app": "itc-ToolBox",
+      "function": "Review-Excel mit Kategorien und Units/Testheften",
+      "original": {
+        "path": "toolbox/itc-output/write/WriteReviewsToXlsx.vb",
+        "anchor": "Public Shared Sub Write",
+        "line": 8,
+        "sha256": "4f43bfee9900dc1c8186e4a6f0e2799e4093038e692e51da9b5c9a0f15ee24cd"
+      },
+      "implementation": [
+        "src/data.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Review-Excel mit Kategorien und Units/Testheften.",
+      "evidence": [
+        {
+          "kind": "windows-files",
+          "pattern": "Reviews:"
+        },
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "reviews export"
+        }
+      ]
+    },
+    {
+      "id": "T-40",
+      "app": "itc-ToolBox",
+      "function": "SQLite neu anlegen",
+      "original": {
+        "path": "toolbox/services/SQLiteConnector.vb",
+        "anchor": "Public Sub New",
+        "line": 36,
+        "sha256": "e21a2238300975ebae24e4262a14da3eec1dc44471c67c2a22178364fc0b21ea"
+      },
+      "implementation": [
+        "src/database.js",
+        "src/data.worker.js",
+        "src/extended-ui.js"
+      ],
+      "assessment": "implemented",
+      "note": "Originalformat v2 bleibt möglich; nullable Kodierungen erfordern die ausdrücklich dokumentierte Erweiterung v3.",
+      "acceptance": "SQLite neu anlegen.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "SQLite roundtrip"
+        },
+        {
+          "kind": "windows-files",
+          "pattern": "Windows original reads browser-created database"
+        }
+      ]
+    },
+    {
+      "id": "T-41",
+      "app": "itc-ToolBox",
+      "function": "Original-SQLite öffnen (Version 1 und 2)",
+      "original": {
+        "path": "toolbox/services/SQLiteConnector.vb",
+        "anchor": "Public Sub New",
+        "line": 36,
+        "sha256": "e21a2238300975ebae24e4262a14da3eec1dc44471c67c2a22178364fc0b21ea"
+      },
+      "implementation": [
+        "src/database.js",
+        "src/data.worker.js",
+        "src/extended-ui.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Original-SQLite öffnen (Version 1 und 2).",
+      "evidence": [
+        {
+          "kind": "windows-files",
+          "pattern": "browser reads original-created database"
+        },
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "SQLite v1 string"
+        }
+      ]
+    },
+    {
+      "id": "T-42",
+      "app": "itc-ToolBox",
+      "function": "CSV/JSON/Testcenter-Daten in SQLite importieren",
+      "original": {
+        "path": "toolbox/MainWindow.xaml.vb",
+        "anchor": "HandleImportFromJsonExecuted",
+        "line": 51,
+        "sha256": "2813bfdcda6910ded413482ad2bbf444dd83703485c99a13a18d8e7144eef94c"
+      },
+      "implementation": [
+        "src/database.js",
+        "src/data.worker.js",
+        "src/extended-ui.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "CSV/JSON/Testcenter-Daten in SQLite importieren.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "SQLite imports are idempotent"
+        },
+        {
+          "kind": "browser",
+          "pattern": "SQLite"
+        }
+      ]
+    },
+    {
+      "id": "T-43",
+      "app": "itc-ToolBox",
+      "function": "Importierte Testhefte ergänzen oder ersetzen",
+      "original": {
+        "path": "toolbox/services/SQLiteConnector.vb",
+        "anchor": "addPerson",
+        "line": 296,
+        "sha256": "e21a2238300975ebae24e4262a14da3eec1dc44471c67c2a22178364fc0b21ea"
+      },
+      "implementation": [
+        "src/database.js",
+        "src/data.worker.js",
+        "src/extended-ui.js"
+      ],
+      "assessment": "difference",
+      "note": "Transaktionen und Idempotenz verhindern doppelte Importe; Logs werden mit eingelesen.",
+      "acceptance": "Importierte Testhefte ergänzen oder ersetzen.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "SQLite imports are idempotent"
+        }
+      ]
+    },
+    {
+      "id": "T-44",
+      "app": "itc-ToolBox",
+      "function": "Testheftgrößen aus JSON übernehmen",
+      "original": {
+        "path": "toolbox/services/SQLiteConnector.vb",
+        "anchor": "addBooklets",
+        "line": 464,
+        "sha256": "e21a2238300975ebae24e4262a14da3eec1dc44471c67c2a22178364fc0b21ea"
+      },
+      "implementation": [
+        "src/database.js",
+        "src/data.worker.js",
+        "src/extended-ui.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Testheftgrößen aus JSON übernehmen.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "SQLite roundtrip"
+        },
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "SQLite v1 string"
+        }
+      ]
+    },
+    {
+      "id": "T-45",
+      "app": "itc-ToolBox",
+      "function": "Datenbankzähler und Gruppen anzeigen",
+      "original": {
+        "path": "toolbox/services/SQLiteConnector.vb",
+        "anchor": "WriteDbInfoData",
+        "line": 221,
+        "sha256": "e21a2238300975ebae24e4262a14da3eec1dc44471c67c2a22178364fc0b21ea"
+      },
+      "implementation": [
+        "src/database.js",
+        "src/data.worker.js",
+        "src/extended-ui.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Datenbankzähler und Gruppen anzeigen.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "SQLite roundtrip"
+        },
+        {
+          "kind": "browser",
+          "pattern": "SQLite"
+        }
+      ]
+    },
+    {
+      "id": "T-46",
+      "app": "itc-ToolBox",
+      "function": "Datenbank auf doppelte Personen und Units prüfen",
+      "original": {
+        "path": "toolbox/SqlLiteCheck/SqliteCheckDialog.xaml.vb",
+        "anchor": "Prüfe auf Personen-Dopplungen",
+        "line": 50,
+        "sha256": "cc489893c63c4e7bf5ab2e1d502ba763766bc77e5eba5fa0b76db6f94806073f"
+      },
+      "implementation": [
+        "src/database.js",
+        "src/data.worker.js",
+        "src/extended-ui.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Datenbank auf doppelte Personen und Units prüfen.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "duplicate detection"
+        },
+        {
+          "kind": "node",
+          "file": "tests/function-matrix.test.js",
+          "pattern": "SQLite checks duplicate"
+        }
+      ]
+    },
+    {
+      "id": "T-47",
+      "app": "itc-ToolBox",
+      "function": "SQLite speichern und mit Windows weiterverwenden",
+      "original": {
+        "path": "toolbox/services/SQLiteConnector.vb",
+        "anchor": "getPersonResponses",
+        "line": 538,
+        "sha256": "e21a2238300975ebae24e4262a14da3eec1dc44471c67c2a22178364fc0b21ea"
+      },
+      "implementation": [
+        "src/database.js",
+        "src/data.worker.js",
+        "src/extended-ui.js"
+      ],
+      "assessment": "partial",
+      "note": "Für Originalschema v1/v2 nachgewiesen. Browser-Erweiterung v3 mit nullable Kodierungen ist im Windows-Original nicht lesbar; keine pauschale Kompatibilität aller Dateien.",
+      "acceptance": "Browser-Datei mit Code=null und Code=0 getrennt exportieren; im Original öffnen. Version 3 ist ausdrücklich nicht kompatibel, v1/v2 bleiben separate Vergleichsfälle.",
+      "evidence": [
+        {
+          "kind": "windows-files",
+          "pattern": "Windows original reads browser-created database"
+        }
+      ]
+    },
+    {
+      "id": "T-48",
+      "app": "itc-ToolBox",
+      "function": "Datenbank nach Excel, Antwort-CSV und Sessions ausgeben",
+      "original": {
+        "path": "toolbox/MainWindow.xaml.vb",
+        "anchor": "HandleExportToXlsxExecuted",
+        "line": 55,
+        "sha256": "2813bfdcda6910ded413482ad2bbf444dd83703485c99a13a18d8e7144eef94c"
+      },
+      "implementation": [
+        "src/database.js",
+        "src/data.worker.js",
+        "src/extended-ui.js"
+      ],
+      "assessment": "implemented",
+      "note": "",
+      "acceptance": "Datenbank nach Excel, Antwort-CSV und Sessions ausgeben.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "wide workbooks"
+        },
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "long and multi-session"
+        }
+      ]
+    },
+    {
+      "id": "T-49",
+      "app": "itc-ToolBox",
+      "function": "Testcenter: normale Administratoranmeldung",
+      "original": {
+        "path": "toolbox/services/ReadTC.vb",
+        "anchor": "Class ReadTC",
+        "line": 4,
+        "sha256": "4fb1800ec6d34b2585a372fb5ded6cda871ac9377beb8d3796a03c1c384d168d"
+      },
+      "implementation": [
+        "src/testcenter.js",
+        "src/extended-ui.js"
+      ],
+      "assessment": "implemented",
+      "note": "Eigene API-Vertragstests und früherer echter Testcenter-19.0.1-Lauf; kein direkter Windows-Netzwerkvergleich desselben Servers.",
+      "acceptance": "Testcenter: normale Administratoranmeldung.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "Testcenter plain authentication"
+        }
+      ]
+    },
+    {
+      "id": "T-50",
+      "app": "itc-ToolBox",
+      "function": "Testcenter: Arbeitsbereiche lesen und auswählen",
+      "original": {
+        "path": "toolbox/services/ReadTC.vb",
+        "anchor": "Class ReadTC",
+        "line": 4,
+        "sha256": "4fb1800ec6d34b2585a372fb5ded6cda871ac9377beb8d3796a03c1c384d168d"
+      },
+      "implementation": [
+        "src/testcenter.js",
+        "src/extended-ui.js"
+      ],
+      "assessment": "implemented",
+      "note": "Eigene API-Vertragstests und früherer echter Testcenter-19.0.1-Lauf; kein direkter Windows-Netzwerkvergleich desselben Servers.",
+      "acceptance": "Testcenter: Arbeitsbereiche lesen und auswählen.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "Testcenter plain authentication"
+        }
+      ]
+    },
+    {
+      "id": "T-51",
+      "app": "itc-ToolBox",
+      "function": "Testcenter: Gruppen einzeln/alle auswählen",
+      "original": {
+        "path": "toolbox/services/ReadTC.vb",
+        "anchor": "Class ReadTC",
+        "line": 4,
+        "sha256": "4fb1800ec6d34b2585a372fb5ded6cda871ac9377beb8d3796a03c1c384d168d"
+      },
+      "implementation": [
+        "src/testcenter.js",
+        "src/extended-ui.js"
+      ],
+      "assessment": "implemented",
+      "note": "Historischer echter UI-Lauf; die aktuelle Gruppenoberfläche wurde in diesem Audit noch nicht erneut direkt mit Windows verglichen.",
+      "acceptance": "Testcenter: Gruppen einzeln/alle auswählen.",
+      "evidence": [
+        {
+          "kind": "historical-browser",
+          "path": "tests/results/pilot-chromium.json",
+          "pattern": "Einzelgruppen"
+        }
+      ]
+    },
+    {
+      "id": "T-52",
+      "app": "itc-ToolBox",
+      "function": "Testcenter: Antworten und Logs abrufen",
+      "original": {
+        "path": "toolbox/services/ReadTC.vb",
+        "anchor": "Class ReadTC",
+        "line": 4,
+        "sha256": "4fb1800ec6d34b2585a372fb5ded6cda871ac9377beb8d3796a03c1c384d168d"
+      },
+      "implementation": [
+        "src/testcenter.js",
+        "src/extended-ui.js"
+      ],
+      "assessment": "implemented",
+      "note": "Eigene API-Vertragstests und früherer echter Testcenter-19.0.1-Lauf; kein direkter Windows-Netzwerkvergleich desselben Servers.",
+      "acceptance": "Testcenter: Antworten und Logs abrufen.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/testcenter-regressions.test.js",
+          "pattern": "real Testcenter"
+        }
+      ]
+    },
+    {
+      "id": "T-53",
+      "app": "itc-ToolBox",
+      "function": "Testcenter: Original-Antwort- und Log-CSV",
+      "original": {
+        "path": "toolbox/services/ReadTC.vb",
+        "anchor": "Class ReadTC",
+        "line": 4,
+        "sha256": "4fb1800ec6d34b2585a372fb5ded6cda871ac9377beb8d3796a03c1c384d168d"
+      },
+      "implementation": [
+        "src/testcenter.js",
+        "src/extended-ui.js"
+      ],
+      "assessment": "implemented",
+      "note": "Eigene API-Vertragstests und früherer echter Testcenter-19.0.1-Lauf; kein direkter Windows-Netzwerkvergleich desselben Servers.",
+      "acceptance": "Testcenter: Original-Antwort- und Log-CSV.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "Testcenter CSV combines"
+        }
+      ]
+    },
+    {
+      "id": "T-54",
+      "app": "itc-ToolBox",
+      "function": "Testcenter: Reviews nach Excel",
+      "original": {
+        "path": "toolbox/services/ReadTC.vb",
+        "anchor": "Class ReadTC",
+        "line": 4,
+        "sha256": "4fb1800ec6d34b2585a372fb5ded6cda871ac9377beb8d3796a03c1c384d168d"
+      },
+      "implementation": [
+        "src/testcenter.js",
+        "src/extended-ui.js"
+      ],
+      "assessment": "implemented",
+      "note": "Eigene API-Vertragstests und früherer echter Testcenter-19.0.1-Lauf; kein direkter Windows-Netzwerkvergleich desselben Servers.",
+      "acceptance": "Testcenter: Reviews nach Excel.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "reviews export"
+        }
+      ]
+    },
+    {
+      "id": "T-55",
+      "app": "itc-ToolBox",
+      "function": "Testcenter: JSON je Ergebnisgruppe",
+      "original": {
+        "path": "toolbox/services/ReadTC.vb",
+        "anchor": "Class ReadTC",
+        "line": 4,
+        "sha256": "4fb1800ec6d34b2585a372fb5ded6cda871ac9377beb8d3796a03c1c384d168d"
+      },
+      "implementation": [
+        "src/testcenter.js",
+        "src/extended-ui.js"
+      ],
+      "assessment": "implemented",
+      "note": "Eigene API-Vertragstests und früherer echter Testcenter-19.0.1-Lauf; kein direkter Windows-Netzwerkvergleich desselben Servers.",
+      "acceptance": "Testcenter: JSON je Ergebnisgruppe.",
+      "evidence": [
+        {
+          "kind": "browser",
+          "pattern": "gruppiertes JSON"
+        }
+      ]
+    },
+    {
+      "id": "T-56",
+      "app": "itc-ToolBox",
+      "function": "Testcenter: direktes Excel und SQLite-Import",
+      "original": {
+        "path": "toolbox/services/ReadTC.vb",
+        "anchor": "Class ReadTC",
+        "line": 4,
+        "sha256": "4fb1800ec6d34b2585a372fb5ded6cda871ac9377beb8d3796a03c1c384d168d"
+      },
+      "implementation": [
+        "src/testcenter.js",
+        "src/extended-ui.js"
+      ],
+      "assessment": "implemented",
+      "note": "Eigene API-Vertragstests und früherer echter Testcenter-19.0.1-Lauf; kein direkter Windows-Netzwerkvergleich desselben Servers.",
+      "acceptance": "Testcenter: direktes Excel und SQLite-Import.",
+      "evidence": [
+        {
+          "kind": "browser",
+          "pattern": "SQLite"
+        }
+      ]
+    },
+    {
+      "id": "T-57",
+      "app": "itc-ToolBox",
+      "function": "Testcenter: Dateien mit HTML-Index herunterladen",
+      "original": {
+        "path": "toolbox/services/ReadTC.vb",
+        "anchor": "Class ReadTC",
+        "line": 4,
+        "sha256": "4fb1800ec6d34b2585a372fb5ded6cda871ac9377beb8d3796a03c1c384d168d"
+      },
+      "implementation": [
+        "src/testcenter.js",
+        "src/extended-ui.js"
+      ],
+      "assessment": "implemented",
+      "note": "Eigene API-Vertragstests und früherer echter Testcenter-19.0.1-Lauf; kein direkter Windows-Netzwerkvergleich desselben Servers.",
+      "acceptance": "Testcenter: Dateien mit HTML-Index herunterladen.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "Testcenter dependencies"
+        }
+      ]
+    },
+    {
+      "id": "T-58",
+      "app": "itc-ToolBox",
+      "function": "Testcenter: Ressourcenabhängigkeiten und Testheftgrößen",
+      "original": {
+        "path": "toolbox/services/ReadTC.vb",
+        "anchor": "Class ReadTC",
+        "line": 4,
+        "sha256": "4fb1800ec6d34b2585a372fb5ded6cda871ac9377beb8d3796a03c1c384d168d"
+      },
+      "implementation": [
+        "src/testcenter.js",
+        "src/extended-ui.js"
+      ],
+      "assessment": "implemented",
+      "note": "Eigene API-Vertragstests und früherer echter Testcenter-19.0.1-Lauf; kein direkter Windows-Netzwerkvergleich desselben Servers.",
+      "acceptance": "Testcenter: Ressourcenabhängigkeiten und Testheftgrößen.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "Testcenter dependencies"
+        }
+      ]
+    },
+    {
+      "id": "T-59",
+      "app": "itc-ToolBox",
+      "function": "Testcenter: gespeicherte Zugangsdaten wiederverwenden",
+      "original": {
+        "path": "toolbox/services/itc-connection.vb",
+        "anchor": "Class ITCConnection",
+        "line": 5,
+        "sha256": "d7c24cd4dd7872915020cb3cf81af3dc07ccde3dac809fd6d299968482451d0e"
+      },
+      "implementation": [
+        "src/testcenter.js",
+        "src/extended-ui.js"
+      ],
+      "assessment": "difference",
+      "note": "Browser hält Zugangsdaten/Token ausschließlich im Arbeitsspeicher; kein dauerhaftes Speichern von Kennwörtern wie in Windows-Einstellungen.",
+      "acceptance": "Testcenter: gespeicherte Zugangsdaten wiederverwenden.",
+      "evidence": []
+    },
+    {
+      "id": "T-60",
+      "app": "itc-ToolBox",
+      "function": "Langläufer abbrechen und Fortschritt anzeigen",
+      "original": {
+        "path": "toolbox/itc-input/BookletXlsxDialog.xaml.vb",
+        "anchor": "CancellationPending",
+        "line": 133,
+        "sha256": "149c45c6e26d656794f3cdffabb6dd1b84582c12bbd5d70613e471e7b45b8758"
+      },
+      "implementation": [
+        "src/extended-ui.js",
+        "src/worker-client.js"
+      ],
+      "assessment": "partial",
+      "note": "Worker/Word/Testcenter abbrechbar; Codes-/Booklet-/Login-Xlsx im Hauptthread bisher ohne eigenen Abbruchknopf.",
+      "acceptance": "Codes, große Booklet- und Login-Tabellen starten und abbrechen; Reaktionszeit und Unverändertheit des bisherigen Ergebnisses mit Windows vergleichen.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "cancellation aborts generation"
+        },
+        {
+          "kind": "node",
+          "file": "tests/testcenter-regressions.test.js",
+          "pattern": "bounded challenge"
+        }
+      ]
+    },
+    {
+      "id": "T-61",
+      "app": "itc-ToolBox",
+      "function": "Programm schließen und Dateipfade merken",
+      "original": {
+        "path": "toolbox/MainWindow.xaml.vb",
+        "anchor": "HandleAppExitExecuted",
+        "line": 49,
+        "sha256": "2813bfdcda6910ded413482ad2bbf444dd83703485c99a13a18d8e7144eef94c"
+      },
+      "implementation": [
+        "src/main.js"
+      ],
+      "assessment": "difference",
+      "note": "Browser-Tab schließen; Dateien müssen nach Neuladen erneut ausgewählt werden. Browser darf keine beliebigen Windows-Verzeichnisse öffnen oder überschreiben.",
+      "acceptance": "Programm schließen und Dateipfade merken.",
+      "evidence": []
+    },
+    {
+      "id": "T-62",
+      "app": "itc-ToolBox",
+      "function": "Deaktivierte Datenbankkopie und DB-JSON-Export",
+      "original": {
+        "path": "toolbox/MainWindow.xaml",
+        "anchor": "AppCommands.DBCopyTo",
+        "line": 231,
+        "sha256": "011ce426952358a15acf19cfbef6acfdf0a1beff444ecf4ffb0fdcdbcebab036"
+      },
+      "implementation": [
+        "src/database.js",
+        "src/data.worker.js",
+        "src/extended-ui.js"
+      ],
+      "assessment": "excluded",
+      "note": "In Original-XAML auskommentiert und CanExecuteFalse; nicht als aktive fehlende Funktion gezählt.",
+      "acceptance": "Deaktivierte Datenbankkopie und DB-JSON-Export.",
+      "evidence": []
+    },
+    {
+      "id": "T-63",
+      "app": "itc-ToolBox",
+      "function": "Entwicklerkommando Strg+Y",
+      "original": {
+        "path": "toolbox/MainWindow.xaml.vb",
+        "anchor": "HandleDevTriggerExecuted",
+        "line": 61,
+        "sha256": "2813bfdcda6910ded413482ad2bbf444dd83703485c99a13a18d8e7144eef94c"
+      },
+      "implementation": [
+        "src/main.js"
+      ],
+      "assessment": "excluded",
+      "note": "Nur für internen Windows-Benutzernamen mechtelm; kein allgemeiner Produktionsauftrag.",
+      "acceptance": "Entwicklerkommando Strg+Y.",
+      "evidence": []
+    },
+    {
+      "id": "X-01",
+      "app": "Zusätzlich",
+      "function": "Offline-Dateiverarbeitung und PWA-Cache",
+      "original": {
+        "path": "toolbox/MainWindow.xaml.vb",
+        "anchor": "Class MainWindow",
+        "line": 2,
+        "sha256": "2813bfdcda6910ded413482ad2bbf444dd83703485c99a13a18d8e7144eef94c"
+      },
+      "implementation": [
+        "scripts/build.mjs"
+      ],
+      "assessment": "extension",
+      "note": "IndexedDB aktuell geprüft; Offline-Wiederherstellung ist durch frühere Tests belegt. PWA-Installation auf realen Geräten bleibt offen.",
+      "acceptance": "Offline-Dateiverarbeitung und PWA-Cache.",
+      "evidence": [
+        {
+          "kind": "browser",
+          "pattern": "IndexedDB"
+        }
+      ]
+    },
+    {
+      "id": "X-02",
+      "app": "Zusätzlich",
+      "function": "Testcenter-Challenge und serverseitige Abmeldung",
+      "original": {
+        "path": "toolbox/MainWindow.xaml.vb",
+        "anchor": "Class MainWindow",
+        "line": 2,
+        "sha256": "2813bfdcda6910ded413482ad2bbf444dd83703485c99a13a18d8e7144eef94c"
+      },
+      "implementation": [
+        "src/testcenter.js"
+      ],
+      "assessment": "extension",
+      "note": "Zusätzliche Unterstützung der aktuellen Testcenter-API.",
+      "acceptance": "Testcenter-Challenge und serverseitige Abmeldung.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/testcenter-regressions.test.js",
+          "pattern": "server logout"
+        }
+      ]
+    },
+    {
+      "id": "X-03",
+      "app": "Zusätzlich",
+      "function": "Coding-Box-SQLite vollständig und bytegleich zurückgeben",
+      "original": {
+        "path": "toolbox/MainWindow.xaml.vb",
+        "anchor": "Class MainWindow",
+        "line": 2,
+        "sha256": "2813bfdcda6910ded413482ad2bbf444dd83703485c99a13a18d8e7144eef94c"
+      },
+      "implementation": [
+        "src/coding-box-database.js"
+      ],
+      "assessment": "extension",
+      "note": "Zusatzfunktion; synthetische Sicherungen, kein Windows-Originalformat.",
+      "acceptance": "Coding-Box-SQLite vollständig und bytegleich zurückgeben.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/coding-box-database.test.js",
+          "pattern": "snapshots open"
+        }
+      ]
+    },
+    {
+      "id": "X-04",
+      "app": "Zusätzlich",
+      "function": "Coding-Box v1/v2/v3 wählen und nullable Kodierung erhalten",
+      "original": {
+        "path": "toolbox/MainWindow.xaml.vb",
+        "anchor": "Class MainWindow",
+        "line": 2,
+        "sha256": "2813bfdcda6910ded413482ad2bbf444dd83703485c99a13a18d8e7144eef94c"
+      },
+      "implementation": [
+        "src/coding-box-database.js"
+      ],
+      "assessment": "extension",
+      "note": "Getrennt vom Format der itc-ToolBox bewertet.",
+      "acceptance": "Coding-Box v1/v2/v3 wählen und nullable Kodierung erhalten.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/coding-box-database.test.js",
+          "pattern": "explicit versions"
+        }
+      ]
+    },
+    {
+      "id": "X-05",
+      "app": "Zusätzlich",
+      "function": "Coding-Box v3 explizit aktualisieren und Historie bewahren",
+      "original": {
+        "path": "toolbox/MainWindow.xaml.vb",
+        "anchor": "Class MainWindow",
+        "line": 2,
+        "sha256": "2813bfdcda6910ded413482ad2bbf444dd83703485c99a13a18d8e7144eef94c"
+      },
+      "implementation": [
+        "src/coding-box-database.js"
+      ],
+      "assessment": "extension",
+      "note": "Keine Änderung an v1/v2 oder Jobs.",
+      "acceptance": "Coding-Box v3 explizit aktualisieren und Historie bewahren.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/coding-box-database.test.js",
+          "pattern": "explicit v3 grade"
+        }
+      ]
+    },
+    {
+      "id": "X-06",
+      "app": "Zusätzlich",
+      "function": "SQLite-Antworten und Logs filtern und seitenweise ansehen",
+      "original": {
+        "path": "toolbox/MainWindow.xaml.vb",
+        "anchor": "Class MainWindow",
+        "line": 2,
+        "sha256": "2813bfdcda6910ded413482ad2bbf444dd83703485c99a13a18d8e7144eef94c"
+      },
+      "implementation": [
+        "src/database-view.js"
+      ],
+      "assessment": "extension",
+      "note": "Zusatzfunktion, aktuell mit Modultests geprüft.",
+      "acceptance": "SQLite-Antworten und Logs filtern und seitenweise ansehen.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/database-view.test.js",
+          "pattern": "inspection"
+        }
+      ]
+    },
+    {
+      "id": "X-07",
+      "app": "Zusätzlich",
+      "function": "Zusätzliche JSON-Gruppen-/Sitzungs-Xlsx-/Word-je-Gruppe-Ausgabe",
+      "original": {
+        "path": "toolbox/MainWindow.xaml.vb",
+        "anchor": "Class MainWindow",
+        "line": 2,
+        "sha256": "2813bfdcda6910ded413482ad2bbf444dd83703485c99a13a18d8e7144eef94c"
+      },
+      "implementation": [
+        "src/data.worker.js",
+        "src/docx.js"
+      ],
+      "assessment": "extension",
+      "note": "Nicht Bestandteil einer strikten Windows-Gleichheitszusage.",
+      "acceptance": "Zusätzliche JSON-Gruppen-/Sitzungs-Xlsx-/Word-je-Gruppe-Ausgabe.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/extended.test.js",
+          "pattern": "custom DOCX table"
+        }
+      ]
+    },
+    {
+      "id": "T-64",
+      "app": "itc-ToolBox",
+      "function": "Programm-Info und Hilfe",
+      "original": {
+        "path": "toolbox/MainWindow.xaml.vb",
+        "anchor": "HandleHelpExecuted",
+        "line": 58,
+        "sha256": "2813bfdcda6910ded413482ad2bbf444dd83703485c99a13a18d8e7144eef94c"
+      },
+      "implementation": [
+        "src/main.js",
+        "src/extended-ui.js"
+      ],
+      "assessment": "partial",
+      "note": "Funktionsumfang und Quellen vorhanden; originale Hilfethemen und Info-Fenster nicht identisch.",
+      "acceptance": "Original-Programmhilfe und Versions-/Lizenzinfo öffnen und mit dem Browserdialog vergleichen.",
+      "evidence": []
+    },
+    {
+      "id": "T-65",
+      "app": "itc-ToolBox",
+      "function": "Voreinstellungen der Login-/XML- und Excel-Dialoge",
+      "original": {
+        "path": "toolbox/MainWindow.xaml.vb",
+        "anchor": "HandleHelpExecuted",
+        "line": 58,
+        "sha256": "2813bfdcda6910ded413482ad2bbf444dd83703485c99a13a18d8e7144eef94c"
+      },
+      "implementation": [
+        "src/main.js",
+        "src/extended-ui.js"
+      ],
+      "assessment": "difference",
+      "note": "Abweichende Browser-Startwerte: Logins neu/XML/Testleitung aktiv, Kennwortlänge 3, gemeinsame XML. Windows: vorhandene Logins behalten (außer leerer Tabelle), XML/Testleitung zunächst aus, Kennwortlänge 0, getrennte XML. Excel startet im Browser mit vier Blättern/Unterformularzeilen; Windows mit Antwortwerten/ohne Unterformulare.",
+      "acceptance": "Frisch gestartete Programme ohne vorherige Einstellungen öffnen; alle Login-, XML- und Excel-Startwerte aus der Notiz einzeln protokollieren.",
+      "evidence": []
+    }
+  ],
+  "entrypoints": {
+    "BtnBookletXlsx_Click": "T-03",
+    "BtnLoginPoolXlsx_Click": "T-01",
+    "BtnLoginXlsxTemplate_Click": "T-08",
+    "BtnLoginXlsxToDocx_Click": "T-18",
+    "BtnDownloadContent_Click": "T-57",
+    "BtnSysCheck_Click": "T-23",
+    "BtnGetTestcenterReviewsData_Click": "T-54",
+    "BtnTestcenterToJson_Click": "T-55",
+    "BtnTestcenterToXlsx_Click": "T-56",
+    "BtnTestcenterToCsvResponses_Click": "T-53",
+    "BtnTestcenterToCsvLogs_Click": "T-53",
+    "BtnTestCsvToXlsx_Click": "T-24",
+    "local:AppCommands.DBNew": "T-40",
+    "local:AppCommands.DBOpen": "T-41",
+    "local:AppCommands.DBCheck": "T-46",
+    "local:AppCommands.AppExit": "T-61",
+    "local:AppCommands.ImportFromTestcenter": "T-42",
+    "local:AppCommands.ImportFromJson": "T-42",
+    "local:AppCommands.ImportBookletsFromJson": "T-44",
+    "local:AppCommands.ImportFromCsv": "T-42",
+    "local:AppCommands.ExportToXlsx": "T-48",
+    "local:AppCommands.ExportResponsesToCsv": "T-37",
+    "local:AppCommands.ExportSessionsToCsv": "T-38"
+  },
+  "limitations": [
+    "Keine pauschale vollständige Gleichwertigkeit; Quellenabgleich und Prüfungen gelten für den angegebenen Versionsstand.",
+    "Die neue lokale Coding-Box-Erweiterung ist getrennt vom Windows-Funktionsumfang aufgeführt.",
+    "Firefox konnte in diesem Audit wegen Zeitüberschreitung der nativen Computersteuerung noch nicht erneut geprüft werden; ältere Firefox-Berichte bleiben historische Nachweise."
+  ]
+}

@@ -1,0 +1,4472 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-31",
+  "scope": "Erreichbare Nutzerfunktionen der beiden Originalprogramme; ergänzende Dateiformate, Tastaturpfade und Datenverarbeitung. Bibliothekseditoren anderer Programme und deaktivierte Entwicklungsfunktionen sind ausdrücklich ausgenommen. Keine Aussage über alle möglichen Eingabedaten oder internen Codepfade.",
+  "note": "Inventar ist eine Such- und Prüfgrundlage, kein Ausführungsnachweis. Methoden enthalten auch Hilfsfunktionen. Deaktivierte Controls/Kommandos sind nicht automatisch aktive Arbeitsaufträge.",
+  "files": [
+    {
+      "path": "coding/Application.cs",
+      "sha256": "2174bb02685beb9327196fd160c06b674fc52449289ca2159c40d15cedbea6f8",
+      "lines": 39,
+      "methods": [
+        {
+          "line": 25,
+          "signature": "public void InitializeComponent()"
+        },
+        {
+          "line": 33,
+          "signature": "public static void Main()"
+        }
+      ]
+    },
+    {
+      "path": "coding/CaseList.cs",
+      "sha256": "fb3816a0c2d3bdbb0950e703d3379e707a5ed25073a6b62f3dac3fdbc5c62f8b",
+      "lines": 470,
+      "methods": [
+        {
+          "line": 34,
+          "signature": "internal string _Lambda_0024__32_002D1(XElement xc)"
+        },
+        {
+          "line": 40,
+          "signature": "internal string _Lambda_0024__32_002D3(XElement xc)"
+        },
+        {
+          "line": 64,
+          "signature": "internal bool _Lambda_0024__0(XElement xc)"
+        },
+        {
+          "line": 70,
+          "signature": "internal bool _Lambda_0024__2(XElement xc)"
+        },
+        {
+          "line": 184,
+          "signature": "public void UpdateLastCodedCaseNumber()"
+        },
+        {
+          "line": 207,
+          "signature": "public void PreviousCase()"
+        },
+        {
+          "line": 218,
+          "signature": "public void NextCase()"
+        },
+        {
+          "line": 229,
+          "signature": "public int SetVarGroupCode(string KeyCodeStr)"
+        },
+        {
+          "line": 431,
+          "signature": "public XDocument ResultsToXDoc()"
+        },
+        {
+          "line": 466,
+          "signature": "internal void NotifyPropertyChanged(string info)"
+        }
+      ]
+    },
+    {
+      "path": "coding/CaseNavigateDialog.xaml",
+      "sha256": "a1bfdf68d9c0beb5be0563e7428c41f1068043da1a69fea21a8301b810e5b4a9",
+      "lines": 68,
+      "methods": []
+    },
+    {
+      "path": "coding/CaseNavigateDialog.xaml.cs",
+      "sha256": "dbb4faaedc1de87df78e4d51311b5958df9f1bf4c9b7fdc6c2bb499ebd0e821c",
+      "lines": 95,
+      "methods": [
+        {
+          "line": 52,
+          "signature": "private void Me_Loaded()"
+        },
+        {
+          "line": 57,
+          "signature": "private void BtnOK_Click(object sender, RoutedEventArgs e)"
+        },
+        {
+          "line": 72,
+          "signature": "public void System_Windows_Markup_IComponentConnector_Connect(int connectionId, object target)"
+        }
+      ]
+    },
+    {
+      "path": "coding/CodeListUserControl.xaml",
+      "sha256": "54e1e3dc73de6255458da5acf393bcacb76f21914040e2dbab0d9b281319348c",
+      "lines": 211,
+      "methods": []
+    },
+    {
+      "path": "coding/CodeListUserControl.xaml.cs",
+      "sha256": "7cbdc1cf6b74aca0fbbc3ea5d27fdf32be2e0e71aa69ee6aee04bb7298d886e9",
+      "lines": 243,
+      "methods": [
+        {
+          "line": 114,
+          "signature": "public void SetCode(string KeyCodeStr)"
+        },
+        {
+          "line": 130,
+          "signature": "private void Me_DataContextChanged()"
+        },
+        {
+          "line": 139,
+          "signature": "private void CodePropertyChanged(object sender, PropertyChangedEventArgs e)"
+        },
+        {
+          "line": 144,
+          "signature": "private void Me_GotFocus(object sender, RoutedEventArgs e)"
+        },
+        {
+          "line": 157,
+          "signature": "private void ICCodes_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)"
+        },
+        {
+          "line": 170,
+          "signature": "private void ICCodes_KeyDown(object sender, KeyEventArgs e)"
+        },
+        {
+          "line": 224,
+          "signature": "public void System_Windows_Markup_IComponentConnector_Connect(int connectionId, object target)"
+        }
+      ]
+    },
+    {
+      "path": "coding/Coding.cs",
+      "sha256": "f69bddc1b9a1af2662a8a7e6942a59f577eb64e180cfd44b1b635aa4741eb029",
+      "lines": 94,
+      "methods": [
+        {
+          "line": 90,
+          "signature": "internal void NotifyPropertyChanged(string info)"
+        }
+      ]
+    },
+    {
+      "path": "coding/Codings.cs",
+      "sha256": "157c3475db348737920f95f353b86c249afe01d2006b344a432cba8f93f7ec57",
+      "lines": 40,
+      "methods": [
+        {
+          "line": 15,
+          "signature": "public List<XElement> ResultsToXML()"
+        }
+      ]
+    },
+    {
+      "path": "coding/InputCoderNameDialog.xaml",
+      "sha256": "492b45c18ed57d376921bc97e3b0d448d520e3c060bb4dab5910c5341bb526e0",
+      "lines": 19,
+      "methods": []
+    },
+    {
+      "path": "coding/InputCoderNameDialog.xaml.cs",
+      "sha256": "7fbaac77be08a10d1787f405f3c753a0fe4885f4bd15ceb1aadbfbab27d89443",
+      "lines": 84,
+      "methods": [
+        {
+          "line": 46,
+          "signature": "private void Me_Loaded()"
+        },
+        {
+          "line": 52,
+          "signature": "private void BtnOK_Click(object sender, RoutedEventArgs e)"
+        },
+        {
+          "line": 61,
+          "signature": "public void System_Windows_Markup_IComponentConnector_Connect(int connectionId, object target)"
+        }
+      ]
+    },
+    {
+      "path": "coding/InputGeneralCommentDialog.xaml",
+      "sha256": "cb1bd8dd0df3ab7b8263406a234e1de155e2524bf611507715879fc11ea2aa93",
+      "lines": 19,
+      "methods": []
+    },
+    {
+      "path": "coding/InputGeneralCommentDialog.xaml.cs",
+      "sha256": "aa3618d2d58e2ef89612bb1876602d7acdd87c69aceb7941c3dd4bcd3bff1ea3",
+      "lines": 84,
+      "methods": [
+        {
+          "line": 46,
+          "signature": "private void Me_Loaded()"
+        },
+        {
+          "line": 52,
+          "signature": "private void BtnOK_Click(object sender, RoutedEventArgs e)"
+        },
+        {
+          "line": 61,
+          "signature": "public void System_Windows_Markup_IComponentConnector_Connect(int connectionId, object target)"
+        }
+      ]
+    },
+    {
+      "path": "coding/JobDefInfo.cs",
+      "sha256": "b10b00dd2cd59652c7bdf8906bf1768faacb5f1d7df0cc89fadf11ae8c9228c2",
+      "lines": 75,
+      "methods": [
+        {
+          "line": 71,
+          "signature": "internal void NotifyPropertyChanged(string info)"
+        }
+      ]
+    },
+    {
+      "path": "coding/MainWindow.xaml",
+      "sha256": "2143f15a9fcc27864cdb4c05c83a3da40142bcfb264a012a5ea7c23ac41acd9e",
+      "lines": 142,
+      "methods": []
+    },
+    {
+      "path": "coding/MainWindow.xaml.cs",
+      "sha256": "05098ca438c3738f0a8d2e2bf7325bd7157e8965089ede984583afe3dda56003",
+      "lines": 648,
+      "methods": [
+        {
+          "line": 110,
+          "signature": "private void MainApplication_Loaded(object sender, RoutedEventArgs e)"
+        },
+        {
+          "line": 186,
+          "signature": "private void HandleHelpExecuted(object sender, ExecutedRoutedEventArgs e)"
+        },
+        {
+          "line": 194,
+          "signature": "private void HandleOpenExecuted(object sender, ExecutedRoutedEventArgs e)"
+        },
+        {
+          "line": 262,
+          "signature": "private void CBJobs_SelectionChanged()"
+        },
+        {
+          "line": 297,
+          "signature": "private void HandleSaveExecuted(object sender, ExecutedRoutedEventArgs e)"
+        },
+        {
+          "line": 317,
+          "signature": "private void HandleGoToPageExecuted(object sender, ExecutedRoutedEventArgs e)"
+        },
+        {
+          "line": 347,
+          "signature": "private bool HandleGoToPageCanExecute(object sender, CanExecuteRoutedEventArgs e)"
+        },
+        {
+          "line": 353,
+          "signature": "private void HandleNextPageExecuted(object sender, ExecutedRoutedEventArgs e)"
+        },
+        {
+          "line": 369,
+          "signature": "private bool HandleNextPageCanExecute(object sender, CanExecuteRoutedEventArgs e)"
+        },
+        {
+          "line": 375,
+          "signature": "private void HandlePreviousPageExecuted(object sender, ExecutedRoutedEventArgs e)"
+        },
+        {
+          "line": 380,
+          "signature": "private bool HandlePreviousPageCanExecute(object sender, CanExecuteRoutedEventArgs e)"
+        },
+        {
+          "line": 386,
+          "signature": "private void CBJobs_DropDownOpened(object sender, EventArgs e)"
+        },
+        {
+          "line": 398,
+          "signature": "private void HandleGlobalCommentExecuted(object sender, ExecutedRoutedEventArgs e)"
+        },
+        {
+          "line": 415,
+          "signature": "private bool HandleGlobalCommentCanExecute(object sender, CanExecuteRoutedEventArgs e)"
+        },
+        {
+          "line": 421,
+          "signature": "private void ChangeCoderName()"
+        },
+        {
+          "line": 439,
+          "signature": "private void Me_KeyDown(object sender, KeyEventArgs e)"
+        },
+        {
+          "line": 446,
+          "signature": "private void Me_KeyUp(object sender, KeyEventArgs e)"
+        },
+        {
+          "line": 602,
+          "signature": "internal Delegate _CreateDelegate(Type delegateType, string handler)"
+        },
+        {
+          "line": 610,
+          "signature": "public void System_Windows_Markup_IComponentConnector_Connect(int connectionId, object target)"
+        }
+      ]
+    },
+    {
+      "path": "coding/MySettings.cs",
+      "sha256": "c059f9f155e21563d262c00831ecfafeb77277e1a8df3c26f2d39ac46b945bef",
+      "lines": 63,
+      "methods": []
+    },
+    {
+      "path": "coding/SelectedCodeBrushConverter.cs",
+      "sha256": "fc37ddbf075ea2c167ed791ec51eea9a39cafbd567b4c0afd9a60fba478a92c0",
+      "lines": 25,
+      "methods": [
+        {
+          "line": 12,
+          "signature": "public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)"
+        }
+      ]
+    },
+    {
+      "path": "scans/Commands.cs",
+      "sha256": "1be45dc02c638dd1bb87bb01aa86353b669f45ee0b1e168f9fe37992da671548",
+      "lines": 44,
+      "methods": []
+    },
+    {
+      "path": "scans/CopyToClipboardCanvas.cs",
+      "sha256": "bf5ca8d1131935901369c6995932c0afa9a8b0941671ce62dad15c1002a112ac",
+      "lines": 146,
+      "methods": [
+        {
+          "line": 24,
+          "signature": "private void InitializeComponent()"
+        },
+        {
+          "line": 98,
+          "signature": "private void HandleCopyButtonClicked(object sender, RoutedEventArgs e)"
+        },
+        {
+          "line": 138,
+          "signature": "private void HandleCancelButtonClicked(object sender, RoutedEventArgs e)"
+        }
+      ]
+    },
+    {
+      "path": "scans/EditJobOptionsUserControl.xaml",
+      "sha256": "b1e607af08f363b4a1b6ea902a9055412af5301730b4e96191e0d54c1ab5278d",
+      "lines": 87,
+      "methods": []
+    },
+    {
+      "path": "scans/EditJobOptionsUserControl.xaml.cs",
+      "sha256": "6670153e6fc4026592fcb8cb152e04a8c17b564506612c311fc600c61c58b29d",
+      "lines": 128,
+      "methods": [
+        {
+          "line": 50,
+          "signature": "private void BtnAddTrim_Click(object sender, RoutedEventArgs e)"
+        },
+        {
+          "line": 78,
+          "signature": "private void BtnDeleteTrim_Click(object sender, RoutedEventArgs e)"
+        },
+        {
+          "line": 98,
+          "signature": "internal Delegate _CreateDelegate(Type delegateType, string handler)"
+        },
+        {
+          "line": 106,
+          "signature": "public void System_Windows_Markup_IComponentConnector_Connect(int connectionId, object target)"
+        }
+      ]
+    },
+    {
+      "path": "scans/IgnoreCodesPatternsDialog.xaml",
+      "sha256": "ce80d4e0ef935272423f590ecd183143ae3672306f28cff0be7b615034b792b3",
+      "lines": 69,
+      "methods": []
+    },
+    {
+      "path": "scans/IgnoreCodesPatternsDialog.xaml.cs",
+      "sha256": "b5d736a3923e418b261145328eec967f12726d7ef2669c80e692f220a43852ab",
+      "lines": 208,
+      "methods": [
+        {
+          "line": 57,
+          "signature": "public void Me_Loaded()"
+        },
+        {
+          "line": 85,
+          "signature": "private void HandleXChanged()"
+        },
+        {
+          "line": 90,
+          "signature": "private void BtnOK_Click(object sender, RoutedEventArgs e)"
+        },
+        {
+          "line": 107,
+          "signature": "private void BtnAddRow(object sender, RoutedEventArgs e)"
+        },
+        {
+          "line": 118,
+          "signature": "private void BtnDeleteRow(object sender, RoutedEventArgs e)"
+        },
+        {
+          "line": 132,
+          "signature": "private void BtnSetStandard_Click(object sender, RoutedEventArgs e)"
+        },
+        {
+          "line": 140,
+          "signature": "private void HyperlinkClick(object sender, RoutedEventArgs e)"
+        },
+        {
+          "line": 161,
+          "signature": "public void System_Windows_Markup_IComponentConnector_Connect(int connectionId, object target)"
+        }
+      ]
+    },
+    {
+      "path": "scans/KodierErgebnisxx.cs",
+      "sha256": "890501af1de0901fa430c4a3b71ae34d51d6be49af373ae6ae5d42decf37f065",
+      "lines": 64,
+      "methods": [
+        {
+          "line": 54,
+          "signature": "public void update(string neuwert, string Coder, string Kommentar)"
+        }
+      ]
+    },
+    {
+      "path": "scans/MovingTemplateCanvas.cs",
+      "sha256": "6b38b36cfa1160bde9038fdcd43e66bcd7f685add1ba7a4f9fb02b47dd00a061",
+      "lines": 201,
+      "methods": [
+        {
+          "line": 36,
+          "signature": "private void InitializeComponent()"
+        },
+        {
+          "line": 78,
+          "signature": "public void Me_Loaded()"
+        },
+        {
+          "line": 92,
+          "signature": "private void ResetDrawing()"
+        },
+        {
+          "line": 104,
+          "signature": "private void Me_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)"
+        },
+        {
+          "line": 131,
+          "signature": "private void Me_LostMouseCapture(object sender, MouseEventArgs e)"
+        },
+        {
+          "line": 136,
+          "signature": "private void Me_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)"
+        },
+        {
+          "line": 141,
+          "signature": "private void Me_MouseMove(object sender, MouseEventArgs e)"
+        },
+        {
+          "line": 197,
+          "signature": "private void Me_MouseLeave(object sender, MouseEventArgs e)"
+        }
+      ]
+    },
+    {
+      "path": "scans/MySettings.cs",
+      "sha256": "b297c64b91c629cfe89a9b0ee32420588ec8cded75a0d87bd1483c889867f1bb",
+      "lines": 16,
+      "methods": []
+    },
+    {
+      "path": "scans/PageArea.cs",
+      "sha256": "868973790ae164647513faef8d1f303d8c7dbb3965c2367bc6adf3c4329a5964",
+      "lines": 139,
+      "methods": [
+        {
+          "line": 82,
+          "signature": "private double XAttrToDouble(string xattr)"
+        },
+        {
+          "line": 135,
+          "signature": "internal void NotifyPropertyChanged(string info)"
+        }
+      ]
+    },
+    {
+      "path": "scans/PageImage.cs",
+      "sha256": "651eea8194710cd7b80f958337af2629215bbcd46194fc80cb746ad66000b33c",
+      "lines": 149,
+      "methods": [
+        {
+          "line": 56,
+          "signature": "public static BitmapImage GetErrorImage()"
+        },
+        {
+          "line": 73,
+          "signature": "public void SetTrim(PageArea NewTrim)"
+        },
+        {
+          "line": 82,
+          "signature": "internal void NotifyPropertyChanged(string info)"
+        },
+        {
+          "line": 102,
+          "signature": "public BitmapImage GetScanImage()"
+        },
+        {
+          "line": 125,
+          "signature": "public MemoryStream GetCroppedScanImageAsStream(PageArea Crop)"
+        }
+      ]
+    },
+    {
+      "path": "scans/PageImageBufferedZip.cs",
+      "sha256": "6f94fe3e3cace539ec4579f4168fa6738a32ea713cc6fc4e55bfb43780b807b6",
+      "lines": 67,
+      "methods": [
+        {
+          "line": 13,
+          "signature": "public static void ClearBuffer()"
+        }
+      ]
+    },
+    {
+      "path": "scans/PageImageFS.cs",
+      "sha256": "af481d9624e7ca188a0f3a60ae0930256a661e194a09de646c10cdb6c00b6dc9",
+      "lines": 62,
+      "methods": []
+    },
+    {
+      "path": "scans/PageImageFrameSetControl.xaml",
+      "sha256": "bd53f189fd082e097c6472acf402a4f521669982e7ef33ee45b2ed5cb6b08cd9",
+      "lines": 55,
+      "methods": []
+    },
+    {
+      "path": "scans/PageImageFrameSetControl.xaml.cs",
+      "sha256": "f1373709c8377304343e6e7caa6fd09d76e7fe66e258d86f4fb2da8bd40b5077",
+      "lines": 346,
+      "methods": [
+        {
+          "line": 117,
+          "signature": "private void IGCanvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)"
+        },
+        {
+          "line": 139,
+          "signature": "private void ResetDrawing(Canvas C = null)"
+        },
+        {
+          "line": 152,
+          "signature": "private void IGCanvas_LostMouseCapture(object sender, MouseEventArgs e)"
+        },
+        {
+          "line": 157,
+          "signature": "private void IGCanvas_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)"
+        },
+        {
+          "line": 164,
+          "signature": "private void IGCanvas_MouseMove(object sender, MouseEventArgs e)"
+        },
+        {
+          "line": 185,
+          "signature": "private void Me_MouseLeave(object sender, MouseEventArgs e)"
+        },
+        {
+          "line": 190,
+          "signature": "private void RePaint()"
+        },
+        {
+          "line": 240,
+          "signature": "public XElement GetNewXFrame()"
+        },
+        {
+          "line": 262,
+          "signature": "private void DockPanel_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)"
+        },
+        {
+          "line": 267,
+          "signature": "public void HandleZoomInExecuted()"
+        },
+        {
+          "line": 279,
+          "signature": "public void HandleZoomOutExecuted()"
+        },
+        {
+          "line": 291,
+          "signature": "private void ZoomInClick(object sender, MouseButtonEventArgs e)"
+        },
+        {
+          "line": 296,
+          "signature": "private void ZoomOutClick(object sender, MouseButtonEventArgs e)"
+        },
+        {
+          "line": 304,
+          "signature": "public void System_Windows_Markup_IComponentConnector_Connect(int connectionId, object target)"
+        }
+      ]
+    },
+    {
+      "path": "scans/PageImagePreloadedZip.cs",
+      "sha256": "132d7b4471906a5be9d325816a207be66994404122e74f3b379ed6b49d506813",
+      "lines": 157,
+      "methods": [
+        {
+          "line": 43,
+          "signature": "public static void ClearBuffer()"
+        },
+        {
+          "line": 144,
+          "signature": "private void myLoader_DoWork(object sender, DoWorkEventArgs e)"
+        }
+      ]
+    },
+    {
+      "path": "scans/PageImageSet.cs",
+      "sha256": "21121c4a9cd69d842da941829de03e68da753e6598eb2af1e3bb987d5b2312c5",
+      "lines": 38,
+      "methods": [
+        {
+          "line": 34,
+          "signature": "internal void NotifyPropertyChanged(string info)"
+        }
+      ]
+    },
+    {
+      "path": "scans/PageImageSetShowControl.xaml",
+      "sha256": "952190071902912a6972b54ea32c4e7406958752de04f94c5d28d7a06f373aa8",
+      "lines": 97,
+      "methods": []
+    },
+    {
+      "path": "scans/PageImageSetShowControl.xaml.cs",
+      "sha256": "41e5587e75c73d142473206ef072ba31da3eed47ac42889a7bfdefa5e8cef533",
+      "lines": 552,
+      "methods": [
+        {
+          "line": 169,
+          "signature": "private void IGCanvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)"
+        },
+        {
+          "line": 191,
+          "signature": "private void IGCanvas_LostMouseCapture(object sender, MouseEventArgs e)"
+        },
+        {
+          "line": 200,
+          "signature": "private void IGCanvas_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)"
+        },
+        {
+          "line": 216,
+          "signature": "private void IGCanvas_MouseMove(object sender, MouseEventArgs e)"
+        },
+        {
+          "line": 237,
+          "signature": "private void Me_Loaded()"
+        },
+        {
+          "line": 251,
+          "signature": "public void AnimateLastPage()"
+        },
+        {
+          "line": 266,
+          "signature": "private void RePaint()"
+        },
+        {
+          "line": 391,
+          "signature": "private void DockPanel_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)"
+        },
+        {
+          "line": 396,
+          "signature": "public void HandleZoomInExecuted()"
+        },
+        {
+          "line": 408,
+          "signature": "public void HandleZoom100Executed()"
+        },
+        {
+          "line": 421,
+          "signature": "public void HandleZoomOutExecuted()"
+        },
+        {
+          "line": 433,
+          "signature": "private void ZoomInClick(object sender, MouseButtonEventArgs e)"
+        },
+        {
+          "line": 438,
+          "signature": "private void ZoomOutClick(object sender, MouseButtonEventArgs e)"
+        },
+        {
+          "line": 443,
+          "signature": "public void StartCopyToClipboard()"
+        },
+        {
+          "line": 448,
+          "signature": "private void HandleCopy2ClipboardExecuted(object sender, ExecutedRoutedEventArgs e)"
+        },
+        {
+          "line": 496,
+          "signature": "private bool HandleCopy2ClipboardCanExecute(object sender, CanExecuteRoutedEventArgs e)"
+        },
+        {
+          "line": 505,
+          "signature": "public void System_Windows_Markup_IComponentConnector_Connect(int connectionId, object target)"
+        }
+      ]
+    },
+    {
+      "path": "scans/PageImageZip.cs",
+      "sha256": "4f962f86d18e588e9abcfb8039296c5eed39a6895665c272c41327d2a9bbc90d",
+      "lines": 98,
+      "methods": []
+    },
+    {
+      "path": "scans/PageImageZip2.cs",
+      "sha256": "15136437f6f874ae88a70be58f383ea62fd20a45cbdc38973d9a90580556dbd9",
+      "lines": 63,
+      "methods": []
+    },
+    {
+      "path": "scans/ResizingAdorner.cs",
+      "sha256": "1f82c06c34d66189e46ff1229546cf7fd559d0899ac1dd20532d0109d382ab48",
+      "lines": 484,
+      "methods": [
+        {
+          "line": 73,
+          "signature": "private void EnforceSize(FrameworkElement adornedElement)"
+        },
+        {
+          "line": 99,
+          "signature": "private double DeltaXModify(double OldDelta, bool IsRightBorder)"
+        },
+        {
+          "line": 138,
+          "signature": "private double DeltaYModify(double OldDelta, bool IsBottomBorder)"
+        },
+        {
+          "line": 177,
+          "signature": "private void HandleBottomRight(object sender, DragDeltaEventArgs args)"
+        },
+        {
+          "line": 201,
+          "signature": "private void HandleTopRight(object sender, DragDeltaEventArgs args)"
+        },
+        {
+          "line": 232,
+          "signature": "private void HandleTopLeft(object sender, DragDeltaEventArgs args)"
+        },
+        {
+          "line": 267,
+          "signature": "private void HandleBottomLeft(object sender, DragDeltaEventArgs args)"
+        },
+        {
+          "line": 298,
+          "signature": "private void HandleBottom(object sender, DragDeltaEventArgs args)"
+        },
+        {
+          "line": 317,
+          "signature": "private void HandleLeft(object sender, DragDeltaEventArgs args)"
+        },
+        {
+          "line": 343,
+          "signature": "private void HandleTop(object sender, DragDeltaEventArgs args)"
+        },
+        {
+          "line": 369,
+          "signature": "private void HandleRight(object sender, DragDeltaEventArgs args)"
+        },
+        {
+          "line": 388,
+          "signature": "private void BuildAdornerCorner(ref Thumb cornerThumb, Cursor customizedCursor, DragDeltaEventHandler DDEH)"
+        },
+        {
+          "line": 408,
+          "signature": "private void BuildAdornerBorder(ref Thumb cornerThumb, Cursor customizedCursor, DragDeltaEventHandler DDEH)"
+        }
+      ]
+    },
+    {
+      "path": "scans/ResizingAndMovingCanvas.cs",
+      "sha256": "a5aaa2818b40caba0832fe3ac9282fa8061d700aa0c1ac318f1705ed18dd99b8",
+      "lines": 212,
+      "methods": [
+        {
+          "line": 31,
+          "signature": "private void InitializeComponent()"
+        },
+        {
+          "line": 116,
+          "signature": "public void Me_Loaded()"
+        },
+        {
+          "line": 122,
+          "signature": "private void ResetDrawing()"
+        },
+        {
+          "line": 135,
+          "signature": "private void Me_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)"
+        },
+        {
+          "line": 152,
+          "signature": "private void Me_LostMouseCapture(object sender, MouseEventArgs e)"
+        },
+        {
+          "line": 157,
+          "signature": "private void Me_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)"
+        },
+        {
+          "line": 162,
+          "signature": "private void Me_MouseMove(object sender, MouseEventArgs e)"
+        },
+        {
+          "line": 208,
+          "signature": "private void Me_MouseLeave(object sender, MouseEventArgs e)"
+        }
+      ]
+    },
+    {
+      "path": "scans/ScanFactory.cs",
+      "sha256": "2ab9129636e99d3bf21a8105d92d6d277e35730c14c63e18c75a2eb0532c9578",
+      "lines": 946,
+      "methods": [
+        {
+          "line": 58,
+          "signature": "internal string _Lambda_0024__8_002D0(XElement xloc)"
+        },
+        {
+          "line": 64,
+          "signature": "internal string _Lambda_0024__8_002D1(XElement xloc)"
+        },
+        {
+          "line": 70,
+          "signature": "internal string _Lambda_0024__8_002D2(XElement xloc)"
+        },
+        {
+          "line": 86,
+          "signature": "internal int _Lambda_0024__8_002D5(VB_0024AnonymousType_0<XElement, int> _0024VB_0024It)"
+        },
+        {
+          "line": 102,
+          "signature": "internal string _Lambda_0024__8_002D7(VB_0024AnonymousType_1<string, XElement> x)"
+        },
+        {
+          "line": 108,
+          "signature": "internal XElement _Lambda_0024__8_002D8(VB_0024AnonymousType_1<string, XElement> x)"
+        },
+        {
+          "line": 114,
+          "signature": "internal string _Lambda_0024__8_002D9(XElement xloc)"
+        },
+        {
+          "line": 130,
+          "signature": "internal int _Lambda_0024__8_002D12(VB_0024AnonymousType_0<XElement, int> _0024VB_0024It)"
+        },
+        {
+          "line": 146,
+          "signature": "internal string _Lambda_0024__8_002D14(VB_0024AnonymousType_1<string, XElement> x)"
+        },
+        {
+          "line": 152,
+          "signature": "internal XElement _Lambda_0024__8_002D15(VB_0024AnonymousType_1<string, XElement> x)"
+        },
+        {
+          "line": 172,
+          "signature": "internal bool _Lambda_0024__3(XElement xloc)"
+        },
+        {
+          "line": 192,
+          "signature": "internal bool _Lambda_0024__10(XElement xloc)"
+        },
+        {
+          "line": 208,
+          "signature": "public static string GetPersonFromScanfilename(string FName)"
+        },
+        {
+          "line": 223,
+          "signature": "public static List<jobDef> GetJobDefsFromDirectory(string DirName)"
+        }
+      ]
+    },
+    {
+      "path": "scans/ScanFileList.cs",
+      "sha256": "4270cbba29ff5aeec2366d6df543dda63e43a03c2ea41e3ca07855001254790c",
+      "lines": 915,
+      "methods": [
+        {
+          "line": 35,
+          "signature": "internal bool _Lambda_0024__2(string t)"
+        },
+        {
+          "line": 41,
+          "signature": "internal string _Lambda_0024__3(string t)"
+        },
+        {
+          "line": 68,
+          "signature": "internal bool _Lambda_0024__0(XElement sd)"
+        },
+        {
+          "line": 92,
+          "signature": "internal bool _Lambda_0024__0(XElement sd)"
+        },
+        {
+          "line": 434,
+          "signature": "public void SetFilter(List<string> f = null)"
+        },
+        {
+          "line": 461,
+          "signature": "public List<string> GetAllTestees(string TesteeMask = \"\")"
+        },
+        {
+          "line": 484,
+          "signature": "public List<string> GetPagesnumbersByBooklet(string booklet)"
+        },
+        {
+          "line": 497,
+          "signature": "public List<string> GetTesteesByBookletAndPage(string booklet, string page)"
+        },
+        {
+          "line": 509,
+          "signature": "public int GetTesteeCountByBookletAndPage(string booklet, string page)"
+        },
+        {
+          "line": 520,
+          "signature": "public int SearchTurbo_GetTesteeCountByBookletAndPage(string booklet, string page)"
+        },
+        {
+          "line": 531,
+          "signature": "public List<PageImageSet> GetPageImagesByBookletAndPage(string booklet, Dictionary<string, PageArea> pageslist)"
+        },
+        {
+          "line": 585,
+          "signature": "public void SearchTurbo_Init()"
+        },
+        {
+          "line": 620,
+          "signature": "public PageImage SearchTurbo_GetPageImageByBookletAndPageAndTestee(string booklet, string page, string testee)"
+        },
+        {
+          "line": 653,
+          "signature": "public PageImage GetPageImageByBookletAndPageAndTestee(string booklet, string page, string testee)"
+        },
+        {
+          "line": 675,
+          "signature": "public List<PageImageSet> GetFirstPageImageByBooklet(string booklet, string Page = \"0\", PageArea VarFrame = null)"
+        },
+        {
+          "line": 727,
+          "signature": "public PageImageSet GetPageImagesByTestee(string Testee)"
+        },
+        {
+          "line": 758,
+          "signature": "public PageImage GetFirstPage()"
+        },
+        {
+          "line": 776,
+          "signature": "public string GetScanFilenameByTesteeAndBookletPageList(string testee, List<string> BookletPageList)"
+        },
+        {
+          "line": 784,
+          "signature": "public List<string> SearchTurbo_GetScanFilenamesByTestee(string testee)"
+        },
+        {
+          "line": 798,
+          "signature": "public List<string> SearchTurbo_GetScanFilenameByTesteeAndBookletPageList(string testee, List<string> BookletPageList)"
+        },
+        {
+          "line": 813,
+          "signature": "public List<string> SearchTurbo_GetScanStats()"
+        },
+        {
+          "line": 911,
+          "signature": "internal void NotifyPropertyChanged(string info)"
+        }
+      ]
+    },
+    {
+      "path": "scans/SelectBookletPageDialog.xaml",
+      "sha256": "f4cf4240ef529f3de52312d35de7a1bf9ec87eb1f77ec6a3701c6b9f5f25aed6",
+      "lines": 37,
+      "methods": []
+    },
+    {
+      "path": "scans/SelectBookletPageDialog.xaml.cs",
+      "sha256": "5babe90ca7544e507e21b756e7795cc6d5d5bcf1c357db39033faa533baacb99",
+      "lines": 143,
+      "methods": [
+        {
+          "line": 72,
+          "signature": "private void Me_Loaded()"
+        },
+        {
+          "line": 80,
+          "signature": "private void LBBooklets_SelectionChanged()"
+        },
+        {
+          "line": 90,
+          "signature": "private void OK_Click(object sender, RoutedEventArgs e)"
+        },
+        {
+          "line": 118,
+          "signature": "public void System_Windows_Markup_IComponentConnector_Connect(int connectionId, object target)"
+        }
+      ]
+    },
+    {
+      "path": "scans/SelectVariableDialog.xaml",
+      "sha256": "bd7cdadeddbbdeb545170a2394d0539122b8b5ba0a104e4de4597ea6bc08c06d",
+      "lines": 37,
+      "methods": []
+    },
+    {
+      "path": "scans/SelectVariableDialog.xaml.cs",
+      "sha256": "a325bca4e53e10a43c0c87a56200486828d7320af5b23c5d35819bc1b700c94f",
+      "lines": 107,
+      "methods": [
+        {
+          "line": 55,
+          "signature": "private void Me_Loaded()"
+        },
+        {
+          "line": 64,
+          "signature": "private void OK_Click(object sender, RoutedEventArgs e)"
+        },
+        {
+          "line": 82,
+          "signature": "public void System_Windows_Markup_IComponentConnector_Connect(int connectionId, object target)"
+        }
+      ]
+    },
+    {
+      "path": "scans/SliderMinConverter.cs",
+      "sha256": "7fd29957d956996bf381ff79be44b978c0872a077b3873ddfd0886e9fa3c9ba4",
+      "lines": 28,
+      "methods": [
+        {
+          "line": 12,
+          "signature": "public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)"
+        }
+      ]
+    },
+    {
+      "path": "scans/SliderValueStringConverter.cs",
+      "sha256": "1b90dd2a142d3077ce903542cf315b7e4b27daeba14f9df6edd14eb43758cbf3",
+      "lines": 31,
+      "methods": [
+        {
+          "line": 10,
+          "signature": "public object Convert(object value, Type targetType, object parameter, CultureInfo culture)"
+        },
+        {
+          "line": 27,
+          "signature": "public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)"
+        }
+      ]
+    },
+    {
+      "path": "scans/VariableFactory.cs",
+      "sha256": "5b160db07d12898b6d9b472505bd6a15f2fbf466ae2411d45ec5a1f53a399faf",
+      "lines": 236,
+      "methods": [
+        {
+          "line": 14,
+          "signature": "public static XElement GetVariableFromOldXMLFile(XElement OldXVariable, bool IgnoreLocations = false)"
+        },
+        {
+          "line": 204,
+          "signature": "public static XElement GetVariablesFromOldXMLFile(string XDocFileName, bool IgnoreLocations)"
+        }
+      ]
+    },
+    {
+      "path": "scans/VariableList.cs",
+      "sha256": "af1530298e403d0048bbf1d0a6b1bb84dcf6d239eab23eea80cbdf8bf2bedce2",
+      "lines": 821,
+      "methods": [
+        {
+          "line": 77,
+          "signature": "internal string _Lambda_0024__13_002D1(XElement xv)"
+        },
+        {
+          "line": 83,
+          "signature": "internal string _Lambda_0024__13_002D2(XElement xv)"
+        },
+        {
+          "line": 112,
+          "signature": "internal string _Lambda_0024__20_002D2(VB_0024AnonymousType_11<VB_0024AnonymousType_10<XElement, string>, XElement> _0024VB_0024It)"
+        },
+        {
+          "line": 118,
+          "signature": "internal XElement _Lambda_0024__20_002D3(VB_0024AnonymousType_11<VB_0024AnonymousType_10<XElement, string>, XElement> _0024VB_0024It)"
+        },
+        {
+          "line": 124,
+          "signature": "internal XElement _Lambda_0024__21_002D1(XElement xv)"
+        },
+        {
+          "line": 140,
+          "signature": "internal long _Lambda_0024__22_002D1(VB_0024AnonymousType_0<XElement, long> _0024VB_0024It)"
+        },
+        {
+          "line": 146,
+          "signature": "internal string _Lambda_0024__22_002D2(VB_0024AnonymousType_0<XElement, long> _0024VB_0024It)"
+        },
+        {
+          "line": 162,
+          "signature": "internal long _Lambda_0024__22_002D4(VB_0024AnonymousType_0<XElement, long> _0024VB_0024It)"
+        },
+        {
+          "line": 168,
+          "signature": "internal string _Lambda_0024__22_002D5(VB_0024AnonymousType_0<XElement, long> _0024VB_0024It)"
+        },
+        {
+          "line": 174,
+          "signature": "internal XElement _Lambda_0024__23_002D1(XElement xxloc)"
+        },
+        {
+          "line": 190,
+          "signature": "internal int _Lambda_0024__24_002D2(VB_0024AnonymousType_0<XElement, int> _0024VB_0024It)"
+        },
+        {
+          "line": 196,
+          "signature": "internal XElement _Lambda_0024__24_002D3(VB_0024AnonymousType_0<XElement, int> _0024VB_0024It)"
+        },
+        {
+          "line": 212,
+          "signature": "internal XElement _Lambda_0024__26_002D2(VB_0024AnonymousType_12<XElement, string> _0024VB_0024It)"
+        },
+        {
+          "line": 228,
+          "signature": "internal string _Lambda_0024__27_002D1(VB_0024AnonymousType_13<XElement, string> _0024VB_0024It)"
+        },
+        {
+          "line": 244,
+          "signature": "internal string _Lambda_0024__27_002D3(VB_0024AnonymousType_13<XElement, string> _0024VB_0024It)"
+        },
+        {
+          "line": 266,
+          "signature": "internal bool _Lambda_0024__0(XElement xxloc)"
+        },
+        {
+          "line": 286,
+          "signature": "internal bool _Lambda_0024__0(XElement xloc)"
+        },
+        {
+          "line": 308,
+          "signature": "internal bool _Lambda_0024__0(XElement VarToDelete)"
+        },
+        {
+          "line": 330,
+          "signature": "internal bool _Lambda_0024__1(VB_0024AnonymousType_12<XElement, string> _0024VB_0024It)"
+        },
+        {
+          "line": 446,
+          "signature": "private void HandleXDocChanged()"
+        },
+        {
+          "line": 451,
+          "signature": "public void Save()"
+        },
+        {
+          "line": 457,
+          "signature": "public List<string> GetIds(string CodingType = \"\")"
+        },
+        {
+          "line": 465,
+          "signature": "public static List<XElement> GetStandardIgnoreCodesPatterns()"
+        },
+        {
+          "line": 481,
+          "signature": "public bool IgnoreCode(XElement XCode)"
+        },
+        {
+          "line": 497,
+          "signature": "public XElement GetCodingGroups()"
+        },
+        {
+          "line": 502,
+          "signature": "public bool AddCodingGroup(List<string> VarIDs)"
+        },
+        {
+          "line": 522,
+          "signature": "public void MergeNewVarData(XElement NewXVarDefs, bool changeLocations, bool changeVarData, bool addIfNew)"
+        },
+        {
+          "line": 629,
+          "signature": "public bool HasVariables()"
+        },
+        {
+          "line": 634,
+          "signature": "public List<XElement> GetXVarListShort()"
+        },
+        {
+          "line": 656,
+          "signature": "public XElement GetXVar(string varID)"
+        },
+        {
+          "line": 668,
+          "signature": "public List<string> GetVarBooklets(string varID = null)"
+        },
+        {
+          "line": 693,
+          "signature": "public void RenameBooklets(Dictionary<string, string> renamelist)"
+        },
+        {
+          "line": 744,
+          "signature": "public void RemoveVariables(List<string> IdList)"
+        },
+        {
+          "line": 757,
+          "signature": "public void RemoveIrrelevantVariables(List<string> validLocations)"
+        }
+      ]
+    },
+    {
+      "path": "scans/jobDef.cs",
+      "sha256": "97c19e3ec80ffbafe0ff7e9d19067d9c10784606532296beefdf28f82879f8b1",
+      "lines": 55,
+      "methods": []
+    },
+    {
+      "path": "scans/jobOptions.cs",
+      "sha256": "c8bb7d1e2fa319489c8060ca731b2fde84e8670e450fdd144bdcb7e45aabdb5e",
+      "lines": 215,
+      "methods": [
+        {
+          "line": 194,
+          "signature": "public XElement ToXML()"
+        }
+      ]
+    },
+    {
+      "path": "scans/jobOptionsOld.cs",
+      "sha256": "89e8b5c1c70300368690227224b1aae0107ab745f550d93588cae08f3c4e634d",
+      "lines": 350,
+      "methods": [
+        {
+          "line": 57,
+          "signature": "private void SetzeStandardwerte()"
+        },
+        {
+          "line": 292,
+          "signature": "public XElement ToXML()"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/AppCommands.vb",
+      "sha256": "70aa08857d9089496f0bee0e3d405409110d3ac4e78096b63117788eecd04083",
+      "lines": 17,
+      "methods": []
+    },
+    {
+      "path": "toolbox/Application.xaml",
+      "sha256": "096665003aebc93e0024f5f93b59aa384e6a2823de1bd4c06bf754fbc0efb48f",
+      "lines": 9,
+      "methods": []
+    },
+    {
+      "path": "toolbox/Application.xaml.vb",
+      "sha256": "b127c174508830981638025004d222a06d6df572d33d73b1ae480bf414ec308d",
+      "lines": 6,
+      "methods": []
+    },
+    {
+      "path": "toolbox/MainWindow.xaml",
+      "sha256": "011ce426952358a15acf19cfbef6acfdf0a1beff444ecf4ffb0fdcdbcebab036",
+      "lines": 257,
+      "methods": []
+    },
+    {
+      "path": "toolbox/MainWindow.xaml.vb",
+      "sha256": "2813bfdcda6910ded413482ad2bbf444dd83703485c99a13a18d8e7144eef94c",
+      "lines": 557,
+      "methods": [
+        {
+          "line": 6,
+          "signature": "Private Sub MainApplication_Loaded(ByVal sender As System.Object, ByVal e As System.Windows.RoutedEventArgs) Handles Me.Loaded"
+        },
+        {
+          "line": 81,
+          "signature": "Private Sub HandleHelpExecuted(sender As Object, e As ExecutedRoutedEventArgs)"
+        },
+        {
+          "line": 87,
+          "signature": "Private Sub MyUnhandledExceptionEventHandler(sender As Object, e As UnhandledExceptionEventArgs)"
+        },
+        {
+          "line": 117,
+          "signature": "Private Sub BtnLoginXlsx_Click(sender As Object, e As RoutedEventArgs)"
+        },
+        {
+          "line": 121,
+          "signature": "Private Sub BtnBookletXlsx_Click(sender As Object, e As RoutedEventArgs)"
+        },
+        {
+          "line": 135,
+          "signature": "Private Sub BtnSysCheck_Click(sender As Object, e As RoutedEventArgs)"
+        },
+        {
+          "line": 157,
+          "signature": "Private Sub BtnResponses_Click(sender As Object, e As RoutedEventArgs)"
+        },
+        {
+          "line": 168,
+          "signature": "Private Sub HyperlinkClick(sender As Object, e As RoutedEventArgs)"
+        },
+        {
+          "line": 175,
+          "signature": "Private Sub BtnBookletXmlNew_Click(sender As Object, e As RoutedEventArgs)"
+        },
+        {
+          "line": 179,
+          "signature": "Private Sub BtnBookletXmlOpen_Click(sender As Object, e As RoutedEventArgs)"
+        },
+        {
+          "line": 183,
+          "signature": "Private Sub BtnLoginPoolXlsx_Click(sender As Object, e As RoutedEventArgs)"
+        },
+        {
+          "line": 197,
+          "signature": "Private Sub BtnLoginXlsxTemplate_Click(sender As Object, e As RoutedEventArgs)"
+        },
+        {
+          "line": 211,
+          "signature": "Private Sub BtnLoginXlsxToDocx_Click(sender As Object, e As RoutedEventArgs)"
+        },
+        {
+          "line": 225,
+          "signature": "Private Sub BtnGetTestcenterReviewsData_Click(sender As Object, e As RoutedEventArgs)"
+        },
+        {
+          "line": 231,
+          "signature": "Private Sub BtnTestcenterToJson_Click(sender As Object, e As RoutedEventArgs)"
+        },
+        {
+          "line": 238,
+          "signature": "Private Sub BtnMergeDataLoadTC_Click(sender As Object, e As RoutedEventArgs)"
+        },
+        {
+          "line": 244,
+          "signature": "Private Sub BtnMergeDataLoadCsv_Click(sender As Object, e As RoutedEventArgs)"
+        },
+        {
+          "line": 258,
+          "signature": "Private Sub BtnDataLoadJson_Click(sender As Object, e As RoutedEventArgs)"
+        },
+        {
+          "line": 263,
+          "signature": "Private Sub BtnMergeDataClear_Click(sender As Object, e As RoutedEventArgs)"
+        },
+        {
+          "line": 268,
+          "signature": "Private Sub HandleExportToJsonExecuted(ByVal sender As Object, ByVal e As ExecutedRoutedEventArgs)"
+        },
+        {
+          "line": 287,
+          "signature": "Private Sub BtnMergeDataSaveJsonByGroup_Click(sender As Object, e As RoutedEventArgs)"
+        },
+        {
+          "line": 305,
+          "signature": "Private Sub updateGroupCount()"
+        },
+        {
+          "line": 314,
+          "signature": "Private Sub BtnMergeDataSaveXlsx_Click(sender As Object, e As RoutedEventArgs)"
+        },
+        {
+          "line": 333,
+          "signature": "Private Sub HandleAppExitExecuted(ByVal sender As Object, ByVal e As ExecutedRoutedEventArgs)"
+        },
+        {
+          "line": 338,
+          "signature": "Private Sub UpdateSqliteDBInfo()"
+        },
+        {
+          "line": 352,
+          "signature": "Private Sub HandleImportFromTestcenterExecuted(ByVal sender As Object, ByVal e As ExecutedRoutedEventArgs)"
+        },
+        {
+          "line": 359,
+          "signature": "Private Sub HandleImportFromCsvExecuted(ByVal sender As Object, ByVal e As ExecutedRoutedEventArgs)"
+        },
+        {
+          "line": 371,
+          "signature": "Private Sub HandleImportFromJsonExecuted(ByVal sender As Object, ByVal e As ExecutedRoutedEventArgs)"
+        },
+        {
+          "line": 388,
+          "signature": "Private Sub HandleImportBookletsFromJsonExecuted(ByVal sender As Object, ByVal e As ExecutedRoutedEventArgs)"
+        },
+        {
+          "line": 402,
+          "signature": "Private Sub HandleDBNewExecuted(ByVal sender As Object, ByVal e As ExecutedRoutedEventArgs)"
+        },
+        {
+          "line": 417,
+          "signature": "Private Sub HandleDBOpenExecuted(ByVal sender As Object, ByVal e As ExecutedRoutedEventArgs)"
+        },
+        {
+          "line": 431,
+          "signature": "Private Sub HandleDBCopyToExecuted(ByVal sender As Object, ByVal e As ExecutedRoutedEventArgs)"
+        },
+        {
+          "line": 445,
+          "signature": "Private Sub HandleDBCheckToExecuted(ByVal sender As Object, ByVal e As ExecutedRoutedEventArgs)"
+        },
+        {
+          "line": 450,
+          "signature": "Private Function HandleDBOperationCanExecute(ByVal sender As Object, ByVal e As System.Windows.Input.CanExecuteRoutedEventArgs) As Boolean"
+        },
+        {
+          "line": 455,
+          "signature": "Private Function CanExecuteFalse(ByVal sender As Object, ByVal e As System.Windows.Input.CanExecuteRoutedEventArgs) As Boolean"
+        },
+        {
+          "line": 461,
+          "signature": "Private Sub BtnMergeDataSaveJson_Click(sender As Object, e As RoutedEventArgs)"
+        },
+        {
+          "line": 465,
+          "signature": "Private Sub BtnTestcenterToXlsx_Click(sender As Object, e As RoutedEventArgs)"
+        },
+        {
+          "line": 481,
+          "signature": "Private Sub HandleExportToXlsxExecuted(ByVal sender As Object, ByVal e As ExecutedRoutedEventArgs)"
+        },
+        {
+          "line": 496,
+          "signature": "Private Sub BtnTestCsvToXlsx_Click(sender As Object, e As RoutedEventArgs)"
+        },
+        {
+          "line": 508,
+          "signature": "Private Sub HandleExportResponsesToCsvExecuted(ByVal sender As Object, ByVal e As ExecutedRoutedEventArgs)"
+        },
+        {
+          "line": 522,
+          "signature": "Private Sub HandleExportSessionsToCsvExecuted(ByVal sender As Object, ByVal e As ExecutedRoutedEventArgs)"
+        },
+        {
+          "line": 536,
+          "signature": "Private Async Sub HandleDevTriggerExecuted(sender As Object, e As ExecutedRoutedEventArgs)"
+        },
+        {
+          "line": 540,
+          "signature": "Private Sub BtnDownloadContent_Click(sender As Object, e As RoutedEventArgs)"
+        },
+        {
+          "line": 546,
+          "signature": "Private Sub BtnTestcenterToCsvResponses_Click(sender As Object, e As RoutedEventArgs)"
+        },
+        {
+          "line": 552,
+          "signature": "Private Sub BtnTestcenterToCsvLogs_Click(sender As Object, e As RoutedEventArgs)"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/SqlLiteCheck/SqliteCheckDialog.xaml",
+      "sha256": "34e11ce0f1963ccfac51910f68cdbc0aea7752b769d2708c40afcd6a2dac3249",
+      "lines": 23,
+      "methods": []
+    },
+    {
+      "path": "toolbox/SqlLiteCheck/SqliteCheckDialog.xaml.vb",
+      "sha256": "cc489893c63c4e7bf5ab2e1d502ba763766bc77e5eba5fa0b76db6f94806073f",
+      "lines": 99,
+      "methods": [
+        {
+          "line": 4,
+          "signature": "Public Sub New(SqliteDB As SQLiteConnector)"
+        },
+        {
+          "line": 9,
+          "signature": "Private Sub Me_Loaded(ByVal sender As System.Object, ByVal e As System.Windows.RoutedEventArgs) Handles Me.Loaded"
+        },
+        {
+          "line": 22,
+          "signature": "Private Sub BtnCancelClose_Click() Handles BtnCancelClose.Click"
+        },
+        {
+          "line": 31,
+          "signature": "Private Sub bw_ProgressChanged(ByVal sender As Object, ByVal e As ComponentModel.ProgressChangedEventArgs) Handles Process1_bw.ProgressChanged"
+        },
+        {
+          "line": 36,
+          "signature": "Private Sub Process1_bw_RunWorkerCompleted(ByVal sender As Object, ByVal e As ComponentModel.RunWorkerCompletedEventArgs) Handles Process1_bw.RunWorkerCompleted"
+        },
+        {
+          "line": 47,
+          "signature": "Private Sub Process1_bw_DoWork(ByVal sender As Object, ByVal e As ComponentModel.DoWorkEventArgs) Handles Process1_bw.DoWork"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-input/BookletXlsxDialog.xaml",
+      "sha256": "4a1186f39f60a7ae242fc1eb56aa963f8f7acc4537556eb01f0d388ac7941511",
+      "lines": 26,
+      "methods": []
+    },
+    {
+      "path": "toolbox/itc-input/BookletXlsxDialog.xaml.vb",
+      "sha256": "149c45c6e26d656794f3cdffabb6dd1b84582c12bbd5d70613e471e7b45b8758",
+      "lines": 457,
+      "methods": [
+        {
+          "line": 11,
+          "signature": "Public Sub New()"
+        },
+        {
+          "line": 15,
+          "signature": "Private Sub Me_Loaded(ByVal sender As System.Object, ByVal e As System.Windows.RoutedEventArgs) Handles Me.Loaded"
+        },
+        {
+          "line": 28,
+          "signature": "Private Sub BtnCancel_Click() Handles BtnCancel.Click"
+        },
+        {
+          "line": 37,
+          "signature": "Private Sub BtnClose_Click() Handles BtnClose.Click"
+        },
+        {
+          "line": 41,
+          "signature": "Private Sub bw_ProgressChanged(ByVal sender As Object, ByVal e As ComponentModel.ProgressChangedEventArgs) Handles Process1_bw.ProgressChanged"
+        },
+        {
+          "line": 46,
+          "signature": "Private Sub Process1_bw_RunWorkerCompleted(ByVal sender As Object, ByVal e As ComponentModel.RunWorkerCompletedEventArgs) Handles Process1_bw.RunWorkerCompleted"
+        },
+        {
+          "line": 84,
+          "signature": "Private Sub Process1_bw_DoWork(ByVal sender As Object, ByVal e As ComponentModel.DoWorkEventArgs) Handles Process1_bw.DoWork"
+        },
+        {
+          "line": 378,
+          "signature": "Private Sub AddWarningMessage(MessageStr As String, MessageParameter As String)"
+        },
+        {
+          "line": 382,
+          "signature": "Private Sub AddErrorMessage(MessageStr As String, MessageParameter As String)"
+        },
+        {
+          "line": 387,
+          "signature": "Private Sub BtnEditor_Click() Handles BtnEditor.Click"
+        },
+        {
+          "line": 415,
+          "signature": "Public Function toXml(titlePrefix As String, labelShort As String) As XElement"
+        },
+        {
+          "line": 430,
+          "signature": "Public Function toXml(codeToEnter As String, codeToEnterPrompt As String, timeMax As String) As XElement"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-input/CodeFactory.vb",
+      "sha256": "22a79a09246874e437dabc868a8268c8ede87a70de02165ab30bfa04f660db55",
+      "lines": 65,
+      "methods": [
+        {
+          "line": 4,
+          "signature": "Public Shared Function GetNewCode(codeLen As Integer) As String"
+        },
+        {
+          "line": 15,
+          "signature": "Public Shared Function GetNewCodeList(codeLen As Integer, codeCount As Integer) As List(Of String)"
+        },
+        {
+          "line": 42,
+          "signature": "Public Function toXml(Optional bookletName As String = \"Booklet1\") As XElement"
+        },
+        {
+          "line": 57,
+          "signature": "Public Function toXml(Optional bookletName As String = \"Booklet1\") As XElement"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-input/CodesXlsxDialog.xaml",
+      "sha256": "5936a89b2d30563c42a7d404e0a12ddcfc000108874797dfbc4991a4f8242f95",
+      "lines": 24,
+      "methods": []
+    },
+    {
+      "path": "toolbox/itc-input/CodesXlsxDialog.xaml.vb",
+      "sha256": "9c576c76b9edcbf598af48406c006dccc8a7854113d322b5e88a2a5af79c049a",
+      "lines": 114,
+      "methods": [
+        {
+          "line": 9,
+          "signature": "Public Sub New()"
+        },
+        {
+          "line": 13,
+          "signature": "Private Sub Me_Loaded(ByVal sender As System.Object, ByVal e As System.Windows.RoutedEventArgs) Handles Me.Loaded"
+        },
+        {
+          "line": 22,
+          "signature": "Private Sub BtnCancel_Click() Handles BtnCancel.Click"
+        },
+        {
+          "line": 31,
+          "signature": "Private Sub BtnClose_Click() Handles BtnClose.Click"
+        },
+        {
+          "line": 35,
+          "signature": "Private Sub bw_ProgressChanged(ByVal sender As Object, ByVal e As ComponentModel.ProgressChangedEventArgs) Handles Process1_bw.ProgressChanged"
+        },
+        {
+          "line": 39,
+          "signature": "Private Sub Process1_bw_RunWorkerCompleted(ByVal sender As Object, ByVal e As ComponentModel.RunWorkerCompletedEventArgs) Handles Process1_bw.RunWorkerCompleted"
+        },
+        {
+          "line": 53,
+          "signature": "Private Sub Process1_bw_DoWork(ByVal sender As Object, ByVal e As ComponentModel.DoWorkEventArgs) Handles Process1_bw.DoWork"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-input/LoginsTemplateXlsxDialog.xaml",
+      "sha256": "38648eb5b2ad733d1a3075e8c64e055f81681fe4b16b1592653cc5f044e3c57f",
+      "lines": 50,
+      "methods": []
+    },
+    {
+      "path": "toolbox/itc-input/LoginsTemplateXlsxDialog.xaml.vb",
+      "sha256": "5b1b8d6b68fac18cc9520cf55ba2afddd07bbf20db4cb0d2fc4166a78d6ec752",
+      "lines": 671,
+      "methods": [
+        {
+          "line": 26,
+          "signature": "Public Sub New()"
+        },
+        {
+          "line": 30,
+          "signature": "Private Sub Me_Loaded(ByVal sender As System.Object, ByVal e As System.Windows.RoutedEventArgs) Handles Me.Loaded"
+        },
+        {
+          "line": 55,
+          "signature": "Private Sub BtnCancel_Click() Handles BtnCancel.Click"
+        },
+        {
+          "line": 67,
+          "signature": "Private Sub BtnClose_Click() Handles BtnClose.Click"
+        },
+        {
+          "line": 71,
+          "signature": "Private Sub bw_ProgressChanged(ByVal sender As Object, ByVal e As ComponentModel.ProgressChangedEventArgs) Handles Process1_bw.ProgressChanged, Process2_bw.ProgressChanged"
+        },
+        {
+          "line": 75,
+          "signature": "Private Sub AddWarningMessage(MessageStr As String, MessageParameter As String)"
+        },
+        {
+          "line": 79,
+          "signature": "Private Sub AddErrorMessage(MessageStr As String, MessageParameter As String)"
+        },
+        {
+          "line": 84,
+          "signature": "Private Sub BtnEditor_Click() Handles BtnEditor.Click"
+        },
+        {
+          "line": 104,
+          "signature": "Private Sub Process1_bw_RunWorkerCompleted(ByVal sender As Object, ByVal e As ComponentModel.RunWorkerCompletedEventArgs) Handles Process1_bw.RunWorkerCompleted"
+        },
+        {
+          "line": 149,
+          "signature": "Private Sub BtnContinue_Click() Handles BtnContinue.Click"
+        },
+        {
+          "line": 178,
+          "signature": "Private Sub Process2_bw_RunWorkerCompleted(ByVal sender As Object, ByVal e As ComponentModel.RunWorkerCompletedEventArgs) Handles Process2_bw.RunWorkerCompleted"
+        },
+        {
+          "line": 214,
+          "signature": "Private Sub Process1_bw_DoWork(ByVal sender As Object, ByVal e As ComponentModel.DoWorkEventArgs) Handles Process1_bw.DoWork"
+        },
+        {
+          "line": 316,
+          "signature": "Private Sub Process2_bw_DoWork(ByVal sender As Object, ByVal e As ComponentModel.DoWorkEventArgs) Handles Process2_bw.DoWork"
+        },
+        {
+          "line": 657,
+          "signature": "Private Function GetGroupId(name1 As String, suffix As String) As String"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-input/LoginsXlsxToDocxDialog.xaml",
+      "sha256": "f5bd556872ec44549c3acb8e5500ba72e8fad7e9f34d29b77619f59b33af6228",
+      "lines": 40,
+      "methods": []
+    },
+    {
+      "path": "toolbox/itc-input/LoginsXlsxToDocxDialog.xaml.vb",
+      "sha256": "375f5fd09aa8daa528422a24291827784b24bfeb0aead40f782e5fe785421311",
+      "lines": 396,
+      "methods": [
+        {
+          "line": 18,
+          "signature": "Public Sub New()"
+        },
+        {
+          "line": 22,
+          "signature": "Private Sub Me_Loaded(ByVal sender As System.Object, ByVal e As System.Windows.RoutedEventArgs) Handles Me.Loaded"
+        },
+        {
+          "line": 49,
+          "signature": "Private Sub BtnCancel_Click() Handles BtnCancel.Click"
+        },
+        {
+          "line": 61,
+          "signature": "Private Sub BtnClose_Click() Handles BtnClose.Click"
+        },
+        {
+          "line": 65,
+          "signature": "Private Sub bw_ProgressChanged(ByVal sender As Object, ByVal e As ComponentModel.ProgressChangedEventArgs) Handles Process1_bw.ProgressChanged, Process2_bw.ProgressChanged"
+        },
+        {
+          "line": 69,
+          "signature": "Private Sub AddWarningMessage(MessageStr As String, MessageParameter As String)"
+        },
+        {
+          "line": 73,
+          "signature": "Private Sub AddErrorMessage(MessageStr As String, MessageParameter As String)"
+        },
+        {
+          "line": 78,
+          "signature": "Private Sub BtnEditor_Click() Handles BtnEditor.Click"
+        },
+        {
+          "line": 98,
+          "signature": "Private Sub Process1_bw_RunWorkerCompleted(ByVal sender As Object, ByVal e As ComponentModel.RunWorkerCompletedEventArgs) Handles Process1_bw.RunWorkerCompleted"
+        },
+        {
+          "line": 136,
+          "signature": "Private Sub BtnContinue_Click() Handles BtnContinue.Click"
+        },
+        {
+          "line": 159,
+          "signature": "Private Sub Process2_bw_RunWorkerCompleted(ByVal sender As Object, ByVal e As ComponentModel.RunWorkerCompletedEventArgs) Handles Process2_bw.RunWorkerCompleted"
+        },
+        {
+          "line": 192,
+          "signature": "Private Sub SelectTemplateFile_Click(sender As Object, e As RoutedEventArgs)"
+        },
+        {
+          "line": 208,
+          "signature": "Private Sub Process1_bw_DoWork(ByVal sender As Object, ByVal e As ComponentModel.DoWorkEventArgs) Handles Process1_bw.DoWork"
+        },
+        {
+          "line": 289,
+          "signature": "Private Sub Process2_bw_DoWork(ByVal sender As Object, ByVal e As ComponentModel.DoWorkEventArgs) Handles Process2_bw.DoWork"
+        },
+        {
+          "line": 349,
+          "signature": "Private Sub replaceText(p As Paragraph, group As groupdata, login As logindata, serverUrl As String, parent As WordprocessingDocument)"
+        },
+        {
+          "line": 389,
+          "signature": "Private Function getUrl(serverAddress As String, login As String) As String"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-input/readContent/DownloadContentDialog.xaml",
+      "sha256": "b77fa6dec60189b9b401e6e873871aa41b57e0e90f5be921674119cb75876296",
+      "lines": 9,
+      "methods": []
+    },
+    {
+      "path": "toolbox/itc-input/readContent/DownloadContentDialog.xaml.vb",
+      "sha256": "8e17cc1641ba150f7c7762a551b32bd8c825be6a13bfbb91cf16de09da4edc69",
+      "lines": 8,
+      "methods": [
+        {
+          "line": 4,
+          "signature": "Public Sub New(testcenterConnection As ITCConnection)"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-input/readContent/DownloadContentPage1Credentials.xaml",
+      "sha256": "62b643daea226ce2b76844006362c7ed1a419881d8b1a9c501075f35229bea8b",
+      "lines": 39,
+      "methods": []
+    },
+    {
+      "path": "toolbox/itc-input/readContent/DownloadContentPage1Credentials.xaml.vb",
+      "sha256": "c5040555282545848380cc125e11beeefd57adf569734d09db3e8bc207e48be4",
+      "lines": 86,
+      "methods": [
+        {
+          "line": 9,
+          "signature": "Private Sub Me_Loaded() Handles Me.Loaded"
+        },
+        {
+          "line": 24,
+          "signature": "Private Sub BtnCancel_Click(sender As System.Object, e As System.Windows.RoutedEventArgs)"
+        },
+        {
+          "line": 29,
+          "signature": "Private Sub BtnContinue_Click(sender As Object, e As RoutedEventArgs)"
+        },
+        {
+          "line": 55,
+          "signature": "Private Sub myBackgroundWorker_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles myBackgroundWorker.DoWork"
+        },
+        {
+          "line": 60,
+          "signature": "Private Sub myBackgroundWorker_ProgressChanged(ByVal sender As Object, ByVal e As ProgressChangedEventArgs) Handles myBackgroundWorker.ProgressChanged"
+        },
+        {
+          "line": 64,
+          "signature": "Private Sub myBackgroundWorker_RunWorkerCompleted(ByVal sender As Object, ByVal e As RunWorkerCompletedEventArgs) Handles myBackgroundWorker.RunWorkerCompleted"
+        },
+        {
+          "line": 78,
+          "signature": "Private Sub BtnOldLogin_Click(sender As Object, e As RoutedEventArgs)"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-input/readContent/DownloadContentPage2SelectWorkspace.xaml",
+      "sha256": "1c55d10c05e1c05054a3d84bc0783bef2388545906126ff4136f3a07d7e3a423",
+      "lines": 27,
+      "methods": []
+    },
+    {
+      "path": "toolbox/itc-input/readContent/DownloadContentPage2SelectWorkspace.xaml.vb",
+      "sha256": "bc6b18a421c2825099e49df0ffa024869d6b607ce87151c830afa6b160e51327",
+      "lines": 22,
+      "methods": [
+        {
+          "line": 2,
+          "signature": "Private Sub Me_Loaded() Handles Me.Loaded"
+        },
+        {
+          "line": 8,
+          "signature": "Private Sub BtnCancel_Click(sender As System.Object, e As System.Windows.RoutedEventArgs)"
+        },
+        {
+          "line": 13,
+          "signature": "Private Sub BtnContinue_Click(sender As Object, e As RoutedEventArgs)"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-input/readContent/DownloadContentPage3Action.xaml",
+      "sha256": "b8c81d8cdcbbc95782d9cede69e9f290361c6dd5a4fad342797b691d4d453391",
+      "lines": 24,
+      "methods": []
+    },
+    {
+      "path": "toolbox/itc-input/readContent/DownloadContentPage3Action.xaml.vb",
+      "sha256": "494f32f6917efcbf80aa4a6a77a5ef99548fbc1226f61857256fff9585643bb9",
+      "lines": 125,
+      "methods": [
+        {
+          "line": 9,
+          "signature": "Private Sub Me_Loaded() Handles Me.Loaded"
+        },
+        {
+          "line": 33,
+          "signature": "Private Sub myBackgroundWorker_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles myBackgroundWorker.DoWork"
+        },
+        {
+          "line": 101,
+          "signature": "Private Sub myBackgroundWorker_ProgressChanged(ByVal sender As Object, ByVal e As ProgressChangedEventArgs) Handles myBackgroundWorker.ProgressChanged"
+        },
+        {
+          "line": 106,
+          "signature": "Private Sub myBackgroundWorker_RunWorkerCompleted(ByVal sender As Object, ByVal e As RunWorkerCompletedEventArgs) Handles myBackgroundWorker.RunWorkerCompleted"
+        },
+        {
+          "line": 115,
+          "signature": "Private Sub BtnCancelClose_Click(sender As System.Object, e As System.Windows.RoutedEventArgs)"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-input/readContent/IndexHtml.vb",
+      "sha256": "10a01e10caf02674b7d75d98c22d89e74e5b5d86fb8395a3db797a4fa88908a1",
+      "lines": 198,
+      "methods": [
+        {
+          "line": 4,
+          "signature": "Private Shared Sub addFileDataToTable(f As WorkspaceFileDTO, tableRow As XElement)"
+        },
+        {
+          "line": 11,
+          "signature": "Public Shared Sub WriteTo(TargetFilename As String, url As String, workspaceName As String, files As List(Of WorkspaceFileDTO))"
+        },
+        {
+          "line": 185,
+          "signature": "Private Shared Function GetFileSizeString(FileSizeInt As Integer) As String"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/JsonReadWrite.vb",
+      "sha256": "9ab98a1e2e9c62c29751835dc5a8d93a4bdb4b4ae0df47168db35cd4b62ebd37",
+      "lines": 150,
+      "methods": [
+        {
+          "line": 3,
+          "signature": "Public Shared Sub Write(targetJsonFilename As String, data As PersonList)"
+        },
+        {
+          "line": 13,
+          "signature": "Public Shared Sub WriteByGroup(targetFoldername As String, data As PersonList)"
+        },
+        {
+          "line": 26,
+          "signature": "Public Shared Sub WriteBooklets(targetJsonFilename As String)"
+        },
+        {
+          "line": 34,
+          "signature": "Public Shared Sub ReadFull(sourceJsonFilenames As String(), myworker As ComponentModel.BackgroundWorker)"
+        },
+        {
+          "line": 56,
+          "signature": "Public Shared Sub ReadResponsesOnly(sourceJsonFilenames As String(), myworker As ComponentModel.BackgroundWorker,"
+        },
+        {
+          "line": 104,
+          "signature": "Public Shared Sub ReadLogsOnly(sourceJsonFilenames As String(), myworker As ComponentModel.BackgroundWorker)"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/classes/ClassesBooklet.vb",
+      "sha256": "ab6f8556d946adf357648a8731de713660f8817037c2e626dfee1adcb00a1bf6",
+      "lines": 190,
+      "methods": [
+        {
+          "line": 8,
+          "signature": "Public Sub SetFirstUnitEnter(g As String, l As String, c As String, b As String, value As Long)"
+        },
+        {
+          "line": 18,
+          "signature": "Public Sub AddLogEntry(logData As UnitLineDataLog)"
+        },
+        {
+          "line": 23,
+          "signature": "Public Sub AddUnitData(unitdata As UnitLineDataResponses)"
+        },
+        {
+          "line": 44,
+          "signature": "Public Function ToUnitLineData() As Dictionary(Of String, Dictionary(Of String, List(Of UnitLineDataResponses)))"
+        },
+        {
+          "line": 57,
+          "signature": "Public Sub New(g As String, l As String, c As String)"
+        },
+        {
+          "line": 64,
+          "signature": "Public Sub addLogEntry(bookletName As String, timestamp As Long, unit As String, event_key As String, event_parameter As String)"
+        },
+        {
+          "line": 98,
+          "signature": "Public Sub New(ts As Long, key As String, parameter As String)"
+        },
+        {
+          "line": 123,
+          "signature": "Public Sub New(unitId As String, Optional unitAlias As String = Nothing)"
+        },
+        {
+          "line": 131,
+          "signature": "Public Function getTimeOnPageData() As TimeOnPageData"
+        },
+        {
+          "line": 152,
+          "signature": "Public Sub New(bookletId As String)"
+        },
+        {
+          "line": 159,
+          "signature": "Public Sub addSession(timestamp As Long, sysdata As Dictionary(Of String, String))"
+        },
+        {
+          "line": 170,
+          "signature": "Public Sub setTimestamps()"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/classes/ClassesConfig.vb",
+      "sha256": "6e4846489f3a9ce1d920e54bed803c79d241fe3cdfe4560316c6b382ceff1a87",
+      "lines": 5,
+      "methods": []
+    },
+    {
+      "path": "toolbox/itc-output/classes/ClassesDTO.vb",
+      "sha256": "cc5af9f10ad615a45d6bdba6defa89e1ea240a6f6499d82d88e853da83bbed8b",
+      "lines": 73,
+      "methods": []
+    },
+    {
+      "path": "toolbox/itc-output/classes/ClassesLogs.vb",
+      "sha256": "77019c7e631cddf55c7f0f6a8e68e81ef25bb3ce52170f323f26834aafe91626",
+      "lines": 282,
+      "methods": [
+        {
+          "line": 46,
+          "signature": "Public Shared Function fromCsvLine(line As String, fileType As CsvLogFileType) As UnitLineDataLog"
+        },
+        {
+          "line": 102,
+          "signature": "Public Shared Function fromTestcenterAPI(log As LogEntryDTO) As UnitLineDataLog"
+        },
+        {
+          "line": 174,
+          "signature": "Public Sub New(g As String, l As String, c As String, b As String)"
+        },
+        {
+          "line": 186,
+          "signature": "Public Function loadspeed(bookletsizelist As Dictionary(Of String, Long)) As Double"
+        },
+        {
+          "line": 193,
+          "signature": "Public Sub AddLogEvent(timestamp As Long, unit As String, event_key As String, event_parameter As String)"
+        },
+        {
+          "line": 196,
+          "signature": "Public Function GetTimeOnUnitList() As List(Of TimeOnUnit)"
+        },
+        {
+          "line": 238,
+          "signature": "Public Function GetResponsesCompleteAllUnitCount(unitsOnly As List(Of String)) As Integer"
+        },
+        {
+          "line": 250,
+          "signature": "Public Sub SetSysdata(timestamp As Long, sysdata As Dictionary(Of String, String))"
+        },
+        {
+          "line": 265,
+          "signature": "Function getFirstPlayerRunning() As Long"
+        },
+        {
+          "line": 274,
+          "signature": "Function getLastActivity() As Long"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/classes/ClassesReports.vb",
+      "sha256": "dc041c894b062b9ab5f23a32e84d819f398636b940dfbeb39527a0beef630ed9",
+      "lines": 12,
+      "methods": []
+    },
+    {
+      "path": "toolbox/itc-output/classes/ClassesResponses.vb",
+      "sha256": "58583f8edeb000e6766a7e5b08dd976a668730241d1329b4db043c82b9d18c92",
+      "lines": 448,
+      "methods": [
+        {
+          "line": 51,
+          "signature": "Public Sub New(id As String, v As String, st As String)"
+        },
+        {
+          "line": 99,
+          "signature": "Public Shared Function fromCsvLine(line As String,"
+        },
+        {
+          "line": 197,
+          "signature": "Public Shared Function fromTestcenterAPI(responseData As ResponseDTO) As UnitLineDataResponses"
+        },
+        {
+          "line": 250,
+          "signature": "Private Shared Function setResponsesDan(responseString As String, varRenameDef As Dictionary(Of String, List(Of String))) As List(Of SubForm)"
+        },
+        {
+          "line": 303,
+          "signature": "Private Shared Function setResponsesAbi(responseString As String) As List(Of SubForm)"
+        },
+        {
+          "line": 345,
+          "signature": "Private Shared Function setResponsesKeyValue(responseString As String, varRenameDef As Dictionary(Of String, List(Of String))) As List(Of SubForm)"
+        },
+        {
+          "line": 390,
+          "signature": "Private Shared Function setResponsesSimplePlayerLegacy(responseString As String, varRenameDef As Dictionary(Of String, List(Of String))) As List(Of SubForm)"
+        },
+        {
+          "line": 405,
+          "signature": "Private Shared Function setResponsesIqbStandard(responseString As String) As List(Of SubForm)"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/globalOutputStore.vb",
+      "sha256": "c3eeba80fa7c950a508cdc7ffd309f7db0e4a00b975937d0bb994017d7d6a8b6",
+      "lines": 11,
+      "methods": [
+        {
+          "line": 6,
+          "signature": "Public Shared Sub clear()"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/read/readCSV/LoadDataFromCsvDialog.xaml",
+      "sha256": "4bfe71ea10d9e158efcbb8ab0209198ce7d4365560c1085d6649f4e139e87a3f",
+      "lines": 10,
+      "methods": []
+    },
+    {
+      "path": "toolbox/itc-output/read/readCSV/LoadDataFromCsvDialog.xaml.vb",
+      "sha256": "544576ca7adf36f82f74524964161d777470b4384033b0c0d4b020ee8e81aadb",
+      "lines": 11,
+      "methods": [
+        {
+          "line": 6,
+          "signature": "Public Sub New(writeToXls As Boolean, Optional sqliteConnection As SQLiteConnector = Nothing)"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/read/readCSV/LoadDataFromCsvPage1Check.xaml",
+      "sha256": "0dfae034e0965bc28f3cfb1c1fd09deea59d66ece6c853444c913630b9dd68f6",
+      "lines": 21,
+      "methods": []
+    },
+    {
+      "path": "toolbox/itc-output/read/readCSV/LoadDataFromCsvPage1Check.xaml.vb",
+      "sha256": "fe87c81ffd1894108985781a0d485248ffa4ba711fe0fe06bea0f8412ef76d34",
+      "lines": 48,
+      "methods": [
+        {
+          "line": 2,
+          "signature": "Private Sub Me_Loaded() Handles Me.Loaded"
+        },
+        {
+          "line": 27,
+          "signature": "Private Sub BtnOk_Click(sender As System.Object, e As System.Windows.RoutedEventArgs) Handles BtnOK.Click"
+        },
+        {
+          "line": 36,
+          "signature": "Private Sub inputTargetFileName()"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/read/readCSV/LoadDataFromCsvPage2Result.xaml",
+      "sha256": "42756fe16a37f79209293aaccd52211babf4dab183f35aac77391207ac6402ac",
+      "lines": 23,
+      "methods": []
+    },
+    {
+      "path": "toolbox/itc-output/read/readCSV/LoadDataFromCsvPage2Result.xaml.vb",
+      "sha256": "38bec8daaa8a07a037a973de86982a508555d8413f7b43e0e00c56457b478362",
+      "lines": 171,
+      "methods": [
+        {
+          "line": 9,
+          "signature": "Private Sub Me_Loaded() Handles Me.Loaded"
+        },
+        {
+          "line": 17,
+          "signature": "Private Sub myBackgroundWorker_RunWorkerCompleted(ByVal sender As Object, ByVal e As RunWorkerCompletedEventArgs) Handles myBackgroundWorker.RunWorkerCompleted"
+        },
+        {
+          "line": 25,
+          "signature": "Private Sub BtnCancelClose_Click(sender As System.Object, e As System.Windows.RoutedEventArgs)"
+        },
+        {
+          "line": 42,
+          "signature": "Private Sub myBackgroundWorker_ProgressChanged(ByVal sender As Object, ByVal e As ProgressChangedEventArgs) Handles myBackgroundWorker.ProgressChanged"
+        },
+        {
+          "line": 53,
+          "signature": "Private Sub myBackgroundWorker_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles myBackgroundWorker.DoWork"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/read/readJsonFilesDialog.xaml",
+      "sha256": "df1dbaa7f5c2f870bea7f639f6c5b43e505a30ce4d2df94ffcee62bd87a767bb",
+      "lines": 36,
+      "methods": []
+    },
+    {
+      "path": "toolbox/itc-output/read/readJsonFilesDialog.xaml.vb",
+      "sha256": "58315779d19ef41398e9c17830c9a088af1bc57e1df10e18bcf5188b9fb11dca",
+      "lines": 97,
+      "methods": [
+        {
+          "line": 9,
+          "signature": "Private Sub Me_Loaded(ByVal sender As System.Object, ByVal e As System.Windows.RoutedEventArgs) Handles Me.Loaded"
+        },
+        {
+          "line": 18,
+          "signature": "Private Sub BtnCancel_Click() Handles BtnCancel.Click"
+        },
+        {
+          "line": 27,
+          "signature": "Private Sub BtnContinue_Click() Handles BtnContinue.Click"
+        },
+        {
+          "line": 54,
+          "signature": "Private Sub bw_ProgressChanged(ByVal sender As Object, ByVal e As ComponentModel.ProgressChangedEventArgs) Handles Process1_bw.ProgressChanged"
+        },
+        {
+          "line": 59,
+          "signature": "Private Sub Process1_bw_RunWorkerCompleted(ByVal sender As Object, ByVal e As ComponentModel.RunWorkerCompletedEventArgs) Handles Process1_bw.RunWorkerCompleted"
+        },
+        {
+          "line": 69,
+          "signature": "Private Sub Process1_bw_DoWork(ByVal sender As Object, ByVal e As ComponentModel.DoWorkEventArgs) Handles Process1_bw.DoWork"
+        },
+        {
+          "line": 84,
+          "signature": "Private Sub UpdateTarget(sender As Object, e As RoutedEventArgs)"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/read/readTestcenter/LoadDataFromTestcenterDialog.xaml",
+      "sha256": "76b41c6de32736c8bed0813476c8d5abec231e7591edc5236bd180c804bc6ccf",
+      "lines": 9,
+      "methods": []
+    },
+    {
+      "path": "toolbox/itc-output/read/readTestcenter/LoadDataFromTestcenterDialog.xaml.vb",
+      "sha256": "ad6b654e4498fc0fe924ca7e22deed534406e17b84696a571a44462a89413dad",
+      "lines": 32,
+      "methods": [
+        {
+          "line": 21,
+          "signature": "Public Sub New(testcenterConnection As ITCConnection,"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/read/readTestcenter/LoadDataFromTestcenterPage1Credentials.xaml",
+      "sha256": "aef9cac4ffe68ab8aa81c3ec5d3a0acad2b72975da9feb51eeeab8a0194a026f",
+      "lines": 39,
+      "methods": []
+    },
+    {
+      "path": "toolbox/itc-output/read/readTestcenter/LoadDataFromTestcenterPage1Credentials.xaml.vb",
+      "sha256": "76ea2d26649283dff808950a74409903bf4ed5cf28e3a247ebdf5e82f744b8e8",
+      "lines": 86,
+      "methods": [
+        {
+          "line": 9,
+          "signature": "Private Sub Me_Loaded() Handles Me.Loaded"
+        },
+        {
+          "line": 24,
+          "signature": "Private Sub BtnCancel_Click(sender As System.Object, e As System.Windows.RoutedEventArgs)"
+        },
+        {
+          "line": 29,
+          "signature": "Private Sub BtnContinue_Click(sender As Object, e As RoutedEventArgs)"
+        },
+        {
+          "line": 55,
+          "signature": "Private Sub myBackgroundWorker_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles myBackgroundWorker.DoWork"
+        },
+        {
+          "line": 60,
+          "signature": "Private Sub myBackgroundWorker_ProgressChanged(ByVal sender As Object, ByVal e As ProgressChangedEventArgs) Handles myBackgroundWorker.ProgressChanged"
+        },
+        {
+          "line": 64,
+          "signature": "Private Sub myBackgroundWorker_RunWorkerCompleted(ByVal sender As Object, ByVal e As RunWorkerCompletedEventArgs) Handles myBackgroundWorker.RunWorkerCompleted"
+        },
+        {
+          "line": 78,
+          "signature": "Private Sub BtnOldLogin_Click(sender As Object, e As RoutedEventArgs)"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/read/readTestcenter/LoadDataFromTestcenterPage2SelectWorkspace.xaml",
+      "sha256": "799ca7d64d1bd4d217dcc87f8f681ac125bc407b5d45d23eaf1d2ccee3d27ec8",
+      "lines": 27,
+      "methods": []
+    },
+    {
+      "path": "toolbox/itc-output/read/readTestcenter/LoadDataFromTestcenterPage2SelectWorkspace.xaml.vb",
+      "sha256": "3ba912a5a78e32b3334fde470c048161fea4b234b8a26321ee05f9169086c6fe",
+      "lines": 20,
+      "methods": [
+        {
+          "line": 2,
+          "signature": "Private Sub Me_Loaded() Handles Me.Loaded"
+        },
+        {
+          "line": 8,
+          "signature": "Private Sub BtnCancel_Click(sender As System.Object, e As System.Windows.RoutedEventArgs)"
+        },
+        {
+          "line": 13,
+          "signature": "Private Sub BtnContinue_Click(sender As Object, e As RoutedEventArgs)"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/read/readTestcenter/LoadDataFromTestcenterPage3SelectGroups.xaml",
+      "sha256": "a309082888dc323867404e4716e448a97a9c51c2df259a88555338a594a39c2f",
+      "lines": 41,
+      "methods": []
+    },
+    {
+      "path": "toolbox/itc-output/read/readTestcenter/LoadDataFromTestcenterPage3SelectGroups.xaml.vb",
+      "sha256": "ed21c9f9925424aedaf3014cdc1828e0218327106216e631eb8f7e605bcbadf7",
+      "lines": 38,
+      "methods": [
+        {
+          "line": 5,
+          "signature": "Private Sub Me_Loaded() Handles Me.Loaded"
+        },
+        {
+          "line": 15,
+          "signature": "Private Sub BtnCancel_Click(sender As System.Object, e As System.Windows.RoutedEventArgs)"
+        },
+        {
+          "line": 20,
+          "signature": "Private Sub BtnContinue_Click(sender As Object, e As RoutedEventArgs)"
+        },
+        {
+          "line": 30,
+          "signature": "Private Sub BtnToggleCheck_Click(sender As Object, e As RoutedEventArgs)"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/read/readTestcenter/LoadDataFromTestcenterPage4Responses.xaml",
+      "sha256": "d36a7f8aae698cd255d8ffd3c8a1e5ede1b4a0605ee7143b4d49ccf3d136850c",
+      "lines": 22,
+      "methods": []
+    },
+    {
+      "path": "toolbox/itc-output/read/readTestcenter/LoadDataFromTestcenterPage4Responses.xaml.vb",
+      "sha256": "715f4fd8071854f3b5e62722e8f6117b5ecf3a0eef0f3d51cfd3fabc706ac8f6",
+      "lines": 184,
+      "methods": [
+        {
+          "line": 9,
+          "signature": "Private Sub Me_Loaded() Handles Me.Loaded"
+        },
+        {
+          "line": 29,
+          "signature": "Private Sub myBackgroundWorker_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles myBackgroundWorker.DoWork"
+        },
+        {
+          "line": 159,
+          "signature": "Private Sub myBackgroundWorker_ProgressChanged(ByVal sender As Object, ByVal e As ProgressChangedEventArgs) Handles myBackgroundWorker.ProgressChanged"
+        },
+        {
+          "line": 164,
+          "signature": "Private Sub myBackgroundWorker_RunWorkerCompleted(ByVal sender As Object, ByVal e As RunWorkerCompletedEventArgs) Handles myBackgroundWorker.RunWorkerCompleted"
+        },
+        {
+          "line": 173,
+          "signature": "Private Sub BtnCancelClose_Click(sender As System.Object, e As System.Windows.RoutedEventArgs)"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/read/readTestcenter/LoadDataFromTestcenterPage4ReviewsXlsx.xaml",
+      "sha256": "5fc9dfec2fdbb77af5306753163a5ced32db6f80e11c9cb0df7bad886ebe2a32",
+      "lines": 22,
+      "methods": []
+    },
+    {
+      "path": "toolbox/itc-output/read/readTestcenter/LoadDataFromTestcenterPage4ReviewsXlsx.xaml.vb",
+      "sha256": "6e8bf3a20b6b2357a8acba8e14964e2dec9d709e058121cf7070986420e69314",
+      "lines": 86,
+      "methods": [
+        {
+          "line": 11,
+          "signature": "Private Sub Me_Loaded() Handles Me.Loaded"
+        },
+        {
+          "line": 30,
+          "signature": "Private Sub myBackgroundWorker_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles myBackgroundWorker.DoWork"
+        },
+        {
+          "line": 71,
+          "signature": "Private Sub myBackgroundWorker_ProgressChanged(ByVal sender As Object, ByVal e As ProgressChangedEventArgs) Handles myBackgroundWorker.ProgressChanged"
+        },
+        {
+          "line": 76,
+          "signature": "Private Sub myBackgroundWorker_RunWorkerCompleted(ByVal sender As Object, ByVal e As RunWorkerCompletedEventArgs) Handles myBackgroundWorker.RunWorkerCompleted"
+        },
+        {
+          "line": 81,
+          "signature": "Private Sub BtnCancelClose_Click(sender As System.Object, e As System.Windows.RoutedEventArgs)"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/read/readTestcenterToCsv/LoadDataFromTestcenterToCsvDialog.xaml",
+      "sha256": "396457118ac7e3a58100588d69580fdb0e8f6e24a5f5c5a5d658a9049ba65ffb",
+      "lines": 9,
+      "methods": []
+    },
+    {
+      "path": "toolbox/itc-output/read/readTestcenterToCsv/LoadDataFromTestcenterToCsvDialog.xaml.vb",
+      "sha256": "cb2c53777d2b9ddcf38d0344860930fbad0534c42bd37b86cf3bdfede4e4e79d",
+      "lines": 16,
+      "methods": [
+        {
+          "line": 11,
+          "signature": "Public Sub New(testcenterConnection As ITCConnection, type As CsvType)"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/read/readTestcenterToCsv/LoadDataFromTestcenterToCsvPage1Credentials.xaml",
+      "sha256": "a312d69213c6d3e5c6135ec60db66fe1ccfbbeff462430cebd068fb9c745047c",
+      "lines": 39,
+      "methods": []
+    },
+    {
+      "path": "toolbox/itc-output/read/readTestcenterToCsv/LoadDataFromTestcenterToCsvPage1Credentials.xaml.vb",
+      "sha256": "4f69466260ec7a8376b8e50a2bbcfd8a5c60c25675e497fa36d2a371cb1f894c",
+      "lines": 86,
+      "methods": [
+        {
+          "line": 9,
+          "signature": "Private Sub Me_Loaded() Handles Me.Loaded"
+        },
+        {
+          "line": 24,
+          "signature": "Private Sub BtnCancel_Click(sender As System.Object, e As System.Windows.RoutedEventArgs)"
+        },
+        {
+          "line": 29,
+          "signature": "Private Sub BtnContinue_Click(sender As Object, e As RoutedEventArgs)"
+        },
+        {
+          "line": 55,
+          "signature": "Private Sub myBackgroundWorker_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles myBackgroundWorker.DoWork"
+        },
+        {
+          "line": 60,
+          "signature": "Private Sub myBackgroundWorker_ProgressChanged(ByVal sender As Object, ByVal e As ProgressChangedEventArgs) Handles myBackgroundWorker.ProgressChanged"
+        },
+        {
+          "line": 64,
+          "signature": "Private Sub myBackgroundWorker_RunWorkerCompleted(ByVal sender As Object, ByVal e As RunWorkerCompletedEventArgs) Handles myBackgroundWorker.RunWorkerCompleted"
+        },
+        {
+          "line": 78,
+          "signature": "Private Sub BtnOldLogin_Click(sender As Object, e As RoutedEventArgs)"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/read/readTestcenterToCsv/LoadDataFromTestcenterToCsvPage2SelectWorkspace.xaml",
+      "sha256": "81924e4cfd1c3551a73bde5a6950a5719395f32f770bf953fa302fecfca34719",
+      "lines": 27,
+      "methods": []
+    },
+    {
+      "path": "toolbox/itc-output/read/readTestcenterToCsv/LoadDataFromTestcenterToCsvPage2SelectWorkspace.xaml.vb",
+      "sha256": "7df2bc4db194d4af571bc01b3a39c7295568026c0b83db769a3f62d6f7f30fff",
+      "lines": 20,
+      "methods": [
+        {
+          "line": 2,
+          "signature": "Private Sub Me_Loaded() Handles Me.Loaded"
+        },
+        {
+          "line": 8,
+          "signature": "Private Sub BtnCancel_Click(sender As System.Object, e As System.Windows.RoutedEventArgs)"
+        },
+        {
+          "line": 13,
+          "signature": "Private Sub BtnContinue_Click(sender As Object, e As RoutedEventArgs)"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/read/readTestcenterToCsv/LoadDataFromTestcenterToCsvPage3SelectGroups.xaml",
+      "sha256": "357e1387e42d8ec18e90079021cc8cede7c8245eb92a98329efa0dc95c4eb5e1",
+      "lines": 41,
+      "methods": []
+    },
+    {
+      "path": "toolbox/itc-output/read/readTestcenterToCsv/LoadDataFromTestcenterToCsvPage3SelectGroups.xaml.vb",
+      "sha256": "7a472f5be9457d5d78b21135f14fb4bb9f7e72523aac854b537264117713486e",
+      "lines": 34,
+      "methods": [
+        {
+          "line": 5,
+          "signature": "Private Sub Me_Loaded() Handles Me.Loaded"
+        },
+        {
+          "line": 15,
+          "signature": "Private Sub BtnCancel_Click(sender As System.Object, e As System.Windows.RoutedEventArgs)"
+        },
+        {
+          "line": 20,
+          "signature": "Private Sub BtnContinue_Click(sender As Object, e As RoutedEventArgs)"
+        },
+        {
+          "line": 26,
+          "signature": "Private Sub BtnToggleCheck_Click(sender As Object, e As RoutedEventArgs)"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/read/readTestcenterToCsv/LoadDataFromTestcenterToCsvPage4Result.xaml",
+      "sha256": "87b054e7bcfc5de1a039fd4ba583f025b4630f27aba105d72ea0b73476ab0ae2",
+      "lines": 22,
+      "methods": []
+    },
+    {
+      "path": "toolbox/itc-output/read/readTestcenterToCsv/LoadDataFromTestcenterToCsvPage4Result.xaml.vb",
+      "sha256": "3cc5a8e39d3bc753cdfc6a130342ef5679f0f2fa85225a1a336f7378db0d110d",
+      "lines": 83,
+      "methods": [
+        {
+          "line": 8,
+          "signature": "Private Sub Me_Loaded() Handles Me.Loaded"
+        },
+        {
+          "line": 27,
+          "signature": "Private Sub myBackgroundWorker_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles myBackgroundWorker.DoWork"
+        },
+        {
+          "line": 68,
+          "signature": "Private Sub myBackgroundWorker_ProgressChanged(ByVal sender As Object, ByVal e As ProgressChangedEventArgs) Handles myBackgroundWorker.ProgressChanged"
+        },
+        {
+          "line": 73,
+          "signature": "Private Sub myBackgroundWorker_RunWorkerCompleted(ByVal sender As Object, ByVal e As RunWorkerCompletedEventArgs) Handles myBackgroundWorker.RunWorkerCompleted"
+        },
+        {
+          "line": 78,
+          "signature": "Private Sub BtnCancelClose_Click(sender As System.Object, e As System.Windows.RoutedEventArgs)"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/sqlite/readJsonBookletFilesToDbDialog.xaml",
+      "sha256": "3902c236ae8f35ec71533bb81e4672c332372b78865a3c20227ad85a790d68f3",
+      "lines": 24,
+      "methods": []
+    },
+    {
+      "path": "toolbox/itc-output/sqlite/readJsonBookletFilesToDbDialog.xaml.vb",
+      "sha256": "90597fbe578a6dc8ab97faa89fbaba9b73f3d32e1a39ec0bf4351eda0935e303",
+      "lines": 64,
+      "methods": [
+        {
+          "line": 8,
+          "signature": "Public Sub New(sourceFileName As String)"
+        },
+        {
+          "line": 13,
+          "signature": "Private Sub Me_Loaded(ByVal sender As System.Object, ByVal e As System.Windows.RoutedEventArgs) Handles Me.Loaded"
+        },
+        {
+          "line": 25,
+          "signature": "Private Sub BtnCancel_Click() Handles BtnCancel.Click"
+        },
+        {
+          "line": 35,
+          "signature": "Private Sub bw_ProgressChanged(ByVal sender As Object, ByVal e As ComponentModel.ProgressChangedEventArgs) Handles Process1_bw.ProgressChanged"
+        },
+        {
+          "line": 39,
+          "signature": "Private Sub Process1_bw_RunWorkerCompleted(ByVal sender As Object, ByVal e As ComponentModel.RunWorkerCompletedEventArgs) Handles Process1_bw.RunWorkerCompleted"
+        },
+        {
+          "line": 49,
+          "signature": "Private Sub Process1_bw_DoWork(ByVal sender As Object, ByVal e As ComponentModel.DoWorkEventArgs) Handles Process1_bw.DoWork"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/sqlite/readJsonFilesToDbDialog.xaml",
+      "sha256": "fffb41ca9344449821be6c5c08285f3c219d7cdaabd02f8c7569a5f4792e0b6c",
+      "lines": 25,
+      "methods": []
+    },
+    {
+      "path": "toolbox/itc-output/sqlite/readJsonFilesToDbDialog.xaml.vb",
+      "sha256": "e0cc59fec35988cb32b9a0ea594eed8d35b33e235d60dd9ecacc1ce756a781b5",
+      "lines": 90,
+      "methods": [
+        {
+          "line": 8,
+          "signature": "Public Sub New(fileNameList As String())"
+        },
+        {
+          "line": 13,
+          "signature": "Private Sub Me_Loaded(ByVal sender As System.Object, ByVal e As System.Windows.RoutedEventArgs) Handles Me.Loaded"
+        },
+        {
+          "line": 26,
+          "signature": "Private Sub BtnCancel_Click() Handles BtnCancel.Click"
+        },
+        {
+          "line": 36,
+          "signature": "Private Sub bw_ProgressChanged(ByVal sender As Object, ByVal e As ComponentModel.ProgressChangedEventArgs) Handles Process1_bw.ProgressChanged"
+        },
+        {
+          "line": 41,
+          "signature": "Private Sub Process1_bw_RunWorkerCompleted(ByVal sender As Object, ByVal e As ComponentModel.RunWorkerCompletedEventArgs) Handles Process1_bw.RunWorkerCompleted"
+        },
+        {
+          "line": 52,
+          "signature": "Private Sub Process1_bw_DoWork(ByVal sender As Object, ByVal e As ComponentModel.DoWorkEventArgs) Handles Process1_bw.DoWork"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/transformCsv2Xlsx.vb",
+      "sha256": "e5ec29d98898000e4e42ce6a83475dc125ed615afd4026ceff353d80e681eccc",
+      "lines": 74,
+      "methods": [
+        {
+          "line": 8,
+          "signature": "Public Sub New(sourceFilename As String)"
+        },
+        {
+          "line": 39,
+          "signature": "Public Sub ToXlsx(targetFilename As String)"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/write/ToCsvDialog.xaml",
+      "sha256": "457d8be5751bdc16e51e646d516bce89db1fecc91258802f5a322250ed0eaad3",
+      "lines": 23,
+      "methods": []
+    },
+    {
+      "path": "toolbox/itc-output/write/ToCsvDialog.xaml.vb",
+      "sha256": "eace22dcf8a14f65cc894a213ecb8a5cf0f6e29f85af249f09a43e54d92d7c2f",
+      "lines": 157,
+      "methods": [
+        {
+          "line": 11,
+          "signature": "Public Sub New(SqliteDB As SQLiteConnector, mode As CsvContent)"
+        },
+        {
+          "line": 18,
+          "signature": "Private Sub Me_Loaded(ByVal sender As System.Object, ByVal e As System.Windows.RoutedEventArgs) Handles Me.Loaded"
+        },
+        {
+          "line": 30,
+          "signature": "Private Sub BtnCancelClose_Click() Handles BtnCancelClose.Click"
+        },
+        {
+          "line": 39,
+          "signature": "Private Sub bw_ProgressChanged(ByVal sender As Object, ByVal e As ComponentModel.ProgressChangedEventArgs) Handles Process1_bw.ProgressChanged"
+        },
+        {
+          "line": 44,
+          "signature": "Private Sub Process1_bw_RunWorkerCompleted(ByVal sender As Object, ByVal e As ComponentModel.RunWorkerCompletedEventArgs) Handles Process1_bw.RunWorkerCompleted"
+        },
+        {
+          "line": 55,
+          "signature": "Private Sub Process1_bw_DoWork(ByVal sender As Object, ByVal e As ComponentModel.DoWorkEventArgs) Handles Process1_bw.DoWork"
+        },
+        {
+          "line": 92,
+          "signature": "Private Function PersonResponseLongAsCsvString(r As PersonResponseLong, Optional separator As String = \";\") As String"
+        },
+        {
+          "line": 118,
+          "signature": "Private Function PersonSessionAsCsvString(s As SessionReport, personId As String, sessionsCount As Integer, Optional separator As String = \";\") As String"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/write/ToXlsxDialog.xaml",
+      "sha256": "6a89b4b6aabd35bfb3342e46308c2695a09404f68b660bd4f46dadcded0cc70e",
+      "lines": 40,
+      "methods": []
+    },
+    {
+      "path": "toolbox/itc-output/write/ToXlsxDialog.xaml.vb",
+      "sha256": "6d49fdfb13b71854b999ab0ec636b9f1d713fc31d469e2d386e76b14b962cfed",
+      "lines": 140,
+      "methods": [
+        {
+          "line": 9,
+          "signature": "Public Sub New(sqliteConnection As SQLiteConnector)"
+        },
+        {
+          "line": 14,
+          "signature": "Private Sub Me_Loaded(ByVal sender As System.Object, ByVal e As System.Windows.RoutedEventArgs) Handles Me.Loaded"
+        },
+        {
+          "line": 61,
+          "signature": "Private Sub BtnCancel_Click() Handles BtnCancel.Click"
+        },
+        {
+          "line": 70,
+          "signature": "Private Sub BtnClose_Click() Handles BtnClose.Click"
+        },
+        {
+          "line": 74,
+          "signature": "Private Sub bw_ProgressChanged(ByVal sender As Object, ByVal e As ComponentModel.ProgressChangedEventArgs) Handles Process1_bw.ProgressChanged"
+        },
+        {
+          "line": 79,
+          "signature": "Private Sub Process1_bw_RunWorkerCompleted(ByVal sender As Object, ByVal e As ComponentModel.RunWorkerCompletedEventArgs) Handles Process1_bw.RunWorkerCompleted"
+        },
+        {
+          "line": 88,
+          "signature": "Private Sub BtnContinue_Click() Handles BtnContinue.Click"
+        },
+        {
+          "line": 120,
+          "signature": "Private Sub Process1_bw_DoWork(ByVal sender As Object, ByVal e As ComponentModel.DoWorkEventArgs) Handles Process1_bw.DoWork"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/write/WriteOutputToXlsx.vb",
+      "sha256": "ec9665d1a83e09eb3a7ba6c887d1a0f3a07c635a8c9147679b4e587cdade227f",
+      "lines": 502,
+      "methods": [
+        {
+          "line": 24,
+          "signature": "Public Shared Sub Write("
+        },
+        {
+          "line": 322,
+          "signature": "Public Shared Sub XXXWriteLite("
+        },
+        {
+          "line": 482,
+          "signature": "Private Shared Function getVariableListFromStore(addSubformSuffix As Boolean) As List(Of String)"
+        },
+        {
+          "line": 499,
+          "signature": "Public Shared Function getColumnKey(unit As Unit, variableId As String, subformKey As String) As String"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/write/WriteReviewsToXlsx.vb",
+      "sha256": "4f43bfee9900dc1c8186e4a6f0e2799e4093038e692e51da9b5c9a0f15ee24cd",
+      "lines": 121,
+      "methods": [
+        {
+          "line": 8,
+          "signature": "Public Shared Sub Write("
+        }
+      ]
+    },
+    {
+      "path": "toolbox/services/ReadTC.vb",
+      "sha256": "4fb1800ec6d34b2585a372fb5ded6cda871ac9377beb8d3796a03c1c384d168d",
+      "lines": 24,
+      "methods": [
+        {
+          "line": 8,
+          "signature": "Public Shared Async Function f1() As Task(Of String)"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/services/SQLiteConnector.vb",
+      "sha256": "e21a2238300975ebae24e4262a14da3eec1dc44471c67c2a22178364fc0b21ea",
+      "lines": 877,
+      "methods": [
+        {
+          "line": 36,
+          "signature": "Public Sub New(dbFileName As String, create As Boolean)"
+        },
+        {
+          "line": 213,
+          "signature": "Public Function GetOpenConnection(ReadOnlyMode As Boolean) As SQLiteConnection"
+        },
+        {
+          "line": 221,
+          "signature": "Public Function WriteDbInfoData(closeConnection As Boolean) As String"
+        },
+        {
+          "line": 291,
+          "signature": "Public Sub CloseConnection()"
+        },
+        {
+          "line": 296,
+          "signature": "Public Sub addPerson(p As Person)"
+        },
+        {
+          "line": 464,
+          "signature": "Public Function addBooklets(bookletSizes As Dictionary(Of String, Long)) As Integer"
+        },
+        {
+          "line": 500,
+          "signature": "Public Function getVariableList(addSubformSuffix As Boolean) As List(Of String)"
+        },
+        {
+          "line": 522,
+          "signature": "Public Function getPeopleList() As Dictionary(Of String, String)"
+        },
+        {
+          "line": 538,
+          "signature": "Public Function getPersonResponses(dbIdString As String) As Person"
+        },
+        {
+          "line": 590,
+          "signature": "Public Function getSessionReports(personDbId As Long) As List(Of SessionReport)"
+        },
+        {
+          "line": 674,
+          "signature": "Public Function getUnitsLastChanged(bookletId As Long) As Dictionary(Of String, Long)"
+        },
+        {
+          "line": 736,
+          "signature": "Public Function getPeopleListAll() As Dictionary(Of Long, String)"
+        },
+        {
+          "line": 752,
+          "signature": "Public Function getUnitList(personDbId As Long) As Dictionary(Of String, Dictionary(Of String, Integer))"
+        },
+        {
+          "line": 790,
+          "signature": "Public Function getPersonResponsesLong(dbIdString As String) As List(Of PersonResponseLong)"
+        }
+      ]
+    },
+    {
+      "path": "toolbox/services/itc-connection.vb",
+      "sha256": "d7c24cd4dd7872915020cb3cf81af3dc07ccde3dac809fd6d299968482451d0e",
+      "lines": 542,
+      "methods": [
+        {
+          "line": 38,
+          "signature": "Public Sub New(url As String, credentials As Net.NetworkCredential, worker As ComponentModel.BackgroundWorker)"
+        },
+        {
+          "line": 103,
+          "signature": "Public Shared Function AcceptAllCertifications(sender As Object,"
+        },
+        {
+          "line": 110,
+          "signature": "Private Function SendJsonRequest(requestUrl As String, method As String, jsonBody As String) As Net.WebResponse"
+        },
+        {
+          "line": 123,
+          "signature": "Private Shared Function ReadErrorBody(ex As Net.WebException) As String"
+        },
+        {
+          "line": 134,
+          "signature": "Private Function CreateSessionWithChallenge(credentials As Net.NetworkCredential, worker As ComponentModel.BackgroundWorker) As Net.WebResponse"
+        },
+        {
+          "line": 161,
+          "signature": "Private Shared Function SolveAltchaChallenge(salt As String, targetHash As String, maxNumber As Long) As Long"
+        },
+        {
+          "line": 181,
+          "signature": "Private Function GetWorkspaceName(wsId As Integer) As String"
+        },
+        {
+          "line": 212,
+          "signature": "Public Function getDataGroups() As List(Of GroupDataDTO)"
+        },
+        {
+          "line": 243,
+          "signature": "Public Function getFullFileList() As List(Of WorkspaceFileDTO)"
+        },
+        {
+          "line": 277,
+          "signature": "Public Function getFileDependencies(fileList As List(Of String)) As List(Of WorkspaceFileDTO)"
+        },
+        {
+          "line": 332,
+          "signature": "Public Function getFile(fileInfo As WorkspaceFileDTO, ByRef TargetFileStream As IO.FileStream, myBW As BackgroundWorker) As Boolean"
+        },
+        {
+          "line": 367,
+          "signature": "Public Function getCsvFile(type As CsvType, dataGroupId As String, ByRef targetStream As IO.MemoryStream, myBW As BackgroundWorker) As Boolean"
+        },
+        {
+          "line": 404,
+          "signature": "Public Function getBookletSizes() As Dictionary(Of String, Long)"
+        },
+        {
+          "line": 432,
+          "signature": "Public Function getLogs(dataGroupId As String) As List(Of LogEntryDTO)"
+        },
+        {
+          "line": 463,
+          "signature": "Public Function getResponses(dataGroupId As String) As List(Of ResponseDTO)"
+        },
+        {
+          "line": 494,
+          "signature": "Public Function getReviews(dataGroupId As String) As List(Of ReviewDTO)"
+        }
+      ]
+    }
+  ],
+  "surfaces": [
+    {
+      "path": "coding/CaseNavigateDialog.xaml",
+      "reachability": "reachable",
+      "reason": "Erreichbarer Dialog oder eingebundenes Control; Zuordnung zu den funktionalen Bereichen in function-matrix.json.",
+      "featuresFromSameSource": [
+        "K-21"
+      ],
+      "controls": [
+        {
+          "tag": "ButtonHelpSmall",
+          "name": "BtnHelp",
+          "command": "",
+          "click": "",
+          "label": "",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "OK",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "Abbrechen",
+          "tooltip": ""
+        },
+        {
+          "tag": "DataGridTemplateColumn",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "Attribute[nr].Value",
+          "tooltip": ""
+        },
+        {
+          "tag": "DataGridTextColumn",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "Attribute[v].Value",
+          "tooltip": ""
+        },
+        {
+          "tag": "DataGridTextColumn",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "Attribute[c].Value",
+          "tooltip": ""
+        },
+        {
+          "tag": "DataGridTemplateColumn",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "Value",
+          "tooltip": ""
+        }
+      ]
+    },
+    {
+      "path": "coding/CodeListUserControl.xaml",
+      "reachability": "reachable",
+      "reason": "Erreichbarer Dialog oder eingebundenes Control; Zuordnung zu den funktionalen Bereichen in function-matrix.json.",
+      "featuresFromSameSource": [
+        "K-13"
+      ],
+      "controls": [
+        {
+          "tag": "TextBox",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "Comment FindAncestor local:CodeListUserControl",
+          "tooltip": ""
+        }
+      ]
+    },
+    {
+      "path": "coding/InputCoderNameDialog.xaml",
+      "reachability": "reachable",
+      "reason": "Erreichbarer Dialog oder eingebundenes Control; Zuordnung zu den funktionalen Bereichen in function-matrix.json.",
+      "featuresFromSameSource": [],
+      "controls": [
+        {
+          "tag": "ButtonHelpSmall",
+          "name": "BtnHelp",
+          "command": "",
+          "click": "",
+          "label": "",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "OK",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "Abbrechen",
+          "tooltip": ""
+        },
+        {
+          "tag": "TextBox",
+          "name": "TBName",
+          "command": "",
+          "click": "",
+          "label": "",
+          "tooltip": ""
+        }
+      ]
+    },
+    {
+      "path": "coding/InputGeneralCommentDialog.xaml",
+      "reachability": "reachable",
+      "reason": "Erreichbarer Dialog oder eingebundenes Control; Zuordnung zu den funktionalen Bereichen in function-matrix.json.",
+      "featuresFromSameSource": [],
+      "controls": [
+        {
+          "tag": "ButtonHelpSmall",
+          "name": "BtnHelp",
+          "command": "",
+          "click": "",
+          "label": "",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "OK",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "Abbrechen",
+          "tooltip": ""
+        },
+        {
+          "tag": "TextBox",
+          "name": "TBComment",
+          "command": "",
+          "click": "",
+          "label": "",
+          "tooltip": ""
+        }
+      ]
+    },
+    {
+      "path": "coding/MainWindow.xaml",
+      "reachability": "reachable",
+      "reason": "Erreichbarer Dialog oder eingebundenes Control; Zuordnung zu den funktionalen Bereichen in function-matrix.json.",
+      "featuresFromSameSource": [
+        "K-02",
+        "K-11",
+        "K-12",
+        "K-16",
+        "K-17",
+        "K-20",
+        "K-35",
+        "K-36"
+      ],
+      "controls": [
+        {
+          "tag": "ButtonOpen",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "",
+          "tooltip": "Jobverzeichnis wählen"
+        },
+        {
+          "tag": "ButtonHelp",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "",
+          "tooltip": "Programm-Info"
+        },
+        {
+          "tag": "ComboBox",
+          "name": "CBJobs",
+          "command": "",
+          "click": "",
+          "label": "Label CaseCount CodedCaseCount CaseCount ProgressValueString CodedCaseCount",
+          "tooltip": "Kodierjob wählen"
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "NavigationCommands.PreviousPage",
+          "click": "",
+          "label": "",
+          "tooltip": "Zum vorherigen Kodierfall gehen"
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "",
+          "tooltip": "Name Kodierer/in ändern"
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "Properties",
+          "click": "",
+          "label": "",
+          "tooltip": "Allgemeinen Kommentar zum Job bearbeiten - F4"
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "NavigationCommands.GoToPage",
+          "click": "",
+          "label": "",
+          "tooltip": "Zu einem Kodierfall springen - F3"
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "NavigationCommands.NextPage",
+          "click": "",
+          "label": "",
+          "tooltip": "Zum nächsten Kodierfall gehen"
+        },
+        {
+          "tag": "Slider",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "SelectedCaseNumber CaseCount FirstUncodedCaseNumber",
+          "tooltip": ""
+        }
+      ]
+    },
+    {
+      "path": "scans/EditJobOptionsUserControl.xaml",
+      "reachability": "excluded",
+      "reason": "Editor der gemeinsamen Bibliothek; vom Kodierer nicht aufgerufen.",
+      "featuresFromSameSource": [],
+      "controls": [
+        {
+          "tag": "CheckBox",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "Attribute[showScore].Value Zeige Score (Punktzahl)",
+          "tooltip": ""
+        },
+        {
+          "tag": "CheckBox",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "Attribute[suppressDescription].Value Unterdrücke Allgemeine Kodieranweisung",
+          "tooltip": ""
+        },
+        {
+          "tag": "CheckBox",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "Attribute[enableComments].Value Kommentare möglich",
+          "tooltip": ""
+        },
+        {
+          "tag": "CheckBox",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "Attribute[anonym].Value Testpersonen anonymisieren",
+          "tooltip": ""
+        },
+        {
+          "tag": "CheckBox",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "Attribute[training].Value Schulungsmodus",
+          "tooltip": ""
+        }
+      ]
+    },
+    {
+      "path": "scans/IgnoreCodesPatternsDialog.xaml",
+      "reachability": "excluded",
+      "reason": "Bibliotheksdialog für andere Anwendungen.",
+      "featuresFromSameSource": [],
+      "controls": [
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "OK",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "Abbrechen",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "Standard setzen",
+          "tooltip": ""
+        },
+        {
+          "tag": "DataGridTextColumn",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "Attribute[c].Value",
+          "tooltip": ""
+        },
+        {
+          "tag": "DataGridTextColumn",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "Value",
+          "tooltip": ""
+        }
+      ]
+    },
+    {
+      "path": "scans/PageImageFrameSetControl.xaml",
+      "reachability": "excluded",
+      "reason": "Rahmeneditor für andere Anwendungen; kein Aufruf im Kodierer.",
+      "featuresFromSameSource": [],
+      "controls": [
+        {
+          "tag": "Slider",
+          "name": "sliZoom",
+          "command": "",
+          "click": "",
+          "label": "",
+          "tooltip": ""
+        }
+      ]
+    },
+    {
+      "path": "scans/PageImageSetShowControl.xaml",
+      "reachability": "reachable",
+      "reason": "Erreichbarer Dialog oder eingebundenes Control; Zuordnung zu den funktionalen Bereichen in function-matrix.json.",
+      "featuresFromSameSource": [
+        "K-22",
+        "K-25",
+        "K-26",
+        "K-27",
+        "K-28",
+        "K-30",
+        "K-37",
+        "K-38"
+      ],
+      "controls": [
+        {
+          "tag": "Slider",
+          "name": "sliZoom",
+          "command": "",
+          "click": "",
+          "label": "Self",
+          "tooltip": ""
+        },
+        {
+          "tag": "ToggleButton",
+          "name": "ToBtnFrame",
+          "command": "",
+          "click": "",
+          "label": "",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "local:Commands.Copy2Clipboard",
+          "click": "",
+          "label": "local:PageImageSetShowControl",
+          "tooltip": "Ausschnitt in Zwischenablage kopieren"
+        }
+      ]
+    },
+    {
+      "path": "scans/SelectBookletPageDialog.xaml",
+      "reachability": "excluded",
+      "reason": "Bibliotheksdialog für andere Anwendungen.",
+      "featuresFromSameSource": [],
+      "controls": [
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "OK",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "Abbruch",
+          "tooltip": ""
+        }
+      ]
+    },
+    {
+      "path": "scans/SelectVariableDialog.xaml",
+      "reachability": "excluded",
+      "reason": "Bibliotheksdialog für andere Anwendungen.",
+      "featuresFromSameSource": [],
+      "controls": [
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "OK",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "Abbruch",
+          "tooltip": ""
+        }
+      ]
+    },
+    {
+      "path": "toolbox/MainWindow.xaml",
+      "reachability": "reachable",
+      "reason": "Erreichbarer Dialog oder eingebundenes Control; Zuordnung zu den funktionalen Bereichen in function-matrix.json.",
+      "featuresFromSameSource": [
+        "T-42",
+        "T-48",
+        "T-61",
+        "T-62",
+        "T-63",
+        "X-01",
+        "X-02",
+        "X-03",
+        "X-04",
+        "X-05",
+        "X-06",
+        "X-07",
+        "T-64",
+        "T-65"
+      ],
+      "controls": [
+        {
+          "tag": "ButtonHelp",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "BtnBookletXlsx_Click",
+          "label": "Booklet-Xlsx",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "BtnLoginPoolXlsx_Click",
+          "label": "Codes-Xlsx",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "BtnLoginXlsxTemplate_Click",
+          "label": "Logins aus Vorlage",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "BtnLoginXlsxToDocx_Click",
+          "label": "Logins in Docx",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "BtnDownloadContent_Click",
+          "label": "Download Content",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "BtnSysCheck_Click",
+          "label": "SysCheck CSV -> Xlsx",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "BtnGetTestcenterReviewsData_Click",
+          "label": "Reviews Testcenter -> Xlsx",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "BtnTestcenterToJson_Click",
+          "label": "Antworten+Logs Testcenter -> JSON",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "BtnTestcenterToXlsx_Click",
+          "label": "Antworten Testcenter -> Xlsx",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "BtnTestcenterToCsvResponses_Click",
+          "label": "Antworten Testcenter -> Csv",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "BtnTestcenterToCsvLogs_Click",
+          "label": "Logs Testcenter -> Csv",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "BtnTestCsvToXlsx_Click",
+          "label": "Antworten CSV -> Xlsx",
+          "tooltip": ""
+        },
+        {
+          "tag": "MenuItem",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "",
+          "tooltip": ""
+        },
+        {
+          "tag": "MenuItem",
+          "name": "",
+          "command": "local:AppCommands.DBNew",
+          "click": "",
+          "label": "",
+          "tooltip": ""
+        },
+        {
+          "tag": "MenuItem",
+          "name": "",
+          "command": "local:AppCommands.DBOpen",
+          "click": "",
+          "label": "",
+          "tooltip": ""
+        },
+        {
+          "tag": "MenuItem",
+          "name": "",
+          "command": "local:AppCommands.DBCheck",
+          "click": "",
+          "label": "",
+          "tooltip": ""
+        },
+        {
+          "tag": "MenuItem",
+          "name": "",
+          "command": "local:AppCommands.AppExit",
+          "click": "",
+          "label": "",
+          "tooltip": ""
+        },
+        {
+          "tag": "MenuItem",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "",
+          "tooltip": ""
+        },
+        {
+          "tag": "MenuItem",
+          "name": "",
+          "command": "local:AppCommands.ImportFromTestcenter",
+          "click": "",
+          "label": "",
+          "tooltip": ""
+        },
+        {
+          "tag": "MenuItem",
+          "name": "",
+          "command": "local:AppCommands.ImportFromJson",
+          "click": "",
+          "label": "",
+          "tooltip": ""
+        },
+        {
+          "tag": "MenuItem",
+          "name": "",
+          "command": "local:AppCommands.ImportBookletsFromJson",
+          "click": "",
+          "label": "",
+          "tooltip": ""
+        },
+        {
+          "tag": "MenuItem",
+          "name": "",
+          "command": "local:AppCommands.ImportFromCsv",
+          "click": "",
+          "label": "",
+          "tooltip": ""
+        },
+        {
+          "tag": "MenuItem",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "",
+          "tooltip": ""
+        },
+        {
+          "tag": "MenuItem",
+          "name": "",
+          "command": "local:AppCommands.ExportToXlsx",
+          "click": "",
+          "label": "",
+          "tooltip": ""
+        },
+        {
+          "tag": "MenuItem",
+          "name": "",
+          "command": "local:AppCommands.ExportResponsesToCsv",
+          "click": "",
+          "label": "",
+          "tooltip": ""
+        },
+        {
+          "tag": "MenuItem",
+          "name": "",
+          "command": "local:AppCommands.ExportSessionsToCsv",
+          "click": "",
+          "label": "",
+          "tooltip": ""
+        }
+      ]
+    },
+    {
+      "path": "toolbox/SqlLiteCheck/SqliteCheckDialog.xaml",
+      "reachability": "reachable",
+      "reason": "Erreichbarer Dialog oder eingebundenes Control; Zuordnung zu den funktionalen Bereichen in function-matrix.json.",
+      "featuresFromSameSource": [
+        "T-46"
+      ],
+      "controls": [
+        {
+          "tag": "Button",
+          "name": "BtnCancelClose",
+          "command": "",
+          "click": "",
+          "label": "Abbrechen",
+          "tooltip": ""
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-input/BookletXlsxDialog.xaml",
+      "reachability": "reachable",
+      "reason": "Erreichbarer Dialog oder eingebundenes Control; Zuordnung zu den funktionalen Bereichen in function-matrix.json.",
+      "featuresFromSameSource": [
+        "T-03",
+        "T-04",
+        "T-05",
+        "T-06",
+        "T-07",
+        "T-22",
+        "T-60"
+      ],
+      "controls": [
+        {
+          "tag": "Button",
+          "name": "BtnClose",
+          "command": "",
+          "click": "",
+          "label": "Schließen",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "BtnCancel",
+          "command": "",
+          "click": "",
+          "label": "Abbrechen",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "BtnEditor",
+          "command": "",
+          "click": "",
+          "label": "Texteditor",
+          "tooltip": "Die Meldungen in einen Texteditor übertragen."
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-input/CodesXlsxDialog.xaml",
+      "reachability": "reachable",
+      "reason": "Erreichbarer Dialog oder eingebundenes Control; Zuordnung zu den funktionalen Bereichen in function-matrix.json.",
+      "featuresFromSameSource": [],
+      "controls": [
+        {
+          "tag": "Button",
+          "name": "BtnClose",
+          "command": "",
+          "click": "",
+          "label": "Schließen",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "BtnCancel",
+          "command": "",
+          "click": "",
+          "label": "Abbrechen",
+          "tooltip": ""
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-input/LoginsTemplateXlsxDialog.xaml",
+      "reachability": "reachable",
+      "reason": "Erreichbarer Dialog oder eingebundenes Control; Zuordnung zu den funktionalen Bereichen in function-matrix.json.",
+      "featuresFromSameSource": [
+        "T-08",
+        "T-09",
+        "T-10",
+        "T-11",
+        "T-12",
+        "T-13",
+        "T-14",
+        "T-15",
+        "T-16",
+        "T-17"
+      ],
+      "controls": [
+        {
+          "tag": "Button",
+          "name": "BtnClose",
+          "command": "",
+          "click": "",
+          "label": "Schließen",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "BtnCancel",
+          "command": "",
+          "click": "",
+          "label": "Abbrechen",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "BtnContinue",
+          "command": "",
+          "click": "",
+          "label": "Weiter",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "BtnEditor",
+          "command": "",
+          "click": "",
+          "label": "Texteditor",
+          "tooltip": "Die Meldungen in einen Texteditor übertragen."
+        },
+        {
+          "tag": "CheckBox",
+          "name": "ChBnew",
+          "command": "",
+          "click": "",
+          "label": "Logins neu erzeugen",
+          "tooltip": ""
+        },
+        {
+          "tag": "TextBox",
+          "name": "TBCharNumberLogin",
+          "command": "",
+          "click": "",
+          "label": "",
+          "tooltip": ""
+        },
+        {
+          "tag": "TextBox",
+          "name": "TBCharNumberPassword",
+          "command": "",
+          "click": "",
+          "label": "",
+          "tooltip": ""
+        },
+        {
+          "tag": "CheckBox",
+          "name": "ChBproctor",
+          "command": "",
+          "click": "",
+          "label": "zusätzlich Account für Testleitung erzeugen in der Form \"TL__\"",
+          "tooltip": ""
+        },
+        {
+          "tag": "CheckBox",
+          "name": "ChBprefixT",
+          "command": "",
+          "click": "",
+          "label": "Präfix vor Test-Benutzername erzeugen in der Form \"T01__\"",
+          "tooltip": ""
+        },
+        {
+          "tag": "CheckBox",
+          "name": "ChBprefixRs",
+          "command": "",
+          "click": "",
+          "label": "Präfix vor Reserve-Benutzername erzeugen in der Form \"RS__\"",
+          "tooltip": ""
+        },
+        {
+          "tag": "CheckBox",
+          "name": "ChBprefixRv",
+          "command": "",
+          "click": "",
+          "label": "Präfix vor Review-Benutzername erzeugen in der Form \"RV__\"",
+          "tooltip": ""
+        },
+        {
+          "tag": "CheckBox",
+          "name": "ChBxml",
+          "command": "",
+          "click": "",
+          "label": "Login-XML-Datei erzeugen",
+          "tooltip": ""
+        },
+        {
+          "tag": "TextBox",
+          "name": "TBBookletName",
+          "command": "",
+          "click": "",
+          "label": "",
+          "tooltip": ""
+        },
+        {
+          "tag": "RadioButton",
+          "name": "RBseparate",
+          "command": "",
+          "click": "",
+          "label": "Für jede Gruppe separate Xml erzeugen",
+          "tooltip": ""
+        },
+        {
+          "tag": "RadioButton",
+          "name": "RBjoin",
+          "command": "",
+          "click": "",
+          "label": "Logins aller Gruppen in einer einzigen Xml speichern",
+          "tooltip": ""
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-input/LoginsXlsxToDocxDialog.xaml",
+      "reachability": "reachable",
+      "reason": "Erreichbarer Dialog oder eingebundenes Control; Zuordnung zu den funktionalen Bereichen in function-matrix.json.",
+      "featuresFromSameSource": [
+        "T-18",
+        "T-19",
+        "T-20",
+        "T-21"
+      ],
+      "controls": [
+        {
+          "tag": "Button",
+          "name": "BtnClose",
+          "command": "",
+          "click": "",
+          "label": "Schließen",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "BtnCancel",
+          "command": "",
+          "click": "",
+          "label": "Abbrechen",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "BtnContinue",
+          "command": "",
+          "click": "",
+          "label": "Weiter",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "BtnEditor",
+          "command": "",
+          "click": "",
+          "label": "Texteditor",
+          "tooltip": "Die Meldungen in einen Texteditor übertragen."
+        },
+        {
+          "tag": "ComboBox",
+          "name": "CBPrefix",
+          "command": "",
+          "click": "",
+          "label": "",
+          "tooltip": ""
+        },
+        {
+          "tag": "TextBox",
+          "name": "TBServerUrl",
+          "command": "",
+          "click": "",
+          "label": "",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "SelectTemplateFile_Click",
+          "label": "wählen...",
+          "tooltip": ""
+        },
+        {
+          "tag": "TextBox",
+          "name": "TBTemplate",
+          "command": "",
+          "click": "",
+          "label": "",
+          "tooltip": ""
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-input/readContent/DownloadContentPage1Credentials.xaml",
+      "reachability": "reachable",
+      "reason": "Erreichbarer Dialog oder eingebundenes Control; Zuordnung zu den funktionalen Bereichen in function-matrix.json.",
+      "featuresFromSameSource": [],
+      "controls": [
+        {
+          "tag": "Button",
+          "name": "BtnContinue",
+          "command": "",
+          "click": "BtnContinue_Click",
+          "label": "Weiter",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "BtnCancel",
+          "command": "",
+          "click": "BtnCancel_Click",
+          "label": "Abrechen",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "BtnOldLogin_Click",
+          "label": "Neue Login-Daten",
+          "tooltip": ""
+        },
+        {
+          "tag": "TextBox",
+          "name": "TBUrl",
+          "command": "",
+          "click": "",
+          "label": "",
+          "tooltip": ""
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-input/readContent/DownloadContentPage2SelectWorkspace.xaml",
+      "reachability": "reachable",
+      "reason": "Erreichbarer Dialog oder eingebundenes Control; Zuordnung zu den funktionalen Bereichen in function-matrix.json.",
+      "featuresFromSameSource": [],
+      "controls": [
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "BtnContinue_Click",
+          "label": "Weiter",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "BtnCancel_Click",
+          "label": "Abrechen",
+          "tooltip": ""
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-input/readContent/DownloadContentPage3Action.xaml",
+      "reachability": "reachable",
+      "reason": "Erreichbarer Dialog oder eingebundenes Control; Zuordnung zu den funktionalen Bereichen in function-matrix.json.",
+      "featuresFromSameSource": [],
+      "controls": [
+        {
+          "tag": "Button",
+          "name": "BtnCancelClose",
+          "command": "",
+          "click": "BtnCancelClose_Click",
+          "label": "Abbrechen",
+          "tooltip": ""
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/read/readCSV/LoadDataFromCsvPage1Check.xaml",
+      "reachability": "reachable",
+      "reason": "Erreichbarer Dialog oder eingebundenes Control; Zuordnung zu den funktionalen Bereichen in function-matrix.json.",
+      "featuresFromSameSource": [],
+      "controls": [
+        {
+          "tag": "Button",
+          "name": "BtnOK",
+          "command": "",
+          "click": "",
+          "label": "Weiter",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "BtnCancel",
+          "command": "",
+          "click": "",
+          "label": "Abbrechen",
+          "tooltip": ""
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/read/readCSV/LoadDataFromCsvPage2Result.xaml",
+      "reachability": "reachable",
+      "reason": "Erreichbarer Dialog oder eingebundenes Control; Zuordnung zu den funktionalen Bereichen in function-matrix.json.",
+      "featuresFromSameSource": [],
+      "controls": [
+        {
+          "tag": "Button",
+          "name": "BtnCancelClose",
+          "command": "",
+          "click": "BtnCancelClose_Click",
+          "label": "Schließen",
+          "tooltip": ""
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/read/readJsonFilesDialog.xaml",
+      "reachability": "excluded",
+      "reason": "Kein erreichbarer Einstieg in MainWindow.xaml (T-26).",
+      "featuresFromSameSource": [
+        "T-26"
+      ],
+      "controls": [
+        {
+          "tag": "Button",
+          "name": "BtnContinue",
+          "command": "",
+          "click": "",
+          "label": "Weiter: Dateien wählen",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "BtnCancel",
+          "command": "",
+          "click": "",
+          "label": "Abbrechen",
+          "tooltip": ""
+        },
+        {
+          "tag": "CheckBox",
+          "name": "ChBResponses",
+          "command": "",
+          "click": "",
+          "label": "Antworten",
+          "tooltip": ""
+        },
+        {
+          "tag": "CheckBox",
+          "name": "ChBResponsesIgnoreNotReached",
+          "command": "",
+          "click": "",
+          "label": "Mit Status \"NOT__REACHED\" ignorieren",
+          "tooltip": ""
+        },
+        {
+          "tag": "CheckBox",
+          "name": "ChBResponsesIgnoreDisplayed",
+          "command": "",
+          "click": "",
+          "label": "Mit Status \"DISPLAYED\" ignorieren",
+          "tooltip": ""
+        },
+        {
+          "tag": "CheckBox",
+          "name": "ChBLogs",
+          "command": "",
+          "click": "",
+          "label": "Logs",
+          "tooltip": ""
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/read/readTestcenter/LoadDataFromTestcenterPage1Credentials.xaml",
+      "reachability": "reachable",
+      "reason": "Erreichbarer Dialog oder eingebundenes Control; Zuordnung zu den funktionalen Bereichen in function-matrix.json.",
+      "featuresFromSameSource": [],
+      "controls": [
+        {
+          "tag": "Button",
+          "name": "BtnContinue",
+          "command": "",
+          "click": "BtnContinue_Click",
+          "label": "Weiter",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "BtnCancel",
+          "command": "",
+          "click": "BtnCancel_Click",
+          "label": "Abrechen",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "BtnOldLogin_Click",
+          "label": "Neue Login-Daten",
+          "tooltip": ""
+        },
+        {
+          "tag": "TextBox",
+          "name": "TBUrl",
+          "command": "",
+          "click": "",
+          "label": "",
+          "tooltip": ""
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/read/readTestcenter/LoadDataFromTestcenterPage2SelectWorkspace.xaml",
+      "reachability": "reachable",
+      "reason": "Erreichbarer Dialog oder eingebundenes Control; Zuordnung zu den funktionalen Bereichen in function-matrix.json.",
+      "featuresFromSameSource": [],
+      "controls": [
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "BtnContinue_Click",
+          "label": "Weiter",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "BtnCancel_Click",
+          "label": "Abrechen",
+          "tooltip": ""
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/read/readTestcenter/LoadDataFromTestcenterPage3SelectGroups.xaml",
+      "reachability": "reachable",
+      "reason": "Erreichbarer Dialog oder eingebundenes Control; Zuordnung zu den funktionalen Bereichen in function-matrix.json.",
+      "featuresFromSameSource": [],
+      "controls": [
+        {
+          "tag": "Button",
+          "name": "BtnContinue",
+          "command": "",
+          "click": "BtnContinue_Click",
+          "label": "Weiter",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "BtnCancel_Click",
+          "label": "Abrechen",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "BtnToggleCheck",
+          "command": "",
+          "click": "BtnToggleCheck_Click",
+          "label": "Toggle",
+          "tooltip": ""
+        },
+        {
+          "tag": "CheckBox",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "",
+          "tooltip": ""
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/read/readTestcenter/LoadDataFromTestcenterPage4Responses.xaml",
+      "reachability": "reachable",
+      "reason": "Erreichbarer Dialog oder eingebundenes Control; Zuordnung zu den funktionalen Bereichen in function-matrix.json.",
+      "featuresFromSameSource": [],
+      "controls": [
+        {
+          "tag": "Button",
+          "name": "BtnCancelClose",
+          "command": "",
+          "click": "BtnCancelClose_Click",
+          "label": "Abbrechen",
+          "tooltip": ""
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/read/readTestcenter/LoadDataFromTestcenterPage4ReviewsXlsx.xaml",
+      "reachability": "reachable",
+      "reason": "Erreichbarer Dialog oder eingebundenes Control; Zuordnung zu den funktionalen Bereichen in function-matrix.json.",
+      "featuresFromSameSource": [],
+      "controls": [
+        {
+          "tag": "Button",
+          "name": "BtnCancelClose",
+          "command": "",
+          "click": "BtnCancelClose_Click",
+          "label": "Schließen",
+          "tooltip": ""
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/read/readTestcenterToCsv/LoadDataFromTestcenterToCsvPage1Credentials.xaml",
+      "reachability": "reachable",
+      "reason": "Erreichbarer Dialog oder eingebundenes Control; Zuordnung zu den funktionalen Bereichen in function-matrix.json.",
+      "featuresFromSameSource": [],
+      "controls": [
+        {
+          "tag": "Button",
+          "name": "BtnContinue",
+          "command": "",
+          "click": "BtnContinue_Click",
+          "label": "Weiter",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "BtnCancel",
+          "command": "",
+          "click": "BtnCancel_Click",
+          "label": "Abrechen",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "BtnOldLogin_Click",
+          "label": "Neue Login-Daten",
+          "tooltip": ""
+        },
+        {
+          "tag": "TextBox",
+          "name": "TBUrl",
+          "command": "",
+          "click": "",
+          "label": "",
+          "tooltip": ""
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/read/readTestcenterToCsv/LoadDataFromTestcenterToCsvPage2SelectWorkspace.xaml",
+      "reachability": "reachable",
+      "reason": "Erreichbarer Dialog oder eingebundenes Control; Zuordnung zu den funktionalen Bereichen in function-matrix.json.",
+      "featuresFromSameSource": [],
+      "controls": [
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "BtnContinue_Click",
+          "label": "Weiter",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "BtnCancel_Click",
+          "label": "Abrechen",
+          "tooltip": ""
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/read/readTestcenterToCsv/LoadDataFromTestcenterToCsvPage3SelectGroups.xaml",
+      "reachability": "reachable",
+      "reason": "Erreichbarer Dialog oder eingebundenes Control; Zuordnung zu den funktionalen Bereichen in function-matrix.json.",
+      "featuresFromSameSource": [],
+      "controls": [
+        {
+          "tag": "Button",
+          "name": "BtnContinue",
+          "command": "",
+          "click": "BtnContinue_Click",
+          "label": "Weiter",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "",
+          "command": "",
+          "click": "BtnCancel_Click",
+          "label": "Abrechen",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "BtnToggleCheck",
+          "command": "",
+          "click": "BtnToggleCheck_Click",
+          "label": "Toggle",
+          "tooltip": ""
+        },
+        {
+          "tag": "CheckBox",
+          "name": "",
+          "command": "",
+          "click": "",
+          "label": "",
+          "tooltip": ""
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/read/readTestcenterToCsv/LoadDataFromTestcenterToCsvPage4Result.xaml",
+      "reachability": "reachable",
+      "reason": "Erreichbarer Dialog oder eingebundenes Control; Zuordnung zu den funktionalen Bereichen in function-matrix.json.",
+      "featuresFromSameSource": [],
+      "controls": [
+        {
+          "tag": "Button",
+          "name": "BtnCancelClose",
+          "command": "",
+          "click": "BtnCancelClose_Click",
+          "label": "Schließen",
+          "tooltip": ""
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/sqlite/readJsonBookletFilesToDbDialog.xaml",
+      "reachability": "reachable",
+      "reason": "Erreichbarer Dialog oder eingebundenes Control; Zuordnung zu den funktionalen Bereichen in function-matrix.json.",
+      "featuresFromSameSource": [],
+      "controls": [
+        {
+          "tag": "Button",
+          "name": "BtnCancel",
+          "command": "",
+          "click": "",
+          "label": "Abbrechen",
+          "tooltip": ""
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/sqlite/readJsonFilesToDbDialog.xaml",
+      "reachability": "reachable",
+      "reason": "Erreichbarer Dialog oder eingebundenes Control; Zuordnung zu den funktionalen Bereichen in function-matrix.json.",
+      "featuresFromSameSource": [],
+      "controls": [
+        {
+          "tag": "Button",
+          "name": "BtnCancel",
+          "command": "",
+          "click": "",
+          "label": "Abbrechen",
+          "tooltip": ""
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/write/ToCsvDialog.xaml",
+      "reachability": "reachable",
+      "reason": "Erreichbarer Dialog oder eingebundenes Control; Zuordnung zu den funktionalen Bereichen in function-matrix.json.",
+      "featuresFromSameSource": [
+        "T-37"
+      ],
+      "controls": [
+        {
+          "tag": "Button",
+          "name": "BtnCancelClose",
+          "command": "",
+          "click": "",
+          "label": "Abbrechen",
+          "tooltip": ""
+        }
+      ]
+    },
+    {
+      "path": "toolbox/itc-output/write/ToXlsxDialog.xaml",
+      "reachability": "reachable",
+      "reason": "Erreichbarer Dialog oder eingebundenes Control; Zuordnung zu den funktionalen Bereichen in function-matrix.json.",
+      "featuresFromSameSource": [
+        "T-35"
+      ],
+      "controls": [
+        {
+          "tag": "Button",
+          "name": "BtnContinue",
+          "command": "",
+          "click": "",
+          "label": "Weiter",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "BtnClose",
+          "command": "",
+          "click": "",
+          "label": "Schließen",
+          "tooltip": ""
+        },
+        {
+          "tag": "Button",
+          "name": "BtnCancel",
+          "command": "",
+          "click": "",
+          "label": "Abbrechen",
+          "tooltip": ""
+        },
+        {
+          "tag": "RadioButton",
+          "name": "RBSubformNone",
+          "command": "",
+          "click": "",
+          "label": "Daten ignorieren",
+          "tooltip": ""
+        },
+        {
+          "tag": "RadioButton",
+          "name": "RBSubformRow",
+          "command": "",
+          "click": "",
+          "label": "zeilenweise",
+          "tooltip": ""
+        },
+        {
+          "tag": "RadioButton",
+          "name": "RBSubformColumn",
+          "command": "",
+          "click": "",
+          "label": "spaltenweise",
+          "tooltip": ""
+        },
+        {
+          "tag": "CheckBox",
+          "name": "ChBValues",
+          "command": "",
+          "click": "",
+          "label": "Antwortwerte",
+          "tooltip": ""
+        },
+        {
+          "tag": "CheckBox",
+          "name": "ChBStatus",
+          "command": "",
+          "click": "",
+          "label": "Status",
+          "tooltip": ""
+        },
+        {
+          "tag": "CheckBox",
+          "name": "ChBCode",
+          "command": "",
+          "click": "",
+          "label": "Codes",
+          "tooltip": ""
+        },
+        {
+          "tag": "CheckBox",
+          "name": "ChBScore",
+          "command": "",
+          "click": "",
+          "label": "Scores",
+          "tooltip": ""
+        }
+      ]
+    }
+  ]
+}

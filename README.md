@@ -10,6 +10,23 @@ Geänderte v3-Kodierungen können ausdrücklich über die Checkbox übernommen w
 
 Für den Rückimport in eine laufende Coding-Box ist der ergänzte MCP-/Backend-Import in einen leeren Bereich erforderlich. Der gemeinsame MCP-Server bietet dafür `coding_import_sqlite`. Die statische Browseranwendung erhält keine Administrationszugangsdaten. Nullable Kodierungen verwenden eine lokale Browser-Schemaerweiterung v3; v1/v2 bleiben lesbar, ältere Windows-Programme unterstützen diese v3-Erweiterung nicht.
 
+## Funktionsmatrix und erneuter Referenzlauf am 31.10.2026
+
+Der [filterbare Funktionsbericht](docs/function-audit.html) und seine [maschinenlesbaren Ergebnisse](docs/function-audit.json) erfassen **110 Funktionspunkte**. Das [Originalinventar](docs/original-inventory.json) hält 130 Quelldateien, 36 XAML-Oberflächen und 151 Controls mit Herkunft und Prüfsummen fest. Alle 23 aktiven Haupteinstiege der Windows-Toolbox sind einer Matrixzeile zugeordnet. Die [Matrixdefinition](docs/function-matrix.json) trennt direkte Windows-Vergleiche, Browser-/Modultests, beabsichtigte Unterschiede, Lücken und reine Browser-Erweiterungen. Das Inventar ist eine Prüfgrundlage und kein Nachweis aller internen Codepfade.
+
+Der aktuelle Stand besteht **66 Node-Tests**, **15 Windows-Konvertervergleiche**, **21 Windows-Datei-/Verhaltensvergleiche** und **46 Prüfungen je nativem Chromium 156 und Safari 27.0.1 auf macOS**. Die unveränderten Windows-Originale wurden erneut ausgeführt; Eingabe- und Assembly-Prüfsummen sind gespeichert. Für den Rückweg nach Windows wurden `.result` und SQLite aus dem aktuellen Browsercode frisch erzeugt. Firefox konnte in diesem Audit wegen Zeitüberschreitungen der nativen Computersteuerung nicht erneut bedient werden; seine älteren Nachweise bleiben getrennt. Die neuen automatisierten Oberflächentests sind auch für den Firefox- und WebKit-CI-Job vorgesehen.
+
+Beim Vergleich korrigiert: fortlaufende Navigation ist jetzt der Standard, vollständig kodierte Jobs öffnen am letzten Fall, die Fallliste lässt sich nach Originalspalten sortieren und zeigt nach Sortierung weiterhin die richtige Fallnummer. Die Jobauswahl nennt den jeweiligen Fortschritt. Ohne ausgewähltes Excel-Ausgabeblatt erscheint ein Fehler statt einer leeren Arbeitsmappe.
+
+**Vollständige Gleichwertigkeit ist weiterhin nicht belegt.** Insbesondere fehlen das Verschieben der Scanansicht durch Ziehen und ein vollständiger Textdownload der Verarbeitungsmeldungen. Weitere Teilnachweise und bewusste Unterschiede, darunter Zoom, Voreinstellungen, Hilfethemen, Dateisicherung und die SQLite-Erweiterung v3, stehen mit eigenem Prüfauftrag im Bericht. Es wurden ausschließlich synthetische Daten verwendet.
+
+```sh
+pnpm test:reference   # aktuelle Module gegen gespeicherte echte Windows-Ausgaben
+pnpm audit:functions  # Node- und Referenztests; Bericht unter work/function-audit/
+```
+
+Die Windows-Vergleiche laufen zusätzlich in beiden Node-CI-Jobs. Sie starten in GitHub Actions keine Windows-VM. `scripts/prepare-reference-inputs.mjs` bereitet aktuelle Rückwegdateien für einen neuen Windows-Lauf vor; `scripts/Run-Windows-Reference.ps1` führt die unveränderten Originalassemblies in einer separaten Windows-Umgebung aus. Die kleinen Referenzdateien unter `tests/fixtures/windows-reference/` enthalten ausschließlich synthetische Ein- und Ausgaben, keine ausführbaren Originalprogramme.
+
 ## Direkt ausprobieren
 
 In IQB-Kodieren **Beispiel öffnen** wählen. In der Toolbox stehen Originalvorlagen und synthetische Beispieldateien zum Download bereit. `public/examples/` enthält außerdem eine ausgefüllte Login-Tabelle, Antwort- und Log-CSV, Toolbox-JSON, Testheftgrößen, eine SQLite-Datenbank und einen Kodierjob mit Schablone.
