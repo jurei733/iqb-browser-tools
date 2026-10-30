@@ -79,7 +79,20 @@ Das Repository enthält den Quellcode und richtet keine öffentliche Website ein
 
 Der Workflow [Tests and build](https://github.com/jurei733/iqb-browser-tools/actions/workflows/ci.yml) läuft bei jedem Push auf allen Branches, bei Pull Requests und bei manuellem Start. Auf Ubuntu prüfen Node.js 22 und 24 jeweils `pnpm install --frozen-lockfile`, `pnpm test` und `pnpm build`. Die pnpm-Version stammt aus `package.json`; der Paketcache beschleunigt weitere Läufe. Die verwendeten Actions sind auf vollständige Commit-Prüfsummen festgelegt.
 
-Die CI führt die automatisierten Node-Tests und den vollständigen Produktionsbuild aus. Die separat beschriebenen Browser-, Windows- und Testcenter-Prüfläufe werden bei Bedarf in ihrer jeweiligen Testumgebung wiederholt.
+Zusätzlich laufen drei unabhängige Playwright-Jobs mit Chromium, Firefox und WebKit auf Linux. Jeder Browser führt die vorhandenen Kompatibilitätsprüfungen und sieben Arbeitsabläufe der gebauten Produktionsoberfläche aus: Kodieren und Ergebnisdownload, Schablonen, Logins und QR-Word, CSV mit Fehlerfällen, Codes und Booklets, Antworten/SQLite samt Offline-Wiederherstellung sowie Testcenter-Gruppenauswahl und Bereichswechsel. Die Testcenter-API wird in diesen Oberflächentests mit synthetischen Antworten nachgebildet. Die separat beschriebenen Windows- und echten Testcenter-Prüfläufe werden in ihrer jeweiligen Testumgebung wiederholt. Playwright-WebKit ersetzt keinen zusätzlichen Test mit Safari auf Apple-Geräten.
+
+HTML-/JSON-Berichte und die erzeugten synthetischen Dateien stehen pro Browser 14 Tage als Actions-Artefakte bereit. Bei Fehlern werden außerdem Screenshots und Traces aufbewahrt; fehlgeschlagene Prüfungen werden nicht durch automatische Wiederholungen verdeckt.
+
+Lokal mit installierten Projektabhängigkeiten:
+
+```sh
+pnpm exec playwright install chromium firefox webkit
+pnpm test:browser
+# Oder nur ein Browser:
+pnpm test:browser --project=firefox
+```
+
+Der Befehl baut Anwendung und Prüfseite frisch und startet dafür eigene lokale Webserver auf `127.0.0.1:4173` und `127.0.0.1:4174`. Auf Linux installiert `pnpm exec playwright install --with-deps` bei Bedarf auch Systembibliotheken. Die Prüfseiten und Testberichte gelangen nicht in `dist/`.
 
 ## Geprüft und verbleibende Nachweise
 
