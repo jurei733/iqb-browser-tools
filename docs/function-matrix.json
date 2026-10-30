@@ -777,9 +777,15 @@
         "src/main.js"
       ],
       "assessment": "partial",
-      "note": "Implementiert; bisherige UI-Stichprobe liegt vor. Rotation/Begrenzung werden nicht auf jeden WPF-Ereignisfall direkt verglichen.",
+      "note": "Aktuelle UI-Prüfung für Verschieben, Drehen und Zurücksetzen in allen drei CI-Browsern. Randbegrenzung und sämtliche WPF-Ereignisvarianten bleiben ein Teilnachweis.",
       "acceptance": "Schablone an alle vier Scanränder ziehen; Umschalt-Ziehen wiederholt nach oben/unten; Winkel und Begrenzung auf gleichen DPI-Scans mit Windows vergleichen.",
-      "evidence": []
+      "evidence": [
+        {
+          "kind": "ci-browser",
+          "path": "tests/results/function-audit-ci-20261031.json",
+          "pattern": "move, rotate and reset its template"
+        }
+      ]
     },
     {
       "id": "K-30",
@@ -2280,13 +2286,18 @@
         "src/extended-ui.js"
       ],
       "assessment": "implemented",
-      "note": "Historischer echter UI-Lauf; die aktuelle Gruppenoberfläche wurde in diesem Audit noch nicht erneut direkt mit Windows verglichen.",
+      "note": "Aktuelle Browseroberfläche mit nachgebildeter API in Chromium, Firefox und WebKit geprüft; älterer echter Demo-Lauf getrennt. Direkter Windows-Netzwerkvergleich bleibt offen.",
       "acceptance": "Testcenter: Gruppen einzeln/alle auswählen.",
       "evidence": [
         {
           "kind": "historical-browser",
           "path": "tests/results/pilot-chromium.json",
           "pattern": "Einzelgruppen"
+        },
+        {
+          "kind": "ci-browser",
+          "path": "tests/results/function-audit-ci-20261031.json",
+          "pattern": "group selection and workspace changes"
         }
       ]
     },
@@ -2760,10 +2771,10 @@
       "app": "itc-ToolBox",
       "function": "Voreinstellungen der Login-/XML- und Excel-Dialoge",
       "original": {
-        "path": "toolbox/MainWindow.xaml.vb",
-        "anchor": "HandleHelpExecuted",
-        "line": 58,
-        "sha256": "2813bfdcda6910ded413482ad2bbf444dd83703485c99a13a18d8e7144eef94c"
+        "path": "toolbox/itc-input/LoginsTemplateXlsxDialog.xaml.vb",
+        "anchor": "Private Shared passwordLength",
+        "line": 16,
+        "sha256": "5b1b8d6b68fac18cc9520cf55ba2afddd07bbf20db4cb0d2fc4166a78d6ec752"
       },
       "implementation": [
         "src/main.js",
@@ -2772,7 +2783,15 @@
       "assessment": "difference",
       "note": "Abweichende Browser-Startwerte: Logins neu/XML/Testleitung aktiv, Kennwortlänge 3, gemeinsame XML. Windows: vorhandene Logins behalten (außer leerer Tabelle), XML/Testleitung zunächst aus, Kennwortlänge 0, getrennte XML. Excel startet im Browser mit vier Blättern/Unterformularzeilen; Windows mit Antwortwerten/ohne Unterformulare.",
       "acceptance": "Frisch gestartete Programme ohne vorherige Einstellungen öffnen; alle Login-, XML- und Excel-Startwerte aus der Notiz einzeln protokollieren.",
-      "evidence": []
+      "evidence": [],
+      "additionalOriginalSources": [
+        {
+          "path": "toolbox/itc-output/write/ToXlsxDialog.xaml.vb",
+          "anchor": ".subformMode = SubformMode.None",
+          "line": 26,
+          "sha256": "6d49fdfb13b71854b999ab0ec636b9f1d713fc31d469e2d386e76b14b962cfed"
+        }
+      ]
     }
   ],
   "entrypoints": {

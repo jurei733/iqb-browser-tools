@@ -1,0 +1,177 @@
+{
+  "runId": 41142968607,
+  "runUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41142968607",
+  "headSha": "e90364296173482a88544604f0257150a61898ee",
+  "evidenceSource": "GitHub Actions job logs and completed steps retrieved through the GitHub connector; no artifact upload succeeded.",
+  "jobs": [
+    {
+      "browser": "webkit",
+      "jobId": 124361365705,
+      "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41142968607/job/124361365705",
+      "conclusion": "success",
+      "passed": 8,
+      "total": 8,
+      "compatibility": {
+        "passed": 46,
+        "total": 46
+      },
+      "artifactUploaded": false,
+      "checks": [
+        {
+          "name": "original templates, image decoders, workers, exports and browser storage",
+          "passed": true
+        },
+        {
+          "name": "coding: keyboard, modal guard, result download and stored progress",
+          "passed": true
+        },
+        {
+          "name": "coding: upload a job and move, rotate and reset its template",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: retain login inputs and downloads, then create QR Word handouts",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: CSV keeps exact values and rejects invalid input without stale downloads",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: codes and booklets produce downloadable original formats",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: answers, SQLite exports, rejected database and offline recovery",
+          "passed": true
+        },
+        {
+          "name": "Testcenter with a synthetic API › Testcenter: group selection and workspace changes cannot export stale groups",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "browser": "firefox",
+      "jobId": 124361365776,
+      "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41142968607/job/124361365776",
+      "conclusion": "success",
+      "passed": 8,
+      "total": 8,
+      "compatibility": {
+        "passed": 46,
+        "total": 46
+      },
+      "artifactUploaded": false,
+      "checks": [
+        {
+          "name": "original templates, image decoders, workers, exports and browser storage",
+          "passed": true
+        },
+        {
+          "name": "coding: keyboard, modal guard, result download and stored progress",
+          "passed": true
+        },
+        {
+          "name": "coding: upload a job and move, rotate and reset its template",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: retain login inputs and downloads, then create QR Word handouts",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: CSV keeps exact values and rejects invalid input without stale downloads",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: codes and booklets produce downloadable original formats",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: answers, SQLite exports, rejected database and offline recovery",
+          "passed": true
+        },
+        {
+          "name": "Testcenter with a synthetic API › Testcenter: group selection and workspace changes cannot export stale groups",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "browser": "chromium",
+      "jobId": 124361365915,
+      "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41142968607/job/124361365915",
+      "conclusion": "success",
+      "passed": 8,
+      "total": 8,
+      "compatibility": {
+        "passed": 46,
+        "total": 46
+      },
+      "artifactUploaded": false,
+      "checks": [
+        {
+          "name": "original templates, image decoders, workers, exports and browser storage",
+          "passed": true
+        },
+        {
+          "name": "coding: keyboard, modal guard, result download and stored progress",
+          "passed": true
+        },
+        {
+          "name": "coding: upload a job and move, rotate and reset its template",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: retain login inputs and downloads, then create QR Word handouts",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: CSV keeps exact values and rejects invalid input without stale downloads",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: codes and booklets produce downloadable original formats",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: answers, SQLite exports, rejected database and offline recovery",
+          "passed": true
+        },
+        {
+          "name": "Testcenter with a synthetic API › Testcenter: group selection and workspace changes cannot export stale groups",
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "applicationFiles": {
+    "src/coding-box-database.js": "d54d0aa57592c52adfa651f98c129c1ef5e1cdc13f077cfc46f2998467bbdd15",
+    "src/coding.js": "9c0ccbc5bde5de24c8e19203e3e263250345d0954a6dd2c981ca4cc83313d1da",
+    "src/data.js": "1f5306d8eb2963c7f065e0bc18c115219431fc4a71840a11c43f306b41ae6d0b",
+    "src/data.worker.js": "e3e48e3416d86102bc670b30f7e68c8b08368d25e7e9e731199453b27d76c040",
+    "src/database-view.js": "03b59ffda3421667de61055284a0f5bde57e3b9e943ce303e5e27f7ee8a8d93e",
+    "src/database.js": "4cb942f7901c7d56801dc161362f8f080922833b7ac7d3422f8bcbdc85b6fa38",
+    "src/docx.js": "424d6024dbdf6b37a98a1c0b8641e7ad72ea8811376486452fc09cb43e552b6d",
+    "src/extended-ui.js": "5097918ccefa3814717c046d29bdd184c61a5b33c2870671ac0ac7fa3504cd77",
+    "src/image.js": "dc64dbaa232f29908ec70ec5a15eeaa8a28e2dd5048713a87c82cde4068a8ba2",
+    "src/json.js": "a0074e5e42877c08aea5217894076953d817b89978a5705aadda598ac41865e4",
+    "src/main.js": "ab07f5e0b43f0e6dda80651b560548bc2f0c9a4d9b3e47758d24a15dd17b29c2",
+    "src/schema.js": "afefd38dd58b1a9257dd010d2e4608ab530526346568fc0dc64726172c90a61d",
+    "src/style.css": "d5193c1c870fd15b871315e3621de3eef2ca3e4619ddca26dfceb28d108bcf73",
+    "src/testcenter.js": "c6ec30c15639685d4838b90399b40a01f28c1da3bc10a234c9e236944e8f5746",
+    "src/toolbox.js": "f6c7fdb2d0d24d28ad6cc4d6954744a5617eaa092fbd999586f9952a074d6c6f",
+    "src/vendor.js": "a978d03a177b68b7308b21ec07b258028248717bb237d3b72921e4425f40678f",
+    "src/worker-client.js": "5cba53db6957c7215844dd74fc3045a340b1b4d2611f7cb7d2ccc496042be7e0",
+    "src/workspace-ui.js": "69a9c90d29c836a9000c3129de88489226aa5c175b958302e2b0891bb59d36d9",
+    "src/xml.js": "8a40475596f0371ed57b79d31304937f85d965caf87897d602460221a5929c1e"
+  },
+  "testFiles": {
+    "tests/browser.js": "d1e166615f3d792f5cc809d18112626cefbfcc58fef076060e895553babbd4df",
+    "tests/e2e/browser.spec.js": "d22a3aa0a3075faececedb9ce3974aa450ec35938cb1661b496616223eccaf08",
+    "tests/e2e/workflows.spec.js": "26e48ddc42d9340a6c8bf839a7520dc3ea80c7947d2b7dc68de054d296695c81",
+    "scripts/build-browser-tests.mjs": "5fcb6b725967ba4c6799613dd78bea7e5f36b4a9704223550b9e3c6f9914e3f6",
+    "playwright.config.js": "9d8b99502c4832ed855b49e058c5d96eb9375aac7f0db831bec83dbf4608722b"
+  }
+}

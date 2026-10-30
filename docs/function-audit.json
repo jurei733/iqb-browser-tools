@@ -1,6 +1,6 @@
 {
   "date": "2026-10-31",
-  "generatedAt": "2026-10-30T23:07:49.560Z",
+  "generatedAt": "2026-10-30T23:15:25.099Z",
   "scope": "Erreichbare Nutzerfunktionen der beiden Originalprogramme; ergänzende Dateiformate, Tastaturpfade und Datenverarbeitung. Bibliothekseditoren anderer Programme und deaktivierte Entwicklungsfunktionen sind ausdrücklich ausgenommen. Keine Aussage über alle möglichen Eingabedaten oder internen Codepfade.",
   "completeEquivalence": false,
   "codeSnapshot": {
@@ -73,13 +73,12 @@
     ]
   },
   "counts": {
-    "Browser-/Modultest bestanden": 45,
+    "Browser-/Modultest bestanden": 46,
     "Windows-Vergleich bestanden": 27,
     "Dokumentierte Abweichung": 18,
     "Fehlt": 2,
     "Teilnachweis / offen": 6,
     "Im Original nicht erreichbar": 4,
-    "Aktueller Nachweis offen": 1,
     "Browser-Erweiterung": 7
   },
   "features": [
@@ -1699,9 +1698,37 @@
         "src/main.js"
       ],
       "assessment": "partial",
-      "note": "Implementiert; bisherige UI-Stichprobe liegt vor. Rotation/Begrenzung werden nicht auf jeden WPF-Ereignisfall direkt verglichen.",
+      "note": "Aktuelle UI-Prüfung für Verschieben, Drehen und Zurücksetzen in allen drei CI-Browsern. Randbegrenzung und sämtliche WPF-Ereignisvarianten bleiben ein Teilnachweis.",
       "acceptance": "Schablone an alle vier Scanränder ziehen; Umschalt-Ziehen wiederholt nach oben/unten; Winkel und Begrenzung auf gleichen DPI-Scans mit Windows vergleichen.",
-      "evidence": [],
+      "evidence": [
+        {
+          "kind": "ci-browser",
+          "path": "tests/results/function-audit-ci-20261031.json",
+          "pattern": "move, rotate and reset its template",
+          "current": true,
+          "passed": true,
+          "checks": [
+            {
+              "name": "coding: upload a job and move, rotate and reset its template",
+              "passed": true,
+              "browser": "webkit",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41142968607/job/124361365705"
+            },
+            {
+              "name": "coding: upload a job and move, rotate and reset its template",
+              "passed": true,
+              "browser": "firefox",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41142968607/job/124361365776"
+            },
+            {
+              "name": "coding: upload a job and move, rotate and reset its template",
+              "passed": true,
+              "browser": "chromium",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41142968607/job/124361365915"
+            }
+          ]
+        }
+      ],
       "result": "Teilnachweis / offen"
     },
     {
@@ -4102,7 +4129,7 @@
         "src/extended-ui.js"
       ],
       "assessment": "implemented",
-      "note": "Historischer echter UI-Lauf; die aktuelle Gruppenoberfläche wurde in diesem Audit noch nicht erneut direkt mit Windows verglichen.",
+      "note": "Aktuelle Browseroberfläche mit nachgebildeter API in Chromium, Firefox und WebKit geprüft; älterer echter Demo-Lauf getrennt. Direkter Windows-Netzwerkvergleich bleibt offen.",
       "acceptance": "Testcenter: Gruppen einzeln/alle auswählen.",
       "evidence": [
         {
@@ -4118,9 +4145,36 @@
               "milliseconds": 4451
             }
           ]
+        },
+        {
+          "kind": "ci-browser",
+          "path": "tests/results/function-audit-ci-20261031.json",
+          "pattern": "group selection and workspace changes",
+          "current": true,
+          "passed": true,
+          "checks": [
+            {
+              "name": "Testcenter with a synthetic API › Testcenter: group selection and workspace changes cannot export stale groups",
+              "passed": true,
+              "browser": "webkit",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41142968607/job/124361365705"
+            },
+            {
+              "name": "Testcenter with a synthetic API › Testcenter: group selection and workspace changes cannot export stale groups",
+              "passed": true,
+              "browser": "firefox",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41142968607/job/124361365776"
+            },
+            {
+              "name": "Testcenter with a synthetic API › Testcenter: group selection and workspace changes cannot export stale groups",
+              "passed": true,
+              "browser": "chromium",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41142968607/job/124361365915"
+            }
+          ]
         }
       ],
-      "result": "Aktueller Nachweis offen"
+      "result": "Browser-/Modultest bestanden"
     },
     {
       "id": "T-52",
@@ -4806,10 +4860,10 @@
       "app": "itc-ToolBox",
       "function": "Voreinstellungen der Login-/XML- und Excel-Dialoge",
       "original": {
-        "path": "toolbox/MainWindow.xaml.vb",
-        "anchor": "HandleHelpExecuted",
-        "line": 58,
-        "sha256": "2813bfdcda6910ded413482ad2bbf444dd83703485c99a13a18d8e7144eef94c"
+        "path": "toolbox/itc-input/LoginsTemplateXlsxDialog.xaml.vb",
+        "anchor": "Private Shared passwordLength",
+        "line": 16,
+        "sha256": "5b1b8d6b68fac18cc9520cf55ba2afddd07bbf20db4cb0d2fc4166a78d6ec752"
       },
       "implementation": [
         "src/main.js",
@@ -4819,6 +4873,14 @@
       "note": "Abweichende Browser-Startwerte: Logins neu/XML/Testleitung aktiv, Kennwortlänge 3, gemeinsame XML. Windows: vorhandene Logins behalten (außer leerer Tabelle), XML/Testleitung zunächst aus, Kennwortlänge 0, getrennte XML. Excel startet im Browser mit vier Blättern/Unterformularzeilen; Windows mit Antwortwerten/ohne Unterformulare.",
       "acceptance": "Frisch gestartete Programme ohne vorherige Einstellungen öffnen; alle Login-, XML- und Excel-Startwerte aus der Notiz einzeln protokollieren.",
       "evidence": [],
+      "additionalOriginalSources": [
+        {
+          "path": "toolbox/itc-output/write/ToXlsxDialog.xaml.vb",
+          "anchor": ".subformMode = SubformMode.None",
+          "line": 26,
+          "sha256": "6d49fdfb13b71854b999ab0ec636b9f1d713fc31d469e2d386e76b14b962cfed"
+        }
+      ],
       "result": "Dokumentierte Abweichung"
     }
   ],
@@ -4830,6 +4892,7 @@
     "Jede Matrixzeile beschreibt einen Nutzerauftrag; sie ist kein Nachweis aller Eingabe-, Größen- oder Fehlerkombinationen.",
     "Keine pauschale vollständige Gleichwertigkeit; Quellenabgleich und Prüfungen gelten für den angegebenen Versionsstand.",
     "Die neue lokale Coding-Box-Erweiterung ist getrennt vom Windows-Funktionsumfang aufgeführt.",
-    "Firefox konnte in diesem Audit wegen Zeitüberschreitung der nativen Computersteuerung noch nicht erneut geprüft werden; ältere Firefox-Berichte bleiben historische Nachweise."
+    "Firefox konnte in diesem Audit wegen Zeitüberschreitung der nativen Computersteuerung noch nicht erneut geprüft werden; ältere Firefox-Berichte bleiben historische Nachweise.",
+    "Aktuelle CI: 8/8 Suiten mit 46/46 Kompatibilitätschecks je Chromium/Firefox/WebKit; Belege in tests/results/function-audit-ci-20261031.json. Artefakt-Uploads bleiben durch GitHubs Speicherquote blockiert."
   ]
 }
