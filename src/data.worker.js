@@ -2,6 +2,7 @@ import initSqlJs from 'sql.js';
 import wasmURL from 'sql.js/dist/sql-wasm.wasm?url';
 import {DOMParser,XMLSerializer} from '@xmldom/xmldom';
 import {OutputDatabase} from './database.js';
+import {databasePage} from './database-view.js';
 import {readDataFiles,normalizePeople,wideWorkbook,longCSV,sessionTable,reviewsWorkbook,peopleFromDTO} from './data.js';
 import {readCodingFiles} from './coding.js';
 import {strToU8,zipSync} from 'fflate';
@@ -18,10 +19,12 @@ async function run(op,args) {
     case 'reviews':return reviewsWorkbook(args.reviews);
     case 'open-db':case 'new-db':{SQL??=await initSqlJs({locateFile:()=>wasmURL});const next=new OutputDatabase(SQL,op==='open-db'?args.bytes:null,args.creator);db?.close();db=next;return db.summary();}
     case 'db-summary':return requireDB().summary();
+    case 'db-page':return databasePage(requireDB().people(args.group||null),args);
     case 'db-import':{const data=args.files?await readDataFiles(args.files,args.options):args.people?normalizePeople(args.people):people;return requireDB().import(data,{merge:args.merge!==false});}
     case 'db-sizes':return requireDB().setSizes(args.sizes);
     case 'db-check':return requireDB().check();
-    case 'db-save':return requireDB().export();
+    case 'db-save':return args.format==='coding-box'?requireDB().exportCodingBox({allowCodingChanges:args.allowCodingChanges}):args.format==='browser'?requireDB().exportBrowser():requireDB().export();
+    case 'db-version':if(requireDB().setVersion)return db.setVersion(args.version);return db.summary();
     case 'db-export':return exportData(args.format,requireDB().people(args.group??null),args.options,db.sizes());
     default:throw new Error('Unbekannter Arbeitsauftrag.');
   }

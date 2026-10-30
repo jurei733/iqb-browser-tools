@@ -1,6 +1,14 @@
-# IQB-Werkzeuge im Browser · Version 0.2.4
+# IQB-Werkzeuge im Browser · Version 0.3.0
 
 Portierung der Arbeitsabläufe von **IQB-Kodieren 4.3.0.3** und **itc-ToolBox 3.3.0.2**. Die Anwendung läuft als statische Website mit lokaler Dateiverarbeitung; eine Windows-Installation ist nicht erforderlich.
+
+## SQLite mit Coding-Box austauschen
+
+Unter **Antwortdatenbank** lassen sich nun auch vollständige SQLite-Arbeitsbereichssicherungen aus Coding-Box öffnen. **Als Browser-Tools-SQLite** und **Als Coding-Box-SQLite** verbinden die Formate. Native Sicherungen behalten sämtliche enthaltenen Tabellen einschließlich Dateien, Jobs und Kodierständen v1/v2/v3. Die sichtbare Kodierversion ist auswählbar. Eine unveränderte Browser-Arbeitskopie kann die ursprüngliche native Datei bytegenau zurückgeben.
+
+Geänderte v3-Kodierungen können ausdrücklich über die Checkbox übernommen werden; v1/v2 und die Jobs bleiben erhalten, Vorher-/Nachher-Werte werden protokolliert. Änderungen an Rohantworten, Personen oder Logs werden getrennt von einer bestehenden Kodierhistorie importiert. Neu angelegte Browser-Datenbanken können einen nativen Antwortdatengraphen erzeugen; dazu werden keine Aufgaben oder früheren Bewertungen erfunden.
+
+Für den Rückimport in eine laufende Coding-Box ist der ergänzte MCP-/Backend-Import in einen leeren Bereich erforderlich. Der gemeinsame MCP-Server bietet dafür `coding_import_sqlite`. Die statische Browseranwendung erhält keine Administrationszugangsdaten. Nullable Kodierungen verwenden eine lokale Browser-Schemaerweiterung v3; v1/v2 bleiben lesbar, ältere Windows-Programme unterstützen diese v3-Erweiterung nicht.
 
 ## Direkt ausprobieren
 

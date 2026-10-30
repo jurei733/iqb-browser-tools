@@ -1,15 +1,16 @@
+import {CodingBoxDatabase,isCodingBoxDatabase,browserToCodingBox} from './coding-box-database.js';
 import {schema} from './schema.js';
-import {STATUS,normalizePeople,refreshTimes,mergePeople} from './data.js';
+import {STATUS,nullableNumeric,normalizePeople,refreshTimes,mergePeople} from './data.js';
 const REQUIRED=['db_info','person','bookletInfo','booklet','session','bookletLog','unit','unitLog','unitLastState','chunk','response'];
 const identity=p=>JSON.stringify([p.group,p.login,p.code||'']);
 
 export class OutputDatabase {
   constructor(SQL,bytes=null,creator='Browser') {
-    this.db=new SQL.Database(bytes||undefined);this.creator=creator||'Browser';
+    this.SQL=SQL;this.db=new SQL.Database(bytes||undefined);if(bytes&&isCodingBoxDatabase(this.db)){this.db.close();return new CodingBoxDatabase(SQL,bytes,creator);}this.creator=creator||'Browser';
     try {
       if(!bytes){this.db.run(schema);for(const [k,v]of Object.entries({name:'IQB-Testcenter-Output',version:'2',created_By:this.creator,created_DateTime:new Date().toISOString(),lastchanged_By:this.creator,lastchanged_DateTime:new Date().toISOString(),number_of_people:'0',number_of_responses:'0',has_subforms:'False',has_codes:'False',response_status:'{}'}))this.meta(k,v);}
       const tables=this.query("SELECT name FROM sqlite_master WHERE type='table'").map(r=>r.name);if(REQUIRED.some(t=>!tables.includes(t)))throw new Error('Keine vollständige IQB-Testcenter-Output-Datenbank.');
-      const info=this.metadata();this.version=Number(info.version);if(info.name!=='IQB-Testcenter-Output'||![1,2].includes(this.version))throw new Error('Nicht unterstütztes IQB-Datenbankformat.');
+      const info=this.metadata();this.version=Number(info.version);if(info.name!=='IQB-Testcenter-Output'||![1,2,3].includes(this.version))throw new Error('Nicht unterstütztes IQB-Datenbankformat.');
       this.statuses=Object.fromEntries(STATUS.map((s,i)=>[i,s]));let custom={};try{custom=JSON.parse(info.response_status||'{}');}catch{}for(const [k,v]of Object.entries(custom))if(/^\d+$/.test(k)&&typeof v==='string')this.statuses[k]=v;
       this.db.run('PRAGMA foreign_keys=ON;');
     }catch(error){this.db.close();throw error;}
@@ -34,11 +35,12 @@ export class OutputDatabase {
     for(const l of this.query('SELECT * FROM unitLog'))umap.get(l.unitId)?.logs.push({ts:Number(l.ts),key:l.key,parameter:l.parameter||''});
     for(const s of this.query('SELECT * FROM unitLastState'))umap.get(s.unitId)?.laststate.push({key:s.key,value:s.value??''});
     for(const c of this.query('SELECT * FROM chunk')){let variables=[];try{variables=JSON.parse(c.variables||'[]');}catch{variables=String(c.variables||'').split(' ').filter(Boolean);}umap.get(c.unitId)?.chunks.push({id:c.key,type:c.type||'',ts:String(c.ts||0),variables});}
-    for(const r of this.query('SELECT * FROM response')){const u=umap.get(r.unitId);if(!u)continue;let sf=u.subforms.find(sf=>sf.id===(r.subform||''));if(!sf){sf={id:r.subform||'',responses:[]};u.subforms.push(sf);}sf.responses.push({id:r.variableId,status:this.status(r.status),value:r.value??'',code:Number(r.code)||0,score:Number(r.score)||0});}
+    for(const r of this.query('SELECT *,CAST(code AS TEXT) AS coding_code,CAST(score AS TEXT) AS coding_score FROM response')){const u=umap.get(r.unitId);if(!u)continue;let sf=u.subforms.find(sf=>sf.id===(r.subform||''));if(!sf){sf={id:r.subform||'',responses:[]};u.subforms.push(sf);}sf.responses.push({id:r.variableId,status:this.status(r.status),value:r.value??'',code:nullableNumeric(r.coding_code),score:nullableNumeric(r.coding_score)});}
     return [...pmap.values()];
   }
   import(people,{merge=true}={}){
     const incoming=mergePeople(refreshTimes(normalizePeople(people))),existing=this.people(),byIdentity=new Map();for(const p of existing){const k=identity(p);if(byIdentity.has(k))throw new Error('Die vorhandene Datenbank enthält doppelte Personen. Bitte zuerst die Datenbankprüfung öffnen.');byIdentity.set(k,p);}
+    if(this.version!==1&&incoming.some(p=>p.booklets.some(b=>b.units.some(u=>u.subforms.some(sf=>sf.responses.some(r=>r.code===null||r.score===null)))))&&this.version!==3)this.upgradeNullableCodings();
     this.run('BEGIN');let count=0;
     try{for(const p of incoming){const found=this.query('SELECT id FROM person WHERE [group]=? AND [login]=? AND coalesce([code],\'\')=?',[p.group,p.login,p.code]);const pid=found[0]?.id??this.insert('person',['group','login','code'],[p.group,p.login,p.code]);const before=byIdentity.get(identity(p));const combined=merge&&before?mergePeople([before],[p])[0]:p;
         for(const b of combined.booklets){let info=this.query('SELECT id FROM bookletInfo WHERE name=?',[b.id])[0];const infoId=info?.id??this.insert('bookletInfo',['name','size'],[b.id,0]);this.run('DELETE FROM booklet WHERE personId=? AND infoId=?',[pid,infoId]);
@@ -52,6 +54,11 @@ export class OutputDatabase {
     return {imported:count,...this.summary()};
   }
   check(){const integrity=this.query('PRAGMA integrity_check'),foreignKeys=this.query('PRAGMA foreign_key_check'),duplicates=this.query("SELECT [group],[login],coalesce([code],'') AS code,count(*) AS count FROM person GROUP BY [group],[login],coalesce([code],'') HAVING count(*)>1"),units=this.query('SELECT bookletId,name,alias,count(*) AS count FROM unit GROUP BY bookletId,name,alias HAVING count(*)>1');return {ok:integrity.every(r=>Object.values(r)[0]==='ok')&&!foreignKeys.length&&!duplicates.length&&!units.length,integrity,foreignKeys,duplicates,units};}
+  upgradeNullableCodings(){
+    this.run('BEGIN');try{this.run('ALTER TABLE response RENAME TO iqb_response_old');this.run('CREATE TABLE response (unitId bigint NOT NULL,variableId text NOT NULL,status int NOT NULL DEFAULT 0,value text,subform text,code int DEFAULT 0,score int DEFAULT 0,FOREIGN KEY(unitId) REFERENCES unit(id) ON DELETE CASCADE)');this.run('INSERT INTO response SELECT * FROM iqb_response_old');this.run('DROP TABLE iqb_response_old');this.meta('version','3');this.run('COMMIT');this.version=3;}catch(error){this.run('ROLLBACK');throw error;}
+  }
+  exportBrowser(){return this.export();}
+  exportCodingBox(options){return browserToCodingBox(this,options);}
   export(){this.touch();return this.db.export();}
   close(){this.db.close();}
 }
