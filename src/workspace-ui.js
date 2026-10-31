@@ -4,7 +4,7 @@ export class ToolPanels {
   panels=new Map();
   remember(panel){
     if(!panel?.dataset.tool)return;
-    panel.querySelectorAll('input[type=password]').forEach(input=>input.value='');
+    if(!panel.querySelector?.('#tc-remember')?.checked)panel.querySelectorAll('input[type=password]').forEach(input=>input.value='');
     this.panels.set(panel.dataset.tool,panel);
   }
   take(tool){return this.panels.get(tool);}
