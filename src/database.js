@@ -38,12 +38,12 @@ export class OutputDatabase {
     for(const r of this.query('SELECT *,CAST(code AS TEXT) AS coding_code,CAST(score AS TEXT) AS coding_score FROM response')){const u=umap.get(r.unitId);if(!u)continue;let sf=u.subforms.find(sf=>sf.id===(r.subform||''));if(!sf){sf={id:r.subform||'',responses:[]};u.subforms.push(sf);}sf.responses.push({id:r.variableId,status:this.status(r.status),value:r.value??'',code:nullableNumeric(r.coding_code),score:nullableNumeric(r.coding_score)});}
     return [...pmap.values()];
   }
-  import(people,{merge=true}={}){
-    const incoming=mergePeople(refreshTimes(normalizePeople(people))),existing=this.people(),byIdentity=new Map();for(const p of existing){const k=identity(p);if(byIdentity.has(k))throw new Error('Die vorhandene Datenbank enthält doppelte Personen. Bitte zuerst die Datenbankprüfung öffnen.');byIdentity.set(k,p);}
+  import(people,{merge=true,windows=false}={}){
+    const incoming=windows?refreshTimes(normalizePeople(people)):mergePeople(refreshTimes(normalizePeople(people))),existing=this.people(),byIdentity=new Map();for(const p of existing){const k=identity(p);if(byIdentity.has(k))throw new Error('Die vorhandene Datenbank enthält doppelte Personen. Bitte zuerst die Datenbankprüfung öffnen.');byIdentity.set(k,p);}
     if(this.version!==1&&incoming.some(p=>p.booklets.some(b=>b.units.some(u=>u.subforms.some(sf=>sf.responses.some(r=>r.code===null||r.score===null)))))&&this.version!==3)this.upgradeNullableCodings();
     this.run('BEGIN');let count=0;
-    try{for(const p of incoming){const found=this.query('SELECT id FROM person WHERE [group]=? AND [login]=? AND coalesce([code],\'\')=?',[p.group,p.login,p.code]);const pid=found[0]?.id??this.insert('person',['group','login','code'],[p.group,p.login,p.code]);const before=byIdentity.get(identity(p));const combined=merge&&before?mergePeople([before],[p])[0]:p;
-        for(const b of combined.booklets){let info=this.query('SELECT id FROM bookletInfo WHERE name=?',[b.id])[0];const infoId=info?.id??this.insert('bookletInfo',['name','size'],[b.id,0]);this.run('DELETE FROM booklet WHERE personId=? AND infoId=?',[pid,infoId]);
+    try{for(const p of incoming){const found=this.query('SELECT id FROM person WHERE [group]=? AND [login]=? AND coalesce([code],\'\')=?',[p.group,p.login,p.code]);const pid=found[0]?.id??this.insert('person',['group','login','code'],[p.group,p.login,p.code]);const before=byIdentity.get(identity(p));const combined=!windows&&merge&&before?mergePeople([before],[p])[0]:p;
+        for(const b of combined.booklets){if(windows&&before?.booklets.some(old=>old.id===b.id&&old.lastTS===b.lastTS))continue;let info=this.query('SELECT id FROM bookletInfo WHERE name=?',[b.id])[0];const infoId=info?.id??this.insert('bookletInfo',['name','size'],[b.id,0]);this.run('DELETE FROM booklet WHERE personId=? AND infoId=?',[pid,infoId]);
           const bid=this.insert('booklet',['infoId','personId','firstTs','lastTs'],[infoId,pid,b.firstTS,b.lastTS]);
           for(const s of b.sessions)this.insert('session',['bookletId','browser','os','screen','ts','loadCompleteMS'],[bid,s.browser,s.os,s.screen,Number(s.ts),Number(s.loadCompleteMS)]);
           for(const l of b.logs)this.insert('bookletLog',['bookletId','key','parameter','ts'],[bid,l.key,l.parameter,Number(l.ts)]);
@@ -58,6 +58,14 @@ export class OutputDatabase {
     this.run('BEGIN');try{this.run('ALTER TABLE response RENAME TO iqb_response_old');this.run('CREATE TABLE response (unitId bigint NOT NULL,variableId text NOT NULL,status int NOT NULL DEFAULT 0,value text,subform text,code int DEFAULT 0,score int DEFAULT 0,FOREIGN KEY(unitId) REFERENCES unit(id) ON DELETE CASCADE)');this.run('INSERT INTO response SELECT * FROM iqb_response_old');this.run('DROP TABLE iqb_response_old');this.meta('version','3');this.run('COMMIT');this.version=3;}catch(error){this.run('ROLLBACK');throw error;}
   }
   exportBrowser(){return this.export();}
+  exportWindows(){
+    const db=new OutputDatabase(this.SQL);
+    try{
+      const people=structuredClone(this.people());
+      for(const p of people)for(const b of p.booklets)for(const u of b.units)for(const sf of u.subforms)for(const r of sf.responses){r.code??=0;r.score??=0;for(const value of [r.code,r.score])if(!Number.isInteger(Number(value))||Number(value)<-2147483648||Number(value)>2147483647)throw new Error('Windows-itc-ToolBox unterstützt Codes und Scores nur als 32-Bit-Ganzzahlen. Die Browser-Sicherung erhält den vollständigen Wert.');}
+      db.import(people);db.setSizes(this.sizes());return db.export();
+    }finally{db.close();}
+  }
   exportCodingBox(options){return browserToCodingBox(this,options);}
   export(){this.touch();return this.db.export();}
   close(){this.db.close();}

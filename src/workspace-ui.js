@@ -1,5 +1,5 @@
 // Keep the actual panels, including selected Files and download handlers, in
-// memory while switching tasks. Form contents are never written to storage.
+// memory while switching tasks. main.js separately restores supported file forms.
 export class ToolPanels {
   panels=new Map();
   remember(panel){

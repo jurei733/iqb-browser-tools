@@ -68,7 +68,7 @@ const set=(ref,row,val) => {ref.sheet.getCell(`${ref.col}${row}`).value=String(v
 function rows(ref) {const list=[];for(let r=ref.row+1;r<=ref.sheet.rowCount;r++) {if(!cell(ref,r)) break;list.push(r);}return list;}
 const colNumber = col => [...col].reduce((n,c)=>n*26+c.charCodeAt(0)-64,0);
 const filename = input => String(input).replace(/[<>:"/\\|?*\x00-\x1f]/g,'_').slice(0,180) || 'export';
-export function bookletXML(workbook) {
+export function bookletXML(workbook,{windows=false}={}) {
   const ids=named(workbook,'unitsCol.ID'),titles=named(workbook,'unitsCol.Title'),units=new Map();
   for(const r of rows(ids)) {
     const id=cell(ids,r),label=cell(titles,r);if(!label || units.has(id)) throw new Error(`Unit ${id}: Titel fehlt oder ID doppelt.`);
@@ -104,7 +104,7 @@ export function bookletXML(workbook) {
         body+=node('Testlet',{id:block.id,label:block.label},(restrictions?node('Restrictions',{},restrictions):'')+blockUnits);
       } else if(!['Code','max Time'].includes(heading))throw new Error(`Unbekannter Spaltenkopf „${heading}“.`);
     }
-    const metadata=node('Metadata',{},node('Id',{},text(id))+node('Label',{},text(title))+node('Description',{},text(cell(descriptions,r))));
+    const metadata=node('Metadata',{},node('Id',{},text(id))+node('Label',{},text(title))+node('Description',{},text(windows?title:cell(descriptions,r))));
     const config=node('BookletConfig',{},node('Config',{key:'force_presentation_complete'},'ON')+node('Config',{key:'unit_navibuttons'},'FULL'));
     files[`booklet${filename(id)}.xml`]=strToU8(documentXML(node('Booklet',{'xmlns:xsi':'http://www.w3.org/2001/XMLSchema-instance','xsi:noNamespaceSchemaLocation':'https://raw.githubusercontent.com/iqb-berlin/testcenter-backend/9.1.1/definitions/vo_Booklet.xsd'},metadata+config+node('Units',{},body))));
   }

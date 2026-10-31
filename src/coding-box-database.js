@@ -45,6 +45,7 @@ export class CodingBoxDatabase {
  check(){const integrity=this.query('PRAGMA integrity_check');return {ok:check(this.db),integrity,foreignKeys:[],duplicates:[],units:[]};}
  export(){return new Uint8Array(this.original);}
  exportCodingBox(){return this.export();}
+ exportWindows(){const db=new OutputDatabase(this.SQL);try{db.import(this.people());db.setSizes(this.sizes());return db.exportWindows();}finally{db.close();}}
  exportBrowser(){
   const db=new OutputDatabase(this.SQL,null,this.creator);try{db.import(this.people());db.setSizes(this.sizes());db.run('CREATE TABLE iqb_codingbox_snapshot (format TEXT,version TEXT,native BLOB,baseline BLOB)');db.run('INSERT INTO iqb_codingbox_snapshot VALUES (?,?,?,?)',['coding-box-snapshot-v1',this.version,gzipSync(this.export()),gzipSync(strToU8(canonicalState(db)))]);return db.export();}finally{db.close();}
  }

@@ -56,15 +56,15 @@ function lastState(raw) {
   try {let data;try{data=json(raw);}catch{data=JSON.parse(String(raw).replace(/""/g,'"'));}if(!data||typeof data!=='object'||Array.isArray(data))throw new Error();return Object.entries(data).map(([key,value])=>({key,value:asText(value)}));}
   catch{return [{key:'state',value:String(raw)}];}
 }
-export function responseUnit(dto) {
+export function responseUnit(dto,{windows=false}={}) {
   const unit={id:String(dto.originalUnitId||dto.unitname||''),alias:String(dto.unitname||''),laststate:lastState(dto.laststate),logs:[],subforms:[],chunks:[]};
   let chunks=dto.responses||[];
   if(typeof chunks==='string'){try{chunks=parseJSON(chunks);}catch(error){chunks=[{id:'all-error',content:JSON.stringify({ERROR:String(chunks)}),responseType:'?',ts:0}];}}
   if(!Array.isArray(chunks))throw new Error('Antwort-Chunks müssen ein Array sein.');
   const latest=new Map();
-  for(const ch of [...chunks].sort((a,b)=>numeric(a.ts)-numeric(b.ts))) {
+  for(const ch of windows?chunks:[...chunks].sort((a,b)=>numeric(a.ts)-numeric(b.ts))) {
     const type=ch.responseType??ch.type??'',forms=parseChunk(ch.content,type),variables=[];
-    for(const sf of forms)for(const response of sf.responses){latest.set(key(sf.id,response.id),{subform:sf.id,response});variables.push(sf.id?sf.id+'##'+response.id:response.id);}
+    for(const sf of forms)for(const response of sf.responses){latest.set(windows?String(latest.size):key(sf.id,response.id),{subform:sf.id,response});variables.push(sf.id?sf.id+'##'+response.id:response.id);}
     unit.chunks.push({id:String(ch.id??''),type,ts:String(ch.ts??0),variables});
   }
   const forms=new Map();for(const {subform,response}of latest.values()){if(!forms.has(subform))forms.set(subform,[]);forms.get(subform).push(response);}
@@ -89,23 +89,23 @@ export function refreshTimes(people) {
   for(const p of people)for(const b of p.booklets){for(const l of [...b.logs,...b.sessions,...b.units.flatMap(u=>[...u.logs,...u.chunks])]){const t=numeric(l.ts);if(t>0){b.firstTS=b.firstTS?Math.min(b.firstTS,t):t;b.lastTS=Math.max(b.lastTS||0,t);}}}
   return people;
 }
-export function peopleFromDTO(responses=[],logs=[]) {
+export function peopleFromDTO(responses=[],logs=[],{windows=false}={}) {
   const people=new Map();
-  function location(d){const group=String(d.groupname??''),login=String(d.loginname??''),code=String(d.code??''),booklet=String(d.bookletname??''),pk=key(group,login,code);if(!people.has(pk))people.set(pk,{group,login,code,booklets:[]});const p=people.get(pk);let b=p.booklets.find(b=>b.id===booklet);if(!b){b={id:booklet,sessions:[],logs:[],units:[],firstTS:0,lastTS:0};p.booklets.push(b);}return b;}
-  for(const d of responses){const b=location(d),u=responseUnit(d);const old=b.units.find(v=>sameUnit(v,u));if(old)mergeUnit(old,u);else b.units.push(u);}
+  function location(d){const group=String(d.groupname??''),login=String(d.loginname??''),code=String(d.code??''),booklet=String(d.bookletname??''),pk=windows?group+login+code:key(group,login,code);if(!people.has(pk))people.set(pk,{group,login,code,booklets:[]});const p=people.get(pk);let b=p.booklets.find(b=>b.id===booklet);if(!b){b={id:booklet,sessions:[],logs:[],units:[],firstTS:0,lastTS:0};p.booklets.push(b);}return b;}
+  for(const d of responses){const b=location(d),u=responseUnit(d,{windows});const old=b.units.find(v=>sameUnit(v,u));if(old&&(!windows||!old.subforms.length&&!old.laststate.length&&!old.chunks.length)){if(windows)Object.assign(old,{chunks:u.chunks,laststate:u.laststate,subforms:u.subforms});else mergeUnit(old,u);}else b.units.push(u);}
   for(const d of logs){const b=location(d),event={ts:numeric(d.timestamp),...splitLog(d.logentry)};
     if(d.unitname){let u=b.units.find(v=>v.alias===d.unitname&&(!d.originalUnitId||v.id===d.originalUnitId||v.id===v.alias));if(!u){u={id:d.originalUnitId||d.unitname,alias:d.unitname,laststate:[],chunks:[],subforms:[],logs:[]};b.units.push(u);}else if(d.originalUnitId&&u.id===u.alias)u.id=d.originalUnitId;u.logs.push(event);}
     else {b.logs.push(event);if(event.key==='LOADCOMPLETE'){let info={};try{info=JSON.parse(event.parameter.replace(/\\"/g,'"'));}catch{}b.sessions.push({ts:event.ts,loadCompleteMS:numeric(info.loadTime),browser:info.browser||[info.browserName,info.browserVersion].filter(Boolean).join(' ')||'?',os:String(info.os??info.osName??'?'),screen:info.screen||(info.screenSizeWidth?`${info.screenSizeWidth} x ${info.screenSizeHeight}`:'?')});}}
   }
   return refreshTimes([...people.values()]);
 }
-export function importCSV(source,delimiter='auto') {
+export function importCSV(source,delimiter='auto',options={}) {
   const table=parseCSV(source,delimiter),headers=table.shift().map(h=>h.trim().replace(/^\uFEFF/,'')),data=table.filter(r=>r.some(Boolean)).map((r,i)=>{if(r.length!==headers.length)throw new Error(`CSV-Zeile ${i+2}: ${r.length} statt ${headers.length} Felder.`);return Object.fromEntries(headers.map((h,j)=>[h,r[j]]));});
   for(const h of ['groupname','loginname','bookletname','unitname'])if(!headers.includes(h))throw new Error(`CSV-Kopf „${h}“ fehlt.`);
-  if(headers.includes('logentry'))return peopleFromDTO([],data);
+  if(headers.includes('logentry'))return peopleFromDTO([],data,options);
   if(!headers.includes('responses'))throw new Error('Keine Testcenter-Antwort- oder Log-CSV.');
   if(headers.includes('responseType'))for(const d of data){try{const chunks=JSON.parse(d.responses);if(Array.isArray(chunks)&&chunks.length&&chunks.every(c=>Object.hasOwn(c,'content')))continue;}catch{}d.responses=JSON.stringify([{id:'all',content:d.responses,responseType:d.responseType,ts:d['response-ts']}]);}
-  return peopleFromDTO(data,[]);
+  return peopleFromDTO(data,[],options);
 }
 export function mergePeople(...groups) {
   const people=new Map();
@@ -119,11 +119,12 @@ export function mergePeople(...groups) {
   }
   return refreshTimes([...people.values()]);
 }
-export async function readDataFiles(files,{encoding='utf-8',delimiter='auto'}={}) {
+export async function readDataFiles(files,{encoding='utf-8',delimiter='auto',windows=false,onWarning=()=>{}}={}) {
   const batches=[];for(const f of files){const source=typeof f.text==='string'?f.text:new TextDecoder(encoding,{fatal:true}).decode(f.bytes??await f.arrayBuffer());
     if(/\.json$/i.test(f.name)){const data=parseJSON(source);if(Array.isArray(data)&&data[0]?.booklets!==undefined)batches.push(normalizePeople(data));else if(Array.isArray(data)&&data[0]?.groupname!==undefined)batches.push(data[0].logentry!==undefined?peopleFromDTO([],data):peopleFromDTO(data));else if(Array.isArray(data)&&!data.length)batches.push([]);else throw new Error(`${f.name}: Unbekanntes JSON-Format.`);}
-    else batches.push(importCSV(source,delimiter));
+    else batches.push(importCSV(source,delimiter,{windows}));
   }
+  if(windows){const map=new Map();for(const [index,batch]of batches.entries())for(const p of batch){const k=p.group+p.login+p.code;if(!map.has(k)){map.set(k,structuredClone(p));continue;}if(/\.json$/i.test(files[index].name)){onWarning(`${files[index].name}: Personenkennung doppelt (${k}); übrige Personen dieser Datei wie im Original übersprungen.`);break;}const target=map.get(k);for(const b of p.booklets){let old=target.booklets.find(v=>v.id===b.id);if(!old){target.booklets.push(structuredClone(b));continue;}old.logs.push(...b.logs);old.sessions.push(...b.sessions);for(const u of b.units){const unit=old.units.find(v=>v.alias===u.alias);if(unit&&!u.subforms.length&&!u.chunks.length&&!u.laststate.length)unit.logs.push(...u.logs);else if(unit&&!unit.subforms.length&&!unit.chunks.length&&!unit.laststate.length)Object.assign(unit,{chunks:u.chunks,laststate:u.laststate,subforms:u.subforms});else old.units.push(structuredClone(u));}}}return refreshTimes([...map].sort(([a],[b])=>a.localeCompare(b,'de')).map(([,p])=>p));}
   return mergePeople(...batches);
 }
 export function responseRecords(people,{ignoreDisplayed=false,ignoreNotReached=false}={}) {
