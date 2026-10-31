@@ -9,6 +9,8 @@ import * as D from '../src/data.js';
 import * as T from '../src/toolbox.js';
 import {OutputDatabase} from '../src/database.js';
 import {loginDocx} from '../src/docx.js';
+import {windowsLongCSV,windowsSessionCSV} from '../src/windows-compatibility.js';
+import {zoomBounds,moveTemplate,rotateTemplate} from '../src/viewer.js';
 import {resolution,tiffResolution} from '../src/image.js';
 import UTIF from 'utif2';
 import {parseXML,children,child} from '../src/xml.js';
@@ -73,13 +75,9 @@ await check('SQLite: browser reads original-created database',async()=>{
 await check('SQLite: Windows original reads browser-created database',()=>{
  let data=record('toolbox-open-browser-database');data=Array.isArray(data)?data:[data];assert.equal(data.length,3);assert.equal(D.responseRecords(D.normalizePeople(data)).length,6);
 });
-await check('Booklets: original Excel template produces equivalent XML',async()=>{
- const original=record('toolbox-booklet-template');assert.ok(original.length);const actual=T.bookletXML(await T.loadWorkbook(await readFile(join(inputRoot,'Booklet-Template.xlsx'))));assert.equal(Object.keys(actual).length,original.length);
- for(const f of original){const a=parseXML(strFromU8(actual[f.name])).documentElement,b=parseXML(f.xml).documentElement;
-  const descriptionA=a.getElementsByTagName('Description')[0],descriptionB=b.getElementsByTagName('Description')[0];
-  if(descriptionA.textContent!==descriptionB.textContent){report.intentionalDifferences.push({test:f.name,field:'Description',original:descriptionB.textContent,browser:descriptionA.textContent,reason:'Use description column instead of original title-column bug'});descriptionB.textContent=descriptionA.textContent;}
-  assert.deepEqual(canonicalXML(a),canonicalXML(b));
- }
+await check('Booklets: Windows mode preserves the original title-column Description',async()=>{
+ const original=record('toolbox-booklet-template'),actual=T.bookletXML(await T.loadWorkbook(await readFile(join(inputRoot,'Booklet-Template.xlsx'))),{windows:true});assert.equal(Object.keys(actual).length,original.length);
+ for(const f of original)assert.deepEqual(canonicalXML(parseXML(strFromU8(actual[f.name])).documentElement),canonicalXML(parseXML(f.xml).documentElement));
 });
 for(const n of [1,2])await check('Word: original template '+n+' retains the same filled content',async()=>{
  record('toolbox-word-original-templates');const workbook=await T.loadWorkbook(await readFile(join(inputRoot,'Logins-Beispiel.xlsx'))),generated=await loginDocx(workbook,await readFile(join(inputRoot,'Logins-Vorlage'+n+'.docx')),'https://testcenter.example.org');
@@ -104,5 +102,38 @@ await check('Coding navigation: first open case, boundaries and atomic person ba
  index=C.navigationIndex(job,-1);positions.push(index+1);
  assert.deepEqual(positions,original.positions);assert.equal(batchCount,original.batchCount);assert.equal(original.rejectedCount,0);assert.equal(job.cases.length,original.caseCount);
  assert.deepEqual(job.cases.map(c=>c.code),C.decodeResult(new TextEncoder().encode(original.xml)).entries.map(e=>e.code));
+});
+await check('Scan zoom: physical sizes and dynamic minimum match the WPF converter',()=>{
+ for(const row of record('scan-zoom-minimum')){const [w,h,vw,vh]=row.values;assert.equal(zoomBounds(w,h,vw,vh).min,row.minimum);}
+});
+await check('Scan template: native shared binding and drag threshold',()=>{
+ const r=record('scan-template-binding');assert.equal(r.before,0);assert.equal(r.after,42);assert.equal(r.canvasLeft,42);assert.equal(r.bound,true);assert.equal(r.dragX,4);assert.equal(r.dragY,4);
+ assert.equal(moveTemplate({x:42,y:0},{x:0,y:0},{left:0,top:0,width:850,height:660,templateWidth:100,templateHeight:100}).x,42);assert.equal(rotateTemplate(200,180,2),10);
+});
+await check('SQLite: Windows reads the explicit nullable-to-zero v2 projection',()=>{
+ const data=D.normalizePeople(record('toolbox-nullable-windows-database'));assert.equal(data.length,3);const rows=D.responseRecords(data);assert.equal(rows.length,6);assert.equal(rows[0].responseCode,0);assert.equal(rows[0].responseScore,0);assert.deepEqual(rows.slice(1).map(r=>[r.responseCode,r.responseScore]),D.responseRecords(people).slice(1).map(r=>[r.responseCode,r.responseScore]));
+});
+await check('CSV: Windows mode reproduces the complete original response text',()=>{
+ assert.equal(windowsLongCSV(people),record('toolbox-legacy-csv').RESPONSES);
+});
+await check('CSV: Windows mode reproduces the complete original session text',()=>{
+ assert.equal(windowsSessionCSV(people),record('toolbox-legacy-csv').SESSIONS);
+});
+for(const n of [1,2])await check('Word Windows mode: template '+n+' paragraphs, controls, QR bitmap bytes and size',async()=>{
+ const workbook=await T.loadWorkbook(await readFile(join(inputRoot,'Logins-Beispiel.xlsx'))),generated=await loginDocx(workbook,await readFile(join(inputRoot,'Logins-Vorlage'+n+'.docx')),'https://testcenter.example.org',{windows:true,qrCentimeters:4});
+ const a=unzipSync(generated.files['Logins.docx']),b=unzipSync(await readFile(join(folder,'logins-'+n+'.docx'))),ad=parseXML(strFromU8(a['word/document.xml'])),bd=parseXML(strFromU8(b['word/document.xml']));
+ const texts=d=>Array.from(d.getElementsByTagName('w:p')).map(p=>p.textContent);assert.deepEqual(texts(ad),texts(bd));assert.equal(ad.getElementsByTagName('w:sdt').length,bd.getElementsByTagName('w:sdt').length);
+ const images=z=>Object.keys(z).filter(k=>/\.bmp$/i.test(k)).map(k=>Buffer.from(z[k]).toString('base64')).sort();assert.deepEqual(images(a),images(b));
+ const dimensions=d=>Array.from(d.getElementsByTagName('wp:extent')).map(n=>[n.getAttribute('cx'),n.getAttribute('cy')]);assert.deepEqual(dimensions(ad),dimensions(bd));
+});
+await check('Coding export: original mode stops at the first completely blank person',async()=>{
+ const xml=record('coding-empty-person-boundary').xml;const result=C.decodeResult(new TextEncoder().encode(xml));assert.equal(result.entries.length,0);
+ const job={id:result.id,label:result.label,cases:[{testee:'001',variable:{id:'A01'},code:''},{testee:'002',variable:{id:'A01'},code:'0'}]};assert.equal(C.decodeResult(C.encodeResult(job,'Reference','',{windows:true})).entries.length,result.entries.length);
+});
+await check('SQLite import: native skip at same end timestamp and replacement after later end',async()=>{
+ const db=new OutputDatabase(await initSqlJs());try{const data=structuredClone(people.slice(0,1)),values=[],value=()=>db.people()[0].booklets[0].units[0].subforms[0].responses[0].value;db.import(data,{windows:true});values.push(value());const b=data[0].booklets[0];b.units[0].subforms[0].responses[0].value='Changed same end';b.firstTS-=1000;db.import(data,{windows:true});values.push(value());b.lastTS+=1000;db.import(data,{windows:true});values.push(value());assert.deepEqual(values,record('toolbox-import-same-end-timestamp').values);assert.equal(db.summary().people,record('toolbox-import-same-end-timestamp').people);}finally{db.close();}
+});
+await check('JSON import: original collision stops the current file after the first person',async()=>{
+ const rows=structuredClone(people);Object.assign(rows[0],{group:'A',login:'BC',code:''});Object.assign(rows[1],{group:'AB',login:'C',code:''});Object.assign(rows[2],{group:'NEW',login:'1',code:''});const warnings=[],actual=await D.readDataFiles([{name:'collision.json',text:JSON.stringify(rows)}],{windows:true,onWarning:m=>warnings.push(m)}),original=record('toolbox-json-collision');assert.equal(actual.length,original.count);assert.deepEqual(actual.map(p=>({group:p.group,login:p.login,code:p.code})),original.identities);assert.equal(warnings.length,1);
 });
 report.passed=report.checks.filter(c=>c.passed).length;report.total=report.checks.length;await writeFile(reportPath,JSON.stringify(report,null,2));console.log(report.passed+'/'+report.total,'file comparisons passed');for(const c of report.checks)if(!c.passed)console.log(c.name,c.error);if(report.passed!==report.total)process.exitCode=1;

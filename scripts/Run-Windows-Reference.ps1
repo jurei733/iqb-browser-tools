@@ -266,10 +266,61 @@ Run-Test 'coding-navigation-and-batch' {
  $list.SelectedCaseNumber=-1;$positions+=$list.SelectedCaseNumber
  return @{positions=$positions;batchCount=$count;rejectedCount=$rejected;caseCount=$list.CaseCount;lastCoded=$list.LastCodedCaseNumber;xml=$list.ResultsToXDoc().ToString()}
 }
+Run-Test 'toolbox-nullable-windows-database' {
+ $db=[Activator]::CreateInstance($Tool.GetType('iqb.testcenter.toolbox.SQLiteConnector'),(Unwrap-Arguments ([object[]]@((Join-Path $Root 'browser-windows-nullable.sqlite'),$false))))
+ try{$list=@();foreach($id in $db.getPeopleList().Values){$list+=($db.getPersonResponses($id))};return ([Newtonsoft.Json.JsonConvert]::SerializeObject($list)|ConvertFrom-Json)}finally{$db.CloseConnection()}
+}
+Run-Test 'scan-zoom-minimum' {
+ $converter=[Activator]::CreateInstance($Scans.GetType('HUBerlin.IQB.Scans.SliderMinConverter'))
+ $result=@();foreach($values in @(@(850.0,660.0,600.0,480.0),@(1700.0,1320.0,600.0,480.0),@(192.0,128.0,600.0,480.0))){$result+=@{values=$values;minimum=$converter.Convert([object[]]$values,[double],$null,[Globalization.CultureInfo]::InvariantCulture)}}
+ return ,$result
+}
+Run-Test 'scan-template-binding' {
+ $type=$Scans.GetType('HUBerlin.IQB.Scans.PageImageSetShowControl');$p=$type.GetProperty('TemplatePositionLeft');$p.SetValue($null,[double]0,$null)
+ $canvas=New-Object Windows.Controls.Canvas;$binding=New-Object Windows.Data.Binding;$binding.Mode=[Windows.Data.BindingMode]::TwoWay;$binding.Path=[Windows.PropertyPath]::new('(0)',[object[]]@($p));$canvas.SetBinding([Windows.Controls.Canvas]::LeftProperty,$binding)|Out-Null
+ $before=$p.GetValue($null,$null);[Windows.Controls.Canvas]::SetLeft($canvas,[double]42)
+ return @{before=$before;after=$p.GetValue($null,$null);canvasLeft=[Windows.Controls.Canvas]::GetLeft($canvas);bound=[Windows.Data.BindingOperations]::IsDataBound($canvas,[Windows.Controls.Canvas]::LeftProperty);dragX=[Windows.SystemParameters]::MinimumHorizontalDragDistance;dragY=[Windows.SystemParameters]::MinimumVerticalDragDistance}
+}
+Run-Test 'toolbox-legacy-csv' {
+ $db=[Activator]::CreateInstance($Tool.GetType('iqb.testcenter.toolbox.SQLiteConnector'),(Unwrap-Arguments ([object[]]@((Join-Path $Out 'native.sqlite'),$false))))
+ try{
+  $obj=New-BackendObject 'ToCsvDialog';$flags=[Reflection.BindingFlags]'NonPublic,Instance';$t=$obj.GetType();$t.GetField('DB',$flags).SetValue($obj,$db);$t.GetField('deCulture',$flags).SetValue($obj,[Globalization.CultureInfo]::CreateSpecificCulture('de-DE'));$settings=Get-OriginalSettings
+  $result=@{};foreach($mode in @('RESPONSES','SESSIONS')){$settings.lastfile_OutputTargetCsv=Join-Path $Out ('native-'+$mode+'.csv');$t.GetField('csvContent',$flags).SetValue($obj,[Enum]::Parse($Tool.GetType('iqb.testcenter.toolbox.CsvContent'),$mode));Invoke-Backend $obj 'Process1_bw_DoWork';$result[$mode]=[IO.File]::ReadAllText($settings.lastfile_OutputTargetCsv)}
+  return $result
+ }finally{$db.CloseConnection()}
+}
+Run-Test 'coding-empty-person-boundary' {
+ $jobs=$Scans.GetType('HUBerlin.IQB.Scans.ScanFactory').GetMethod('GetJobDefsFromDirectory').Invoke($null,(Unwrap-Arguments ([object[]]@((Join-Path $Root 'coding')))))
+ $job=@($jobs|Where-Object{$_.ID -eq 'reference-modern'})[0];$type=$Code.GetType('HUBerlin.IQB.Kodieren.CaseList')
+ $list=[Activator]::CreateInstance($type,(Unwrap-Arguments ([object[]]@($job,(Join-Path $Out 'empty-results-folder')))))
+ $all=$type.GetField('AllCases',([Reflection.BindingFlags]'NonPublic,Instance')).GetValue($list)
+ foreach($coding in $all[1].CodingList.Values){$coding.Code='0'}
+ return @{people=$all.Count;xml=$list.ResultsToXDoc().ToString()}
+}
+Run-Test 'toolbox-import-same-end-timestamp' {
+ $type=$Tool.GetType('iqb.testcenter.toolbox.Person');$listType=[Collections.Generic.List``1].MakeGenericType($type)
+ $people=[Newtonsoft.Json.JsonConvert]::DeserializeObject([IO.File]::ReadAllText((Join-Path $Root 'people.json')),$listType);$person=$people[0]
+ $db=[Activator]::CreateInstance($Tool.GetType('iqb.testcenter.toolbox.SQLiteConnector'),(Unwrap-Arguments ([object[]]@((Join-Path $Out 'import-parity.sqlite'),$true))))
+ try{
+  $values=@();$db.addPerson($person);$id=@($db.getPeopleList().Values)[0];$values+=($db.getPersonResponses($id).booklets[0].units[0].subforms[0].responses[0].value)
+  $person.booklets[0].units[0].subforms[0].responses[0].value='Changed same end';$person.booklets[0].firstTS-=1000;$db.addPerson($person);$values+=($db.getPersonResponses($id).booklets[0].units[0].subforms[0].responses[0].value)
+  $person.booklets[0].lastTS+=1000;$db.addPerson($person);$values+=($db.getPersonResponses($id).booklets[0].units[0].subforms[0].responses[0].value)
+  return @{values=$values;people=$db.getPeopleList().Count}
+ }finally{$db.CloseConnection()}
+}
+Run-Test 'toolbox-json-collision' {
+ $people=([IO.File]::ReadAllText((Join-Path $Root 'people.json'))|ConvertFrom-Json);$a=$people[0];$a.group='A';$a.login='BC';$a.code='';$b=$people[1];$b.group='AB';$b.login='C';$b.code='';$c=$people[2];$c.group='NEW';$c.login='1';$c.code=''
+ $path=Join-Path $Out 'collision.json';ConvertTo-Json -InputObject @($a,$b,$c) -Depth 40|Set-Content -Encoding UTF8 $path
+ $Tool.GetType('iqb.testcenter.toolbox.globalOutputStore').GetMethod('clear').Invoke($null,$null)|Out-Null
+ $worker=New-Object ComponentModel.BackgroundWorker;$worker.WorkerReportsProgress=$true
+ $Tool.GetType('iqb.testcenter.toolbox.JsonReadWrite').GetMethod('ReadFull').Invoke($null,(Unwrap-Arguments ([object[]]@([string[]]@($path),$worker))))|Out-Null
+ $data=$Tool.GetType('iqb.testcenter.toolbox.globalOutputStore').GetField('personDataFull').GetValue($null)
+ return @{count=$data.Count;keys=@($data.Keys);identities=@($data.Values|ForEach-Object{@{group=$_.group;login=$_.login;code=$_.code}})}
+}
 $hashes=@{}
 foreach($p in @((Join-Path $ToolPath 'itc-Toolbox.exe'),(Join-Path $CodePath 'IQB-Kodieren.exe'),(Join-Path $CodePath 'IQB-Scans.dll'),(Join-Path $CodePath 'IQB-Common.dll'))){$hashes[[IO.Path]::GetFileName($p)]=(Get-FileHash $p -Algorithm SHA256).Hash.ToLowerInvariant()}
 $inputHashes=@{}
-foreach($name in @('browser.result','browser.sqlite','people.json','cases.json','options.json','coding\modern.zip')){$inputHashes[$name]=(Get-FileHash (Join-Path $Root $name) -Algorithm SHA256).Hash.ToLowerInvariant()}
+foreach($name in @('browser.result','browser.sqlite','people.json','cases.json','options.json','coding\modern.zip','browser-windows-nullable.sqlite')){$inputHashes[$name]=(Get-FileHash (Join-Path $Root $name) -Algorithm SHA256).Hash.ToLowerInvariant()}
 $report=@{inputHashes=$inputHashes;finished=[DateTime]::UtcNow.ToString('o');platform=[Environment]::OSVersion.VersionString;runtime=[Environment]::Version.ToString();architecture=$env:PROCESSOR_ARCHITECTURE;culture=[Threading.Thread]::CurrentThread.CurrentCulture.Name;hashes=$hashes;results=$Results.ToArray()}
 $report|ConvertTo-Json -Depth 50|Set-Content -Encoding UTF8 (Join-Path $Out 'original-windows.json')
 Write-Host ('Reference run saved: '+$Out)

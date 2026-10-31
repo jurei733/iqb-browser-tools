@@ -17,3 +17,5 @@ await writeFile(join(destination,'browser.result'),encodeResult(job,old.coder,ol
 const db=new OutputDatabase(await initSqlJs());
 try{db.import(normalizePeople(JSON.parse(await readFile(join(destination,'people.json'),'utf8'))));await writeFile(join(destination,'browser.sqlite'),db.export());}finally{db.close();}
 console.log('Current browser reference inputs:',destination);
+
+const nullable=new OutputDatabase(await initSqlJs());try{const data=normalizePeople(JSON.parse(await readFile(join(destination,'people.json'),'utf8')));const response=data[0].booklets[0].units[0].subforms[0].responses[0];response.code=null;response.score=null;nullable.import(data);await writeFile(join(destination,'browser-windows-nullable.sqlite'),nullable.exportWindows());}finally{nullable.close();}

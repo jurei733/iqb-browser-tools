@@ -1,0 +1,7 @@
+﻿Group;Login;Code;Booklet;Unit-Name;Unit-Alias;Response-Id;Response-Status;Response-Value;Response-Subform;Response-Code;Response-Score;Response-Timestamp;Response-Timestamp-String
+"DEMO";"demo1";"001";"DEMO";"MATHE01";"MATHE_";"summe";"CODING_COMPLETE";"13";"";1;1;1792663206000;"22.10.2026 10:00:06"
+"DEMO";"demo1";"001";"DEMO";"MATHE01";"MATHE_";"begruendung";"VALUE_CHANGED";"8 + 5 = 13";"1";0;0;1792663206000;"22.10.2026 10:00:06"
+"DEMO";"demo2";"002";"DEMO";"MATHE01";"MATHE_";"summe";"CODING_COMPLETE";"12";"";0;0;1792663207000;"22.10.2026 10:00:07"
+"DEMO";"demo2";"002";"DEMO";"MATHE01";"MATHE_";"begruendung";"VALUE_CHANGED";"#null#";"1";0;0;1792663207000;"22.10.2026 10:00:07"
+"DEMO";"demo3";"003";"DEMO";"MATHE01";"MATHE_";"summe";"CODING_COMPLETE";"13";"";1;1;1792663208000;"22.10.2026 10:00:08"
+"DEMO";"demo3";"003";"DEMO";"MATHE01";"MATHE_";"begruendung";"VALUE_CHANGED";"8 + 5 = 13";"1";0;0;1792663208000;"22.10.2026 10:00:08"

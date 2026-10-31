@@ -1,0 +1,4 @@
+﻿Person;Booklet;Session-No;Sessions-Total;Units-w-Value;Start-At-TS;Start-At-DT;First-Responses-After-MS;First-Responses-After-MMSS;Last-Responses-After-MS;Last-Responses-After-MMSS;Load-Speed-MBitPerSec;Browser;OS;Screen;Screen-Width;Screen-Height
+"DEMOdemo1001";"DEMO";1;1;"MATHE_";1792663200000;"22.10.2026 10:00:00";6;"'0:06";6;"'0:06";"0";"Beispielbrowser 1";"Beispielsystem";"1440 x 900";1440;900
+"DEMOdemo2002";"DEMO";1;1;"MATHE_";1792663200000;"22.10.2026 10:00:00";7;"'0:07";7;"'0:07";"0";"Beispielbrowser 1";"Beispielsystem";"1440 x 900";1440;900
+"DEMOdemo3003";"DEMO";1;1;"MATHE_";1792663200000;"22.10.2026 10:00:00";8;"'0:08";8;"'0:08";"0";"Beispielbrowser 1";"Beispielsystem";"1440 x 900";1440;900
