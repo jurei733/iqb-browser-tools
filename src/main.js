@@ -81,7 +81,7 @@ async function selectJob(job) {
 async function saveProgress(){if(!state.job)return;pendingSaves++;if($('#saved'))$('#saved').textContent='Wird gespeichert …';const j=state.job;const result={id:j.id,label:j.label,coder:state.coder,globalComment:state.globalComment,transforms:state.transforms,entries:j.cases.filter(c=>c.code||c.comment).map(c=>({testee:c.testee,variable:c.variable.id,code:c.code,comment:c.comment,time:c.time}))};
   try{await store(jobKey(j),result);if(fileWorkspace&&result.coder.trim()){await fileWorkspace.save(j.label,Coding.encodeResult({...j,cases:result.entries.map(e=>({...e,variable:{id:e.variable}}))},result.coder,result.globalComment));if($('#saved'))$('#saved').textContent='Im Arbeitsordner gespeichert';}else if($('#saved'))$('#saved').textContent='Lokal gespeichert';}catch(e){if($('#saved'))$('#saved').textContent='Speichern fehlgeschlagen';throw new Error('Speichern fehlgeschlagen. Bitte die Ergebnisdatei herunterladen.');}finally{pendingSaves--;}
 }
-async function chooseCode(code){const c=state.job.cases[state.index];c.code=code;c.time=Coding.localTimestamp();await saveProgress();renderCoding();}
+async function chooseCode(code){const c=state.job.cases[state.index];c.code=code;c.time=Coding.localTimestamp();renderCoding();await saveProgress();}
 function navigateTo(index){if(state.job){state.index=Coding.navigationIndex(state.job,index,{free:state.freeNavigation});renderCoding();}}
 function navigate(offset){if(state.index+offset>=state.job.cases.length){$('#scans')?.animate([{opacity:.4},{opacity:1}],{duration:1000});return;}navigateTo(state.index+offset);}
 function templateTransform(){return templatePosition;}
@@ -152,7 +152,7 @@ document.addEventListener('keydown',e=>{if(e.key==='F1'){e.preventDefault();$('#
   if(e.key==='F4'){e.preventDefault();const details=$('#global-comment').closest('details');details.open=true;$('#global-comment').focus();return;}
   if(['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName)){if(e.key==='Escape')e.target.blur();return;}
   const c=state.job.cases[state.index];
-  if((e.ctrlKey||e.metaKey)&&/^\d$/.test(e.key)){e.preventDefault();action(async()=>{state.index=Coding.batchCode(state.job,state.index,e.key);await saveProgress();renderCoding();});return;}
+  if((e.ctrlKey||e.metaKey)&&/^\d$/.test(e.key)){e.preventDefault();action(async()=>{state.index=Coding.batchCode(state.job,state.index,e.key);renderCoding();await saveProgress();});return;}
   if(e.ctrlKey||e.metaKey||e.altKey)return;
   if(['ArrowRight','Enter','PageDown'].includes(e.key)){e.preventDefault();navigate(1);}else if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();navigate(-1);}
   else if(['ArrowUp','ArrowDown'].includes(e.key)){e.preventDefault();action(()=>chooseCode(Coding.cycleCode(c,e.key==='ArrowUp'?-1:1)));}
