@@ -285,12 +285,13 @@
         "src/main.js"
       ],
       "assessment": "difference",
-      "note": "Manuelle Eingabe; keine automatische Ermittlung über Windows Active Directory.",
-      "acceptance": "Kodierername eintragen und ändern.",
+      "note": "Name manuell eingeben und lokal wiederverwenden; der Browser kann Windows Active Directory nicht ohne einen gesonderten Identitätsdienst auslesen.",
+      "acceptance": "Kodierername eintragen und ändern; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
       "evidence": [
         {
-          "kind": "browser",
-          "pattern": "Jobwechsel erhält"
+          "kind": "ci-browser",
+          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "pattern": "last coding workspace"
         }
       ]
     },
@@ -704,15 +705,21 @@
         "sha256": "41e5587e75c73d142473206ef072ba31da3eed47ac42889a7bfdefa5e8cef533"
       },
       "implementation": [
-        "src/main.js"
+        "src/main.js",
+        "src/viewer.js"
       ],
-      "assessment": "difference",
-      "note": "Browser 25–300 % relativ zur verfügbaren Breite; Windows verwendet einen WPF-Skalierungsfaktor mit dynamischer Untergrenze. Keine pixelgleiche 100-%-Ansicht behauptet.",
-      "acceptance": "Scan-Zoom und 100-Prozent-Tastenkürzel.",
+      "assessment": "implemented",
+      "note": "96-DPI-Geräteeinheiten, dynamische Untergrenze, kontinuierlicher Schieber und Zehntelschritte des Bereichs wie WPF. PNG-Auflösungsrundungen werden physikalisch berücksichtigt.",
+      "acceptance": "Scan-Zoom und 100-Prozent-Tastenkürzel; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
       "evidence": [
         {
-          "kind": "browser",
-          "pattern": "Joboptionen, fortlaufende"
+          "kind": "windows-files",
+          "pattern": "Scan zoom:"
+        },
+        {
+          "kind": "ci-browser",
+          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "pattern": "physical zoom"
         }
       ]
     },
@@ -727,12 +734,19 @@
         "sha256": "41e5587e75c73d142473206ef072ba31da3eed47ac42889a7bfdefa5e8cef533"
       },
       "implementation": [
-        "src/main.js"
+        "src/main.js",
+        "src/viewer.js"
       ],
-      "assessment": "missing",
-      "note": "Native Scrollleisten sind vorhanden; Ziehen zum Verschieben des Scan-Viewports ist noch nicht übertragen.",
-      "acceptance": "Einen mehrseitigen Scan auf 200 % zoomen, im Scan ziehen und horizontale/vertikale Scrollposition mit Windows vergleichen. Browser besitzt dafür derzeit keinen Handler.",
-      "evidence": []
+      "assessment": "implemented",
+      "note": "Scan-Viewport horizontal und vertikal durch Ziehen verschieben; Pointer-Capture, Abbruch und Loslassen werden behandelt. Die Schablone besitzt wie im Original ihren eigenen Ziehgriff.",
+      "acceptance": "Scan durch Ziehen verschieben; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
+      "evidence": [
+        {
+          "kind": "ci-browser",
+          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "pattern": "physical zoom"
+        }
+      ]
     },
     {
       "id": "K-28",
@@ -774,16 +788,26 @@
         "sha256": "6b38b36cfa1160bde9038fdcd43e66bcd7f685add1ba7a4f9fb02b47dd00a061"
       },
       "implementation": [
-        "src/main.js"
+        "src/main.js",
+        "src/viewer.js"
       ],
-      "assessment": "partial",
-      "note": "Aktuelle UI-Prüfung für Verschieben, Drehen und Zurücksetzen in allen drei CI-Browsern. Randbegrenzung und sämtliche WPF-Ereignisvarianten bleiben ein Teilnachweis.",
-      "acceptance": "Schablone an alle vier Scanränder ziehen; Umschalt-Ziehen wiederholt nach oben/unten; Winkel und Begrenzung auf gleichen DPI-Scans mit Windows vergleichen.",
+      "assessment": "implemented",
+      "note": "Begrenzung in logischen Seitenkoordinaten, native Drag-Schwelle, Umschalt-Drehung mit WPF-Rundung und Zurücksetzen des Winkels beim Fallwechsel.",
+      "acceptance": "Schablone begrenzt verschieben und mit Umschalt drehen; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
       "evidence": [
         {
+          "kind": "node",
+          "file": "tests/parity-completion.test.js",
+          "pattern": "template bounds"
+        },
+        {
+          "kind": "windows-files",
+          "pattern": "Scan template:"
+        },
+        {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031.json",
-          "pattern": "move, rotate and reset its template"
+          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "pattern": "physical zoom"
         }
       ]
     },
@@ -798,12 +822,23 @@
         "sha256": "41e5587e75c73d142473206ef072ba31da3eed47ac42889a7bfdefa5e8cef533"
       },
       "implementation": [
-        "src/main.js"
+        "src/main.js",
+        "src/viewer.js"
       ],
-      "assessment": "difference",
-      "note": "Browser speichert je Variable einschließlich Rotation; Windows bindet gemeinsame statische Position. Ein eigener direkter Positionsvergleich fehlt.",
-      "acceptance": "Schablone in Variable A verschieben, zu B und zurück wechseln; gemeinsame Windows-Position gegen getrennte Browserpositionen protokollieren.",
-      "evidence": []
+      "assessment": "implemented",
+      "note": "Gemeinsame Position über Variablen und Fälle; Drehung beim Fallwechsel zurücksetzen. Der direkte WPF-Bindungsversuch bestätigt den gemeinsamen statischen Wert.",
+      "acceptance": "Schablonenposition beim Fallwechsel behalten; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
+      "evidence": [
+        {
+          "kind": "windows-files",
+          "pattern": "Scan template:"
+        },
+        {
+          "kind": "ci-browser",
+          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "pattern": "shared position"
+        }
+      ]
     },
     {
       "id": "K-31",
@@ -888,7 +923,7 @@
     {
       "id": "K-34",
       "app": "IQB-Kodieren",
-      "function": "Ergebnis nach leerer Person weiter exportieren",
+      "function": "Ergebnisexport mit wählbarer Original-Grenze",
       "original": {
         "path": "coding/CaseList.cs",
         "anchor": "ResultsToXDoc",
@@ -898,14 +933,18 @@
       "implementation": [
         "src/coding.js"
       ],
-      "assessment": "difference",
-      "note": "Original bricht beim ersten vollständig leeren Personenblock ab; Browser erhält spätere Kodierungen.",
-      "acceptance": "Ergebnis nach leerer Person weiter exportieren.",
+      "assessment": "implemented",
+      "note": "Der ausdrücklich wählbare Original-Export beendet die Ausgabe nach einer vollständig leeren Person. Der vollständige Export bleibt als erweiterte Alternative verfügbar.",
+      "acceptance": "Ergebnis nach leerer Person weiter exportieren; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
       "evidence": [
         {
-          "kind": "node",
-          "file": "tests/compatibility.test.js",
-          "pattern": "results export contains later"
+          "kind": "windows-files",
+          "pattern": "Coding export:"
+        },
+        {
+          "kind": "ci-browser",
+          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "pattern": "original result boundary"
         }
       ]
     },
@@ -920,15 +959,22 @@
         "sha256": "05098ca438c3738f0a8d2e2bf7325bd7157e8965089ede984583afe3dda56003"
       },
       "implementation": [
+        "src/file-workspace.js",
         "src/main.js"
       ],
       "assessment": "difference",
-      "note": "IndexedDB sichert lokal; Strg/Cmd+S lädt eine unabhängige Datei herunter. Kein stilles Überschreiben im Jobverzeichnis.",
-      "acceptance": "Speichern automatisch / Strg+S.",
+      "note": "Automatisches Speichern, laufender Speicherstatus, Neustart und Ergebnisdownload funktionieren. Direktes Überschreiben im verbundenen Arbeitsordner setzt die File System Access API voraus; Safari/Firefox nutzen IndexedDB und Downloads. Der Zugriff auf beliebige Windows-Pfade ist keine portable Browserfunktion.",
+      "acceptance": "Speichern automatisch / Strg+S; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
       "evidence": [
         {
-          "kind": "browser",
-          "pattern": "GZip-Ergebnisse"
+          "kind": "node",
+          "file": "tests/parity-completion.test.js",
+          "pattern": "directory saves"
+        },
+        {
+          "kind": "ci-browser",
+          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "pattern": "last coding workspace"
         }
       ]
     },
@@ -945,10 +991,16 @@
       "implementation": [
         "src/main.js"
       ],
-      "assessment": "partial",
-      "note": "Funktionsumfang und Quellen als Browserdialog vorhanden. Originale CHM-Themen, Lizenz-/Versionsdialog und F1-Zuordnung sind nicht identisch übertragen.",
-      "acceptance": "F1 und Hilfe-Schaltfläche aus Hauptfenster und Fallliste öffnen; verfügbare Original-Hilfethemen mit Browserdialog vergleichen.",
-      "evidence": []
+      "assessment": "implemented",
+      "note": "F1 öffnet Programm-Info mit Originalversionen, Beschreibung und Lizenz; Bedienhinweise und originale Online-Dokumentation sind erreichbar. In den heruntergeladenen Originalpaketen wurde keine zusätzliche CHM-Datei gefunden.",
+      "acceptance": "Programmhilfe / F1; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
+      "evidence": [
+        {
+          "kind": "ci-browser",
+          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "pattern": "physical zoom"
+        }
+      ]
     },
     {
       "id": "K-37",
@@ -963,10 +1015,16 @@
       "implementation": [
         "src/main.js"
       ],
-      "assessment": "difference",
-      "note": "Browser deaktiviert Weiter und zeigt den Fortschritt; die einsekündige Windows-Animation wird nicht nachgebildet.",
-      "acceptance": "Ende des Jobs optisch signalisieren.",
-      "evidence": []
+      "assessment": "implemented",
+      "note": "Weiter am Jobende löst die einsekündige Opazitätsanimation aus und erhält die letzte Fallnummer.",
+      "acceptance": "Ende des Jobs optisch signalisieren; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
+      "evidence": [
+        {
+          "kind": "ci-browser",
+          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "pattern": "completed job flashes"
+        }
+      ]
     },
     {
       "id": "K-38",
@@ -1027,14 +1085,18 @@
       "implementation": [
         "src/toolbox.js"
       ],
-      "assessment": "difference",
-      "note": "Web Crypto statt Windows-Zufall; gültige Menge/Anzahl, keine identische Zufallsfolge.",
-      "acceptance": "Eindeutige Codes ohne Wiederholung erzeugen.",
+      "assessment": "implemented",
+      "note": "Eindeutigkeit, Anzahlen und alternierende Originalzeichenmengen sind direkt mit Windows geprüft. Zufallsziehungen sind in beiden Programmen nicht deterministisch; eine identische Zufallsfolge ist kein reproduzierbares Originalverhalten.",
+      "acceptance": "Eindeutige Codes ohne Wiederholung erzeugen; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
       "evidence": [
         {
-          "kind": "node",
-          "file": "tests/compatibility.test.js",
-          "pattern": "code alphabets and capacity"
+          "kind": "windows-files",
+          "pattern": "CodeFactory:"
+        },
+        {
+          "kind": "ci-browser",
+          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "pattern": "codes and booklets"
         }
       ]
     },
@@ -1136,7 +1198,7 @@
     {
       "id": "T-07",
       "app": "itc-ToolBox",
-      "function": "Booklet-Beschreibung aus Beschreibungsspalte",
+      "function": "Booklet-Beschreibung im Original- oder erweiterten Modus",
       "original": {
         "path": "toolbox/itc-input/BookletXlsxDialog.xaml.vb",
         "anchor": "bookletsCol.Description",
@@ -1146,13 +1208,13 @@
       "implementation": [
         "src/toolbox.js"
       ],
-      "assessment": "difference",
-      "note": "Bewusste Korrektur: Original liest hier die Titelspalte. Vergleich normalisiert ausschließlich diese dokumentierte Abweichung.",
-      "acceptance": "Booklet-Beschreibung aus Beschreibungsspalte.",
+      "assessment": "implemented",
+      "note": "Windows-Modus verwendet den Titel als Beschreibung, ohne Normalisierung im Vergleich. Die Beschreibungsspalte steht als zusätzliche Ausgabeoption bereit.",
+      "acceptance": "Booklet-Beschreibung aus Beschreibungsspalte; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
       "evidence": [
         {
           "kind": "windows-files",
-          "pattern": "Booklets:"
+          "pattern": "Booklets: Windows mode"
         }
       ]
     },
@@ -1403,10 +1465,21 @@
       "implementation": [
         "src/main.js"
       ],
-      "assessment": "partial",
-      "note": "Checkbox implementiert; bisher kein eigenständiger Oberflächentest für ausgeschaltete XML-Ausgabe.",
-      "acceptance": "Vorhandene Logins mit ausgeschaltetem Neuerzeugen und ausgeschalteter XML-Ausgabe verarbeiten: ausschließlich Xlsx, unveränderte Namen/Modi, keine XML-Datei.",
-      "evidence": []
+      "assessment": "implemented",
+      "note": "Regenerierte Login-Xlsx ohne XML-Ausgabe wird eigenständig geprüft. Wie im Original verlangt eine vorhandene Login-Tabelle mindestens Neuerzeugung oder XML als Arbeitsauftrag.",
+      "acceptance": "XML-Ausgabe abschalten; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/parity-completion.test.js",
+          "pattern": "preparation keeps"
+        },
+        {
+          "kind": "ci-browser",
+          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "pattern": "without XML match Windows"
+        }
+      ]
     },
     {
       "id": "T-18",
@@ -1439,7 +1512,7 @@
     {
       "id": "T-19",
       "app": "itc-ToolBox",
-      "function": "Word: eigene Vorlage und unveränderte Tabellenstruktur",
+      "function": "Word: originale Paragraphen oder erhaltene Tabellen",
       "original": {
         "path": "toolbox/itc-input/LoginsXlsxToDocxDialog.xaml.vb",
         "anchor": "SelectTemplateFile_Click",
@@ -1449,21 +1522,20 @@
       "implementation": [
         "src/docx.js"
       ],
-      "assessment": "difference",
-      "note": "Browser erhält komplette Tabellenblöcke; Original wiederholt nur Paragraphen.",
-      "acceptance": "Word: eigene Vorlage und unveränderte Tabellenstruktur.",
+      "assessment": "implemented",
+      "note": "Windows-Modus wiederholt ursprüngliche Paragraphen und ersetzt Run-Inhaltssteuerelemente. Tabellen erhaltender Modus ist zusätzlich wählbar.",
+      "acceptance": "Word: eigene Vorlage und unveränderte Tabellenstruktur; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
       "evidence": [
         {
-          "kind": "node",
-          "file": "tests/extended.test.js",
-          "pattern": "custom DOCX table"
+          "kind": "windows-files",
+          "pattern": "Word Windows mode:"
         }
       ]
     },
     {
       "id": "T-20",
       "app": "itc-ToolBox",
-      "function": "Word: http/https-Adresse und Login-Link",
+      "function": "Word: ursprüngliche oder normalisierte Login-Links",
       "original": {
         "path": "toolbox/itc-input/LoginsXlsxToDocxDialog.xaml.vb",
         "anchor": "getUrl",
@@ -1473,21 +1545,25 @@
       "implementation": [
         "src/docx.js"
       ],
-      "assessment": "difference",
-      "note": "Browser normalisiert abschließende Schrägstriche und kodiert Login-Sonderzeichen.",
-      "acceptance": "Word: http/https-Adresse und Login-Link.",
+      "assessment": "implemented",
+      "note": "Windows-Modus behält abschließende Schrägstriche und ursprüngliche Login-Zeichen; der erweiterte Modus bietet normalisierte Links.",
+      "acceptance": "Word: http/https-Adresse und Login-Link; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
       "evidence": [
         {
           "kind": "node",
-          "file": "tests/extended.test.js",
-          "pattern": "both original Word"
+          "file": "tests/parity-completion.test.js",
+          "pattern": "Windows Word mode"
+        },
+        {
+          "kind": "windows-files",
+          "pattern": "Word Windows mode:"
         }
       ]
     },
     {
       "id": "T-21",
       "app": "itc-ToolBox",
-      "function": "Word: QR-Bild je Login",
+      "function": "Word: QR-Bild je Login als BMP oder PNG",
       "original": {
         "path": "toolbox/itc-input/LoginsXlsxToDocxDialog.xaml.vb",
         "anchor": "link-qr",
@@ -1495,20 +1571,16 @@
         "sha256": "375f5fd09aa8daa528422a24291827784b24bfeb0aead40f782e5fe785421311"
       },
       "implementation": [
-        "src/docx.js"
+        "src/docx.js",
+        "src/qr-bmp.js"
       ],
-      "assessment": "difference",
-      "note": "Portable PNG statt originalem BMP; QR-Inhalt und Dokumentbeziehungen geprüft, keine identischen Bildbytes.",
-      "acceptance": "Word: QR-Bild je Login.",
+      "assessment": "implemented",
+      "note": "Windows-Modus erzeugt QRCoder-kompatible 32-Bit-BMPs. Sämtliche QR-Bildbytes beider Originalvorlagen und die Größe von 4 cm sind direkt verglichen; PNG bleibt zusätzlich verfügbar.",
+      "acceptance": "Word: QR-Bild je Login; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
       "evidence": [
         {
-          "kind": "node",
-          "file": "tests/extended.test.js",
-          "pattern": "both original Word"
-        },
-        {
-          "kind": "browser",
-          "pattern": "Word"
+          "kind": "windows-files",
+          "pattern": "Word Windows mode:"
         }
       ]
     },
@@ -1523,12 +1595,24 @@
         "sha256": "149c45c6e26d656794f3cdffabb6dd1b84582c12bbd5d70613e471e7b45b8758"
       },
       "implementation": [
+        "src/diagnostics.js",
         "src/main.js"
       ],
-      "assessment": "missing",
-      "note": "Browser zeigt Meldungen an, bietet noch keinen vollständigen Diagnosebericht als Textdownload.",
-      "acceptance": "Fehlerhafte Booklet- und Login-Vorlagen einlesen; sämtliche Meldungen einschließlich Warnungen als Text ausgeben. Im Browser fehlt die entsprechende Ausgabeaktion.",
-      "evidence": []
+      "assessment": "implemented",
+      "note": "Vollständiges Sitzungsprotokoll mit allen Einzelmeldungen, Aufträgen, Zeitstempeln und Fehlerdetails als UTF-8-Text herunterladen; bleibt über Modulwechsel erhalten.",
+      "acceptance": "Verarbeitungsmeldungen in Texteditor übernehmen; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
+      "evidence": [
+        {
+          "kind": "node",
+          "file": "tests/parity-completion.test.js",
+          "pattern": "diagnostic text retains"
+        },
+        {
+          "kind": "ci-browser",
+          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "pattern": "full diagnostics"
+        }
+      ]
     },
     {
       "id": "T-23",
@@ -1743,7 +1827,7 @@
     {
       "id": "T-31",
       "app": "itc-ToolBox",
-      "function": "Antworten zeitlich zusammenführen, Identitäten erhalten",
+      "function": "Ursprüngliche oder erweiterte Import- und Zusammenführungslogik",
       "original": {
         "path": "toolbox/itc-output/globalOutputStore.vb",
         "anchor": "Class globalOutputStore",
@@ -1753,14 +1837,26 @@
       "implementation": [
         "src/data.js"
       ],
-      "assessment": "difference",
-      "note": "Jüngster Zeitstempel und kollisionsfreie Tupel statt fehleranfälliger Verkettung; alle Logs bleiben erhalten.",
-      "acceptance": "Antworten zeitlich zusammenführen, Identitäten erhalten.",
+      "assessment": "implemented",
+      "note": "Windows-Import ist auswählbar: verkettete Identitäten, Dateireihenfolge und Abbruch der aktuellen JSON-Datei bei Doppelkennung. Erweiterter Modus behält kollisionsfreie Identitäten und jüngste Antworten.",
+      "acceptance": "Antworten zeitlich zusammenführen, Identitäten erhalten; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
       "evidence": [
         {
+          "kind": "windows-files",
+          "pattern": "JSON import:"
+        },
+        {
           "kind": "node",
-          "file": "tests/extended.test.js",
-          "pattern": "responses and logs merge"
+          "file": "tests/parity-completion.test.js",
+          "pattern": "Windows JSON import"
+        }
+      ],
+      "additionalOriginalSources": [
+        {
+          "path": "toolbox/itc-output/JsonReadWrite.vb",
+          "sha256": "9ab98a1e2e9c62c29751835dc5a8d93a4bdb4b4ae0df47168db35cd4b62ebd37",
+          "anchor": "ReadFull",
+          "line": 34
         }
       ]
     },
@@ -1892,16 +1988,16 @@
         "sha256": "eace22dcf8a14f65cc894a213ecb8a5cf0f6e29f85af249f09a43e54d92d7c2f"
       },
       "implementation": [
-        "src/data.js"
+        "src/data.js",
+        "src/windows-compatibility.js"
       ],
-      "assessment": "difference",
-      "note": "CSV-Zitate korrekt maskiert; Datumstexte explizit ISO-UTC. Nullkodierungen bleiben im erweiterten Datenmodell von 0 unterscheidbar.",
-      "acceptance": "Antworten als CSV-Langformat exportieren.",
+      "assessment": "implemented",
+      "note": "Separates Windows-CSV reproduziert den vollständigen nativen Antworttext mit deutschen Datumsangaben, ursprünglichen Zitaten und Null-zu-0-Verhalten. Das korrigierte CSV bleibt verfügbar.",
+      "acceptance": "Antworten als CSV-Langformat exportieren; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
       "evidence": [
         {
-          "kind": "node",
-          "file": "tests/extended.test.js",
-          "pattern": "long and multi-session"
+          "kind": "windows-files",
+          "pattern": "CSV: Windows mode reproduces the complete original response"
         }
       ]
     },
@@ -1916,16 +2012,21 @@
         "sha256": "e21a2238300975ebae24e4262a14da3eec1dc44471c67c2a22178364fc0b21ea"
       },
       "implementation": [
-        "src/data.js"
+        "src/data.js",
+        "src/windows-compatibility.js"
       ],
-      "assessment": "difference",
-      "note": "Mehrere Sitzungen werden ausgegeben; Millisekunden und Mbit/s korrigiert. Originalfehler werden nicht reproduziert.",
-      "acceptance": "Sitzungsberichte mit Gerät, Zeiten und Ladegeschwindigkeit.",
+      "assessment": "implemented",
+      "note": "Separates Windows-Sitzungs-CSV reproduziert die nativen Texte einschließlich der ursprünglichen Berechnung und Mehrsitzungs-Auslassung. Korrigierte Berichte bleiben verfügbar.",
+      "acceptance": "Sitzungsberichte mit Gerät, Zeiten und Ladegeschwindigkeit; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
       "evidence": [
         {
+          "kind": "windows-files",
+          "pattern": "CSV: Windows mode reproduces the complete original session"
+        },
+        {
           "kind": "node",
-          "file": "tests/extended.test.js",
-          "pattern": "long and multi-session"
+          "file": "tests/parity-completion.test.js",
+          "pattern": "original CSV retains"
         }
       ]
     },
@@ -1968,8 +2069,8 @@
         "sha256": "e21a2238300975ebae24e4262a14da3eec1dc44471c67c2a22178364fc0b21ea"
       },
       "implementation": [
-        "src/database.js",
         "src/data.worker.js",
+        "src/database.js",
         "src/extended-ui.js"
       ],
       "assessment": "implemented",
@@ -1998,8 +2099,8 @@
         "sha256": "e21a2238300975ebae24e4262a14da3eec1dc44471c67c2a22178364fc0b21ea"
       },
       "implementation": [
-        "src/database.js",
         "src/data.worker.js",
+        "src/database.js",
         "src/extended-ui.js"
       ],
       "assessment": "implemented",
@@ -2028,8 +2129,8 @@
         "sha256": "2813bfdcda6910ded413482ad2bbf444dd83703485c99a13a18d8e7144eef94c"
       },
       "implementation": [
-        "src/database.js",
         "src/data.worker.js",
+        "src/database.js",
         "src/extended-ui.js"
       ],
       "assessment": "implemented",
@@ -2058,18 +2159,22 @@
         "sha256": "e21a2238300975ebae24e4262a14da3eec1dc44471c67c2a22178364fc0b21ea"
       },
       "implementation": [
-        "src/database.js",
         "src/data.worker.js",
+        "src/database.js",
         "src/extended-ui.js"
       ],
-      "assessment": "difference",
-      "note": "Transaktionen und Idempotenz verhindern doppelte Importe; Logs werden mit eingelesen.",
-      "acceptance": "Importierte Testhefte ergänzen oder ersetzen.",
+      "assessment": "implemented",
+      "note": "Windows-Import überspringt vorhandene Testhefte mit gleichem Endzeitstempel und ersetzt sie bei geändertem Endzeitstempel. Ergänzen und unbedingtes Ersetzen sind zusätzliche Modi. Transaktionen und gebundene SQL-Parameter bleiben erhalten.",
+      "acceptance": "Importierte Testhefte ergänzen oder ersetzen; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
       "evidence": [
         {
+          "kind": "windows-files",
+          "pattern": "SQLite import:"
+        },
+        {
           "kind": "node",
-          "file": "tests/extended.test.js",
-          "pattern": "SQLite imports are idempotent"
+          "file": "tests/parity-completion.test.js",
+          "pattern": "Windows import skips"
         }
       ]
     },
@@ -2084,8 +2189,8 @@
         "sha256": "e21a2238300975ebae24e4262a14da3eec1dc44471c67c2a22178364fc0b21ea"
       },
       "implementation": [
-        "src/database.js",
         "src/data.worker.js",
+        "src/database.js",
         "src/extended-ui.js"
       ],
       "assessment": "implemented",
@@ -2115,8 +2220,8 @@
         "sha256": "e21a2238300975ebae24e4262a14da3eec1dc44471c67c2a22178364fc0b21ea"
       },
       "implementation": [
-        "src/database.js",
         "src/data.worker.js",
+        "src/database.js",
         "src/extended-ui.js"
       ],
       "assessment": "implemented",
@@ -2145,8 +2250,8 @@
         "sha256": "cc489893c63c4e7bf5ab2e1d502ba763766bc77e5eba5fa0b76db6f94806073f"
       },
       "implementation": [
-        "src/database.js",
         "src/data.worker.js",
+        "src/database.js",
         "src/extended-ui.js"
       ],
       "assessment": "implemented",
@@ -2176,17 +2281,22 @@
         "sha256": "e21a2238300975ebae24e4262a14da3eec1dc44471c67c2a22178364fc0b21ea"
       },
       "implementation": [
-        "src/database.js",
         "src/data.worker.js",
+        "src/database.js",
         "src/extended-ui.js"
       ],
-      "assessment": "partial",
-      "note": "Für Originalschema v1/v2 nachgewiesen. Browser-Erweiterung v3 mit nullable Kodierungen ist im Windows-Original nicht lesbar; keine pauschale Kompatibilität aller Dateien.",
-      "acceptance": "Browser-Datei mit Code=null und Code=0 getrennt exportieren; im Original öffnen. Version 3 ist ausdrücklich nicht kompatibel, v1/v2 bleiben separate Vergleichsfälle.",
+      "assessment": "implemented",
+      "note": "Eigener Windows-v2-Export projiziert nullable Codes/Scores auf 0, ohne die Browser-/Coding-Box-Sicherung zu ändern. Windows liest diese Datei direkt ein; Werte außerhalb Int32 werden beim Windows-Export abgewiesen.",
+      "acceptance": "SQLite speichern und mit Windows weiterverwenden; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
       "evidence": [
         {
           "kind": "windows-files",
-          "pattern": "Windows original reads browser-created database"
+          "pattern": "SQLite: Windows reads the explicit"
+        },
+        {
+          "kind": "node",
+          "file": "tests/parity-completion.test.js",
+          "pattern": "Windows-compatible SQLite"
         }
       ]
     },
@@ -2201,8 +2311,8 @@
         "sha256": "2813bfdcda6910ded413482ad2bbf444dd83703485c99a13a18d8e7144eef94c"
       },
       "implementation": [
-        "src/database.js",
         "src/data.worker.js",
+        "src/database.js",
         "src/extended-ui.js"
       ],
       "assessment": "implemented",
@@ -2232,8 +2342,8 @@
         "sha256": "4fb1800ec6d34b2585a372fb5ded6cda871ac9377beb8d3796a03c1c384d168d"
       },
       "implementation": [
-        "src/testcenter.js",
-        "src/extended-ui.js"
+        "src/extended-ui.js",
+        "src/testcenter.js"
       ],
       "assessment": "implemented",
       "note": "Eigene API-Vertragstests und früherer echter Testcenter-19.0.1-Lauf; kein direkter Windows-Netzwerkvergleich desselben Servers.",
@@ -2257,8 +2367,8 @@
         "sha256": "4fb1800ec6d34b2585a372fb5ded6cda871ac9377beb8d3796a03c1c384d168d"
       },
       "implementation": [
-        "src/testcenter.js",
-        "src/extended-ui.js"
+        "src/extended-ui.js",
+        "src/testcenter.js"
       ],
       "assessment": "implemented",
       "note": "Eigene API-Vertragstests und früherer echter Testcenter-19.0.1-Lauf; kein direkter Windows-Netzwerkvergleich desselben Servers.",
@@ -2282,8 +2392,8 @@
         "sha256": "4fb1800ec6d34b2585a372fb5ded6cda871ac9377beb8d3796a03c1c384d168d"
       },
       "implementation": [
-        "src/testcenter.js",
-        "src/extended-ui.js"
+        "src/extended-ui.js",
+        "src/testcenter.js"
       ],
       "assessment": "implemented",
       "note": "Aktuelle Browseroberfläche mit nachgebildeter API in Chromium, Firefox und WebKit geprüft; älterer echter Demo-Lauf getrennt. Direkter Windows-Netzwerkvergleich bleibt offen.",
@@ -2296,7 +2406,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031.json",
+          "path": "tests/results/function-audit-ci-20261031-parity.json",
           "pattern": "group selection and workspace changes"
         }
       ]
@@ -2312,8 +2422,8 @@
         "sha256": "4fb1800ec6d34b2585a372fb5ded6cda871ac9377beb8d3796a03c1c384d168d"
       },
       "implementation": [
-        "src/testcenter.js",
-        "src/extended-ui.js"
+        "src/extended-ui.js",
+        "src/testcenter.js"
       ],
       "assessment": "implemented",
       "note": "Eigene API-Vertragstests und früherer echter Testcenter-19.0.1-Lauf; kein direkter Windows-Netzwerkvergleich desselben Servers.",
@@ -2337,8 +2447,8 @@
         "sha256": "4fb1800ec6d34b2585a372fb5ded6cda871ac9377beb8d3796a03c1c384d168d"
       },
       "implementation": [
-        "src/testcenter.js",
-        "src/extended-ui.js"
+        "src/extended-ui.js",
+        "src/testcenter.js"
       ],
       "assessment": "implemented",
       "note": "Eigene API-Vertragstests und früherer echter Testcenter-19.0.1-Lauf; kein direkter Windows-Netzwerkvergleich desselben Servers.",
@@ -2362,8 +2472,8 @@
         "sha256": "4fb1800ec6d34b2585a372fb5ded6cda871ac9377beb8d3796a03c1c384d168d"
       },
       "implementation": [
-        "src/testcenter.js",
-        "src/extended-ui.js"
+        "src/extended-ui.js",
+        "src/testcenter.js"
       ],
       "assessment": "implemented",
       "note": "Eigene API-Vertragstests und früherer echter Testcenter-19.0.1-Lauf; kein direkter Windows-Netzwerkvergleich desselben Servers.",
@@ -2387,8 +2497,8 @@
         "sha256": "4fb1800ec6d34b2585a372fb5ded6cda871ac9377beb8d3796a03c1c384d168d"
       },
       "implementation": [
-        "src/testcenter.js",
-        "src/extended-ui.js"
+        "src/extended-ui.js",
+        "src/testcenter.js"
       ],
       "assessment": "implemented",
       "note": "Eigene API-Vertragstests und früherer echter Testcenter-19.0.1-Lauf; kein direkter Windows-Netzwerkvergleich desselben Servers.",
@@ -2411,8 +2521,8 @@
         "sha256": "4fb1800ec6d34b2585a372fb5ded6cda871ac9377beb8d3796a03c1c384d168d"
       },
       "implementation": [
-        "src/testcenter.js",
-        "src/extended-ui.js"
+        "src/extended-ui.js",
+        "src/testcenter.js"
       ],
       "assessment": "implemented",
       "note": "Eigene API-Vertragstests und früherer echter Testcenter-19.0.1-Lauf; kein direkter Windows-Netzwerkvergleich desselben Servers.",
@@ -2435,8 +2545,8 @@
         "sha256": "4fb1800ec6d34b2585a372fb5ded6cda871ac9377beb8d3796a03c1c384d168d"
       },
       "implementation": [
-        "src/testcenter.js",
-        "src/extended-ui.js"
+        "src/extended-ui.js",
+        "src/testcenter.js"
       ],
       "assessment": "implemented",
       "note": "Eigene API-Vertragstests und früherer echter Testcenter-19.0.1-Lauf; kein direkter Windows-Netzwerkvergleich desselben Servers.",
@@ -2460,8 +2570,8 @@
         "sha256": "4fb1800ec6d34b2585a372fb5ded6cda871ac9377beb8d3796a03c1c384d168d"
       },
       "implementation": [
-        "src/testcenter.js",
-        "src/extended-ui.js"
+        "src/extended-ui.js",
+        "src/testcenter.js"
       ],
       "assessment": "implemented",
       "note": "Eigene API-Vertragstests und früherer echter Testcenter-19.0.1-Lauf; kein direkter Windows-Netzwerkvergleich desselben Servers.",
@@ -2485,13 +2595,19 @@
         "sha256": "d7c24cd4dd7872915020cb3cf81af3dc07ccde3dac809fd6d299968482451d0e"
       },
       "implementation": [
-        "src/testcenter.js",
-        "src/extended-ui.js"
+        "src/extended-ui.js",
+        "src/testcenter.js"
       ],
-      "assessment": "difference",
-      "note": "Browser hält Zugangsdaten/Token ausschließlich im Arbeitsspeicher; kein dauerhaftes Speichern von Kennwörtern wie in Windows-Einstellungen.",
-      "acceptance": "Testcenter: gespeicherte Zugangsdaten wiederverwenden.",
-      "evidence": []
+      "assessment": "implemented",
+      "note": "Zugangsdaten ausdrücklich lokal merken, beim nächsten Start wiederverwenden und löschen. Sitzungsschlüssel werden nicht dauerhaft gespeichert. Ohne Auswahl bleibt das Kennwort nur im Arbeitsspeicher.",
+      "acceptance": "Testcenter: gespeicherte Zugangsdaten wiederverwenden; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
+      "evidence": [
+        {
+          "kind": "ci-browser",
+          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "pattern": "access can be remembered"
+        }
+      ]
     },
     {
       "id": "T-60",
@@ -2505,21 +2621,17 @@
       },
       "implementation": [
         "src/extended-ui.js",
+        "src/preparation.js",
         "src/worker-client.js"
       ],
-      "assessment": "partial",
-      "note": "Worker/Word/Testcenter abbrechbar; Codes-/Booklet-/Login-Xlsx im Hauptthread bisher ohne eigenen Abbruchknopf.",
-      "acceptance": "Codes, große Booklet- und Login-Tabellen starten und abbrechen; Reaktionszeit und Unverändertheit des bisherigen Ergebnisses mit Windows vergleichen.",
+      "assessment": "implemented",
+      "note": "Codes, Booklets und Login-Xlsx laufen im abbrechbaren Worker mit Fortschrittsmeldungen. Der Browser prüft alle drei Abbrüche und die Wiederherstellung der bestehenden SQLite-Arbeitskopie.",
+      "acceptance": "Langläufer abbrechen und Fortschritt anzeigen; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
       "evidence": [
         {
-          "kind": "node",
-          "file": "tests/extended.test.js",
-          "pattern": "cancellation aborts generation"
-        },
-        {
-          "kind": "node",
-          "file": "tests/testcenter-regressions.test.js",
-          "pattern": "bounded challenge"
+          "kind": "ci-browser",
+          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "pattern": "preparation cancellation"
         }
       ]
     },
@@ -2534,12 +2646,25 @@
         "sha256": "2813bfdcda6910ded413482ad2bbf444dd83703485c99a13a18d8e7144eef94c"
       },
       "implementation": [
+        "src/file-workspace.js",
+        "src/form-state.js",
         "src/main.js"
       ],
       "assessment": "difference",
-      "note": "Browser-Tab schließen; Dateien müssen nach Neuladen erneut ausgewählt werden. Browser darf keine beliebigen Windows-Verzeichnisse öffnen oder überschreiben.",
-      "acceptance": "Programm schließen und Dateipfade merken.",
-      "evidence": []
+      "note": "Letzten Kodierstand, ausgewählte Toolbox-Dateien, Optionen und Verbindungen im Browser wiederaufnehmen. Dateiauswahlen sind lokale Bytekopien. Der gespeicherte echte Verzeichniszugriff und das erneute Einlesen externer Änderungen sind nur mit unterstützter File System Access API möglich; andere Browser verlangen dafür eine erneute Dateiauswahl.",
+      "acceptance": "Programm schließen und Dateipfade merken; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
+      "evidence": [
+        {
+          "kind": "ci-browser",
+          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "pattern": "last coding workspace"
+        },
+        {
+          "kind": "ci-browser",
+          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "pattern": "selected Toolbox input files"
+        }
+      ]
     },
     {
       "id": "T-62",
@@ -2552,8 +2677,8 @@
         "sha256": "011ce426952358a15acf19cfbef6acfdf0a1beff444ecf4ffb0fdcdbcebab036"
       },
       "implementation": [
-        "src/database.js",
         "src/data.worker.js",
+        "src/database.js",
         "src/extended-ui.js"
       ],
       "assessment": "excluded",
@@ -2758,13 +2883,19 @@
         "sha256": "2813bfdcda6910ded413482ad2bbf444dd83703485c99a13a18d8e7144eef94c"
       },
       "implementation": [
-        "src/main.js",
-        "src/extended-ui.js"
+        "src/extended-ui.js",
+        "src/main.js"
       ],
-      "assessment": "partial",
-      "note": "Funktionsumfang und Quellen vorhanden; originale Hilfethemen und Info-Fenster nicht identisch.",
-      "acceptance": "Original-Programmhilfe und Versions-/Lizenzinfo öffnen und mit dem Browserdialog vergleichen.",
-      "evidence": []
+      "assessment": "implemented",
+      "note": "Programm-Info mit beiden Originalversionen, Beschreibung, Lizenzdownload, F1 und originaler Online-Dokumentation. Die verfügbare Hilfe der Originalpakete ist eine Online-Verknüpfung; keine zusätzliche CHM-Datei lag vor.",
+      "acceptance": "Programm-Info und Hilfe; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
+      "evidence": [
+        {
+          "kind": "ci-browser",
+          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "pattern": "physical zoom"
+        }
+      ]
     },
     {
       "id": "T-65",
@@ -2777,13 +2908,19 @@
         "sha256": "5b1b8d6b68fac18cc9520cf55ba2afddd07bbf20db4cb0d2fc4166a78d6ec752"
       },
       "implementation": [
-        "src/main.js",
-        "src/extended-ui.js"
+        "src/extended-ui.js",
+        "src/main.js"
       ],
-      "assessment": "difference",
-      "note": "Abweichende Browser-Startwerte: Logins neu/XML/Testleitung aktiv, Kennwortlänge 3, gemeinsame XML. Windows: vorhandene Logins behalten (außer leerer Tabelle), XML/Testleitung zunächst aus, Kennwortlänge 0, getrennte XML. Excel startet im Browser mit vier Blättern/Unterformularzeilen; Windows mit Antwortwerten/ohne Unterformulare.",
-      "acceptance": "Frisch gestartete Programme ohne vorherige Einstellungen öffnen; alle Login-, XML- und Excel-Startwerte aus der Notiz einzeln protokollieren.",
-      "evidence": [],
+      "assessment": "implemented",
+      "note": "Windows-Startwerte: vorhandene Logins behalten, XML/Testleitung aus, Kennwortlänge 0 und getrennte XML. Excel startet mit Antwortwerten und ohne Unterformulare. Lokale gespeicherte Benutzerentscheidungen werden beim nächsten Start wiederhergestellt.",
+      "acceptance": "Voreinstellungen der Login-/XML- und Excel-Dialoge; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
+      "evidence": [
+        {
+          "kind": "ci-browser",
+          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "pattern": "startup defaults"
+        }
+      ],
       "additionalOriginalSources": [
         {
           "path": "toolbox/itc-output/write/ToXlsxDialog.xaml.vb",
@@ -2820,8 +2957,10 @@
     "local:AppCommands.ExportSessionsToCsv": "T-38"
   },
   "limitations": [
-    "Keine pauschale vollständige Gleichwertigkeit; Quellenabgleich und Prüfungen gelten für den angegebenen Versionsstand.",
-    "Die neue lokale Coding-Box-Erweiterung ist getrennt vom Windows-Funktionsumfang aufgeführt.",
-    "Firefox konnte in diesem Audit wegen Zeitüberschreitung der nativen Computersteuerung noch nicht erneut geprüft werden; ältere Firefox-Berichte bleiben historische Nachweise."
+    "Drei verbleibende Plattformabweichungen: automatische Windows-Domänenidentität (K-11), direkter Dateizugriff/-ersatz ohne portable Browser-API (K-35) und echte dauerhafte Dateipfade statt lokaler Dateikopien (T-61).",
+    "Originalmodi reproduzieren ausdrücklich gewählte historische Export-/Importgrenzen; erweiterte Modi erhalten die bisherigen Korrekturen.",
+    "Reale Arbeitsbestände und alle Eingabe-/Fehlerkombinationen sind durch synthetische Referenzfälle nicht vollständig abgedeckt.",
+    "Die lokale Coding-Box-Erweiterung bleibt vom Windows-Funktionsumfang getrennt.",
+    "Firefox wird in GitHub Actions auf Linux geprüft; der macOS-Playwright-Build startet in dieser Umgebung mit einem Profilordnerfehler nicht. WebKit-Prüfungen sind kein Test einer installierten Safari-Version."
   ]
 }

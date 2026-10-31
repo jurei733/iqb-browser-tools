@@ -1,4 +1,4 @@
-# IQB-Werkzeuge im Browser · Version 0.3.0
+# IQB-Werkzeuge im Browser · Version 0.4.0
 
 Portierung der Arbeitsabläufe von **IQB-Kodieren 4.3.0.3** und **itc-ToolBox 3.3.0.2**. Die Anwendung läuft als statische Website mit lokaler Dateiverarbeitung; eine Windows-Installation ist nicht erforderlich.
 
@@ -14,11 +14,15 @@ Für den Rückimport in eine laufende Coding-Box ist der ergänzte MCP-/Backend-
 
 Der [filterbare Funktionsbericht](docs/function-audit.html) und seine [maschinenlesbaren Ergebnisse](docs/function-audit.json) erfassen **110 Funktionspunkte**. Das [Originalinventar](docs/original-inventory.json) hält 130 Quelldateien, 36 XAML-Oberflächen und 151 Controls mit Herkunft und Prüfsummen fest. Alle 23 aktiven Haupteinstiege der Windows-Toolbox sind einer Matrixzeile zugeordnet. Die [Matrixdefinition](docs/function-matrix.json) trennt direkte Windows-Vergleiche, Browser-/Modultests, beabsichtigte Unterschiede, Lücken und reine Browser-Erweiterungen. Das Inventar ist eine Prüfgrundlage und kein Nachweis aller internen Codepfade.
 
-Der aktuelle Stand besteht **66 Node-Tests**, **15 Windows-Konvertervergleiche**, **21 Windows-Datei-/Verhaltensvergleiche** und **46 Prüfungen je nativem Chromium 156 und Safari 27.0.1 auf macOS**. Die unveränderten Windows-Originale wurden erneut ausgeführt; Eingabe- und Assembly-Prüfsummen sind gespeichert. Für den Rückweg nach Windows wurden `.result` und SQLite aus dem aktuellen Browsercode frisch erzeugt. Firefox konnte in diesem Audit wegen Zeitüberschreitungen der nativen Computersteuerung nicht erneut bedient werden; seine älteren Nachweise bleiben getrennt. Der [GitHub-Lauf](https://github.com/jurei733/iqb-browser-tools/actions/runs/41142968607) besteht zusätzlich **8/8 Testsuiten mit 46/46 Kompatibilitätsprüfungen je Chromium, Firefox und WebKit**. Diese Linux-Läufe sind getrennt vom nativen Safari-/Chromium-Nachweis gespeichert. Die Artefakt-Uploads sind weiterhin durch die GitHub-Speicherquote blockiert; die Ergebnisse sind über Logs und Job-Zusammenfassungen belegt.
+Der aktuelle Stand besteht **78 Modultests**, **15 Windows-Konvertervergleiche** und **31 Windows-Datei-/Verhaltensvergleiche**. Die unveränderten Originale wurden am 31.10.2026 mit 38 nativen Prüfoperationen erneut ausgeführt. Eingabe- und Assembly-Prüfsummen sind gespeichert. Sämtliche BMP-QR-Bilder beider Original-Wordvorlagen stimmen Byte für Byte überein; DOCX-/XLSX-ZIP-Metadaten werden bei Inhaltsvergleichen nicht als Nutzdaten behandelt.
 
-Beim Vergleich korrigiert: fortlaufende Navigation ist jetzt der Standard, vollständig kodierte Jobs öffnen am letzten Fall, die Fallliste lässt sich nach Originalspalten sortieren und zeigt nach Sortierung weiterhin die richtige Fallnummer. Die Jobauswahl nennt den jeweiligen Fortschritt. Ohne ausgewähltes Excel-Ausgabeblatt erscheint ein Fehler statt einer leeren Arbeitsmappe.
+Chromium und WebKit bestehen auf macOS jeweils **16 Ablaufprüfungen und 46 Kompatibilitätsprüfungen**. Die drei Browser-Engines werden zusätzlich in [GitHub Actions](https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074) auf Linux geprüft; die genauen Ergebnisse und Source-Hashes stehen in `tests/results/function-audit-ci-20261031-parity.json`. Der lokale Firefox-Playwright-Build startet wegen eines Profilordnerfehlers nicht. WebKit ersetzt keinen Test der installierten Safari-App.
 
-**Vollständige Gleichwertigkeit ist weiterhin nicht belegt.** Insbesondere fehlen das Verschieben der Scanansicht durch Ziehen und ein vollständiger Textdownload der Verarbeitungsmeldungen. Weitere Teilnachweise und bewusste Unterschiede, darunter Zoom, Voreinstellungen, Hilfethemen, Dateisicherung und die SQLite-Erweiterung v3, stehen mit eigenem Prüfauftrag im Bericht. Es wurden ausschließlich synthetische Daten verwendet.
+Neu abgeschlossen sind Scanverschiebung durch Ziehen, physikalischer WPF-Zoom, gemeinsame Schablonenposition und Umschalt-Drehung, Endanimation, F1/Programm-Info, vollständiger Meldungsexport als Text, abbrechbare Vorbereitung und ursprüngliche Dialog-Voreinstellungen. Arbeitsstände, Eingabedateien und Optionen lassen sich nach einem Neustart öffnen. Zugangsdaten können ausdrücklich lokal gemerkt und wieder gelöscht werden.
+
+Für historische Unterschiede stehen auswählbare **Windows-Modi** bereit: Booklet-Beschreibung aus der Titelspalte, Word-Paragraphen mit ursprünglichen Links und BMP-QR, ursprüngliche Antwort-/Sitzungs-CSV, die historische JSON-Identitätslogik, Überspringen gleicher Datenbank-Endzeitstempel und der Abbruch des Ergebnisexports nach einer leeren Person. Die erweiterten Varianten bleiben erhalten. Windows-Modi können historische Auslassungen reproduzieren und sind entsprechend beschriftet.
+
+**Drei Plattformabweichungen bleiben ausdrücklich bestehen:** automatische Windows-Domänenidentität (K-11), automatischer Dateiersatz in jedem Browser (K-35) und dauerhafte echte Dateipfade (T-61). Chromium kann nach Freigabe einen Arbeitsordner direkt lesen und Ergebnisse dort speichern. Safari/Firefox nutzen lokale Browserkopien und Downloads; externe Dateiänderungen erfordern eine neue Auswahl. Eine uneingeschränkte 1:1-Gleichheit wird daher nicht behauptet. Die Prüfungen verwenden synthetische Daten; sie decken nicht jede Kombination realer Arbeitsbestände ab.
 
 ```sh
 pnpm test:reference   # aktuelle Module gegen gespeicherte echte Windows-Ausgaben
@@ -45,32 +49,32 @@ Alle Beispiele sind erfunden. Die Adresse `testcenter.example.org` ist ein Platz
 | Anwendung / Bereich | Übertragenes Verhalten |
 | --- | --- |
 | Kodierjobs | ZIP, lose Dateien oder Ordner; aktuelle und historische XML-Varianten; Variablenpakete, getrennte Scanordner, Personenpräfixe und alternative Testhefte |
-| Scanansicht | PNG, JPEG, BMP, GIF, WebP und erste TIFF-Seite; TIFF-, BMP-, PNG-, JPEG-JFIF- und EXIF-Auflösung; crop- und DPI-korrigierte Bereichsrahmen |
-| Kodierschablonen | CT_VARIABLE-Bilder und lokale Testschablone.png; ausblenden, ziehen, drehen, zurücksetzen; Position je Variable lokal sichern |
+| Scanansicht | PNG, JPEG, BMP, GIF, WebP und erste TIFF-Seite; Ziehen zum Verschieben und physikalischer Zoom; TIFF-, BMP-, PNG-, JPEG-JFIF- und EXIF-Auflösung; crop- und DPI-korrigierte Bereichsrahmen |
+| Kodierschablonen | CT_VARIABLE-Bilder und lokale Testschablone.png; ausblenden, ziehen, drehen, zurücksetzen; gemeinsame Position behalten und Drehwinkel beim Fallwechsel zurücksetzen |
 | Kodieren | Codes einschließlich 0, Fall- und Jobkommentare, nächste offene Antwort, Fallliste, freie oder fortlaufende Navigation, Tastatursteuerung und atomare Sammelkodierung je Person |
 | Ergebnisse | GZip-XML im ursprünglichen CodingResults-Format Version 5; Ergebnisse gemeinsam mit dem Job oder nachträglich laden; lokaler Fortschritt in IndexedDB |
 | Codes | Vier ursprüngliche Spalten und Anzahlen, ursprüngliche Zeichenmengen, Ziehung ohne Wiederholung mit Web Crypto |
 | Booklets | Originale benannte Excel-Zellen, Units, Blöcke, Nummerierung, Startcodes, Zeitbegrenzungen und Metadaten → Booklet-XML |
 | Logins | Testpersonen, Reserve, Reviewer und Testleitung; getrennte Präfixe, Gruppen-IDs und gemeinsames Zufallssuffix; bearbeitete Xlsx und optionale Testtaker-XML je Gruppe oder insgesamt |
-| Word-Handzettel | Beide Original-DOCX-Vorlagen und eigene Vorlagen mit Inhaltssteuerelementen; alle acht ursprünglichen Tags; QR-Codes, ein Dokument insgesamt oder je Gruppe; Tabellen und Dokumentstile bleiben erhalten |
+| Word-Handzettel | Beide Original-DOCX-Vorlagen und eigene Vorlagen mit Inhaltssteuerelementen; alle acht ursprünglichen Tags; QR-Codes, ein Dokument insgesamt oder je Gruppe; Original-Paragraphen/BMP-QR oder zusätzlich Tabellen erhaltender Modus mit PNG-QR |
 | CSV | UTF-8, Windows-1252, UTF-16 LE; Komma, Semikolon oder Tabulator; gequotete und mehrzeilige Felder, leere Zellen und führende Nullen |
 | Antworten / Logs | Alte 11-spaltige, 2019er und 2024er Testcenter-CSV sowie Toolbox-JSON und rohe JSON-Berichte; ursprüngliche Player-Antwortformate; Zusammenführen nach Personenidentität und jüngstem Antwortzeitpunkt |
 | Auswertungen | Breite Excel-Tabellen Antworten/Status/Codes/Scores; Unterformulare als Zeilen, Spalten oder ohne Unterformulare; ursprüngliches CSV-Langformat; Sitzungsberichte als CSV/Xlsx; vollständiges JSON oder ZIP je Gruppe |
 | Antwortdatenbank | SQLite im ursprünglichen Schema; Version 1 und 2 öffnen, neue Version-2-Dateien anlegen; CSV/JSON/Testcenter importieren; ergänzen oder importierte Testhefte ersetzen; Größen importieren; Integrität, Fremdschlüssel und Duplikate prüfen; Originaldatei und Auswertungen herunterladen |
 | Datenbanksicherung | Aktuelle Arbeitskopie und vorherige geöffnete Datenbank lokal im Browser wiederherstellen; SQLite-Download zur unabhängigen Sicherung |
 | Testcenter | Anmeldung einschließlich SHA-256-Challenge, Arbeitsbereiche und Gruppen; Antworten, Logs, rohe CSV und Reviews; Inhalte mit HTML-Index als ZIP; Testheftgrößen mit Ressourcenabhängigkeiten; direkte Übernahme in die lokale Datenbank |
-| Verarbeitung | Kodierpakete, Datenimporte, SQLite und Auswertungen in einem Web Worker; erweiterte Aufträge abbrechen; Word-Erzeugung mit Fortschritt und Abbruch |
+| Verarbeitung | Kodierpakete, Datenimporte, SQLite und Auswertungen in einem Web Worker; Codes-/Booklet-/Login-Aufträge und erweiterte Aufträge abbrechen; vollständiges Meldungsprotokoll als Text; Word-Erzeugung mit Fortschritt und Abbruch |
 | Offline | Service Worker speichert Anwendung, Bibliotheken, WASM, Vorlagen und Beispiele. Nach dem ersten vollständigen Laden sind lokale Dateifunktionen offline nutzbar. Installationsmanifest mit 192-/512-Pixel-Icons |
 
 Das Training-Flag wird eingelesen. In der rekonstruierten Windows-Version steuert dieses Flag keinen eigenen Trainingsablauf. Die Browserfassung erfindet deshalb keine zusätzlichen Trainingsbewertungen.
 
 ### Tastatur
 
-Pfeile links/rechts, Bild auf/ab und Enter: Fall wechseln. Pfeile oben/unten: Code wechseln. Strg/Cmd + Ziffer: dieselbe Person über alle Variablen kodieren, sofern der Code überall eindeutig ist. F3: kodierte Fälle, F4: Jobkommentar, Strg/Cmd+O: öffnen, Strg/Cmd+S: Ergebnisdownload, Plus/Minus: Zoom. Ziffern: eindeutigen passenden Code wählen. Punkt/Komma/Schrägstrich: Zoom auf 100 % zurücksetzen. Texteingaben behalten ihre normale Tastaturbedienung.
+Pfeile links/rechts, Bild auf/ab und Enter: Fall wechseln. Pfeile oben/unten: Code wechseln. Strg/Cmd + Ziffer: dieselbe Person über alle Variablen kodieren, sofern der Code überall eindeutig ist. F1: Programm-Info, F3: kodierte Fälle, F4: Jobkommentar, Strg/Cmd+O: öffnen, Strg/Cmd+S: Ergebnisdownload, Plus/Minus: Zoom. Ziffern: eindeutigen passenden Code wählen. Punkt/Komma/Schrägstrich: Zoom auf 100 % zurücksetzen. Texteingaben behalten ihre normale Tastaturbedienung.
 
 ## Testcenter verbinden
 
-Die Serveradresse und Administrationszugangsdaten in **Testcenter verbinden** eingeben. Zugangsdaten und AuthToken werden nur im Arbeitsspeicher gehalten und beim Trennen verworfen. Die Abmeldung beendet die Administrationssitzung zusätzlich auf dem Server; ein Fehler beim serverseitigen Abmelden wird angezeigt. Keine Zugangsdaten werden in URL, Local Storage oder Service-Worker-Cache gespeichert.
+Die Serveradresse und Administrationszugangsdaten in **Testcenter verbinden** eingeben. Ohne Auswahl von „Zugangsdaten in diesem Browser merken“ bleibt das Kennwort im Arbeitsspeicher. Mit dieser Auswahl werden Server, Benutzername und Kennwort lokal in IndexedDB gespeichert und lassen sich über „Gespeicherten Zugang löschen“ entfernen. Der AuthToken wird beim Trennen verworfen und nicht dauerhaft gespeichert. Die Abmeldung beendet die Administrationssitzung zusätzlich auf dem Server; ein Fehler beim serverseitigen Abmelden wird angezeigt. Zugangsdaten werden weder in URL noch in Service-Worker-Cache geschrieben.
 
 Bei verschiedenen Ursprüngen muss der Testcenter-Server CORS für den Ursprung dieser Anwendung erlauben, einschließlich GET/PUT/POST/DELETE/OPTIONS und der Header `Content-Type` und `AuthToken`. Bei einer HTTPS-Anwendung muss auch das entfernte Testcenter HTTPS verwenden. Alternativ `dist/` auf einem geeigneten Ursprung zusammen mit der API bereitstellen. Eine Browseranwendung kann diese Serverfreigabe nicht selbst umgehen. Es gibt keinen Anmelde- oder Datenproxy.
 
