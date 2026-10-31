@@ -281,9 +281,13 @@ test('parity: preparation cancellation preserves the SQLite working copy',async(
 test('parity: the last coding workspace reopens after reload without selecting the source files again',async({page})=>{
  await page.goto('/');await page.locator('#coding-files').setInputFiles(await viewerJob());await expect(page.locator('#coder')).toBeVisible();await page.locator('#coder').fill('Remembered coder');await page.locator('#coder').blur();await page.locator('[data-code="0"]').click();await expect(page.locator('.progress')).toContainText('1 von 4 kodiert');await expect(page.locator('#saved')).toHaveText('Lokal gespeichert');await page.reload();await page.locator('#resume-workspace').click();await expect(page.locator('#coder')).toHaveValue('Remembered coder');await expect(page.locator('.progress')).toContainText('1 von 4 kodiert');
 });
-test('parity: Testcenter access can be remembered explicitly and deleted again',async({page})=>{
+test.describe('Remembered access with a synthetic API',()=>{
+ test.use({serviceWorkers:'block'});
+ test('parity: Testcenter access can be remembered explicitly and deleted again',async({page})=>{
  await page.route('**/api/**',route=>{const p=new URL(route.request().url()).pathname;return route.fulfill(p==='/api/session/admin'?{json:{token:'synthetic',access:{workspaceAdmin:['1']}}}:p==='/api/workspace/1'?{json:{name:'Synthetic'}}:p==='/api/workspace/1/results'?{json:[]}:p==='/api/session'?{status:205,body:''}:{status:404,body:''});});
  await page.goto('/');await module(page,'toolbox');await tool(page,'testcenter');await page.locator('#tc-url').fill('http://127.0.0.1:4173');await page.locator('#tc-name').fill('synthetic-remember');await page.locator('#tc-password').fill('synthetic-only');await page.locator('#tc-remember').check();await page.locator('#tc-connect').click();await done(page);await expect(page.locator('#tc-connected')).toBeVisible();await page.reload();await module(page,'toolbox');await tool(page,'testcenter');await expect(page.locator('#tc-name')).toHaveValue('synthetic-remember');await expect(page.locator('#tc-password')).toHaveValue('synthetic-only');await expect(page.locator('#tc-remember')).toBeChecked();await page.locator('#tc-forget').click();await page.reload();await module(page,'toolbox');await tool(page,'testcenter');await expect(page.locator('#tc-password')).toHaveValue('');await expect(page.locator('#tc-name')).toHaveValue('');
+});
+
 });
 
 test('parity: original result boundary is selectable and the completed job flashes for one second',async({page},testInfo)=>{
