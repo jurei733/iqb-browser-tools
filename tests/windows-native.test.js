@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {DOMParser} from '@xmldom/xmldom';
+import {verifyNativeWindows,assertNativeRegressionScope} from '../scripts/native-windows-checks.mjs';
+globalThis.DOMParser=DOMParser;
+const reference=JSON.parse(await readFile(new URL('./fixtures/windows-native/reference.json',import.meta.url))),report=await verifyNativeWindows(reference,new Uint8Array(await readFile(new URL('./fixtures/windows-edge/coding-inputs.json',import.meta.url))));
+test('Native Windows x64 hardware: all 1214 inputs match the 64-bit converter profile',()=>{assert.deepEqual(report.summary.architectures[1],{bits:64,passed:1214,total:1214,values:1049,valuesPassed:1049,errorOutcomes:165});});
+test('Native Windows x86: 1212 inputs match; two G17 text differences remain explicit',()=>{assertNativeRegressionScope(report);assert.equal(report.summary.architectures[0].passed,1212);assert.equal(report.completeEquivalence,false);assert.equal(report.realProductionDataTested,false);});
+test('Native Windows APIs and CodingResults: both architectures and bidirectional exports',()=>{assert.deepEqual(report.summary.api,{passed:26,total:26,cases:13});assert.deepEqual(report.summary.coding,{passed:24,total:24,bidirectional:22,errorDetection:2});});

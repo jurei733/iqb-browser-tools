@@ -13,3 +13,4 @@
 
 # Keep raw Windows evidence byte-stable across checkouts.
 tests/fixtures/windows-edge/*.json -text
+tests/fixtures/windows-native/*.json -text

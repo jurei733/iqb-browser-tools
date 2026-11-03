@@ -1,6 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {parseChunk,responseUnit,peopleFromDTO,readDataFiles} from '../src/data.js';
+import initSqlJs from 'sql.js';
+import {OutputDatabase} from '../src/database.js';
 test('Windows Double overflow produces an ERROR response in every converter family',()=>{
  for(const type of ['iqb-standard@1.1','unknown','IQBVisualUnitPlayerV2.1.0','keyvalue','iqb-simple-player@1.0.0']){
   const raw=type==='iqb-standard@1.1'?'[{"id":"v","value":1e309}]':type==='iqb-simple-player@1.0.0'?'{"answers":{"v":1e309}}':'{"v":1e309}';
@@ -16,4 +18,5 @@ test('Windows state values retain numeric lexemes, property order and null throu
  assert.deepEqual(responseUnit(dto,{windows:true}).laststate,expected);
  const people=peopleFromDTO([dto],[],{windows:true}),reloaded=await readDataFiles([{name:'structured.json',text:JSON.stringify(people)}],{windows:true});
  assert.deepEqual(reloaded[0].booklets[0].units[0].laststate,expected);
+ const db=new OutputDatabase(await initSqlJs());try{db.import(people,{windows:true});assert.deepEqual(db.people()[0].booklets[0].units[0].laststate,expected);}finally{db.close();}
 });

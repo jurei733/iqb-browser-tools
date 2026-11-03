@@ -27,6 +27,11 @@ jobs:
       - name: Download pinned originals and capture x86, x64 and CodingResults outputs
         shell: powershell
         run: ./scripts/Run-Native-Windows.ps1 -Root work/native-windows
+      - name: Emit lossless synthetic reference bundle
+        if: ${{ !cancelled() }}
+        run: node scripts/bundle-native-windows.mjs
+      - name: Compare current browser code and expose documented x86 text gaps
+        run: node scripts/compare-native-windows.mjs work/native-windows/bundle.json work/native-windows/comparison.json --allow-documented-x86-gap
       - name: Retain synthetic native reference files
         if: ${{ !cancelled() }}
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
@@ -34,6 +39,3 @@ jobs:
           name: windows-native-reference
           path: work/native-windows/*.json
           retention-days: 14
-      - name: Emit lossless synthetic reference bundle
-        if: ${{ !cancelled() }}
-        run: node scripts/bundle-native-windows.mjs

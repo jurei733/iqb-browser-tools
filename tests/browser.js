@@ -6,6 +6,7 @@ import * as D from '../src/data.js';
 import {converterCorpus,converterTypes,pipelineCorpus} from '../scripts/converter-corpus.mjs';
 import {windowsEdgeCorpus} from '../scripts/windows-edge-corpus.mjs';
 import {windowsCodingCorpus} from '../scripts/windows-coding-corpus.mjs';
+import {verifyNativeWindows,assertNativeRegressionScope} from '../scripts/native-windows-checks.mjs';
 import {parseXML,decodeXML} from '../src/xml.js';
 import {decodeCanvas} from '../src/image.js';
 import {loginDocx} from '../src/docx.js';
@@ -120,5 +121,11 @@ check('Windows-Kodierer: 22 Ergebnisdateien in beide Richtungen und zwei Steuerz
  const bytes=value=>Uint8Array.from(atob(value),c=>c.charCodeAt(0));let valid=0,rejected=0;
  for(const fixture of inputs){const original=native.results.find(c=>c.id===fixture.id);let encoded,error=false;try{encoded=C.encodeResult(fixture.job,fixture.coder,fixture.globalComment,{windows:true});}catch{error=true;}if(original.nativeError){assert(error,fixture.id);rejected++;continue;}assert(!error,fixture.id);assert(strFromU8(gunzipSync(encoded))===strFromU8(gunzipSync(bytes(fixture.browserBase64))),fixture.id+' aktuelle Export-XML');assert(canonical(C.decodeResult(bytes(original.nativeBase64)))===canonical(original.nativeModel),fixture.id+' Windows → Browser');assert(canonical(original.browserModel)===canonical(original.nativeModel),fixture.id+' Browser → Windows');valid++;}
  assert(valid===22&&rejected===2);
+});
+check('Windows-x64-Runner: 1214 Eingaben je Profil, 13 API-Fälle und Kodierer; zwei x86-Textabweichungen bleiben offen',async()=>{
+ const bundle=JSON.parse(strFromU8(await get('/fixtures/windows-native/reference.json'))),report=await verifyNativeWindows(bundle,await get('/fixtures/windows-edge/coding-inputs.json'));
+ assertNativeRegressionScope(report);assert(report.summary.architectures[1].passed===1214&&report.summary.architectures[0].passed===1212);assert(report.summary.api.passed===26&&report.summary.coding.passed===24);
+ await task('new-db');await task('dto',{responses:[{groupname:'G',loginname:'L',code:'0',bookletname:'B',unitname:'U',originalUnitId:'U',laststate:'{"n":null}',responses:[{id:'c',responseType:'unknown',ts:1,content:'{"v":null}'}]}],logs:[],windows:'64'});await task('db-import',{windows:'64'});
+ const saved=JSON.parse(strFromU8(await task('db-export',{format:'json'})));assert(saved[0].booklets[0].units[0].subforms[0].responses[0].value===null,'Worker verlor SQL-NULL');assert(saved[0].booklets[0].units[0].laststate[0].value===null,'Worker verlor Zustands-NULL');
 });
 $('#run').onclick=async()=>{const button=$('#run');button.disabled=true;$('#results').replaceChildren();const report={userAgent:navigator.userAgent,started:new Date().toISOString(),checks:[]};let passed=0;for(const {name,fn}of checks){$('#status').textContent=name;const li=document.createElement('li');try{await fn();passed++;li.className='ok';li.textContent='✓ '+name;report.checks.push({name,passed:true});}catch(e){li.className='fail';li.textContent='✗ '+name+' — '+e.message;report.checks.push({name,passed:false,error:e.message,stack:e.stack});}$('#results').append(li);}report.passed=passed;report.total=checks.length;report.finished=new Date().toISOString();$('#status').textContent=`${passed} / ${checks.length} erfolgreich`;$('#download').href=URL.createObjectURL(new Blob([JSON.stringify(report,null,2)],{type:'application/json'}));$('#download').download='Browser-Pruefbericht.json';$('#download').hidden=false;try{await fetch('/__report__',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(report)});}catch{}button.disabled=false;};

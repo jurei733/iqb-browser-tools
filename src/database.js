@@ -33,9 +33,9 @@ export class OutputDatabase {
     for(const s of this.query('SELECT * FROM session'))bmap.get(s.bookletId)?.sessions.push({browser:s.browser||'',os:s.os||'',screen:s.screen||'',ts:Number(s.ts),loadCompleteMS:Number(s.loadCompleteMS)});
     for(const l of this.query('SELECT * FROM bookletLog'))bmap.get(l.bookletId)?.logs.push({ts:Number(l.ts),key:l.key,parameter:l.parameter||''});
     for(const l of this.query('SELECT * FROM unitLog'))umap.get(l.unitId)?.logs.push({ts:Number(l.ts),key:l.key,parameter:l.parameter||''});
-    for(const s of this.query('SELECT * FROM unitLastState'))umap.get(s.unitId)?.laststate.push({key:s.key,value:s.value??''});
+    for(const s of this.query('SELECT * FROM unitLastState'))umap.get(s.unitId)?.laststate.push({key:s.key,value:s.value});
     for(const c of this.query('SELECT * FROM chunk')){let variables=[];try{variables=JSON.parse(c.variables||'[]');}catch{variables=String(c.variables||'').split(' ').filter(Boolean);}umap.get(c.unitId)?.chunks.push({id:c.key,type:c.type||'',ts:String(c.ts||0),variables});}
-    for(const r of this.query('SELECT *,CAST(code AS TEXT) AS coding_code,CAST(score AS TEXT) AS coding_score FROM response')){const u=umap.get(r.unitId);if(!u)continue;let sf=u.subforms.find(sf=>sf.id===(r.subform||''));if(!sf){sf={id:r.subform||'',responses:[]};u.subforms.push(sf);}sf.responses.push({id:r.variableId,status:this.status(r.status),value:r.value??'',code:nullableNumeric(r.coding_code),score:nullableNumeric(r.coding_score)});}
+    for(const r of this.query('SELECT *,CAST(code AS TEXT) AS coding_code,CAST(score AS TEXT) AS coding_score FROM response')){const u=umap.get(r.unitId);if(!u)continue;let sf=u.subforms.find(sf=>sf.id===(r.subform||''));if(!sf){sf={id:r.subform||'',responses:[]};u.subforms.push(sf);}sf.responses.push({id:r.variableId,status:this.status(r.status),value:r.value,code:nullableNumeric(r.coding_code),score:nullableNumeric(r.coding_score)});}
     return [...pmap.values()];
   }
   import(people,{merge=true,windows=false}={}){
