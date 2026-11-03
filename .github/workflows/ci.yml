@@ -106,3 +106,24 @@ jobs:
         run: |
           echo '::warning::Browser artifact upload failed. Test results remain in the job summary and logs; check the upload step for the storage error.'
           echo 'Browser artifacts could not be uploaded. The test results above remain valid; see the upload step for the storage error.' >> "$GITHUB_STEP_SUMMARY"
+
+  local-starter:
+    name: Local starter (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Verify local identity and file integration
+        run: node --test tests/local-app.test.js
