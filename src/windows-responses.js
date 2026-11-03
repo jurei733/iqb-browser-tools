@@ -35,18 +35,21 @@ function int32(value){
   if(!Number.isInteger(number)||number< -2147483648||number>2147483647)throw new Error('Windows-Konvertierung: Code oder Score außerhalb des 32-Bit-Bereichs.');return number;
 }
 export function parseWindowsChunk(content,type=''){
-  let data=typeof content==='string'?parseJSON(content):content;const forms=new Map();
+  const family=standardTypes.has(type)?'iqb-standard':type==='unknown'?'Abi':type==='IQBVisualUnitPlayerV2.1.0'?'Dan':type==='iqb-simple-player@1.0.0'?'SimplePlayerLegacy':'KeyValue';
+  const failed=message=>[{id:'',responses:[{id:'ERROR',value:`Converter ${family} failed: ${message}`,status:'ERROR',code:0,score:0}]}];
+  let data;try{data=typeof content==='string'?(content.trim()==='undefined'?null:parseJSON(content)):content;}catch(error){return failed(error.message);}
+  const forms=new Map();
   const add=(form,id,value,status='UNSET',code=0,score=0)=>{if(form===null)throw new Error('Windows-Konvertierung: Ein Unterformular darf nicht null sein.');form=String(form);if(!forms.has(form))forms.set(form,[]);forms.get(form).push({id,value,status,code,score});};
   if(standardTypes.has(type)){
-    const rows=Array.isArray(data)?data:[data];for(const row of rows){if(row===null)throw new Error('Windows-Konvertierung: Eine Antwort darf nicht null sein.');if(typeof row!=='object'||Array.isArray(row))throw new Error('Windows-Konvertierung: Antwortobjekt erwartet.');if(!Object.hasOwn(row,'id')||!Object.hasOwn(row,'value'))continue;
+    const rows=Array.isArray(data)?data:[data];if(rows.some(row=>row!==null&&(typeof row!=='object'||Array.isArray(row))))return failed('Antwortobjekt erwartet.');for(const row of rows){if(row===null)throw new Error('Windows-Konvertierung: Eine Antwort darf nicht null sein.');if(typeof row!=='object'||Array.isArray(row))throw new Error('Windows-Konvertierung: Antwortobjekt erwartet.');if(!Object.hasOwn(row,'id')||!Object.hasOwn(row,'value'))continue;
       add(Object.hasOwn(row,'subform')?row.subform:'',token(row.id),row.value===null?'#null#':token(row.value).replace(/\r\n/g,''),Object.hasOwn(row,'status')?token(row.status):'UNSET',Object.hasOwn(row,'code')?int32(row.code):0,Object.hasOwn(row,'score')?int32(row.score):0);
     }
   }else{
-    if(type==='iqb-simple-player@1.0.0'){if(!data||typeof data!=='object'||Array.isArray(data))throw new Error('Windows-Konvertierung: SimplePlayer-Objekt erwartet.');if(Object.values(data).some(value=>value!==null&&(typeof value!=='object'||Array.isArray(value))))throw new Error('Windows-Konvertierung: SimplePlayer-Inhaltsobjekt erwartet.');data=Object.hasOwn(data,'answers')?data.answers:{};}
-    if(!data||typeof data!=='object'||Array.isArray(data))throw new Error('Windows-Konvertierung: Schlüssel-Wert-Objekt erwartet.');
+    if(type==='iqb-simple-player@1.0.0'){if(data===null)throw new Error('Windows-Konvertierung: SimplePlayer-Objekt darf nicht null sein.');if(typeof data!=='object'||Array.isArray(data))return failed('SimplePlayer-Objekt erwartet.');if(Object.values(data).some(value=>value!==null&&(typeof value!=='object'||Array.isArray(value))))return failed('SimplePlayer-Inhaltsobjekt erwartet.');data=Object.hasOwn(data,'answers')?data.answers:{};}
+    if(data===null)throw new Error('Windows-Konvertierung: Schlüssel-Wert-Objekt darf nicht null sein.');if(typeof data!=='object'||Array.isArray(data))return failed('Schlüssel-Wert-Objekt erwartet.');
     if(type!=='unknown')forms.set('',[]);
     // Dictionary<string,string> and JToken's explicit string cast reject containers.
-    if(type!=='IQBVisualUnitPlayerV2.1.0'&&Object.values(data).some(value=>value!==null&&typeof value==='object'))throw new Error('Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt.');
+    if(type!=='IQBVisualUnitPlayerV2.1.0'&&Object.values(data).some(value=>value!==null&&typeof value==='object')){if(type==='unknown')return failed('Verschachtelter Wert wird von diesem Playerformat nicht unterstützt.');throw new Error('Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt.');}
     for(const [id,value]of Object.entries(data)){
       if(type==='IQBVisualUnitPlayerV2.1.0'&&['responsesGiven','pagesViewed'].includes(id))continue;
       if(type==='unknown'){

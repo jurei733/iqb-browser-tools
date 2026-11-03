@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T10:08:58.079Z",
+  "generatedAt": "2026-11-03T10:20:32.072Z",
   "nativeFinished": "2026-11-03T10:04:57.1876204Z",
   "nativePlatform": "Microsoft Windows NT 10.0.26300.0",
   "nativeRuntime": "4.0.30319.42000",
@@ -16,9 +16,10 @@
       "passed": 401,
       "total": 401
     },
-    "rejectionDecisions": {
+    "errorHandling": {
       "passed": 146,
       "total": 146,
+      "sameRepresentation": 146,
       "identicalErrorMessagesProven": false
     },
     "apiUnits": {
@@ -32,7 +33,7 @@
   },
   "limitations": [
     "No universal equivalence claim: a finite corpus is not all possible inputs.",
-    "Error cases prove the rejection decision; .NET exception types, message text and GUI presentation are not identical.",
+    "Error cases prove error detection and the ERROR-record versus exception outcome; .NET exception classes, message text and GUI presentation are not identical.",
     "Exact converter comparison preserves field values, types and list order; JSON object-key serialization order is not compared.",
     "Native API field mapping: unitId→id and unitname→alias; browser-only empty logs field added. No response-value normalization.",
     "German de-DE culture and the captured Windows/.NET versions only.",
@@ -304,6 +305,7 @@
       "method": "setResponsesIqbStandard",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -313,6 +315,7 @@
       "method": "setResponsesIqbStandard",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -322,6 +325,7 @@
       "method": "setResponsesIqbStandard",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -331,6 +335,7 @@
       "method": "setResponsesIqbStandard",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -340,6 +345,7 @@
       "method": "setResponsesIqbStandard",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -349,6 +355,7 @@
       "method": "setResponsesIqbStandard",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -358,6 +365,7 @@
       "method": "setResponsesIqbStandard",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -367,6 +375,7 @@
       "method": "setResponsesIqbStandard",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -376,6 +385,7 @@
       "method": "setResponsesIqbStandard",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -385,6 +395,7 @@
       "method": "setResponsesIqbStandard",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -394,6 +405,7 @@
       "method": "setResponsesIqbStandard",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -403,6 +415,7 @@
       "method": "setResponsesIqbStandard",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -412,6 +425,7 @@
       "method": "setResponsesIqbStandard",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -421,6 +435,7 @@
       "method": "setResponsesIqbStandard",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -430,6 +445,7 @@
       "method": "setResponsesIqbStandard",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -439,6 +455,7 @@
       "method": "setResponsesIqbStandard",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -448,6 +465,7 @@
       "method": "setResponsesIqbStandard",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -457,6 +475,7 @@
       "method": "setResponsesIqbStandard",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -466,6 +485,7 @@
       "method": "setResponsesIqbStandard",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -475,6 +495,7 @@
       "method": "setResponsesIqbStandard",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -484,6 +505,7 @@
       "method": "setResponsesIqbStandard",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -493,6 +515,7 @@
       "method": "setResponsesIqbStandard",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -502,6 +525,7 @@
       "method": "setResponsesIqbStandard",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -511,6 +535,7 @@
       "method": "setResponsesIqbStandard",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -520,6 +545,7 @@
       "method": "setResponsesIqbStandard",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -529,6 +555,7 @@
       "method": "setResponsesIqbStandard",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -538,6 +565,7 @@
       "method": "setResponsesAbi",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -547,6 +575,7 @@
       "method": "setResponsesAbi",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -556,6 +585,7 @@
       "method": "setResponsesAbi",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -565,6 +595,7 @@
       "method": "setResponsesAbi",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -574,6 +605,7 @@
       "method": "setResponsesAbi",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -583,6 +615,7 @@
       "method": "setResponsesAbi",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -592,6 +625,7 @@
       "method": "setResponsesAbi",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -601,6 +635,7 @@
       "method": "setResponsesAbi",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -610,6 +645,7 @@
       "method": "setResponsesAbi",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -619,6 +655,7 @@
       "method": "setResponsesAbi",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -628,6 +665,7 @@
       "method": "setResponsesAbi",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -637,6 +675,7 @@
       "method": "setResponsesAbi",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -646,6 +685,7 @@
       "method": "setResponsesAbi",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -655,6 +695,7 @@
       "method": "setResponsesAbi",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -664,6 +705,7 @@
       "method": "setResponsesAbi",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -673,6 +715,7 @@
       "method": "setResponsesAbi",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -682,6 +725,7 @@
       "method": "setResponsesAbi",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -691,6 +735,7 @@
       "method": "setResponsesAbi",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -700,6 +745,7 @@
       "method": "setResponsesAbi",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -709,6 +755,7 @@
       "method": "setResponsesAbi",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -718,6 +765,7 @@
       "method": "setResponsesAbi",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -727,61 +775,67 @@
       "method": "setResponsesAbi",
       "category": "value-boundary",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'v', line 1, position 6.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-value-22",
       "method": "setResponsesAbi",
       "category": "value-boundary",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'v', line 1, position 6.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-value-23",
       "method": "setResponsesAbi",
       "category": "value-boundary",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'v', line 1, position 6.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-value-24",
       "method": "setResponsesAbi",
       "category": "value-boundary",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'v', line 1, position 6.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-value-25",
       "method": "setResponsesAbi",
       "category": "value-boundary",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'v', line 1, position 6.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesDan-value-0",
       "method": "setResponsesDan",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -791,6 +845,7 @@
       "method": "setResponsesDan",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -800,6 +855,7 @@
       "method": "setResponsesDan",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -809,6 +865,7 @@
       "method": "setResponsesDan",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -818,6 +875,7 @@
       "method": "setResponsesDan",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -827,6 +885,7 @@
       "method": "setResponsesDan",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -836,6 +895,7 @@
       "method": "setResponsesDan",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -845,6 +905,7 @@
       "method": "setResponsesDan",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -854,6 +915,7 @@
       "method": "setResponsesDan",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -863,6 +925,7 @@
       "method": "setResponsesDan",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -872,6 +935,7 @@
       "method": "setResponsesDan",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -881,6 +945,7 @@
       "method": "setResponsesDan",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -890,6 +955,7 @@
       "method": "setResponsesDan",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -899,6 +965,7 @@
       "method": "setResponsesDan",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -908,6 +975,7 @@
       "method": "setResponsesDan",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -917,6 +985,7 @@
       "method": "setResponsesDan",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -926,6 +995,7 @@
       "method": "setResponsesDan",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -935,6 +1005,7 @@
       "method": "setResponsesDan",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -944,6 +1015,7 @@
       "method": "setResponsesDan",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -953,6 +1025,7 @@
       "method": "setResponsesDan",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -962,6 +1035,7 @@
       "method": "setResponsesDan",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -971,6 +1045,7 @@
       "method": "setResponsesDan",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -980,6 +1055,7 @@
       "method": "setResponsesDan",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -989,6 +1065,7 @@
       "method": "setResponsesDan",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -998,6 +1075,7 @@
       "method": "setResponsesDan",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1007,6 +1085,7 @@
       "method": "setResponsesDan",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1016,6 +1095,7 @@
       "method": "setResponsesKeyValue",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1025,6 +1105,7 @@
       "method": "setResponsesKeyValue",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1034,6 +1115,7 @@
       "method": "setResponsesKeyValue",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1043,6 +1125,7 @@
       "method": "setResponsesKeyValue",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1052,6 +1135,7 @@
       "method": "setResponsesKeyValue",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1061,6 +1145,7 @@
       "method": "setResponsesKeyValue",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1070,6 +1155,7 @@
       "method": "setResponsesKeyValue",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1079,6 +1165,7 @@
       "method": "setResponsesKeyValue",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1088,6 +1175,7 @@
       "method": "setResponsesKeyValue",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1097,6 +1185,7 @@
       "method": "setResponsesKeyValue",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1106,6 +1195,7 @@
       "method": "setResponsesKeyValue",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1115,6 +1205,7 @@
       "method": "setResponsesKeyValue",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1124,6 +1215,7 @@
       "method": "setResponsesKeyValue",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1133,6 +1225,7 @@
       "method": "setResponsesKeyValue",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1142,6 +1235,7 @@
       "method": "setResponsesKeyValue",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1151,6 +1245,7 @@
       "method": "setResponsesKeyValue",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1160,6 +1255,7 @@
       "method": "setResponsesKeyValue",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1169,6 +1265,7 @@
       "method": "setResponsesKeyValue",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1178,6 +1275,7 @@
       "method": "setResponsesKeyValue",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1187,6 +1285,7 @@
       "method": "setResponsesKeyValue",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1196,6 +1295,7 @@
       "method": "setResponsesKeyValue",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1205,7 +1305,8 @@
       "method": "setResponsesKeyValue",
       "category": "value-boundary",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -1216,7 +1317,8 @@
       "method": "setResponsesKeyValue",
       "category": "value-boundary",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -1227,7 +1329,8 @@
       "method": "setResponsesKeyValue",
       "category": "value-boundary",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -1238,7 +1341,8 @@
       "method": "setResponsesKeyValue",
       "category": "value-boundary",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -1249,7 +1353,8 @@
       "method": "setResponsesKeyValue",
       "category": "value-boundary",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -1260,6 +1365,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1269,6 +1375,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1278,6 +1385,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1287,6 +1395,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1296,6 +1405,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1305,6 +1415,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1314,6 +1425,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1323,6 +1435,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1332,6 +1445,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1341,6 +1455,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1350,6 +1465,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1359,6 +1475,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1368,6 +1485,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1377,6 +1495,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1386,6 +1505,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1395,6 +1515,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1404,6 +1525,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1413,6 +1535,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1422,6 +1545,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1431,6 +1555,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1440,6 +1565,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "value-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1449,7 +1575,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "value-boundary",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -1460,7 +1587,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "value-boundary",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -1471,7 +1599,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "value-boundary",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -1482,7 +1611,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "value-boundary",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -1493,7 +1623,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "value-boundary",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -1504,6 +1635,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1513,6 +1645,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1522,6 +1655,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1531,6 +1665,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1540,6 +1675,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1549,6 +1685,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1558,6 +1695,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1567,6 +1705,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1576,6 +1715,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1585,6 +1725,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1594,6 +1735,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1603,6 +1745,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1612,6 +1755,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1621,6 +1765,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1630,6 +1775,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1639,6 +1785,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1648,6 +1795,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1657,6 +1805,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1666,6 +1815,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1675,6 +1825,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1684,6 +1835,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1693,6 +1845,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1702,6 +1855,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1711,6 +1865,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1720,6 +1875,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1729,6 +1885,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1738,6 +1895,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1747,6 +1905,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1756,6 +1915,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1765,6 +1925,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1774,6 +1935,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1783,6 +1945,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1792,6 +1955,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1801,6 +1965,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1810,6 +1975,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1819,6 +1985,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1828,6 +1995,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1837,6 +2005,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1846,6 +2015,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1855,6 +2025,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1864,6 +2035,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1873,6 +2045,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1882,6 +2055,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1891,6 +2065,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1900,6 +2075,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1909,6 +2085,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1918,6 +2095,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1927,6 +2105,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1936,6 +2115,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1945,6 +2125,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -1954,6 +2135,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1963,6 +2145,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1972,6 +2155,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1981,6 +2165,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1990,6 +2175,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -1999,6 +2185,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -2008,6 +2195,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2017,6 +2205,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -2026,6 +2215,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2035,6 +2225,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2044,6 +2235,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -2053,6 +2245,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -2062,6 +2255,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -2071,6 +2265,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2080,6 +2275,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2089,6 +2285,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -2098,6 +2295,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -2107,6 +2305,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -2116,6 +2315,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -2125,6 +2325,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -2134,6 +2335,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -2143,6 +2345,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -2152,6 +2355,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2161,6 +2365,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2170,6 +2375,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -2179,6 +2385,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2188,6 +2395,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -2197,6 +2405,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2206,6 +2415,7 @@
       "method": "setResponsesIqbStandard",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2215,17 +2425,19 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable2_0', line 1, position 68.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-seed733-1",
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2235,6 +2447,7 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2244,17 +2457,19 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable2_3', line 1, position 52.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-seed733-4",
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2264,6 +2479,7 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2273,17 +2489,19 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable1_2', line 1, position 37.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-seed733-7",
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2293,28 +2511,31 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable0_0', line 1, position 16.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-seed733-9",
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable0_1', line 1, position 16.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-seed733-10",
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -2324,28 +2545,31 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable2_3', line 1, position 55.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-seed733-12",
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable0_0', line 1, position 16.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-seed733-13",
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2355,6 +2579,7 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2364,39 +2589,43 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable0_3', line 1, position 16.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-seed733-16",
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable0_0', line 1, position 16.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-seed733-17",
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable0_1', line 1, position 16.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-seed733-18",
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2406,17 +2635,19 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable1_3', line 1, position 48.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-seed733-20",
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2426,17 +2657,19 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable0_1', line 1, position 16.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-seed733-22",
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2446,6 +2679,7 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2455,6 +2689,7 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2464,6 +2699,7 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2473,17 +2709,19 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable2_2', line 1, position 55.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-seed733-27",
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2493,17 +2731,19 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable2_0', line 1, position 65.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-seed733-29",
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2513,28 +2753,31 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable0_3', line 1, position 16.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-seed733-32",
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable0_0', line 1, position 16.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-seed733-33",
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2544,6 +2787,7 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2553,6 +2797,7 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2562,17 +2807,19 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable4_0', line 1, position 99.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-seed733-37",
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2582,39 +2829,43 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable2_2', line 1, position 64.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-seed733-39",
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable2_3', line 1, position 53.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-seed733-40",
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable1_0', line 1, position 36.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-seed733-41",
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2624,17 +2875,19 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable0_3', line 1, position 16.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-seed733-44",
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2644,6 +2897,7 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -2653,6 +2907,7 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -2662,17 +2917,19 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable1_0', line 1, position 36.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-seed733-49",
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2682,17 +2939,19 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable1_2', line 1, position 37.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-seed733-52",
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2702,6 +2961,7 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2711,6 +2971,7 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2720,6 +2981,7 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2729,6 +2991,7 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2738,6 +3001,7 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2747,39 +3011,43 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable0_2', line 1, position 16.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-seed733-59",
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable0_3', line 1, position 16.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-seed733-60",
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable1_0', line 1, position 53.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-seed733-61",
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2789,6 +3057,7 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2798,6 +3067,7 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2807,17 +3077,19 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable2_0', line 1, position 56.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-seed733-65",
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2827,6 +3099,7 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2836,6 +3109,7 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2845,17 +3119,19 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable2_0', line 1, position 56.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-seed733-69",
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2865,72 +3141,79 @@
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable4_3', line 1, position 118.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-seed733-72",
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable1_0', line 1, position 36.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-seed733-74",
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable0_2', line 1, position 16.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-seed733-76",
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable0_0', line 1, position 16.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-seed733-77",
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable0_1', line 1, position 16.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-seed733-79",
       "method": "setResponsesAbi",
       "category": "seeded-combination",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable2_3', line 1, position 66.",
-      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+      "browserError": ""
     },
     {
       "id": "setResponsesDan-seed733-0",
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2940,6 +3223,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -2949,6 +3233,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -2958,6 +3243,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -2967,6 +3253,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -2976,6 +3263,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -2985,6 +3273,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -2994,6 +3283,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3003,6 +3293,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -3012,6 +3303,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3021,6 +3313,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3030,6 +3323,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3039,6 +3333,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3048,6 +3343,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3057,6 +3353,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -3066,6 +3363,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3075,6 +3373,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -3084,6 +3383,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3093,6 +3393,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3102,6 +3403,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3111,6 +3413,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -3120,6 +3423,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3129,6 +3433,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -3138,6 +3443,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3147,6 +3453,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3156,6 +3463,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3165,6 +3473,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -3174,6 +3483,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -3183,6 +3493,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3192,6 +3503,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3201,6 +3513,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3210,6 +3523,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3219,6 +3533,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3228,6 +3543,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3237,6 +3553,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3246,6 +3563,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3255,6 +3573,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3264,6 +3583,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3273,6 +3593,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3282,6 +3603,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -3291,6 +3613,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3300,6 +3623,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3309,6 +3633,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3318,6 +3643,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3327,6 +3653,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -3336,6 +3663,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3345,6 +3673,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3354,6 +3683,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3363,6 +3693,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3372,6 +3703,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -3381,6 +3713,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3390,6 +3723,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3399,6 +3733,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -3408,6 +3743,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3417,6 +3753,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -3426,6 +3763,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -3435,6 +3773,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3444,6 +3783,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3453,6 +3793,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -3462,6 +3803,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3471,6 +3813,7 @@
       "method": "setResponsesDan",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3480,7 +3823,8 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -3491,6 +3835,7 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -3500,7 +3845,8 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -3511,6 +3857,7 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -3520,6 +3867,7 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -3529,6 +3877,7 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -3538,7 +3887,8 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -3549,6 +3899,7 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3558,6 +3909,7 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3567,6 +3919,7 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3576,6 +3929,7 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -3585,7 +3939,8 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -3596,6 +3951,7 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3605,6 +3961,7 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -3614,7 +3971,8 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -3625,6 +3983,7 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -3634,7 +3993,8 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -3645,7 +4005,8 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -3656,6 +4017,7 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -3665,7 +4027,8 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -3676,6 +4039,7 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -3685,7 +4049,8 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -3696,6 +4061,7 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3705,7 +4071,8 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -3716,7 +4083,8 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -3727,7 +4095,8 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -3738,6 +4107,7 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3747,7 +4117,8 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -3758,6 +4129,7 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -3767,6 +4139,7 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -3776,6 +4149,7 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -3785,7 +4159,8 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -3796,7 +4171,8 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -3807,7 +4183,8 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -3818,7 +4195,8 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -3829,6 +4207,7 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3838,7 +4217,8 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -3849,6 +4229,7 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -3858,6 +4239,7 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -3867,7 +4249,8 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -3878,7 +4261,8 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -3889,7 +4273,8 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -3900,6 +4285,7 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -3909,6 +4295,7 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -3918,7 +4305,8 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -3929,7 +4317,8 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -3940,6 +4329,7 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -3949,7 +4339,8 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -3960,6 +4351,7 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -3969,6 +4361,7 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -3978,6 +4371,7 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -3987,7 +4381,8 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -3998,7 +4393,8 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4009,7 +4405,8 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4020,7 +4417,8 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4031,7 +4429,8 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4042,6 +4441,7 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -4051,7 +4451,8 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4062,7 +4463,8 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4073,6 +4475,7 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -4082,7 +4485,8 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4093,7 +4497,8 @@
       "method": "setResponsesKeyValue",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4104,7 +4509,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4115,6 +4521,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -4124,6 +4531,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -4133,7 +4541,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4144,7 +4553,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4155,6 +4565,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -4164,6 +4575,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -4173,6 +4585,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -4182,6 +4595,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -4191,7 +4605,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4202,6 +4617,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -4211,7 +4627,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4222,7 +4639,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4233,7 +4651,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4244,6 +4663,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -4253,7 +4673,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4264,7 +4685,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4275,6 +4697,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -4284,6 +4707,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -4293,7 +4717,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4304,6 +4729,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -4313,6 +4739,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -4322,7 +4749,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4333,6 +4761,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -4342,7 +4771,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4353,7 +4783,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4364,6 +4795,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -4373,7 +4805,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4384,6 +4817,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -4393,6 +4827,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -4402,6 +4837,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -4411,6 +4847,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -4420,6 +4857,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -4429,7 +4867,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4440,7 +4879,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4451,6 +4891,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -4460,7 +4901,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4471,7 +4913,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4482,7 +4925,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4493,6 +4937,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -4502,7 +4947,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4513,7 +4959,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4524,7 +4971,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4535,7 +4983,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4546,7 +4995,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4557,6 +5007,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -4566,7 +5017,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4577,6 +5029,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -4586,6 +5039,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -4595,6 +5049,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -4604,7 +5059,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4615,6 +5071,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -4624,7 +5081,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4635,7 +5093,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4646,7 +5105,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4657,7 +5117,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4668,6 +5129,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -4677,7 +5139,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4688,7 +5151,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4699,6 +5163,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -4708,6 +5173,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -4717,7 +5183,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4728,6 +5195,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -4737,6 +5205,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -4746,6 +5215,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -4755,6 +5225,7 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -4764,7 +5235,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4775,7 +5247,8 @@
       "method": "setResponsesSimplePlayerLegacy",
       "category": "seeded-combination",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4786,6 +5259,7 @@
       "method": "setResponsesIqbStandard",
       "category": "status-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -4795,6 +5269,7 @@
       "method": "setResponsesIqbStandard",
       "category": "status-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -4804,6 +5279,7 @@
       "method": "setResponsesIqbStandard",
       "category": "status-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -4813,6 +5289,7 @@
       "method": "setResponsesIqbStandard",
       "category": "status-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -4822,6 +5299,7 @@
       "method": "setResponsesIqbStandard",
       "category": "status-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -4831,6 +5309,7 @@
       "method": "setResponsesIqbStandard",
       "category": "status-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -4840,6 +5319,7 @@
       "method": "setResponsesIqbStandard",
       "category": "status-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -4849,6 +5329,7 @@
       "method": "setResponsesIqbStandard",
       "category": "status-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -4858,6 +5339,7 @@
       "method": "setResponsesIqbStandard",
       "category": "status-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -4867,6 +5349,7 @@
       "method": "setResponsesIqbStandard",
       "category": "status-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -4876,6 +5359,7 @@
       "method": "setResponsesIqbStandard",
       "category": "status-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -4885,6 +5369,7 @@
       "method": "setResponsesIqbStandard",
       "category": "status-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -4894,6 +5379,7 @@
       "method": "setResponsesIqbStandard",
       "category": "status-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -4903,6 +5389,7 @@
       "method": "setResponsesIqbStandard",
       "category": "status-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -4912,6 +5399,7 @@
       "method": "setResponsesIqbStandard",
       "category": "status-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -4921,6 +5409,7 @@
       "method": "setResponsesIqbStandard",
       "category": "status-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -4930,6 +5419,7 @@
       "method": "setResponsesIqbStandard",
       "category": "code-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -4939,6 +5429,7 @@
       "method": "setResponsesIqbStandard",
       "category": "code-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -4948,6 +5439,7 @@
       "method": "setResponsesIqbStandard",
       "category": "code-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -4957,6 +5449,7 @@
       "method": "setResponsesIqbStandard",
       "category": "code-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -4966,6 +5459,7 @@
       "method": "setResponsesIqbStandard",
       "category": "code-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -4975,7 +5469,8 @@
       "method": "setResponsesIqbStandard",
       "category": "code-boundary",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentException",
@@ -4986,7 +5481,8 @@
       "method": "setResponsesIqbStandard",
       "category": "code-boundary",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.OverflowException",
@@ -4997,7 +5493,8 @@
       "method": "setResponsesIqbStandard",
       "category": "code-boundary",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.OverflowException",
@@ -5008,6 +5505,7 @@
       "method": "setResponsesIqbStandard",
       "category": "code-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -5017,6 +5515,7 @@
       "method": "setResponsesIqbStandard",
       "category": "code-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -5026,7 +5525,8 @@
       "method": "setResponsesIqbStandard",
       "category": "code-boundary",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.FormatException",
@@ -5037,6 +5537,7 @@
       "method": "setResponsesIqbStandard",
       "category": "code-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -5046,6 +5547,7 @@
       "method": "setResponsesIqbStandard",
       "category": "structure-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -5055,6 +5557,7 @@
       "method": "setResponsesIqbStandard",
       "category": "structure-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -5064,6 +5567,7 @@
       "method": "setResponsesIqbStandard",
       "category": "structure-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -5073,6 +5577,7 @@
       "method": "setResponsesIqbStandard",
       "category": "structure-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -5082,7 +5587,8 @@
       "method": "setResponsesIqbStandard",
       "category": "structure-boundary",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.NullReferenceException",
@@ -5093,7 +5599,8 @@
       "method": "setResponsesIqbStandard",
       "category": "structure-boundary",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.NullReferenceException",
@@ -5104,18 +5611,20 @@
       "method": "setResponsesIqbStandard",
       "category": "structure-boundary",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter iqb-standard failed: Error converting value 1 to type 'System.Collections.Generic.List`1[System.Collections.Generic.Dictionary`2[System.String,Newtonsoft.Json.Linq.JToken]]'. Path '', line 1, position 1.",
-      "browserError": "Windows-Konvertierung: Antwortobjekt erwartet."
+      "browserError": ""
     },
     {
       "id": "structure-nullSubform",
       "method": "setResponsesIqbStandard",
       "category": "structure-boundary",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.ArgumentNullException",
@@ -5126,6 +5635,7 @@
       "method": "setResponsesIqbStandard",
       "category": "structure-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -5135,6 +5645,7 @@
       "method": "setResponsesIqbStandard",
       "category": "structure-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -5144,6 +5655,7 @@
       "method": "setResponsesIqbStandard",
       "category": "structure-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -5153,6 +5665,7 @@
       "method": "setResponsesAbi",
       "category": "form-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -5162,6 +5675,7 @@
       "method": "setResponsesAbi",
       "category": "form-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -5171,6 +5685,7 @@
       "method": "setResponsesAbi",
       "category": "form-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -5180,6 +5695,7 @@
       "method": "setResponsesAbi",
       "category": "form-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -5189,6 +5705,7 @@
       "method": "setResponsesAbi",
       "category": "form-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -5198,6 +5715,7 @@
       "method": "setResponsesAbi",
       "category": "form-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -5207,6 +5725,7 @@
       "method": "setResponsesAbi",
       "category": "form-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -5216,6 +5735,7 @@
       "method": "setResponsesAbi",
       "category": "form-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -5225,6 +5745,7 @@
       "method": "setResponsesAbi",
       "category": "form-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -5234,6 +5755,7 @@
       "method": "setResponsesAbi",
       "category": "form-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -5243,6 +5765,7 @@
       "method": "setResponsesAbi",
       "category": "form-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -5252,39 +5775,43 @@
       "method": "setResponsesIqbStandard",
       "category": "syntax-boundary",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter iqb-standard failed: Unexpected end when reading JSON. Path '', line 1, position 1.",
-      "browserError": "Quoted object key or end of object '}' expected but reached end of input at position 1"
+      "browserError": ""
     },
     {
       "id": "setResponsesIqbStandard-syntax-1",
       "method": "setResponsesIqbStandard",
       "category": "syntax-boundary",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter iqb-standard failed: Unexpected end when deserializing array. Path '', line 1, position 1.",
-      "browserError": "Array item or end of array ']' expected but reached end of input at position 1"
+      "browserError": ""
     },
     {
       "id": "setResponsesIqbStandard-syntax-2",
       "method": "setResponsesIqbStandard",
       "category": "syntax-boundary",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.NullReferenceException",
-      "browserError": "JSON value expected but got 'u' at position 0"
+      "browserError": "Windows-Konvertierung: Eine Antwort darf nicht null sein."
     },
     {
       "id": "setResponsesIqbStandard-syntax-3",
       "method": "setResponsesIqbStandard",
       "category": "syntax-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": false
@@ -5294,50 +5821,55 @@
       "method": "setResponsesIqbStandard",
       "category": "syntax-boundary",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter iqb-standard failed: Cannot deserialize the current JSON object (e.g. {\"name\":\"value\"}) into type 'System.Collections.Generic.List`1[System.Collections.Generic.Dictionary`2[System.String,Newtonsoft.Json.Linq.JToken]]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.\r\nTo fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.\r\nPath 'v', line 1, position 5.",
-      "browserError": "Expected end of input but got 't' at position 8"
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-syntax-0",
       "method": "setResponsesAbi",
       "category": "syntax-boundary",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Unexpected end when reading JSON. Path '', line 1, position 1.",
-      "browserError": "Quoted object key or end of object '}' expected but reached end of input at position 1"
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-syntax-1",
       "method": "setResponsesAbi",
       "category": "syntax-boundary",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'System.Collections.Generic.Dictionary`2[System.String,System.String]' because the type requires a JSON object (e.g. {\"name\":\"value\"}) to deserialize correctly.\r\nTo fix this error either change the JSON to a JSON object (e.g. {\"name\":\"value\"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.\r\nPath '', line 1, position 1.",
-      "browserError": "Array item or end of array ']' expected but reached end of input at position 1"
+      "browserError": ""
     },
     {
       "id": "setResponsesAbi-syntax-2",
       "method": "setResponsesAbi",
       "category": "syntax-boundary",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.NullReferenceException",
-      "browserError": "JSON value expected but got 'u' at position 0"
+      "browserError": "Windows-Konvertierung: Schlüssel-Wert-Objekt darf nicht null sein."
     },
     {
       "id": "setResponsesAbi-syntax-3",
       "method": "setResponsesAbi",
       "category": "syntax-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -5347,50 +5879,55 @@
       "method": "setResponsesAbi",
       "category": "syntax-boundary",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Abi failed: Additional text encountered after finished reading JSON content: t. Path '', line 1, position 8.",
-      "browserError": "Expected end of input but got 't' at position 8"
+      "browserError": ""
     },
     {
       "id": "setResponsesDan-syntax-0",
       "method": "setResponsesDan",
       "category": "syntax-boundary",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Dan failed: Unexpected end when reading JSON. Path '', line 1, position 1.",
-      "browserError": "Quoted object key or end of object '}' expected but reached end of input at position 1"
+      "browserError": ""
     },
     {
       "id": "setResponsesDan-syntax-1",
       "method": "setResponsesDan",
       "category": "syntax-boundary",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Dan failed: Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'System.Collections.Generic.Dictionary`2[System.String,Newtonsoft.Json.Linq.JToken]' because the type requires a JSON object (e.g. {\"name\":\"value\"}) to deserialize correctly.\r\nTo fix this error either change the JSON to a JSON object (e.g. {\"name\":\"value\"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.\r\nPath '', line 1, position 1.",
-      "browserError": "Array item or end of array ']' expected but reached end of input at position 1"
+      "browserError": ""
     },
     {
       "id": "setResponsesDan-syntax-2",
       "method": "setResponsesDan",
       "category": "syntax-boundary",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.NullReferenceException",
-      "browserError": "JSON value expected but got 'u' at position 0"
+      "browserError": "Windows-Konvertierung: Schlüssel-Wert-Objekt darf nicht null sein."
     },
     {
       "id": "setResponsesDan-syntax-3",
       "method": "setResponsesDan",
       "category": "syntax-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -5400,50 +5937,55 @@
       "method": "setResponsesDan",
       "category": "syntax-boundary",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter Dan failed: Additional text encountered after finished reading JSON content: t. Path '', line 1, position 8.",
-      "browserError": "Expected end of input but got 't' at position 8"
+      "browserError": ""
     },
     {
       "id": "setResponsesKeyValue-syntax-0",
       "method": "setResponsesKeyValue",
       "category": "syntax-boundary",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter KeyValue failed: Unexpected end when reading JSON. Path '', line 1, position 1.",
-      "browserError": "Quoted object key or end of object '}' expected but reached end of input at position 1"
+      "browserError": ""
     },
     {
       "id": "setResponsesKeyValue-syntax-1",
       "method": "setResponsesKeyValue",
       "category": "syntax-boundary",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter KeyValue failed: Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'System.Collections.Generic.Dictionary`2[System.String,Newtonsoft.Json.Linq.JToken]' because the type requires a JSON object (e.g. {\"name\":\"value\"}) to deserialize correctly.\r\nTo fix this error either change the JSON to a JSON object (e.g. {\"name\":\"value\"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.\r\nPath '', line 1, position 1.",
-      "browserError": "Array item or end of array ']' expected but reached end of input at position 1"
+      "browserError": ""
     },
     {
       "id": "setResponsesKeyValue-syntax-2",
       "method": "setResponsesKeyValue",
       "category": "syntax-boundary",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.NullReferenceException",
-      "browserError": "JSON value expected but got 'u' at position 0"
+      "browserError": "Windows-Konvertierung: Schlüssel-Wert-Objekt darf nicht null sein."
     },
     {
       "id": "setResponsesKeyValue-syntax-3",
       "method": "setResponsesKeyValue",
       "category": "syntax-boundary",
       "nativeOutcome": "value",
+      "browserOutcome": "value",
       "proof": "strict-value-and-order",
       "passed": true,
       "enhancedModeIdentical": true
@@ -5453,66 +5995,72 @@
       "method": "setResponsesKeyValue",
       "category": "syntax-boundary",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter KeyValue failed: Additional text encountered after finished reading JSON content: t. Path '', line 1, position 8.",
-      "browserError": "Expected end of input but got 't' at position 8"
+      "browserError": ""
     },
     {
       "id": "setResponsesSimplePlayerLegacy-syntax-0",
       "method": "setResponsesSimplePlayerLegacy",
       "category": "syntax-boundary",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter SimplePlayerLegacy failed: Unexpected end when reading JSON. Path '', line 1, position 1.",
-      "browserError": "Quoted object key or end of object '}' expected but reached end of input at position 1"
+      "browserError": ""
     },
     {
       "id": "setResponsesSimplePlayerLegacy-syntax-1",
       "method": "setResponsesSimplePlayerLegacy",
       "category": "syntax-boundary",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter SimplePlayerLegacy failed: Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'System.Collections.Generic.Dictionary`2[System.String,Newtonsoft.Json.Linq.JObject]' because the type requires a JSON object (e.g. {\"name\":\"value\"}) to deserialize correctly.\r\nTo fix this error either change the JSON to a JSON object (e.g. {\"name\":\"value\"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.\r\nPath '', line 1, position 1.",
-      "browserError": "Array item or end of array ']' expected but reached end of input at position 1"
+      "browserError": ""
     },
     {
       "id": "setResponsesSimplePlayerLegacy-syntax-2",
       "method": "setResponsesSimplePlayerLegacy",
       "category": "syntax-boundary",
       "nativeOutcome": "exception",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "exception",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "System.NullReferenceException",
-      "browserError": "JSON value expected but got 'u' at position 0"
+      "browserError": "Windows-Konvertierung: SimplePlayer-Objekt darf nicht null sein."
     },
     {
       "id": "setResponsesSimplePlayerLegacy-syntax-3",
       "method": "setResponsesSimplePlayerLegacy",
       "category": "syntax-boundary",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter SimplePlayerLegacy failed: Deserialized JSON type 'Newtonsoft.Json.Linq.JValue' is not compatible with expected type 'Newtonsoft.Json.Linq.JObject'. Path 'v', line 1, position 6.",
-      "browserError": "Windows-Konvertierung: SimplePlayer-Inhaltsobjekt erwartet."
+      "browserError": ""
     },
     {
       "id": "setResponsesSimplePlayerLegacy-syntax-4",
       "method": "setResponsesSimplePlayerLegacy",
       "category": "syntax-boundary",
       "nativeOutcome": "error-response",
-      "proof": "rejection-decision-only",
+      "browserOutcome": "error-response",
+      "proof": "error-handling-category-only",
       "passed": true,
       "enhancedModeIdentical": false,
       "nativeError": "Converter SimplePlayerLegacy failed: Deserialized JSON type 'Newtonsoft.Json.Linq.JValue' is not compatible with expected type 'Newtonsoft.Json.Linq.JObject'. Path 'v', line 1, position 6.",
-      "browserError": "Expected end of input but got 't' at position 8"
+      "browserError": ""
     }
   ],
   "api": [

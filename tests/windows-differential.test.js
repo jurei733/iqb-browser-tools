@@ -19,8 +19,8 @@ test('strict Windows converter values and order: setResponsesAbi',()=>strictMeth
 test('strict Windows converter values and order: setResponsesDan',()=>strictMethod('setResponsesDan'));
 test('strict Windows converter values and order: setResponsesKeyValue',()=>strictMethod('setResponsesKeyValue'));
 test('strict Windows converter values and order: setResponsesSimplePlayerLegacy',()=>strictMethod('setResponsesSimplePlayerLegacy'));
-test('strict Windows evidence: rejection decisions are checked separately from error-message identity',()=>{
- const report=analyze(native);assert.deepEqual(report.summary.strictValues,{passed:401,total:401});assert.equal(report.summary.rejectionDecisions.passed,146);assert.equal(report.summary.rejectionDecisions.total,146);assert.equal(report.summary.rejectionDecisions.identicalErrorMessagesProven,false);assert.equal(report.completeEquivalence,false);assert.equal(report.realProductionDataTested,false);assert.equal(report.normalizationApplied,false);assert.equal(report.summary.enhancedMode.different,177);
+test('strict Windows evidence: error detection and representation are checked separately from error-message identity',()=>{
+ const report=analyze(native);assert.deepEqual(report.summary.strictValues,{passed:401,total:401});assert.equal(report.summary.errorHandling.passed,146);assert.equal(report.summary.errorHandling.total,146);assert.equal(report.summary.errorHandling.sameRepresentation,146);assert.equal(report.summary.errorHandling.identicalErrorMessagesProven,false);assert.equal(report.completeEquivalence,false);assert.equal(report.realProductionDataTested,false);assert.equal(report.normalizationApplied,false);assert.equal(report.summary.enhancedMode.different,177);
 });
 test('strict Windows API units: preserve chunk order, duplicate subforms, nullable values and laststate',()=>{
  for(const fixture of pipelineCorpus()){const expected=JSON.parse(native.pipelineResults.find(r=>r.id===fixture.id).outputJSON);assert.deepEqual(responseUnit(fixture.dto,{windows:true}),nativeUnit(expected),fixture.id);}
