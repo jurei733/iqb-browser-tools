@@ -1,0 +1,235 @@
+{
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
+  "started": "2026-11-03T08:33:26.262Z",
+  "checks": [
+    {
+      "name": "XML: native Parser, Sonderzeichen und fehlerhafte XML",
+      "passed": true
+    },
+    {
+      "name": "XML: historische UTF-16-Kodierung",
+      "passed": true
+    },
+    {
+      "name": "Kodieren: ZIP im echten Module-Worker importieren",
+      "passed": true
+    },
+    {
+      "name": "Kodieren: Scan, DPI und transparente Schablone zeichnen",
+      "passed": true
+    },
+    {
+      "name": "Kodieren: unterschiedliche X/Y-DPI behalten die physischen Scan- und Schablonenproportionen",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: scan.png",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: scan.jpg",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: scan.bmp",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: scan.gif",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: scan.webp",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: scan.tif",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation2.jpg",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation3.jpg",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation4.jpg",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation5.jpg",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation6.jpg",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation7.jpg",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation8.jpg",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation6.png",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation6.webp",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: HTML-Image-Fallback nach Bitmap-Fehler",
+      "passed": true
+    },
+    {
+      "name": "Kodieren: GZip-Ergebnisse mit Code 0 und Kommentar",
+      "passed": true
+    },
+    {
+      "name": "Safari-Ergebnisdateinamen: .result-2 im Worker importieren",
+      "passed": true
+    },
+    {
+      "name": "Codes: Excel-Datei im Browser erzeugen und erneut lesen",
+      "passed": true
+    },
+    {
+      "name": "Booklets: Original-Xlsx zu gültigen Booklet-XML-Dateien",
+      "passed": true
+    },
+    {
+      "name": "Windows-Originalexport: SpreadsheetML mit Namespace-Präfix und führenden Nullen einlesen",
+      "passed": true
+    },
+    {
+      "name": "Logins: Originalvorlage, Präfixe und Testtaker-XML",
+      "passed": true
+    },
+    {
+      "name": "Word: Originalvorlage 1",
+      "passed": true
+    },
+    {
+      "name": "Word: Originalvorlage 2 mit QR-Code",
+      "passed": true
+    },
+    {
+      "name": "Antworten: CSV und Logs gemeinsam im Worker einlesen",
+      "passed": true
+    },
+    {
+      "name": "Antworten: breite Excel-Datei, Unterformulare rows",
+      "passed": true
+    },
+    {
+      "name": "Antworten: breite Excel-Datei, Unterformulare columns",
+      "passed": true
+    },
+    {
+      "name": "Antworten: breite Excel-Datei, Unterformulare none",
+      "passed": true
+    },
+    {
+      "name": "Antworten: CSV, gruppiertes JSON und Sitzungsberichte",
+      "passed": true
+    },
+    {
+      "name": "SQLite: WASM, Import und Integritätsprüfung",
+      "passed": true
+    },
+    {
+      "name": "SQLite: exportierte Datei erneut öffnen und auswerten",
+      "passed": true
+    },
+    {
+      "name": "Worker: nach Abbruch neu starten und Datenbank wiederherstellen",
+      "passed": true
+    },
+    {
+      "name": "Browser-Speicher: IndexedDB schreiben und wieder lesen",
+      "passed": true
+    },
+    {
+      "name": "Testcenter: Web-Crypto-Challenge und Browser-fetch",
+      "passed": true
+    },
+    {
+      "name": "Reviews: Export mit Kategorien und gültigen Blattnamen",
+      "passed": true
+    },
+    {
+      "name": "Kodieroptionen: Leerzeichen bei True und False im Worker",
+      "passed": true
+    },
+    {
+      "name": "Antwortkonverter: alte numerische Unterformulare und Boolean-Schreibweise",
+      "passed": true
+    },
+    {
+      "name": "Große Antwortzahlen: API, Module-Worker, JSON, SQLite und Excel ohne Rundung",
+      "passed": true
+    },
+    {
+      "name": "Funktionsmatrix Oberfläche: Joboptionen, fortlaufende Navigation, Rahmen und Zoom",
+      "passed": true
+    },
+    {
+      "name": "Funktionsmatrix Oberfläche: Code 0, sortierte Fallliste, richtiger Sprung und Dialog-Tastensperre",
+      "passed": true
+    },
+    {
+      "name": "Funktionsmatrix Oberfläche: Jobwechsel erhält Fortschritt und vollständig kodierte Jobs öffnen am letzten Fall",
+      "passed": true
+    }
+  ],
+  "passed": 46,
+  "total": 46,
+  "finished": "2026-11-03T08:33:27.873Z",
+  "applicationFiles": {
+    "src/coding-box-database.js": "3ddbc12bd6049a66c812ad5d053991d57bad80e8ea2ea56cceca3e882bb3ad32",
+    "src/coding.js": "0105a6d86e965494afaf59ecfbf29b58e5c035a0c509b8bffd7bc6fc4b2625d4",
+    "src/data.js": "34d12844dfe24d443e8309dc4555c41f2141512b5739c3eb683df93ab495abd7",
+    "src/data.worker.js": "4489c3f3e9b382fa1045935e697f59f8377211419e47b7d0d1bb95c196cab970",
+    "src/database-view.js": "03b59ffda3421667de61055284a0f5bde57e3b9e943ce303e5e27f7ee8a8d93e",
+    "src/database.js": "f1f3fb3e84f7b3c4a50532df08642d7e80ff8ce2277c4b7ba0de6836498d0981",
+    "src/diagnostics.js": "0ed689ce6ae85bf7a4eef11d6120c57de91a5fe4f1b273bc0a45eedb3fb4554f",
+    "src/docx.js": "6297dd6e2fee3f8caf04f73c9532f67839d3ec4fa0fa5b4a9fbba18ca4f7a777",
+    "src/extended-ui.js": "73d666a2a35f19de42d83d34a2b3764ed3849bb0da2d0a8bf1bfc21d467eab82",
+    "src/file-workspace.js": "a62b5dae86c3189b35c453d84dc7f156dc18d77787f50bf90801e56a1e1486b3",
+    "src/form-state.js": "70f981db7537023a712b9482cdc3980c9d5dc6c404db215e84bb957a31c49883",
+    "src/image.js": "dc64dbaa232f29908ec70ec5a15eeaa8a28e2dd5048713a87c82cde4068a8ba2",
+    "src/json.js": "a0074e5e42877c08aea5217894076953d817b89978a5705aadda598ac41865e4",
+    "src/local-connection.js": "b397a4b34ee4e662aef4dc8476c4cc792d7a5516117042657828ff64f317347e",
+    "src/main.js": "ebbad99f1788b098c913f22efabb21d1d05845e34e044440585b656785e6e81a",
+    "src/preparation.js": "f7e235a7120afecc401004976e0bb7bc6575f68dc1a4291f648e0687b6a8cbc0",
+    "src/qr-bmp.js": "1b9f35184e150455390a4dcafe283702b2e05155d5bf46e140a5b4296bce7457",
+    "src/schema.js": "afefd38dd58b1a9257dd010d2e4608ab530526346568fc0dc64726172c90a61d",
+    "src/style.css": "3e85c7d6e16194f076fd8525c9b3d3bdbb2e7de29f81a6abbf7d7bec63078498",
+    "src/testcenter.js": "c6ec30c15639685d4838b90399b40a01f28c1da3bc10a234c9e236944e8f5746",
+    "src/toolbox.js": "c534b02ee76f20140fc32c39ea4ba5164194126b94e5bfb37c24800d84585e21",
+    "src/vendor.js": "a978d03a177b68b7308b21ec07b258028248717bb237d3b72921e4425f40678f",
+    "src/viewer.js": "9def9bb19d44f015ca22763004047df08afcedfbf9ce1bf2cb6062b7d592d278",
+    "src/windows-compatibility.js": "2f427150e996d55aa049b1d7fbb5ce01f83d6becffaccceadcf1384c20e43559",
+    "src/worker-client.js": "bdd1223666dfde8ddd7c9f2ede1acfc3c97fd862d2ff1d5ebcb0aff46a87f416",
+    "src/workspace-ui.js": "3f620a7dff35da2e0121c751d04aa6ea74d30101d246187ff8b5e95a52f145d1",
+    "src/xml.js": "8a40475596f0371ed57b79d31304937f85d965caf87897d602460221a5929c1e",
+    "scripts/local-app.mjs": "d27b31fec5e3955ee9f0e87ae5808e8ab0166878c5cea054dca597425e2e449b",
+    "scripts/lib/local-server.mjs": "b0c829fe87911919c0f6d34e3d404e797d186eb29d8b5c23b200c8ee92be454c"
+  },
+  "testFiles": {
+    "tests/browser.js": "9f2de10e2d3720941ede4c4a563770b1ac1645723bba50ac5ec628e26c49ea75",
+    "tests/e2e/browser.spec.js": "d22a3aa0a3075faececedb9ce3974aa450ec35938cb1661b496616223eccaf08",
+    "tests/e2e/workflows.spec.js": "671c63838a248a105f119d66ac43d529d47c21ac5e6dd4672994e899579ed9d4",
+    "tests/e2e/local-starter.spec.js": "f01b5f8cf97bb31a2cd7151d000b2298cf581f4e702146cfdb691b07d3e278ff",
+    "tests/local-app.test.js": "f0db4be01622a88c0d4673cffc18f1ae6f1b1e35baea6bbc3aef1fd42fcf127c",
+    "scripts/build-browser-tests.mjs": "5fcb6b725967ba4c6799613dd78bea7e5f36b4a9704223550b9e3c6f9914e3f6",
+    "playwright.config.js": "9d8b99502c4832ed855b49e058c5d96eb9375aac7f0db831bec83dbf4608722b"
+  },
+  "sourceCommit": "d2ae3b1efe3cb647249ebbb89e79b0bd1e2363d5",
+  "runner": "Playwright on macOS; browser engines, not the installed Safari application"
+}

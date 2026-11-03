@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "date": "2026-10-31",
+  "date": "2026-11-03",
   "windowsVersions": {
     "IQB-Kodieren": "4.3.0.3",
     "itc-ToolBox": "3.3.0.2"
@@ -282,16 +282,29 @@
         "sha256": "05098ca438c3738f0a8d2e2bf7325bd7157e8965089ede984583afe3dda56003"
       },
       "implementation": [
-        "src/main.js"
+        "src/main.js",
+        "src/local-connection.js",
+        "scripts/local-app.mjs",
+        "scripts/lib/local-server.mjs"
       ],
       "assessment": "difference",
-      "note": "Name manuell eingeben und lokal wiederverwenden; der Browser kann Windows Active Directory nicht ohne einen gesonderten Identitätsdienst auslesen.",
+      "note": "Online: Namen manuell eintragen und lokal wiederverwenden. Optionaler lokaler Starter: aktuelles Betriebssystemkonto automatisch vorschlagen; unter Windows den Benutzerteil des whoami-Kontos wie ADFactory.GetMyName verwenden, vollständiges Konto separat anzeigen. Ohne Starter kann die Website die Windows-Anmeldeidentität nicht lesen.",
       "acceptance": "Kodierername eintragen und ändern; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "last coding workspace"
+        },
+        {
+          "kind": "node",
+          "file": "tests/local-app.test.js",
+          "pattern": "identity comes|actual OS account"
+        },
+        {
+          "kind": "ci-browser",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
+          "pattern": "local starter: account"
         }
       ]
     },
@@ -718,7 +731,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "physical zoom"
         }
       ]
@@ -743,7 +756,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "physical zoom"
         }
       ]
@@ -806,7 +819,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "physical zoom"
         }
       ]
@@ -835,7 +848,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "shared position"
         }
       ]
@@ -943,7 +956,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "original result boundary"
         }
       ]
@@ -960,10 +973,13 @@
       },
       "implementation": [
         "src/file-workspace.js",
-        "src/main.js"
+        "src/main.js",
+        "src/local-connection.js",
+        "scripts/local-app.mjs",
+        "scripts/lib/local-server.mjs"
       ],
       "assessment": "difference",
-      "note": "Automatisches Speichern, laufender Speicherstatus, Neustart und Ergebnisdownload funktionieren. Direktes Überschreiben im verbundenen Arbeitsordner setzt die File System Access API voraus; Safari/Firefox nutzen IndexedDB und Downloads. Der Zugriff auf beliebige Windows-Pfade ist keine portable Browserfunktion.",
+      "note": "Online: IndexedDB-Sicherung und Download; direktes Speichern nur mit unterstützter File System Access API. Optionaler lokaler Starter: automatische, atomare .result-Schreibvorgänge in Chromium, Firefox und WebKit; vorhandene eindeutig zugeordnete Ergebnisdatei am gleichen Pfad ersetzen. Der Starter ist eine zusätzliche lokale Voraussetzung.",
       "acceptance": "Speichern automatisch / Strg+S; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
       "evidence": [
         {
@@ -973,8 +989,18 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "last coding workspace"
+        },
+        {
+          "kind": "node",
+          "file": "tests/local-app.test.js",
+          "pattern": "rereads real files|rejects foreign|symlink"
+        },
+        {
+          "kind": "ci-browser",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
+          "pattern": "local starter: account"
         }
       ]
     },
@@ -997,7 +1023,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "physical zoom"
         }
       ]
@@ -1021,7 +1047,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "completed job flashes"
         }
       ]
@@ -1095,7 +1121,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "codes and booklets"
         }
       ]
@@ -1476,7 +1502,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "without XML match Windows"
         }
       ]
@@ -1609,7 +1635,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "full diagnostics"
         }
       ]
@@ -2406,7 +2432,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "group selection and workspace changes"
         }
       ]
@@ -2604,7 +2630,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "access can be remembered"
         }
       ]
@@ -2630,7 +2656,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "preparation cancellation"
         }
       ]
@@ -2648,21 +2674,34 @@
       "implementation": [
         "src/file-workspace.js",
         "src/form-state.js",
-        "src/main.js"
+        "src/main.js",
+        "src/local-connection.js",
+        "scripts/local-app.mjs",
+        "scripts/lib/local-server.mjs"
       ],
       "assessment": "difference",
-      "note": "Letzten Kodierstand, ausgewählte Toolbox-Dateien, Optionen und Verbindungen im Browser wiederaufnehmen. Dateiauswahlen sind lokale Bytekopien. Der gespeicherte echte Verzeichniszugriff und das erneute Einlesen externer Änderungen sind nur mit unterstützter File System Access API möglich; andere Browser verlangen dafür eine erneute Dateiauswahl.",
+      "note": "Online: Dateikopien und Formulare im Browser merken. Optionaler lokaler Starter: ausdrücklich verbundenen echten Ordnerpfad dauerhaft speichern und Toolbox-Dateireferenzen bei jedem Neustart frisch einlesen. Fehlende oder anders zugeordnete Pfade werden abgewiesen; externe Änderungen während einer Sitzung benötigen Neuladen oder erneute Auswahl. Starter erforderlich, keine unbeaufsichtigte Pfadfreigabe durch die Onlinefassung.",
       "acceptance": "Programm schließen und Dateipfade merken; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "last coding workspace"
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "selected Toolbox input files"
+        },
+        {
+          "kind": "node",
+          "file": "tests/local-app.test.js",
+          "pattern": "remembers only|rereads real files"
+        },
+        {
+          "kind": "ci-browser",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
+          "pattern": "local starter: account"
         }
       ]
     },
@@ -2892,7 +2931,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "physical zoom"
         }
       ]
@@ -2917,7 +2956,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "startup defaults"
         }
       ],
@@ -2957,10 +2996,11 @@
     "local:AppCommands.ExportSessionsToCsv": "T-38"
   },
   "limitations": [
-    "Drei verbleibende Plattformabweichungen: automatische Windows-Domänenidentität (K-11), direkter Dateizugriff/-ersatz ohne portable Browser-API (K-35) und echte dauerhafte Dateipfade statt lokaler Dateikopien (T-61).",
+    "In der reinen Onlinefassung bleiben K-11, K-35 und T-61 eingeschränkt. Der optionale lokale Starter gleicht Kontoübernahme, automatisches Speichern und wiederverwendbare Dateipfade aus; dafür muss er auf dem Arbeitsplatz laufen.",
     "Originalmodi reproduzieren ausdrücklich gewählte historische Export-/Importgrenzen; erweiterte Modi erhalten die bisherigen Korrekturen.",
     "Reale Arbeitsbestände und alle Eingabe-/Fehlerkombinationen sind durch synthetische Referenzfälle nicht vollständig abgedeckt.",
     "Die lokale Coding-Box-Erweiterung bleibt vom Windows-Funktionsumfang getrennt.",
     "Firefox wird in GitHub Actions auf Linux geprüft; der macOS-Playwright-Build startet in dieser Umgebung mit einem Profilordnerfehler nicht. WebKit-Prüfungen sind kein Test einer installierten Safari-Version."
-  ]
+  ],
+  "ciReport": "tests/results/function-audit-ci-20261103-local.json"
 }

@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-31",
-  "generatedAt": "2026-10-31T05:26:28.034Z",
+  "date": "2026-11-03",
+  "generatedAt": "2026-11-03T08:39:29.175Z",
   "scope": "Erreichbare Nutzerfunktionen der beiden Originalprogramme; ergänzende Dateiformate, Tastaturpfade und Datenverarbeitung. Bibliothekseditoren anderer Programme und deaktivierte Entwicklungsfunktionen sind ausdrücklich ausgenommen. Keine Aussage über alle möglichen Eingabedaten oder internen Codepfade.",
   "completeEquivalence": false,
   "codeSnapshot": {
@@ -14,14 +14,15 @@
     "src/docx.js": "6297dd6e2fee3f8caf04f73c9532f67839d3ec4fa0fa5b4a9fbba18ca4f7a777",
     "src/extended-ui.js": "73d666a2a35f19de42d83d34a2b3764ed3849bb0da2d0a8bf1bfc21d467eab82",
     "src/file-workspace.js": "a62b5dae86c3189b35c453d84dc7f156dc18d77787f50bf90801e56a1e1486b3",
-    "src/form-state.js": "db1fec81d9a17c01f67fb644d8dd31210b3c3371d22daf605eb649ffdd5c6469",
+    "src/form-state.js": "70f981db7537023a712b9482cdc3980c9d5dc6c404db215e84bb957a31c49883",
     "src/image.js": "dc64dbaa232f29908ec70ec5a15eeaa8a28e2dd5048713a87c82cde4068a8ba2",
     "src/json.js": "a0074e5e42877c08aea5217894076953d817b89978a5705aadda598ac41865e4",
-    "src/main.js": "e5dc9cc6ea40c9ed7aaa0885ee714740928a64cea0849ad4bd40e67f13549e17",
+    "src/local-connection.js": "b397a4b34ee4e662aef4dc8476c4cc792d7a5516117042657828ff64f317347e",
+    "src/main.js": "ebbad99f1788b098c913f22efabb21d1d05845e34e044440585b656785e6e81a",
     "src/preparation.js": "f7e235a7120afecc401004976e0bb7bc6575f68dc1a4291f648e0687b6a8cbc0",
     "src/qr-bmp.js": "1b9f35184e150455390a4dcafe283702b2e05155d5bf46e140a5b4296bce7457",
     "src/schema.js": "afefd38dd58b1a9257dd010d2e4608ab530526346568fc0dc64726172c90a61d",
-    "src/style.css": "193db4a70846805b10bf86b2767371c853f54438e74512152e9d5a3611d02883",
+    "src/style.css": "3e85c7d6e16194f076fd8525c9b3d3bdbb2e7de29f81a6abbf7d7bec63078498",
     "src/testcenter.js": "c6ec30c15639685d4838b90399b40a01f28c1da3bc10a234c9e236944e8f5746",
     "src/toolbox.js": "c534b02ee76f20140fc32c39ea4ba5164194126b94e5bfb37c24800d84585e21",
     "src/vendor.js": "a978d03a177b68b7308b21ec07b258028248717bb237d3b72921e4425f40678f",
@@ -29,7 +30,9 @@
     "src/windows-compatibility.js": "2f427150e996d55aa049b1d7fbb5ce01f83d6becffaccceadcf1384c20e43559",
     "src/worker-client.js": "bdd1223666dfde8ddd7c9f2ede1acfc3c97fd862d2ff1d5ebcb0aff46a87f416",
     "src/workspace-ui.js": "3f620a7dff35da2e0121c751d04aa6ea74d30101d246187ff8b5e95a52f145d1",
-    "src/xml.js": "8a40475596f0371ed57b79d31304937f85d965caf87897d602460221a5929c1e"
+    "src/xml.js": "8a40475596f0371ed57b79d31304937f85d965caf87897d602460221a5929c1e",
+    "scripts/local-app.mjs": "d27b31fec5e3955ee9f0e87ae5808e8ab0166878c5cea054dca597425e2e449b",
+    "scripts/lib/local-server.mjs": "b0c829fe87911919c0f6d34e3d404e797d186eb29d8b5c23b200c8ee92be454c"
   },
   "originalInventory": {
     "files": 130,
@@ -40,13 +43,42 @@
   },
   "checks": {
     "ci": {
-      "runId": 41172353074,
-      "runUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074",
+      "runId": 41604274505,
+      "runUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505",
+      "localStarter": [
+        {
+          "platform": "ubuntu-latest",
+          "jobId": 125810133229,
+          "conclusion": "success",
+          "total": 6,
+          "passed": 6,
+          "skipped": 0,
+          "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133229"
+        },
+        {
+          "platform": "macos-latest",
+          "jobId": 125810133288,
+          "conclusion": "success",
+          "total": 6,
+          "passed": 6,
+          "skipped": 0,
+          "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133288"
+        },
+        {
+          "platform": "windows-latest",
+          "jobId": 125810133429,
+          "conclusion": "success",
+          "total": 6,
+          "passed": 6,
+          "skipped": 0,
+          "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133429"
+        }
+      ],
       "jobs": [
         {
-          "browser": "chromium",
-          "passed": 16,
-          "total": 16,
+          "browser": "webkit",
+          "passed": 17,
+          "total": 17,
           "compatibility": {
             "passed": 46,
             "total": 46
@@ -54,9 +86,9 @@
           "conclusion": "success"
         },
         {
-          "browser": "webkit",
-          "passed": 16,
-          "total": 16,
+          "browser": "chromium",
+          "passed": 17,
+          "total": 17,
           "compatibility": {
             "passed": 46,
             "total": 46
@@ -65,8 +97,8 @@
         },
         {
           "browser": "firefox",
-          "passed": 16,
-          "total": 16,
+          "passed": 17,
+          "total": 17,
           "compatibility": {
             "passed": 46,
             "total": 46
@@ -76,8 +108,8 @@
       ]
     },
     "node": {
-      "passed": 78,
-      "total": 78,
+      "passed": 84,
+      "total": 84,
       "exitCode": 0
     },
     "windows": {
@@ -101,7 +133,7 @@
       {
         "path": "tests/results/function-audit-20261031-052307-chromium.json",
         "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-        "current": true,
+        "current": false,
         "passed": 46,
         "total": 46,
         "finished": "2026-10-31T05:23:12.405Z"
@@ -109,7 +141,7 @@
       {
         "path": "tests/results/function-audit-20261031-052307-webkit.json",
         "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-        "current": true,
+        "current": false,
         "passed": 46,
         "total": 46,
         "finished": "2026-10-31T05:23:34.330Z"
@@ -129,6 +161,22 @@
         "passed": 46,
         "total": 46,
         "finished": "2026-10-30T23:06:05.277Z"
+      },
+      {
+        "path": "tests/results/function-audit-20261103-083322-chromium.json",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
+        "current": true,
+        "passed": 46,
+        "total": 46,
+        "finished": "2026-11-03T08:33:27.873Z"
+      },
+      {
+        "path": "tests/results/function-audit-20261103-083322-webkit.json",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
+        "current": true,
+        "passed": 46,
+        "total": 46,
+        "finished": "2026-11-03T08:33:50.204Z"
       }
     ]
   },
@@ -181,14 +229,14 @@
               "name": "Kodieren: ZIP im echten Module-Worker importieren",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Kodieren: ZIP im echten Module-Worker importieren",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             }
           ]
@@ -223,14 +271,14 @@
               "name": "Funktionsmatrix Oberfläche: Jobwechsel erhält Fortschritt und vollständig kodierte Jobs öffnen am letzten Fall",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Funktionsmatrix Oberfläche: Jobwechsel erhält Fortschritt und vollständig kodierte Jobs öffnen am letzten Fall",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             }
           ]
@@ -402,14 +450,14 @@
               "name": "Funktionsmatrix Oberfläche: Joboptionen, fortlaufende Navigation, Rahmen und Zoom",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Funktionsmatrix Oberfläche: Joboptionen, fortlaufende Navigation, Rahmen und Zoom",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             }
           ]
@@ -457,14 +505,14 @@
               "name": "Funktionsmatrix Oberfläche: Joboptionen, fortlaufende Navigation, Rahmen und Zoom",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Funktionsmatrix Oberfläche: Joboptionen, fortlaufende Navigation, Rahmen und Zoom",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             }
           ]
@@ -512,14 +560,14 @@
               "name": "Funktionsmatrix Oberfläche: Joboptionen, fortlaufende Navigation, Rahmen und Zoom",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Funktionsmatrix Oberfläche: Joboptionen, fortlaufende Navigation, Rahmen und Zoom",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             }
           ]
@@ -554,14 +602,14 @@
               "name": "Funktionsmatrix Oberfläche: Joboptionen, fortlaufende Navigation, Rahmen und Zoom",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Funktionsmatrix Oberfläche: Joboptionen, fortlaufende Navigation, Rahmen und Zoom",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             }
           ]
@@ -613,15 +661,18 @@
         "sha256": "05098ca438c3738f0a8d2e2bf7325bd7157e8965089ede984583afe3dda56003"
       },
       "implementation": [
-        "src/main.js"
+        "src/main.js",
+        "src/local-connection.js",
+        "scripts/local-app.mjs",
+        "scripts/lib/local-server.mjs"
       ],
       "assessment": "difference",
-      "note": "Name manuell eingeben und lokal wiederverwenden; der Browser kann Windows Active Directory nicht ohne einen gesonderten Identitätsdienst auslesen.",
+      "note": "Online: Namen manuell eintragen und lokal wiederverwenden. Optionaler lokaler Starter: aktuelles Betriebssystemkonto automatisch vorschlagen; unter Windows den Benutzerteil des whoami-Kontos wie ADFactory.GetMyName verwenden, vollständiges Konto separat anzeigen. Ohne Starter kann die Website die Windows-Anmeldeidentität nicht lesen.",
       "acceptance": "Kodierername eintragen und ändern; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "last coding workspace",
           "current": true,
           "passed": true,
@@ -629,20 +680,64 @@
             {
               "name": "parity: the last coding workspace reopens after reload without selecting the source files again",
               "passed": true,
-              "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805573"
+              "browser": "webkit",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133225"
             },
             {
               "name": "parity: the last coding workspace reopens after reload without selecting the source files again",
               "passed": true,
-              "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805732"
+              "browser": "chromium",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133320"
             },
             {
               "name": "parity: the last coding workspace reopens after reload without selecting the source files again",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805761"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133345"
+            }
+          ]
+        },
+        {
+          "kind": "node",
+          "file": "tests/local-app.test.js",
+          "pattern": "identity comes|actual OS account",
+          "current": true,
+          "passed": true,
+          "checks": [
+            {
+              "name": "local starter: Windows identity comes from whoami, local fallback remains explicit",
+              "passed": true
+            },
+            {
+              "name": "local starter: actual OS account is available on this platform",
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "ci-browser",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
+          "pattern": "local starter: account",
+          "current": true,
+          "passed": true,
+          "checks": [
+            {
+              "name": "local starter: account, direct overwrite and remembered fresh Toolbox paths",
+              "passed": true,
+              "browser": "webkit",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133225"
+            },
+            {
+              "name": "local starter: account, direct overwrite and remembered fresh Toolbox paths",
+              "passed": true,
+              "browser": "chromium",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133320"
+            },
+            {
+              "name": "local starter: account, direct overwrite and remembered fresh Toolbox paths",
+              "passed": true,
+              "browser": "firefox",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133345"
             }
           ]
         }
@@ -677,14 +772,14 @@
               "name": "Funktionsmatrix Oberfläche: Code 0, sortierte Fallliste, richtiger Sprung und Dialog-Tastensperre",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Funktionsmatrix Oberfläche: Code 0, sortierte Fallliste, richtiger Sprung und Dialog-Tastensperre",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             }
           ]
@@ -746,14 +841,14 @@
               "name": "Funktionsmatrix Oberfläche: Code 0, sortierte Fallliste, richtiger Sprung und Dialog-Tastensperre",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Funktionsmatrix Oberfläche: Code 0, sortierte Fallliste, richtiger Sprung und Dialog-Tastensperre",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             }
           ]
@@ -848,14 +943,14 @@
               "name": "Kodieren: GZip-Ergebnisse mit Code 0 und Kommentar",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Kodieren: GZip-Ergebnisse mit Code 0 und Kommentar",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             }
           ]
@@ -890,14 +985,14 @@
               "name": "Funktionsmatrix Oberfläche: Jobwechsel erhält Fortschritt und vollständig kodierte Jobs öffnen am letzten Fall",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Funktionsmatrix Oberfläche: Jobwechsel erhält Fortschritt und vollständig kodierte Jobs öffnen am letzten Fall",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             }
           ]
@@ -959,14 +1054,14 @@
               "name": "Funktionsmatrix Oberfläche: Code 0, sortierte Fallliste, richtiger Sprung und Dialog-Tastensperre",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Funktionsmatrix Oberfläche: Code 0, sortierte Fallliste, richtiger Sprung und Dialog-Tastensperre",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             }
           ]
@@ -1027,14 +1122,14 @@
               "name": "Funktionsmatrix Oberfläche: Joboptionen, fortlaufende Navigation, Rahmen und Zoom",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Funktionsmatrix Oberfläche: Joboptionen, fortlaufende Navigation, Rahmen und Zoom",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             }
           ]
@@ -1095,14 +1190,14 @@
               "name": "Funktionsmatrix Oberfläche: Jobwechsel erhält Fortschritt und vollständig kodierte Jobs öffnen am letzten Fall",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Funktionsmatrix Oberfläche: Jobwechsel erhält Fortschritt und vollständig kodierte Jobs öffnen am letzten Fall",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             }
           ]
@@ -1137,14 +1232,14 @@
               "name": "Funktionsmatrix Oberfläche: Code 0, sortierte Fallliste, richtiger Sprung und Dialog-Tastensperre",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Funktionsmatrix Oberfläche: Code 0, sortierte Fallliste, richtiger Sprung und Dialog-Tastensperre",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             }
           ]
@@ -1193,14 +1288,14 @@
               "name": "Funktionsmatrix Oberfläche: Code 0, sortierte Fallliste, richtiger Sprung und Dialog-Tastensperre",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Funktionsmatrix Oberfläche: Code 0, sortierte Fallliste, richtiger Sprung und Dialog-Tastensperre",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             }
           ]
@@ -1293,224 +1388,224 @@
               "name": "Bilddekoder: scan.png",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Bilddekoder: scan.jpg",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Bilddekoder: scan.bmp",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Bilddekoder: scan.gif",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Bilddekoder: scan.webp",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Bilddekoder: scan.tif",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Bilddekoder: orientation2.jpg",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Bilddekoder: orientation3.jpg",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Bilddekoder: orientation4.jpg",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Bilddekoder: orientation5.jpg",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Bilddekoder: orientation6.jpg",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Bilddekoder: orientation7.jpg",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Bilddekoder: orientation8.jpg",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Bilddekoder: orientation6.png",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Bilddekoder: orientation6.webp",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Bilddekoder: HTML-Image-Fallback nach Bitmap-Fehler",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Bilddekoder: scan.png",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             },
             {
               "name": "Bilddekoder: scan.jpg",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             },
             {
               "name": "Bilddekoder: scan.bmp",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             },
             {
               "name": "Bilddekoder: scan.gif",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             },
             {
               "name": "Bilddekoder: scan.webp",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             },
             {
               "name": "Bilddekoder: scan.tif",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             },
             {
               "name": "Bilddekoder: orientation2.jpg",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             },
             {
               "name": "Bilddekoder: orientation3.jpg",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             },
             {
               "name": "Bilddekoder: orientation4.jpg",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             },
             {
               "name": "Bilddekoder: orientation5.jpg",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             },
             {
               "name": "Bilddekoder: orientation6.jpg",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             },
             {
               "name": "Bilddekoder: orientation7.jpg",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             },
             {
               "name": "Bilddekoder: orientation8.jpg",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             },
             {
               "name": "Bilddekoder: orientation6.png",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             },
             {
               "name": "Bilddekoder: orientation6.webp",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             },
             {
               "name": "Bilddekoder: HTML-Image-Fallback nach Bitmap-Fehler",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             }
           ]
@@ -1615,14 +1710,14 @@
               "name": "Funktionsmatrix Oberfläche: Joboptionen, fortlaufende Navigation, Rahmen und Zoom",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Funktionsmatrix Oberfläche: Joboptionen, fortlaufende Navigation, Rahmen und Zoom",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             }
           ]
@@ -1662,7 +1757,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "physical zoom",
           "current": true,
           "passed": true,
@@ -1670,20 +1765,20 @@
             {
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
-              "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805573"
+              "browser": "webkit",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133225"
             },
             {
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
-              "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805732"
+              "browser": "chromium",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133320"
             },
             {
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805761"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133345"
             }
           ]
         }
@@ -1710,7 +1805,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "physical zoom",
           "current": true,
           "passed": true,
@@ -1718,20 +1813,20 @@
             {
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
-              "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805573"
+              "browser": "webkit",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133225"
             },
             {
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
-              "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805732"
+              "browser": "chromium",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133320"
             },
             {
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805761"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133345"
             }
           ]
         }
@@ -1779,14 +1874,14 @@
               "name": "Kodieren: Scan, DPI und transparente Schablone zeichnen",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Kodieren: Scan, DPI und transparente Schablone zeichnen",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             }
           ]
@@ -1839,7 +1934,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "physical zoom",
           "current": true,
           "passed": true,
@@ -1847,20 +1942,20 @@
             {
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
-              "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805573"
+              "browser": "webkit",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133225"
             },
             {
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
-              "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805732"
+              "browser": "chromium",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133320"
             },
             {
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805761"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133345"
             }
           ]
         }
@@ -1899,7 +1994,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "shared position",
           "current": true,
           "passed": true,
@@ -1907,20 +2002,20 @@
             {
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
-              "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805573"
+              "browser": "webkit",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133225"
             },
             {
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
-              "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805732"
+              "browser": "chromium",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133320"
             },
             {
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805761"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133345"
             }
           ]
         }
@@ -2045,14 +2140,14 @@
               "name": "Kodieren: GZip-Ergebnisse mit Code 0 und Kommentar",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Kodieren: GZip-Ergebnisse mit Code 0 und Kommentar",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             }
           ]
@@ -2091,7 +2186,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "original result boundary",
           "current": true,
           "passed": true,
@@ -2099,20 +2194,20 @@
             {
               "name": "parity: original result boundary is selectable and the completed job flashes for one second",
               "passed": true,
-              "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805573"
+              "browser": "webkit",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133225"
             },
             {
               "name": "parity: original result boundary is selectable and the completed job flashes for one second",
               "passed": true,
-              "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805732"
+              "browser": "chromium",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133320"
             },
             {
               "name": "parity: original result boundary is selectable and the completed job flashes for one second",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805761"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133345"
             }
           ]
         }
@@ -2131,10 +2226,13 @@
       },
       "implementation": [
         "src/file-workspace.js",
-        "src/main.js"
+        "src/main.js",
+        "src/local-connection.js",
+        "scripts/local-app.mjs",
+        "scripts/lib/local-server.mjs"
       ],
       "assessment": "difference",
-      "note": "Automatisches Speichern, laufender Speicherstatus, Neustart und Ergebnisdownload funktionieren. Direktes Überschreiben im verbundenen Arbeitsordner setzt die File System Access API voraus; Safari/Firefox nutzen IndexedDB und Downloads. Der Zugriff auf beliebige Windows-Pfade ist keine portable Browserfunktion.",
+      "note": "Online: IndexedDB-Sicherung und Download; direktes Speichern nur mit unterstützter File System Access API. Optionaler lokaler Starter: automatische, atomare .result-Schreibvorgänge in Chromium, Firefox und WebKit; vorhandene eindeutig zugeordnete Ergebnisdatei am gleichen Pfad ersetzen. Der Starter ist eine zusätzliche lokale Voraussetzung.",
       "acceptance": "Speichern automatisch / Strg+S; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
       "evidence": [
         {
@@ -2152,7 +2250,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "last coding workspace",
           "current": true,
           "passed": true,
@@ -2160,20 +2258,68 @@
             {
               "name": "parity: the last coding workspace reopens after reload without selecting the source files again",
               "passed": true,
-              "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805573"
+              "browser": "webkit",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133225"
             },
             {
               "name": "parity: the last coding workspace reopens after reload without selecting the source files again",
               "passed": true,
-              "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805732"
+              "browser": "chromium",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133320"
             },
             {
               "name": "parity: the last coding workspace reopens after reload without selecting the source files again",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805761"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133345"
+            }
+          ]
+        },
+        {
+          "kind": "node",
+          "file": "tests/local-app.test.js",
+          "pattern": "rereads real files|rejects foreign|symlink",
+          "current": true,
+          "passed": true,
+          "checks": [
+            {
+              "name": "local starter: rereads real files, overwrites results in place and serializes writes",
+              "passed": true
+            },
+            {
+              "name": "local starter: rejects foreign origins, CSRF, path traversal and unapproved file writes",
+              "passed": true
+            },
+            {
+              "name": "local starter: skips symlink directories and never overwrites a symlink target",
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "ci-browser",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
+          "pattern": "local starter: account",
+          "current": true,
+          "passed": true,
+          "checks": [
+            {
+              "name": "local starter: account, direct overwrite and remembered fresh Toolbox paths",
+              "passed": true,
+              "browser": "webkit",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133225"
+            },
+            {
+              "name": "local starter: account, direct overwrite and remembered fresh Toolbox paths",
+              "passed": true,
+              "browser": "chromium",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133320"
+            },
+            {
+              "name": "local starter: account, direct overwrite and remembered fresh Toolbox paths",
+              "passed": true,
+              "browser": "firefox",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133345"
             }
           ]
         }
@@ -2199,7 +2345,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "physical zoom",
           "current": true,
           "passed": true,
@@ -2207,20 +2353,20 @@
             {
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
-              "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805573"
+              "browser": "webkit",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133225"
             },
             {
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
-              "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805732"
+              "browser": "chromium",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133320"
             },
             {
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805761"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133345"
             }
           ]
         }
@@ -2246,7 +2392,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "completed job flashes",
           "current": true,
           "passed": true,
@@ -2254,20 +2400,20 @@
             {
               "name": "parity: original result boundary is selectable and the completed job flashes for one second",
               "passed": true,
-              "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805573"
+              "browser": "webkit",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133225"
             },
             {
               "name": "parity: original result boundary is selectable and the completed job flashes for one second",
               "passed": true,
-              "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805732"
+              "browser": "chromium",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133320"
             },
             {
               "name": "parity: original result boundary is selectable and the completed job flashes for one second",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805761"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133345"
             }
           ]
         }
@@ -2369,7 +2515,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "codes and booklets",
           "current": true,
           "passed": true,
@@ -2377,20 +2523,20 @@
             {
               "name": "Toolbox: codes and booklets produce downloadable original formats",
               "passed": true,
-              "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805573"
+              "browser": "webkit",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133225"
             },
             {
               "name": "Toolbox: codes and booklets produce downloadable original formats",
               "passed": true,
-              "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805732"
+              "browser": "chromium",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133320"
             },
             {
               "name": "Toolbox: codes and booklets produce downloadable original formats",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805761"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133345"
             }
           ]
         }
@@ -2824,14 +2970,14 @@
               "name": "Logins: Originalvorlage, Präfixe und Testtaker-XML",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Logins: Originalvorlage, Präfixe und Testtaker-XML",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             }
           ]
@@ -2949,7 +3095,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "without XML match Windows",
           "current": true,
           "passed": true,
@@ -2957,20 +3103,20 @@
             {
               "name": "parity: startup defaults and login regeneration without XML match Windows",
               "passed": true,
-              "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805573"
+              "browser": "webkit",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133225"
             },
             {
               "name": "parity: startup defaults and login regeneration without XML match Windows",
               "passed": true,
-              "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805732"
+              "browser": "chromium",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133320"
             },
             {
               "name": "parity: startup defaults and login regeneration without XML match Windows",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805761"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133345"
             }
           ]
         }
@@ -3181,7 +3327,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "full diagnostics",
           "current": true,
           "passed": true,
@@ -3189,20 +3335,20 @@
             {
               "name": "parity: full diagnostics survive module changes and export every validation error",
               "passed": true,
-              "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805573"
+              "browser": "webkit",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133225"
             },
             {
               "name": "parity: full diagnostics survive module changes and export every validation error",
               "passed": true,
-              "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805732"
+              "browser": "chromium",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133320"
             },
             {
               "name": "parity: full diagnostics survive module changes and export every validation error",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805761"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133345"
             }
           ]
         }
@@ -3327,70 +3473,70 @@
               "name": "Antworten: CSV und Logs gemeinsam im Worker einlesen",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Antworten: breite Excel-Datei, Unterformulare rows",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Antworten: breite Excel-Datei, Unterformulare columns",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Antworten: breite Excel-Datei, Unterformulare none",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Antworten: CSV, gruppiertes JSON und Sitzungsberichte",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Antworten: CSV und Logs gemeinsam im Worker einlesen",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             },
             {
               "name": "Antworten: breite Excel-Datei, Unterformulare rows",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             },
             {
               "name": "Antworten: breite Excel-Datei, Unterformulare columns",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             },
             {
               "name": "Antworten: breite Excel-Datei, Unterformulare none",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             },
             {
               "name": "Antworten: CSV, gruppiertes JSON und Sitzungsberichte",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             }
           ]
@@ -4112,42 +4258,42 @@
               "name": "SQLite: WASM, Import und Integritätsprüfung",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "SQLite: exportierte Datei erneut öffnen und auswerten",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Große Antwortzahlen: API, Module-Worker, JSON, SQLite und Excel ohne Rundung",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "SQLite: WASM, Import und Integritätsprüfung",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             },
             {
               "name": "SQLite: exportierte Datei erneut öffnen und auswerten",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             },
             {
               "name": "Große Antwortzahlen: API, Module-Worker, JSON, SQLite und Excel ohne Rundung",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             }
           ]
@@ -4292,42 +4438,42 @@
               "name": "SQLite: WASM, Import und Integritätsprüfung",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "SQLite: exportierte Datei erneut öffnen und auswerten",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Große Antwortzahlen: API, Module-Worker, JSON, SQLite und Excel ohne Rundung",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "SQLite: WASM, Import und Integritätsprüfung",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             },
             {
               "name": "SQLite: exportierte Datei erneut öffnen und auswerten",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             },
             {
               "name": "Große Antwortzahlen: API, Module-Worker, JSON, SQLite und Excel ohne Rundung",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             }
           ]
@@ -4580,7 +4726,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "group selection and workspace changes",
           "current": true,
           "passed": true,
@@ -4588,20 +4734,20 @@
             {
               "name": "Testcenter: group selection and workspace changes cannot export stale groups",
               "passed": true,
-              "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805573"
+              "browser": "webkit",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133225"
             },
             {
               "name": "Testcenter: group selection and workspace changes cannot export stale groups",
               "passed": true,
-              "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805732"
+              "browser": "chromium",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133320"
             },
             {
               "name": "Testcenter: group selection and workspace changes cannot export stale groups",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805761"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133345"
             }
           ]
         }
@@ -4738,14 +4884,14 @@
               "name": "Antworten: CSV, gruppiertes JSON und Sitzungsberichte",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Antworten: CSV, gruppiertes JSON und Sitzungsberichte",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             }
           ]
@@ -4781,42 +4927,42 @@
               "name": "SQLite: WASM, Import und Integritätsprüfung",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "SQLite: exportierte Datei erneut öffnen und auswerten",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Große Antwortzahlen: API, Module-Worker, JSON, SQLite und Excel ohne Rundung",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "SQLite: WASM, Import und Integritätsprüfung",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             },
             {
               "name": "SQLite: exportierte Datei erneut öffnen und auswerten",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             },
             {
               "name": "Große Antwortzahlen: API, Module-Worker, JSON, SQLite und Excel ohne Rundung",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             }
           ]
@@ -4912,7 +5058,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "access can be remembered",
           "current": true,
           "passed": true,
@@ -4920,20 +5066,20 @@
             {
               "name": "parity: Testcenter access can be remembered explicitly and deleted again",
               "passed": true,
-              "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805573"
+              "browser": "webkit",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133225"
             },
             {
               "name": "parity: Testcenter access can be remembered explicitly and deleted again",
               "passed": true,
-              "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805732"
+              "browser": "chromium",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133320"
             },
             {
               "name": "parity: Testcenter access can be remembered explicitly and deleted again",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805761"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133345"
             }
           ]
         }
@@ -4961,7 +5107,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "preparation cancellation",
           "current": true,
           "passed": true,
@@ -4969,20 +5115,20 @@
             {
               "name": "parity: preparation cancellation preserves the SQLite working copy",
               "passed": true,
-              "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805573"
+              "browser": "webkit",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133225"
             },
             {
               "name": "parity: preparation cancellation preserves the SQLite working copy",
               "passed": true,
-              "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805732"
+              "browser": "chromium",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133320"
             },
             {
               "name": "parity: preparation cancellation preserves the SQLite working copy",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805761"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133345"
             }
           ]
         }
@@ -5002,15 +5148,18 @@
       "implementation": [
         "src/file-workspace.js",
         "src/form-state.js",
-        "src/main.js"
+        "src/main.js",
+        "src/local-connection.js",
+        "scripts/local-app.mjs",
+        "scripts/lib/local-server.mjs"
       ],
       "assessment": "difference",
-      "note": "Letzten Kodierstand, ausgewählte Toolbox-Dateien, Optionen und Verbindungen im Browser wiederaufnehmen. Dateiauswahlen sind lokale Bytekopien. Der gespeicherte echte Verzeichniszugriff und das erneute Einlesen externer Änderungen sind nur mit unterstützter File System Access API möglich; andere Browser verlangen dafür eine erneute Dateiauswahl.",
+      "note": "Online: Dateikopien und Formulare im Browser merken. Optionaler lokaler Starter: ausdrücklich verbundenen echten Ordnerpfad dauerhaft speichern und Toolbox-Dateireferenzen bei jedem Neustart frisch einlesen. Fehlende oder anders zugeordnete Pfade werden abgewiesen; externe Änderungen während einer Sitzung benötigen Neuladen oder erneute Auswahl. Starter erforderlich, keine unbeaufsichtigte Pfadfreigabe durch die Onlinefassung.",
       "acceptance": "Programm schließen und Dateipfade merken; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "last coding workspace",
           "current": true,
           "passed": true,
@@ -5018,26 +5167,26 @@
             {
               "name": "parity: the last coding workspace reopens after reload without selecting the source files again",
               "passed": true,
-              "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805573"
+              "browser": "webkit",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133225"
             },
             {
               "name": "parity: the last coding workspace reopens after reload without selecting the source files again",
               "passed": true,
-              "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805732"
+              "browser": "chromium",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133320"
             },
             {
               "name": "parity: the last coding workspace reopens after reload without selecting the source files again",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805761"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133345"
             }
           ]
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "selected Toolbox input files",
           "current": true,
           "passed": true,
@@ -5045,20 +5194,64 @@
             {
               "name": "parity: selected Toolbox input files and options survive closing and reopening the page",
               "passed": true,
-              "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805573"
+              "browser": "webkit",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133225"
             },
             {
               "name": "parity: selected Toolbox input files and options survive closing and reopening the page",
               "passed": true,
-              "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805732"
+              "browser": "chromium",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133320"
             },
             {
               "name": "parity: selected Toolbox input files and options survive closing and reopening the page",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805761"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133345"
+            }
+          ]
+        },
+        {
+          "kind": "node",
+          "file": "tests/local-app.test.js",
+          "pattern": "remembers only|rereads real files",
+          "current": true,
+          "passed": true,
+          "checks": [
+            {
+              "name": "local starter: rereads real files, overwrites results in place and serializes writes",
+              "passed": true
+            },
+            {
+              "name": "local starter: remembers only an explicitly selected path and restores it after restart",
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "ci-browser",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
+          "pattern": "local starter: account",
+          "current": true,
+          "passed": true,
+          "checks": [
+            {
+              "name": "local starter: account, direct overwrite and remembered fresh Toolbox paths",
+              "passed": true,
+              "browser": "webkit",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133225"
+            },
+            {
+              "name": "local starter: account, direct overwrite and remembered fresh Toolbox paths",
+              "passed": true,
+              "browser": "chromium",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133320"
+            },
+            {
+              "name": "local starter: account, direct overwrite and remembered fresh Toolbox paths",
+              "passed": true,
+              "browser": "firefox",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133345"
             }
           ]
         }
@@ -5132,14 +5325,14 @@
               "name": "Browser-Speicher: IndexedDB schreiben und wieder lesen",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-              "report": "tests/results/function-audit-20261031-052307-chromium.json",
+              "report": "tests/results/function-audit-20261103-083322-chromium.json",
               "current": true
             },
             {
               "name": "Browser-Speicher: IndexedDB schreiben und wieder lesen",
               "passed": true,
               "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
-              "report": "tests/results/function-audit-20261031-052307-webkit.json",
+              "report": "tests/results/function-audit-20261103-083322-webkit.json",
               "current": true
             }
           ]
@@ -5374,7 +5567,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "physical zoom",
           "current": true,
           "passed": true,
@@ -5382,20 +5575,20 @@
             {
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
-              "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805573"
+              "browser": "webkit",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133225"
             },
             {
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
-              "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805732"
+              "browser": "chromium",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133320"
             },
             {
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805761"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133345"
             }
           ]
         }
@@ -5422,7 +5615,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261031-parity.json",
+          "path": "tests/results/function-audit-ci-20261103-local.json",
           "pattern": "startup defaults",
           "current": true,
           "passed": true,
@@ -5430,20 +5623,20 @@
             {
               "name": "parity: startup defaults and login regeneration without XML match Windows",
               "passed": true,
-              "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805573"
+              "browser": "webkit",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133225"
             },
             {
               "name": "parity: startup defaults and login regeneration without XML match Windows",
               "passed": true,
-              "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805732"
+              "browser": "chromium",
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133320"
             },
             {
               "name": "parity: startup defaults and login regeneration without XML match Windows",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074/job/124452805761"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505/job/125810133345"
             }
           ]
         }
@@ -5465,11 +5658,11 @@
     "Testcenter-Verträge und ältere reale Demo-Läufe ersetzen keinen direkten Windows-Netzwerkvergleich aller Serverversionen.",
     "Fehlende/teilweise geprüfte Funktionen werden nicht als gleichwertig gezählt.",
     "Jede Matrixzeile beschreibt einen Nutzerauftrag; sie ist kein Nachweis aller Eingabe-, Größen- oder Fehlerkombinationen.",
-    "Drei verbleibende Plattformabweichungen: automatische Windows-Domänenidentität (K-11), direkter Dateizugriff/-ersatz ohne portable Browser-API (K-35) und echte dauerhafte Dateipfade statt lokaler Dateikopien (T-61).",
+    "In der reinen Onlinefassung bleiben K-11, K-35 und T-61 eingeschränkt. Der optionale lokale Starter gleicht Kontoübernahme, automatisches Speichern und wiederverwendbare Dateipfade aus; dafür muss er auf dem Arbeitsplatz laufen.",
     "Originalmodi reproduzieren ausdrücklich gewählte historische Export-/Importgrenzen; erweiterte Modi erhalten die bisherigen Korrekturen.",
     "Reale Arbeitsbestände und alle Eingabe-/Fehlerkombinationen sind durch synthetische Referenzfälle nicht vollständig abgedeckt.",
     "Die lokale Coding-Box-Erweiterung bleibt vom Windows-Funktionsumfang getrennt.",
     "Firefox wird in GitHub Actions auf Linux geprüft; der macOS-Playwright-Build startet in dieser Umgebung mit einem Profilordnerfehler nicht. WebKit-Prüfungen sind kein Test einer installierten Safari-Version.",
-    "Aktuelle CI: chromium 16/16 Suiten, 46/46 Kompatibilitätschecks; webkit 16/16 Suiten, 46/46 Kompatibilitätschecks; firefox 16/16 Suiten, 46/46 Kompatibilitätschecks. Belege: tests/results/function-audit-ci-20261031-parity.json. Artefaktstatus steht je Job im Nachweis."
+    "Aktuelle CI: webkit 17/17 Suiten, 46/46 Kompatibilitätschecks; chromium 17/17 Suiten, 46/46 Kompatibilitätschecks; firefox 17/17 Suiten, 46/46 Kompatibilitätschecks. Belege: tests/results/function-audit-ci-20261103-local.json. Artefaktstatus steht je Job im Nachweis."
   ]
 }
