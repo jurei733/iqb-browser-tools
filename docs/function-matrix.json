@@ -293,7 +293,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-local.json",
+          "path": "tests/results/function-audit-ci-20261103-strict.json",
           "pattern": "last coding workspace"
         },
         {
@@ -303,7 +303,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-local.json",
+          "path": "tests/results/function-audit-ci-20261103-strict.json",
           "pattern": "local starter: account"
         }
       ]
@@ -731,7 +731,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-local.json",
+          "path": "tests/results/function-audit-ci-20261103-strict.json",
           "pattern": "physical zoom"
         }
       ]
@@ -756,7 +756,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-local.json",
+          "path": "tests/results/function-audit-ci-20261103-strict.json",
           "pattern": "physical zoom"
         }
       ]
@@ -819,7 +819,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-local.json",
+          "path": "tests/results/function-audit-ci-20261103-strict.json",
           "pattern": "physical zoom"
         }
       ]
@@ -848,7 +848,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-local.json",
+          "path": "tests/results/function-audit-ci-20261103-strict.json",
           "pattern": "shared position"
         }
       ]
@@ -956,7 +956,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-local.json",
+          "path": "tests/results/function-audit-ci-20261103-strict.json",
           "pattern": "original result boundary"
         }
       ]
@@ -989,7 +989,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-local.json",
+          "path": "tests/results/function-audit-ci-20261103-strict.json",
           "pattern": "last coding workspace"
         },
         {
@@ -999,7 +999,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-local.json",
+          "path": "tests/results/function-audit-ci-20261103-strict.json",
           "pattern": "local starter: account"
         }
       ]
@@ -1023,7 +1023,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-local.json",
+          "path": "tests/results/function-audit-ci-20261103-strict.json",
           "pattern": "physical zoom"
         }
       ]
@@ -1047,7 +1047,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-local.json",
+          "path": "tests/results/function-audit-ci-20261103-strict.json",
           "pattern": "completed job flashes"
         }
       ]
@@ -1121,7 +1121,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-local.json",
+          "path": "tests/results/function-audit-ci-20261103-strict.json",
           "pattern": "codes and booklets"
         }
       ]
@@ -1502,7 +1502,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-local.json",
+          "path": "tests/results/function-audit-ci-20261103-strict.json",
           "pattern": "without XML match Windows"
         }
       ]
@@ -1635,7 +1635,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-local.json",
+          "path": "tests/results/function-audit-ci-20261103-strict.json",
           "pattern": "full diagnostics"
         }
       ]
@@ -1717,6 +1717,16 @@
         {
           "kind": "browser",
           "pattern": "Antworten"
+        },
+        {
+          "kind": "node",
+          "file": "tests/windows-differential.test.js",
+          "pattern": "strict Windows API units|Windows conversion propagates"
+        },
+        {
+          "kind": "ci-browser",
+          "path": "tests/results/function-audit-ci-20261103-strict.json",
+          "pattern": "Windows mode: raw API files"
         }
       ]
     },
@@ -1749,10 +1759,11 @@
         "sha256": "58583f8edeb000e6766a7e5b08dd976a668730241d1329b4db043c82b9d18c92"
       },
       "implementation": [
-        "src/data.js"
+        "src/data.js",
+        "src/windows-responses.js"
       ],
       "assessment": "implemented",
-      "note": "Dokumentierte Normalisierungen für Nullwerte, JSON-Whitespace, Dezimaltrennzeichen und Zeilenumbrüche beachten.",
+      "note": "Dokumentierte Normalisierungen für Nullwerte, JSON-Whitespace, Dezimaltrennzeichen und Zeilenumbrüche beachten. Neuer strenger Windows-Korpus: identische Werte und Listenreihenfolge ohne Normalisierung im expliziten Windows-Modus. Fehlerfälle prüfen die Erkennung und die Unterscheidung zwischen ERROR-Antwort und Ausnahme; Meldungstexte und Windows-Dialoge sind nicht als identisch belegt.",
       "acceptance": "Standard-/Aspect-Antwortkonverter.",
       "evidence": [
         {
@@ -1763,6 +1774,15 @@
           "kind": "node",
           "file": "tests/extended.test.js",
           "pattern": "all original response converters"
+        },
+        {
+          "kind": "node",
+          "file": "tests/windows-differential.test.js",
+          "pattern": "strict Windows converter values and order: setResponsesIqbStandard"
+        },
+        {
+          "kind": "browser",
+          "pattern": "Windows-Differenzial"
         }
       ]
     },
@@ -1777,10 +1797,11 @@
         "sha256": "58583f8edeb000e6766a7e5b08dd976a668730241d1329b4db043c82b9d18c92"
       },
       "implementation": [
-        "src/data.js"
+        "src/data.js",
+        "src/windows-responses.js"
       ],
       "assessment": "implemented",
-      "note": "Dokumentierte Normalisierungen für Nullwerte, JSON-Whitespace, Dezimaltrennzeichen und Zeilenumbrüche beachten.",
+      "note": "Dokumentierte Normalisierungen für Nullwerte, JSON-Whitespace, Dezimaltrennzeichen und Zeilenumbrüche beachten. Neuer strenger Windows-Korpus: identische Werte und Listenreihenfolge ohne Normalisierung im expliziten Windows-Modus. Fehlerfälle prüfen die Erkennung und die Unterscheidung zwischen ERROR-Antwort und Ausnahme; Meldungstexte und Windows-Dialoge sind nicht als identisch belegt.",
       "acceptance": "Abi-Unterformulare und Default-Antworten.",
       "evidence": [
         {
@@ -1791,6 +1812,15 @@
           "kind": "node",
           "file": "tests/extended.test.js",
           "pattern": "all original response converters"
+        },
+        {
+          "kind": "node",
+          "file": "tests/windows-differential.test.js",
+          "pattern": "strict Windows converter values and order: setResponsesAbi"
+        },
+        {
+          "kind": "browser",
+          "pattern": "Windows-Differenzial"
         }
       ]
     },
@@ -1805,10 +1835,11 @@
         "sha256": "58583f8edeb000e6766a7e5b08dd976a668730241d1329b4db043c82b9d18c92"
       },
       "implementation": [
-        "src/data.js"
+        "src/data.js",
+        "src/windows-responses.js"
       ],
       "assessment": "implemented",
-      "note": "Dokumentierte Normalisierungen für Nullwerte, JSON-Whitespace, Dezimaltrennzeichen und Zeilenumbrüche beachten.",
+      "note": "Dokumentierte Normalisierungen für Nullwerte, JSON-Whitespace, Dezimaltrennzeichen und Zeilenumbrüche beachten. Neuer strenger Windows-Korpus: identische Werte und Listenreihenfolge ohne Normalisierung im expliziten Windows-Modus. Fehlerfälle prüfen die Erkennung und die Unterscheidung zwischen ERROR-Antwort und Ausnahme; Meldungstexte und Windows-Dialoge sind nicht als identisch belegt.",
       "acceptance": "Dan-Konverter und Meta-Angaben.",
       "evidence": [
         {
@@ -1819,6 +1850,15 @@
           "kind": "node",
           "file": "tests/extended.test.js",
           "pattern": "all original response converters"
+        },
+        {
+          "kind": "node",
+          "file": "tests/windows-differential.test.js",
+          "pattern": "strict Windows converter values and order: setResponsesDan"
+        },
+        {
+          "kind": "browser",
+          "pattern": "Windows-Differenzial"
         }
       ]
     },
@@ -1833,10 +1873,11 @@
         "sha256": "58583f8edeb000e6766a7e5b08dd976a668730241d1329b4db043c82b9d18c92"
       },
       "implementation": [
-        "src/data.js"
+        "src/data.js",
+        "src/windows-responses.js"
       ],
       "assessment": "implemented",
-      "note": "Dokumentierte Normalisierungen für Nullwerte, JSON-Whitespace, Dezimaltrennzeichen und Zeilenumbrüche beachten.",
+      "note": "Dokumentierte Normalisierungen für Nullwerte, JSON-Whitespace, Dezimaltrennzeichen und Zeilenumbrüche beachten. Neuer strenger Windows-Korpus: identische Werte und Listenreihenfolge ohne Normalisierung im expliziten Windows-Modus. Fehlerfälle prüfen die Erkennung und die Unterscheidung zwischen ERROR-Antwort und Ausnahme; Meldungstexte und Windows-Dialoge sind nicht als identisch belegt.",
       "acceptance": "Schlüssel/Wert- und Simple-Konverter.",
       "evidence": [
         {
@@ -1847,6 +1888,20 @@
           "kind": "node",
           "file": "tests/extended.test.js",
           "pattern": "all original response converters"
+        },
+        {
+          "kind": "node",
+          "file": "tests/windows-differential.test.js",
+          "pattern": "strict Windows converter values and order: setResponsesKeyValue"
+        },
+        {
+          "kind": "node",
+          "file": "tests/windows-differential.test.js",
+          "pattern": "strict Windows converter values and order: setResponsesSimplePlayerLegacy"
+        },
+        {
+          "kind": "browser",
+          "pattern": "Windows-Differenzial"
         }
       ]
     },
@@ -1875,6 +1930,16 @@
           "kind": "node",
           "file": "tests/parity-completion.test.js",
           "pattern": "Windows JSON import"
+        },
+        {
+          "kind": "node",
+          "file": "tests/windows-differential.test.js",
+          "pattern": "strict Windows API units|Windows conversion propagates"
+        },
+        {
+          "kind": "ci-browser",
+          "path": "tests/results/function-audit-ci-20261103-strict.json",
+          "pattern": "Windows mode: raw API files"
         }
       ],
       "additionalOriginalSources": [
@@ -2432,7 +2497,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-local.json",
+          "path": "tests/results/function-audit-ci-20261103-strict.json",
           "pattern": "group selection and workspace changes"
         }
       ]
@@ -2630,7 +2695,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-local.json",
+          "path": "tests/results/function-audit-ci-20261103-strict.json",
           "pattern": "access can be remembered"
         }
       ]
@@ -2656,7 +2721,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-local.json",
+          "path": "tests/results/function-audit-ci-20261103-strict.json",
           "pattern": "preparation cancellation"
         }
       ]
@@ -2685,12 +2750,12 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-local.json",
+          "path": "tests/results/function-audit-ci-20261103-strict.json",
           "pattern": "last coding workspace"
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-local.json",
+          "path": "tests/results/function-audit-ci-20261103-strict.json",
           "pattern": "selected Toolbox input files"
         },
         {
@@ -2700,7 +2765,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-local.json",
+          "path": "tests/results/function-audit-ci-20261103-strict.json",
           "pattern": "local starter: account"
         }
       ]
@@ -2931,7 +2996,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-local.json",
+          "path": "tests/results/function-audit-ci-20261103-strict.json",
           "pattern": "physical zoom"
         }
       ]
@@ -2956,7 +3021,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-local.json",
+          "path": "tests/results/function-audit-ci-20261103-strict.json",
           "pattern": "startup defaults"
         }
       ],
@@ -2996,11 +3061,12 @@
     "local:AppCommands.ExportSessionsToCsv": "T-38"
   },
   "limitations": [
+    "Kein vollständiger Gleichheitsnachweis: 401 reguläre Konverterausgaben stimmen im expliziten Windows-Modus ohne Wertanpassungen überein; 146 Fälle prüfen Fehlererkennung und die Unterscheidung zwischen ERROR-Antwort und Ausnahme und sieben Fälle den API-Konverter. Reale Studiendaten und identische Fehlermeldungen sind nicht nachgewiesen. Der erweiterte Standardmodus unterscheidet sich in 177 der 401 regulären Korpusfälle.",
     "In der reinen Onlinefassung bleiben K-11, K-35 und T-61 eingeschränkt. Der optionale lokale Starter gleicht Kontoübernahme, automatisches Speichern und wiederverwendbare Dateipfade aus; dafür muss er auf dem Arbeitsplatz laufen.",
     "Originalmodi reproduzieren ausdrücklich gewählte historische Export-/Importgrenzen; erweiterte Modi erhalten die bisherigen Korrekturen.",
     "Reale Arbeitsbestände und alle Eingabe-/Fehlerkombinationen sind durch synthetische Referenzfälle nicht vollständig abgedeckt.",
     "Die lokale Coding-Box-Erweiterung bleibt vom Windows-Funktionsumfang getrennt.",
     "Firefox wird in GitHub Actions auf Linux geprüft; der macOS-Playwright-Build startet in dieser Umgebung mit einem Profilordnerfehler nicht. WebKit-Prüfungen sind kein Test einer installierten Safari-Version."
   ],
-  "ciReport": "tests/results/function-audit-ci-20261103-local.json"
+  "ciReport": "tests/results/function-audit-ci-20261103-strict.json"
 }
