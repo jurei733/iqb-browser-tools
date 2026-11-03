@@ -37,6 +37,14 @@ public class WindowsPrecisionReference {
   if(!IsWow64Process2(System.Diagnostics.Process.GetCurrentProcess().Handle,out processMachine,out nativeMachine))throw new System.ComponentModel.Win32Exception();
   report["processMachine"]=processMachine.ToString("x4");report["nativeMachine"]=nativeMachine.ToString("x4");
   report["precisionProfile"]=args[3];report["harnessSHA256"]=Hash(Assembly.GetExecutingAssembly().Location);report["inputSHA256"]=Hash(args[1]);report["assemblySHA256"]=Hash(Path.Combine(toolPath,"itc-Toolbox.exe"));report["results"]=results;
+  if(args.Length>4){
+   var pipelines=JArray.Parse(File.ReadAllText(args[4]));var outputs=new JArray();
+   foreach(var test in pipelines){var entry=new JObject();entry["id"]=(string)test["id"];try{
+    var dto=JsonConvert.DeserializeObject(test["dto"].ToString(Formatting.None),tool.GetType("iqb.testcenter.toolbox.ResponseDTO"));
+    var output=tool.GetType("iqb.testcenter.toolbox.UnitLineDataResponses").GetMethod("fromTestcenterAPI").Invoke(null,new object[]{dto});entry["outputJSON"]=JsonConvert.SerializeObject(output);
+   }catch(Exception e){while(e.InnerException!=null)e=e.InnerException;entry["exceptionType"]=e.GetType().FullName;entry["message"]=e.Message;}outputs.Add(entry);}
+   report["pipelineResults"]=outputs;report["pipelineInputSHA256"]=Hash(args[4]);
+  }
   File.WriteAllText(args[2],report.ToString(),new System.Text.UTF8Encoding(false));
  }
 }

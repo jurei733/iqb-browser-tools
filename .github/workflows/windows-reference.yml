@@ -34,3 +34,6 @@ jobs:
           name: windows-native-reference
           path: work/native-windows/*.json
           retention-days: 14
+      - name: Emit lossless synthetic reference bundle
+        if: ${{ !cancelled() }}
+        run: node scripts/bundle-native-windows.mjs

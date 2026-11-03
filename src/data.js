@@ -2,6 +2,7 @@ import Excel from 'exceljs';
 import {parseCSV,csvString} from './toolbox.js';
 import {parseJSON,stringifyJSON} from './json.js';
 import {parseWindowsChunk} from './windows-responses.js';
+import {parseWindowsJSON,isContainer,orderedEntries,windowsTokenText} from './windows-tokens.js';
 
 export const STATUS=['UNSET','NOT_REACHED','DISPLAYED','VALUE_CHANGED','DERIVE_ERROR','CODING_COMPLETE','NO_CODING','INVALID','CODING_INCOMPLETE','CODING_ERROR','PARTLY_DISPLAYED','DERIVE_PENDING','INTENDED_INCOMPLETE','CODE_SELECTION_PENDING'];
 export const asText=v=>v===null?'#null#':typeof v==='object'?stringifyJSON(v):String(v??'');
@@ -54,7 +55,8 @@ export function parseChunk(content,type='',{windows=false}={}) {
 }
 function lastState(raw,{windows=false}={}) {
   if(!raw)return [];
-  if(windows){const source=typeof raw==='string'?raw.replace(/""/g,'"'):stringifyJSON(raw);try{const data=parseJSON(source);if(!data||typeof data!=='object'||Array.isArray(data)||Object.values(data).some(v=>v!==null&&typeof v==='object'))throw new Error();return Object.entries(data).map(([key,value])=>({key,value:value===null?null:String(value)}));}catch{return [{key:'state',value:source}];}}
+  if(Array.isArray(raw))return raw.map(v=>({key:String(v.key??''),value:windows&&v.value===null?null:asText(v.value)}));
+  if(windows){const source=typeof raw==='string'?raw.replace(/""/g,'"'):stringifyJSON(raw);try{const data=parseWindowsJSON(source,{stringsOnly:true});if(!isContainer(data)||Array.isArray(data)||Object.values(data).some(isContainer))throw new Error();return orderedEntries(data).map(([key,value])=>({key,value:value===null?null:windowsTokenText(value,{stringsOnly:true})}));}catch{return [{key:'state',value:source}];}}
   if(Array.isArray(raw))return raw.map(v=>({key:String(v.key),value:asText(v.value)}));
   try {let data;try{data=json(raw);}catch{data=JSON.parse(String(raw).replace(/""/g,'"'));}if(!data||typeof data!=='object'||Array.isArray(data))throw new Error();return Object.entries(data).map(([key,value])=>({key,value:asText(value)}));}
   catch{return [{key:'state',value:String(raw)}];}
@@ -86,7 +88,7 @@ export function splitLog(logentry) {
 }
 export function normalizePeople(input,{windows=false}={}) {
   if(!Array.isArray(input))throw new Error('Erwartet wird eine Liste von Testpersonen.');
-  return input.map(p=>({group:String(p.group??''),login:String(p.login??''),code:String(p.code??''),booklets:(p.booklets||[]).map(b=>({id:String(b.id??''),firstTS:numeric(b.firstTS),lastTS:numeric(b.lastTS),sessions:(b.sessions||[]).map(s=>({...s,ts:numeric(s.ts),loadCompleteMS:numeric(s.loadCompleteMS)})),logs:(b.logs||[]).map(l=>({...l,ts:numeric(l.ts)})),units:(b.units||[]).map(u=>({id:String(u.id??u.alias??''),alias:String(u.alias??u.id??''),laststate:lastState(u.laststate),chunks:(u.chunks||[]).map(c=>({...c,ts:String(c.ts??0),variables:c.variables||[]})),logs:(u.logs||[]).map(l=>({...l,ts:numeric(l.ts)})),subforms:(u.subforms||[]).map(sf=>({id:String(sf.id??''),responses:(sf.responses||[]).map(r=>({...r,id:String(r.id),value:windows&&r.value===null?null:asText(r.value),status:String(r.status||'UNSET'),code:nullableNumeric(r.code),score:nullableNumeric(r.score)}))}))}))}))}));
+  return input.map(p=>({group:String(p.group??''),login:String(p.login??''),code:String(p.code??''),booklets:(p.booklets||[]).map(b=>({id:String(b.id??''),firstTS:numeric(b.firstTS),lastTS:numeric(b.lastTS),sessions:(b.sessions||[]).map(s=>({...s,ts:numeric(s.ts),loadCompleteMS:numeric(s.loadCompleteMS)})),logs:(b.logs||[]).map(l=>({...l,ts:numeric(l.ts)})),units:(b.units||[]).map(u=>({id:String(u.id??u.alias??''),alias:String(u.alias??u.id??''),laststate:lastState(u.laststate,{windows}),chunks:(u.chunks||[]).map(c=>({...c,ts:String(c.ts??0),variables:c.variables||[]})),logs:(u.logs||[]).map(l=>({...l,ts:numeric(l.ts)})),subforms:(u.subforms||[]).map(sf=>({id:String(sf.id??''),responses:(sf.responses||[]).map(r=>({...r,id:String(r.id),value:windows&&r.value===null?null:asText(r.value),status:String(r.status||'UNSET'),code:nullableNumeric(r.code),score:nullableNumeric(r.score)}))}))}))}))}));
 }
 export function refreshTimes(people) {
   for(const p of people)for(const b of p.booklets){for(const l of [...b.logs,...b.sessions,...b.units.flatMap(u=>[...u.logs,...u.chunks])]){const t=numeric(l.ts);if(t>0){b.firstTS=b.firstTS?Math.min(b.firstTS,t):t;b.lastTS=Math.max(b.lastTS||0,t);}}}

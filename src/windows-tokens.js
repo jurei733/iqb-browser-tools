@@ -1,8 +1,9 @@
 import {parseTree} from 'jsonc-parser';
+import {legacyDouble,parseWindowsDouble} from './windows-number.js';
 
 const order=Symbol('JSON property order');
 export class WindowsNumber {
- constructor(raw){this.raw=raw;this.floating=/[.eE]/.test(raw);this.value=this.floating?Number(raw):BigInt(raw);}
+ constructor(raw){this.raw=raw;this.floating=/[.eE]/.test(raw);this.value=this.floating?parseWindowsDouble(raw):BigInt(raw);if(this.floating&&!Number.isFinite(this.value))throw new Error('Zahl außerhalb des Windows-Double-Bereichs.');}
 }
 class WindowsDate {
  constructor(parts,fraction='',suffix=''){this.parts=parts;this.fraction=fraction.replace(/0+$/,'');this.suffix=suffix;}
@@ -71,7 +72,7 @@ export function windowsTokenText(value,{invariant=false,stringsOnly=false}={}){
  return String(value);
 }
 export function prettyWindowsJSON(value,depth=0){
- if(value instanceof WindowsNumber){if(!value.floating)return String(value.value);let out=generalDouble(value.value);if(Number(out)!==value.value)out=generalDouble(value.value,17);return /[.E]/.test(out)?out:out+'.0';}
+ if(value instanceof WindowsNumber){if(!value.floating)return String(value.value);let out=generalDouble(value.value);if(legacyDouble(value.value.toExponential(14))!==value.value)out=generalDouble(value.value,17);return /[.E]/.test(out)?out:out+'.0';}
  if(value instanceof WindowsDate){const [y,m,d,h,min,s]=value.parts;return JSON.stringify(`${pad(y,4)}-${pad(m)}-${pad(d)}T${pad(h)}:${pad(min)}:${pad(s)}${value.fraction?'.'+value.fraction:''}${value.suffix}`);}
  if(!isContainer(value))return JSON.stringify(value);
  const array=Array.isArray(value),items=array?value.map(item=>prettyWindowsJSON(item,depth+1)):orderedEntries(value).map(([key,item])=>JSON.stringify(key)+': '+prettyWindowsJSON(item,depth+1));
