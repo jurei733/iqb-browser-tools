@@ -293,7 +293,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-edges.json",
+          "path": "tests/results/function-audit-ci-20261103-native.json",
           "pattern": "last coding workspace"
         },
         {
@@ -303,7 +303,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-edges.json",
+          "path": "tests/results/function-audit-ci-20261103-native.json",
           "pattern": "local starter: account"
         }
       ]
@@ -731,7 +731,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-edges.json",
+          "path": "tests/results/function-audit-ci-20261103-native.json",
           "pattern": "physical zoom"
         }
       ]
@@ -756,7 +756,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-edges.json",
+          "path": "tests/results/function-audit-ci-20261103-native.json",
           "pattern": "physical zoom"
         }
       ]
@@ -819,7 +819,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-edges.json",
+          "path": "tests/results/function-audit-ci-20261103-native.json",
           "pattern": "physical zoom"
         }
       ]
@@ -848,7 +848,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-edges.json",
+          "path": "tests/results/function-audit-ci-20261103-native.json",
           "pattern": "shared position"
         }
       ]
@@ -966,7 +966,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-edges.json",
+          "path": "tests/results/function-audit-ci-20261103-native.json",
           "pattern": "original result boundary"
         }
       ]
@@ -999,7 +999,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-edges.json",
+          "path": "tests/results/function-audit-ci-20261103-native.json",
           "pattern": "last coding workspace"
         },
         {
@@ -1009,7 +1009,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-edges.json",
+          "path": "tests/results/function-audit-ci-20261103-native.json",
           "pattern": "local starter: account"
         }
       ]
@@ -1033,7 +1033,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-edges.json",
+          "path": "tests/results/function-audit-ci-20261103-native.json",
           "pattern": "physical zoom"
         }
       ]
@@ -1057,7 +1057,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-edges.json",
+          "path": "tests/results/function-audit-ci-20261103-native.json",
           "pattern": "completed job flashes"
         }
       ]
@@ -1131,7 +1131,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-edges.json",
+          "path": "tests/results/function-audit-ci-20261103-native.json",
           "pattern": "codes and booklets"
         }
       ]
@@ -1512,7 +1512,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-edges.json",
+          "path": "tests/results/function-audit-ci-20261103-native.json",
           "pattern": "without XML match Windows"
         }
       ]
@@ -1645,7 +1645,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-edges.json",
+          "path": "tests/results/function-audit-ci-20261103-native.json",
           "pattern": "full diagnostics"
         }
       ]
@@ -1735,7 +1735,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-edges.json",
+          "path": "tests/results/function-audit-ci-20261103-native.json",
           "pattern": "Windows mode: raw API files"
         }
       ]
@@ -1773,7 +1773,7 @@
         "src/windows-responses.js"
       ],
       "assessment": "partial",
-      "note": "Dokumentierte Normalisierungen für Nullwerte, JSON-Whitespace, Dezimaltrennzeichen und Zeilenumbrüche beachten. Neuer strenger Windows-Korpus: identische Werte und Listenreihenfolge ohne Normalisierung im expliziten Windows-Modus. Fehlerfälle prüfen die Erkennung und die Unterscheidung zwischen ERROR-Antwort und Ausnahme; Meldungstexte und Windows-Dialoge sind nicht als identisch belegt. Zusätzlich 118 Grenzfälle: Browser entspricht dem unveränderten 64-Bit-Konverterprofil (de-DE, Berlin). Im 32-Bit-Prüfprozess liefert dieselbe Originalassembly in sechs Zahlengrenzfällen andere Werte; diese Übereinstimmung bleibt offen.",
+      "note": "Explizite 32-/64-Bit-Profile prüfen Originalwerte und Listenreihenfolge ohne Wertnormalisierung. Der neue native Windows-x64-Lauf enthält 1214 unterschiedliche Konvertereingaben. Das 64-Bit-Profil besteht alle geprüften Vergleiche. Im 32-Bit-Profil bleibt in dieser Konverterfamilie die letzte G17-Dezimalstelle einer verschachtelten JSON-Zahl abweichend. Fehlerfälle belegen ERROR-Antwort versus Ausnahme; identische Meldungstexte und Windows-Dialoge sind nicht nachgewiesen.",
       "acceptance": "Standard-/Aspect-Antwortkonverter.",
       "evidence": [
         {
@@ -1793,6 +1793,11 @@
         {
           "kind": "browser",
           "pattern": "Windows-Differenzial"
+        },
+        {
+          "kind": "node",
+          "file": "tests/windows-native.test.js",
+          "pattern": "Native Windows x64 hardware"
         }
       ]
     },
@@ -1849,7 +1854,7 @@
         "src/windows-responses.js"
       ],
       "assessment": "partial",
-      "note": "Dokumentierte Normalisierungen für Nullwerte, JSON-Whitespace, Dezimaltrennzeichen und Zeilenumbrüche beachten. Neuer strenger Windows-Korpus: identische Werte und Listenreihenfolge ohne Normalisierung im expliziten Windows-Modus. Fehlerfälle prüfen die Erkennung und die Unterscheidung zwischen ERROR-Antwort und Ausnahme; Meldungstexte und Windows-Dialoge sind nicht als identisch belegt. Zusätzlich 118 Grenzfälle: Browser entspricht dem unveränderten 64-Bit-Konverterprofil (de-DE, Berlin). Im 32-Bit-Prüfprozess liefert dieselbe Originalassembly in sechs Zahlengrenzfällen andere Werte; diese Übereinstimmung bleibt offen.",
+      "note": "Explizite 32-/64-Bit-Profile prüfen Originalwerte und Listenreihenfolge ohne Wertnormalisierung. Der neue native Windows-x64-Lauf enthält 1214 unterschiedliche Konvertereingaben. Das 64-Bit-Profil besteht alle geprüften Vergleiche. Im 32-Bit-Profil bleibt in dieser Konverterfamilie die letzte G17-Dezimalstelle einer verschachtelten JSON-Zahl abweichend. Fehlerfälle belegen ERROR-Antwort versus Ausnahme; identische Meldungstexte und Windows-Dialoge sind nicht nachgewiesen.",
       "acceptance": "Dan-Konverter und Meta-Angaben.",
       "evidence": [
         {
@@ -1869,6 +1874,11 @@
         {
           "kind": "browser",
           "pattern": "Windows-Differenzial"
+        },
+        {
+          "kind": "node",
+          "file": "tests/windows-native.test.js",
+          "pattern": "Native Windows x64 hardware"
         }
       ]
     },
@@ -1886,8 +1896,8 @@
         "src/data.js",
         "src/windows-responses.js"
       ],
-      "assessment": "partial",
-      "note": "Dokumentierte Normalisierungen für Nullwerte, JSON-Whitespace, Dezimaltrennzeichen und Zeilenumbrüche beachten. Neuer strenger Windows-Korpus: identische Werte und Listenreihenfolge ohne Normalisierung im expliziten Windows-Modus. Fehlerfälle prüfen die Erkennung und die Unterscheidung zwischen ERROR-Antwort und Ausnahme; Meldungstexte und Windows-Dialoge sind nicht als identisch belegt. Zusätzlich 118 Grenzfälle: Browser entspricht dem unveränderten 64-Bit-Konverterprofil (de-DE, Berlin). Im 32-Bit-Prüfprozess liefert dieselbe Originalassembly in sechs Zahlengrenzfällen andere Werte; diese Übereinstimmung bleibt offen.",
+      "assessment": "implemented",
+      "note": "Explizite 32-/64-Bit-Profile erhalten Originalwerte, JSON-Zahltypen und Listenreihenfolge ohne Wertnormalisierung. Beide Profile bestehen die Fälle dieser Konverterfamilien im neuen nativen Windows-x64-Korpus. Fehlerfälle belegen ERROR-Antwort versus Ausnahme; identische Meldungstexte und Windows-Dialoge sind nicht nachgewiesen. Synthetische Eingaben ersetzen keine Prüfung sämtlicher realer Dateien.",
       "acceptance": "Schlüssel/Wert- und Simple-Konverter.",
       "evidence": [
         {
@@ -1912,6 +1922,11 @@
         {
           "kind": "browser",
           "pattern": "Windows-Differenzial"
+        },
+        {
+          "kind": "node",
+          "file": "tests/windows-native.test.js",
+          "pattern": "Native Windows x64 hardware"
         }
       ]
     },
@@ -1948,7 +1963,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-edges.json",
+          "path": "tests/results/function-audit-ci-20261103-native.json",
           "pattern": "Windows mode: raw API files"
         }
       ],
@@ -2507,7 +2522,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-edges.json",
+          "path": "tests/results/function-audit-ci-20261103-native.json",
           "pattern": "group selection and workspace changes"
         }
       ]
@@ -2705,7 +2720,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-edges.json",
+          "path": "tests/results/function-audit-ci-20261103-native.json",
           "pattern": "access can be remembered"
         }
       ]
@@ -2731,7 +2746,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-edges.json",
+          "path": "tests/results/function-audit-ci-20261103-native.json",
           "pattern": "preparation cancellation"
         }
       ]
@@ -2760,12 +2775,12 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-edges.json",
+          "path": "tests/results/function-audit-ci-20261103-native.json",
           "pattern": "last coding workspace"
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-edges.json",
+          "path": "tests/results/function-audit-ci-20261103-native.json",
           "pattern": "selected Toolbox input files"
         },
         {
@@ -2775,7 +2790,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-edges.json",
+          "path": "tests/results/function-audit-ci-20261103-native.json",
           "pattern": "local starter: account"
         }
       ]
@@ -3006,7 +3021,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-edges.json",
+          "path": "tests/results/function-audit-ci-20261103-native.json",
           "pattern": "physical zoom"
         }
       ]
@@ -3031,7 +3046,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-edges.json",
+          "path": "tests/results/function-audit-ci-20261103-native.json",
           "pattern": "startup defaults"
         }
       ],
@@ -3077,7 +3092,7 @@
     "Reale Arbeitsbestände und alle Eingabe-/Fehlerkombinationen sind durch synthetische Referenzfälle nicht vollständig abgedeckt.",
     "Die lokale Coding-Box-Erweiterung bleibt vom Windows-Funktionsumfang getrennt.",
     "Firefox wird in GitHub Actions auf Linux geprüft; der macOS-Playwright-Build startet in dieser Umgebung mit einem Profilordnerfehler nicht. WebKit-Prüfungen sind kein Test einer installierten Safari-Version.",
-    "Zusätzlich 118 Grenzfälle: Browser entspricht dem unveränderten 64-Bit-Konverterprofil (de-DE, Berlin). Im 32-Bit-Prüfprozess liefert dieselbe Originalassembly in sechs Zahlengrenzfällen andere Werte; diese Übereinstimmung bleibt offen. Die 32-/64-Bit-Ausgaben sind gesondert gespeichert; daraus wird keine Ursache oder Gleichheit auf sämtlichen Rechnern abgeleitet."
+    "Die historischen sechs ARM/x86-Abweichungen sind keine allgemeinen Windows-x86-Abweichungen. Der neue Windows-x64-Runner prüft beide Bitbreiten direkt: 1214/1214 im 64-Bit-Profil, 1212/1214 im 32-Bit-Profil. Zwei G17-Textdarstellungen bleiben strikt abweichend, obwohl dieselben Double-Bits gespeichert sind."
   ],
-  "ciReport": "tests/results/function-audit-ci-20261103-edges.json"
+  "ciReport": "tests/results/function-audit-ci-20261103-native.json"
 }

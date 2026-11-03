@@ -1,0 +1,428 @@
+{
+  "runId": 41632480170,
+  "runUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41632480170",
+  "headSha": "d7be9c77fab01e7373c1251433fb9f3a6159545a",
+  "evidenceSource": "GitHub Actions metadata, completed job logs and artifact metadata for this exact SHA; source hashes checked against the local checkout. The separate native workflow admits exactly two documented x86 text gaps, never counting them as equal.",
+  "jobs": [
+    {
+      "jobId": 125905260109,
+      "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41632480170/job/125905260109",
+      "conclusion": "success",
+      "browser": "webkit",
+      "passed": 18,
+      "total": 18,
+      "compatibility": {
+        "passed": 50,
+        "total": 50
+      },
+      "checks": [
+        {
+          "name": "original templates, image decoders, workers, exports and browser storage",
+          "passed": true
+        },
+        {
+          "name": "local starter: account, direct overwrite and remembered fresh Toolbox paths",
+          "passed": true
+        },
+        {
+          "name": "Windows mode: raw API files retain original values and chunk order through the real worker",
+          "passed": true
+        },
+        {
+          "name": "coding: keyboard, modal guard, result download and stored progress",
+          "passed": true
+        },
+        {
+          "name": "coding: upload a job and move, rotate and reset its template",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: retain login inputs and downloads, then create QR Word handouts",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: CSV keeps exact values and rejects invalid input without stale downloads",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: codes and booklets produce downloadable original formats",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: answers, SQLite exports, rejected database and offline recovery",
+          "passed": true
+        },
+        {
+          "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
+          "passed": true
+        },
+        {
+          "name": "parity: startup defaults and login regeneration without XML match Windows",
+          "passed": true
+        },
+        {
+          "name": "parity: full diagnostics survive module changes and export every validation error",
+          "passed": true
+        },
+        {
+          "name": "parity: preparation cancellation preserves the SQLite working copy",
+          "passed": true
+        },
+        {
+          "name": "parity: the last coding workspace reopens after reload without selecting the source files again",
+          "passed": true
+        },
+        {
+          "name": "parity: original result boundary is selectable and the completed job flashes for one second",
+          "passed": true
+        },
+        {
+          "name": "parity: selected Toolbox input files and options survive closing and reopening the page",
+          "passed": true
+        },
+        {
+          "name": "Testcenter: group selection and workspace changes cannot export stale groups",
+          "passed": true
+        },
+        {
+          "name": "parity: Testcenter access can be remembered explicitly and deleted again",
+          "passed": true
+        }
+      ],
+      "artifactUploaded": true,
+      "artifact": {
+        "id": 13229017217,
+        "digest": "sha256:35293b53bd108ee99fad5fa32664819f830b33a86f082432782c459165dc3e81",
+        "expiresAt": "2026-11-17T12:06:49Z"
+      }
+    },
+    {
+      "jobId": 125905260596,
+      "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41632480170/job/125905260596",
+      "conclusion": "success",
+      "browser": "chromium",
+      "passed": 18,
+      "total": 18,
+      "compatibility": {
+        "passed": 50,
+        "total": 50
+      },
+      "checks": [
+        {
+          "name": "original templates, image decoders, workers, exports and browser storage",
+          "passed": true
+        },
+        {
+          "name": "local starter: account, direct overwrite and remembered fresh Toolbox paths",
+          "passed": true
+        },
+        {
+          "name": "Windows mode: raw API files retain original values and chunk order through the real worker",
+          "passed": true
+        },
+        {
+          "name": "coding: keyboard, modal guard, result download and stored progress",
+          "passed": true
+        },
+        {
+          "name": "coding: upload a job and move, rotate and reset its template",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: retain login inputs and downloads, then create QR Word handouts",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: CSV keeps exact values and rejects invalid input without stale downloads",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: codes and booklets produce downloadable original formats",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: answers, SQLite exports, rejected database and offline recovery",
+          "passed": true
+        },
+        {
+          "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
+          "passed": true
+        },
+        {
+          "name": "parity: startup defaults and login regeneration without XML match Windows",
+          "passed": true
+        },
+        {
+          "name": "parity: full diagnostics survive module changes and export every validation error",
+          "passed": true
+        },
+        {
+          "name": "parity: preparation cancellation preserves the SQLite working copy",
+          "passed": true
+        },
+        {
+          "name": "parity: the last coding workspace reopens after reload without selecting the source files again",
+          "passed": true
+        },
+        {
+          "name": "parity: original result boundary is selectable and the completed job flashes for one second",
+          "passed": true
+        },
+        {
+          "name": "parity: selected Toolbox input files and options survive closing and reopening the page",
+          "passed": true
+        },
+        {
+          "name": "Testcenter: group selection and workspace changes cannot export stale groups",
+          "passed": true
+        },
+        {
+          "name": "parity: Testcenter access can be remembered explicitly and deleted again",
+          "passed": true
+        }
+      ],
+      "artifactUploaded": true,
+      "artifact": {
+        "id": 13229460708,
+        "digest": "sha256:dfd30cbd0b99ef1d3dc3a6b9c0e95c4b3fd985c81a8d05e5b8d2f06b588f643a",
+        "expiresAt": "2026-11-17T12:05:08Z"
+      }
+    },
+    {
+      "jobId": 125905260627,
+      "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41632480170/job/125905260627",
+      "conclusion": "success",
+      "browser": "firefox",
+      "passed": 18,
+      "total": 18,
+      "compatibility": {
+        "passed": 50,
+        "total": 50
+      },
+      "checks": [
+        {
+          "name": "original templates, image decoders, workers, exports and browser storage",
+          "passed": true
+        },
+        {
+          "name": "local starter: account, direct overwrite and remembered fresh Toolbox paths",
+          "passed": true
+        },
+        {
+          "name": "Windows mode: raw API files retain original values and chunk order through the real worker",
+          "passed": true
+        },
+        {
+          "name": "coding: keyboard, modal guard, result download and stored progress",
+          "passed": true
+        },
+        {
+          "name": "coding: upload a job and move, rotate and reset its template",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: retain login inputs and downloads, then create QR Word handouts",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: CSV keeps exact values and rejects invalid input without stale downloads",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: codes and booklets produce downloadable original formats",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: answers, SQLite exports, rejected database and offline recovery",
+          "passed": true
+        },
+        {
+          "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
+          "passed": true
+        },
+        {
+          "name": "parity: startup defaults and login regeneration without XML match Windows",
+          "passed": true
+        },
+        {
+          "name": "parity: full diagnostics survive module changes and export every validation error",
+          "passed": true
+        },
+        {
+          "name": "parity: preparation cancellation preserves the SQLite working copy",
+          "passed": true
+        },
+        {
+          "name": "parity: the last coding workspace reopens after reload without selecting the source files again",
+          "passed": true
+        },
+        {
+          "name": "parity: original result boundary is selectable and the completed job flashes for one second",
+          "passed": true
+        },
+        {
+          "name": "parity: selected Toolbox input files and options survive closing and reopening the page",
+          "passed": true
+        },
+        {
+          "name": "Testcenter: group selection and workspace changes cannot export stale groups",
+          "passed": true
+        },
+        {
+          "name": "parity: Testcenter access can be remembered explicitly and deleted again",
+          "passed": true
+        }
+      ],
+      "artifactUploaded": true,
+      "artifact": {
+        "id": 13229420919,
+        "digest": "sha256:66f6f90503b4a303fae3c7793ae43f4175f010539ebb1518aa4087228cbad983",
+        "expiresAt": "2026-11-17T12:05:16Z"
+      }
+    }
+  ],
+  "localStarter": [
+    {
+      "jobId": 125905260385,
+      "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41632480170/job/125905260385",
+      "conclusion": "success",
+      "platform": "ubuntu-latest",
+      "passed": 6,
+      "total": 6
+    },
+    {
+      "jobId": 125905260584,
+      "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41632480170/job/125905260584",
+      "conclusion": "success",
+      "platform": "windows-latest",
+      "passed": 6,
+      "total": 6
+    },
+    {
+      "jobId": 125905260639,
+      "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41632480170/job/125905260639",
+      "conclusion": "success",
+      "platform": "macos-latest",
+      "passed": 6,
+      "total": 6
+    }
+  ],
+  "buildJobs": [
+    {
+      "jobId": 125905260527,
+      "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41632480170/job/125905260527",
+      "conclusion": "success",
+      "node": "22",
+      "passed": 109,
+      "total": 109
+    },
+    {
+      "jobId": 125905260696,
+      "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41632480170/job/125905260696",
+      "conclusion": "success",
+      "node": "24",
+      "passed": 109,
+      "total": 109
+    }
+  ],
+  "applicationFiles": {
+    "src/coding-box-database.js": "3ddbc12bd6049a66c812ad5d053991d57bad80e8ea2ea56cceca3e882bb3ad32",
+    "src/coding.js": "a3b5f6ee9367b59806e57932fdafaf2eb7efada994b53dc670bda93d9d4b3f79",
+    "src/data.js": "04c2a74f9be071e28ee3573a3f7780ebea72fc2a06f96c7690034532954b7a9f",
+    "src/data.worker.js": "7d9a9f8fb184cb240dc0e6e420f0097f7bd45c211c21d42f35e785f89542705e",
+    "src/database-view.js": "03b59ffda3421667de61055284a0f5bde57e3b9e943ce303e5e27f7ee8a8d93e",
+    "src/database.js": "6ea6af1d460ce3a1cc173864894ec7f4b9f0af75690ccec5170fb04ea2bdee79",
+    "src/diagnostics.js": "0ed689ce6ae85bf7a4eef11d6120c57de91a5fe4f1b273bc0a45eedb3fb4554f",
+    "src/docx.js": "6297dd6e2fee3f8caf04f73c9532f67839d3ec4fa0fa5b4a9fbba18ca4f7a777",
+    "src/extended-ui.js": "8497dac795481d5e2f6bd2658707815721a4585b337b84b1811008e74b175623",
+    "src/file-workspace.js": "a62b5dae86c3189b35c453d84dc7f156dc18d77787f50bf90801e56a1e1486b3",
+    "src/form-state.js": "70f981db7537023a712b9482cdc3980c9d5dc6c404db215e84bb957a31c49883",
+    "src/image.js": "dc64dbaa232f29908ec70ec5a15eeaa8a28e2dd5048713a87c82cde4068a8ba2",
+    "src/json.js": "a0074e5e42877c08aea5217894076953d817b89978a5705aadda598ac41865e4",
+    "src/local-connection.js": "b397a4b34ee4e662aef4dc8476c4cc792d7a5516117042657828ff64f317347e",
+    "src/main.js": "3b1c063254374920a7628320c0818c8a5ff603bf464500faf433bcbc4f915114",
+    "src/preparation.js": "f7e235a7120afecc401004976e0bb7bc6575f68dc1a4291f648e0687b6a8cbc0",
+    "src/qr-bmp.js": "1b9f35184e150455390a4dcafe283702b2e05155d5bf46e140a5b4296bce7457",
+    "src/schema.js": "afefd38dd58b1a9257dd010d2e4608ab530526346568fc0dc64726172c90a61d",
+    "src/style.css": "3e85c7d6e16194f076fd8525c9b3d3bdbb2e7de29f81a6abbf7d7bec63078498",
+    "src/testcenter.js": "c6ec30c15639685d4838b90399b40a01f28c1da3bc10a234c9e236944e8f5746",
+    "src/toolbox.js": "c534b02ee76f20140fc32c39ea4ba5164194126b94e5bfb37c24800d84585e21",
+    "src/vendor.js": "a978d03a177b68b7308b21ec07b258028248717bb237d3b72921e4425f40678f",
+    "src/viewer.js": "9def9bb19d44f015ca22763004047df08afcedfbf9ce1bf2cb6062b7d592d278",
+    "src/windows-compatibility.js": "2f427150e996d55aa049b1d7fbb5ce01f83d6becffaccceadcf1384c20e43559",
+    "src/windows-number.js": "90ad15ae54b08b38f7b50f059d00ae5a51eab83a81cbd35f76b7e26dbed73b14",
+    "src/windows-responses.js": "f510eebf3b8624dc1420c0dac93f7f10c4fdc11752b6a23d4665596045722de8",
+    "src/windows-tokens.js": "815a3e932c82c1772ee2fd0f3bb66b9979bf2d09ff2e2c138d9452eb1eedf475",
+    "src/worker-client.js": "bdd1223666dfde8ddd7c9f2ede1acfc3c97fd862d2ff1d5ebcb0aff46a87f416",
+    "src/workspace-ui.js": "3f620a7dff35da2e0121c751d04aa6ea74d30101d246187ff8b5e95a52f145d1",
+    "src/xml.js": "f1213427cc5c484b98e72974d5169db17e96bdc3ba641d75f5881877d2323acb",
+    "scripts/local-app.mjs": "d27b31fec5e3955ee9f0e87ae5808e8ab0166878c5cea054dca597425e2e449b",
+    "scripts/lib/local-server.mjs": "b0c829fe87911919c0f6d34e3d404e797d186eb29d8b5c23b200c8ee92be454c"
+  },
+  "testFiles": {
+    "scripts/native-windows-checks.mjs": "ea48da8fffa8e763bc8cb87a98b8e927c7cee1c9cc11afb970a57c6ae68fe56c",
+    "scripts/compare-native-windows.mjs": "966f5c55c296139987b29260ff18b3e48f46d0c7dfef1a52105fb2463776cf81",
+    "scripts/windows-native-corpus.mjs": "e42b38a12a74abcd88c3396ce9ff090417c77a85c8394a53cd4f46125a40576f",
+    "scripts/windows-number-corpus.mjs": "84cfc0d4bef49eeadddf2c56295764da1ae235bb0e24d85495d27ee157b097d9",
+    "scripts/prepare-native-windows.mjs": "94e8358fa83d022633016f302e31a756d442fdda433f641db2637dfb56bb8410",
+    "scripts/WindowsPrecisionReference.cs": "ea7138d7a0721dd71e41f75df98606cc76c9f9db1d7d8631bbef8876cbf3261e",
+    "scripts/Run-Native-Windows.ps1": "498fa8b593cd570d9856b5681f48b26a573c3b04a0252043af6b75f23187dc15",
+    "scripts/bundle-native-windows.mjs": "56079f21184f49b10788f31a590a0e947ee0ba258466e36f74ad2724d65abc5a",
+    ".github/workflows/windows-reference.yml": "b58e9971529c76fe28169dd0a300afff915d8c1bdb46993ac48c4c3023f2cba5",
+    "tests/windows-native.test.js": "ed370dee7163938b1c72dca532b046c273f1307656f5d2d233af1c27000deb78",
+    "tests/windows-number.test.js": "442cea6abd416054e11a53284447f9ffdb4b00857af61e6289a5ea7ba0529ca3",
+    "tests/fixtures/windows-native/reference.json": "f097a7b0eab79706d458f0321ac6cce550da92f5e15e025d4cf1b04518400a86",
+    "tests/browser.js": "acf0369061bda59014a55004bcc59beb459957f4f8d3cb8208990846b2a83d7c",
+    "tests/e2e/browser.spec.js": "d22a3aa0a3075faececedb9ce3974aa450ec35938cb1661b496616223eccaf08",
+    "tests/e2e/workflows.spec.js": "671c63838a248a105f119d66ac43d529d47c21ac5e6dd4672994e899579ed9d4",
+    "tests/e2e/local-starter.spec.js": "f01b5f8cf97bb31a2cd7151d000b2298cf581f4e702146cfdb691b07d3e278ff",
+    "tests/e2e/windows-differential.spec.js": "337847daa3b569e78b0252cde212ad6c9c02482037ceea9e9fb93ff3025acff4",
+    "tests/windows-differential.test.js": "72a477af807602041004ff4384ecf7413e822021bd765234e157baea199558c4",
+    "tests/windows-edges.test.js": "e24d43855f11b9e64dcce824b1bff2b970be2720a6a32b4c16da3986bf788614",
+    "scripts/windows-edge-corpus.mjs": "d4466febe8c633235af2377be179f442199bd064ceb2b82d7ded1bf16d4dde83",
+    "scripts/analyze-windows-edges.mjs": "5f8fae49bd8f4994c34cf7132d3b728a98189a67451fdc2e5608bf1eefbdbae7",
+    "scripts/Run-Windows-CodingCorpus.ps1": "bb038b43ce82aeeec81654b9d37a2e17ab5a2cfb275156c4d554d7c55f991b3f",
+    "scripts/Run-Windows-ConverterCorpus.ps1": "140fc06b2f72559bfc641db05b1e848079db1154c6c3f6aed1bf540a09aa9da6",
+    "scripts/windows-coding-corpus.mjs": "e3a2e0ec52a702d548116d19592952d0d62acbce1e7401be8401f12ff9e103e3",
+    "tests/fixtures/windows-edge/native-32.json": "43212520114d9b986778b520540140f805be9ba6cd01ead79c9eb261ea9d0380",
+    "tests/fixtures/windows-edge/native-64.json": "8ff52d3200b5c966e5c28c57c13dd0739e92f9eec4c50c358f76b0e5b7779674",
+    "tests/fixtures/windows-edge/native-coding.json": "65d5e46a170d42142df70b6fdff419ea3f969c9769c98a8b176c5dc5c9342b57",
+    "tests/fixtures/windows-edge/coding-inputs.json": "fa9ea1b949cfff76ce18ca68a1bd9d959b2119ea5fc7cc076efa38a3bc587332",
+    "package.json": "ae32cc37ea81e153fb179e7017d38df9ebe4369870e6c0e86f67c4b9cdd363ac",
+    "pnpm-lock.yaml": "e432ea75e1054f4e288b0d1ce07ba7790c634560d542e948a79e960cf8c4c95f",
+    "scripts/converter-corpus.mjs": "a7652098718859970e50edef39e358b0e189bd9a73e72aacb8f8c082f948ff09",
+    "tests/fixtures/windows-differential/native-converters.json": "c060bb017700a1db2f156084d2c944a09282c5ea3b4d7887ee0e9637d9785132",
+    "tests/local-app.test.js": "f0db4be01622a88c0d4673cffc18f1ae6f1b1e35baea6bbc3aef1fd42fcf127c",
+    "scripts/build-browser-tests.mjs": "5fcb6b725967ba4c6799613dd78bea7e5f36b4a9704223550b9e3c6f9914e3f6",
+    "playwright.config.js": "9d8b99502c4832ed855b49e058c5d96eb9375aac7f0db831bec83dbf4608722b"
+  },
+  "nativeReference": {
+    "runId": 41632480109,
+    "runUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41632480109",
+    "headSha": "d7be9c77fab01e7373c1251433fb9f3a6159545a",
+    "jobId": 125905261900,
+    "conclusion": "success",
+    "knownTextDifferences": 2,
+    "completeEquivalence": false,
+    "policy": "Only the two documented x86 G17 text differences are allowed; strict equality still fails.",
+    "artifact": {
+      "id": 13229165994,
+      "name": "windows-native-reference",
+      "size_in_bytes": 186117,
+      "url": "https://api.github.com/repos/jurei733/iqb-browser-tools/actions/artifacts/13229165994",
+      "archive_download_url": "https://api.github.com/repos/jurei733/iqb-browser-tools/actions/artifacts/13229165994/zip",
+      "expired": false,
+      "created_at": "2026-11-03T12:05:30Z",
+      "expires_at": "2026-11-17T12:05:30Z",
+      "updated_at": "2026-11-03T12:05:30Z",
+      "digest": "sha256:9df22510c37e29f0c3de19ee7a7b078163fc068b8b82b4335fa9e243ebf7ec77",
+      "workflow_run": {
+        "id": 41632480109,
+        "repository_id": 1431223398,
+        "head_repository_id": 1431223398,
+        "head_branch": "main",
+        "head_sha": "d7be9c77fab01e7373c1251433fb9f3a6159545a"
+      }
+    }
+  }
+}

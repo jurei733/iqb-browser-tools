@@ -1,8 +1,25 @@
-# IQB-Werkzeuge im Browser · Version 0.4.3
+# IQB-Werkzeuge im Browser · Version 0.4.4
 
 Portierung der Arbeitsabläufe von **IQB-Kodieren 4.3.0.3** und **itc-ToolBox 3.3.0.2**. Die Anwendung läuft als statische Website mit lokaler Dateiverarbeitung; eine Windows-Installation ist nicht erforderlich.
 
-## Strenger Windows-Abgleich vom 03.11.2026
+## Nativer Windows-Vergleich 0.4.4
+
+Die unveränderten Originale laufen jetzt zusätzlich automatisch auf einem **Windows-x64-Runner in GitHub Actions**. Beide Programme werden von den dokumentierten IQB-Adressen geladen; alle Dateiprüfsummen werden vor der Ausführung geprüft. Der Workflow benötigt dafür den offiziellen Downloadserver. Er erhält ausschließlich Lesezugriff auf das Repository und speichert synthetische Referenzen als Artefakt; Originalprogramme werden nicht eingecheckt.
+
+Der deterministische Korpus enthält **1214 verschiedene Eingaben** nach Entfernung von 25 Überschneidungen zwischen den bisherigen und neuen Testgruppen. Das **64-Bit-Profil** stimmt bei **1049 regulären Ausgaben** exakt in Feldwerten, Typen und Listenreihenfolge überein; **165 weitere Fälle** prüfen nur die ERROR-Antwort bzw. Ausnahme. Das **32-Bit-Profil** besteht **1212/1214 Vergleiche**. Zwei Textausgaben derselben Zahl in Standard-/Dan-JSON unterscheiden sich noch in der letzten G17-Dezimalstelle. Die separat erfassten Double-Bits sind identisch; die Texte werden trotzdem ausdrücklich als abweichend gezählt.
+
+Die sechs zuvor gemeldeten Fälle stammen aus dem ARM/x86-VM-Lauf. Bei denselben Eingaben auf dem Windows-x64-Runner stimmen die Originale und passenden Browserprofile überein. Historische Belege bleiben erhalten; die Ursache des ARM-Laufs wird nicht pauschal als bewiesen behandelt. Die frische Referenz enthält außerdem **13 API-Fälle in beiden Architekturen**, **22 bidirektionale Kodierergebnisse** und **zwei XML-Steuerzeichen-Ablehnungen**. Der API-Vergleich ruft den originalen DTO-Konverter auf; er ist kein Windows-Netzwerktest aller Testcenter-Versionen.
+
+Behoben wurden Zahlenüberläufe, die .NET-Entscheidung zwischen G15 und G17, numerische Zustands-Schreibweisen und -Reihenfolge, NULL-Verlust beim Wiederlesen von Browser-SQLite-Daten sowie die Weitergabe des 64-Bit-Profils durch Worker und Testcenter-Datenbankimport. Unter **Importverhalten** bzw. **Antwortkonvertierung** sind beide Profile ausdrücklich wählbar. Der erweiterte Modus bleibt die Vorgabe. Das 32-Bit-Profil weist auf die zwei offenen Textfälle hin.
+
+`tests/fixtures/windows-native/reference.json` enthält die originalen JSON-Dateien als Base64 mit Rohdatei-Prüfsummen. `scripts/windows-native-corpus.mjs` erzeugt die Eingaben. `WindowsPrecisionReference.cs` führt unveränderte Originalmethoden aus; `native-windows-checks.mjs` vergleicht die Ausgaben. Der Live-Nachweis unter `/equivalence.html` zeigt die Gegenbeispiele. **Reale oder anonymisierte Studiendaten fehlen weiterhin; universelle Gleichheit wird nicht behauptet.**
+
+```sh
+pnpm test:reference  # prüft zusätzlich, dass genau die zwei dokumentierten x86-Gegenbeispiele offen sind
+node scripts/compare-native-windows.mjs  # strikt: Exit 1 solange die zwei Textausgaben abweichen
+```
+
+## Historischer Windows-Abgleich 0.4.2 vom 03.11.2026
 
 **Vollständige Gleichheit für alle Funktionen, realen Dateien und Sonderfälle ist weiterhin nicht nachgewiesen.** Der neue [live lesbare Nachweis](https://iqb-browser-tools-jr-20261103.iqb-e-v-8867.chatgpt.site/equivalence.html) legt den tatsächlichen Umfang offen. Der bisherige Konvertervergleich hatte einige Antwortwerte vor dem Vergleich angepasst; daraus konnte keine identische Ausgabe abgeleitet werden. `compare-windows-converters.mjs` prüft jetzt den ausdrücklich gewählten Windows-Modus ohne Wertanpassungen und ohne Sortieren der Ergebnislisten.
 
@@ -19,7 +36,7 @@ pnpm test:reference     # zusätzlich 15 strikte ältere Konverterfälle und 31 
 
 Native Erfassung: `tests/fixtures/windows-differential/native-converters.json`; deterministische Eingaben: `scripts/converter-corpus.mjs`; Windows-Lauf: `scripts/Run-Windows-ConverterCorpus.ps1`; neuer 38-Operationen-Nachweis: `tests/results/equivalence-fresh-reference-20261103.json`. Der Browser-Harness führt denselben 547-Fälle-Korpus und die sieben API-Fälle aus. Fehlerkategorien werden ausdrücklich nicht als identische Fehlermeldungen gezählt.
 
-## Erweiterter Grenzvergleich vom 03.11.2026 (0.4.3)
+## Historischer ARM-Grenzvergleich vom 03.11.2026 (0.4.3)
 
 Weitere **118 verschiedene Eingaben** wurden mit derselben unveränderten Toolbox-Assembly in zwei Windows-Prüfprozessen erfasst. **113 reguläre Ausgaben und fünf Fehlerentscheidungen** stimmen im Browser mit dem **64-Bit-Profil (AMD64, de-DE, Zeitzone Berlin)** überein. Zum 32-Bit-Prozess stimmen **112 von 118 Fällen** überein. Die Originalassembly selbst liefert in diesen beiden Prozessen sechs unterschiedliche Zahlenausgaben. Diese sechs Fälle werden ausdrücklich als verbleibende Unterschiede zum 32-Bit-Lauf ausgewiesen. Eine bestimmte Ursache oder Übertragbarkeit auf andere Rechner ist damit nicht bewiesen.
 
@@ -59,9 +76,11 @@ Für den Rückimport in eine laufende Coding-Box ist der ergänzte MCP-/Backend-
 
 Der [filterbare Funktionsbericht](docs/function-audit.html) und seine [maschinenlesbaren Ergebnisse](docs/function-audit.json) erfassen **110 Funktionspunkte**. Das [Originalinventar](docs/original-inventory.json) hält 130 Quelldateien, 36 XAML-Oberflächen und 151 Controls mit Herkunft und Prüfsummen fest. Alle 23 aktiven Haupteinstiege der Windows-Toolbox sind einer Matrixzeile zugeordnet. Die [Matrixdefinition](docs/function-matrix.json) trennt direkte Windows-Vergleiche, Browser-/Modultests, beabsichtigte Unterschiede, Lücken und reine Browser-Erweiterungen. Das Inventar ist eine Prüfgrundlage und kein Nachweis aller internen Codepfade.
 
-Der aktuelle Stand besteht **103 Modultests**, **15 Windows-Konvertervergleiche** und **31 Windows-Datei-/Verhaltensvergleiche**. Die unveränderten Originale wurden am 31.10.2026 und am 03.11.2026 mit je 38 nativen Prüfoperationen ausgeführt. Eingabe- und Assembly-Prüfsummen sind gespeichert. Sämtliche BMP-QR-Bilder beider Original-Wordvorlagen stimmen Byte für Byte überein; DOCX-/XLSX-ZIP-Metadaten werden bei Inhaltsvergleichen nicht als Nutzdaten behandelt.
+Der aktuelle Stand besteht **109 Modultests**, **15 Windows-Konvertervergleiche** und **31 Windows-Datei-/Verhaltensvergleiche**. Die unveränderten Originale wurden am 31.10.2026 und am 03.11.2026 mit je 38 nativen Prüfoperationen ausgeführt. Eingabe- und Assembly-Prüfsummen sind gespeichert. Sämtliche BMP-QR-Bilder beider Original-Wordvorlagen stimmen Byte für Byte überein; DOCX-/XLSX-ZIP-Metadaten werden bei Inhaltsvergleichen nicht als Nutzdaten behandelt.
 
-Chromium, Firefox und WebKit bestehen in [GitHub Actions](https://github.com/jurei733/iqb-browser-tools/actions/runs/41623577752) jeweils **18 Ablaufprüfungen mit 49 enthaltenen Kompatibilitätsprüfungen**. Alle acht Jobs sind erfolgreich: Browser, Node 22/24 sowie je sechs Tests des lokalen Starters unter Windows, macOS und Linux. Alle drei Browserberichte wurden als Artefakte hochgeladen. Quellprüfsummen und Jobbelege stehen in `tests/results/function-audit-ci-20261103-edges.json`. Lokal auf macOS bestehen Chromium und WebKit ebenfalls je 18 Abläufe/47 Kompatibilitätschecks. Der lokale Firefox-Playwright-Build startet wegen eines Profilordnerfehlers nicht; Firefox wird in CI auf Linux geprüft. WebKit ersetzt keinen Test der installierten Safari-App. Die Tests verwenden synthetische Dateien und ein kontrolliertes Konto; ein produktiver IQB-Domänenarbeitsplatz wurde nicht geprüft.
+Für Version 0.4.4 prüfen Chromium, Firefox und WebKit in [GitHub Actions](https://github.com/jurei733/iqb-browser-tools/actions/runs/41632480170) jeweils **18 Ablaufprüfungen mit 50 enthaltenen Kompatibilitätsprüfungen**. Dazu kommen 109 Modultests unter Node 22/24 und je sechs Startertests unter Windows, macOS und Linux. Der zusätzliche Windows-Workflow führt die unveränderten Originale erneut aus. Seine zwei dokumentierten x86-Textabweichungen bleiben im Ergebnis fehlgeschlagen; die CI erlaubt ausschließlich diese bekannten Gegenbeispiele. Ein grüner Lauf belegt damit die festgehaltenen Vergleichsgrenzen, keine vollständige Gleichheit. Quellprüfsummen, Job- und Artefaktbelege stehen in `tests/results/function-audit-ci-20261103-native.json`.
+
+Lokal auf macOS bestehen Chromium und WebKit ebenfalls je **18 Abläufe und 50 Kompatibilitätsprüfungen**. Der lokale Firefox-Playwright-Build startet wegen eines Profilordnerfehlers nicht; Firefox wird in CI auf Linux geprüft. WebKit ersetzt keinen Test der installierten Safari-App. Die Tests verwenden synthetische Dateien und ein kontrolliertes Konto; ein produktiver IQB-Domänenarbeitsplatz wurde nicht geprüft. Historische CI-Belege aus Version 0.4.3 bleiben in `tests/results/function-audit-ci-20261103-edges.json` erhalten.
 
 Neu abgeschlossen sind Scanverschiebung durch Ziehen, physikalischer WPF-Zoom, gemeinsame Schablonenposition und Umschalt-Drehung, Endanimation, F1/Programm-Info, vollständiger Meldungsexport als Text, abbrechbare Vorbereitung und ursprüngliche Dialog-Voreinstellungen. Arbeitsstände, Eingabedateien und Optionen lassen sich nach einem Neustart öffnen. Zugangsdaten können ausdrücklich lokal gemerkt und wieder gelöscht werden.
 
