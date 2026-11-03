@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T10:55:48.883Z",
+  "generatedAt": "2026-11-03T11:01:53.083Z",
   "nativeFinished": "2026-11-03T10:04:57.1876204Z",
   "nativePlatform": "Microsoft Windows NT 10.0.26300.0",
   "nativeRuntime": "4.0.30319.42000",
@@ -6132,7 +6132,7 @@
       "src/workspace-ui.js": "3f620a7dff35da2e0121c751d04aa6ea74d30101d246187ff8b5e95a52f145d1",
       "src/xml.js": "f1213427cc5c484b98e72974d5169db17e96bdc3ba641d75f5881877d2323acb"
     },
-    "generatedAt": "2026-11-03T10:55:48.964Z",
+    "generatedAt": "2026-11-03T11:01:53.125Z",
     "completeEquivalence": false,
     "realProductionDataTested": false,
     "summary": {
@@ -14938,6 +14938,52 @@
         "browserToNative": true
       }
     ]
+  },
+  "verification": {
+    "headSha": "1ee4c143685f0cb21e9169c0a180c1dc7e38c4c4",
+    "runUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41623577752",
+    "node": [
+      {
+        "node": "22",
+        "passed": 103,
+        "total": 103
+      },
+      {
+        "node": "24",
+        "passed": 103,
+        "total": 103
+      }
+    ],
+    "browsers": [
+      {
+        "browser": "webkit",
+        "passed": 18,
+        "total": 18,
+        "compatibility": {
+          "passed": 49,
+          "total": 49
+        }
+      },
+      {
+        "browser": "chromium",
+        "passed": 18,
+        "total": 18,
+        "compatibility": {
+          "passed": 49,
+          "total": 49
+        }
+      },
+      {
+        "browser": "firefox",
+        "passed": 18,
+        "total": 18,
+        "compatibility": {
+          "passed": 49,
+          "total": 49
+        }
+      }
+    ],
+    "sourceFilesMatched": true
   },
   "nativeCaptureSHA256": "c060bb017700a1db2f156084d2c944a09282c5ea3b4d7887ee0e9637d9785132"
 }

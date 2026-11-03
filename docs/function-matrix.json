@@ -293,7 +293,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-strict.json",
+          "path": "tests/results/function-audit-ci-20261103-edges.json",
           "pattern": "last coding workspace"
         },
         {
@@ -303,7 +303,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-strict.json",
+          "path": "tests/results/function-audit-ci-20261103-edges.json",
           "pattern": "local starter: account"
         }
       ]
@@ -731,7 +731,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-strict.json",
+          "path": "tests/results/function-audit-ci-20261103-edges.json",
           "pattern": "physical zoom"
         }
       ]
@@ -756,7 +756,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-strict.json",
+          "path": "tests/results/function-audit-ci-20261103-edges.json",
           "pattern": "physical zoom"
         }
       ]
@@ -819,7 +819,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-strict.json",
+          "path": "tests/results/function-audit-ci-20261103-edges.json",
           "pattern": "physical zoom"
         }
       ]
@@ -848,7 +848,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-strict.json",
+          "path": "tests/results/function-audit-ci-20261103-edges.json",
           "pattern": "shared position"
         }
       ]
@@ -966,7 +966,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-strict.json",
+          "path": "tests/results/function-audit-ci-20261103-edges.json",
           "pattern": "original result boundary"
         }
       ]
@@ -999,7 +999,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-strict.json",
+          "path": "tests/results/function-audit-ci-20261103-edges.json",
           "pattern": "last coding workspace"
         },
         {
@@ -1009,7 +1009,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-strict.json",
+          "path": "tests/results/function-audit-ci-20261103-edges.json",
           "pattern": "local starter: account"
         }
       ]
@@ -1033,7 +1033,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-strict.json",
+          "path": "tests/results/function-audit-ci-20261103-edges.json",
           "pattern": "physical zoom"
         }
       ]
@@ -1057,7 +1057,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-strict.json",
+          "path": "tests/results/function-audit-ci-20261103-edges.json",
           "pattern": "completed job flashes"
         }
       ]
@@ -1131,7 +1131,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-strict.json",
+          "path": "tests/results/function-audit-ci-20261103-edges.json",
           "pattern": "codes and booklets"
         }
       ]
@@ -1512,7 +1512,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-strict.json",
+          "path": "tests/results/function-audit-ci-20261103-edges.json",
           "pattern": "without XML match Windows"
         }
       ]
@@ -1645,7 +1645,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-strict.json",
+          "path": "tests/results/function-audit-ci-20261103-edges.json",
           "pattern": "full diagnostics"
         }
       ]
@@ -1735,7 +1735,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-strict.json",
+          "path": "tests/results/function-audit-ci-20261103-edges.json",
           "pattern": "Windows mode: raw API files"
         }
       ]
@@ -1948,7 +1948,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-strict.json",
+          "path": "tests/results/function-audit-ci-20261103-edges.json",
           "pattern": "Windows mode: raw API files"
         }
       ],
@@ -2507,7 +2507,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-strict.json",
+          "path": "tests/results/function-audit-ci-20261103-edges.json",
           "pattern": "group selection and workspace changes"
         }
       ]
@@ -2705,7 +2705,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-strict.json",
+          "path": "tests/results/function-audit-ci-20261103-edges.json",
           "pattern": "access can be remembered"
         }
       ]
@@ -2731,7 +2731,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-strict.json",
+          "path": "tests/results/function-audit-ci-20261103-edges.json",
           "pattern": "preparation cancellation"
         }
       ]
@@ -2760,12 +2760,12 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-strict.json",
+          "path": "tests/results/function-audit-ci-20261103-edges.json",
           "pattern": "last coding workspace"
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-strict.json",
+          "path": "tests/results/function-audit-ci-20261103-edges.json",
           "pattern": "selected Toolbox input files"
         },
         {
@@ -2775,7 +2775,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-strict.json",
+          "path": "tests/results/function-audit-ci-20261103-edges.json",
           "pattern": "local starter: account"
         }
       ]
@@ -3006,7 +3006,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-strict.json",
+          "path": "tests/results/function-audit-ci-20261103-edges.json",
           "pattern": "physical zoom"
         }
       ]
@@ -3031,7 +3031,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-strict.json",
+          "path": "tests/results/function-audit-ci-20261103-edges.json",
           "pattern": "startup defaults"
         }
       ],
@@ -3079,5 +3079,5 @@
     "Firefox wird in GitHub Actions auf Linux geprüft; der macOS-Playwright-Build startet in dieser Umgebung mit einem Profilordnerfehler nicht. WebKit-Prüfungen sind kein Test einer installierten Safari-Version.",
     "Zusätzlich 118 Grenzfälle: Browser entspricht dem unveränderten 64-Bit-Konverterprofil (de-DE, Berlin). Im 32-Bit-Prüfprozess liefert dieselbe Originalassembly in sechs Zahlengrenzfällen andere Werte; diese Übereinstimmung bleibt offen. Die 32-/64-Bit-Ausgaben sind gesondert gespeichert; daraus wird keine Ursache oder Gleichheit auf sämtlichen Rechnern abgeleitet."
   ],
-  "ciReport": "tests/results/function-audit-ci-20261103-strict.json"
+  "ciReport": "tests/results/function-audit-ci-20261103-edges.json"
 }
