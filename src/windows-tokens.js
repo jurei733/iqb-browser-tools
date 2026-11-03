@@ -3,7 +3,7 @@ import {legacyDouble,parseWindowsDouble} from './windows-number.js';
 
 const order=Symbol('JSON property order');
 export class WindowsNumber {
- constructor(raw){this.raw=raw;this.floating=/[.eE]/.test(raw);this.value=this.floating?parseWindowsDouble(raw):BigInt(raw);if(this.floating&&!Number.isFinite(this.value))throw new Error('Zahl außerhalb des Windows-Double-Bereichs.');}
+ constructor(raw,bits=32){this.raw=raw;this.bits=bits;this.floating=/[.eE]/.test(raw);this.value=this.floating?(bits===64?parseWindowsDouble(raw):Number(raw)):BigInt(raw);if(this.floating&&!Number.isFinite(this.value))throw new Error('Zahl außerhalb des Windows-Double-Bereichs.');}
 }
 class WindowsDate {
  constructor(parts,fraction='',suffix=''){this.parts=parts;this.fraction=fraction.replace(/0+$/,'');this.suffix=suffix;}
@@ -35,11 +35,11 @@ function dateToken(value){
  }
  return new WindowsDate(parts,fraction,zone);
 }
-export function parseWindowsJSON(source,{stringsOnly=false}={}){
+export function parseWindowsJSON(source,{stringsOnly=false,bits=32}={}){
  const errors=[],tree=parseTree(source,errors,{allowTrailingComma:true});
  if(errors.length||!tree)throw new Error('Ungültiges JSON.');
  function convert(node){
-  if(node.type==='number')return new WindowsNumber(source.slice(node.offset,node.offset+node.length));
+  if(node.type==='number')return new WindowsNumber(source.slice(node.offset,node.offset+node.length),bits);
   if(node.type==='string')return stringsOnly?node.value:dateToken(node.value);
   if(node.type==='array')return node.children.map(convert);
   if(node.type==='object'){
@@ -72,7 +72,7 @@ export function windowsTokenText(value,{invariant=false,stringsOnly=false}={}){
  return String(value);
 }
 export function prettyWindowsJSON(value,depth=0){
- if(value instanceof WindowsNumber){if(!value.floating)return String(value.value);let out=generalDouble(value.value);if(legacyDouble(value.value.toExponential(14))!==value.value)out=generalDouble(value.value,17);return /[.E]/.test(out)?out:out+'.0';}
+ if(value instanceof WindowsNumber){if(!value.floating)return String(value.value);let out=generalDouble(value.value);const parse=value.bits===64?legacyDouble:Number;if(parse(value.value.toExponential(14))!==value.value)out=generalDouble(value.value,17);return /[.E]/.test(out)?out:out+'.0';}
  if(value instanceof WindowsDate){const [y,m,d,h,min,s]=value.parts;return JSON.stringify(`${pad(y,4)}-${pad(m)}-${pad(d)}T${pad(h)}:${pad(min)}:${pad(s)}${value.fraction?'.'+value.fraction:''}${value.suffix}`);}
  if(!isContainer(value))return JSON.stringify(value);
  const array=Array.isArray(value),items=array?value.map(item=>prettyWindowsJSON(item,depth+1)):orderedEntries(value).map(([key,item])=>JSON.stringify(key)+': '+prettyWindowsJSON(item,depth+1));

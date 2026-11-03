@@ -22,7 +22,7 @@ function mergeUnit(unit,incoming){
 const sameUnit=(a,b)=>a.alias===b.alias&&(a.id===b.id||a.id===a.alias||b.id===b.alias);
 
 export function parseChunk(content,type='',{windows=false}={}) {
-  if(windows)return parseWindowsChunk(content,type);
+  if(windows)return parseWindowsChunk(content,type,{bits:windows==='64'?64:32});
   const forms=new Map();
   const add=(subform,id,value,status='UNSET',code=0,score=0)=>{
     if(!forms.has(String(subform??'')))forms.set(String(subform??''),[]);

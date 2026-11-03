@@ -8,10 +8,10 @@ function int32(value){
   let number=Number(value);if(typeof value==='number'&&!Number.isInteger(value)){const floor=Math.floor(value),fraction=value-floor;number=fraction===.5?(floor%2===0?floor:floor+1):Math.round(value);}
   if(!Number.isInteger(number)||number< -2147483648||number>2147483647)throw new Error('Windows-Konvertierung: Code oder Score außerhalb des 32-Bit-Bereichs.');return number;
 }
-export function parseWindowsChunk(content,type=''){
+export function parseWindowsChunk(content,type='',{bits=32}={}){
   const family=standardTypes.has(type)?'iqb-standard':type==='unknown'?'Abi':type==='IQBVisualUnitPlayerV2.1.0'?'Dan':type==='iqb-simple-player@1.0.0'?'SimplePlayerLegacy':'KeyValue';
   const failed=message=>[{id:'',responses:[{id:'ERROR',value:`Converter ${family} failed: ${message}`,status:'ERROR',code:0,score:0}]}];
-  let data;try{data=typeof content==='string'?(content.trim()==='undefined'?null:parseWindowsJSON(content,{stringsOnly:type==='unknown'})):content;}catch(error){return failed(error.message);}
+  let data;try{data=typeof content==='string'?(content.trim()==='undefined'?null:parseWindowsJSON(content,{stringsOnly:type==='unknown',bits})):content;}catch(error){return failed(error.message);}
   const forms=new Map();
   const add=(form,id,value,status='UNSET',code=0,score=0)=>{if(form===null||isContainer(form))throw new Error('Windows-Konvertierung: Ein Unterformular muss ein skalarer Wert sein.');form=invariantToken(form);if(!forms.has(form))forms.set(form,[]);forms.get(form).push({id,value,status,code,score});};
   if(standardTypes.has(type)){

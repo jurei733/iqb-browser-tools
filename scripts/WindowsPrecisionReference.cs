@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Globalization;
 using System.Security.Cryptography;
 using System.Runtime.InteropServices;
+using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -30,6 +31,11 @@ public class WindowsPrecisionReference {
     var values=method=="setResponsesIqbStandard"||method=="setResponsesAbi"?new object[]{content}:new object[]{content,null};
     result["outputJSON"]=JsonConvert.SerializeObject(m.Invoke(null,values));
    } catch(Exception e) { while(e.InnerException!=null)e=e.InnerException;result["exceptionType"]=e.GetType().FullName;result["message"]=e.Message; }
+   try {
+    var probes=new JArray();foreach(var value in JToken.Parse((string)test["contentJSON"]).SelectTokens("$..*").OfType<JValue>().Where(v=>v.Type==JTokenType.Float)){
+     var number=(double)value.Value;var p=new JObject();p["path"]=value.Path;p["bits"]=BitConverter.DoubleToInt64Bits(number).ToString("x16");p["g15"]=number.ToString("G15",CultureInfo.InvariantCulture);p["g17"]=number.ToString("G17",CultureInfo.InvariantCulture);p["roundTrip"]=number.ToString("R",CultureInfo.InvariantCulture);probes.Add(p);
+    }result["doubleProbes"]=probes;
+   } catch { /* Diagnostic parsing cannot change the original converter outcome. */ }
    results.Add(result);
   }
   var report=new JObject();report["finished"]=DateTime.UtcNow.ToString("o");report["processBits"]=IntPtr.Size*8;report["processArchitecture"]=Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE");report["platform"]=Environment.OSVersion.VersionString;report["runtime"]=Environment.Version.ToString();report["timezone"]=TimeZoneInfo.Local.Id;report["culture"]=CultureInfo.CurrentCulture.Name;
