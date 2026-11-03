@@ -1,7 +1,7 @@
 {
   "name": "iqb-browser-port",
   "private": true,
-  "version": "0.4.1",
+  "version": "0.4.2",
   "type": "module",
   "packageManager": "pnpm@11.25.0",
   "scripts": {
@@ -11,6 +11,7 @@
     "test": "node --test tests/*.test.js",
     "test:browser": "pnpm build && node scripts/build-browser-tests.mjs work/browser-tests && playwright test",
     "test:reference": "node scripts/test-reference.mjs",
+    "test:differential": "node scripts/analyze-windows-differential.mjs",
     "audit:functions": "node scripts/audit-functions.mjs"
   },
   "dependencies": {

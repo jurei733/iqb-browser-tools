@@ -1,0 +1,211 @@
+<!doctype html><html lang="de"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Strenger Windows-Vergleich · IQB-Werkzeuge</title><style>body{font:16px/1.6 system-ui,sans-serif;color:#142952;background:#f7f9fb;max-width:1100px;margin:30px auto;padding:0 22px}h1{font-size:30px;line-height:1.2}a{color:#006b72}table{border-collapse:collapse;width:100%;background:white;margin:20px 0}th,td{text-align:left;padding:10px;border-bottom:1px solid #d5dfe7}code{overflow-wrap:anywhere}pre{background:#edf2f6;padding:16px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px}.scope{background:#fff2d5;padding:18px;border-left:5px solid #b67c00}.checks{display:flex;gap:12px;flex-wrap:wrap}.checks p{background:white;padding:16px;flex:1;min-width:200px}details{background:white;margin:12px 0;padding:12px}summary{cursor:pointer}small{overflow-wrap:anywhere}footer{margin:40px 0}</style><a href="/">← Zu den IQB-Werkzeugen</a><h1>Was gegenüber Windows nachgewiesen ist</h1><p>Original: itc-ToolBox 3.3.0.2 · Browserfassung 0.4.2 · Windows-Lauf 2026-11-03T10:04:57.1876204Z</p><p class="scope"><strong>Ein vollständiger Gleichheitsnachweis ist nicht erbracht.</strong> Nachgewiesen sind die folgenden begrenzten Fälle. Produktive oder anonymisierte Studiendateien waren nicht verfügbar. Der erweiterte Standardmodus und der ausdrücklich gewählte Windows-Modus haben unterschiedliche Ziele.</p><div class="checks"><p><strong>401/401</strong><br>Reguläre Ausgaben: identische Feldwerte, Typen und Listenreihenfolge</p><p><strong>146/146</strong><br>Fehlerfälle: gleiche Zurückweisungsentscheidung; Fehlermeldungen nicht identisch nachgewiesen</p><p><strong>7/7</strong><br>Originaler Testcenter-API-Konverter: gleiche Inhalte nach benannter Feldzuordnung</p></div><h2>Wie geprüft wurde</h2><p>Die unveränderte Windows-Assembly wurde in einer Windows-VM ausgeführt. Ein deterministischer Korpus enthält 547 unterschiedliche Eingaben; 58 doppelte Eingaben aus einem ersten Lauf mit 605 Fällen wurden entfernt. Die Prüfung verändert keine Antwortwerte und sortiert keine Ergebnislisten. JSON-Objektschlüssel dürfen in unterschiedlicher Reihenfolge serialisiert sein.</p><p>Die Eingabeprüfsumme und die Assembly-Prüfsumme sind mit dem gespeicherten Windows-Ergebnis verbunden. Die 401 regulären Ausgaben werden in Node und in den Browserprüfungen direkt verglichen. Bei Fehlern wird ausschließlich geprüft, ob beide Programme die Eingabe zurückweisen. .NET-Ausnahmetypen, Meldungstexte und Windows-Dialoge sind damit nicht als identisch belegt.</p><table><thead><tr><th>Originalmethode</th><th>Reguläre Ausgaben</th><th>Fehlerentscheidungen</th><th>Ergebnis</th></tr></thead><tbody><tr><td><code>setResponsesIqbStandard</code></td><td>137</td><td>12</td><td>Bestanden</td></tr><tr><td><code>setResponsesAbi</code></td><td>71</td><td>43</td><td>Bestanden</td></tr><tr><td><code>setResponsesDan</code></td><td>88</td><td>4</td><td>Bestanden</td></tr><tr><td><code>setResponsesKeyValue</code></td><td>51</td><td>42</td><td>Bestanden</td></tr><tr><td><code>setResponsesSimplePlayerLegacy</code></td><td>54</td><td>45</td><td>Bestanden</td></tr></tbody></table><h2>Windows-Modus auswählen</h2><p>Unter „Antworten und Logs auswerten“ bei „Importverhalten“ den Windows-Modus wählen. Für direkte Testcenter-Abrufe steht „Antwortkonvertierung“ zur Verfügung. Er bildet unter anderem deutsche Dezimalzeichen, .NET-Zahlen- und Datumsdarstellung, Nullwerte, die ursprüngliche Behandlung von CRLF und wiederholten Unterformularen nach.</p><p>Im erweiterten Modus stimmen 224 der 401 regulären Ausgaben exakt überein; 177 unterscheiden sich. Dieser Modus erhält beispielsweise Zeilenumbrüche und standardisierte Zahlendarstellungen. Seine Ausgaben sind deshalb kein allgemeiner Gleichheitsnachweis zum Original.</p><h2>Konkrete Gegenbeispiele zur pauschalen Gleichheit</h2><details><summary>setResponsesIqbStandard-value-3</summary><p>Eingabe:</p><pre>[{&quot;id&quot;:&quot;v&quot;,&quot;value&quot;:&quot;a\r\nb\nc&quot;,&quot;status&quot;:&quot;VALUE_CHANGED&quot;,&quot;code&quot;:0,&quot;score&quot;:0}]</pre><p>Windows-Original:</p><pre>[
+  {
+    &quot;id&quot;: &quot;&quot;,
+    &quot;responses&quot;: [
+      {
+        &quot;id&quot;: &quot;v&quot;,
+        &quot;status&quot;: &quot;VALUE_CHANGED&quot;,
+        &quot;value&quot;: &quot;ab\nc&quot;,
+        &quot;code&quot;: 0,
+        &quot;score&quot;: 0
+      }
+    ]
+  }
+]</pre><p>Erweiterter Browsermodus:</p><pre>[
+  {
+    &quot;id&quot;: &quot;&quot;,
+    &quot;responses&quot;: [
+      {
+        &quot;id&quot;: &quot;v&quot;,
+        &quot;value&quot;: &quot;a\r\nb\nc&quot;,
+        &quot;status&quot;: &quot;VALUE_CHANGED&quot;,
+        &quot;code&quot;: 0,
+        &quot;score&quot;: 0
+      }
+    ]
+  }
+]</pre></details><details><summary>setResponsesIqbStandard-value-4</summary><p>Eingabe:</p><pre>[{&quot;id&quot;:&quot;v&quot;,&quot;value&quot;:&quot;\r\n&quot;,&quot;status&quot;:&quot;VALUE_CHANGED&quot;,&quot;code&quot;:0,&quot;score&quot;:0}]</pre><p>Windows-Original:</p><pre>[
+  {
+    &quot;id&quot;: &quot;&quot;,
+    &quot;responses&quot;: [
+      {
+        &quot;id&quot;: &quot;v&quot;,
+        &quot;status&quot;: &quot;VALUE_CHANGED&quot;,
+        &quot;value&quot;: &quot;&quot;,
+        &quot;code&quot;: 0,
+        &quot;score&quot;: 0
+      }
+    ]
+  }
+]</pre><p>Erweiterter Browsermodus:</p><pre>[
+  {
+    &quot;id&quot;: &quot;&quot;,
+    &quot;responses&quot;: [
+      {
+        &quot;id&quot;: &quot;v&quot;,
+        &quot;value&quot;: &quot;\r\n&quot;,
+        &quot;status&quot;: &quot;VALUE_CHANGED&quot;,
+        &quot;code&quot;: 0,
+        &quot;score&quot;: 0
+      }
+    ]
+  }
+]</pre></details><details><summary>setResponsesIqbStandard-value-11</summary><p>Eingabe:</p><pre>[{&quot;id&quot;:&quot;v&quot;,&quot;value&quot;:12.5,&quot;status&quot;:&quot;VALUE_CHANGED&quot;,&quot;code&quot;:0,&quot;score&quot;:0}]</pre><p>Windows-Original:</p><pre>[
+  {
+    &quot;id&quot;: &quot;&quot;,
+    &quot;responses&quot;: [
+      {
+        &quot;id&quot;: &quot;v&quot;,
+        &quot;status&quot;: &quot;VALUE_CHANGED&quot;,
+        &quot;value&quot;: &quot;12,5&quot;,
+        &quot;code&quot;: 0,
+        &quot;score&quot;: 0
+      }
+    ]
+  }
+]</pre><p>Erweiterter Browsermodus:</p><pre>[
+  {
+    &quot;id&quot;: &quot;&quot;,
+    &quot;responses&quot;: [
+      {
+        &quot;id&quot;: &quot;v&quot;,
+        &quot;value&quot;: &quot;12.5&quot;,
+        &quot;status&quot;: &quot;VALUE_CHANGED&quot;,
+        &quot;code&quot;: 0,
+        &quot;score&quot;: 0
+      }
+    ]
+  }
+]</pre></details><details><summary>setResponsesIqbStandard-value-12</summary><p>Eingabe:</p><pre>[{&quot;id&quot;:&quot;v&quot;,&quot;value&quot;:-12.5,&quot;status&quot;:&quot;VALUE_CHANGED&quot;,&quot;code&quot;:0,&quot;score&quot;:0}]</pre><p>Windows-Original:</p><pre>[
+  {
+    &quot;id&quot;: &quot;&quot;,
+    &quot;responses&quot;: [
+      {
+        &quot;id&quot;: &quot;v&quot;,
+        &quot;status&quot;: &quot;VALUE_CHANGED&quot;,
+        &quot;value&quot;: &quot;-12,5&quot;,
+        &quot;code&quot;: 0,
+        &quot;score&quot;: 0
+      }
+    ]
+  }
+]</pre><p>Erweiterter Browsermodus:</p><pre>[
+  {
+    &quot;id&quot;: &quot;&quot;,
+    &quot;responses&quot;: [
+      {
+        &quot;id&quot;: &quot;v&quot;,
+        &quot;value&quot;: &quot;-12.5&quot;,
+        &quot;status&quot;: &quot;VALUE_CHANGED&quot;,
+        &quot;code&quot;: 0,
+        &quot;score&quot;: 0
+      }
+    ]
+  }
+]</pre></details><details><summary>setResponsesIqbStandard-value-13</summary><p>Eingabe:</p><pre>[{&quot;id&quot;:&quot;v&quot;,&quot;value&quot;:1e-7,&quot;status&quot;:&quot;VALUE_CHANGED&quot;,&quot;code&quot;:0,&quot;score&quot;:0}]</pre><p>Windows-Original:</p><pre>[
+  {
+    &quot;id&quot;: &quot;&quot;,
+    &quot;responses&quot;: [
+      {
+        &quot;id&quot;: &quot;v&quot;,
+        &quot;status&quot;: &quot;VALUE_CHANGED&quot;,
+        &quot;value&quot;: &quot;1E-07&quot;,
+        &quot;code&quot;: 0,
+        &quot;score&quot;: 0
+      }
+    ]
+  }
+]</pre><p>Erweiterter Browsermodus:</p><pre>[
+  {
+    &quot;id&quot;: &quot;&quot;,
+    &quot;responses&quot;: [
+      {
+        &quot;id&quot;: &quot;v&quot;,
+        &quot;value&quot;: &quot;1e-7&quot;,
+        &quot;status&quot;: &quot;VALUE_CHANGED&quot;,
+        &quot;code&quot;: 0,
+        &quot;score&quot;: 0
+      }
+    ]
+  }
+]</pre></details><details><summary>setResponsesIqbStandard-value-15</summary><p>Eingabe:</p><pre>[{&quot;id&quot;:&quot;v&quot;,&quot;value&quot;:3.141592653589793,&quot;status&quot;:&quot;VALUE_CHANGED&quot;,&quot;code&quot;:0,&quot;score&quot;:0}]</pre><p>Windows-Original:</p><pre>[
+  {
+    &quot;id&quot;: &quot;&quot;,
+    &quot;responses&quot;: [
+      {
+        &quot;id&quot;: &quot;v&quot;,
+        &quot;status&quot;: &quot;VALUE_CHANGED&quot;,
+        &quot;value&quot;: &quot;3,14159265358979&quot;,
+        &quot;code&quot;: 0,
+        &quot;score&quot;: 0
+      }
+    ]
+  }
+]</pre><p>Erweiterter Browsermodus:</p><pre>[
+  {
+    &quot;id&quot;: &quot;&quot;,
+    &quot;responses&quot;: [
+      {
+        &quot;id&quot;: &quot;v&quot;,
+        &quot;value&quot;: &quot;3.141592653589793&quot;,
+        &quot;status&quot;: &quot;VALUE_CHANGED&quot;,
+        &quot;code&quot;: 0,
+        &quot;score&quot;: 0
+      }
+    ]
+  }
+]</pre></details><details><summary>setResponsesIqbStandard-value-17</summary><p>Eingabe:</p><pre>[{&quot;id&quot;:&quot;v&quot;,&quot;value&quot;:&quot;2026-10-22T10:11:12Z&quot;,&quot;status&quot;:&quot;VALUE_CHANGED&quot;,&quot;code&quot;:0,&quot;score&quot;:0}]</pre><p>Windows-Original:</p><pre>[
+  {
+    &quot;id&quot;: &quot;&quot;,
+    &quot;responses&quot;: [
+      {
+        &quot;id&quot;: &quot;v&quot;,
+        &quot;status&quot;: &quot;VALUE_CHANGED&quot;,
+        &quot;value&quot;: &quot;22.10.2026 10:11:12&quot;,
+        &quot;code&quot;: 0,
+        &quot;score&quot;: 0
+      }
+    ]
+  }
+]</pre><p>Erweiterter Browsermodus:</p><pre>[
+  {
+    &quot;id&quot;: &quot;&quot;,
+    &quot;responses&quot;: [
+      {
+        &quot;id&quot;: &quot;v&quot;,
+        &quot;value&quot;: &quot;2026-10-22T10:11:12Z&quot;,
+        &quot;status&quot;: &quot;VALUE_CHANGED&quot;,
+        &quot;code&quot;: 0,
+        &quot;score&quot;: 0
+      }
+    ]
+  }
+]</pre></details><details><summary>setResponsesIqbStandard-value-22</summary><p>Eingabe:</p><pre>[{&quot;id&quot;:&quot;v&quot;,&quot;value&quot;:[1,&quot;001&quot;,true,null],&quot;status&quot;:&quot;VALUE_CHANGED&quot;,&quot;code&quot;:0,&quot;score&quot;:0}]</pre><p>Windows-Original:</p><pre>[
+  {
+    &quot;id&quot;: &quot;&quot;,
+    &quot;responses&quot;: [
+      {
+        &quot;id&quot;: &quot;v&quot;,
+        &quot;status&quot;: &quot;VALUE_CHANGED&quot;,
+        &quot;value&quot;: &quot;[  1,  \&quot;001\&quot;,  true,  null]&quot;,
+        &quot;code&quot;: 0,
+        &quot;score&quot;: 0
+      }
+    ]
+  }
+]</pre><p>Erweiterter Browsermodus:</p><pre>[
+  {
+    &quot;id&quot;: &quot;&quot;,
+    &quot;responses&quot;: [
+      {
+        &quot;id&quot;: &quot;v&quot;,
+        &quot;value&quot;: &quot;[1,\&quot;001\&quot;,true,null]&quot;,
+        &quot;status&quot;: &quot;VALUE_CHANGED&quot;,
+        &quot;code&quot;: 0,
+        &quot;score&quot;: 0
+      }
+    ]
+  }
+]</pre></details><h2>Weitere Grenzen</h2><ul><li>Die sieben API-Fälle bilden <code>unitId → id</code> und <code>unitname → alias</code> ab und ergänzen das leere Browserfeld <code>logs</code>. Antwortwerte werden nicht angepasst.</li><li>Geprüft wurden die festgehaltenen Windows-/NET-Versionen mit deutscher Kultur <code>de-DE</code>.</li><li>Die 110 Funktionspunkte der bisherigen Matrix enthalten auch reine Browser- und Modultests. Diese sind kein unmittelbarer Windows-Nachweis jeder Funktion.</li><li>Alle realen Dateien, beliebige Dateigrößen, sämtliche Netzwerkfehler, jede GUI-Interaktion und produktive Domänenkonten sind nicht geprüft.</li><li>Betriebssystemkonto und dauerhafter Dateizugriff benötigen weiterhin den optionalen lokalen Starter.</li></ul><h2>Reproduzieren</h2><pre>pnpm test:differential
+pnpm test:reference
+pnpm test:browser</pre><p><a href="/equivalence-proof.json" download>Maschinenlesbaren Nachweis herunterladen</a> · <a href="https://github.com/jurei733/iqb-browser-tools/actions">Aktuelle CI-Läufe</a></p><p><small>Assembly SHA-256: c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1<br>Eingaben SHA-256: 8cc7dd11cfb93d3a294f00f7d17fe597004417b4c089119a379f0e07b1809f93<br>Native Erfassung SHA-256: c060bb017700a1db2f156084d2c944a09282c5ea3b4d7887ee0e9637d9785132</small></p><footer>Die Ergebnisse belegen den beschriebenen Testumfang. Sie werden nicht zu einer Aussage über sämtliche denkbaren Eingaben erweitert.</footer></html>

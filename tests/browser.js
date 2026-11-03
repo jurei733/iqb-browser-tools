@@ -3,6 +3,7 @@ import {unzipSync,zipSync,strToU8,strFromU8} from 'fflate';
 import * as T from '../src/toolbox.js';
 import * as C from '../src/coding.js';
 import * as D from '../src/data.js';
+import {converterCorpus,converterTypes,pipelineCorpus} from '../scripts/converter-corpus.mjs';
 import {parseXML,decodeXML} from '../src/xml.js';
 import {decodeCanvas} from '../src/image.js';
 import {loginDocx} from '../src/docx.js';
@@ -92,5 +93,13 @@ check('Funktionsmatrix Oberfläche: Jobwechsel erhält Fortschritt und vollstän
  auditSet('#jobs','1');await waitAudit(()=>auditDoc().querySelector('#case-number')?.value==='1');assert(auditDoc().querySelector('#global-comment').value==='');
  auditSet('#jobs','0');await waitAudit(()=>auditDoc().querySelector('#case-number')?.value==='3');assert(auditDoc().querySelector('#global-comment').value==='Job A & Kommentar');assert(auditDoc().querySelector('#jobs option').textContent.includes('3/3'));
  auditFrame.remove();
+});
+check('Windows-Differenzial: 547 unterschiedliche Eingaben und sieben originale API-Konvertierungen ohne Wertanpassungen',async()=>{
+ const native=JSON.parse(strFromU8(await get('/fixtures/windows-differential/native-converters.json'))),cases=converterCorpus();
+ const digest=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(JSON.stringify(cases))),sha=Array.from(new Uint8Array(digest)).map(n=>n.toString(16).padStart(2,'0')).join('');assert(sha===native.inputSHA256,'Korpus stimmt nicht mit dem Windows-Lauf überein');assert(native.assemblySHA256==='c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1');
+ const objectKeysOnly=value=>JSON.stringify(value,(_key,item)=>item&&typeof item==='object'&&!Array.isArray(item)?Object.fromEntries(Object.keys(item).sort().map(key=>[key,item[key]])):item);let exact=0,rejected=0;
+ for(const item of cases){const captured=native.results.find(r=>r.id===item.id),expected=captured.exceptionType?null:JSON.parse(captured.outputJSON),isError=captured.exceptionType||expected.some(sf=>sf.responses.some(r=>r.status==='ERROR'));let actual,error=false;try{actual=D.parseChunk(item.contentJSON,converterTypes[item.method],{windows:true});error=actual.some(sf=>sf.responses.some(r=>r.status==='ERROR'));}catch{error=true;}if(isError){assert(error,item.id+' wurde nicht zurückgewiesen');rejected++;}else{assert(!error&&objectKeysOnly(actual)===objectKeysOnly(expected),item.id+' hat abweichende Werte oder Listenreihenfolge');exact++;}}
+ assert(exact===401&&rejected===146);
+ for(const item of pipelineCorpus()){const original=JSON.parse(native.pipelineResults.find(r=>r.id===item.id).outputJSON),expected={id:original.unitId,alias:original.unitname,laststate:original.laststate,logs:[],subforms:original.subforms,chunks:original.chunks};assert(objectKeysOnly(D.responseUnit(item.dto,{windows:true}))===objectKeysOnly(expected),item.id+' API-Konvertierung weicht ab');}
 });
 $('#run').onclick=async()=>{const button=$('#run');button.disabled=true;$('#results').replaceChildren();const report={userAgent:navigator.userAgent,started:new Date().toISOString(),checks:[]};let passed=0;for(const {name,fn}of checks){$('#status').textContent=name;const li=document.createElement('li');try{await fn();passed++;li.className='ok';li.textContent='✓ '+name;report.checks.push({name,passed:true});}catch(e){li.className='fail';li.textContent='✗ '+name+' — '+e.message;report.checks.push({name,passed:false,error:e.message,stack:e.stack});}$('#results').append(li);}report.passed=passed;report.total=checks.length;report.finished=new Date().toISOString();$('#status').textContent=`${passed} / ${checks.length} erfolgreich`;$('#download').href=URL.createObjectURL(new Blob([JSON.stringify(report,null,2)],{type:'application/json'}));$('#download').download='Browser-Pruefbericht.json';$('#download').hidden=false;try{await fetch('/__report__',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(report)});}catch{}button.disabled=false;};

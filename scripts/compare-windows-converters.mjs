@@ -6,21 +6,14 @@ const input=JSON.parse(await readFile(new URL('../tests/fixtures/reference-cases
 const exactInput=parseJSON(await readFile(new URL('../tests/fixtures/reference-cases.json',import.meta.url),'utf8'));
 const native=JSON.parse((await readFile(process.argv[2],'utf8')).replace(/^\uFEFF/,''));
 const types={setResponsesIqbStandard:'iqb-standard@1.1',setResponsesAbi:'unknown',setResponsesDan:'IQBVisualUnitPlayerV2.1.0',setResponsesKeyValue:'keyvalue',setResponsesSimplePlayerLegacy:'iqb-simple-player@1.0.0'};
-const report={platform:native.platform,runtime:native.runtime,checks:[],intentionalDifferences:[]};
-const order=forms=>forms.filter(sf=>sf.responses.length).map(sf=>({...sf,responses:[...sf.responses].sort((a,b)=>a.id.localeCompare(b.id))})).sort((a,b)=>a.id.localeCompare(b.id));
+const report={platform:native.platform,runtime:native.runtime,checks:[],comparison:"Strict field values and array order in the explicit Windows conversion mode; no value normalization"};
 for(const test of exactInput){
  try{
   const original=native.results.find(r=>r.id===test.id);if(original.error)throw new Error(original.error);
   let expected=original.outputJSON?JSON.parse(original.outputJSON):structuredClone(original.output);
   expected=Array.isArray(expected)?expected:[expected];
-  const actual=D.parseChunk(stringifyJSON(test.content),types[test.method]);
-  for(const form of expected)for(const r of form.responses){
-   if((test.id==='standard-primitives'||test.id==='aspect-primitives'||test.id==='dan-primitives')&&r.id==='number'&&r.value==='12,5'){r.value='12.5';report.intentionalDifferences.push({test:test.id,field:r.id,reason:'Stable JSON decimal separator instead of host culture'});}
-   if(r.value===null||(test.id==='dan-primitives'&&r.id==='null'&&r.value==='')){r.value='#null#';report.intentionalDifferences.push({test:test.id,field:r.id,reason:'Explicit null marker across all response formats'});}
-   if((test.id==='standard-primitives'||test.id==='aspect-primitives')&&r.id==='lines'&&r.value==='ab\nc'){r.value='a\r\nb\nc';report.intentionalDifferences.push({test:test.id,field:r.id,reason:'Preserve original answer line breaks'});}
-   if(['standard-array','standard-large-integers'].includes(test.id)&&/^[\[{]/.test(r.value)){r.value=stringifyJSON(parseJSON(r.value));report.intentionalDifferences.push({test:test.id,field:r.id,reason:'Compact equivalent JSON formatting'});}
-  }
-  assert.deepEqual(order(actual),order(expected));report.checks.push({name:test.id,passed:true});
+  const actual=D.parseChunk(stringifyJSON(test.content),types[test.method],{windows:true});
+  assert.deepEqual(actual,expected);report.checks.push({name:test.id,passed:true});
  }catch(e){report.checks.push({name:test.id,passed:false,error:e.message});}
 }
 report.passed=report.checks.filter(c=>c.passed).length;report.total=report.checks.length;

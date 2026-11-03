@@ -1,0 +1,5556 @@
+{
+  "generatedAt": "2026-11-03T10:08:58.079Z",
+  "nativeFinished": "2026-11-03T10:04:57.1876204Z",
+  "nativePlatform": "Microsoft Windows NT 10.0.26300.0",
+  "nativeRuntime": "4.0.30319.42000",
+  "culture": "de-DE",
+  "assemblySHA256": "c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1",
+  "inputSHA256": "8cc7dd11cfb93d3a294f00f7d17fe597004417b4c089119a379f0e07b1809f93",
+  "pipelineInputSHA256": "53f5d2123c63166c6db6c83cc19b8284cfee27cea202973c2946d8c016e1ed77",
+  "completeEquivalence": false,
+  "realProductionDataTested": false,
+  "normalizationApplied": false,
+  "summary": {
+    "distinctConverterInputs": 547,
+    "strictValues": {
+      "passed": 401,
+      "total": 401
+    },
+    "rejectionDecisions": {
+      "passed": 146,
+      "total": 146,
+      "identicalErrorMessagesProven": false
+    },
+    "apiUnits": {
+      "passed": 7,
+      "total": 7
+    },
+    "enhancedMode": {
+      "strictlyIdentical": 224,
+      "different": 177
+    }
+  },
+  "limitations": [
+    "No universal equivalence claim: a finite corpus is not all possible inputs.",
+    "Error cases prove the rejection decision; .NET exception types, message text and GUI presentation are not identical.",
+    "Exact converter comparison preserves field values, types and list order; JSON object-key serialization order is not compared.",
+    "Native API field mapping: unitId→id and unitname→alias; browser-only empty logs field added. No response-value normalization.",
+    "German de-DE culture and the captured Windows/.NET versions only.",
+    "No production or anonymized study data supplied.",
+    "Enhanced mode intentionally preserves values and differs from Windows. Use explicit Windows conversion mode for this corpus.",
+    "Original GUI, all network failure paths, all file sizes and real domain accounts are not exhaustively tested."
+  ],
+  "counterexamples": [
+    {
+      "id": "setResponsesIqbStandard-value-3",
+      "input": "[{\"id\":\"v\",\"value\":\"a\\r\\nb\\nc\",\"status\":\"VALUE_CHANGED\",\"code\":0,\"score\":0}]",
+      "native": [
+        {
+          "id": "",
+          "responses": [
+            {
+              "id": "v",
+              "status": "VALUE_CHANGED",
+              "value": "ab\nc",
+              "code": 0,
+              "score": 0
+            }
+          ]
+        }
+      ],
+      "enhanced": [
+        {
+          "id": "",
+          "responses": [
+            {
+              "id": "v",
+              "value": "a\r\nb\nc",
+              "status": "VALUE_CHANGED",
+              "code": 0,
+              "score": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "setResponsesIqbStandard-value-4",
+      "input": "[{\"id\":\"v\",\"value\":\"\\r\\n\",\"status\":\"VALUE_CHANGED\",\"code\":0,\"score\":0}]",
+      "native": [
+        {
+          "id": "",
+          "responses": [
+            {
+              "id": "v",
+              "status": "VALUE_CHANGED",
+              "value": "",
+              "code": 0,
+              "score": 0
+            }
+          ]
+        }
+      ],
+      "enhanced": [
+        {
+          "id": "",
+          "responses": [
+            {
+              "id": "v",
+              "value": "\r\n",
+              "status": "VALUE_CHANGED",
+              "code": 0,
+              "score": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "setResponsesIqbStandard-value-11",
+      "input": "[{\"id\":\"v\",\"value\":12.5,\"status\":\"VALUE_CHANGED\",\"code\":0,\"score\":0}]",
+      "native": [
+        {
+          "id": "",
+          "responses": [
+            {
+              "id": "v",
+              "status": "VALUE_CHANGED",
+              "value": "12,5",
+              "code": 0,
+              "score": 0
+            }
+          ]
+        }
+      ],
+      "enhanced": [
+        {
+          "id": "",
+          "responses": [
+            {
+              "id": "v",
+              "value": "12.5",
+              "status": "VALUE_CHANGED",
+              "code": 0,
+              "score": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "setResponsesIqbStandard-value-12",
+      "input": "[{\"id\":\"v\",\"value\":-12.5,\"status\":\"VALUE_CHANGED\",\"code\":0,\"score\":0}]",
+      "native": [
+        {
+          "id": "",
+          "responses": [
+            {
+              "id": "v",
+              "status": "VALUE_CHANGED",
+              "value": "-12,5",
+              "code": 0,
+              "score": 0
+            }
+          ]
+        }
+      ],
+      "enhanced": [
+        {
+          "id": "",
+          "responses": [
+            {
+              "id": "v",
+              "value": "-12.5",
+              "status": "VALUE_CHANGED",
+              "code": 0,
+              "score": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "setResponsesIqbStandard-value-13",
+      "input": "[{\"id\":\"v\",\"value\":1e-7,\"status\":\"VALUE_CHANGED\",\"code\":0,\"score\":0}]",
+      "native": [
+        {
+          "id": "",
+          "responses": [
+            {
+              "id": "v",
+              "status": "VALUE_CHANGED",
+              "value": "1E-07",
+              "code": 0,
+              "score": 0
+            }
+          ]
+        }
+      ],
+      "enhanced": [
+        {
+          "id": "",
+          "responses": [
+            {
+              "id": "v",
+              "value": "1e-7",
+              "status": "VALUE_CHANGED",
+              "code": 0,
+              "score": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "setResponsesIqbStandard-value-15",
+      "input": "[{\"id\":\"v\",\"value\":3.141592653589793,\"status\":\"VALUE_CHANGED\",\"code\":0,\"score\":0}]",
+      "native": [
+        {
+          "id": "",
+          "responses": [
+            {
+              "id": "v",
+              "status": "VALUE_CHANGED",
+              "value": "3,14159265358979",
+              "code": 0,
+              "score": 0
+            }
+          ]
+        }
+      ],
+      "enhanced": [
+        {
+          "id": "",
+          "responses": [
+            {
+              "id": "v",
+              "value": "3.141592653589793",
+              "status": "VALUE_CHANGED",
+              "code": 0,
+              "score": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "setResponsesIqbStandard-value-17",
+      "input": "[{\"id\":\"v\",\"value\":\"2026-10-22T10:11:12Z\",\"status\":\"VALUE_CHANGED\",\"code\":0,\"score\":0}]",
+      "native": [
+        {
+          "id": "",
+          "responses": [
+            {
+              "id": "v",
+              "status": "VALUE_CHANGED",
+              "value": "22.10.2026 10:11:12",
+              "code": 0,
+              "score": 0
+            }
+          ]
+        }
+      ],
+      "enhanced": [
+        {
+          "id": "",
+          "responses": [
+            {
+              "id": "v",
+              "value": "2026-10-22T10:11:12Z",
+              "status": "VALUE_CHANGED",
+              "code": 0,
+              "score": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "setResponsesIqbStandard-value-22",
+      "input": "[{\"id\":\"v\",\"value\":[1,\"001\",true,null],\"status\":\"VALUE_CHANGED\",\"code\":0,\"score\":0}]",
+      "native": [
+        {
+          "id": "",
+          "responses": [
+            {
+              "id": "v",
+              "status": "VALUE_CHANGED",
+              "value": "[  1,  \"001\",  true,  null]",
+              "code": 0,
+              "score": 0
+            }
+          ]
+        }
+      ],
+      "enhanced": [
+        {
+          "id": "",
+          "responses": [
+            {
+              "id": "v",
+              "value": "[1,\"001\",true,null]",
+              "status": "VALUE_CHANGED",
+              "code": 0,
+              "score": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "id": "setResponsesIqbStandard-value-0",
+      "method": "setResponsesIqbStandard",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-value-1",
+      "method": "setResponsesIqbStandard",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-value-2",
+      "method": "setResponsesIqbStandard",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-value-3",
+      "method": "setResponsesIqbStandard",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-value-4",
+      "method": "setResponsesIqbStandard",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-value-5",
+      "method": "setResponsesIqbStandard",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-value-6",
+      "method": "setResponsesIqbStandard",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-value-7",
+      "method": "setResponsesIqbStandard",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-value-8",
+      "method": "setResponsesIqbStandard",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-value-9",
+      "method": "setResponsesIqbStandard",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-value-10",
+      "method": "setResponsesIqbStandard",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-value-11",
+      "method": "setResponsesIqbStandard",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-value-12",
+      "method": "setResponsesIqbStandard",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-value-13",
+      "method": "setResponsesIqbStandard",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-value-14",
+      "method": "setResponsesIqbStandard",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-value-15",
+      "method": "setResponsesIqbStandard",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-value-16",
+      "method": "setResponsesIqbStandard",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-value-17",
+      "method": "setResponsesIqbStandard",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-value-18",
+      "method": "setResponsesIqbStandard",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-value-19",
+      "method": "setResponsesIqbStandard",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-value-20",
+      "method": "setResponsesIqbStandard",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-value-21",
+      "method": "setResponsesIqbStandard",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-value-22",
+      "method": "setResponsesIqbStandard",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-value-23",
+      "method": "setResponsesIqbStandard",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-value-24",
+      "method": "setResponsesIqbStandard",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-value-25",
+      "method": "setResponsesIqbStandard",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesAbi-value-0",
+      "method": "setResponsesAbi",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-value-1",
+      "method": "setResponsesAbi",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-value-2",
+      "method": "setResponsesAbi",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-value-3",
+      "method": "setResponsesAbi",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-value-4",
+      "method": "setResponsesAbi",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-value-5",
+      "method": "setResponsesAbi",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-value-6",
+      "method": "setResponsesAbi",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-value-7",
+      "method": "setResponsesAbi",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-value-8",
+      "method": "setResponsesAbi",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-value-9",
+      "method": "setResponsesAbi",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-value-10",
+      "method": "setResponsesAbi",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-value-11",
+      "method": "setResponsesAbi",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-value-12",
+      "method": "setResponsesAbi",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-value-13",
+      "method": "setResponsesAbi",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-value-14",
+      "method": "setResponsesAbi",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-value-15",
+      "method": "setResponsesAbi",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-value-16",
+      "method": "setResponsesAbi",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-value-17",
+      "method": "setResponsesAbi",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-value-18",
+      "method": "setResponsesAbi",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesAbi-value-19",
+      "method": "setResponsesAbi",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-value-20",
+      "method": "setResponsesAbi",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-value-21",
+      "method": "setResponsesAbi",
+      "category": "value-boundary",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'v', line 1, position 6.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-value-22",
+      "method": "setResponsesAbi",
+      "category": "value-boundary",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'v', line 1, position 6.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-value-23",
+      "method": "setResponsesAbi",
+      "category": "value-boundary",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'v', line 1, position 6.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-value-24",
+      "method": "setResponsesAbi",
+      "category": "value-boundary",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'v', line 1, position 6.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-value-25",
+      "method": "setResponsesAbi",
+      "category": "value-boundary",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'v', line 1, position 6.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesDan-value-0",
+      "method": "setResponsesDan",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-value-1",
+      "method": "setResponsesDan",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-value-2",
+      "method": "setResponsesDan",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-value-3",
+      "method": "setResponsesDan",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-value-4",
+      "method": "setResponsesDan",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-value-5",
+      "method": "setResponsesDan",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-value-6",
+      "method": "setResponsesDan",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-value-7",
+      "method": "setResponsesDan",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-value-8",
+      "method": "setResponsesDan",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-value-9",
+      "method": "setResponsesDan",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-value-10",
+      "method": "setResponsesDan",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-value-11",
+      "method": "setResponsesDan",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-value-12",
+      "method": "setResponsesDan",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-value-13",
+      "method": "setResponsesDan",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-value-14",
+      "method": "setResponsesDan",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-value-15",
+      "method": "setResponsesDan",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-value-16",
+      "method": "setResponsesDan",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-value-17",
+      "method": "setResponsesDan",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-value-18",
+      "method": "setResponsesDan",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-value-19",
+      "method": "setResponsesDan",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-value-20",
+      "method": "setResponsesDan",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-value-21",
+      "method": "setResponsesDan",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-value-22",
+      "method": "setResponsesDan",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-value-23",
+      "method": "setResponsesDan",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-value-24",
+      "method": "setResponsesDan",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-value-25",
+      "method": "setResponsesDan",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesKeyValue-value-0",
+      "method": "setResponsesKeyValue",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-value-1",
+      "method": "setResponsesKeyValue",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-value-2",
+      "method": "setResponsesKeyValue",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-value-3",
+      "method": "setResponsesKeyValue",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-value-4",
+      "method": "setResponsesKeyValue",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-value-5",
+      "method": "setResponsesKeyValue",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-value-6",
+      "method": "setResponsesKeyValue",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-value-7",
+      "method": "setResponsesKeyValue",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-value-8",
+      "method": "setResponsesKeyValue",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-value-9",
+      "method": "setResponsesKeyValue",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-value-10",
+      "method": "setResponsesKeyValue",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-value-11",
+      "method": "setResponsesKeyValue",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-value-12",
+      "method": "setResponsesKeyValue",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-value-13",
+      "method": "setResponsesKeyValue",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesKeyValue-value-14",
+      "method": "setResponsesKeyValue",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-value-15",
+      "method": "setResponsesKeyValue",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesKeyValue-value-16",
+      "method": "setResponsesKeyValue",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-value-17",
+      "method": "setResponsesKeyValue",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesKeyValue-value-18",
+      "method": "setResponsesKeyValue",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesKeyValue-value-19",
+      "method": "setResponsesKeyValue",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-value-20",
+      "method": "setResponsesKeyValue",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-value-21",
+      "method": "setResponsesKeyValue",
+      "category": "value-boundary",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-value-22",
+      "method": "setResponsesKeyValue",
+      "category": "value-boundary",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-value-23",
+      "method": "setResponsesKeyValue",
+      "category": "value-boundary",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-value-24",
+      "method": "setResponsesKeyValue",
+      "category": "value-boundary",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-value-25",
+      "method": "setResponsesKeyValue",
+      "category": "value-boundary",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-0",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-1",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-2",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-3",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-4",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-5",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-6",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-7",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-8",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-9",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-10",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-11",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-12",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-13",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-14",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-15",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-16",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-17",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-18",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-19",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-20",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "value-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-21",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "value-boundary",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-22",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "value-boundary",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-23",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "value-boundary",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-24",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "value-boundary",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-25",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "value-boundary",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-0",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-1",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-2",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-3",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-4",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-5",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-6",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-7",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-8",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-9",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-10",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-11",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-12",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-13",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-14",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-15",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-16",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-17",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-18",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-19",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-20",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-21",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-22",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-23",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-24",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-25",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-26",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-27",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-28",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-29",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-30",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-31",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-32",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-33",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-34",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-35",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-36",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-37",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-38",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-39",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-40",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-41",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-42",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-43",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-44",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-45",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-46",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-47",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-48",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-49",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-50",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-51",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-52",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-53",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-54",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-55",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-56",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-57",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-58",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-59",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-60",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-61",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-62",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-63",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-64",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-65",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-66",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-67",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-68",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-69",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-70",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-71",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-72",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-73",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-74",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-75",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-77",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-78",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-79",
+      "method": "setResponsesIqbStandard",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-0",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable2_0', line 1, position 68.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-seed733-1",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-2",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-3",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable2_3', line 1, position 52.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-seed733-4",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-5",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-6",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable1_2', line 1, position 37.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-seed733-7",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-8",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable0_0', line 1, position 16.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-seed733-9",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable0_1', line 1, position 16.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-seed733-10",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesAbi-seed733-11",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable2_3', line 1, position 55.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-seed733-12",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable0_0', line 1, position 16.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-seed733-13",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-14",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-15",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable0_3', line 1, position 16.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-seed733-16",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable0_0', line 1, position 16.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-seed733-17",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable0_1', line 1, position 16.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-seed733-18",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-19",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable1_3', line 1, position 48.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-seed733-20",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-21",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable0_1', line 1, position 16.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-seed733-22",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-23",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-24",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-25",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-26",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable2_2', line 1, position 55.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-seed733-27",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-28",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable2_0', line 1, position 65.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-seed733-29",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-31",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable0_3', line 1, position 16.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-seed733-32",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable0_0', line 1, position 16.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-seed733-33",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-34",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-35",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-36",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable4_0', line 1, position 99.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-seed733-37",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-38",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable2_2', line 1, position 64.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-seed733-39",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable2_3', line 1, position 53.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-seed733-40",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable1_0', line 1, position 36.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-seed733-41",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-43",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable0_3', line 1, position 16.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-seed733-44",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-45",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesAbi-seed733-46",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesAbi-seed733-48",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable1_0', line 1, position 36.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-seed733-49",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-50",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable1_2', line 1, position 37.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-seed733-52",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-53",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-54",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-55",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-56",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-57",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-58",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable0_2', line 1, position 16.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-seed733-59",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable0_3', line 1, position 16.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-seed733-60",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable1_0', line 1, position 53.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-seed733-61",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-62",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-63",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-64",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable2_0', line 1, position 56.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-seed733-65",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-66",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-67",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-68",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable2_0', line 1, position 56.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-seed733-69",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-seed733-71",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable4_3', line 1, position 118.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-seed733-72",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable1_0', line 1, position 36.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-seed733-74",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable0_2', line 1, position 16.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-seed733-76",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable0_0', line 1, position 16.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-seed733-77",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable0_1', line 1, position 16.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesAbi-seed733-79",
+      "method": "setResponsesAbi",
+      "category": "seeded-combination",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable2_3', line 1, position 66.",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesDan-seed733-0",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-seed733-1",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-2",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-3",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-4",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-5",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-6",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-seed733-7",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-8",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-seed733-9",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-10",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-11",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-12",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-13",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-14",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-seed733-15",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-16",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-seed733-18",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-19",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-20",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-22",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-seed733-23",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-24",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-seed733-26",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-29",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-30",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-31",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-seed733-35",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-seed733-36",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-37",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-40",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-41",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-42",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-43",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-44",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-45",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-46",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-48",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-49",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-52",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-seed733-54",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-55",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-56",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-57",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-58",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-seed733-59",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-60",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-61",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-62",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-64",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-seed733-65",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-66",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-67",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-seed733-69",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-70",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-seed733-72",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-seed733-73",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-74",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-75",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-seed733-76",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesDan-seed733-77",
+      "method": "setResponsesDan",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-0",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-1",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-2",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-3",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-4",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-5",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-6",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-7",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-8",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-9",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-10",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-11",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-12",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-13",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-14",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-15",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-17",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-18",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-19",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-20",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-21",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-22",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-26",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-27",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-28",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-29",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-30",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-32",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-33",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-34",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-35",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-36",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-37",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-38",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-39",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-40",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-41",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-42",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-43",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-44",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-45",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-47",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-48",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-50",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-51",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-52",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-53",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-57",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-58",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-61",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-62",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-63",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-65",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-66",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-68",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-69",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-70",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-71",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-72",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-73",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-76",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-77",
+      "method": "setResponsesKeyValue",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-0",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-1",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-2",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-3",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-4",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-5",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-6",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-7",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-8",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-9",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-11",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-12",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-13",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-14",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-15",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-16",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-17",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-18",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-20",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-21",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-22",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-23",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-24",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-25",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-26",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-27",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-29",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-30",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-31",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-32",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-33",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-34",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-36",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-37",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-38",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-39",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-40",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-41",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-42",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-44",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-45",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-46",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-47",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-48",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-49",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-50",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-52",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-53",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-55",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-56",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-57",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-59",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-60",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-61",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-62",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-63",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-65",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-66",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-67",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-69",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-70",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-71",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-72",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-73",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-74",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-75",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-77",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-79",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "seeded-combination",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Verschachtelter Wert wird von diesem Playerformat nicht unterstützt."
+    },
+    {
+      "id": "status-UNSET",
+      "method": "setResponsesIqbStandard",
+      "category": "status-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "status-NOT_REACHED",
+      "method": "setResponsesIqbStandard",
+      "category": "status-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "status-DISPLAYED",
+      "method": "setResponsesIqbStandard",
+      "category": "status-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "status-VALUE_CHANGED",
+      "method": "setResponsesIqbStandard",
+      "category": "status-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "status-DERIVE_ERROR",
+      "method": "setResponsesIqbStandard",
+      "category": "status-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "status-CODING_COMPLETE",
+      "method": "setResponsesIqbStandard",
+      "category": "status-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "status-NO_CODING",
+      "method": "setResponsesIqbStandard",
+      "category": "status-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "status-INVALID",
+      "method": "setResponsesIqbStandard",
+      "category": "status-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "status-CODING_INCOMPLETE",
+      "method": "setResponsesIqbStandard",
+      "category": "status-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "status-CODING_ERROR",
+      "method": "setResponsesIqbStandard",
+      "category": "status-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "status-PARTLY_DISPLAYED",
+      "method": "setResponsesIqbStandard",
+      "category": "status-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "status-DERIVE_PENDING",
+      "method": "setResponsesIqbStandard",
+      "category": "status-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "status-INTENDED_INCOMPLETE",
+      "method": "setResponsesIqbStandard",
+      "category": "status-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "status-CODE_SELECTION_PENDING",
+      "method": "setResponsesIqbStandard",
+      "category": "status-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "status-",
+      "method": "setResponsesIqbStandard",
+      "category": "status-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "status-null",
+      "method": "setResponsesIqbStandard",
+      "category": "status-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "code-number--2147483648",
+      "method": "setResponsesIqbStandard",
+      "category": "code-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "code-number--1",
+      "method": "setResponsesIqbStandard",
+      "category": "code-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "code-number-0",
+      "method": "setResponsesIqbStandard",
+      "category": "code-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "code-number-1",
+      "method": "setResponsesIqbStandard",
+      "category": "code-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "code-number-2147483647",
+      "method": "setResponsesIqbStandard",
+      "category": "code-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "code-object-null",
+      "method": "setResponsesIqbStandard",
+      "category": "code-boundary",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentException",
+      "browserError": "Windows-Konvertierung: Code oder Score ist keine ganze Zahl."
+    },
+    {
+      "id": "code-number-2147483648",
+      "method": "setResponsesIqbStandard",
+      "category": "code-boundary",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.OverflowException",
+      "browserError": "Windows-Konvertierung: Code oder Score außerhalb des 32-Bit-Bereichs."
+    },
+    {
+      "id": "code-number--2147483649",
+      "method": "setResponsesIqbStandard",
+      "category": "code-boundary",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.OverflowException",
+      "browserError": "Windows-Konvertierung: Code oder Score außerhalb des 32-Bit-Bereichs."
+    },
+    {
+      "id": "code-number-1.5",
+      "method": "setResponsesIqbStandard",
+      "category": "code-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "code-string-1",
+      "method": "setResponsesIqbStandard",
+      "category": "code-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "code-string-",
+      "method": "setResponsesIqbStandard",
+      "category": "code-boundary",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.FormatException",
+      "browserError": "Windows-Konvertierung: Code oder Score ist keine ganze Zahl."
+    },
+    {
+      "id": "code-boolean-true",
+      "method": "setResponsesIqbStandard",
+      "category": "code-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "structure-singleton",
+      "method": "setResponsesIqbStandard",
+      "category": "structure-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "structure-empty",
+      "method": "setResponsesIqbStandard",
+      "category": "structure-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "structure-missingID",
+      "method": "setResponsesIqbStandard",
+      "category": "structure-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "structure-missingValue",
+      "method": "setResponsesIqbStandard",
+      "category": "structure-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "structure-nullEntry",
+      "method": "setResponsesIqbStandard",
+      "category": "structure-boundary",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.NullReferenceException",
+      "browserError": "Windows-Konvertierung: Eine Antwort darf nicht null sein."
+    },
+    {
+      "id": "structure-nullRoot",
+      "method": "setResponsesIqbStandard",
+      "category": "structure-boundary",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.NullReferenceException",
+      "browserError": "Windows-Konvertierung: Eine Antwort darf nicht null sein."
+    },
+    {
+      "id": "structure-scalarRoot",
+      "method": "setResponsesIqbStandard",
+      "category": "structure-boundary",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter iqb-standard failed: Error converting value 1 to type 'System.Collections.Generic.List`1[System.Collections.Generic.Dictionary`2[System.String,Newtonsoft.Json.Linq.JToken]]'. Path '', line 1, position 1.",
+      "browserError": "Windows-Konvertierung: Antwortobjekt erwartet."
+    },
+    {
+      "id": "structure-nullSubform",
+      "method": "setResponsesIqbStandard",
+      "category": "structure-boundary",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.ArgumentNullException",
+      "browserError": "Windows-Konvertierung: Ein Unterformular darf nicht null sein."
+    },
+    {
+      "id": "structure-numberID",
+      "method": "setResponsesIqbStandard",
+      "category": "structure-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "structure-nullID",
+      "method": "setResponsesIqbStandard",
+      "category": "structure-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "structure-duplicate",
+      "method": "setResponsesIqbStandard",
+      "category": "structure-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "abi-suffix-01",
+      "method": "setResponsesAbi",
+      "category": "form-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "abi-suffix-1",
+      "method": "setResponsesAbi",
+      "category": "form-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "abi-suffix-0002",
+      "method": "setResponsesAbi",
+      "category": "form-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "abi-suffix-+2",
+      "method": "setResponsesAbi",
+      "category": "form-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "abi-suffix--1",
+      "method": "setResponsesAbi",
+      "category": "form-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "abi-suffix-0",
+      "method": "setResponsesAbi",
+      "category": "form-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "abi-suffix-2147483647",
+      "method": "setResponsesAbi",
+      "category": "form-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "abi-suffix-2147483648",
+      "method": "setResponsesAbi",
+      "category": "form-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "abi-suffix- 2 ",
+      "method": "setResponsesAbi",
+      "category": "form-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "abi-suffix-1.5",
+      "method": "setResponsesAbi",
+      "category": "form-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "abi-suffix-",
+      "method": "setResponsesAbi",
+      "category": "form-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-syntax-0",
+      "method": "setResponsesIqbStandard",
+      "category": "syntax-boundary",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter iqb-standard failed: Unexpected end when reading JSON. Path '', line 1, position 1.",
+      "browserError": "Quoted object key or end of object '}' expected but reached end of input at position 1"
+    },
+    {
+      "id": "setResponsesIqbStandard-syntax-1",
+      "method": "setResponsesIqbStandard",
+      "category": "syntax-boundary",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter iqb-standard failed: Unexpected end when deserializing array. Path '', line 1, position 1.",
+      "browserError": "Array item or end of array ']' expected but reached end of input at position 1"
+    },
+    {
+      "id": "setResponsesIqbStandard-syntax-2",
+      "method": "setResponsesIqbStandard",
+      "category": "syntax-boundary",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.NullReferenceException",
+      "browserError": "JSON value expected but got 'u' at position 0"
+    },
+    {
+      "id": "setResponsesIqbStandard-syntax-3",
+      "method": "setResponsesIqbStandard",
+      "category": "syntax-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": false
+    },
+    {
+      "id": "setResponsesIqbStandard-syntax-4",
+      "method": "setResponsesIqbStandard",
+      "category": "syntax-boundary",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter iqb-standard failed: Cannot deserialize the current JSON object (e.g. {\"name\":\"value\"}) into type 'System.Collections.Generic.List`1[System.Collections.Generic.Dictionary`2[System.String,Newtonsoft.Json.Linq.JToken]]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.\r\nTo fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.\r\nPath 'v', line 1, position 5.",
+      "browserError": "Expected end of input but got 't' at position 8"
+    },
+    {
+      "id": "setResponsesAbi-syntax-0",
+      "method": "setResponsesAbi",
+      "category": "syntax-boundary",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Unexpected end when reading JSON. Path '', line 1, position 1.",
+      "browserError": "Quoted object key or end of object '}' expected but reached end of input at position 1"
+    },
+    {
+      "id": "setResponsesAbi-syntax-1",
+      "method": "setResponsesAbi",
+      "category": "syntax-boundary",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'System.Collections.Generic.Dictionary`2[System.String,System.String]' because the type requires a JSON object (e.g. {\"name\":\"value\"}) to deserialize correctly.\r\nTo fix this error either change the JSON to a JSON object (e.g. {\"name\":\"value\"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.\r\nPath '', line 1, position 1.",
+      "browserError": "Array item or end of array ']' expected but reached end of input at position 1"
+    },
+    {
+      "id": "setResponsesAbi-syntax-2",
+      "method": "setResponsesAbi",
+      "category": "syntax-boundary",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.NullReferenceException",
+      "browserError": "JSON value expected but got 'u' at position 0"
+    },
+    {
+      "id": "setResponsesAbi-syntax-3",
+      "method": "setResponsesAbi",
+      "category": "syntax-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesAbi-syntax-4",
+      "method": "setResponsesAbi",
+      "category": "syntax-boundary",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Abi failed: Additional text encountered after finished reading JSON content: t. Path '', line 1, position 8.",
+      "browserError": "Expected end of input but got 't' at position 8"
+    },
+    {
+      "id": "setResponsesDan-syntax-0",
+      "method": "setResponsesDan",
+      "category": "syntax-boundary",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Dan failed: Unexpected end when reading JSON. Path '', line 1, position 1.",
+      "browserError": "Quoted object key or end of object '}' expected but reached end of input at position 1"
+    },
+    {
+      "id": "setResponsesDan-syntax-1",
+      "method": "setResponsesDan",
+      "category": "syntax-boundary",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Dan failed: Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'System.Collections.Generic.Dictionary`2[System.String,Newtonsoft.Json.Linq.JToken]' because the type requires a JSON object (e.g. {\"name\":\"value\"}) to deserialize correctly.\r\nTo fix this error either change the JSON to a JSON object (e.g. {\"name\":\"value\"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.\r\nPath '', line 1, position 1.",
+      "browserError": "Array item or end of array ']' expected but reached end of input at position 1"
+    },
+    {
+      "id": "setResponsesDan-syntax-2",
+      "method": "setResponsesDan",
+      "category": "syntax-boundary",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.NullReferenceException",
+      "browserError": "JSON value expected but got 'u' at position 0"
+    },
+    {
+      "id": "setResponsesDan-syntax-3",
+      "method": "setResponsesDan",
+      "category": "syntax-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesDan-syntax-4",
+      "method": "setResponsesDan",
+      "category": "syntax-boundary",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter Dan failed: Additional text encountered after finished reading JSON content: t. Path '', line 1, position 8.",
+      "browserError": "Expected end of input but got 't' at position 8"
+    },
+    {
+      "id": "setResponsesKeyValue-syntax-0",
+      "method": "setResponsesKeyValue",
+      "category": "syntax-boundary",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter KeyValue failed: Unexpected end when reading JSON. Path '', line 1, position 1.",
+      "browserError": "Quoted object key or end of object '}' expected but reached end of input at position 1"
+    },
+    {
+      "id": "setResponsesKeyValue-syntax-1",
+      "method": "setResponsesKeyValue",
+      "category": "syntax-boundary",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter KeyValue failed: Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'System.Collections.Generic.Dictionary`2[System.String,Newtonsoft.Json.Linq.JToken]' because the type requires a JSON object (e.g. {\"name\":\"value\"}) to deserialize correctly.\r\nTo fix this error either change the JSON to a JSON object (e.g. {\"name\":\"value\"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.\r\nPath '', line 1, position 1.",
+      "browserError": "Array item or end of array ']' expected but reached end of input at position 1"
+    },
+    {
+      "id": "setResponsesKeyValue-syntax-2",
+      "method": "setResponsesKeyValue",
+      "category": "syntax-boundary",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.NullReferenceException",
+      "browserError": "JSON value expected but got 'u' at position 0"
+    },
+    {
+      "id": "setResponsesKeyValue-syntax-3",
+      "method": "setResponsesKeyValue",
+      "category": "syntax-boundary",
+      "nativeOutcome": "value",
+      "proof": "strict-value-and-order",
+      "passed": true,
+      "enhancedModeIdentical": true
+    },
+    {
+      "id": "setResponsesKeyValue-syntax-4",
+      "method": "setResponsesKeyValue",
+      "category": "syntax-boundary",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter KeyValue failed: Additional text encountered after finished reading JSON content: t. Path '', line 1, position 8.",
+      "browserError": "Expected end of input but got 't' at position 8"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-syntax-0",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "syntax-boundary",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter SimplePlayerLegacy failed: Unexpected end when reading JSON. Path '', line 1, position 1.",
+      "browserError": "Quoted object key or end of object '}' expected but reached end of input at position 1"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-syntax-1",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "syntax-boundary",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter SimplePlayerLegacy failed: Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'System.Collections.Generic.Dictionary`2[System.String,Newtonsoft.Json.Linq.JObject]' because the type requires a JSON object (e.g. {\"name\":\"value\"}) to deserialize correctly.\r\nTo fix this error either change the JSON to a JSON object (e.g. {\"name\":\"value\"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.\r\nPath '', line 1, position 1.",
+      "browserError": "Array item or end of array ']' expected but reached end of input at position 1"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-syntax-2",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "syntax-boundary",
+      "nativeOutcome": "exception",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "System.NullReferenceException",
+      "browserError": "JSON value expected but got 'u' at position 0"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-syntax-3",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "syntax-boundary",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter SimplePlayerLegacy failed: Deserialized JSON type 'Newtonsoft.Json.Linq.JValue' is not compatible with expected type 'Newtonsoft.Json.Linq.JObject'. Path 'v', line 1, position 6.",
+      "browserError": "Windows-Konvertierung: SimplePlayer-Inhaltsobjekt erwartet."
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-syntax-4",
+      "method": "setResponsesSimplePlayerLegacy",
+      "category": "syntax-boundary",
+      "nativeOutcome": "error-response",
+      "proof": "rejection-decision-only",
+      "passed": true,
+      "enhancedModeIdentical": false,
+      "nativeError": "Converter SimplePlayerLegacy failed: Deserialized JSON type 'Newtonsoft.Json.Linq.JValue' is not compatible with expected type 'Newtonsoft.Json.Linq.JObject'. Path 'v', line 1, position 6.",
+      "browserError": "Expected end of input but got 't' at position 8"
+    }
+  ],
+  "api": [
+    {
+      "id": "standard-repeated-forms",
+      "proof": "strict-values-and-order-with-documented-field-mapping",
+      "passed": true
+    },
+    {
+      "id": "abi-null",
+      "proof": "strict-values-and-order-with-documented-field-mapping",
+      "passed": true
+    },
+    {
+      "id": "keyvalue-state-values",
+      "proof": "strict-values-and-order-with-documented-field-mapping",
+      "passed": true
+    },
+    {
+      "id": "simple-empty",
+      "proof": "strict-values-and-order-with-documented-field-mapping",
+      "passed": true
+    },
+    {
+      "id": "dan-container",
+      "proof": "strict-values-and-order-with-documented-field-mapping",
+      "passed": true
+    },
+    {
+      "id": "invalid-laststate",
+      "proof": "strict-values-and-order-with-documented-field-mapping",
+      "passed": true
+    },
+    {
+      "id": "array-laststate",
+      "proof": "strict-values-and-order-with-documented-field-mapping",
+      "passed": true
+    }
+  ],
+  "nativeCaptureSHA256": "c060bb017700a1db2f156084d2c944a09282c5ea3b4d7887ee0e9637d9785132"
+}

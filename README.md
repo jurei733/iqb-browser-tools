@@ -1,6 +1,23 @@
-# IQB-Werkzeuge im Browser · Version 0.4.1
+# IQB-Werkzeuge im Browser · Version 0.4.2
 
 Portierung der Arbeitsabläufe von **IQB-Kodieren 4.3.0.3** und **itc-ToolBox 3.3.0.2**. Die Anwendung läuft als statische Website mit lokaler Dateiverarbeitung; eine Windows-Installation ist nicht erforderlich.
+
+## Strenger Windows-Abgleich vom 03.11.2026
+
+**Vollständige Gleichheit für alle Funktionen, realen Dateien und Sonderfälle ist weiterhin nicht nachgewiesen.** Der neue [live lesbare Nachweis](https://iqb-browser-tools-jr-20261103.iqb-e-v-8867.chatgpt.site/equivalence.html) legt den tatsächlichen Umfang offen. Der bisherige Konvertervergleich hatte einige Antwortwerte vor dem Vergleich angepasst; daraus konnte keine identische Ausgabe abgeleitet werden. `compare-windows-converters.mjs` prüft jetzt den ausdrücklich gewählten Windows-Modus ohne Wertanpassungen und ohne Sortieren der Ergebnislisten.
+
+Der zusätzliche, mit unveränderten Windows-Assemblies neu erfasste Korpus enthält **547 unterschiedliche Eingaben**. 58 doppelte Eingaben eines ersten Laufs mit 605 Fällen wurden entfernt. Im Windows-Modus stimmen **401 reguläre Ausgaben** in Feldwerten, Typen und Listenreihenfolge überein. Bei **146 Fehlerfällen** stimmt die Zurückweisungsentscheidung überein; .NET-Ausnahmetypen, Meldungstexte und GUI-Darstellung sind damit nicht identisch nachgewiesen. **Sieben zusätzliche API-Konvertierungen** stimmen nach der ausdrücklich beschriebenen Feldzuordnung überein. Der erweiterte Standardmodus unterscheidet sich in **177 der 401 regulären Fälle** vom Original; er erhält unter anderem Zeilenumbrüche und standardisierte Zahlenwerte.
+
+Behoben wurden fehlende Originalkonvertierung im Windows-Modus, deutsche .NET-Zahlen- und Datumsdarstellung, Nullwerte, ursprüngliche JSON-Einrückung und CRLF-Behandlung, Int32-Konvertierung, wiederholte Unterformulare und die Weitergabe des Modus bei rohen API-JSON-Dateien, CSV, Datenbankimport und Testcenter-Abrufen. Unter **Antworten und Logs auswerten → Importverhalten** bzw. **Testcenter → Antwortkonvertierung** lässt sich der Modus ausdrücklich wählen.
+
+Die 38 bisherigen nativen Referenzoperationen wurden am 03.11.2026 frisch ausgeführt; die Original-Assemblies und Eingaben sind über SHA-256 gebunden. Die 31 Dateivergleiche bestehen auch gegen diese neuen Ausgaben. Es wurden keine produktiven oder anonymisierten Studiendateien bereitgestellt. Dieser Korpus ersetzt keine Abnahme aller realen Arbeitsbestände, jeder GUI-Interaktion, beliebiger Dateigrößen oder sämtlicher Netzwerkfehler.
+
+```sh
+pnpm test:differential  # 401 strikte Wertevergleiche, 146 Fehlerentscheidungen, 7 API-Fälle
+pnpm test:reference     # zusätzlich 15 strikte ältere Konverterfälle und 31 Dateivergleiche
+```
+
+Native Erfassung: `tests/fixtures/windows-differential/native-converters.json`; deterministische Eingaben: `scripts/converter-corpus.mjs`; Windows-Lauf: `scripts/Run-Windows-ConverterCorpus.ps1`; neuer 38-Operationen-Nachweis: `tests/results/equivalence-fresh-reference-20261103.json`. Der Browser-Harness führt denselben 547-Fälle-Korpus und die sieben API-Fälle aus. Fehlerentscheidungen werden ausdrücklich nicht als identische Fehlermeldungen gezählt.
 
 ## Optional lokal: Konto, direktes Speichern und echte Dateipfade
 
@@ -32,7 +49,7 @@ Für den Rückimport in eine laufende Coding-Box ist der ergänzte MCP-/Backend-
 
 Der [filterbare Funktionsbericht](docs/function-audit.html) und seine [maschinenlesbaren Ergebnisse](docs/function-audit.json) erfassen **110 Funktionspunkte**. Das [Originalinventar](docs/original-inventory.json) hält 130 Quelldateien, 36 XAML-Oberflächen und 151 Controls mit Herkunft und Prüfsummen fest. Alle 23 aktiven Haupteinstiege der Windows-Toolbox sind einer Matrixzeile zugeordnet. Die [Matrixdefinition](docs/function-matrix.json) trennt direkte Windows-Vergleiche, Browser-/Modultests, beabsichtigte Unterschiede, Lücken und reine Browser-Erweiterungen. Das Inventar ist eine Prüfgrundlage und kein Nachweis aller internen Codepfade.
 
-Der aktuelle Stand besteht **84 Modultests**, **15 Windows-Konvertervergleiche** und **31 Windows-Datei-/Verhaltensvergleiche**. Die unveränderten Originale wurden am 31.10.2026 mit 38 nativen Prüfoperationen erneut ausgeführt. Eingabe- und Assembly-Prüfsummen sind gespeichert. Sämtliche BMP-QR-Bilder beider Original-Wordvorlagen stimmen Byte für Byte überein; DOCX-/XLSX-ZIP-Metadaten werden bei Inhaltsvergleichen nicht als Nutzdaten behandelt.
+Der aktuelle Stand besteht **94 Modultests**, **15 Windows-Konvertervergleiche** und **31 Windows-Datei-/Verhaltensvergleiche**. Die unveränderten Originale wurden am 31.10.2026 und am 03.11.2026 mit je 38 nativen Prüfoperationen ausgeführt. Eingabe- und Assembly-Prüfsummen sind gespeichert. Sämtliche BMP-QR-Bilder beider Original-Wordvorlagen stimmen Byte für Byte überein; DOCX-/XLSX-ZIP-Metadaten werden bei Inhaltsvergleichen nicht als Nutzdaten behandelt.
 
 Chromium, Firefox und WebKit bestehen in [GitHub Actions](https://github.com/jurei733/iqb-browser-tools/actions/runs/41604274505) jeweils **17 Ablaufprüfungen mit 46 enthaltenen Kompatibilitätsprüfungen**. Alle acht Jobs sind erfolgreich: Browser, Node 22/24 sowie je sechs Tests des lokalen Starters unter Windows, macOS und Linux. Alle drei Browserberichte wurden als Artefakte hochgeladen. Quellprüfsummen und Jobbelege stehen in `tests/results/function-audit-ci-20261103-local.json`. Lokal auf macOS bestehen Chromium und WebKit ebenfalls je 17 Abläufe/46 Kompatibilitätschecks. Der lokale Firefox-Playwright-Build startet wegen eines Profilordnerfehlers nicht; Firefox wird in CI auf Linux geprüft. WebKit ersetzt keinen Test der installierten Safari-App. Die Tests verwenden synthetische Dateien und ein kontrolliertes Konto; ein produktiver IQB-Domänenarbeitsplatz wurde nicht geprüft.
 
@@ -40,7 +57,7 @@ Neu abgeschlossen sind Scanverschiebung durch Ziehen, physikalischer WPF-Zoom, g
 
 Für historische Unterschiede stehen auswählbare **Windows-Modi** bereit: Booklet-Beschreibung aus der Titelspalte, Word-Paragraphen mit ursprünglichen Links und BMP-QR, ursprüngliche Antwort-/Sitzungs-CSV, die historische JSON-Identitätslogik, Überspringen gleicher Datenbank-Endzeitstempel und der Abbruch des Ergebnisexports nach einer leeren Person. Die erweiterten Varianten bleiben erhalten. Windows-Modi können historische Auslassungen reproduzieren und sind entsprechend beschriftet.
 
-**In der reinen Onlinefassung bleiben drei Plattformabweichungen:** automatische Windows-Domänenidentität (K-11), automatischer Dateiersatz in jedem Browser (K-35) und dauerhafte echte Dateipfade (T-61). Chromium kann nach Freigabe einen Arbeitsordner direkt lesen und Ergebnisse dort speichern. Ohne lokalen Starter nutzen Safari/Firefox lokale Browserkopien und Downloads; externe Dateiänderungen erfordern eine neue Auswahl. Eine uneingeschränkte 1:1-Gleichheit wird daher nicht behauptet. Die Prüfungen verwenden synthetische Daten; sie decken nicht jede Kombination realer Arbeitsbestände ab.
+**Zusätzlich zu den oben beschriebenen Konvertierungs- und Nachweisgrenzen bleiben in der reinen Onlinefassung drei Plattformabweichungen:** automatische Windows-Domänenidentität (K-11), automatischer Dateiersatz in jedem Browser (K-35) und dauerhafte echte Dateipfade (T-61). Chromium kann nach Freigabe einen Arbeitsordner direkt lesen und Ergebnisse dort speichern. Ohne lokalen Starter nutzen Safari/Firefox lokale Browserkopien und Downloads; externe Dateiänderungen erfordern eine neue Auswahl. Eine uneingeschränkte 1:1-Gleichheit wird daher nicht behauptet. Die Prüfungen verwenden synthetische Daten; sie decken nicht jede Kombination realer Arbeitsbestände ab.
 
 ```sh
 pnpm test:reference   # aktuelle Module gegen gespeicherte echte Windows-Ausgaben
