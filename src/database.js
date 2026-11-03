@@ -39,7 +39,7 @@ export class OutputDatabase {
     return [...pmap.values()];
   }
   import(people,{merge=true,windows=false}={}){
-    const incoming=windows?refreshTimes(normalizePeople(people)):mergePeople(refreshTimes(normalizePeople(people))),existing=this.people(),byIdentity=new Map();for(const p of existing){const k=identity(p);if(byIdentity.has(k))throw new Error('Die vorhandene Datenbank enthält doppelte Personen. Bitte zuerst die Datenbankprüfung öffnen.');byIdentity.set(k,p);}
+    const incoming=windows?refreshTimes(normalizePeople(people,{windows})):mergePeople(refreshTimes(normalizePeople(people))),existing=this.people(),byIdentity=new Map();for(const p of existing){const k=identity(p);if(byIdentity.has(k))throw new Error('Die vorhandene Datenbank enthält doppelte Personen. Bitte zuerst die Datenbankprüfung öffnen.');byIdentity.set(k,p);}
     if(this.version!==1&&incoming.some(p=>p.booklets.some(b=>b.units.some(u=>u.subforms.some(sf=>sf.responses.some(r=>r.code===null||r.score===null)))))&&this.version!==3)this.upgradeNullableCodings();
     this.run('BEGIN');let count=0;
     try{for(const p of incoming){const found=this.query('SELECT id FROM person WHERE [group]=? AND [login]=? AND coalesce([code],\'\')=?',[p.group,p.login,p.code]);const pid=found[0]?.id??this.insert('person',['group','login','code'],[p.group,p.login,p.code]);const before=byIdentity.get(identity(p));const combined=!windows&&merge&&before?mergePeople([before],[p])[0]:p;

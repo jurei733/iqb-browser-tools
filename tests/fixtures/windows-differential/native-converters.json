@@ -1,0 +1,2319 @@
+{
+  "results": [
+    {
+      "id": "setResponsesIqbStandard-value-0",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"VALUE_CHANGED\",\"value\":\"\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-value-1",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"VALUE_CHANGED\",\"value\":\"001\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-value-2",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"VALUE_CHANGED\",\"value\":\"äöß & < > \\\"\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-value-3",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"VALUE_CHANGED\",\"value\":\"ab\\nc\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-value-4",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"VALUE_CHANGED\",\"value\":\"\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-value-5",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"VALUE_CHANGED\",\"value\":\" \\t \",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-value-6",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"VALUE_CHANGED\",\"value\":\"🙂\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-value-7",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"VALUE_CHANGED\",\"value\":\"é\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-value-8",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"VALUE_CHANGED\",\"value\":\"0\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-value-9",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"VALUE_CHANGED\",\"value\":\"-1\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-value-10",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"VALUE_CHANGED\",\"value\":\"1\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-value-11",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"VALUE_CHANGED\",\"value\":\"12,5\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-value-12",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"VALUE_CHANGED\",\"value\":\"-12,5\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-value-13",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"VALUE_CHANGED\",\"value\":\"1E-07\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-value-14",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"VALUE_CHANGED\",\"value\":\"1000000000000000\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-value-15",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"VALUE_CHANGED\",\"value\":\"3,14159265358979\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-value-16",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"VALUE_CHANGED\",\"value\":\"9007199254740991\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-value-17",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"VALUE_CHANGED\",\"value\":\"22.10.2026 10:11:12\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-value-18",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"VALUE_CHANGED\",\"value\":\"#null#\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-value-19",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"VALUE_CHANGED\",\"value\":\"True\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-value-20",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"VALUE_CHANGED\",\"value\":\"False\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-value-21",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"VALUE_CHANGED\",\"value\":\"[]\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-value-22",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"VALUE_CHANGED\",\"value\":\"[  1,  \\\"001\\\",  true,  null]\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-value-23",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"VALUE_CHANGED\",\"value\":\"{}\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-value-24",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"VALUE_CHANGED\",\"value\":\"{  \\\"a\\\": 1,  \\\"b\\\": \\\"ä\\\"}\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-value-25",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"VALUE_CHANGED\",\"value\":\"[  \\\"a\\\\r\\\\nb\\\",  \\\"x\\\"]\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-value-0",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-value-1",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-value-2",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"äöß & < > \\\"\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-value-3",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"a\\r\\nb\\nc\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-value-4",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"\\r\\n\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-value-5",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\" \\t \",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-value-6",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"🙂\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-value-7",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-value-8",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"0\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-value-9",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-value-10",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-value-11",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"12.5\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-value-12",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"-12.5\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-value-13",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1e-7\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-value-14",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1000000000000000\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-value-15",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"3.141592653589793\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-value-16",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"9007199254740991\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-value-17",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"2026-10-22T10:11:12Z\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-value-18",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":null,\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-value-19",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"true\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-value-20",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"false\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-value-21",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'v', line 1, position 6.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-value-22",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'v', line 1, position 6.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-value-23",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'v', line 1, position 6.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-value-24",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'v', line 1, position 6.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-value-25",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'v', line 1, position 6.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-value-0",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-value-1",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-value-2",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"äöß & < > \\\"\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-value-3",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"a\\r\\nb\\nc\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-value-4",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"\\r\\n\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-value-5",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\" \\t \",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-value-6",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"🙂\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-value-7",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-value-8",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"0\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-value-9",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-value-10",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-value-11",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"12,5\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-value-12",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"-12,5\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-value-13",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-value-14",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1000000000000000\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-value-15",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"3,14159265358979\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-value-16",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"9007199254740991\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-value-17",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"22.10.2026 10:11:12\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-value-18",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-value-19",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"True\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-value-20",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"False\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-value-21",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"[]\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-value-22",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"[\\r\\n  1,\\r\\n  \\\"001\\\",\\r\\n  true,\\r\\n  null\\r\\n]\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-value-23",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"{}\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-value-24",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"{\\r\\n  \\\"a\\\": 1,\\r\\n  \\\"b\\\": \\\"ä\\\"\\r\\n}\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-value-25",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"[\\r\\n  \\\"a\\\\r\\\\nb\\\",\\r\\n  \\\"x\\\"\\r\\n]\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-value-0",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-value-1",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-value-2",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"äöß & < > \\\"\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-value-3",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"a\\r\\nb\\nc\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-value-4",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"\\r\\n\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-value-5",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\" \\t \",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-value-6",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"🙂\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-value-7",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-value-8",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"0\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-value-9",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-value-10",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-value-11",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"12.5\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-value-12",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"-12.5\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-value-13",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-value-14",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1000000000000000\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-value-15",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"3.14159265358979\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-value-16",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"9007199254740991\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-value-17",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"10/22/2026 10:11:12\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-value-18",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":null,\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-value-19",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"True\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-value-20",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"False\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-value-21"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-value-22"
+    },
+    {
+      "message": "Can not convert Object to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-value-23"
+    },
+    {
+      "message": "Can not convert Object to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-value-24"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-value-25"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-0",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-1",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-2",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"äöß & < > \\\"\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-3",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"a\\r\\nb\\nc\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-4",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"\\r\\n\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-5",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\" \\t \",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-6",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"🙂\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-7",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-8",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"0\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-9",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-10",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-11",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"12.5\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-12",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"-12.5\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-13",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-14",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1000000000000000\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-15",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"3.14159265358979\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-16",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"9007199254740991\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-17",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"10/22/2026 10:11:12\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-18",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":null,\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-19",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"True\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-value-20",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"False\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-value-21"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-value-22"
+    },
+    {
+      "message": "Can not convert Object to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-value-23"
+    },
+    {
+      "message": "Can not convert Object to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-value-24"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-value-25"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-0",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"NOT_REACHED\",\"value\":\" \\t \",\"code\":-2,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-1",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"VALUE_CHANGED\",\"value\":\"12,5\",\"code\":-2,\"score\":0}]},{\"id\":\"\",\"responses\":[{\"id\":\"V1\",\"status\":\"UNSET\",\"value\":\"1000000000000000\",\"code\":-1,\"score\":1}]},{\"id\":\"A\",\"responses\":[{\"id\":\"V2\",\"status\":\"UNSET\",\"value\":\"{}\",\"code\":-2,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-2",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"VALUE_CHANGED\",\"value\":\"[]\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-3",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"NOT_REACHED\",\"value\":\"{}\",\"code\":1,\"score\":0},{\"id\":\"V4\",\"status\":\"VALUE_CHANGED\",\"value\":\"3,14159265358979\",\"code\":-2,\"score\":1}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V1\",\"status\":\"DISPLAYED\",\"value\":\"#null#\",\"code\":0,\"score\":1}]},{\"id\":\"01\",\"responses\":[{\"id\":\"V2\",\"status\":\"VALUE_CHANGED\",\"value\":\"1E-07\",\"code\":2,\"score\":0}]},{\"id\":\"\",\"responses\":[{\"id\":\"V3\",\"status\":\"NOT_REACHED\",\"value\":\"1\",\"code\":-1,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-4",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"VALUE_CHANGED\",\"value\":\"1E-07\",\"code\":2,\"score\":0}]},{\"id\":\"\",\"responses\":[{\"id\":\"V1\",\"status\":\"CODING_COMPLETE\",\"value\":\"äöß & < > \\\"\",\"code\":1,\"score\":0}]},{\"id\":\"A\",\"responses\":[{\"id\":\"V2\",\"status\":\"CODING_COMPLETE\",\"value\":\"12,5\",\"code\":2,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-5",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"VALUE_CHANGED\",\"value\":\"é\",\"code\":2,\"score\":0},{\"id\":\"V4\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":0,\"score\":2}]},{\"id\":\"\",\"responses\":[{\"id\":\"V1\",\"status\":\"VALUE_CHANGED\",\"value\":\"{  \\\"a\\\": 1,  \\\"b\\\": \\\"ä\\\"}\",\"code\":-2,\"score\":2}]},{\"id\":\"A\",\"responses\":[{\"id\":\"V2\",\"status\":\"VALUE_CHANGED\",\"value\":\"ab\\nc\",\"code\":-1,\"score\":1}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V3\",\"status\":\"CODING_COMPLETE\",\"value\":\"äöß & < > \\\"\",\"code\":1,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-6",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"CODING_COMPLETE\",\"value\":\"[]\",\"code\":-1,\"score\":0}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V1\",\"status\":\"VALUE_CHANGED\",\"value\":\"9007199254740991\",\"code\":-1,\"score\":1}]},{\"id\":\"01\",\"responses\":[{\"id\":\"V2\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":-1,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-7",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":-2,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-8",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":2,\"score\":2}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-9",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"DISPLAYED\",\"value\":\"[  \\\"a\\\\r\\\\nb\\\",  \\\"x\\\"]\",\"code\":-2,\"score\":1},{\"id\":\"V4\",\"status\":\"UNSET\",\"value\":\"{}\",\"code\":1,\"score\":0}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V1\",\"status\":\"CODING_COMPLETE\",\"value\":\"äöß & < > \\\"\",\"code\":0,\"score\":1}]},{\"id\":\"01\",\"responses\":[{\"id\":\"V2\",\"status\":\"CODING_COMPLETE\",\"value\":\"12,5\",\"code\":-2,\"score\":2}]},{\"id\":\"\",\"responses\":[{\"id\":\"V3\",\"status\":\"NOT_REACHED\",\"value\":\"{  \\\"a\\\": 1,  \\\"b\\\": \\\"ä\\\"}\",\"code\":1,\"score\":2}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-10",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"DISPLAYED\",\"value\":\"[  \\\"a\\\\r\\\\nb\\\",  \\\"x\\\"]\",\"code\":1,\"score\":2}]},{\"id\":\"\",\"responses\":[{\"id\":\"V1\",\"status\":\"VALUE_CHANGED\",\"value\":\"🙂\",\"code\":1,\"score\":1}]},{\"id\":\"A\",\"responses\":[{\"id\":\"V2\",\"status\":\"VALUE_CHANGED\",\"value\":\"True\",\"code\":-1,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-11",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"CODING_COMPLETE\",\"value\":\"3,14159265358979\",\"code\":-2,\"score\":0}]},{\"id\":\"\",\"responses\":[{\"id\":\"V1\",\"status\":\"UNSET\",\"value\":\"\",\"code\":-1,\"score\":1}]},{\"id\":\"A\",\"responses\":[{\"id\":\"V2\",\"status\":\"NOT_REACHED\",\"value\":\"22.10.2026 10:11:12\",\"code\":-2,\"score\":1}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-12",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"VALUE_CHANGED\",\"value\":\"3,14159265358979\",\"code\":-2,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-13",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"DISPLAYED\",\"value\":\"{}\",\"code\":-1,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-14",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"VALUE_CHANGED\",\"value\":\"12,5\",\"code\":-1,\"score\":1},{\"id\":\"V4\",\"status\":\"DISPLAYED\",\"value\":\"é\",\"code\":-2,\"score\":1}]},{\"id\":\"\",\"responses\":[{\"id\":\"V1\",\"status\":\"UNSET\",\"value\":\"\",\"code\":-1,\"score\":2}]},{\"id\":\"A\",\"responses\":[{\"id\":\"V2\",\"status\":\"VALUE_CHANGED\",\"value\":\"True\",\"code\":-2,\"score\":0}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V3\",\"status\":\"DISPLAYED\",\"value\":\"1\",\"code\":0,\"score\":1}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-15",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"VALUE_CHANGED\",\"value\":\"3,14159265358979\",\"code\":1,\"score\":2},{\"id\":\"V4\",\"status\":\"CODING_COMPLETE\",\"value\":\"3,14159265358979\",\"code\":2,\"score\":2}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V1\",\"status\":\"VALUE_CHANGED\",\"value\":\"#null#\",\"code\":-2,\"score\":0}]},{\"id\":\"01\",\"responses\":[{\"id\":\"V2\",\"status\":\"DISPLAYED\",\"value\":\"-1\",\"code\":-2,\"score\":1}]},{\"id\":\"\",\"responses\":[{\"id\":\"V3\",\"status\":\"UNSET\",\"value\":\"[  1,  \\\"001\\\",  true,  null]\",\"code\":1,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-16",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"UNSET\",\"value\":\"True\",\"code\":2,\"score\":1},{\"id\":\"V4\",\"status\":\"CODING_COMPLETE\",\"value\":\" \\t \",\"code\":1,\"score\":2}]},{\"id\":\"\",\"responses\":[{\"id\":\"V1\",\"status\":\"DISPLAYED\",\"value\":\"äöß & < > \\\"\",\"code\":0,\"score\":1}]},{\"id\":\"A\",\"responses\":[{\"id\":\"V2\",\"status\":\"CODING_COMPLETE\",\"value\":\"True\",\"code\":0,\"score\":2}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V3\",\"status\":\"CODING_COMPLETE\",\"value\":\"False\",\"code\":2,\"score\":1}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-17",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"CODING_COMPLETE\",\"value\":\"ab\\nc\",\"code\":2,\"score\":0},{\"id\":\"V4\",\"status\":\"VALUE_CHANGED\",\"value\":\"{}\",\"code\":0,\"score\":2}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V1\",\"status\":\"DISPLAYED\",\"value\":\"\",\"code\":-1,\"score\":0}]},{\"id\":\"01\",\"responses\":[{\"id\":\"V2\",\"status\":\"NOT_REACHED\",\"value\":\"001\",\"code\":0,\"score\":2}]},{\"id\":\"\",\"responses\":[{\"id\":\"V3\",\"status\":\"CODING_COMPLETE\",\"value\":\"äöß & < > \\\"\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-18",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"DISPLAYED\",\"value\":\"{}\",\"code\":0,\"score\":2},{\"id\":\"V4\",\"status\":\"DISPLAYED\",\"value\":\"{}\",\"code\":2,\"score\":1}]},{\"id\":\"\",\"responses\":[{\"id\":\"V1\",\"status\":\"NOT_REACHED\",\"value\":\"9007199254740991\",\"code\":0,\"score\":0}]},{\"id\":\"A\",\"responses\":[{\"id\":\"V2\",\"status\":\"DISPLAYED\",\"value\":\"{}\",\"code\":1,\"score\":0}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V3\",\"status\":\"DISPLAYED\",\"value\":\"1000000000000000\",\"code\":-1,\"score\":2}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-19",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"DISPLAYED\",\"value\":\"[]\",\"code\":1,\"score\":0}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V1\",\"status\":\"NOT_REACHED\",\"value\":\"#null#\",\"code\":0,\"score\":0}]},{\"id\":\"01\",\"responses\":[{\"id\":\"V2\",\"status\":\"NOT_REACHED\",\"value\":\"12,5\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-20",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":1,\"score\":0}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V1\",\"status\":\"CODING_COMPLETE\",\"value\":\"False\",\"code\":1,\"score\":1}]},{\"id\":\"01\",\"responses\":[{\"id\":\"V2\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":2}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-21",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"DISPLAYED\",\"value\":\"-1\",\"code\":0,\"score\":0},{\"id\":\"V4\",\"status\":\"NOT_REACHED\",\"value\":\"ab\\nc\",\"code\":0,\"score\":2}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V1\",\"status\":\"CODING_COMPLETE\",\"value\":\"äöß & < > \\\"\",\"code\":1,\"score\":0}]},{\"id\":\"01\",\"responses\":[{\"id\":\"V2\",\"status\":\"DISPLAYED\",\"value\":\"[  \\\"a\\\\r\\\\nb\\\",  \\\"x\\\"]\",\"code\":-2,\"score\":1}]},{\"id\":\"\",\"responses\":[{\"id\":\"V3\",\"status\":\"DISPLAYED\",\"value\":\"-12,5\",\"code\":-2,\"score\":2}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-22",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"DISPLAYED\",\"value\":\" \\t \",\"code\":-1,\"score\":1}]},{\"id\":\"\",\"responses\":[{\"id\":\"V1\",\"status\":\"UNSET\",\"value\":\"🙂\",\"code\":-2,\"score\":1}]},{\"id\":\"A\",\"responses\":[{\"id\":\"V2\",\"status\":\"DISPLAYED\",\"value\":\"[  \\\"a\\\\r\\\\nb\\\",  \\\"x\\\"]\",\"code\":0,\"score\":1}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-23",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"DISPLAYED\",\"value\":\"True\",\"code\":2,\"score\":2}]},{\"id\":\"\",\"responses\":[{\"id\":\"V1\",\"status\":\"CODING_COMPLETE\",\"value\":\"0\",\"code\":-2,\"score\":2}]},{\"id\":\"A\",\"responses\":[{\"id\":\"V2\",\"status\":\"CODING_COMPLETE\",\"value\":\"3,14159265358979\",\"code\":-1,\"score\":2}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-24",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"CODING_COMPLETE\",\"value\":\"1E-07\",\"code\":2,\"score\":1},{\"id\":\"V4\",\"status\":\"VALUE_CHANGED\",\"value\":\"001\",\"code\":2,\"score\":1}]},{\"id\":\"\",\"responses\":[{\"id\":\"V1\",\"status\":\"NOT_REACHED\",\"value\":\"{  \\\"a\\\": 1,  \\\"b\\\": \\\"ä\\\"}\",\"code\":-1,\"score\":1}]},{\"id\":\"A\",\"responses\":[{\"id\":\"V2\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":-1,\"score\":1}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V3\",\"status\":\"CODING_COMPLETE\",\"value\":\"\",\"code\":-1,\"score\":2}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-25",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"CODING_COMPLETE\",\"value\":\"12,5\",\"code\":-2,\"score\":0}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V1\",\"status\":\"NOT_REACHED\",\"value\":\"1\",\"code\":0,\"score\":1}]},{\"id\":\"01\",\"responses\":[{\"id\":\"V2\",\"status\":\"NOT_REACHED\",\"value\":\"[]\",\"code\":0,\"score\":1}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-26",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"CODING_COMPLETE\",\"value\":\"[]\",\"code\":0,\"score\":0}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V1\",\"status\":\"DISPLAYED\",\"value\":\"1\",\"code\":1,\"score\":1}]},{\"id\":\"01\",\"responses\":[{\"id\":\"V2\",\"status\":\"CODING_COMPLETE\",\"value\":\"22.10.2026 10:11:12\",\"code\":-1,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-27",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"NOT_REACHED\",\"value\":\"True\",\"code\":0,\"score\":2}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-28",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"CODING_COMPLETE\",\"value\":\"{}\",\"code\":-2,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-29",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"CODING_COMPLETE\",\"value\":\"[  \\\"a\\\\r\\\\nb\\\",  \\\"x\\\"]\",\"code\":0,\"score\":1}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-30",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"VALUE_CHANGED\",\"value\":\"[]\",\"code\":2,\"score\":0}]},{\"id\":\"\",\"responses\":[{\"id\":\"V1\",\"status\":\"CODING_COMPLETE\",\"value\":\"\",\"code\":1,\"score\":0}]},{\"id\":\"A\",\"responses\":[{\"id\":\"V2\",\"status\":\"DISPLAYED\",\"value\":\"001\",\"code\":1,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-31",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"NOT_REACHED\",\"value\":\"22.10.2026 10:11:12\",\"code\":-2,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-32",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"VALUE_CHANGED\",\"value\":\"001\",\"code\":-1,\"score\":0}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V1\",\"status\":\"UNSET\",\"value\":\"\",\"code\":1,\"score\":2}]},{\"id\":\"01\",\"responses\":[{\"id\":\"V2\",\"status\":\"DISPLAYED\",\"value\":\" \\t \",\"code\":2,\"score\":1}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-33",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"UNSET\",\"value\":\"ab\\nc\",\"code\":-2,\"score\":2},{\"id\":\"V4\",\"status\":\"NOT_REACHED\",\"value\":\"[  \\\"a\\\\r\\\\nb\\\",  \\\"x\\\"]\",\"code\":1,\"score\":1}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V1\",\"status\":\"VALUE_CHANGED\",\"value\":\"{  \\\"a\\\": 1,  \\\"b\\\": \\\"ä\\\"}\",\"code\":-2,\"score\":1}]},{\"id\":\"01\",\"responses\":[{\"id\":\"V2\",\"status\":\"CODING_COMPLETE\",\"value\":\"{}\",\"code\":-2,\"score\":0}]},{\"id\":\"\",\"responses\":[{\"id\":\"V3\",\"status\":\"VALUE_CHANGED\",\"value\":\"#null#\",\"code\":2,\"score\":2}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-34",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":-2,\"score\":2}]},{\"id\":\"\",\"responses\":[{\"id\":\"V1\",\"status\":\"VALUE_CHANGED\",\"value\":\"[  1,  \\\"001\\\",  true,  null]\",\"code\":1,\"score\":1}]},{\"id\":\"A\",\"responses\":[{\"id\":\"V2\",\"status\":\"CODING_COMPLETE\",\"value\":\"12,5\",\"code\":2,\"score\":2}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-35",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"VALUE_CHANGED\",\"value\":\"[]\",\"code\":0,\"score\":1},{\"id\":\"V4\",\"status\":\"VALUE_CHANGED\",\"value\":\" \\t \",\"code\":0,\"score\":1}]},{\"id\":\"\",\"responses\":[{\"id\":\"V1\",\"status\":\"CODING_COMPLETE\",\"value\":\"-12,5\",\"code\":2,\"score\":2}]},{\"id\":\"A\",\"responses\":[{\"id\":\"V2\",\"status\":\"NOT_REACHED\",\"value\":\" \\t \",\"code\":0,\"score\":1}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V3\",\"status\":\"NOT_REACHED\",\"value\":\"🙂\",\"code\":0,\"score\":2}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-36",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":2,\"score\":0},{\"id\":\"V4\",\"status\":\"DISPLAYED\",\"value\":\"-1\",\"code\":1,\"score\":2}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V1\",\"status\":\"CODING_COMPLETE\",\"value\":\"🙂\",\"code\":1,\"score\":0}]},{\"id\":\"01\",\"responses\":[{\"id\":\"V2\",\"status\":\"CODING_COMPLETE\",\"value\":\"1E-07\",\"code\":-2,\"score\":0}]},{\"id\":\"\",\"responses\":[{\"id\":\"V3\",\"status\":\"UNSET\",\"value\":\"0\",\"code\":-2,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-37",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":2},{\"id\":\"V4\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":1,\"score\":2}]},{\"id\":\"\",\"responses\":[{\"id\":\"V1\",\"status\":\"UNSET\",\"value\":\"äöß & < > \\\"\",\"code\":-2,\"score\":0}]},{\"id\":\"A\",\"responses\":[{\"id\":\"V2\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":2,\"score\":2}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V3\",\"status\":\"VALUE_CHANGED\",\"value\":\"False\",\"code\":-2,\"score\":2}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-38",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"UNSET\",\"value\":\"True\",\"code\":2,\"score\":2}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-39",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"DISPLAYED\",\"value\":\"ab\\nc\",\"code\":1,\"score\":2}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-40",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"NOT_REACHED\",\"value\":\"é\",\"code\":1,\"score\":2}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-41",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"NOT_REACHED\",\"value\":\"1E-07\",\"code\":-1,\"score\":0},{\"id\":\"V4\",\"status\":\"VALUE_CHANGED\",\"value\":\"22.10.2026 10:11:12\",\"code\":-1,\"score\":0}]},{\"id\":\"\",\"responses\":[{\"id\":\"V1\",\"status\":\"VALUE_CHANGED\",\"value\":\"False\",\"code\":-1,\"score\":2}]},{\"id\":\"A\",\"responses\":[{\"id\":\"V2\",\"status\":\"CODING_COMPLETE\",\"value\":\"1E-07\",\"code\":-2,\"score\":1}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V3\",\"status\":\"UNSET\",\"value\":\"1\",\"code\":1,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-42",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"CODING_COMPLETE\",\"value\":\"-1\",\"code\":0,\"score\":0},{\"id\":\"V4\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":1,\"score\":1}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V1\",\"status\":\"CODING_COMPLETE\",\"value\":\"1\",\"code\":-1,\"score\":2}]},{\"id\":\"01\",\"responses\":[{\"id\":\"V2\",\"status\":\"CODING_COMPLETE\",\"value\":\"1E-07\",\"code\":2,\"score\":0}]},{\"id\":\"\",\"responses\":[{\"id\":\"V3\",\"status\":\"DISPLAYED\",\"value\":\"-12,5\",\"code\":0,\"score\":1}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-43",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"DISPLAYED\",\"value\":\"12,5\",\"code\":-2,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-44",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"CODING_COMPLETE\",\"value\":\"ab\\nc\",\"code\":1,\"score\":1}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-45",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"CODING_COMPLETE\",\"value\":\"22.10.2026 10:11:12\",\"code\":1,\"score\":0},{\"id\":\"V4\",\"status\":\"VALUE_CHANGED\",\"value\":\"ab\\nc\",\"code\":-1,\"score\":2}]},{\"id\":\"\",\"responses\":[{\"id\":\"V1\",\"status\":\"UNSET\",\"value\":\"1000000000000000\",\"code\":1,\"score\":1}]},{\"id\":\"A\",\"responses\":[{\"id\":\"V2\",\"status\":\"NOT_REACHED\",\"value\":\"1E-07\",\"code\":-2,\"score\":0}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V3\",\"status\":\"UNSET\",\"value\":\"{  \\\"a\\\": 1,  \\\"b\\\": \\\"ä\\\"}\",\"code\":2,\"score\":2}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-46",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"DISPLAYED\",\"value\":\"True\",\"code\":-2,\"score\":2}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-47",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":-2,\"score\":1}]},{\"id\":\"\",\"responses\":[{\"id\":\"V1\",\"status\":\"CODING_COMPLETE\",\"value\":\"False\",\"code\":-2,\"score\":1}]},{\"id\":\"A\",\"responses\":[{\"id\":\"V2\",\"status\":\"CODING_COMPLETE\",\"value\":\"3,14159265358979\",\"code\":2,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-48",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"NOT_REACHED\",\"value\":\"[]\",\"code\":-2,\"score\":0},{\"id\":\"V4\",\"status\":\"NOT_REACHED\",\"value\":\"3,14159265358979\",\"code\":2,\"score\":1}]},{\"id\":\"\",\"responses\":[{\"id\":\"V1\",\"status\":\"CODING_COMPLETE\",\"value\":\"äöß & < > \\\"\",\"code\":-2,\"score\":1}]},{\"id\":\"A\",\"responses\":[{\"id\":\"V2\",\"status\":\"DISPLAYED\",\"value\":\"-1\",\"code\":-2,\"score\":0}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V3\",\"status\":\"UNSET\",\"value\":\"1\",\"code\":-2,\"score\":1}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-49",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"DISPLAYED\",\"value\":\" \\t \",\"code\":2,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-50",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"DISPLAYED\",\"value\":\"12,5\",\"code\":-1,\"score\":2}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-51",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"VALUE_CHANGED\",\"value\":\"12,5\",\"code\":-2,\"score\":0},{\"id\":\"V4\",\"status\":\"CODING_COMPLETE\",\"value\":\"é\",\"code\":2,\"score\":0}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V1\",\"status\":\"UNSET\",\"value\":\"-12,5\",\"code\":-1,\"score\":1}]},{\"id\":\"01\",\"responses\":[{\"id\":\"V2\",\"status\":\"DISPLAYED\",\"value\":\"True\",\"code\":0,\"score\":2}]},{\"id\":\"\",\"responses\":[{\"id\":\"V3\",\"status\":\"CODING_COMPLETE\",\"value\":\"0\",\"code\":-1,\"score\":2}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-52",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"DISPLAYED\",\"value\":\"[  \\\"a\\\\r\\\\nb\\\",  \\\"x\\\"]\",\"code\":1,\"score\":1},{\"id\":\"V4\",\"status\":\"CODING_COMPLETE\",\"value\":\"001\",\"code\":1,\"score\":2}]},{\"id\":\"\",\"responses\":[{\"id\":\"V1\",\"status\":\"VALUE_CHANGED\",\"value\":\"1000000000000000\",\"code\":1,\"score\":0}]},{\"id\":\"A\",\"responses\":[{\"id\":\"V2\",\"status\":\"NOT_REACHED\",\"value\":\"-1\",\"code\":0,\"score\":2}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V3\",\"status\":\"NOT_REACHED\",\"value\":\"1000000000000000\",\"code\":-2,\"score\":2}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-53",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"UNSET\",\"value\":\"ab\\nc\",\"code\":0,\"score\":0}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V1\",\"status\":\"NOT_REACHED\",\"value\":\"🙂\",\"code\":-2,\"score\":2}]},{\"id\":\"01\",\"responses\":[{\"id\":\"V2\",\"status\":\"UNSET\",\"value\":\"[]\",\"code\":2,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-54",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"UNSET\",\"value\":\"[  \\\"a\\\\r\\\\nb\\\",  \\\"x\\\"]\",\"code\":-1,\"score\":0},{\"id\":\"V4\",\"status\":\"NOT_REACHED\",\"value\":\"[]\",\"code\":-1,\"score\":0}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V1\",\"status\":\"NOT_REACHED\",\"value\":\"[  1,  \\\"001\\\",  true,  null]\",\"code\":-2,\"score\":0}]},{\"id\":\"01\",\"responses\":[{\"id\":\"V2\",\"status\":\"DISPLAYED\",\"value\":\"ab\\nc\",\"code\":2,\"score\":0}]},{\"id\":\"\",\"responses\":[{\"id\":\"V3\",\"status\":\"CODING_COMPLETE\",\"value\":\"🙂\",\"code\":-2,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-55",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"DISPLAYED\",\"value\":\"ab\\nc\",\"code\":2,\"score\":0}]},{\"id\":\"\",\"responses\":[{\"id\":\"V1\",\"status\":\"DISPLAYED\",\"value\":\"🙂\",\"code\":-2,\"score\":0}]},{\"id\":\"A\",\"responses\":[{\"id\":\"V2\",\"status\":\"UNSET\",\"value\":\"3,14159265358979\",\"code\":2,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-56",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"CODING_COMPLETE\",\"value\":\"001\",\"code\":1,\"score\":0}]},{\"id\":\"\",\"responses\":[{\"id\":\"V1\",\"status\":\"CODING_COMPLETE\",\"value\":\"#null#\",\"code\":-1,\"score\":0}]},{\"id\":\"A\",\"responses\":[{\"id\":\"V2\",\"status\":\"DISPLAYED\",\"value\":\"-1\",\"code\":-2,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-57",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":1,\"score\":1},{\"id\":\"V4\",\"status\":\"VALUE_CHANGED\",\"value\":\"-1\",\"code\":0,\"score\":1}]},{\"id\":\"\",\"responses\":[{\"id\":\"V1\",\"status\":\"UNSET\",\"value\":\"{  \\\"a\\\": 1,  \\\"b\\\": \\\"ä\\\"}\",\"code\":1,\"score\":0}]},{\"id\":\"A\",\"responses\":[{\"id\":\"V2\",\"status\":\"UNSET\",\"value\":\"[  \\\"a\\\\r\\\\nb\\\",  \\\"x\\\"]\",\"code\":1,\"score\":1}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V3\",\"status\":\"NOT_REACHED\",\"value\":\"1\",\"code\":0,\"score\":1}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-58",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"NOT_REACHED\",\"value\":\"{}\",\"code\":0,\"score\":2}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-59",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"DISPLAYED\",\"value\":\" \\t \",\"code\":1,\"score\":2}]},{\"id\":\"\",\"responses\":[{\"id\":\"V1\",\"status\":\"VALUE_CHANGED\",\"value\":\"#null#\",\"code\":1,\"score\":2}]},{\"id\":\"A\",\"responses\":[{\"id\":\"V2\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":2,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-60",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"NOT_REACHED\",\"value\":\"True\",\"code\":0,\"score\":0}]},{\"id\":\"\",\"responses\":[{\"id\":\"V1\",\"status\":\"UNSET\",\"value\":\"9007199254740991\",\"code\":-1,\"score\":1}]},{\"id\":\"A\",\"responses\":[{\"id\":\"V2\",\"status\":\"VALUE_CHANGED\",\"value\":\"1E-07\",\"code\":0,\"score\":2}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-61",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"CODING_COMPLETE\",\"value\":\"22.10.2026 10:11:12\",\"code\":-1,\"score\":1}]},{\"id\":\"\",\"responses\":[{\"id\":\"V1\",\"status\":\"DISPLAYED\",\"value\":\"äöß & < > \\\"\",\"code\":2,\"score\":2}]},{\"id\":\"A\",\"responses\":[{\"id\":\"V2\",\"status\":\"DISPLAYED\",\"value\":\"22.10.2026 10:11:12\",\"code\":2,\"score\":1}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-62",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"DISPLAYED\",\"value\":\"True\",\"code\":0,\"score\":2}]},{\"id\":\"\",\"responses\":[{\"id\":\"V1\",\"status\":\"VALUE_CHANGED\",\"value\":\"{  \\\"a\\\": 1,  \\\"b\\\": \\\"ä\\\"}\",\"code\":-1,\"score\":2}]},{\"id\":\"A\",\"responses\":[{\"id\":\"V2\",\"status\":\"NOT_REACHED\",\"value\":\"001\",\"code\":-1,\"score\":2}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-63",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"NOT_REACHED\",\"value\":\"[]\",\"code\":-1,\"score\":1}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-64",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"NOT_REACHED\",\"value\":\"-1\",\"code\":1,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-65",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"VALUE_CHANGED\",\"value\":\"1E-07\",\"code\":-2,\"score\":0},{\"id\":\"V4\",\"status\":\"NOT_REACHED\",\"value\":\"22.10.2026 10:11:12\",\"code\":2,\"score\":0}]},{\"id\":\"\",\"responses\":[{\"id\":\"V1\",\"status\":\"CODING_COMPLETE\",\"value\":\"#null#\",\"code\":2,\"score\":2}]},{\"id\":\"A\",\"responses\":[{\"id\":\"V2\",\"status\":\"VALUE_CHANGED\",\"value\":\"001\",\"code\":-2,\"score\":1}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V3\",\"status\":\"DISPLAYED\",\"value\":\"9007199254740991\",\"code\":-1,\"score\":1}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-66",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"NOT_REACHED\",\"value\":\"3,14159265358979\",\"code\":0,\"score\":1}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-67",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"DISPLAYED\",\"value\":\"{}\",\"code\":1,\"score\":1},{\"id\":\"V4\",\"status\":\"DISPLAYED\",\"value\":\"1E-07\",\"code\":-2,\"score\":1}]},{\"id\":\"\",\"responses\":[{\"id\":\"V1\",\"status\":\"DISPLAYED\",\"value\":\"0\",\"code\":-1,\"score\":0}]},{\"id\":\"A\",\"responses\":[{\"id\":\"V2\",\"status\":\"CODING_COMPLETE\",\"value\":\"[  \\\"a\\\\r\\\\nb\\\",  \\\"x\\\"]\",\"code\":0,\"score\":2}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V3\",\"status\":\"VALUE_CHANGED\",\"value\":\"\",\"code\":-1,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-68",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"UNSET\",\"value\":\" \\t \",\"code\":2,\"score\":2},{\"id\":\"V4\",\"status\":\"CODING_COMPLETE\",\"value\":\"é\",\"code\":-1,\"score\":2}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V1\",\"status\":\"DISPLAYED\",\"value\":\"\",\"code\":0,\"score\":1}]},{\"id\":\"01\",\"responses\":[{\"id\":\"V2\",\"status\":\"CODING_COMPLETE\",\"value\":\"12,5\",\"code\":0,\"score\":0}]},{\"id\":\"\",\"responses\":[{\"id\":\"V3\",\"status\":\"NOT_REACHED\",\"value\":\"1\",\"code\":0,\"score\":1}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-69",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"VALUE_CHANGED\",\"value\":\"ab\\nc\",\"code\":-2,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-70",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"DISPLAYED\",\"value\":\"[]\",\"code\":2,\"score\":0},{\"id\":\"V4\",\"status\":\"VALUE_CHANGED\",\"value\":\"ab\\nc\",\"code\":-1,\"score\":1}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V1\",\"status\":\"DISPLAYED\",\"value\":\"äöß & < > \\\"\",\"code\":1,\"score\":1}]},{\"id\":\"01\",\"responses\":[{\"id\":\"V2\",\"status\":\"VALUE_CHANGED\",\"value\":\"12,5\",\"code\":1,\"score\":2}]},{\"id\":\"\",\"responses\":[{\"id\":\"V3\",\"status\":\"UNSET\",\"value\":\"🙂\",\"code\":-2,\"score\":2}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-71",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"NOT_REACHED\",\"value\":\"3,14159265358979\",\"code\":2,\"score\":1}]},{\"id\":\"\",\"responses\":[{\"id\":\"V1\",\"status\":\"UNSET\",\"value\":\"1\",\"code\":-1,\"score\":0}]},{\"id\":\"A\",\"responses\":[{\"id\":\"V2\",\"status\":\"CODING_COMPLETE\",\"value\":\"[  \\\"a\\\\r\\\\nb\\\",  \\\"x\\\"]\",\"code\":-1,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-72",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"VALUE_CHANGED\",\"value\":\"-1\",\"code\":2,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-73",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"CODING_COMPLETE\",\"value\":\"{}\",\"code\":1,\"score\":1},{\"id\":\"V4\",\"status\":\"CODING_COMPLETE\",\"value\":\"001\",\"code\":0,\"score\":2}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V1\",\"status\":\"UNSET\",\"value\":\"äöß & < > \\\"\",\"code\":-2,\"score\":0}]},{\"id\":\"01\",\"responses\":[{\"id\":\"V2\",\"status\":\"DISPLAYED\",\"value\":\"é\",\"code\":2,\"score\":1}]},{\"id\":\"\",\"responses\":[{\"id\":\"V3\",\"status\":\"UNSET\",\"value\":\"\",\"code\":0,\"score\":1}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-74",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"NOT_REACHED\",\"value\":\"1E-07\",\"code\":-2,\"score\":1}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-75",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":-1,\"score\":2}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-77",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"VALUE_CHANGED\",\"value\":\"22.10.2026 10:11:12\",\"code\":2,\"score\":1}]},{\"id\":\"02\",\"responses\":[{\"id\":\"V1\",\"status\":\"DISPLAYED\",\"value\":\"{  \\\"a\\\": 1,  \\\"b\\\": \\\"ä\\\"}\",\"code\":2,\"score\":0}]},{\"id\":\"01\",\"responses\":[{\"id\":\"V2\",\"status\":\"DISPLAYED\",\"value\":\"-1\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-78",
+      "outputJSON": "[{\"id\":\"A\",\"responses\":[{\"id\":\"V0\",\"status\":\"DISPLAYED\",\"value\":\"True\",\"code\":1,\"score\":2}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-seed733-79",
+      "outputJSON": "[{\"id\":\"01\",\"responses\":[{\"id\":\"V0\",\"status\":\"NOT_REACHED\",\"value\":\"001\",\"code\":-2,\"score\":2}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-0",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable2_0', line 1, position 68.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-1",
+      "outputJSON": "[{\"id\":\"1\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\" \\t \",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-2",
+      "outputJSON": "[{\"id\":\"2\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"1e-7\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-3",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable2_3', line 1, position 52.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-4",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0_0\",\"status\":\"UNSET\",\"value\":\"true\",\"code\":0,\"score\":0},{\"id\":\"variable1_0\",\"status\":\"UNSET\",\"value\":\"äöß & < > \\\"\",\"code\":0,\"score\":0},{\"id\":\"variable2_0\",\"status\":\"UNSET\",\"value\":\"2026-10-22T10:11:12Z\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-5",
+      "outputJSON": "[{\"id\":\"1\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"12.5\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"1\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"3.141592653589793\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-6",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable1_2', line 1, position 37.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-7",
+      "outputJSON": "[{\"id\":\"3\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-8",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable0_0', line 1, position 16.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-9",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable0_1', line 1, position 16.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-10",
+      "outputJSON": "[{\"id\":\"2\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"12.5\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"-12.5\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":null,\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\" \\t \",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-11",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable2_3', line 1, position 55.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-12",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable0_0', line 1, position 16.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-13",
+      "outputJSON": "[{\"id\":\"1\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"äöß & < > \\\"\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"a\\r\\nb\\nc\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"1\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-14",
+      "outputJSON": "[{\"id\":\"2\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"2026-10-22T10:11:12Z\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-15",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable0_3', line 1, position 16.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-16",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable0_0', line 1, position 16.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-17",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable0_1', line 1, position 16.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-18",
+      "outputJSON": "[{\"id\":\"2\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\" \\t \",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-19",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable1_3', line 1, position 48.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-20",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0_0\",\"status\":\"UNSET\",\"value\":\"2026-10-22T10:11:12Z\",\"code\":0,\"score\":0},{\"id\":\"variable1_0\",\"status\":\"UNSET\",\"value\":\"false\",\"code\":0,\"score\":0},{\"id\":\"variable2_0\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-21",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable0_1', line 1, position 16.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-22",
+      "outputJSON": "[{\"id\":\"2\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"true\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-23",
+      "outputJSON": "[{\"id\":\"3\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"12.5\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-24",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0_0\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":0,\"score\":0},{\"id\":\"variable1_0\",\"status\":\"UNSET\",\"value\":\"äöß & < > \\\"\",\"code\":0,\"score\":0},{\"id\":\"variable2_0\",\"status\":\"UNSET\",\"value\":\"1e-7\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-25",
+      "outputJSON": "[{\"id\":\"1\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"3.141592653589793\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"1000000000000000\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"2026-10-22T10:11:12Z\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-26",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable2_2', line 1, position 55.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-27",
+      "outputJSON": "[{\"id\":\"3\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-28",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable2_0', line 1, position 65.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-29",
+      "outputJSON": "[{\"id\":\"1\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-31",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable0_3', line 1, position 16.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-32",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable0_0', line 1, position 16.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-33",
+      "outputJSON": "[{\"id\":\"1\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"true\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"1000000000000000\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"1e-7\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-34",
+      "outputJSON": "[{\"id\":\"2\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"1\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-35",
+      "outputJSON": "[{\"id\":\"3\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"1e-7\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-36",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable4_0', line 1, position 99.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-37",
+      "outputJSON": "[{\"id\":\"1\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"2026-10-22T10:11:12Z\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-38",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable2_2', line 1, position 64.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-39",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable2_3', line 1, position 53.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-40",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable1_0', line 1, position 36.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-41",
+      "outputJSON": "[{\"id\":\"1\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"-12.5\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-43",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable0_3', line 1, position 16.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-44",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0_0\",\"status\":\"UNSET\",\"value\":\"2026-10-22T10:11:12Z\",\"code\":0,\"score\":0},{\"id\":\"variable1_0\",\"status\":\"UNSET\",\"value\":\"0\",\"code\":0,\"score\":0},{\"id\":\"variable2_0\",\"status\":\"UNSET\",\"value\":\"12.5\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-45",
+      "outputJSON": "[{\"id\":\"1\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"a\\r\\nb\\nc\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":null,\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-46",
+      "outputJSON": "[{\"id\":\"2\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"1e-7\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"äöß & < > \\\"\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\" \\t \",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":null,\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"3.141592653589793\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-48",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable1_0', line 1, position 36.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-49",
+      "outputJSON": "[{\"id\":\"1\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"a\\r\\nb\\nc\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"🙂\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"a\\r\\nb\\nc\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-50",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable1_2', line 1, position 37.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-52",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0_0\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-53",
+      "outputJSON": "[{\"id\":\"1\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"1\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-54",
+      "outputJSON": "[{\"id\":\"2\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-55",
+      "outputJSON": "[{\"id\":\"3\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"2026-10-22T10:11:12Z\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"1000000000000000\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\" \\t \",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"🙂\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"1e-7\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-56",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0_0\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-57",
+      "outputJSON": "[{\"id\":\"1\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\" \\t \",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"\\r\\n\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-58",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable0_2', line 1, position 16.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-59",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable0_3', line 1, position 16.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-60",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable1_0', line 1, position 53.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-61",
+      "outputJSON": "[{\"id\":\"1\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-62",
+      "outputJSON": "[{\"id\":\"2\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"true\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"1000000000000000\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"2026-10-22T10:11:12Z\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-63",
+      "outputJSON": "[{\"id\":\"3\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"a\\r\\nb\\nc\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"2026-10-22T10:11:12Z\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-64",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable2_0', line 1, position 56.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-65",
+      "outputJSON": "[{\"id\":\"1\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"a\\r\\nb\\nc\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"9007199254740991\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"12.5\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-66",
+      "outputJSON": "[{\"id\":\"2\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"\\r\\n\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-67",
+      "outputJSON": "[{\"id\":\"3\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"3.141592653589793\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-68",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable2_0', line 1, position 56.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-69",
+      "outputJSON": "[{\"id\":\"1\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"true\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"-12.5\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"\\r\\n\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\" \\t \",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-71",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable4_3', line 1, position 118.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-72",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable1_0', line 1, position 36.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-74",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable0_2', line 1, position 16.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-76",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: [. Path 'variable0_0', line 1, position 16.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-77",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable0_1', line 1, position 16.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-seed733-79",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected character encountered while parsing value: {. Path 'variable2_3', line 1, position 66.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-0",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"äöß & < > \\\"\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-1",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"{\\r\\n  \\\"a\\\": 1,\\r\\n  \\\"b\\\": \\\"ä\\\"\\r\\n}\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"True\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-2",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"22.10.2026 10:11:12\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"\\r\\n\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"🙂\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-3",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"12,5\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-4",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"3,14159265358979\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-5",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"3,14159265358979\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"{\\r\\n  \\\"a\\\": 1,\\r\\n  \\\"b\\\": \\\"ä\\\"\\r\\n}\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"[]\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-6",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-7",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"{}\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"-12,5\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"12,5\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"False\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"[]\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-8",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"{}\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"\\r\\n\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"1000000000000000\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-9",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"False\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"\\r\\n\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"12,5\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-10",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"12,5\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"True\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-11",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"22.10.2026 10:11:12\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-12",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"\\r\\n\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"22.10.2026 10:11:12\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"[\\r\\n  \\\"a\\\\r\\\\nb\\\",\\r\\n  \\\"x\\\"\\r\\n]\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-13",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\" \\t \",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"{\\r\\n  \\\"a\\\": 1,\\r\\n  \\\"b\\\": \\\"ä\\\"\\r\\n}\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"3,14159265358979\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"🙂\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"[\\r\\n  \\\"a\\\\r\\\\nb\\\",\\r\\n  \\\"x\\\"\\r\\n]\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-14",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"False\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"a\\r\\nb\\nc\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-15",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"3,14159265358979\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"True\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"äöß & < > \\\"\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"3,14159265358979\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-16",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-18",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"a\\r\\nb\\nc\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"1000000000000000\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"12,5\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-19",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"1000000000000000\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"{}\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-20",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\" \\t \",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"12,5\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"1\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"3,14159265358979\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-22",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-23",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-24",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"[]\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-26",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"[\\r\\n  \\\"a\\\\r\\\\nb\\\",\\r\\n  \\\"x\\\"\\r\\n]\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"1000000000000000\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"{}\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-29",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"3,14159265358979\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"0\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-30",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"a\\r\\nb\\nc\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"[\\r\\n  \\\"a\\\\r\\\\nb\\\",\\r\\n  \\\"x\\\"\\r\\n]\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-31",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"{}\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-35",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"a\\r\\nb\\nc\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-36",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"\\r\\n\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"12,5\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"1\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"a\\r\\nb\\nc\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-37",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"a\\r\\nb\\nc\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"\\r\\n\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-40",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"3,14159265358979\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"9007199254740991\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"3,14159265358979\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"\\r\\n\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"12,5\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-41",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"3,14159265358979\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"-12,5\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"{}\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-42",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"22.10.2026 10:11:12\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"1000000000000000\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-43",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"[]\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"1\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"[\\r\\n  \\\"a\\\\r\\\\nb\\\",\\r\\n  \\\"x\\\"\\r\\n]\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"1000000000000000\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"[]\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-44",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"{\\r\\n  \\\"a\\\": 1,\\r\\n  \\\"b\\\": \\\"ä\\\"\\r\\n}\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-45",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"{}\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"1000000000000000\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"12,5\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-46",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"a\\r\\nb\\nc\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"-12,5\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"True\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-48",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\" \\t \",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"[\\r\\n  \\\"a\\\\r\\\\nb\\\",\\r\\n  \\\"x\\\"\\r\\n]\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-49",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"12,5\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"False\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"[\\r\\n  \\\"a\\\\r\\\\nb\\\",\\r\\n  \\\"x\\\"\\r\\n]\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"9007199254740991\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-52",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\" \\t \",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-54",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"a\\r\\nb\\nc\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"[\\r\\n  \\\"a\\\\r\\\\nb\\\",\\r\\n  \\\"x\\\"\\r\\n]\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"22.10.2026 10:11:12\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-55",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"False\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"{}\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-56",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"[\\r\\n  \\\"a\\\\r\\\\nb\\\",\\r\\n  \\\"x\\\"\\r\\n]\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"0\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"[\\r\\n  1,\\r\\n  \\\"001\\\",\\r\\n  true,\\r\\n  null\\r\\n]\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-57",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"22.10.2026 10:11:12\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"0\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"[\\r\\n  \\\"a\\\\r\\\\nb\\\",\\r\\n  \\\"x\\\"\\r\\n]\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-58",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"{}\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"0\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-59",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"True\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"🙂\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-60",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"a\\r\\nb\\nc\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"-12,5\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-61",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"3,14159265358979\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"\\r\\n\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"22.10.2026 10:11:12\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-62",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"[]\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"1\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"[\\r\\n  1,\\r\\n  \\\"001\\\",\\r\\n  true,\\r\\n  null\\r\\n]\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"[]\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-64",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"1000000000000000\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"a\\r\\nb\\nc\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-65",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"12,5\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"\\r\\n\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"[\\r\\n  \\\"a\\\\r\\\\nb\\\",\\r\\n  \\\"x\\\"\\r\\n]\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"🙂\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\" \\t \",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-66",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"True\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"a\\r\\nb\\nc\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-67",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"\\r\\n\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-69",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"-12,5\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"12,5\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"False\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-70",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"a\\r\\nb\\nc\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-72",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"1\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\" \\t \",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-73",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"[\\r\\n  1,\\r\\n  \\\"001\\\",\\r\\n  true,\\r\\n  null\\r\\n]\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"äöß & < > \\\"\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"3,14159265358979\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-74",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"22.10.2026 10:11:12\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"0\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"22.10.2026 10:11:12\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-75",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"{}\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"🙂\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\" \\t \",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-76",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"🙂\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"22.10.2026 10:11:12\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"\\r\\n\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"[\\r\\n  \\\"a\\\\r\\\\nb\\\",\\r\\n  \\\"x\\\"\\r\\n]\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-seed733-77",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"3,14159265358979\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"1\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"12,5\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Object to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-seed733-0"
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-1",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"12.5\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"1\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-seed733-2"
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-3",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"1\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-4",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"1\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"a\\r\\nb\\nc\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"🙂\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-5",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"12.5\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-seed733-6"
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-7",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"3.14159265358979\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-8",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-9",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":null,\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\" \\t \",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-10",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"True\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"9007199254740991\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"True\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-seed733-11"
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-12",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"10/22/2026 10:11:12\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-13",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\" \\t \",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Object to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-seed733-14"
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-15",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\" \\t \",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"\\r\\n\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"12.5\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"12.5\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-seed733-17"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-seed733-18"
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-19",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"-12.5\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-seed733-20"
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-21",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-seed733-22"
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-26",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"12.5\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"0\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"3.14159265358979\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-seed733-27"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-seed733-28"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-seed733-29"
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-30",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"12.5\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"äöß & < > \\\"\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"9007199254740991\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"3.14159265358979\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-seed733-32"
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-33",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"äöß & < > \\\"\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\" \\t \",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"0\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"True\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-34",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"True\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-35",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"9007199254740991\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-seed733-36"
+    },
+    {
+      "message": "Can not convert Object to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-seed733-37"
+    },
+    {
+      "message": "Can not convert Object to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-seed733-38"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-seed733-39"
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-40",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"3.14159265358979\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"False\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-seed733-41"
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-42",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"True\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"-12.5\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"9007199254740991\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-43",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"äöß & < > \\\"\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\" \\t \",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"9007199254740991\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"12.5\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Object to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-seed733-44"
+    },
+    {
+      "message": "Can not convert Object to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-seed733-45"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-seed733-47"
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-48",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"12.5\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"äöß & < > \\\"\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"12.5\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-50",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Object to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-seed733-51"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-seed733-52"
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-53",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"True\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"\\r\\n\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"True\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-seed733-57"
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-58",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-61",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\" \\t \",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"9007199254740991\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"a\\r\\nb\\nc\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-62",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\" \\t \",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":null,\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"🙂\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"3.14159265358979\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Object to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-seed733-63"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-seed733-65"
+    },
+    {
+      "message": "Can not convert Object to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-seed733-66"
+    },
+    {
+      "message": "Can not convert Object to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-seed733-68"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-seed733-69"
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-70",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"True\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"\\r\\n\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"False\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-seed733-71"
+    },
+    {
+      "message": "Can not convert Object to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-seed733-72"
+    },
+    {
+      "id": "setResponsesKeyValue-seed733-73",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"9007199254740991\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"10/22/2026 10:11:12\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Object to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-seed733-76"
+    },
+    {
+      "message": "Can not convert Object to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesKeyValue-seed733-77"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-0"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-1",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"10/22/2026 10:11:12\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-2",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"a\\r\\nb\\nc\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Object to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-3"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-4"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-5",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"12.5\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"🙂\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\" \\t \",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"10/22/2026 10:11:12\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-6",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-7",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"🙂\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"True\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"9007199254740991\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"True\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-8",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"\\r\\n\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"1000000000000000\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-9"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-11",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"3.14159265358979\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"9007199254740991\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"0\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"a\\r\\nb\\nc\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-12"
+    },
+    {
+      "message": "Can not convert Object to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-13"
+    },
+    {
+      "message": "Can not convert Object to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-14"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-15",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"a\\r\\nb\\nc\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"9007199254740991\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-16"
+    },
+    {
+      "message": "Can not convert Object to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-17"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-18",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"1000000000000000\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-20",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Object to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-21"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-22",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":null,\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"a\\r\\nb\\nc\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"1\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\" \\t \",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-23",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"9007199254740991\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"True\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":null,\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Object to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-24"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-25",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"12.5\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Object to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-26"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-27"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-29",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"é\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-30"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-31",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"a\\r\\nb\\nc\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"-12.5\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-32",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-33",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"-12.5\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"3.14159265358979\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"1000000000000000\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"True\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-34",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"True\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"9007199254740991\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\" \\t \",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-36",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"10/22/2026 10:11:12\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Object to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-37"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-38"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-39",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\" \\t \",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"9007199254740991\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"a\\r\\nb\\nc\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-40"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-41"
+    },
+    {
+      "message": "Can not convert Object to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-42"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-44",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"10/22/2026 10:11:12\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"🙂\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"3.14159265358979\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-45"
+    },
+    {
+      "message": "Can not convert Object to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-46"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-47"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-48"
+    },
+    {
+      "message": "Can not convert Object to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-49"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-50",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"12.5\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"1000000000000000\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-52"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-53",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\" \\t \",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-55",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"12.5\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"-12.5\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"12.5\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-56",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"12.5\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"1000000000000000\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Object to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-57"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-59",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":null,\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"🙂\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-60"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-61"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-62"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-63"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-65",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"True\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":null,\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"12.5\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"\\r\\n\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"3.14159265358979\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-66"
+    },
+    {
+      "message": "Can not convert Object to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-67"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-69",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"-12.5\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"10/22/2026 10:11:12\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"3.14159265358979\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-70",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"10/22/2026 10:11:12\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"-12.5\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"-1\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-71"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-72",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"3.14159265358979\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"🙂\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"12.5\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-73",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"3.14159265358979\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-74",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"a\\r\\nb\\nc\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":null,\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\"001\",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":null,\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"1E-07\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-seed733-75",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"variable0\",\"status\":\"UNSET\",\"value\":\"10/22/2026 10:11:12\",\"code\":0,\"score\":0},{\"id\":\"variable1\",\"status\":\"UNSET\",\"value\":\"0\",\"code\":0,\"score\":0},{\"id\":\"variable2\",\"status\":\"UNSET\",\"value\":\" \\t \",\"code\":0,\"score\":0},{\"id\":\"variable3\",\"status\":\"UNSET\",\"value\":\"🙂\",\"code\":0,\"score\":0},{\"id\":\"variable4\",\"status\":\"UNSET\",\"value\":\"12.5\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Array to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-77"
+    },
+    {
+      "message": "Can not convert Object to String.",
+      "exceptionType": "System.ArgumentException",
+      "id": "setResponsesSimplePlayerLegacy-seed733-79"
+    },
+    {
+      "id": "status-UNSET",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"x\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "status-NOT_REACHED",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"NOT_REACHED\",\"value\":\"x\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "status-DISPLAYED",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"DISPLAYED\",\"value\":\"x\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "status-VALUE_CHANGED",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"VALUE_CHANGED\",\"value\":\"x\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "status-DERIVE_ERROR",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"DERIVE_ERROR\",\"value\":\"x\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "status-CODING_COMPLETE",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"CODING_COMPLETE\",\"value\":\"x\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "status-NO_CODING",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"NO_CODING\",\"value\":\"x\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "status-INVALID",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"INVALID\",\"value\":\"x\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "status-CODING_INCOMPLETE",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"CODING_INCOMPLETE\",\"value\":\"x\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "status-CODING_ERROR",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"CODING_ERROR\",\"value\":\"x\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "status-PARTLY_DISPLAYED",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"PARTLY_DISPLAYED\",\"value\":\"x\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "status-DERIVE_PENDING",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"DERIVE_PENDING\",\"value\":\"x\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "status-INTENDED_INCOMPLETE",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"INTENDED_INCOMPLETE\",\"value\":\"x\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "status-CODE_SELECTION_PENDING",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"CODE_SELECTION_PENDING\",\"value\":\"x\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "status-",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"\",\"value\":\"x\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "status-null",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"\",\"value\":\"x\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "code-number--2147483648",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"x\",\"code\":-2147483648,\"score\":0}]}]"
+    },
+    {
+      "id": "code-number--1",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"x\",\"code\":-1,\"score\":0}]}]"
+    },
+    {
+      "id": "code-number-0",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"x\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "code-number-1",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"x\",\"code\":1,\"score\":0}]}]"
+    },
+    {
+      "id": "code-number-2147483647",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"x\",\"code\":2147483647,\"score\":0}]}]"
+    },
+    {
+      "message": "Can not convert Null to Int32.",
+      "exceptionType": "System.ArgumentException",
+      "id": "code-object-null"
+    },
+    {
+      "message": "Der Wert für einen Int32 war zu groß oder zu klein.",
+      "exceptionType": "System.OverflowException",
+      "id": "code-number-2147483648"
+    },
+    {
+      "message": "Der Wert für einen Int32 war zu groß oder zu klein.",
+      "exceptionType": "System.OverflowException",
+      "id": "code-number--2147483649"
+    },
+    {
+      "id": "code-number-1.5",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"x\",\"code\":2,\"score\":0}]}]"
+    },
+    {
+      "id": "code-string-1",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"x\",\"code\":1,\"score\":0}]}]"
+    },
+    {
+      "message": "Die Eingabezeichenfolge hat das falsche Format.",
+      "exceptionType": "System.FormatException",
+      "id": "code-string-"
+    },
+    {
+      "id": "code-boolean-true",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"x\",\"code\":1,\"score\":0}]}]"
+    },
+    {
+      "id": "structure-singleton",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"x\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "structure-empty",
+      "outputJSON": "[]"
+    },
+    {
+      "id": "structure-missingID",
+      "outputJSON": "[]"
+    },
+    {
+      "id": "structure-missingValue",
+      "outputJSON": "[]"
+    },
+    {
+      "message": "Der Objektverweis wurde nicht auf eine Objektinstanz festgelegt.",
+      "exceptionType": "System.NullReferenceException",
+      "id": "structure-nullEntry"
+    },
+    {
+      "message": "Der Objektverweis wurde nicht auf eine Objektinstanz festgelegt.",
+      "exceptionType": "System.NullReferenceException",
+      "id": "structure-nullRoot"
+    },
+    {
+      "id": "structure-scalarRoot",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter iqb-standard failed: Error converting value 1 to type 'System.Collections.Generic.List`1[System.Collections.Generic.Dictionary`2[System.String,Newtonsoft.Json.Linq.JToken]]'. Path '', line 1, position 1.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Der Wert darf nicht NULL sein.\r\nParametername: key",
+      "exceptionType": "System.ArgumentNullException",
+      "id": "structure-nullSubform"
+    },
+    {
+      "id": "structure-numberID",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"1\",\"status\":\"UNSET\",\"value\":\"x\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "structure-nullID",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"\",\"status\":\"UNSET\",\"value\":\"x\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "structure-duplicate",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"x\",\"code\":0,\"score\":0},{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"y\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "abi-suffix-01",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"plain\",\"status\":\"UNSET\",\"value\":null,\"code\":0,\"score\":0}]},{\"id\":\"1\",\"responses\":[{\"id\":\"ab\",\"status\":\"UNSET\",\"value\":\"c\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "abi-suffix-1",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"plain\",\"status\":\"UNSET\",\"value\":null,\"code\":0,\"score\":0}]},{\"id\":\"1\",\"responses\":[{\"id\":\"ab\",\"status\":\"UNSET\",\"value\":\"b\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "abi-suffix-0002",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"plain\",\"status\":\"UNSET\",\"value\":null,\"code\":0,\"score\":0}]},{\"id\":\"2\",\"responses\":[{\"id\":\"ab\",\"status\":\"UNSET\",\"value\":\"a\",\"code\":0,\"score\":0}]},{\"id\":\"1\",\"responses\":[{\"id\":\"ab\",\"status\":\"UNSET\",\"value\":\"b\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "abi-suffix-+2",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"plain\",\"status\":\"UNSET\",\"value\":null,\"code\":0,\"score\":0}]},{\"id\":\"2\",\"responses\":[{\"id\":\"ab\",\"status\":\"UNSET\",\"value\":\"a\",\"code\":0,\"score\":0}]},{\"id\":\"1\",\"responses\":[{\"id\":\"ab\",\"status\":\"UNSET\",\"value\":\"b\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "abi-suffix--1",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ab_-1\",\"status\":\"UNSET\",\"value\":\"a\",\"code\":0,\"score\":0},{\"id\":\"plain\",\"status\":\"UNSET\",\"value\":null,\"code\":0,\"score\":0}]},{\"id\":\"1\",\"responses\":[{\"id\":\"ab\",\"status\":\"UNSET\",\"value\":\"b\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "abi-suffix-0",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ab_0\",\"status\":\"UNSET\",\"value\":\"a\",\"code\":0,\"score\":0},{\"id\":\"plain\",\"status\":\"UNSET\",\"value\":null,\"code\":0,\"score\":0}]},{\"id\":\"1\",\"responses\":[{\"id\":\"ab\",\"status\":\"UNSET\",\"value\":\"b\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "abi-suffix-2147483647",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"plain\",\"status\":\"UNSET\",\"value\":null,\"code\":0,\"score\":0}]},{\"id\":\"2147483647\",\"responses\":[{\"id\":\"ab\",\"status\":\"UNSET\",\"value\":\"a\",\"code\":0,\"score\":0}]},{\"id\":\"1\",\"responses\":[{\"id\":\"ab\",\"status\":\"UNSET\",\"value\":\"b\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "abi-suffix-2147483648",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ab_2147483648\",\"status\":\"UNSET\",\"value\":\"a\",\"code\":0,\"score\":0},{\"id\":\"plain\",\"status\":\"UNSET\",\"value\":null,\"code\":0,\"score\":0}]},{\"id\":\"1\",\"responses\":[{\"id\":\"ab\",\"status\":\"UNSET\",\"value\":\"b\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "abi-suffix- 2 ",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"plain\",\"status\":\"UNSET\",\"value\":null,\"code\":0,\"score\":0}]},{\"id\":\"2\",\"responses\":[{\"id\":\"ab\",\"status\":\"UNSET\",\"value\":\"a\",\"code\":0,\"score\":0}]},{\"id\":\"1\",\"responses\":[{\"id\":\"ab\",\"status\":\"UNSET\",\"value\":\"b\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "abi-suffix-1.5",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ab_1.5\",\"status\":\"UNSET\",\"value\":\"a\",\"code\":0,\"score\":0},{\"id\":\"plain\",\"status\":\"UNSET\",\"value\":null,\"code\":0,\"score\":0}]},{\"id\":\"1\",\"responses\":[{\"id\":\"ab\",\"status\":\"UNSET\",\"value\":\"b\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "abi-suffix-",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ab_\",\"status\":\"UNSET\",\"value\":\"a\",\"code\":0,\"score\":0},{\"id\":\"plain\",\"status\":\"UNSET\",\"value\":null,\"code\":0,\"score\":0}]},{\"id\":\"1\",\"responses\":[{\"id\":\"ab\",\"status\":\"UNSET\",\"value\":\"b\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-syntax-0",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter iqb-standard failed: Unexpected end when reading JSON. Path '', line 1, position 1.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesIqbStandard-syntax-1",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter iqb-standard failed: Unexpected end when deserializing array. Path '', line 1, position 1.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Der Objektverweis wurde nicht auf eine Objektinstanz festgelegt.",
+      "exceptionType": "System.NullReferenceException",
+      "id": "setResponsesIqbStandard-syntax-2"
+    },
+    {
+      "id": "setResponsesIqbStandard-syntax-3",
+      "outputJSON": "[]"
+    },
+    {
+      "id": "setResponsesIqbStandard-syntax-4",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter iqb-standard failed: Cannot deserialize the current JSON object (e.g. {\\\"name\\\":\\\"value\\\"}) into type 'System.Collections.Generic.List`1[System.Collections.Generic.Dictionary`2[System.String,Newtonsoft.Json.Linq.JToken]]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.\\r\\nTo fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.\\r\\nPath 'v', line 1, position 5.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-syntax-0",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Unexpected end when reading JSON. Path '', line 1, position 1.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-syntax-1",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'System.Collections.Generic.Dictionary`2[System.String,System.String]' because the type requires a JSON object (e.g. {\\\"name\\\":\\\"value\\\"}) to deserialize correctly.\\r\\nTo fix this error either change the JSON to a JSON object (e.g. {\\\"name\\\":\\\"value\\\"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.\\r\\nPath '', line 1, position 1.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Der Objektverweis wurde nicht auf eine Objektinstanz festgelegt.",
+      "exceptionType": "System.NullReferenceException",
+      "id": "setResponsesAbi-syntax-2"
+    },
+    {
+      "id": "setResponsesAbi-syntax-3",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"2\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesAbi-syntax-4",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Abi failed: Additional text encountered after finished reading JSON content: t. Path '', line 1, position 8.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-syntax-0",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Dan failed: Unexpected end when reading JSON. Path '', line 1, position 1.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-syntax-1",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Dan failed: Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'System.Collections.Generic.Dictionary`2[System.String,Newtonsoft.Json.Linq.JToken]' because the type requires a JSON object (e.g. {\\\"name\\\":\\\"value\\\"}) to deserialize correctly.\\r\\nTo fix this error either change the JSON to a JSON object (e.g. {\\\"name\\\":\\\"value\\\"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.\\r\\nPath '', line 1, position 1.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Der Objektverweis wurde nicht auf eine Objektinstanz festgelegt.",
+      "exceptionType": "System.NullReferenceException",
+      "id": "setResponsesDan-syntax-2"
+    },
+    {
+      "id": "setResponsesDan-syntax-3",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"2\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesDan-syntax-4",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter Dan failed: Additional text encountered after finished reading JSON content: t. Path '', line 1, position 8.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-syntax-0",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter KeyValue failed: Unexpected end when reading JSON. Path '', line 1, position 1.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-syntax-1",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter KeyValue failed: Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'System.Collections.Generic.Dictionary`2[System.String,Newtonsoft.Json.Linq.JToken]' because the type requires a JSON object (e.g. {\\\"name\\\":\\\"value\\\"}) to deserialize correctly.\\r\\nTo fix this error either change the JSON to a JSON object (e.g. {\\\"name\\\":\\\"value\\\"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.\\r\\nPath '', line 1, position 1.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Der Objektverweis wurde nicht auf eine Objektinstanz festgelegt.",
+      "exceptionType": "System.NullReferenceException",
+      "id": "setResponsesKeyValue-syntax-2"
+    },
+    {
+      "id": "setResponsesKeyValue-syntax-3",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"2\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesKeyValue-syntax-4",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter KeyValue failed: Additional text encountered after finished reading JSON content: t. Path '', line 1, position 8.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-syntax-0",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter SimplePlayerLegacy failed: Unexpected end when reading JSON. Path '', line 1, position 1.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-syntax-1",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter SimplePlayerLegacy failed: Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'System.Collections.Generic.Dictionary`2[System.String,Newtonsoft.Json.Linq.JObject]' because the type requires a JSON object (e.g. {\\\"name\\\":\\\"value\\\"}) to deserialize correctly.\\r\\nTo fix this error either change the JSON to a JSON object (e.g. {\\\"name\\\":\\\"value\\\"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.\\r\\nPath '', line 1, position 1.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "message": "Der Objektverweis wurde nicht auf eine Objektinstanz festgelegt.",
+      "exceptionType": "System.NullReferenceException",
+      "id": "setResponsesSimplePlayerLegacy-syntax-2"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-syntax-3",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter SimplePlayerLegacy failed: Deserialized JSON type 'Newtonsoft.Json.Linq.JValue' is not compatible with expected type 'Newtonsoft.Json.Linq.JObject'. Path 'v', line 1, position 6.\",\"code\":0,\"score\":0}]}]"
+    },
+    {
+      "id": "setResponsesSimplePlayerLegacy-syntax-4",
+      "outputJSON": "[{\"id\":\"\",\"responses\":[{\"id\":\"ERROR\",\"status\":\"ERROR\",\"value\":\"Converter SimplePlayerLegacy failed: Deserialized JSON type 'Newtonsoft.Json.Linq.JValue' is not compatible with expected type 'Newtonsoft.Json.Linq.JObject'. Path 'v', line 1, position 6.\",\"code\":0,\"score\":0}]}]"
+    }
+  ],
+  "pipelineInputSHA256": "53f5d2123c63166c6db6c83cc19b8284cfee27cea202973c2946d8c016e1ed77",
+  "platform": "Microsoft Windows NT 10.0.26300.0",
+  "assemblySHA256": "c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1",
+  "finished": "2026-11-03T10:04:57.1876204Z",
+  "inputSHA256": "8cc7dd11cfb93d3a294f00f7d17fe597004417b4c089119a379f0e07b1809f93",
+  "pipelineResults": [
+    {
+      "id": "standard-repeated-forms",
+      "outputJSON": "{\"groupname\":\"G\",\"loginname\":\"001\",\"code\":\"0\",\"bookletname\":\"B\",\"unitname\":\"U_alias\",\"unitId\":\"U\",\"laststate\":[{\"key\":\"PLAYER\",\"value\":\"RUNNING\"}],\"subforms\":[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"\",\"value\":\"12,5\",\"code\":0,\"score\":0}]},{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"ab\\nc\",\"code\":1,\"score\":1}]}],\"chunks\":[{\"id\":\"newer\",\"type\":\"iqb-standard@1.1\",\"ts\":\"3000\",\"variables\":[\"v\"]},{\"id\":\"older\",\"type\":\"iqb-standard@1.1\",\"ts\":\"1000\",\"variables\":[\"v\"]}]}"
+    },
+    {
+      "id": "abi-null",
+      "outputJSON": "{\"groupname\":\"G\",\"loginname\":\"001\",\"code\":\"0\",\"bookletname\":\"B\",\"unitname\":\"U_alias\",\"unitId\":\"U\",\"laststate\":[{\"key\":\"PLAYER\",\"value\":\"RUNNING\"}],\"subforms\":[{\"id\":\"\",\"responses\":[{\"id\":\"plain\",\"status\":\"UNSET\",\"value\":null,\"code\":0,\"score\":0}]},{\"id\":\"1\",\"responses\":[{\"id\":\"ab\",\"status\":\"UNSET\",\"value\":\"true\",\"code\":0,\"score\":0}]},{\"id\":\"2\",\"responses\":[{\"id\":\"ab\",\"status\":\"UNSET\",\"value\":\"12.5\",\"code\":0,\"score\":0}]}],\"chunks\":[{\"id\":\"all\",\"type\":\"unknown\",\"ts\":\"1000\",\"variables\":[\"plain\",\"1##ab\",\"2##ab\"]}]}"
+    },
+    {
+      "id": "keyvalue-state-values",
+      "outputJSON": "{\"groupname\":\"G\",\"loginname\":\"001\",\"code\":\"0\",\"bookletname\":\"B\",\"unitname\":\"U_alias\",\"unitId\":\"U\",\"laststate\":[{\"key\":\"empty\",\"value\":null},{\"key\":\"n\",\"value\":\"12.5\"},{\"key\":\"yes\",\"value\":\"true\"}],\"subforms\":[{\"id\":\"\",\"responses\":[{\"id\":\"null\",\"status\":\"UNSET\",\"value\":null,\"code\":0,\"score\":0},{\"id\":\"date\",\"status\":\"UNSET\",\"value\":\"10/22/2026 10:11:12\",\"code\":0,\"score\":0},{\"id\":\"decimal\",\"status\":\"UNSET\",\"value\":\"12.5\",\"code\":0,\"score\":0}]}],\"chunks\":[{\"id\":\"all\",\"type\":\"keyvalue\",\"ts\":\"1000\",\"variables\":[\"null\",\"date\",\"decimal\"]}]}"
+    },
+    {
+      "id": "simple-empty",
+      "outputJSON": "{\"groupname\":\"G\",\"loginname\":\"001\",\"code\":\"0\",\"bookletname\":\"B\",\"unitname\":\"U_alias\",\"unitId\":\"U\",\"laststate\":[{\"key\":\"PLAYER\",\"value\":\"RUNNING\"}],\"subforms\":[{\"id\":\"\",\"responses\":[]}],\"chunks\":[{\"id\":\"all\",\"type\":\"iqb-simple-player@1.0.0\",\"ts\":\"1000\",\"variables\":[]}]}"
+    },
+    {
+      "id": "dan-container",
+      "outputJSON": "{\"groupname\":\"G\",\"loginname\":\"001\",\"code\":\"0\",\"bookletname\":\"B\",\"unitname\":\"U_alias\",\"unitId\":\"U\",\"laststate\":[{\"key\":\"PLAYER\",\"value\":\"RUNNING\"}],\"subforms\":[{\"id\":\"\",\"responses\":[{\"id\":\"value\",\"status\":\"UNSET\",\"value\":\"[\\r\\n  1,\\r\\n  \\\"001\\\",\\r\\n  null\\r\\n]\",\"code\":0,\"score\":0},{\"id\":\"empty\",\"status\":\"UNSET\",\"value\":\"\",\"code\":0,\"score\":0}]}],\"chunks\":[{\"id\":\"all\",\"type\":\"IQBVisualUnitPlayerV2.1.0\",\"ts\":\"1000\",\"variables\":[\"value\",\"empty\"]}]}"
+    },
+    {
+      "id": "invalid-laststate",
+      "outputJSON": "{\"groupname\":\"G\",\"loginname\":\"001\",\"code\":\"0\",\"bookletname\":\"B\",\"unitname\":\"U_alias\",\"unitId\":\"U\",\"laststate\":[{\"key\":\"state\",\"value\":\"not JSON\"}],\"subforms\":[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"x\",\"code\":0,\"score\":0}]}],\"chunks\":[{\"id\":\"all\",\"type\":\"keyvalue\",\"ts\":\"1000\",\"variables\":[\"v\"]}]}"
+    },
+    {
+      "id": "array-laststate",
+      "outputJSON": "{\"groupname\":\"G\",\"loginname\":\"001\",\"code\":\"0\",\"bookletname\":\"B\",\"unitname\":\"U_alias\",\"unitId\":\"U\",\"laststate\":[{\"key\":\"state\",\"value\":\"[]\"}],\"subforms\":[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"x\",\"code\":0,\"score\":0}]}],\"chunks\":[{\"id\":\"all\",\"type\":\"keyvalue\",\"ts\":\"1000\",\"variables\":[\"v\"]}]}"
+    }
+  ],
+  "culture": "de-DE",
+  "runtime": "4.0.30319.42000"
+}

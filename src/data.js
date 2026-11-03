@@ -1,6 +1,7 @@
 import Excel from 'exceljs';
 import {parseCSV,csvString} from './toolbox.js';
 import {parseJSON,stringifyJSON} from './json.js';
+import {parseWindowsChunk} from './windows-responses.js';
 
 export const STATUS=['UNSET','NOT_REACHED','DISPLAYED','VALUE_CHANGED','DERIVE_ERROR','CODING_COMPLETE','NO_CODING','INVALID','CODING_INCOMPLETE','CODING_ERROR','PARTLY_DISPLAYED','DERIVE_PENDING','INTENDED_INCOMPLETE','CODE_SELECTION_PENDING'];
 export const asText=v=>v===null?'#null#':typeof v==='object'?stringifyJSON(v):String(v??'');
@@ -19,7 +20,8 @@ function mergeUnit(unit,incoming){
 }
 const sameUnit=(a,b)=>a.alias===b.alias&&(a.id===b.id||a.id===a.alias||b.id===b.alias);
 
-export function parseChunk(content,type='') {
+export function parseChunk(content,type='',{windows=false}={}) {
+  if(windows)return parseWindowsChunk(content,type);
   const forms=new Map();
   const add=(subform,id,value,status='UNSET',code=0,score=0)=>{
     if(!forms.has(String(subform??'')))forms.set(String(subform??''),[]);
@@ -50,25 +52,26 @@ export function parseChunk(content,type='') {
   } catch(error) {add('','ERROR',`Konvertierung (${type||'KeyValue'}): ${error.message}`,'ERROR');}
   return [...forms].sort(type==='unknown'?([a],[b])=>a===''?-1:b===''?1:0:()=>0).map(([id,responses])=>({id,responses}));
 }
-function lastState(raw) {
+function lastState(raw,{windows=false}={}) {
   if(!raw)return [];
+  if(windows){const source=typeof raw==='string'?raw.replace(/""/g,'"'):stringifyJSON(raw);try{const data=parseJSON(source);if(!data||typeof data!=='object'||Array.isArray(data)||Object.values(data).some(v=>v!==null&&typeof v==='object'))throw new Error();return Object.entries(data).map(([key,value])=>({key,value:value===null?null:String(value)}));}catch{return [{key:'state',value:source}];}}
   if(Array.isArray(raw))return raw.map(v=>({key:String(v.key),value:asText(v.value)}));
   try {let data;try{data=json(raw);}catch{data=JSON.parse(String(raw).replace(/""/g,'"'));}if(!data||typeof data!=='object'||Array.isArray(data))throw new Error();return Object.entries(data).map(([key,value])=>({key,value:asText(value)}));}
   catch{return [{key:'state',value:String(raw)}];}
 }
 export function responseUnit(dto,{windows=false}={}) {
-  const unit={id:String(dto.originalUnitId||dto.unitname||''),alias:String(dto.unitname||''),laststate:lastState(dto.laststate),logs:[],subforms:[],chunks:[]};
+  const unit={id:String(dto.originalUnitId||dto.unitname||''),alias:String(dto.unitname||''),laststate:lastState(dto.laststate,{windows}),logs:[],subforms:[],chunks:[]};
   let chunks=dto.responses||[];
   if(typeof chunks==='string'){try{chunks=parseJSON(chunks);}catch(error){chunks=[{id:'all-error',content:JSON.stringify({ERROR:String(chunks)}),responseType:'?',ts:0}];}}
   if(!Array.isArray(chunks))throw new Error('Antwort-Chunks müssen ein Array sein.');
-  const latest=new Map();
+  const latest=new Map(),originalForms=[];
   for(const ch of windows?chunks:[...chunks].sort((a,b)=>numeric(a.ts)-numeric(b.ts))) {
-    const type=ch.responseType??ch.type??'',forms=parseChunk(ch.content,type),variables=[];
+    const type=ch.responseType??ch.type??'',forms=parseChunk(ch.content,type,{windows}),variables=[];if(windows)originalForms.push(...forms);
     for(const sf of forms)for(const response of sf.responses){latest.set(windows?String(latest.size):key(sf.id,response.id),{subform:sf.id,response});variables.push(sf.id?sf.id+'##'+response.id:response.id);}
     unit.chunks.push({id:String(ch.id??''),type,ts:String(ch.ts??0),variables});
   }
   const forms=new Map();for(const {subform,response}of latest.values()){if(!forms.has(subform))forms.set(subform,[]);forms.get(subform).push(response);}
-  unit.subforms=[...forms].map(([id,responses])=>({id,responses}));return unit;
+  unit.subforms=windows?originalForms:[...forms].map(([id,responses])=>({id,responses}));return unit;
 }
 export function splitLog(logentry) {
   let str=String(logentry??''),position=str.indexOf(' : ');if(position<0)position=str.indexOf(' = ');
@@ -81,9 +84,9 @@ export function splitLog(logentry) {
   }
   return result;
 }
-export function normalizePeople(input) {
+export function normalizePeople(input,{windows=false}={}) {
   if(!Array.isArray(input))throw new Error('Erwartet wird eine Liste von Testpersonen.');
-  return input.map(p=>({group:String(p.group??''),login:String(p.login??''),code:String(p.code??''),booklets:(p.booklets||[]).map(b=>({id:String(b.id??''),firstTS:numeric(b.firstTS),lastTS:numeric(b.lastTS),sessions:(b.sessions||[]).map(s=>({...s,ts:numeric(s.ts),loadCompleteMS:numeric(s.loadCompleteMS)})),logs:(b.logs||[]).map(l=>({...l,ts:numeric(l.ts)})),units:(b.units||[]).map(u=>({id:String(u.id??u.alias??''),alias:String(u.alias??u.id??''),laststate:lastState(u.laststate),chunks:(u.chunks||[]).map(c=>({...c,ts:String(c.ts??0),variables:c.variables||[]})),logs:(u.logs||[]).map(l=>({...l,ts:numeric(l.ts)})),subforms:(u.subforms||[]).map(sf=>({id:String(sf.id??''),responses:(sf.responses||[]).map(r=>({...r,id:String(r.id),value:asText(r.value),status:String(r.status||'UNSET'),code:nullableNumeric(r.code),score:nullableNumeric(r.score)}))}))}))}))}));
+  return input.map(p=>({group:String(p.group??''),login:String(p.login??''),code:String(p.code??''),booklets:(p.booklets||[]).map(b=>({id:String(b.id??''),firstTS:numeric(b.firstTS),lastTS:numeric(b.lastTS),sessions:(b.sessions||[]).map(s=>({...s,ts:numeric(s.ts),loadCompleteMS:numeric(s.loadCompleteMS)})),logs:(b.logs||[]).map(l=>({...l,ts:numeric(l.ts)})),units:(b.units||[]).map(u=>({id:String(u.id??u.alias??''),alias:String(u.alias??u.id??''),laststate:lastState(u.laststate),chunks:(u.chunks||[]).map(c=>({...c,ts:String(c.ts??0),variables:c.variables||[]})),logs:(u.logs||[]).map(l=>({...l,ts:numeric(l.ts)})),subforms:(u.subforms||[]).map(sf=>({id:String(sf.id??''),responses:(sf.responses||[]).map(r=>({...r,id:String(r.id),value:windows&&r.value===null?null:asText(r.value),status:String(r.status||'UNSET'),code:nullableNumeric(r.code),score:nullableNumeric(r.score)}))}))}))}))}));
 }
 export function refreshTimes(people) {
   for(const p of people)for(const b of p.booklets){for(const l of [...b.logs,...b.sessions,...b.units.flatMap(u=>[...u.logs,...u.chunks])]){const t=numeric(l.ts);if(t>0){b.firstTS=b.firstTS?Math.min(b.firstTS,t):t;b.lastTS=Math.max(b.lastTS||0,t);}}}
@@ -121,7 +124,7 @@ export function mergePeople(...groups) {
 }
 export async function readDataFiles(files,{encoding='utf-8',delimiter='auto',windows=false,onWarning=()=>{}}={}) {
   const batches=[];for(const f of files){const source=typeof f.text==='string'?f.text:new TextDecoder(encoding,{fatal:true}).decode(f.bytes??await f.arrayBuffer());
-    if(/\.json$/i.test(f.name)){const data=parseJSON(source);if(Array.isArray(data)&&data[0]?.booklets!==undefined)batches.push(normalizePeople(data));else if(Array.isArray(data)&&data[0]?.groupname!==undefined)batches.push(data[0].logentry!==undefined?peopleFromDTO([],data):peopleFromDTO(data));else if(Array.isArray(data)&&!data.length)batches.push([]);else throw new Error(`${f.name}: Unbekanntes JSON-Format.`);}
+    if(/\.json$/i.test(f.name)){const data=parseJSON(source);if(Array.isArray(data)&&data[0]?.booklets!==undefined)batches.push(normalizePeople(data,{windows}));else if(Array.isArray(data)&&data[0]?.groupname!==undefined)batches.push(data[0].logentry!==undefined?peopleFromDTO([],data,{windows}):peopleFromDTO(data,[],{windows}));else if(Array.isArray(data)&&!data.length)batches.push([]);else throw new Error(`${f.name}: Unbekanntes JSON-Format.`);}
     else batches.push(importCSV(source,delimiter,{windows}));
   }
   if(windows){const map=new Map();for(const [index,batch]of batches.entries())for(const p of batch){const k=p.group+p.login+p.code;if(!map.has(k)){map.set(k,structuredClone(p));continue;}if(/\.json$/i.test(files[index].name)){onWarning(`${files[index].name}: Personenkennung doppelt (${k}); übrige Personen dieser Datei wie im Original übersprungen.`);break;}const target=map.get(k);for(const b of p.booklets){let old=target.booklets.find(v=>v.id===b.id);if(!old){target.booklets.push(structuredClone(b));continue;}old.logs.push(...b.logs);old.sessions.push(...b.sessions);for(const u of b.units){const unit=old.units.find(v=>v.alias===u.alias);if(unit&&!u.subforms.length&&!u.chunks.length&&!u.laststate.length)unit.logs.push(...u.logs);else if(unit&&!unit.subforms.length&&!unit.chunks.length&&!unit.laststate.length)Object.assign(unit,{chunks:u.chunks,laststate:u.laststate,subforms:u.subforms});else old.units.push(structuredClone(u));}}}return refreshTimes([...map].sort(([a],[b])=>a.localeCompare(b,'de')).map(([,p])=>p));}

@@ -16,14 +16,14 @@ async function run(op,args,progress) {
     case 'prepare':return prepare(args.kind,args,progress);
     case 'coding':return readCodingFiles(args.files.map(f=>({name:f.name,webkitRelativePath:f.relativePath||'',arrayBuffer:async()=>f.bytes.buffer.slice(f.bytes.byteOffset,f.bytes.byteOffset+f.bytes.byteLength)})));
     case 'load-data':people=await readDataFiles(args.files,{...args.options,onWarning:progress});return {people:people.length,responses:people.reduce((n,p)=>n+p.booklets.reduce((n,b)=>n+b.units.reduce((n,u)=>n+u.subforms.reduce((n,s)=>n+s.responses.length,0),0),0),0)};
-    case 'dto':people=peopleFromDTO(args.responses,args.logs);return {people:people.length};
+    case 'dto':people=peopleFromDTO(args.responses,args.logs,{windows:args.windows===true});return {people:people.length};
     case 'set-data':people=normalizePeople(args.people);return {people:people.length};
     case 'export-data':return exportData(args.format,people,args.options,args.sizes);
     case 'reviews':return reviewsWorkbook(args.reviews);
     case 'open-db':case 'new-db':{SQL??=await initSqlJs({locateFile:()=>wasmURL});const next=new OutputDatabase(SQL,op==='open-db'?args.bytes:null,args.creator);db?.close();db=next;return db.summary();}
     case 'db-summary':return requireDB().summary();
     case 'db-page':return databasePage(requireDB().people(args.group||null),args);
-    case 'db-import':{const data=args.files?await readDataFiles(args.files,{...args.options,onWarning:progress}):args.people?normalizePeople(args.people):people;return requireDB().import(data,{merge:args.merge!==false,windows:args.windows===true});}
+    case 'db-import':{const data=args.files?await readDataFiles(args.files,{...args.options,windows:args.windows===true,onWarning:progress}):args.people?normalizePeople(args.people):people;return requireDB().import(data,{merge:args.merge!==false,windows:args.windows===true});}
     case 'db-sizes':return requireDB().setSizes(args.sizes);
     case 'db-check':return requireDB().check();
     case 'db-save':return args.format==='windows'?requireDB().exportWindows():args.format==='coding-box'?requireDB().exportCodingBox({allowCodingChanges:args.allowCodingChanges}):args.format==='browser'?requireDB().exportBrowser():requireDB().export();
