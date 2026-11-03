@@ -867,7 +867,7 @@
         "src/coding.js"
       ],
       "assessment": "implemented",
-      "note": "",
+      "note": " Zusätzlich 22 Ergebnisdateien in beiden Richtungen mit Originalserializer/-Reader geprüft; zwei XML-Steuerzeichenfälle werden beidseitig abgewiesen.",
       "acceptance": "Original-Ergebnisdateien Version 5 lesen.",
       "evidence": [
         {
@@ -878,6 +878,11 @@
           "kind": "node",
           "file": "tests/compatibility.test.js",
           "pattern": "CodingResults v5"
+        },
+        {
+          "kind": "node",
+          "file": "tests/windows-edges.test.js",
+          "pattern": "Original CodingResults codec reads"
         }
       ]
     },
@@ -895,12 +900,17 @@
         "src/coding.js"
       ],
       "assessment": "implemented",
-      "note": "",
+      "note": " Zusätzlich 22 Ergebnisdateien in beiden Richtungen mit Originalserializer/-Reader geprüft; zwei XML-Steuerzeichenfälle werden beidseitig abgewiesen.",
       "acceptance": "Original-Ergebnisdateien schreiben und mit Windows öffnen.",
       "evidence": [
         {
           "kind": "windows-files",
           "pattern": "Windows original reads the browser export"
+        },
+        {
+          "kind": "node",
+          "file": "tests/windows-edges.test.js",
+          "pattern": "Original CodingResults codec reads"
         }
       ]
     },
@@ -1762,8 +1772,8 @@
         "src/data.js",
         "src/windows-responses.js"
       ],
-      "assessment": "implemented",
-      "note": "Dokumentierte Normalisierungen für Nullwerte, JSON-Whitespace, Dezimaltrennzeichen und Zeilenumbrüche beachten. Neuer strenger Windows-Korpus: identische Werte und Listenreihenfolge ohne Normalisierung im expliziten Windows-Modus. Fehlerfälle prüfen die Erkennung und die Unterscheidung zwischen ERROR-Antwort und Ausnahme; Meldungstexte und Windows-Dialoge sind nicht als identisch belegt.",
+      "assessment": "partial",
+      "note": "Dokumentierte Normalisierungen für Nullwerte, JSON-Whitespace, Dezimaltrennzeichen und Zeilenumbrüche beachten. Neuer strenger Windows-Korpus: identische Werte und Listenreihenfolge ohne Normalisierung im expliziten Windows-Modus. Fehlerfälle prüfen die Erkennung und die Unterscheidung zwischen ERROR-Antwort und Ausnahme; Meldungstexte und Windows-Dialoge sind nicht als identisch belegt. Zusätzlich 118 Grenzfälle: Browser entspricht dem unveränderten 64-Bit-Konverterprofil (de-DE, Berlin). Im 32-Bit-Prüfprozess liefert dieselbe Originalassembly in sechs Zahlengrenzfällen andere Werte; diese Übereinstimmung bleibt offen.",
       "acceptance": "Standard-/Aspect-Antwortkonverter.",
       "evidence": [
         {
@@ -1838,8 +1848,8 @@
         "src/data.js",
         "src/windows-responses.js"
       ],
-      "assessment": "implemented",
-      "note": "Dokumentierte Normalisierungen für Nullwerte, JSON-Whitespace, Dezimaltrennzeichen und Zeilenumbrüche beachten. Neuer strenger Windows-Korpus: identische Werte und Listenreihenfolge ohne Normalisierung im expliziten Windows-Modus. Fehlerfälle prüfen die Erkennung und die Unterscheidung zwischen ERROR-Antwort und Ausnahme; Meldungstexte und Windows-Dialoge sind nicht als identisch belegt.",
+      "assessment": "partial",
+      "note": "Dokumentierte Normalisierungen für Nullwerte, JSON-Whitespace, Dezimaltrennzeichen und Zeilenumbrüche beachten. Neuer strenger Windows-Korpus: identische Werte und Listenreihenfolge ohne Normalisierung im expliziten Windows-Modus. Fehlerfälle prüfen die Erkennung und die Unterscheidung zwischen ERROR-Antwort und Ausnahme; Meldungstexte und Windows-Dialoge sind nicht als identisch belegt. Zusätzlich 118 Grenzfälle: Browser entspricht dem unveränderten 64-Bit-Konverterprofil (de-DE, Berlin). Im 32-Bit-Prüfprozess liefert dieselbe Originalassembly in sechs Zahlengrenzfällen andere Werte; diese Übereinstimmung bleibt offen.",
       "acceptance": "Dan-Konverter und Meta-Angaben.",
       "evidence": [
         {
@@ -1876,8 +1886,8 @@
         "src/data.js",
         "src/windows-responses.js"
       ],
-      "assessment": "implemented",
-      "note": "Dokumentierte Normalisierungen für Nullwerte, JSON-Whitespace, Dezimaltrennzeichen und Zeilenumbrüche beachten. Neuer strenger Windows-Korpus: identische Werte und Listenreihenfolge ohne Normalisierung im expliziten Windows-Modus. Fehlerfälle prüfen die Erkennung und die Unterscheidung zwischen ERROR-Antwort und Ausnahme; Meldungstexte und Windows-Dialoge sind nicht als identisch belegt.",
+      "assessment": "partial",
+      "note": "Dokumentierte Normalisierungen für Nullwerte, JSON-Whitespace, Dezimaltrennzeichen und Zeilenumbrüche beachten. Neuer strenger Windows-Korpus: identische Werte und Listenreihenfolge ohne Normalisierung im expliziten Windows-Modus. Fehlerfälle prüfen die Erkennung und die Unterscheidung zwischen ERROR-Antwort und Ausnahme; Meldungstexte und Windows-Dialoge sind nicht als identisch belegt. Zusätzlich 118 Grenzfälle: Browser entspricht dem unveränderten 64-Bit-Konverterprofil (de-DE, Berlin). Im 32-Bit-Prüfprozess liefert dieselbe Originalassembly in sechs Zahlengrenzfällen andere Werte; diese Übereinstimmung bleibt offen.",
       "acceptance": "Schlüssel/Wert- und Simple-Konverter.",
       "evidence": [
         {
@@ -3066,7 +3076,8 @@
     "Originalmodi reproduzieren ausdrücklich gewählte historische Export-/Importgrenzen; erweiterte Modi erhalten die bisherigen Korrekturen.",
     "Reale Arbeitsbestände und alle Eingabe-/Fehlerkombinationen sind durch synthetische Referenzfälle nicht vollständig abgedeckt.",
     "Die lokale Coding-Box-Erweiterung bleibt vom Windows-Funktionsumfang getrennt.",
-    "Firefox wird in GitHub Actions auf Linux geprüft; der macOS-Playwright-Build startet in dieser Umgebung mit einem Profilordnerfehler nicht. WebKit-Prüfungen sind kein Test einer installierten Safari-Version."
+    "Firefox wird in GitHub Actions auf Linux geprüft; der macOS-Playwright-Build startet in dieser Umgebung mit einem Profilordnerfehler nicht. WebKit-Prüfungen sind kein Test einer installierten Safari-Version.",
+    "Zusätzlich 118 Grenzfälle: Browser entspricht dem unveränderten 64-Bit-Konverterprofil (de-DE, Berlin). Im 32-Bit-Prüfprozess liefert dieselbe Originalassembly in sechs Zahlengrenzfällen andere Werte; diese Übereinstimmung bleibt offen. Die 32-/64-Bit-Ausgaben sind gesondert gespeichert; daraus wird keine Ursache oder Gleichheit auf sämtlichen Rechnern abgeleitet."
   ],
   "ciReport": "tests/results/function-audit-ci-20261103-strict.json"
 }
