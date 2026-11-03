@@ -120,7 +120,7 @@ pnpm build
 
 `dist/` enthält die vollständige Website einschließlich Service Worker, Worker-JavaScript und SQLite-WASM. Auf einem statischen Webserver über HTTPS oder zum lokalen Test über localhost ausliefern; nicht direkt über `file://` öffnen. WASM sollte mit `application/wasm` ausgeliefert werden. `sw.js` darf vom Webserver nicht dauerhaft unverändert zwischengespeichert werden. Bei Bereitstellung unter einer Unteradresse müssen Vite-Basispfad, Vorlagen-/Beispielpfade sowie Manifest und Service-Worker-Scope angepasst werden; dieser Stand ist für den Ursprungspfad `/` gebaut.
 
-Das Repository enthält den Quellcode und richtet keine öffentliche Website ein. Die bisherige private Sites-Veröffentlichung ist davon unabhängig. Für andere Personen `dist/` auf einem geeigneten Webserver bereitstellen.
+Neue private Sites-Instanz: [IQB-Werkzeuge im Browser](https://iqb-browser-tools-jr-20261103.iqb-e-v-8867.chatgpt.site). Sie ersetzt die frühere, nicht mehr aktualisierbare Instanz. Die Projektkennung und das statische Build-Verzeichnis sind in `.openai/hosting.json` versioniert. Aktualisierungen verwenden diese Kennung; Zugriffs- und Git-Zugangsschlüssel werden nicht im Repository gespeichert. Die neue Instanz bleibt nur für ihren Eigentümer zugänglich. Für andere Personen `dist/` auf einem geeigneten Webserver bereitstellen oder die Freigabe ausdrücklich ändern.
 
 ## Automatische Prüfungen mit GitHub Actions
 

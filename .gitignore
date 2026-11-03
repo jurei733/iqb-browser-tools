@@ -1,9 +1,12 @@
 node_modules/
 dist/
 work/
-.openai/
+.openai/*
+!.openai/hosting.json
 __pycache__/
 *.pyc
 .DS_Store
 playwright-report/
 test-results/
+
+.sites-runtime/
