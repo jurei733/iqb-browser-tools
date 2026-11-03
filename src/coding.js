@@ -11,21 +11,22 @@ const bool = (el,k,def) => {
 };
 export const isResultFilename=name=>/\.result(?:-\d+)?$/i.test(name);
 export const resultFilename=(label,date=new Date())=>(String(label).replace(/[<>:"/\\|?*\x00-\x1f]/g,'_').slice(0,150)||'Kodierung')+'_'+date.toISOString().replace(/[:.]/g,'-')+'.result';
+const resultText=source=>/^[ \t\r\n]*$/.test(source)?'':source;
 export function decodeResult(bytes) {
   const doc = parseXML(decodeXML(bytes[0] === 31 && bytes[1] === 139 ? gunzipSync(bytes) : bytes));
   const root = doc.documentElement;
   if (root.localName !== 'CodingResults' || attr(root,'version') !== '5') throw new Error('Erwartet wird eine CodingResults-Datei in Version 5.');
   const seen = new Set();
   const entries = children(root,'c').map(el => {
-    const entry = {testee:attr(el,'tp'),variable:attr(el,'v'),code:attr(el,'c'),comment:el.textContent || '',time:attr(el,'tm')};
+    const entry = {testee:attr(el,'tp'),variable:attr(el,'v'),code:attr(el,'c'),comment:resultText(el.textContent || ''),time:attr(el,'tm')};
     const key = JSON.stringify([entry.testee,entry.variable.toUpperCase()]);
     if (seen.has(key)) throw new Error('Doppelte Kodierung in der Ergebnisdatei.');
     seen.add(key); return entry;
   });
-  return {id:attr(root,'id'),label:attr(root,'label'),coder:attr(root,'coder'),globalComment:value(root,'globalcomment'),entries};
+  return {id:attr(root,'id'),label:attr(root,'label'),coder:attr(root,'coder'),globalComment:resultText(value(root,'globalcomment')),entries};
 }
 export function encodeResult(job, coder, globalComment = '',{windows=false}={}) {
-  if (!coder.trim()) throw new Error('Bitte einen Kodierernamen eingeben.');
+  if (windows?!coder:!coder.trim()) throw new Error('Bitte einen Kodierernamen eingeben.');
   let cases=job.cases;if(windows){const groups=[];for(const c of cases){let group=groups.find(g=>g[0]?.testee===c.testee);if(!group){group=[];groups.push(group);}group.push(c);}cases=[];for(const group of groups){if(!group.some(c=>c.code||c.comment))break;cases.push(...group);}}
   const body = (globalComment ? node('globalcomment',{},text(globalComment)) : '') + cases.filter(c => c.code || c.comment).map(c => node('c', {v:c.variable.id,tp:c.testee,tm:c.time || localTimestamp(),c:c.code || ''},text(c.comment || ''))).join('\n');
   return gzipSync(strToU8(documentXML(node('CodingResults',{version:'5',id:job.id,coder,label:job.label},body))));

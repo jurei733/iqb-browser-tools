@@ -1,0 +1,494 @@
+{
+    "results":  [
+                    {
+                        "id":  "setResponsesIqbStandard-lexeme-0",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"12\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesIqbStandard-lexeme-1",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"12\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesIqbStandard-lexeme-2",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1E+20\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesIqbStandard-lexeme-3",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1,23456789012346\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesIqbStandard-lexeme-4",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1,79769313486232E+308\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesIqbStandard-lexeme-5",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"4,94065645841247E-324\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesIqbStandard-lexeme-6",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"0\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesIqbStandard-lexeme-7",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1E-05\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesIqbStandard-lexeme-8",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"0,0001\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesIqbStandard-lexeme-9",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1E+15\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesIqbStandard-lexeme-10",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"9007199254740993\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesIqbStandard-lexeme-11",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"9223372036854775808\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesIqbStandard-lexeme-12",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"01.01.0001 00:00:00\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesIqbStandard-lexeme-13",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"22.10.2026 10:11:12\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesIqbStandard-lexeme-14",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"22.10.2026 10:11:12\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesIqbStandard-lexeme-15",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"22.10.2026 17:41:12\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesIqbStandard-lexeme-16",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"22.10.2026 10:11:12\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesIqbStandard-lexeme-17",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"2026-02-30T10:11:12Z\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesIqbStandard-lexeme-18",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"01.01.1970 00:00:00\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesIqbStandard-lexeme-19",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"2026-10-22\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesAbi-lexeme-0",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"12.0\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesAbi-lexeme-1",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"12e0\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesAbi-lexeme-2",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1e20\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesAbi-lexeme-3",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1.2345678901234567\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesAbi-lexeme-4",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1.7976931348623157e308\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesAbi-lexeme-5",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"5e-324\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesAbi-lexeme-6",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"-0.0\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesAbi-lexeme-7",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"0.00001\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesAbi-lexeme-8",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"0.0001\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesAbi-lexeme-9",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"999999999999999.5\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesAbi-lexeme-10",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"9007199254740993\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesAbi-lexeme-11",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"9223372036854775808\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesAbi-lexeme-12",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"0001-01-01T00:00:00Z\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesAbi-lexeme-13",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"2026-10-22T10:11:12.1234567Z\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesAbi-lexeme-14",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"2026-10-22T10:11:12+02:00\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesAbi-lexeme-15",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"2026-10-22T10:11:12-05:30\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesAbi-lexeme-16",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"2026-10-22T10:11:12\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesAbi-lexeme-17",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"2026-02-30T10:11:12Z\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesAbi-lexeme-18",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"/Date(0)/\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesAbi-lexeme-19",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"2026-10-22\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesDan-lexeme-0",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"12\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesDan-lexeme-1",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"12\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesDan-lexeme-2",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1E+20\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesDan-lexeme-3",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1,23456789012346\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesDan-lexeme-4",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1,79769313486232E+308\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesDan-lexeme-5",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"4,94065645841247E-324\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesDan-lexeme-6",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"0\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesDan-lexeme-7",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1E-05\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesDan-lexeme-8",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"0,0001\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesDan-lexeme-9",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1E+15\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesDan-lexeme-10",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"9007199254740993\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesDan-lexeme-11",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"9223372036854775808\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesDan-lexeme-12",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"01.01.0001 00:00:00\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesDan-lexeme-13",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"22.10.2026 10:11:12\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesDan-lexeme-14",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"22.10.2026 10:11:12\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesDan-lexeme-15",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"22.10.2026 17:41:12\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesDan-lexeme-16",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"22.10.2026 10:11:12\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesDan-lexeme-17",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"2026-02-30T10:11:12Z\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesDan-lexeme-18",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"01.01.1970 00:00:00\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesDan-lexeme-19",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"2026-10-22\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesKeyValue-lexeme-0",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"12\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesKeyValue-lexeme-1",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"12\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesKeyValue-lexeme-2",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1E+20\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesKeyValue-lexeme-3",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1.23456789012346\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesKeyValue-lexeme-4",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1.79769313486232E+308\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesKeyValue-lexeme-5",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"4.94065645841247E-324\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesKeyValue-lexeme-6",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"0\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesKeyValue-lexeme-7",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1E-05\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesKeyValue-lexeme-8",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"0.0001\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesKeyValue-lexeme-9",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1E+15\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesKeyValue-lexeme-10",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"9007199254740993\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesKeyValue-lexeme-11",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"9223372036854775808\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesKeyValue-lexeme-12",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"01/01/0001 00:00:00\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesKeyValue-lexeme-13",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"10/22/2026 10:11:12\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesKeyValue-lexeme-14",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"10/22/2026 10:11:12\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesKeyValue-lexeme-15",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"10/22/2026 17:41:12\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesKeyValue-lexeme-16",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"10/22/2026 10:11:12\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesKeyValue-lexeme-17",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"2026-02-30T10:11:12Z\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesKeyValue-lexeme-18",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"01/01/1970 00:00:00\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesKeyValue-lexeme-19",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"2026-10-22\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesSimplePlayerLegacy-lexeme-0",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"12\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesSimplePlayerLegacy-lexeme-1",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"12\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesSimplePlayerLegacy-lexeme-2",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1E+20\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesSimplePlayerLegacy-lexeme-3",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1.23456789012346\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesSimplePlayerLegacy-lexeme-4",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1.79769313486232E+308\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesSimplePlayerLegacy-lexeme-5",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"4.94065645841247E-324\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesSimplePlayerLegacy-lexeme-6",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"0\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesSimplePlayerLegacy-lexeme-7",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1E-05\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesSimplePlayerLegacy-lexeme-8",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"0.0001\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesSimplePlayerLegacy-lexeme-9",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"1E+15\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesSimplePlayerLegacy-lexeme-10",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"9007199254740993\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesSimplePlayerLegacy-lexeme-11",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"9223372036854775808\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesSimplePlayerLegacy-lexeme-12",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"01/01/0001 00:00:00\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesSimplePlayerLegacy-lexeme-13",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"10/22/2026 10:11:12\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesSimplePlayerLegacy-lexeme-14",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"10/22/2026 10:11:12\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesSimplePlayerLegacy-lexeme-15",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"10/22/2026 17:41:12\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesSimplePlayerLegacy-lexeme-16",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"10/22/2026 10:11:12\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesSimplePlayerLegacy-lexeme-17",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"2026-02-30T10:11:12Z\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesSimplePlayerLegacy-lexeme-18",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"01/01/1970 00:00:00\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesSimplePlayerLegacy-lexeme-19",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"2026-10-22\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesIqbStandard-key-order",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"{  \\\"10\\\": \\\"ten\\\",  \\\"2\\\": \\\"two\\\",  \\\"01\\\": \\\"one\\\",  \\\"__proto__\\\": \\\"own\\\",  \\\"constructor\\\": \\\"own\\\"}\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesAbi-key-order",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"10\",\"status\":\"UNSET\",\"value\":\"ten\",\"code\":0,\"score\":0},{\"id\":\"2\",\"status\":\"UNSET\",\"value\":\"two\",\"code\":0,\"score\":0},{\"id\":\"01\",\"status\":\"UNSET\",\"value\":\"one\",\"code\":0,\"score\":0},{\"id\":\"__proto__\",\"status\":\"UNSET\",\"value\":\"own\",\"code\":0,\"score\":0},{\"id\":\"constructor\",\"status\":\"UNSET\",\"value\":\"own\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesDan-key-order",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"10\",\"status\":\"UNSET\",\"value\":\"ten\",\"code\":0,\"score\":0},{\"id\":\"2\",\"status\":\"UNSET\",\"value\":\"two\",\"code\":0,\"score\":0},{\"id\":\"01\",\"status\":\"UNSET\",\"value\":\"one\",\"code\":0,\"score\":0},{\"id\":\"__proto__\",\"status\":\"UNSET\",\"value\":\"own\",\"code\":0,\"score\":0},{\"id\":\"constructor\",\"status\":\"UNSET\",\"value\":\"own\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesKeyValue-key-order",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"10\",\"status\":\"UNSET\",\"value\":\"ten\",\"code\":0,\"score\":0},{\"id\":\"2\",\"status\":\"UNSET\",\"value\":\"two\",\"code\":0,\"score\":0},{\"id\":\"01\",\"status\":\"UNSET\",\"value\":\"one\",\"code\":0,\"score\":0},{\"id\":\"__proto__\",\"status\":\"UNSET\",\"value\":\"own\",\"code\":0,\"score\":0},{\"id\":\"constructor\",\"status\":\"UNSET\",\"value\":\"own\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "setResponsesSimplePlayerLegacy-key-order",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"10\",\"status\":\"UNSET\",\"value\":\"ten\",\"code\":0,\"score\":0},{\"id\":\"2\",\"status\":\"UNSET\",\"value\":\"two\",\"code\":0,\"score\":0},{\"id\":\"01\",\"status\":\"UNSET\",\"value\":\"one\",\"code\":0,\"score\":0},{\"id\":\"__proto__\",\"status\":\"UNSET\",\"value\":\"own\",\"code\":0,\"score\":0},{\"id\":\"constructor\",\"status\":\"UNSET\",\"value\":\"own\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "standard-nested-types",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"{  \\\"10\\\": 12.0,  \\\"2\\\": 1.2345678901234567,  \\\"small\\\": 4.94065645841247E-324,  \\\"large\\\": 1.7976931348623157E+308,  \\\"date\\\": \\\"2026-10-22T10:11:12.1234567Z\\\"}\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "dan-nested-types",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"{\\r\\n  \\\"10\\\": 12.0,\\r\\n  \\\"2\\\": 1.2345678901234567,\\r\\n  \\\"small\\\": 4.94065645841247E-324,\\r\\n  \\\"large\\\": 1.7976931348623157E+308,\\r\\n  \\\"date\\\": \\\"2026-10-22T10:11:12.1234567Z\\\"\\r\\n}\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "dan-metadata-0",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"x\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "dan-metadata-1",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"x\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "dan-metadata-2",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"x\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "dan-metadata-3",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"x\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "dan-metadata-4",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"x\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "id":  "dan-metadata-5",
+                        "outputJSON":  "[{\"id\":\"\",\"responses\":[{\"id\":\"v\",\"status\":\"UNSET\",\"value\":\"x\",\"code\":0,\"score\":0}]}]"
+                    },
+                    {
+                        "message":  "Could not convert string to boolean: yes. Path \u0027v\u0027.",
+                        "exceptionType":  "Newtonsoft.Json.JsonReaderException",
+                        "id":  "dan-metadata-6"
+                    },
+                    {
+                        "message":  "Das NULL-Objekt kann nicht in einen Werttyp konvertiert werden.",
+                        "exceptionType":  "System.InvalidCastException",
+                        "id":  "dan-metadata-7"
+                    },
+                    {
+                        "message":  "Cannot deserialize the current JSON array (e.g. [1,2,3]) into type \u0027System.Collections.Generic.Dictionary`2[System.String,System.Boolean]\u0027 because the type requires a JSON object (e.g. {\"name\":\"value\"}) to deserialize correctly.\r\nTo fix this error either change the JSON to a JSON object (e.g. {\"name\":\"value\"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List\u003cT\u003e that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.\r\nPath \u0027\u0027.",
+                        "exceptionType":  "Newtonsoft.Json.JsonSerializationException",
+                        "id":  "dan-metadata-8"
+                    },
+                    {
+                        "message":  "Could not cast or convert from System.Int64 to System.Collections.Generic.Dictionary`2[System.String,System.Boolean].",
+                        "exceptionType":  "System.ArgumentException",
+                        "id":  "dan-metadata-9"
+                    },
+                    {
+                        "message":  "Error reading boolean. Unexpected token: StartObject. Path \u0027v\u0027.",
+                        "exceptionType":  "Newtonsoft.Json.JsonReaderException",
+                        "id":  "dan-metadata-10"
+                    }
+                ],
+    "pipelineInputSHA256":  null,
+    "assemblySHA256":  "c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1",
+    "platform":  "Microsoft Windows NT 10.0.26300.0",
+    "timezone":  "W. Europe Standard Time",
+    "finished":  "2026-11-03T10:52:14.1371896Z",
+    "inputSHA256":  "2727e542c7cb5117e81d701763d4f965ed97c08db330a39554b0c7eedd8f045f",
+    "processBits":  64,
+    "culture":  "de-DE",
+    "processArchitecture":  "AMD64",
+    "runtime":  "4.0.30319.42000",
+    "pipelineResults":  [
+
+                        ]
+}

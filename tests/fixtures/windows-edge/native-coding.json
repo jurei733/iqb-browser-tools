@@ -1,0 +1,773 @@
+{
+    "inputSHA256":  "fa9ea1b949cfff76ce18ca68a1bd9d959b2119ea5fc7cc076efa38a3bc587332",
+    "results":  [
+                    {
+                        "nativeBase64":  "H4sIAAAAAAAEAFWOTQrCMBSE94J3eLx9bFJRRJJ20RsUcd+mr6WSJqV/eDcXHskrmBREuhuGmW/m83rL9NkZWGgYW2cVigNHIKtd1dpG4TzV7IJpst/JbLVyGmczjf/CCaGtFPoCafZwJUKQg8Kcaho8iRBMUZJRmIUMehaAbIwrC6Nd15Gdkt4UrZXR1lxzGhaFd4Ew9Qo5D6JTGPP4zIRg/HgT/CrEVcR+1wfwh9LhcrT5nHwBDhkE8+4AAAA=",
+                        "id":  "comment-0",
+                        "browserModel":  {
+                                             "label":  "Codec",
+                                             "globalComment":  "plain",
+                                             "coder":  "Reference",
+                                             "id":  "codec-job",
+                                             "entries":  [
+                                                             {
+                                                                 "comment":  "plain",
+                                                                 "time":  "2026-11-03T10:11:12",
+                                                                 "variable":  "V1",
+                                                                 "code":  "0",
+                                                                 "testee":  "001"
+                                                             }
+                                                         ]
+                                         },
+                        "nativeModel":  {
+                                            "label":  "Codec",
+                                            "globalComment":  "plain",
+                                            "coder":  "Reference",
+                                            "id":  "codec-job",
+                                            "entries":  [
+                                                            {
+                                                                "comment":  "plain",
+                                                                "time":  "2026-11-03T10:11:12",
+                                                                "variable":  "V1",
+                                                                "code":  "0",
+                                                                "testee":  "001"
+                                                            }
+                                                        ]
+                                        }
+                    },
+                    {
+                        "nativeBase64":  "H4sIAAAAAAAEAFWOTQ6CMBCF9ybeoZk90mI0hrSw8AbGC0AZSZNpS6AQ7ubCI3kFESOE3Xwv837ez5fMR0tswLYz3ikQBw4MnfaVcbWCPjyiC+TZfievs3TDrqfQrYYTMFMpaKgwDtjkw3YhKkqkP00ZjMmafFmQ9taiC9mPZLxV50fNhiUnNOtpFSQ8OUdCRPx4FzwVIhXJ1Lz0BByDjPV3c7wZnX0AtIXQKu8AAAA=",
+                        "id":  "attributes-0",
+                        "browserModel":  {
+                                             "label":  "plain",
+                                             "globalComment":  "global",
+                                             "coder":  "plain",
+                                             "id":  "plain",
+                                             "entries":  [
+                                                             {
+                                                                 "comment":  "text",
+                                                                 "time":  "2026-11-03T10:11:12",
+                                                                 "variable":  "plain",
+                                                                 "code":  "plain",
+                                                                 "testee":  "plain"
+                                                             }
+                                                         ]
+                                         },
+                        "nativeModel":  {
+                                            "label":  "plain",
+                                            "globalComment":  "global",
+                                            "coder":  "plain",
+                                            "id":  "plain",
+                                            "entries":  [
+                                                            {
+                                                                "comment":  "text",
+                                                                "time":  "2026-11-03T10:11:12",
+                                                                "variable":  "plain",
+                                                                "code":  "plain",
+                                                                "testee":  "plain"
+                                                            }
+                                                        ]
+                                        }
+                    },
+                    {
+                        "nativeBase64":  "H4sIAAAAAAAEAHWPMQrCQBREe8E7fKbQKrobUUSzsfAGIvbJ+g2R3awkm+CBvIWFhQfyCm5sxMJmGD5vhj+v+yPZXK2hjuumdJWCnAgQV9ody6pQaP0pWmKTDgfJ9nPacdMa33wDc1B5VAgB1tHZ5aDe1go7PnEdmhhkspyNwrZnELqIksK4PDPaWcuVT583GmX2sqaR8UGKIKBxMv2lPkFNncJBgvxFQYjeWIVYxItIykjM9lKspFzJODwSAPzt1v2o6c+q9A2DYcR0EAEAAA==",
+                        "id":  "comment-1",
+                        "browserModel":  {
+                                             "label":  "Codec",
+                                             "globalComment":  "ä \u0026 \u003c \u003e \" \u0027",
+                                             "coder":  "Reference",
+                                             "id":  "codec-job",
+                                             "entries":  [
+                                                             {
+                                                                 "comment":  "ä \u0026 \u003c \u003e \" \u0027",
+                                                                 "time":  "2026-11-03T10:11:12",
+                                                                 "variable":  "V1",
+                                                                 "code":  "0",
+                                                                 "testee":  "001"
+                                                             }
+                                                         ]
+                                         },
+                        "nativeModel":  {
+                                            "label":  "Codec",
+                                            "globalComment":  "ä \u0026 \u003c \u003e \" \u0027",
+                                            "coder":  "Reference",
+                                            "id":  "codec-job",
+                                            "entries":  [
+                                                            {
+                                                                "comment":  "ä \u0026 \u003c \u003e \" \u0027",
+                                                                "time":  "2026-11-03T10:11:12",
+                                                                "variable":  "V1",
+                                                                "code":  "0",
+                                                                "testee":  "001"
+                                                            }
+                                                        ]
+                                        }
+                    },
+                    {
+                        "nativeBase64":  "H4sIAAAAAAAEAHu/e7+NfUVujkJZalFxZn6erZKhnoGSQmpecn5KZl66rVJpSZquhZK9HS+XjTNYKCi1uDSnpBihwVRJITPFVunwEgW1xNwCawW1nBIgkQ4iCkvzgZS6kgLQtNQiAmpyEpNSc/CrAbpCQcEmPSc/KTEnOT83NzWvxA7Cs9FHFQUrTFYoI2BnSQEhBbm2SkYGRma6hoa6BsYhhgZWhoZWhkZAHxFwaUlqRYmNfjIo3PRRAs4OAIsoiBxzAQAA",
+                        "id":  "attributes-1",
+                        "browserModel":  {
+                                             "label":  "ä \u0026 \u003c \u003e \" \u0027",
+                                             "globalComment":  "global",
+                                             "coder":  "ä \u0026 \u003c \u003e \" \u0027",
+                                             "id":  "ä \u0026 \u003c \u003e \" \u0027",
+                                             "entries":  [
+                                                             {
+                                                                 "comment":  "text",
+                                                                 "time":  "2026-11-03T10:11:12",
+                                                                 "variable":  "ä \u0026 \u003c \u003e \" \u0027",
+                                                                 "code":  "ä \u0026 \u003c \u003e \" \u0027",
+                                                                 "testee":  "ä \u0026 \u003c \u003e \" \u0027"
+                                                             }
+                                                         ]
+                                         },
+                        "nativeModel":  {
+                                            "label":  "ä \u0026 \u003c \u003e \" \u0027",
+                                            "globalComment":  "global",
+                                            "coder":  "ä \u0026 \u003c \u003e \" \u0027",
+                                            "id":  "ä \u0026 \u003c \u003e \" \u0027",
+                                            "entries":  [
+                                                            {
+                                                                "comment":  "text",
+                                                                "time":  "2026-11-03T10:11:12",
+                                                                "variable":  "ä \u0026 \u003c \u003e \" \u0027",
+                                                                "code":  "ä \u0026 \u003c \u003e \" \u0027",
+                                                                "testee":  "ä \u0026 \u003c \u003e \" \u0027"
+                                                            }
+                                                        ]
+                                        }
+                    },
+                    {
+                        "nativeBase64":  "H4sIAAAAAAAEAFWOPQ6CQBSEexPv8PJ6ZBejMWQXCm5AjD0sD4JZWMNfbPUWVh7Ewgt4Fz2CC43STSYz38z78RThudIwUNOWppbIVwyBamWysi4k9l3u7DAMlgsRTVZMba+79lfYIJSZRFsg5RxNijDKRmJMOTWWRAg6SUlLjMYMWhaAKLRJE61MVVHdBZ/77Qr0ugh37k9RBYPEA0foThIZG0Ul0WPe1uHcYes9Zz7nPvfstA3gH02Nx93Z8+ALG+ZLzPQAAAA=",
+                        "id":  "comment-2",
+                        "browserModel":  {
+                                             "label":  "Codec",
+                                             "globalComment":  "🙂 é",
+                                             "coder":  "Reference",
+                                             "id":  "codec-job",
+                                             "entries":  [
+                                                             {
+                                                                 "comment":  "🙂 é",
+                                                                 "time":  "2026-11-03T10:11:12",
+                                                                 "variable":  "V1",
+                                                                 "code":  "0",
+                                                                 "testee":  "001"
+                                                             }
+                                                         ]
+                                         },
+                        "nativeModel":  {
+                                            "label":  "Codec",
+                                            "globalComment":  "🙂 é",
+                                            "coder":  "Reference",
+                                            "id":  "codec-job",
+                                            "entries":  [
+                                                            {
+                                                                "comment":  "🙂 é",
+                                                                "time":  "2026-11-03T10:11:12",
+                                                                "variable":  "V1",
+                                                                "code":  "0",
+                                                                "testee":  "001"
+                                                            }
+                                                        ]
+                                        }
+                    },
+                    {
+                        "nativeBase64":  "H4sIAAAAAAAEAHu/e7+NfUVujkJZalFxZn6erZKhnoGSQmpecn5KZl66rVJpSZquhZK9HS+XjTNYKCi1uDSnpBihwVRJITPFVunD/JlNCqlnGpUUgFpTi5AFchKTUnOQBICGKSjYpOfkJyXmJOfn5qbmldhBeDb6qKJghckKZcimlRSg8HJtlYwMjMx0DQ11DYxDDA2sDA2tDI2ArkC2sCS1osRGPxnkC30Ub9gBAO8fiacBAQAA",
+                        "id":  "attributes-2",
+                        "browserModel":  {
+                                             "label":  "🙂 é",
+                                             "globalComment":  "global",
+                                             "coder":  "🙂 é",
+                                             "id":  "🙂 é",
+                                             "entries":  [
+                                                             {
+                                                                 "comment":  "text",
+                                                                 "time":  "2026-11-03T10:11:12",
+                                                                 "variable":  "🙂 é",
+                                                                 "code":  "🙂 é",
+                                                                 "testee":  "🙂 é"
+                                                             }
+                                                         ]
+                                         },
+                        "nativeModel":  {
+                                            "label":  "🙂 é",
+                                            "globalComment":  "global",
+                                            "coder":  "🙂 é",
+                                            "id":  "🙂 é",
+                                            "entries":  [
+                                                            {
+                                                                "comment":  "text",
+                                                                "time":  "2026-11-03T10:11:12",
+                                                                "variable":  "🙂 é",
+                                                                "code":  "🙂 é",
+                                                                "testee":  "🙂 é"
+                                                            }
+                                                        ]
+                                        }
+                    },
+                    {
+                        "nativeBase64":  "H4sIAAAAAAAEAF2PQQ6CMBBF9yTcYTJ7pMVoDKGw4AbEuIcyEExpDS3Eu7nwSF7Bwsbg7ufP/2/yP693VjxHBQtNdjBaID8wBNLStIPuBc6uiy5Y5GGQlZtVkZ2Vs7/CCWFoBfoCyehuGoRVTgIr6mjyJEJQdUNKYLlm0LMAsl6ZplbSjCNpl3fDZF0YWJJGt1m8P255CYvAG0dwD4GMrWIUmLDkHHEeseOVs5TzlCf+vw/gP1KuE+LdhvwLMMQ48/4AAAA=",
+                        "id":  "comment-3",
+                        "browserModel":  {
+                                             "label":  "Codec",
+                                             "globalComment":  "first\nsecond",
+                                             "coder":  "Reference",
+                                             "id":  "codec-job",
+                                             "entries":  [
+                                                             {
+                                                                 "comment":  "first\nsecond",
+                                                                 "time":  "2026-11-03T10:11:12",
+                                                                 "variable":  "V1",
+                                                                 "code":  "0",
+                                                                 "testee":  "001"
+                                                             }
+                                                         ]
+                                         },
+                        "nativeModel":  {
+                                            "label":  "Codec",
+                                            "globalComment":  "first\nsecond",
+                                            "coder":  "Reference",
+                                            "id":  "codec-job",
+                                            "entries":  [
+                                                            {
+                                                                "comment":  "first\nsecond",
+                                                                "time":  "2026-11-03T10:11:12",
+                                                                "variable":  "V1",
+                                                                "code":  "0",
+                                                                "testee":  "001"
+                                                            }
+                                                        ]
+                                        }
+                    },
+                    {
+                        "nativeBase64":  "H4sIAAAAAAAEAG2PTQ6CMBCF9ybeoRkTd0iL0RgsEOMNjBeAMpAm/TG0EO7mwiN5BREXhqTL+d7Mm/fezxcvRq3IgJ2T1mTAdhQIGmFradoMet9EJyjy9YpfZ3RD1yvv/gcHILLOoJGd89vNeDk7FNbUQCYL7EKCKitUAWF6Qghvla1KJazWaHz+m3i8pPOiIEPI3T+CVGeQ0OQYMRbR/Z3RlLGUJVPKUBCPo+ex+LaOF7XzD7VTIk4xAQAA",
+                        "id":  "attributes-3",
+                        "browserModel":  {
+                                             "label":  "first\nsecond",
+                                             "globalComment":  "global",
+                                             "coder":  "first\nsecond",
+                                             "id":  "first\nsecond",
+                                             "entries":  [
+                                                             {
+                                                                 "comment":  "text",
+                                                                 "time":  "2026-11-03T10:11:12",
+                                                                 "variable":  "first\nsecond",
+                                                                 "code":  "first\nsecond",
+                                                                 "testee":  "first\nsecond"
+                                                             }
+                                                         ]
+                                         },
+                        "nativeModel":  {
+                                            "label":  "first\nsecond",
+                                            "globalComment":  "global",
+                                            "coder":  "first\nsecond",
+                                            "id":  "first\nsecond",
+                                            "entries":  [
+                                                            {
+                                                                "comment":  "text",
+                                                                "time":  "2026-11-03T10:11:12",
+                                                                "variable":  "first\nsecond",
+                                                                "code":  "first\nsecond",
+                                                                "testee":  "first\nsecond"
+                                                            }
+                                                        ]
+                                        }
+                    },
+                    {
+                        "nativeBase64":  "H4sIAAAAAAAEAF2PQQ6CMBBF9yTcYTJ7pMVoDKGw4AbEuIcyEExpDS3Eu7nwSF7Bwsbg7ufP/2/yP693VjxHBQtNdjBaID8wBNLStIPuBc6uiy5Y5GGQlZtVkZ2Vs7/CCWFoBfoCyehuGoRVTgIr6mjyJEJQdUNKYLlm0LMAsl6ZplbSjCNpl3fDZF0YWJJGt1m8P255CYvAG0dwD4GMrWIUmLDkHHEeseOVs5TzlCf+vw/gP1KuE+LdhvwLMMQ48/4AAAA=",
+                        "id":  "comment-4",
+                        "browserModel":  {
+                                             "label":  "Codec",
+                                             "globalComment":  "first\nsecond",
+                                             "coder":  "Reference",
+                                             "id":  "codec-job",
+                                             "entries":  [
+                                                             {
+                                                                 "comment":  "first\nsecond",
+                                                                 "time":  "2026-11-03T10:11:12",
+                                                                 "variable":  "V1",
+                                                                 "code":  "0",
+                                                                 "testee":  "001"
+                                                             }
+                                                         ]
+                                         },
+                        "nativeModel":  {
+                                            "label":  "Codec",
+                                            "globalComment":  "first\nsecond",
+                                            "coder":  "Reference",
+                                            "id":  "codec-job",
+                                            "entries":  [
+                                                            {
+                                                                "comment":  "first\nsecond",
+                                                                "time":  "2026-11-03T10:11:12",
+                                                                "variable":  "V1",
+                                                                "code":  "0",
+                                                                "testee":  "001"
+                                                            }
+                                                        ]
+                                        }
+                    },
+                    {
+                        "nativeBase64":  "H4sIAAAAAAAEAG2PTQ6CMBCF9ybeoRkTd0iL0RgssNATGC8AZSBN+mNoIdzNhUfyCiIuDEmX872ZN++9ny9ejFqRATsnrcmA7SgQNMLW0rQZ9L6JTlDk6xW/zOiGrlfe/Q8OQGSdQSM757eb8Xp2KKypgUwW2IUEVVaoAsL0hBDeKluVSlit0fj8N/F4SedFQYaQu38Eqc4gockxYiyi+zujKWMpS6aUoSAeR89j8W0dL2rnH3ODYdYxAQAA",
+                        "id":  "attributes-4",
+                        "browserModel":  {
+                                             "label":  "first\rsecond",
+                                             "globalComment":  "global",
+                                             "coder":  "first\rsecond",
+                                             "id":  "first\rsecond",
+                                             "entries":  [
+                                                             {
+                                                                 "comment":  "text",
+                                                                 "time":  "2026-11-03T10:11:12",
+                                                                 "variable":  "first\rsecond",
+                                                                 "code":  "first\rsecond",
+                                                                 "testee":  "first\rsecond"
+                                                             }
+                                                         ]
+                                         },
+                        "nativeModel":  {
+                                            "label":  "first\rsecond",
+                                            "globalComment":  "global",
+                                            "coder":  "first\rsecond",
+                                            "id":  "first\rsecond",
+                                            "entries":  [
+                                                            {
+                                                                "comment":  "text",
+                                                                "time":  "2026-11-03T10:11:12",
+                                                                "variable":  "first\rsecond",
+                                                                "code":  "first\rsecond",
+                                                                "testee":  "first\rsecond"
+                                                            }
+                                                        ]
+                                        }
+                    },
+                    {
+                        "nativeBase64":  "H4sIAAAAAAAEAF2PQQ6CMBBF9yTcYTJ7pMVoDKGw4AbEuIcyEExpDS3Eu7nwSF7Bwsbg7ufP/2/yP693VjxHBQtNdjBaID8wBNLStIPuBc6uiy5Y5GGQlZtVkZ2Vs7/CCWFoBfoCyehuGoRVTgIr6mjyJEJQdUNKYLlm0LMAsl6ZplbSjCNpl3fDZF0YWJJGt1m8P255CYvAG0dwD4GMrWIUmLDkHHEeseOVs5TzlCf+vw/gP1KuE+LdhvwLMMQ48/4AAAA=",
+                        "id":  "comment-5",
+                        "browserModel":  {
+                                             "label":  "Codec",
+                                             "globalComment":  "first\nsecond",
+                                             "coder":  "Reference",
+                                             "id":  "codec-job",
+                                             "entries":  [
+                                                             {
+                                                                 "comment":  "first\nsecond",
+                                                                 "time":  "2026-11-03T10:11:12",
+                                                                 "variable":  "V1",
+                                                                 "code":  "0",
+                                                                 "testee":  "001"
+                                                             }
+                                                         ]
+                                         },
+                        "nativeModel":  {
+                                            "label":  "Codec",
+                                            "globalComment":  "first\nsecond",
+                                            "coder":  "Reference",
+                                            "id":  "codec-job",
+                                            "entries":  [
+                                                            {
+                                                                "comment":  "first\nsecond",
+                                                                "time":  "2026-11-03T10:11:12",
+                                                                "variable":  "V1",
+                                                                "code":  "0",
+                                                                "testee":  "001"
+                                                            }
+                                                        ]
+                                        }
+                    },
+                    {
+                        "nativeBase64":  "H4sIAAAAAAAEAHVQSwrCMBTcC94hPMFdbVNRpE1aRE8gXqBN0xLIR5q09G4uPJJXMNaFdJHNgzcz780w7+eLlJOSaOS9FUZTwLsEENfMNEJ3FAbXRicoi/WKXGboxu0gnf0fHACJhkIreuu2m+ma+3HOLWdGN4D8H94HWVnVXIZY74kQ6aSpK8mMUly74reReInOQobGoI97hClFIU3SY4RxlOzvOMkwznDqkwdzOT45ErNvJ/GilOIDFbUt9U8BAAA=",
+                        "id":  "attributes-5",
+                        "browserModel":  {
+                                             "label":  "first\r\nsecond",
+                                             "globalComment":  "global",
+                                             "coder":  "first\r\nsecond",
+                                             "id":  "first\r\nsecond",
+                                             "entries":  [
+                                                             {
+                                                                 "comment":  "text",
+                                                                 "time":  "2026-11-03T10:11:12",
+                                                                 "variable":  "first\r\nsecond",
+                                                                 "code":  "first\r\nsecond",
+                                                                 "testee":  "first\r\nsecond"
+                                                             }
+                                                         ]
+                                         },
+                        "nativeModel":  {
+                                            "label":  "first\r\nsecond",
+                                            "globalComment":  "global",
+                                            "coder":  "first\r\nsecond",
+                                            "id":  "first\r\nsecond",
+                                            "entries":  [
+                                                            {
+                                                                "comment":  "text",
+                                                                "time":  "2026-11-03T10:11:12",
+                                                                "variable":  "first\r\nsecond",
+                                                                "code":  "first\r\nsecond",
+                                                                "testee":  "first\r\nsecond"
+                                                            }
+                                                        ]
+                                        }
+                    },
+                    {
+                        "nativeBase64":  "H4sIAAAAAAAEAFWOTQ6CMBSE15p4h5e3R1qMxpA+WHADYtxDeRhMaQ1/8W4uPJJXsODCsJtMZr6Zz+ut0mdrYOKub5wllHuBwFa7qrE3wnGogzOmyW6rssXKuR/N0P8LR4SmIvQF1sHdlQiz7AhzrrnzJEYwRcmGMJsz6FkA6mZcWRjt2pbtkMAGVLi2lpSGifAqEYYHoRCzaAkjEZ0CKQNxuEgRSxnLyK/6AP5Aer4brv4mXwDduDTqAAAA",
+                        "id":  "comment-6",
+                        "browserModel":  {
+                                             "label":  "Codec",
+                                             "globalComment":  "",
+                                             "coder":  "Reference",
+                                             "id":  "codec-job",
+                                             "entries":  [
+                                                             {
+                                                                 "comment":  "",
+                                                                 "time":  "2026-11-03T10:11:12",
+                                                                 "variable":  "V1",
+                                                                 "code":  "0",
+                                                                 "testee":  "001"
+                                                             }
+                                                         ]
+                                         },
+                        "nativeModel":  {
+                                            "label":  "Codec",
+                                            "globalComment":  "",
+                                            "coder":  "Reference",
+                                            "id":  "codec-job",
+                                            "entries":  [
+                                                            {
+                                                                "comment":  "",
+                                                                "time":  "2026-11-03T10:11:12",
+                                                                "variable":  "V1",
+                                                                "code":  "0",
+                                                                "testee":  "001"
+                                                            }
+                                                        ]
+                                        }
+                    },
+                    {
+                        "nativeBase64":  "H4sIAAAAAAAEAFWPTQ6CMBSE9ybe4eWZuENajEaxhYU3MF4ASiUk/TFQCHdz4ZG8ghUXlOU3eTNv5vN6s3zUCgbZdo01HOmOIEgjbNWYmmPvHtEJ82y9YtdJusmuV66bDQeEpuII2814vgCCd8o2YFWUUs3skwBYrWxZKGG1lsZlf2LxUp0OBQxBlnuGoDkmJDlGlEZkf6ckpTSliW8QfHNydCwWv/7xYkD2BV8ePUP7AAAA",
+                        "id":  "attributes-6",
+                        "browserModel":  {
+                                             "label":  " \t ",
+                                             "globalComment":  "global",
+                                             "coder":  " \t ",
+                                             "id":  " \t ",
+                                             "entries":  [
+                                                             {
+                                                                 "comment":  "text",
+                                                                 "time":  "2026-11-03T10:11:12",
+                                                                 "variable":  " \t ",
+                                                                 "code":  " \t ",
+                                                                 "testee":  " \t "
+                                                             }
+                                                         ]
+                                         },
+                        "nativeModel":  {
+                                            "label":  " \t ",
+                                            "globalComment":  "global",
+                                            "coder":  " \t ",
+                                            "id":  " \t ",
+                                            "entries":  [
+                                                            {
+                                                                "comment":  "text",
+                                                                "time":  "2026-11-03T10:11:12",
+                                                                "variable":  " \t ",
+                                                                "code":  " \t ",
+                                                                "testee":  " \t "
+                                                            }
+                                                        ]
+                                        }
+                    },
+                    {
+                        "nativeBase64":  "H4sIAAAAAAAEAF2OTQ6CMBCF9ybeYTL7aovRGEJhwQ2IcQ9lIJj+GCjEu7nwSF7Blo3RzeTl5b1v3vv5yoqH0bDQOA3OShQ7jkBWuXawvcTZd+yMRb7dZOVqVTTN2k/fwhFhaCWGAil2cw1ClKPEijoaA4kQdN2QlljGDAYWQNZr19RaOWPI+ojf/zshpGCReBUI/i6R8yiMxIQnJyYE44eL4KkQqUjC0xDAlaPW+7M2/wDvX+rK6AAAAA==",
+                        "id":  "comment-7",
+                        "browserModel":  {
+                                             "label":  "Codec",
+                                             "globalComment":  "",
+                                             "coder":  "Reference",
+                                             "id":  "codec-job",
+                                             "entries":  [
+                                                             {
+                                                                 "comment":  "",
+                                                                 "time":  "2026-11-03T10:11:12",
+                                                                 "variable":  "V1",
+                                                                 "code":  "0",
+                                                                 "testee":  "001"
+                                                             }
+                                                         ]
+                                         },
+                        "nativeModel":  {
+                                            "label":  "Codec",
+                                            "globalComment":  "",
+                                            "coder":  "Reference",
+                                            "id":  "codec-job",
+                                            "entries":  [
+                                                            {
+                                                                "comment":  "",
+                                                                "time":  "2026-11-03T10:11:12",
+                                                                "variable":  "V1",
+                                                                "code":  "0",
+                                                                "testee":  "001"
+                                                            }
+                                                        ]
+                                        }
+                    },
+                    {
+                        "nativeBase64":  "H4sIAAAAAAAEAHu/e7+NfUVujkJZalFxZn6erZKhnoGSQmpecn5KZl66rVJpSZquhZK9HS+XjTNYKCi1uDSnpBihwVRJITPFVklNucLRWkkBqC+1CM7LSUxKzYHxgGYoKNik5+QnJeYk5+fmpuaV2EF4NvqoomCFyQplcHNKChDMXFslIwMjM11DQ10D4xBDAytDQytDI6DNcHtKUitKbPSTQW7WR3G0HQDrRzgH7wAAAA==",
+                        "id":  "attributes-7",
+                        "browserModel":  {
+                                             "label":  "\n",
+                                             "globalComment":  "global",
+                                             "coder":  "\n",
+                                             "id":  "\n",
+                                             "entries":  [
+                                                             {
+                                                                 "comment":  "text",
+                                                                 "time":  "2026-11-03T10:11:12",
+                                                                 "variable":  "\n",
+                                                                 "code":  "\n",
+                                                                 "testee":  "\n"
+                                                             }
+                                                         ]
+                                         },
+                        "nativeModel":  {
+                                            "label":  "\n",
+                                            "globalComment":  "global",
+                                            "coder":  "\n",
+                                            "id":  "\n",
+                                            "entries":  [
+                                                            {
+                                                                "comment":  "text",
+                                                                "time":  "2026-11-03T10:11:12",
+                                                                "variable":  "\n",
+                                                                "code":  "\n",
+                                                                "testee":  "\n"
+                                                            }
+                                                        ]
+                                        }
+                    },
+                    {
+                        "nativeBase64":  "H4sIAAAAAAAEAFWOTQqCUBSF50F7uJy59a5RhHh14A4kmqdew3hq+Ed7a9CS2kLvNYlmh8P5Ps77+YrTR2tp0WFs+k7AGwPSruyrprsK5qkOjkiT9SrOvlWu42yn8QfsQU0lcICWwa0vQD4OglxrHZxJQfZSqBVkfgPnIopLWgRnBk13gTE+tILQhIeAOTC7E5uIOeLQ+dwAtPUftn8nkg9vvZ0+vwAAAA==",
+                        "id":  "comment-8",
+                        "browserModel":  {
+                                             "label":  "Codec",
+                                             "globalComment":  "",
+                                             "coder":  "Reference",
+                                             "id":  "codec-job",
+                                             "entries":  [
+                                                             {
+                                                                 "comment":  "",
+                                                                 "time":  "2026-11-03T10:11:12",
+                                                                 "variable":  "V1",
+                                                                 "code":  "0",
+                                                                 "testee":  "001"
+                                                             }
+                                                         ]
+                                         },
+                        "nativeModel":  {
+                                            "label":  "Codec",
+                                            "globalComment":  "",
+                                            "coder":  "Reference",
+                                            "id":  "codec-job",
+                                            "entries":  [
+                                                            {
+                                                                "comment":  "",
+                                                                "time":  "2026-11-03T10:11:12",
+                                                                "variable":  "V1",
+                                                                "code":  "0",
+                                                                "testee":  "001"
+                                                            }
+                                                        ]
+                                        }
+                    },
+                    {
+                        "nativeBase64":  "H4sIAAAAAAAEAFWOTQ6CMBCF9ybeYTJ7pMVoDGlh4Q2IF4AyEJL+GFoId3PhkbyCBReGzSTzZr733uf1FuViNMw0+sFZifzEEMgq1w62lziFLrlhWRwP4r5JFflJB/8HLghDKxEhIjRKrKijMRoQgq4b0vEUaQDRa9fUWjljyIbit4l0r26PCubVLzy3aSRmLLsmnCfs/OAs5zznWYxbjQMtQaRqrZfu+hVfd7mG4toAAAA=",
+                        "id":  "attributes-8",
+                        "browserModel":  {
+                                             "label":  "",
+                                             "globalComment":  "global",
+                                             "coder":  "Reference",
+                                             "id":  "",
+                                             "entries":  [
+                                                             {
+                                                                 "comment":  "text",
+                                                                 "time":  "2026-11-03T10:11:12",
+                                                                 "variable":  "",
+                                                                 "code":  "",
+                                                                 "testee":  ""
+                                                             }
+                                                         ]
+                                         },
+                        "nativeModel":  {
+                                            "label":  "",
+                                            "globalComment":  "global",
+                                            "coder":  "Reference",
+                                            "id":  "",
+                                            "entries":  [
+                                                            {
+                                                                "comment":  "text",
+                                                                "time":  "2026-11-03T10:11:12",
+                                                                "variable":  "",
+                                                                "code":  "",
+                                                                "testee":  ""
+                                                            }
+                                                        ]
+                                        }
+                    },
+                    {
+                        "nativeBase64":  "H4sIAAAAAAAEAHWPTQrCMBCF1xZ6h2H21aSiiDTtojcQcW/Taa3kR9K0eDcXHskrmLgRF+4ew/c+5r0ez6K6awUzuXGwRiBfMgQy0raD6QVOvst2WJVpUtSf04HGSfnxW9ggDK3AUCCZXW2DEKMTeKCOXDARgjo3pATWkcHgAih6ZZuzklZrMr5U1PmFDIlcmrihv/g0IdMWq1/s05QwCzxxBH8TyFgMWmDO8m3GecbWR872nO95Hj4JAP6Xyzhr9bOrfANCBuptEgEAAA==",
+                        "id":  "comment-9",
+                        "browserModel":  {
+                                             "label":  "Codec",
+                                             "globalComment":  "left\tcenter\nright\nend",
+                                             "coder":  "Reference",
+                                             "id":  "codec-job",
+                                             "entries":  [
+                                                             {
+                                                                 "comment":  "left\tcenter\nright\nend",
+                                                                 "time":  "2026-11-03T10:11:12",
+                                                                 "variable":  "V1",
+                                                                 "code":  "0",
+                                                                 "testee":  "001"
+                                                             }
+                                                         ]
+                                         },
+                        "nativeModel":  {
+                                            "label":  "Codec",
+                                            "globalComment":  "left\tcenter\nright\nend",
+                                            "coder":  "Reference",
+                                            "id":  "codec-job",
+                                            "entries":  [
+                                                            {
+                                                                "comment":  "left\tcenter\nright\nend",
+                                                                "time":  "2026-11-03T10:11:12",
+                                                                "variable":  "V1",
+                                                                "code":  "0",
+                                                                "testee":  "001"
+                                                            }
+                                                        ]
+                                        }
+                    },
+                    {
+                        "nativeBase64":  "H4sIAAAAAAAEAI2QQQ6CMBBF9ybeoRkTdwjFaBQKxOgJjBfAMmCTthgohLu58EhewYILw667mZ83M3/+5/Vm2aAk6bFpRa0ToJsACGpeF0JXCXSm9A6QpcsFO0/SFdtOmvY/sAMiigQklma9Go4xR22wseUpbkT1GMVLjLoAYndi40TK/I7ShbS+CGGVrO+55LVSlkt/HfPn6gRy0jvdN083TCUQBuHeo9QLtjcaRJRGNLSfOnk3OBjm8zFbfxZu+gX+WcnolwEAAA==",
+                        "id":  "attributes-9",
+                        "browserModel":  {
+                                             "label":  "left\tcenter\nright\rend",
+                                             "globalComment":  "global",
+                                             "coder":  "left\tcenter\nright\rend",
+                                             "id":  "left\tcenter\nright\rend",
+                                             "entries":  [
+                                                             {
+                                                                 "comment":  "text",
+                                                                 "time":  "2026-11-03T10:11:12",
+                                                                 "variable":  "left\tcenter\nright\rend",
+                                                                 "code":  "left\tcenter\nright\rend",
+                                                                 "testee":  "left\tcenter\nright\rend"
+                                                             }
+                                                         ]
+                                         },
+                        "nativeModel":  {
+                                            "label":  "left\tcenter\nright\rend",
+                                            "globalComment":  "global",
+                                            "coder":  "left\tcenter\nright\rend",
+                                            "id":  "left\tcenter\nright\rend",
+                                            "entries":  [
+                                                            {
+                                                                "comment":  "text",
+                                                                "time":  "2026-11-03T10:11:12",
+                                                                "variable":  "left\tcenter\nright\rend",
+                                                                "code":  "left\tcenter\nright\rend",
+                                                                "testee":  "left\tcenter\nright\rend"
+                                                            }
+                                                        ]
+                                        }
+                    },
+                    {
+                        "id":  "comment-10",
+                        "nativeError":  {
+                                            "exceptionType":  "System.ArgumentException",
+                                            "message":  "\u0027\u0001\u0027, hexidezimaler Wert 0x01, ist ein ungültiges Zeichen."
+                                        }
+                    },
+                    {
+                        "id":  "attributes-10",
+                        "nativeError":  {
+                                            "exceptionType":  "System.ArgumentException",
+                                            "message":  "\u0027\u0001\u0027, hexidezimaler Wert 0x01, ist ein ungültiges Zeichen."
+                                        }
+                    },
+                    {
+                        "nativeBase64":  "H4sIAAAAAAAEAFWOQQqDMBRE94Xe4fP31sTSUkqiC28gpXuNX7FEUzRK71aKR/IKTeyiuBuGmTezvGeRvFoNE/VDYzqJ/MAQqFOmbLpa4mir4IJJvN+JdLUyGkZth3/hhNCUEl2BVPAwBYKXvcSMKuodiRB0XpCWmPoMOhaAqLUpcq1M21Jn42X+iHBrrSkFk8Q7R7BPiYx50UqMWHQOOA/Y8cbZlfMrj9yqC+APpPzdcPM3/gJc0jiZ6gAAAA==",
+                        "id":  "comment-11",
+                        "browserModel":  {
+                                             "label":  "Codec",
+                                             "globalComment":  "�",
+                                             "coder":  "Reference",
+                                             "id":  "codec-job",
+                                             "entries":  [
+                                                             {
+                                                                 "comment":  "�",
+                                                                 "time":  "2026-11-03T10:11:12",
+                                                                 "variable":  "V1",
+                                                                 "code":  "0",
+                                                                 "testee":  "001"
+                                                             }
+                                                         ]
+                                         },
+                        "nativeModel":  {
+                                            "label":  "Codec",
+                                            "globalComment":  "�",
+                                            "coder":  "Reference",
+                                            "id":  "codec-job",
+                                            "entries":  [
+                                                            {
+                                                                "comment":  "�",
+                                                                "time":  "2026-11-03T10:11:12",
+                                                                "variable":  "V1",
+                                                                "code":  "0",
+                                                                "testee":  "001"
+                                                            }
+                                                        ]
+                                        }
+                    },
+                    {
+                        "nativeBase64":  "H4sIAAAAAAAEAFWOXQqCQBSF34P2cLnv5lyjCJnRh3YQbUDHSYT5CR3FvUW4JLeQqRG+nXs43z1nfA087Y2GTtVN5axAOjAEZaUrKlsKbP0juGCa7Hf8Ols31bTaN3/ghFAVAsfhjTBRql61znKlFz3RALzULs+0dMYo65Pl4uHWnYMSuvWHf/6EERix6BwQBex4JxYTxRRNjWuDV73nofzuDDdDkw8yR2oS4wAAAA==",
+                        "id":  "attributes-11",
+                        "browserModel":  {
+                                             "label":  "�",
+                                             "globalComment":  "global",
+                                             "coder":  "�",
+                                             "id":  "�",
+                                             "entries":  [
+                                                             {
+                                                                 "comment":  "text",
+                                                                 "time":  "2026-11-03T10:11:12",
+                                                                 "variable":  "�",
+                                                                 "code":  "�",
+                                                                 "testee":  "�"
+                                                             }
+                                                         ]
+                                         },
+                        "nativeModel":  {
+                                            "label":  "�",
+                                            "globalComment":  "global",
+                                            "coder":  "�",
+                                            "id":  "�",
+                                            "entries":  [
+                                                            {
+                                                                "comment":  "text",
+                                                                "time":  "2026-11-03T10:11:12",
+                                                                "variable":  "�",
+                                                                "code":  "�",
+                                                                "testee":  "�"
+                                                            }
+                                                        ]
+                                        }
+                    }
+                ],
+    "processArchitecture":  "x86",
+    "commonSHA256":  "4845bf183b80509f743dc87d6e5b211bd5c9757417a9ff08665278f27fda20a6",
+    "timezone":  "W. Europe Standard Time",
+    "codingSHA256":  "7b8fdb074669c5e0ba267c2e924b484a322abb32cb733bae2c659b38191d3407",
+    "finished":  "2026-11-03T10:52:16.7663920Z",
+    "processBits":  32
+}

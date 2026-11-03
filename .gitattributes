@@ -10,3 +10,6 @@
 *.sqlite binary
 *.zip binary
 *.result binary
+
+# Keep raw Windows evidence byte-stable across checkouts.
+tests/fixtures/windows-edge/*.json -text

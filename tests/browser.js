@@ -1,9 +1,11 @@
 import {DOMParser as PortableParser} from '@xmldom/xmldom';
-import {unzipSync,zipSync,strToU8,strFromU8} from 'fflate';
+import {unzipSync,zipSync,gunzipSync,strToU8,strFromU8} from 'fflate';
 import * as T from '../src/toolbox.js';
 import * as C from '../src/coding.js';
 import * as D from '../src/data.js';
 import {converterCorpus,converterTypes,pipelineCorpus} from '../scripts/converter-corpus.mjs';
+import {windowsEdgeCorpus} from '../scripts/windows-edge-corpus.mjs';
+import {windowsCodingCorpus} from '../scripts/windows-coding-corpus.mjs';
 import {parseXML,decodeXML} from '../src/xml.js';
 import {decodeCanvas} from '../src/image.js';
 import {loginDocx} from '../src/docx.js';
@@ -101,5 +103,22 @@ check('Windows-Differenzial: 547 unterschiedliche Eingaben und sieben originale 
  for(const item of cases){const captured=native.results.find(r=>r.id===item.id),expected=captured.exceptionType?null:JSON.parse(captured.outputJSON),isError=captured.exceptionType||expected.some(sf=>sf.responses.some(r=>r.status==='ERROR'));let actual,error=false,outcome='value';try{actual=D.parseChunk(item.contentJSON,converterTypes[item.method],{windows:true});error=actual.some(sf=>sf.responses.some(r=>r.status==='ERROR'));if(error)outcome='error-response';}catch{error=true;outcome='exception';}if(isError){assert(error&&outcome===(captured.exceptionType?'exception':'error-response'),item.id+' zeigt eine andere Fehlerbehandlung');rejected++;}else{assert(!error&&objectKeysOnly(actual)===objectKeysOnly(expected),item.id+' hat abweichende Werte oder Listenreihenfolge');exact++;}}
  assert(exact===401&&rejected===146);
  for(const item of pipelineCorpus()){const original=JSON.parse(native.pipelineResults.find(r=>r.id===item.id).outputJSON),expected={id:original.unitId,alias:original.unitname,laststate:original.laststate,logs:[],subforms:original.subforms,chunks:original.chunks};assert(objectKeysOnly(D.responseUnit(item.dto,{windows:true}))===objectKeysOnly(expected),item.id+' API-Konvertierung weicht ab');}
+});
+const canonical=value=>JSON.stringify(value,(_key,item)=>item&&typeof item==='object'&&!Array.isArray(item)?Object.fromEntries(Object.keys(item).sort().map(key=>[key,item[key]])):item);
+const sha256=async bytes=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))).map(n=>n.toString(16).padStart(2,'0')).join('');
+check('Windows-Grenzen: 118 Eingaben im 64-Bit-Profil; sechs abweichende 32-Bit-Ausgaben bleiben ausgewiesen',async()=>{
+ const native=JSON.parse(strFromU8(await get('/fixtures/windows-edge/native-64.json'))),cases=windowsEdgeCorpus();
+ assert(await sha256(new TextEncoder().encode(JSON.stringify(cases)))===native.inputSHA256);assert(native.processBits===64);assert(native.assemblySHA256==='c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1');let values=0,errors=0;
+ for(const fixture of cases){const original=native.results.find(c=>c.id===fixture.id),expected=original.exceptionType?null:JSON.parse(original.outputJSON);let actual,kind='value';try{actual=D.parseChunk(fixture.contentJSON,converterTypes[fixture.method],{windows:true});if(actual.some(sf=>sf.responses.some(r=>r.status==='ERROR')))kind='error-response';}catch{kind='exception';}const expectedKind=original.exceptionType?'exception':expected.some(sf=>sf.responses.some(r=>r.status==='ERROR'))?'error-response':'value';assert(kind===expectedKind,fixture.id);if(expectedKind==='value'){assert(canonical(actual)===canonical(expected),fixture.id);values++;}else errors++;}
+ assert(values===113&&errors===5);
+ const native32=JSON.parse(strFromU8(await get('/fixtures/windows-edge/native-32.json')));assert(native32.processBits===32&&native32.inputSHA256===native.inputSHA256);const differences=cases.filter(f=>{const a=native.results.find(c=>c.id===f.id),b=native32.results.find(c=>c.id===f.id);return a.exceptionType!==b.exceptionType||a.outputJSON!==b.outputJSON;});assert(differences.length===6,'32-/64-Bit-Unterschiede verschwiegen oder verändert');
+});
+check('Windows-Kodierer: 22 Ergebnisdateien in beide Richtungen und zwei Steuerzeichen-Ablehnungen',async()=>{
+ const native=JSON.parse(strFromU8(await get('/fixtures/windows-edge/native-coding.json'))),inputBytes=await get('/fixtures/windows-edge/coding-inputs.json'),inputs=JSON.parse(strFromU8(inputBytes));
+ assert(await sha256(inputBytes)===native.inputSHA256);assert(canonical(inputs.map(({id,job,coder,globalComment})=>({id,job,coder,globalComment})))===canonical(windowsCodingCorpus()));
+ assert(native.codingSHA256==='7b8fdb074669c5e0ba267c2e924b484a322abb32cb733bae2c659b38191d3407');
+ const bytes=value=>Uint8Array.from(atob(value),c=>c.charCodeAt(0));let valid=0,rejected=0;
+ for(const fixture of inputs){const original=native.results.find(c=>c.id===fixture.id);let encoded,error=false;try{encoded=C.encodeResult(fixture.job,fixture.coder,fixture.globalComment,{windows:true});}catch{error=true;}if(original.nativeError){assert(error,fixture.id);rejected++;continue;}assert(!error,fixture.id);assert(strFromU8(gunzipSync(encoded))===strFromU8(gunzipSync(bytes(fixture.browserBase64))),fixture.id+' aktuelle Export-XML');assert(canonical(C.decodeResult(bytes(original.nativeBase64)))===canonical(original.nativeModel),fixture.id+' Windows → Browser');assert(canonical(original.browserModel)===canonical(original.nativeModel),fixture.id+' Browser → Windows');valid++;}
+ assert(valid===22&&rejected===2);
 });
 $('#run').onclick=async()=>{const button=$('#run');button.disabled=true;$('#results').replaceChildren();const report={userAgent:navigator.userAgent,started:new Date().toISOString(),checks:[]};let passed=0;for(const {name,fn}of checks){$('#status').textContent=name;const li=document.createElement('li');try{await fn();passed++;li.className='ok';li.textContent='✓ '+name;report.checks.push({name,passed:true});}catch(e){li.className='fail';li.textContent='✗ '+name+' — '+e.message;report.checks.push({name,passed:false,error:e.message,stack:e.stack});}$('#results').append(li);}report.passed=passed;report.total=checks.length;report.finished=new Date().toISOString();$('#status').textContent=`${passed} / ${checks.length} erfolgreich`;$('#download').href=URL.createObjectURL(new Blob([JSON.stringify(report,null,2)],{type:'application/json'}));$('#download').download='Browser-Pruefbericht.json';$('#download').hidden=false;try{await fetch('/__report__',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(report)});}catch{}button.disabled=false;};

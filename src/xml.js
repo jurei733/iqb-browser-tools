@@ -1,4 +1,8 @@
-export const text = (value = '') => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
+export const text = (value = '') => {
+  const source=String(value);
+  if(/[\x00-\x08\x0b\x0c\x0e-\x1f\ufffe\uffff]/u.test(source))throw new Error('Der Text enthält ein in XML unzulässiges Steuerzeichen.');
+  return source.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
+};
 export const children = (el, tag) => Array.from(el?.childNodes || []).filter(n => n.nodeType === 1 && (!tag || n.localName === tag));
 export const descendants = (el, tag) => Array.from(el?.getElementsByTagName(tag) || []);
 export const attr = (el, name, fallback = '') => el?.hasAttribute(name) ? el.getAttribute(name) : fallback;
@@ -20,6 +24,6 @@ export function parseXML(source) {
   return doc;
 }
 export function node(tag, attrs = {}, inner = '') {
-  return `<${tag}${Object.entries(attrs).filter(([,v]) => v !== null && v !== undefined).map(([k,v]) => ` ${k}="${text(v)}"`).join('')}>${inner}</${tag}>`;
+  return `<${tag}${Object.entries(attrs).filter(([,v]) => v !== null && v !== undefined).map(([k,v]) => ` ${k}="${text(v).replace(/[\t\r\n]/g,c=>'&#'+c.charCodeAt(0)+';')}"`).join('')}>${inner}</${tag}>`;
 }
 export const documentXML = body => '<?xml version="1.0" encoding="utf-8"?>\n' + body;
