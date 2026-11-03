@@ -1,6 +1,24 @@
-# IQB-Werkzeuge im Browser · Version 0.4.0
+# IQB-Werkzeuge im Browser · Version 0.4.1
 
 Portierung der Arbeitsabläufe von **IQB-Kodieren 4.3.0.3** und **itc-ToolBox 3.3.0.2**. Die Anwendung läuft als statische Website mit lokaler Dateiverarbeitung; eine Windows-Installation ist nicht erforderlich.
+
+## Optional lokal: Konto, direktes Speichern und echte Dateipfade
+
+Der lokale Starter gleicht die drei Browsergrenzen aus. Die Oberfläche bleibt dieselbe Browseranwendung; ein kleiner Node.js-Prozess vermittelt die ausdrücklich verbundenen Dateizugriffe. Er benötigt **Node.js 22 oder neuer**, keine Windows-Installation und keine zusätzlichen npm-Pakete. Er läuft auf `127.0.0.1` und stellt keine Dateien im Netzwerk bereit. Die gehostete Website verbindet sich nicht mit diesem Dienst.
+
+Im Repository zuerst `pnpm build` ausführen. Im entpackten Release-ZIP ist `dist/` bereits enthalten. Dann starten:
+
+```sh
+node scripts/local-app.mjs --open
+```
+
+Die Adresse ist standardmäßig `http://127.0.0.1:4175`. Unter **Arbeitsordner & Konto** einen absoluten Ordnerpfad eintragen und verbinden. Mit „Diesen Ordner beim nächsten Start wiederverwenden“ wird ausschließlich dieser Pfad in `~/.iqb-browser-tools/local.json` gespeichert. „Gespeicherten Ordner vergessen“ entfernt diese Einstellung; Arbeitsdateien bleiben erhalten. Alternativ kann der Ordner beim Start mit `--workspace "/absoluter/Arbeitsordner"` angegeben werden. Für einen anderen Port `--port 4176` verwenden. Strg+C beendet den Starter.
+
+- **Konto:** Unter Windows wird `whoami.exe` für das aktuelle Anmeldekonto verwendet. In der Kontoinfo steht `DOMÄNE\Benutzer`; als Kodierer wird wie im Original `ADFactory.GetMyName()` nur der Benutzerteil vorgeschlagen. Auf macOS/Linux wird das Betriebssystemkonto vorgeschlagen. Ein bereits gewählter Kodierername bleibt erhalten; **Arbeitsplatzkonto übernehmen** setzt den Vorschlag erneut.
+- **Ergebnisdateien:** **Lokalen Arbeitsordner öffnen** lädt Kodierjobs und Ergebnisse. Danach werden Änderungen automatisch und atomar im Ordner gespeichert, auch in Firefox und WebKit. Eine vorhandene, eindeutig zugeordnete `.result`-Datei behält ihren Pfad; sonst wird `<Jobname>.result` verwendet. Mehrdeutige Ergebnisdateien werden abgewiesen. Der Speicherstatus bestätigt erst einen abgeschlossenen Schreibvorgang. **Arbeitsordner frisch einlesen** übernimmt externe Änderungen an Jobs und Ergebnissen.
+- **Toolbox-Dateipfade:** **Aus Arbeitsordner wählen** verwendet echte Pfade im verbundenen Ordner. Gemerkte Eingabedateien der wiederherstellbaren Toolbox-Formulare werden nach einem Neustart frisch vom Dateisystem gelesen. Fehlende Dateien oder ein anderer verbundener Ordner führen zu einer Meldung und leeren die betroffene Dateiauswahl; alte Browserkopien werden dann nicht unbemerkt verarbeitet. Änderungen während einer geöffneten Sitzung werden durch erneute Dateiauswahl oder Neuladen übernommen. Normale Browser-Dateiauswahlen bleiben Bytekopien.
+
+Der Starter prüft gleichen Ursprung, Host und einen sitzungsbezogenen API-Schlüssel; er liest nur unterstützte Eingabedateitypen und schreibt ausschließlich Ergebnisdateien. Symbolische Verknüpfungen werden ausgeschlossen. Automatisches Überschreiben betrifft Kodierergebnisse; Toolbox-Exporte bleiben ausdrücklich ausgelöste Downloads. Die Funktion ist für einen Arbeitsplatzbenutzer vorgesehen, nicht als gemeinsam zugänglicher Server oder als Authentifizierungsdienst für mehrere Personen.
 
 ## SQLite mit Coding-Box austauschen
 
@@ -14,15 +32,15 @@ Für den Rückimport in eine laufende Coding-Box ist der ergänzte MCP-/Backend-
 
 Der [filterbare Funktionsbericht](docs/function-audit.html) und seine [maschinenlesbaren Ergebnisse](docs/function-audit.json) erfassen **110 Funktionspunkte**. Das [Originalinventar](docs/original-inventory.json) hält 130 Quelldateien, 36 XAML-Oberflächen und 151 Controls mit Herkunft und Prüfsummen fest. Alle 23 aktiven Haupteinstiege der Windows-Toolbox sind einer Matrixzeile zugeordnet. Die [Matrixdefinition](docs/function-matrix.json) trennt direkte Windows-Vergleiche, Browser-/Modultests, beabsichtigte Unterschiede, Lücken und reine Browser-Erweiterungen. Das Inventar ist eine Prüfgrundlage und kein Nachweis aller internen Codepfade.
 
-Der aktuelle Stand besteht **78 Modultests**, **15 Windows-Konvertervergleiche** und **31 Windows-Datei-/Verhaltensvergleiche**. Die unveränderten Originale wurden am 31.10.2026 mit 38 nativen Prüfoperationen erneut ausgeführt. Eingabe- und Assembly-Prüfsummen sind gespeichert. Sämtliche BMP-QR-Bilder beider Original-Wordvorlagen stimmen Byte für Byte überein; DOCX-/XLSX-ZIP-Metadaten werden bei Inhaltsvergleichen nicht als Nutzdaten behandelt.
+Der aktuelle Stand besteht **84 Modultests**, **15 Windows-Konvertervergleiche** und **31 Windows-Datei-/Verhaltensvergleiche**. Die unveränderten Originale wurden am 31.10.2026 mit 38 nativen Prüfoperationen erneut ausgeführt. Eingabe- und Assembly-Prüfsummen sind gespeichert. Sämtliche BMP-QR-Bilder beider Original-Wordvorlagen stimmen Byte für Byte überein; DOCX-/XLSX-ZIP-Metadaten werden bei Inhaltsvergleichen nicht als Nutzdaten behandelt.
 
-Chromium und WebKit bestehen auf macOS jeweils **16 Ablaufprüfungen und 46 Kompatibilitätsprüfungen**. Die drei Browser-Engines werden zusätzlich in [GitHub Actions](https://github.com/jurei733/iqb-browser-tools/actions/runs/41172353074) auf Linux geprüft; die genauen Ergebnisse und Source-Hashes stehen in `tests/results/function-audit-ci-20261031-parity.json`. Der lokale Firefox-Playwright-Build startet wegen eines Profilordnerfehlers nicht. WebKit ersetzt keinen Test der installierten Safari-App.
+Für Version 0.4.1 werden die vorhandenen Browserabläufe um den lokalen Starter ergänzt. Der vollständige CI-Nachweis des vorigen Stands bleibt unter `tests/results/function-audit-ci-20261031-parity.json` erhalten; er belegt keine späteren Codeänderungen. Aktuelle Prüfungen und Quellprüfsummen stehen im Funktionsbericht. Der lokale Firefox-Playwright-Build startet wegen eines Profilordnerfehlers nicht; Firefox wird zusätzlich in GitHub Actions auf Linux geprüft. WebKit ersetzt keinen Test der installierten Safari-App.
 
 Neu abgeschlossen sind Scanverschiebung durch Ziehen, physikalischer WPF-Zoom, gemeinsame Schablonenposition und Umschalt-Drehung, Endanimation, F1/Programm-Info, vollständiger Meldungsexport als Text, abbrechbare Vorbereitung und ursprüngliche Dialog-Voreinstellungen. Arbeitsstände, Eingabedateien und Optionen lassen sich nach einem Neustart öffnen. Zugangsdaten können ausdrücklich lokal gemerkt und wieder gelöscht werden.
 
 Für historische Unterschiede stehen auswählbare **Windows-Modi** bereit: Booklet-Beschreibung aus der Titelspalte, Word-Paragraphen mit ursprünglichen Links und BMP-QR, ursprüngliche Antwort-/Sitzungs-CSV, die historische JSON-Identitätslogik, Überspringen gleicher Datenbank-Endzeitstempel und der Abbruch des Ergebnisexports nach einer leeren Person. Die erweiterten Varianten bleiben erhalten. Windows-Modi können historische Auslassungen reproduzieren und sind entsprechend beschriftet.
 
-**Drei Plattformabweichungen bleiben ausdrücklich bestehen:** automatische Windows-Domänenidentität (K-11), automatischer Dateiersatz in jedem Browser (K-35) und dauerhafte echte Dateipfade (T-61). Chromium kann nach Freigabe einen Arbeitsordner direkt lesen und Ergebnisse dort speichern. Safari/Firefox nutzen lokale Browserkopien und Downloads; externe Dateiänderungen erfordern eine neue Auswahl. Eine uneingeschränkte 1:1-Gleichheit wird daher nicht behauptet. Die Prüfungen verwenden synthetische Daten; sie decken nicht jede Kombination realer Arbeitsbestände ab.
+**In der reinen Onlinefassung bleiben drei Plattformabweichungen:** automatische Windows-Domänenidentität (K-11), automatischer Dateiersatz in jedem Browser (K-35) und dauerhafte echte Dateipfade (T-61). Chromium kann nach Freigabe einen Arbeitsordner direkt lesen und Ergebnisse dort speichern. Ohne lokalen Starter nutzen Safari/Firefox lokale Browserkopien und Downloads; externe Dateiänderungen erfordern eine neue Auswahl. Eine uneingeschränkte 1:1-Gleichheit wird daher nicht behauptet. Die Prüfungen verwenden synthetische Daten; sie decken nicht jede Kombination realer Arbeitsbestände ab.
 
 ```sh
 pnpm test:reference   # aktuelle Module gegen gespeicherte echte Windows-Ausgaben
@@ -106,7 +124,7 @@ Das Repository enthält den Quellcode und richtet keine öffentliche Website ein
 
 ## Automatische Prüfungen mit GitHub Actions
 
-Der Workflow [Tests and build](https://github.com/jurei733/iqb-browser-tools/actions/workflows/ci.yml) läuft bei jedem Push auf allen Branches, bei Pull Requests und bei manuellem Start. Auf Ubuntu prüfen Node.js 22 und 24 jeweils `pnpm install --frozen-lockfile`, `pnpm test` und `pnpm build`. Die pnpm-Version stammt aus `package.json`; der Paketcache beschleunigt weitere Läufe. Die verwendeten Actions sind auf vollständige Commit-Prüfsummen festgelegt.
+Der Workflow [Tests and build](https://github.com/jurei733/iqb-browser-tools/actions/workflows/ci.yml) läuft bei jedem Push auf allen Branches, bei Pull Requests und bei manuellem Start. Zusätzlich prüfen Ubuntu, macOS und Windows die lokale Konto- und Dateianbindung ohne Browser. Auf Ubuntu prüfen Node.js 22 und 24 jeweils `pnpm install --frozen-lockfile`, `pnpm test` und `pnpm build`. Die pnpm-Version stammt aus `package.json`; der Paketcache beschleunigt weitere Läufe. Die verwendeten Actions sind auf vollständige Commit-Prüfsummen festgelegt.
 
 Zusätzlich laufen drei unabhängige Playwright-Jobs mit Chromium, Firefox und WebKit auf Linux. Jeder Browser führt die vorhandenen Kompatibilitätsprüfungen und sieben Arbeitsabläufe der gebauten Produktionsoberfläche aus: Kodieren und Ergebnisdownload, Schablonen, Logins und QR-Word, CSV mit Fehlerfällen, Codes und Booklets, Antworten/SQLite samt Offline-Wiederherstellung sowie Testcenter-Gruppenauswahl und Bereichswechsel. Die Testcenter-API wird in diesen Oberflächentests mit synthetischen Antworten nachgebildet. Die separat beschriebenen Windows- und echten Testcenter-Prüfläufe werden in ihrer jeweiligen Testumgebung wiederholt. Playwright-WebKit ersetzt keinen zusätzlichen Test mit Safari auf Apple-Geräten.
 
