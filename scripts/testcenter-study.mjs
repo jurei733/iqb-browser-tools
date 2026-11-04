@@ -1,3 +1,4 @@
+import {parseJSON,stringifyJSON} from '../src/json.js';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
@@ -13,7 +14,7 @@ import {encodeResult,decodeResult} from '../src/coding.js';
 
 globalThis.DOMParser=DOMParser;globalThis.XMLSerializer=XMLSerializer;
 const defaultFixture=new URL('../tests/fixtures/testcenter-study/',import.meta.url);
-export const canonical=value=>JSON.stringify(value,(_key,v)=>v&&typeof v==='object'&&!Array.isArray(v)?Object.fromEntries(Object.keys(v).sort().map(k=>[k,v[k]])):v);
+export const canonical=value=>stringifyJSON(value,(_key,v)=>v&&typeof v==='object'&&!Array.isArray(v)?Object.fromEntries(Object.keys(v).sort().map(k=>[k,v[k]])):v);
 export const sha256=bytes=>createHash('sha256').update(bytes).digest('hex');
 export const modelHash=value=>sha256(canonical(value));
 export const workbookCells=workbook=>workbook.worksheets.map(s=>({name:s.name,rows:s.rowCount,columns:s.columnCount,values:Array.from({length:s.rowCount},(_,r)=>Array.from({length:s.columnCount},(_,c)=>s.getCell(r+1,c+1).text))}));
@@ -26,9 +27,9 @@ export async function runStudyComparison(outputDirectory,fixture=defaultFixture)
   for(const [name,hash]of Object.entries(reference.rawFileSHA256))assert.equal(sha256(files[name]),hash,name+' raw bytes');
   const blankTemplate=Buffer.from(files['blank-native.xlsx'],'base64');
   assert.equal(sha256(blankTemplate),reference.blankTemplateSHA256,'Unchanged valid native XLSX template');
-  const responses=JSON.parse(files['existing-responses.json']);
+  const responses=parseJSON(files['existing-responses.json']);
   const table=parseCSV(files['logs.csv'],';'),headers=table.shift();
-  const logs=files['logs-api.json']?JSON.parse(files['logs-api.json']):table.filter(row=>row.some(Boolean)).map(row=>Object.fromEntries(headers.map((key,i)=>[key,row[i]])));
+  const logs=files['logs-api.json']?parseJSON(files['logs-api.json']):table.filter(row=>row.some(Boolean)).map(row=>Object.fromEntries(headers.map((key,i)=>[key,row[i]])));
   assert.equal(responses.length,reference.counts.unitRows);assert.equal(logs.length,reference.counts.logs);
   const SQL=await initSqlJs(),checks=[];
   const check=(name,actual,expected)=>{assert.deepEqual(actual,expected,name);checks.push({name,passed:true});};
@@ -67,7 +68,7 @@ export async function runStudyComparison(outputDirectory,fixture=defaultFixture)
     const decoded=decodeResult(result);
     check(profile+' unscored comment count',decoded.entries.length,reference.counts.codingComments);
     check(profile+' original archive reader/writer model',modelHash(decoded),reference.codingModelSHA256);
-    if(!outputs)outputs={...files,'blank-native.xlsx':blankTemplate,'logs-api.json':JSON.stringify(logs),'browser.sqlite':bytes,'browser-wide.xlsx':xlsx,'browser-long.csv':longCSV(people),'browser.result':result};
+    if(!outputs)outputs={...files,'blank-native.xlsx':blankTemplate,'logs-api.json':stringifyJSON(logs),'browser.sqlite':bytes,'browser-wide.xlsx':xlsx,'browser-long.csv':longCSV(people),'browser.result':result};
   }
   const report={synthetic:true,empiricalStudy:false,source:reference.source,counts:reference.counts,csvSkippedLogRows:reference.csvSkippedLogRows||0,checks,limitations:reference.limitations};
   if(outputDirectory){

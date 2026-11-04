@@ -1,5 +1,7 @@
 import {DOMParser as PortableParser} from '@xmldom/xmldom';
 import {unzipSync,zipSync,gunzipSync,strToU8,strFromU8} from 'fflate';
+import {parseJSON,stringifyJSON} from '../src/json.js';
+import {int64LogCorpus} from '../scripts/int64-corpus.mjs';
 import * as T from '../src/toolbox.js';
 import * as C from '../src/coding.js';
 import * as D from '../src/data.js';
@@ -106,7 +108,7 @@ check('Windows-Differenzial: 547 unterschiedliche Eingaben und sieben originale 
  assert(exact===401&&rejected===146);
  for(const item of pipelineCorpus()){const original=JSON.parse(native.pipelineResults.find(r=>r.id===item.id).outputJSON),expected={id:original.unitId,alias:original.unitname,laststate:original.laststate,logs:[],subforms:original.subforms,chunks:original.chunks};assert(objectKeysOnly(D.responseUnit(item.dto,{windows:true}))===objectKeysOnly(expected),item.id+' API-Konvertierung weicht ab');}
 });
-const canonical=value=>JSON.stringify(value,(_key,item)=>item&&typeof item==='object'&&!Array.isArray(item)?Object.fromEntries(Object.keys(item).sort().map(key=>[key,item[key]])):item);
+const canonical=value=>stringifyJSON(value,(_key,item)=>item&&typeof item==='object'&&!Array.isArray(item)?Object.fromEntries(Object.keys(item).sort().map(key=>[key,item[key]])):item);
 const sha256=async bytes=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))).map(n=>n.toString(16).padStart(2,'0')).join('');
 check('Windows-Grenzen: 118 Eingaben im 64-Bit-Profil; sechs abweichende 32-Bit-Ausgaben bleiben ausgewiesen',async()=>{
  const native=JSON.parse(strFromU8(await get('/fixtures/windows-edge/native-64.json'))),cases=windowsEdgeCorpus();
@@ -151,5 +153,17 @@ check('Testcenter-Pilot84: API, Windows-CSV mit 24 übersprungenen Logs und Stan
  assert(warnings.length===2&&warnings.every(m=>m.includes('24 Logzeilen')),'Übersprungene Zeilen müssen sichtbar sein');
  await task('load-data',{files:['responses.csv','logs.csv'].map(name=>file(name,strToU8(raw[name])))});
  const standard=JSON.parse(strFromU8(await task('export-data',{format:'json'}))),count=standard.reduce((n,p)=>n+p.booklets.reduce((n,b)=>n+b.logs.length+b.units.reduce((n,u)=>n+u.logs.length,0),0),0);assert(count===3672,'Standardmodus verlor Logs');
+});
+check('Int64-Zeitstempel: 64 Werte im Worker, JSON und beiden SQLite-Formaten ohne Rundung',async()=>{
+ const logs=int64LogCorpus(),exact=logs.map(l=>String(l.timestamp));
+ for(const windows of [true,'64']){
+  await task('dto',{responses:[],logs,windows});const json=await task('export-data',{format:'json'}),people=parseJSON(strFromU8(json));
+  const times=people.map(p=>String(p.booklets[0].logs[0]?.ts??p.booklets[0].units[0].logs[0].ts));assert(canonical(times)===canonical(exact),'API/JSON');assert(strFromU8(json).includes('9007199254740993'),'JSON-Zahl gerundet');
+  await task('new-db');await task('db-import',{windows});const bytes=await task('db-save',{format:'windows'});await task('open-db',{bytes});
+  assert(canonical(parseJSON(strFromU8(await task('db-export',{format:'json'}))))===canonical(people),'Windows-SQLite');
+  const coding=await task('db-save',{format:'coding-box'});await task('open-db',{bytes:coding});
+  assert(canonical(parseJSON(strFromU8(await task('db-export',{format:'json'}))))===canonical(people),'Coding-Box-SQLite');
+ }
+ const a=parseJSON('{"timestamp":9007199254740992}'),b=parseJSON('{"timestamp":9007199254740993}');assert(canonical(a)!==canonical(b),'Referenzleser verschluckt Gegenbeispiel');
 });
 $('#run').onclick=async()=>{const button=$('#run');button.disabled=true;$('#results').replaceChildren();const report={userAgent:navigator.userAgent,started:new Date().toISOString(),checks:[]};let passed=0;for(const {name,fn}of checks){$('#status').textContent=name;const li=document.createElement('li');try{await fn();passed++;li.className='ok';li.textContent='✓ '+name;report.checks.push({name,passed:true});}catch(e){li.className='fail';li.textContent='✗ '+name+' — '+e.message;report.checks.push({name,passed:false,error:e.message,stack:e.stack});}$('#results').append(li);}report.passed=passed;report.total=checks.length;report.finished=new Date().toISOString();$('#status').textContent=`${passed} / ${checks.length} erfolgreich`;$('#download').href=URL.createObjectURL(new Blob([JSON.stringify(report,null,2)],{type:'application/json'}));$('#download').download='Browser-Pruefbericht.json';$('#download').hidden=false;try{await fetch('/__report__',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(report)});}catch{}button.disabled=false;};

@@ -1,3 +1,4 @@
+import {parseJSON,stringifyJSON} from '../src/json.js';
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {resolve,join} from 'node:path';
 import {gunzipSync} from 'node:zlib';
@@ -8,6 +9,7 @@ import {parseCSV,loadWorkbook} from '../src/toolbox.js';
 import {OutputDatabase} from '../src/database.js';
 import {encodeResult,decodeResult} from '../src/coding.js';
 import {sha256,modelHash,workbookCells} from './testcenter-study.mjs';
+import {int64LogCorpus} from './int64-corpus.mjs';
 
 const studies=[
  {id:'cohort1000',folder:'testcenter-study',metadata:'reference.json',codecId:'Testcenter-Codec-A85A58E88AE4'},
@@ -15,7 +17,7 @@ const studies=[
 ];
 const tables=['person','bookletInfo','booklet','session','bookletLog','unit','unitLog','unitLastState','chunk','response'];
 const SQL=await initSqlJs();
-const json=async path=>JSON.parse(await readFile(path));
+const json=async path=>parseJSON(await readFile(path,'utf8'));
 const tableModels=db=>tables.map(name=>{
  const columns=db.query('PRAGMA table_info(['+name+'])').map(c=>c.name);
  const rows=db.query('SELECT '+columns.map(c=>'['+c+']').join(',')+' FROM ['+name+'] ORDER BY rowid').map(r=>columns.map(c=>r[c]));
@@ -31,7 +33,7 @@ async function prepare(root){
   const template=Buffer.from(raw['blank-native.xlsx'],'base64');assert.equal(sha256(template),meta.blankTemplateSHA256);
   const table=parseCSV(raw['logs.csv'],';'),headers=table.shift();
   const csvLogs=table.filter(r=>r.some(Boolean)).map(r=>Object.fromEntries(headers.map((h,i)=>[h,r[i]])));
-  const logs=raw['logs-api.json']?JSON.parse(raw['logs-api.json']):csvLogs,responses=JSON.parse(raw['existing-responses.json']);
+  const logs=raw['logs-api.json']?parseJSON(raw['logs-api.json']):csvLogs,responses=parseJSON(raw['existing-responses.json']);
   assert.equal(responses.length,meta.counts.unitRows);assert.equal(logs.length,meta.counts.logs);
   for(const [arch,windows]of [['x86',true],['x64','64']]){
    const dir=join(root,study.id,arch);await mkdir(dir,{recursive:true});
@@ -48,9 +50,12 @@ async function prepare(root){
    for(const p of people)for(const b of p.booklets)for(const u of b.units)for(const sf of u.subforms)for(const r of sf.responses)if(['reason','critique'].includes(r.id)&&r.value&&r.status==='VALUE_CHANGED')cases.push({testee:p.login,variable:{id:u.id+'_'+r.id,codes:[]},code:'',comment:r.value,time:new Date(Number(u.chunks[0].ts)).toISOString()});
    const job={id:study.codecId,label:'Synthetische Testcenter-Freitexte, reine Codecprobe',variables:[...new Set(cases.map(c=>c.variable.id))].map(id=>({id,codes:[]})),cases};
    const result=encodeResult(job,'Synthetische Codecprobe','Keine Bewertung oder manuelle Einreichung',{windows:true}),decoded=decodeResult(result);assert.equal(decoded.entries.length,meta.counts.codingComments);
-   const files={'existing-responses.json':raw['existing-responses.json'],'responses.csv':raw['responses.csv'],'logs.csv':raw['logs.csv'],'logs-api.json':raw['logs-api.json']||JSON.stringify(logs),'blank-native.xlsx':template,'browser.sqlite':sqlite,'browser-wide.xlsx':xlsx,'browser.result':result};
+   const probes=int64LogCorpus(),probePeople=peopleFromDTO([],probes,{windows}),probeDB=new OutputDatabase(SQL);let probeBytes,probeTables;
+   try{probeDB.import(probePeople,{windows});probeBytes=probeDB.exportWindows();probeTables=tableModels(probeDB);}finally{probeDB.close();}
+   const int64={count:probes.length,timestamps:probes.map(r=>String(r.timestamp)),fullGraphSHA256:modelHash(probePeople),sqlTables:probeTables};
+   const files={'existing-responses.json':raw['existing-responses.json'],'responses.csv':raw['responses.csv'],'logs.csv':raw['logs.csv'],'logs-api.json':raw['logs-api.json']||stringifyJSON(logs),'blank-native.xlsx':template,'browser.sqlite':sqlite,'browser-wide.xlsx':xlsx,'browser.result':result,'int64-input.json':stringifyJSON(probes),'browser-int64.sqlite':probeBytes};
    for(const [name,bytes]of Object.entries(files))await writeFile(join(dir,name),bytes);
-   await writeFile(join(dir,'expected.json'),JSON.stringify({study:study.id,arch,counts:meta.counts,fullGraphSHA256:modelHash(people),csvGraphSHA256:modelHash(csvPeople),csvSkippedLogRows,sqlTables,excelSheets,codingModelSHA256:modelHash(decoded),inputSHA256:Object.fromEntries(Object.entries(files).filter(([n])=>n!=='browser-wide.xlsx').map(([n,b])=>[n,sha256(b)]))},null,2)+'\n');
+   await writeFile(join(dir,'expected.json'),stringifyJSON({study:study.id,arch,counts:meta.counts,int64,fullGraphSHA256:modelHash(people),csvGraphSHA256:modelHash(csvPeople),csvSkippedLogRows,sqlTables,excelSheets,codingModelSHA256:modelHash(decoded),inputSHA256:Object.fromEntries(Object.entries(files).filter(([n])=>n!=='browser-wide.xlsx').map(([n,b])=>[n,sha256(b)]))},null,2)+'\n');
   }
  }
  console.log('Prepared both Testcenter cohorts for fresh x86/x64 Windows execution.');
@@ -68,6 +73,14 @@ async function compare(root){
   check(study.id,arch,'original CodingResults library SHA256',report.codingCommonSHA256,'4845bf183b80509f743dc87d6e5b211bd5c9757417a9ff08665278f27fda20a6');
   for(const [name,hash]of Object.entries(report.inputSHA256))check(study.id,arch,'input '+name,hash,expected.inputSHA256[name]);
   for(const step of ['toolbox-api-import','toolbox-csv-import','toolbox-read-browser-sqlite','toolbox-write-sqlite','toolbox-excel-export','coding-original-archive-codec'])check(study.id,arch,step,report[step],'passed');
+  check(study.id,arch,'original Int64 probe operations',report['toolbox-int64-log-probe'],'passed');
+  const probe=await json(join(dir,'native-int64-probe.json'));
+  check(study.id,arch,'Int64 API timestamps as exact decimal text',probe.api,expected.int64.timestamps);
+  check(study.id,arch,'Int64 CSV timestamps as exact decimal text',probe.csv,expected.int64.timestamps);
+  check(study.id,arch,'native SQLite provider reads browser Int64 values',probe.browserSqlite,expected.int64.timestamps);
+  check(study.id,arch,'Int64 original full graph',modelHash(await json(join(dir,'native-int64-people.json'))),expected.int64.fullGraphSHA256);
+  const probeDB=new OutputDatabase(SQL,await readFile(join(dir,'native-int64.sqlite')));
+  try{check(study.id,arch,'Int64 original SQLite full graph',modelHash(probeDB.people()),expected.int64.fullGraphSHA256);for(const [i,t]of tableModels(probeDB).entries())check(study.id,arch,'Int64 SQLite all fields '+t.name,t,expected.int64.sqlTables[i]);}finally{probeDB.close();}
   const graph=await json(join(dir,'native-api-people.json')),csvGraph=await json(join(dir,'native-csv-people.json'));
   check(study.id,arch,'API full graph',modelHash(graph),expected.fullGraphSHA256);check(study.id,arch,'CSV full graph',modelHash(csvGraph),expected.csvGraphSHA256);
   check(study.id,arch,'CSV skipped log rows',report.csvSkippedLogRows,expected.csvSkippedLogRows);
@@ -81,8 +94,8 @@ async function compare(root){
   }catch(error){checks.push({study:study.id,arch,name:'native capture files readable',passed:false,error:error.message});}
  }
  const result={synthetic:true,empiricalStudy:false,completeEquivalence:false,checks,captures,passed:checks.filter(c=>c.passed).length,total:checks.length,excluded:['SQLite db_info and sqlite_sequence metadata','XLSX styles and ZIP metadata; cells compared as text','Manual coding decisions and scan workflows','Empirical human study data']};
- await writeFile(join(root,'comparison.json'),JSON.stringify(result,null,2)+'\n');
- console.log('NATIVE_STUDY_REFERENCE_BEGIN');console.log(JSON.stringify(result));console.log('NATIVE_STUDY_REFERENCE_END');
+ await writeFile(join(root,'comparison.json'),stringifyJSON(result,null,2)+'\n');
+ console.log('NATIVE_STUDY_REFERENCE_BEGIN');console.log(stringifyJSON(result));console.log('NATIVE_STUDY_REFERENCE_END');
  assert.equal(result.passed,result.total,'Fresh Windows Testcenter study comparisons failed');
  console.log(result.passed+'/'+result.total+' fresh Windows study comparisons passed.');
 }
