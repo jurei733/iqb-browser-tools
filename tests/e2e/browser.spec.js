@@ -5,9 +5,8 @@ test('original templates, image decoders, workers, exports and browser storage',
   page.on('pageerror', error=>errors.push(error.message));
   // Collect the existing browser harness report without adding a public report endpoint.
   await page.route('**/__report__', route=>route.fulfill({status: 200, body: 'OK'}));
-  await page.goto('http://127.0.0.1:4174/tests/browser.html');
   const reported=page.waitForRequest(r=>r.method()==='POST'&&new URL(r.url()).pathname==='/__report__');
-  await page.locator('#run').click();
+  await page.goto('http://127.0.0.1:4174/tests/browser.html?run=1');
   const report=(await reported).postDataJSON();
   console.log(`Browser compatibility: ${report.passed}/${report.total} passed`);
   await testInfo.attach('browser-compatibility.json', {body: JSON.stringify(report,null,2), contentType:'application/json'});
