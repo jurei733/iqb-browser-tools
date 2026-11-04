@@ -1,4 +1,4 @@
-# IQB-Werkzeuge im Browser · Version 0.4.5
+# IQB-Werkzeuge im Browser · Version 0.4.6
 
 Portierung der Arbeitsabläufe von **IQB-Kodieren 4.3.0.3** und **itc-ToolBox 3.3.0.2**. Die Anwendung läuft als statische Website mit lokaler Dateiverarbeitung; eine Windows-Installation ist nicht erforderlich.
 
@@ -8,7 +8,11 @@ Ein frisch exportierter vorhandener Testcenter-Pilot umfasst **1.000 simulierte 
 
 Der Test läuft über `pnpm test` automatisch in der bestehenden CI. `pnpm test:study -- work/study-export` erzeugt zusätzlich die Eingabe- und Browser-Exportdateien. [Herkunft, Prüfumfang und erneuter Windows-Lauf](demo/testcenter/STUDY-PARITY.md); [Referenz mit Original-Prüfsummen](tests/fixtures/testcenter-study/reference.json).
 
-**Die Sitzungen liegen im echten Testcenter, ihre Antworten sind synthetisch.** Sie ersetzen keine empirischen Studiendaten. Vollständiger Studienabschluss, fachliche Freitextbewertungen und sämtliche GUI-Arbeitsabläufe werden durch diesen Datensatzvergleich nicht nachgewiesen. Ein zusätzlich geplanter 84-Personen-Pilot wurde wegen abgelehnter MCP-Schreibfreigabe nicht gestartet.
+**Die Sitzungen liegen im echten Testcenter, ihre Antworten sind synthetisch.** Sie ersetzen keine empirischen Studiendaten. Vollständiger Studienabschluss, fachliche Freitextbewertungen und sämtliche GUI-Arbeitsabläufe werden durch diesen Datensatzvergleich nicht nachgewiesen. Der zusätzliche **84-Personen-Pilot ist abgeschlossen**: 84 gesperrte Sitzungen, davon zwölf vorzeitig beendet, 504 Unit-Datensätze, 756 Antworten und 3.672 Logs. Die unabhängige Coding-Box-Prüfung bestätigt Code, Score und Status aller 756 Variablen; 137 Freitextbewertungen bleiben offen. Es wurden keine manuellen Bewertungen eingereicht.
+
+Der neue Windows-x64-CI-Lauf führt die Originale für **beide Kohorten und beide Prozessarchitekturen bei jedem Commit** aus: **144/144 strikte Vergleiche** bestehen. Der neue Pilot ergänzt zehn SQLite-Tabellen mit 6.613 fachlichen Zeilen, vier Excel-Blätter mit 4.080 Zelltexten und den Archivtransport von 137 unbewerteten Kommentaren. Der feste Pilot-Nachweis wird zusätzlich in Node und in Chromium, Firefox und WebKit geprüft. [Frischer Originalvergleich](tests/results/testcenter-native-20261104.json); [Pilot-Referenz](tests/fixtures/testcenter-pilot84/reference.json).
+
+**Korrigierter Windows-CSV-Modus:** Der ursprüngliche CSV-Logparser überspringt im neuen Pilot 24 Zeilen mit einer bestimmten Anführungszeichen-/Semikolonfolge. Beide Windows-Profile reproduzieren diesen Datenbestand und zeigen die übersprungene Anzahl an. Der erweiterte Standardmodus und der API-Import erhalten alle 3.672 Logs. Deshalb werden API- und CSV-Originalausgaben getrennt verglichen. Die API-basierten SQLite-/Excel-Dateien enthalten rohe Testcenter-Antworten; automatisch ermittelte Coding-Box-Wertungen werden separat als v1-CSV geprüft.
 
 ## Windows-Zahlenverarbeitung 0.4.5 vom 04.11.2026
 

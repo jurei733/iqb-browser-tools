@@ -12,13 +12,13 @@ import {OutputDatabase} from '../src/database.js';
 import {encodeResult,decodeResult} from '../src/coding.js';
 
 globalThis.DOMParser=DOMParser;globalThis.XMLSerializer=XMLSerializer;
-const fixture=new URL('../tests/fixtures/testcenter-study/',import.meta.url);
+const defaultFixture=new URL('../tests/fixtures/testcenter-study/',import.meta.url);
 export const canonical=value=>JSON.stringify(value,(_key,v)=>v&&typeof v==='object'&&!Array.isArray(v)?Object.fromEntries(Object.keys(v).sort().map(k=>[k,v[k]])):v);
 export const sha256=bytes=>createHash('sha256').update(bytes).digest('hex');
 export const modelHash=value=>sha256(canonical(value));
 export const workbookCells=workbook=>workbook.worksheets.map(s=>({name:s.name,rows:s.rowCount,columns:s.columnCount,values:Array.from({length:s.rowCount},(_,r)=>Array.from({length:s.columnCount},(_,c)=>s.getCell(r+1,c+1).text))}));
 
-export async function runStudyComparison(outputDirectory){
+export async function runStudyComparison(outputDirectory,fixture=defaultFixture){
   const reference=JSON.parse(await readFile(new URL('reference.json',fixture)));
   const packed=await readFile(new URL('input.json.gz',fixture));
   assert.equal(sha256(packed),reference.inputArchiveSHA256,'Unchanged Testcenter input archive');
@@ -28,7 +28,7 @@ export async function runStudyComparison(outputDirectory){
   assert.equal(sha256(blankTemplate),reference.blankTemplateSHA256,'Unchanged valid native XLSX template');
   const responses=JSON.parse(files['existing-responses.json']);
   const table=parseCSV(files['logs.csv'],';'),headers=table.shift();
-  const logs=table.filter(row=>row.some(Boolean)).map(row=>Object.fromEntries(headers.map((key,i)=>[key,row[i]])));
+  const logs=files['logs-api.json']?JSON.parse(files['logs-api.json']):table.filter(row=>row.some(Boolean)).map(row=>Object.fromEntries(headers.map((key,i)=>[key,row[i]])));
   assert.equal(responses.length,reference.counts.unitRows);assert.equal(logs.length,reference.counts.logs);
   const SQL=await initSqlJs(),checks=[];
   const check=(name,actual,expected)=>{assert.deepEqual(actual,expected,name);checks.push({name,passed:true});};
@@ -39,7 +39,7 @@ export async function runStudyComparison(outputDirectory){
     check(profile+' person count',people.length,reference.counts.people);
     check(profile+' response count',responseRecords(people).length,reference.counts.responses);
     const csvPeople=await readDataFiles(['responses.csv','logs.csv'].map(name=>({name,bytes:new TextEncoder().encode(files[name])})),{windows});
-    check(profile+' CSV full data graph',modelHash(csvPeople),reference.fullGraphSHA256);
+    check(profile+' CSV full data graph',modelHash(csvPeople),reference.csvGraphSHA256||reference.fullGraphSHA256);
     const db=new OutputDatabase(SQL);let bytes;
     try{
       db.import(people,{windows});check(profile+' database integrity',db.check().ok,true);bytes=db.exportWindows();
@@ -62,14 +62,14 @@ export async function runStudyComparison(outputDirectory){
     for(const p of people)for(const b of p.booklets)for(const u of b.units)for(const sf of u.subforms)for(const r of sf.responses){
       if(['reason','critique'].includes(r.id)&&r.value&&r.status==='VALUE_CHANGED')cases.push({testee:p.login,variable:{id:u.id+'_'+r.id,codes:[]},code:'',comment:r.value,time:new Date(Number(u.chunks[0].ts)).toISOString()});
     }
-    const job={id:'Testcenter-Codec-A85A58E88AE4',label:'Synthetische Testcenter-Freitexte, reine Codecprobe',variables:[...new Set(cases.map(c=>c.variable.id))].map(id=>({id,codes:[]})),cases};
+    const job={id:reference.codecId||'Testcenter-Codec-A85A58E88AE4',label:'Synthetische Testcenter-Freitexte, reine Codecprobe',variables:[...new Set(cases.map(c=>c.variable.id))].map(id=>({id,codes:[]})),cases};
     const result=encodeResult(job,'Synthetische Codecprobe','Keine Bewertung oder manuelle Einreichung',{windows:true});
     const decoded=decodeResult(result);
     check(profile+' unscored comment count',decoded.entries.length,reference.counts.codingComments);
     check(profile+' original archive reader/writer model',modelHash(decoded),reference.codingModelSHA256);
     if(!outputs)outputs={...files,'blank-native.xlsx':blankTemplate,'logs-api.json':JSON.stringify(logs),'browser.sqlite':bytes,'browser-wide.xlsx':xlsx,'browser-long.csv':longCSV(people),'browser.result':result};
   }
-  const report={synthetic:true,empiricalStudy:false,source:reference.source,counts:reference.counts,checks,limitations:reference.limitations};
+  const report={synthetic:true,empiricalStudy:false,source:reference.source,counts:reference.counts,csvSkippedLogRows:reference.csvSkippedLogRows||0,checks,limitations:reference.limitations};
   if(outputDirectory){
     await mkdir(outputDirectory,{recursive:true});
     for(const [name,data]of Object.entries(outputs))await writeFile(join(outputDirectory,name),data);
@@ -81,7 +81,8 @@ export async function runStudyComparison(outputDirectory){
 
 if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){
   const args=process.argv.slice(2);if(args[0]==='--')args.shift();
-  assert(args.length<=1,'Usage: node scripts/testcenter-study.mjs [OUTPUT_DIRECTORY]');
-  const report=await runStudyComparison(args[0]&&resolve(args[0]));
+  assert(args.length<=2&&(!args[1]||['cohort1000','pilot84'].includes(args[1])),'Usage: node scripts/testcenter-study.mjs [OUTPUT_DIRECTORY] [cohort1000|pilot84]');
+  const selected=args[1]==='pilot84'?new URL('../tests/fixtures/testcenter-pilot84/',import.meta.url):defaultFixture;
+  const report=await runStudyComparison(args[0]&&resolve(args[0]),selected);
   console.log(report.checks.length+'/'+report.checks.length+' Testcenter study comparisons passed (synthetic, not empirical).');
 }

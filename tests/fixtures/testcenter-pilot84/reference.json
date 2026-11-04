@@ -1,0 +1,294 @@
+{
+  "synthetic": true,
+  "empiricalStudy": false,
+  "source": "MCP participant-API pilot on 2026-11-04",
+  "group_id": "MCP_SIM_1574B8D03210",
+  "job_id": "187fe223-2be4-4a81-815d-116c47982173",
+  "codecId": "Testcenter-Codec-1574B8D03210",
+  "inputArchiveSHA256": "f4a44299ea01ebfd6af8538e47bc9fa07ea17985e195e7d42d65fb74e720e095",
+  "blankTemplateSHA256": "acb5e92ec4de302b2f00cca11a6a1b3c384ea9542aa0e47ac85ef26a9df5b384",
+  "rawFileSHA256": {
+    "existing-responses.json": "f000d3333ea08340a77a9e56d94b1a223c44bce9511d1dcd1a6749eee29987ab",
+    "responses.csv": "c1d4a5412a4836580e145d7d12e03fa0cf384a748718eb01dbb3e4e58ce0c93f",
+    "logs.csv": "e80c380481dfad51e24439becaa286d5a41845aac936adc91f05937e5c160143",
+    "logs-api.json": "4f245e0f89f48862db242c8f520d97c222a3676194454642bdff73582d32afc9"
+  },
+  "counts": {
+    "people": 84,
+    "booklets": 84,
+    "unitRows": 504,
+    "responses": 756,
+    "logs": 3672,
+    "codingComments": 137,
+    "sqlDomainRows": 6613,
+    "excelCells": 4080
+  },
+  "verification": {
+    "locked_persons": 84,
+    "early_ends": 12,
+    "testcenter": {
+      "persons": 84,
+      "unit_sessions": 504,
+      "response_values_verified": 756,
+      "source_sha256": "2819b205d9afa35543159fcebb77a0c8dc8d3410ffb0e086b94ca4608077c0ba"
+    },
+    "logs": {
+      "log_rows": 3672,
+      "simulation_events_verified": 1872,
+      "groups": 1,
+      "virtual_timeline": true
+    },
+    "coding": {
+      "variables_verified": 756,
+      "codes_verified": 756,
+      "scores_verified": 756,
+      "statuses_verified": 756,
+      "total_score": 294,
+      "manual_pending": 137,
+      "automatic_complete": 518,
+      "status_counts": {
+        "CODING_COMPLETE": 518,
+        "NOT_REACHED": 72,
+        "DISPLAYED": 29,
+        "CODING_INCOMPLETE": 137
+      },
+      "uncoded_derived_variables": [],
+      "uncoded_derived_output_cases_not_exported": 0
+    }
+  },
+  "behaviors": {
+    "dropout": 12,
+    "navigation": 12,
+    "pause_resume": 12,
+    "rapid": 12,
+    "normal": 12,
+    "answer_changes": 12,
+    "distracted": 12
+  },
+  "limitations": [
+    "Simulated participant-API data, not empirical human study data or a browser/player interaction test.",
+    "137 free-text ratings remain pending; no manual scores were invented."
+  ],
+  "capturedOn": "2026-11-04",
+  "sourceCommit": "d198986ffac63e75810fc6b5f7755ea8c685b032",
+  "workflowRun": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41823004471",
+  "fullGraphSHA256": "e47d9006068e8feb2501d9ebbe6fda2198006e719efa41aa2cba5e4aa47504cb",
+  "csvGraphSHA256": "9abec62391db813fce3723ff4ac771394e3648cf40b33d8c2e3766ab3b9ec2b8",
+  "csvSkippedLogRows": 24,
+  "sqlTables": [
+    {
+      "name": "person",
+      "columns": [
+        "id",
+        "group",
+        "login",
+        "code"
+      ],
+      "rows": 84,
+      "sha256": "3941517983138f3cd84cf72c725dcf9d22df0c0121a27477fbc501fb90ee5c73"
+    },
+    {
+      "name": "bookletInfo",
+      "columns": [
+        "id",
+        "name",
+        "size"
+      ],
+      "rows": 1,
+      "sha256": "84403fc4b417515db3607f72f39def50581c96a13adfcd4844500595c1aa2614"
+    },
+    {
+      "name": "booklet",
+      "columns": [
+        "id",
+        "infoId",
+        "personId",
+        "lastTs",
+        "firstTs"
+      ],
+      "rows": 84,
+      "sha256": "38257fcc257ce7235a0eb29ede485f9579c16fa791d45fe1bb16d70b1a547cb8"
+    },
+    {
+      "name": "session",
+      "columns": [
+        "bookletId",
+        "browser",
+        "os",
+        "screen",
+        "ts",
+        "loadCompleteMS"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "bookletLog",
+      "columns": [
+        "bookletId",
+        "key",
+        "parameter",
+        "ts"
+      ],
+      "rows": 960,
+      "sha256": "4d1f9c689fbc815ba2a087d8191a532b8e8210ef3369945202756219463b0b2d"
+    },
+    {
+      "name": "unit",
+      "columns": [
+        "id",
+        "bookletId",
+        "name",
+        "alias"
+      ],
+      "rows": 504,
+      "sha256": "50f20f05256c506ae92bcfa09391f3975b48863479e83416dcd76232248acb89"
+    },
+    {
+      "name": "unitLog",
+      "columns": [
+        "unitId",
+        "key",
+        "parameter",
+        "ts"
+      ],
+      "rows": 2712,
+      "sha256": "a73b2f599f6f7a2590df7a25df12ce2bd4a7602c9cb0c3c7f66ac7d2a94bc1f1"
+    },
+    {
+      "name": "unitLastState",
+      "columns": [
+        "unitId",
+        "key",
+        "value"
+      ],
+      "rows": 1008,
+      "sha256": "e871fc45fda16b906ee525ecf362493bc80c4cd9cf13d053846f3234792f564b"
+    },
+    {
+      "name": "chunk",
+      "columns": [
+        "unitId",
+        "key",
+        "type",
+        "variables",
+        "ts"
+      ],
+      "rows": 504,
+      "sha256": "1983be4345f86a833b2a7215244b26a559a2198cb3c075d1a9b3ae0214973c9c"
+    },
+    {
+      "name": "response",
+      "columns": [
+        "unitId",
+        "variableId",
+        "status",
+        "value",
+        "subform",
+        "code",
+        "score"
+      ],
+      "rows": 756,
+      "sha256": "097d5ffb8a2f00b4a57b44d6103d1453aeac83bb432bb114fbbd45d4572b5284"
+    }
+  ],
+  "excelSheets": [
+    {
+      "name": "Antworten",
+      "cells": {
+        "rows": 85,
+        "columns": 12,
+        "sha256": "86e6a337cce83e4999989e7a80468ef9f8ca1aee8269729fd25d4a52cb39b66b"
+      }
+    },
+    {
+      "name": "Status",
+      "cells": {
+        "rows": 85,
+        "columns": 12,
+        "sha256": "75bf6ef5736fc9c795c559827eb629dd930d1c548e29932f637ef5b23cee4b61"
+      }
+    },
+    {
+      "name": "Codes",
+      "cells": {
+        "rows": 85,
+        "columns": 12,
+        "sha256": "a448ec3652f1a6296584fd50ce0d9abc39760fccb8208eae26d7f6000eef41d7"
+      }
+    },
+    {
+      "name": "Scores",
+      "cells": {
+        "rows": 85,
+        "columns": 12,
+        "sha256": "a448ec3652f1a6296584fd50ce0d9abc39760fccb8208eae26d7f6000eef41d7"
+      }
+    }
+  ],
+  "codingModelSHA256": "0df47527a393e7f3dce08f44031ae955f13f76c4e630de68f3f6e81da5a9ae39",
+  "nativeReports": [
+    {
+      "synthetic": true,
+      "empiricalStudy": false,
+      "started": "2026-11-04T11:45:16.1175805Z",
+      "processBits": 32,
+      "nativeMachine": "8664",
+      "processMachine": "014c",
+      "culture": "de-DE",
+      "timezone": "W. Europe Standard Time",
+      "toolboxSHA256": "c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1",
+      "codingCommonSHA256": "4845bf183b80509f743dc87d6e5b211bd5c9757417a9ff08665278f27fda20a6",
+      "inputSHA256": {
+        "existing-responses.json": "f000d3333ea08340a77a9e56d94b1a223c44bce9511d1dcd1a6749eee29987ab",
+        "responses.csv": "c1d4a5412a4836580e145d7d12e03fa0cf384a748718eb01dbb3e4e58ce0c93f",
+        "logs.csv": "e80c380481dfad51e24439becaa286d5a41845aac936adc91f05937e5c160143",
+        "logs-api.json": "4f245e0f89f48862db242c8f520d97c222a3676194454642bdff73582d32afc9",
+        "browser.sqlite": "3d86064596a4a713062f809cc214c0b8b5c7cc90800e718b5fc8bb4ad0a7303a",
+        "browser.result": "dbb3f74bb2c57f316223dddcd52aa2a109de3d5ac2e29308d05abf764630bce3",
+        "blank-native.xlsx": "acb5e92ec4de302b2f00cca11a6a1b3c384ea9542aa0e47ac85ef26a9df5b384"
+      },
+      "people": 84,
+      "toolbox-api-import": "passed",
+      "csvSkippedResponseRows": 0,
+      "csvSkippedLogRows": 24,
+      "toolbox-csv-import": "passed",
+      "toolbox-read-browser-sqlite": "passed",
+      "toolbox-write-sqlite": "passed",
+      "toolbox-excel-export": "passed",
+      "coding-original-archive-codec": "passed",
+      "finished": "2026-11-04T11:45:17.6989680Z"
+    },
+    {
+      "synthetic": true,
+      "empiricalStudy": false,
+      "started": "2026-11-04T11:45:17.9649622Z",
+      "processBits": 64,
+      "nativeMachine": "8664",
+      "processMachine": "0000",
+      "culture": "de-DE",
+      "timezone": "W. Europe Standard Time",
+      "toolboxSHA256": "c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1",
+      "codingCommonSHA256": "4845bf183b80509f743dc87d6e5b211bd5c9757417a9ff08665278f27fda20a6",
+      "inputSHA256": {
+        "existing-responses.json": "f000d3333ea08340a77a9e56d94b1a223c44bce9511d1dcd1a6749eee29987ab",
+        "responses.csv": "c1d4a5412a4836580e145d7d12e03fa0cf384a748718eb01dbb3e4e58ce0c93f",
+        "logs.csv": "e80c380481dfad51e24439becaa286d5a41845aac936adc91f05937e5c160143",
+        "logs-api.json": "4f245e0f89f48862db242c8f520d97c222a3676194454642bdff73582d32afc9",
+        "browser.sqlite": "45ad7cfbb8db4fcc2d7af4401c939d4649bd1a2ee757523d761de09b886a62a5",
+        "browser.result": "6699b35bf3b315ac69aae507c206a7b6a13568584599c78d4f64ff48b8ab58b2",
+        "blank-native.xlsx": "acb5e92ec4de302b2f00cca11a6a1b3c384ea9542aa0e47ac85ef26a9df5b384"
+      },
+      "people": 84,
+      "toolbox-api-import": "passed",
+      "csvSkippedResponseRows": 0,
+      "csvSkippedLogRows": 24,
+      "toolbox-csv-import": "passed",
+      "toolbox-read-browser-sqlite": "passed",
+      "toolbox-write-sqlite": "passed",
+      "toolbox-excel-export": "passed",
+      "coding-original-archive-codec": "passed",
+      "finished": "2026-11-04T11:45:19.6021472Z"
+    }
+  ]
+}

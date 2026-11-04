@@ -31,11 +31,12 @@ In diesem Vergleich wurde kein weiterer Produktfehler gefunden. Die erste native
 pnpm install --frozen-lockfile
 pnpm test:study
 pnpm test:study -- work/study-export
+pnpm test:study -- work/pilot84-export pilot84
 ```
 
 Der erste Befehl nach der Installation vergleicht den aktuellen Browsercode mit den erfassten Windows-Referenzwerten. Der zweite legt zusätzlich Rohdaten, Log-DTOs, SQLite, Excel, langes CSV, unbewertete Kommentar-Archivprobe und Vergleichsbericht ab. Das lange CSV ist ein zusätzlicher Browserexport; für diese Datei wird hier kein neuer Vergleich mit dem Original behauptet.
 
-`tests/testcenter-study.test.js` führt dieselben 66 Prüfungen in der bestehenden Node-22/24-CI aus. Der Linux-Test führt die Original-Assemblies nicht erneut aus. Die separate bestehende Windows-CI prüft weiterhin ihre Zahlen-/Konverterkorpora; der neue große Testcenter-Datensatz ist dort noch kein frischer Windows-Lauf je Commit.
+`tests/testcenter-study.test.js` führt dieselben 66 Prüfungen in der bestehenden Node-22/24-CI aus. Der Linux-Test führt die Original-Assemblies nicht erneut aus. Die separate Windows-CI führt inzwischen zusätzlich die Original-Assemblies für beide Kohorten in x86 und x64 auf einem Windows-x64-Runner erneut aus. `node scripts/native-study.mjs prepare work/native-studies`, `scripts/Run-Native-Study.ps1` und `node scripts/native-study.mjs compare work/native-studies` bilden diesen frischen Lauf ab. Der archivierte Bericht `tests/results/testcenter-native-20261104.json` enthält 144/144 erfolgreiche Vergleiche aus Lauf 41823004471. Die älteren ARM-VM-Belege oben bleiben unverändert als historische Referenz erhalten.
 
 Für eine erneute Erfassung unter Windows:
 
@@ -50,8 +51,22 @@ Für eine erneute Erfassung unter Windows:
 
 Je Architektur einen neuen Ordner verwenden: Der Helfer verweigert das Überschreiben einer bereits vorhandenen `native.sqlite`. `native-report.json` enthält Eingabe- und Original-Prüfsummen, Architektur, Kultur und Ergebnisse jeder Originaloperation. Native Ausgaben müssen erneut mit dem aktuellen Datengraphen, den SQL-Feldwerten und den Excel-Zellwerten verglichen werden; ein erfolgreicher Programmstart allein ist kein Gleichheitsnachweis.
 
-## Offener Umfang
+## Abgeschlossener zusätzlicher Pilot mit 84 Personen
 
-Ein weiterer Pilot mit 84 simulierten Personen und zusätzlichen Textvarianten wurde vorbereitet und mit dem aktuellen Studio-Schema validiert. Der MCP-Start wurde vor Ausführung mit `APPROVAL_DECLINED` abgelehnt. Er wurde nicht über einen lokalen API-Aufruf umgangen. Die hierfür vorgesehene Gruppe ist nicht Teil dieses Nachweises.
+Nach ausdrücklicher Freigabe und Reparatur der Formularweiterleitung wurde Job `187fe223-2be4-4a81-815d-116c47982173` regulär über die IQB-MCP-Anbindung gestartet und erfolgreich abgeschlossen. Gruppe `MCP_SIM_1574B8D03210` enthält 84 gesperrte simulierte Sitzungen, zwölf davon vorzeitig beendet, 504 Unit-Datensätze, 756 Antworten und 3.672 Logs. Sieben Verhaltensprofile sind mit je zwölf Personen vertreten: normal, rapid, answer_changes, navigation, pause_resume, dropout und distracted. Dies sind Teilnehmer-API-Simulationen, keine menschliche Browser-/Playerbedienung.
+
+Die Studio-Quellrevision und die unabhängige Coding-Box-Prüfung stehen in `tests/fixtures/testcenter-pilot84/source.json`. Codes, Scores und Status aller 756 Variablen wurden bestätigt: 518 CODING_COMPLETE, 137 CODING_INCOMPLETE, 72 NOT_REACHED und 29 DISPLAYED; Gesamtscore 294. 137 Freitextbewertungen bleiben offen. Keine manuelle Bewertung wurde erfunden oder eingereicht. Das separate Coding-Box-v1-CSV enthält die automatischen Wertungen; die API-basierten Browser-SQLite-/Excel-Dateien enthalten die rohen Testcenter-Antworten und übernehmen diese Wertungen nicht stillschweigend.
+
+Die unveränderten API-Exporte und CSV-Rohtexte liegen komprimiert in `tests/fixtures/testcenter-pilot84/input.json.gz`; Herkunft und Prüfsummen stehen nebenan. Anders als bei der älteren Kohorte wurden die Log-DTOs hier direkt exportiert. Zugangsdaten und Testtaker-Pakete werden weder eingecheckt noch in das Nachweispaket aufgenommen.
+
+Der frische native x86-/x64-Lauf bestätigt vollständige API- und CSV-Datengraphen, zehn fachliche SQLite-Tabellen mit 6.613 Zeilen, vier Excel-Blätter mit zusammen 4.080 Zelltexten und 137 unbewertete Archivkommentare. Beide Profile liefern dieselben Hashes für diese Pilotdaten. `tests/fixtures/testcenter-pilot84/reference.json` bindet diese Originalausgaben; die zusätzliche Node-Prüfung umfasst 66 Vergleiche. Der echte Browser-Worker prüft API, CSV, SQLite und Excel in Chromium, Firefox und WebKit.
+
+### Gefundener CSV-Unterschied
+
+Der Originalparser zerlegt physische Zeilen zunächst an `";`, bei falscher Spaltenzahl an `;`. Bei 24 Logs mit einer bestimmten Anführungszeichen-/Semikolonfolge liefert er null; die Originaloberfläche überspringt diese Zeilen. Unser erster nativer Prüfharness hatte null fälschlich als Ausnahme behandelt. Er bildet nun das tatsächliche Überspringen ab und protokolliert dessen Anzahl. Die Produktkorrektur reproduziert das Verhalten ausschließlich in den ausdrücklich gewählten Windows-Profilen und zeigt eine Warnung an. Der Standardmodus und der API-Import behalten alle 3.672 Logs; Windows-CSV enthält 3.648. Die unveränderten Antwortwerte bleiben erhalten.
+
+API-Graph SHA-256: `e47d9006068e8feb2501d9ebbe6fda2198006e719efa41aa2cba5e4aa47504cb`. Windows-CSV-Graph SHA-256: `9abec62391db813fce3723ff4ac771394e3648cf40b33d8c2e3766ab3b9ec2b8`. Die getrennten Erwartungen sind wichtig: Eine Gleichsetzung von API und CSV würde hier das Verhalten des Originals verdecken.
+
+## Offener Umfang
 
 Empirische Studienbestände, sämtliche Dateien, Sonderfälle, menschliche Interaktionen und fachliche Bewertungen bleiben außerhalb dieses Vergleichs. Die gezeigte Gleichheit gilt ausschließlich für die beschriebenen Daten und Operationen in den ausdrücklich gewählten Windows-Profilen.

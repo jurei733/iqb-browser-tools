@@ -44,5 +44,15 @@
     "workspacesListed": 7,
     "scope": "Known pilot, simulation and SQLite round-trip workspaces; no empirical provenance established."
   },
-  "assessment": "Accessible metadata identifies pilot/simulation stocks. Empirical or anonymised study files are still unavailable for the reference comparison. This inspection does not establish the absence of such files elsewhere."
+  "assessment": "Accessible metadata identifies pilot/simulation stocks. Empirical or anonymised study files are still unavailable for the reference comparison. This inspection does not establish the absence of such files elsewhere.",
+  "subsequentSyntheticPilot": {
+    "date": "2026-11-04",
+    "status": "succeeded",
+    "group": "MCP_SIM_1574B8D03210",
+    "jobId": "187fe223-2be4-4a81-815d-116c47982173",
+    "participants": 84,
+    "method": "participant-api",
+    "empirical": false,
+    "source": "tests/fixtures/testcenter-pilot84/source.json"
+  }
 }

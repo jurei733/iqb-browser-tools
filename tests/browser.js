@@ -130,4 +130,26 @@ check('Windows-x64-Runner: 1214 Eingaben je Profil, 13 API-Fälle und Kodierer; 
  const saved=JSON.parse(strFromU8(await task('db-export',{format:'json'})));assert(saved[0].booklets[0].units[0].subforms[0].responses[0].value===null,'Worker verlor SQL-NULL');assert(saved[0].booklets[0].units[0].laststate[0].value===null,'Worker verlor Zustands-NULL');
 });
 check('CLR-Zahlenprofile: je 8373 feste Proben mit identischen Binärwerten und G15/G17/R',async()=>{const report=await nativeReport();assert(report.summary.numericDiagnostics.uniqueInputs===8373);assert(report.numericChecks.length===16746&&report.numericChecks.every(c=>c.passed));assertNativeRegressionScope(report);});
+check('Testcenter-Pilot84: API, Windows-CSV mit 24 übersprungenen Logs und Standardmodus im Worker',async()=>{
+ const reference=JSON.parse(strFromU8(await get('/fixtures/testcenter-pilot84/reference.json'))),packed=await get('/fixtures/testcenter-pilot84/input.json.gz');
+ // Static servers may set Content-Encoding: gzip, which fetch already decodes.
+ const raw=JSON.parse(strFromU8(packed[0]===31&&packed[1]===139?gunzipSync(packed):packed));
+ const responses=JSON.parse(raw['existing-responses.json']),logs=JSON.parse(raw['logs-api.json']),hash=async v=>sha256(strToU8(canonical(v))),warnings=[];
+ for(const windows of [true,'64']){
+  await task('dto',{responses,logs,windows});const people=JSON.parse(strFromU8(await task('export-data',{format:'json'})));
+  assert(people.length===84&&D.responseRecords(people).length===756);assert(await hash(people)===reference.fullGraphSHA256,'API-Graph');
+  await task('new-db');await task('db-import',{windows});const sqlite=await task('db-save',{format:'windows'});await task('open-db',{bytes:sqlite});assert((await task('db-check')).ok);
+  assert(await hash(JSON.parse(strFromU8(await task('db-export',{format:'json'}))))===reference.fullGraphSHA256,'SQLite-Graph');
+  const workbook=await T.loadWorkbook(await task('db-export',{format:'xlsx'}));
+  for(const [i,sheet]of workbook.worksheets.entries()){
+   const expected=reference.excelSheets[i],cells=Array.from({length:sheet.rowCount},(_,r)=>Array.from({length:sheet.columnCount},(_,c)=>sheet.getCell(r+1,c+1).text));
+   assert(sheet.name===expected.name&&sheet.rowCount===expected.cells.rows&&sheet.columnCount===expected.cells.columns);assert(await hash(cells)===expected.cells.sha256,'Excel '+sheet.name);
+  }
+  await task('load-data',{files:['responses.csv','logs.csv'].map(name=>file(name,strToU8(raw[name]))),options:{windows}},message=>warnings.push(message));
+  assert(await hash(JSON.parse(strFromU8(await task('export-data',{format:'json'}))))===reference.csvGraphSHA256,'Windows-CSV-Graph');
+ }
+ assert(warnings.length===2&&warnings.every(m=>m.includes('24 Logzeilen')),'Übersprungene Zeilen müssen sichtbar sein');
+ await task('load-data',{files:['responses.csv','logs.csv'].map(name=>file(name,strToU8(raw[name])))});
+ const standard=JSON.parse(strFromU8(await task('export-data',{format:'json'}))),count=standard.reduce((n,p)=>n+p.booklets.reduce((n,b)=>n+b.logs.length+b.units.reduce((n,u)=>n+u.logs.length,0),0),0);assert(count===3672,'Standardmodus verlor Logs');
+});
 $('#run').onclick=async()=>{const button=$('#run');button.disabled=true;$('#results').replaceChildren();const report={userAgent:navigator.userAgent,started:new Date().toISOString(),checks:[]};let passed=0;for(const {name,fn}of checks){$('#status').textContent=name;const li=document.createElement('li');try{await fn();passed++;li.className='ok';li.textContent='✓ '+name;report.checks.push({name,passed:true});}catch(e){li.className='fail';li.textContent='✗ '+name+' — '+e.message;report.checks.push({name,passed:false,error:e.message,stack:e.stack});}$('#results').append(li);}report.passed=passed;report.total=checks.length;report.finished=new Date().toISOString();$('#status').textContent=`${passed} / ${checks.length} erfolgreich`;$('#download').href=URL.createObjectURL(new Blob([JSON.stringify(report,null,2)],{type:'application/json'}));$('#download').download='Browser-Pruefbericht.json';$('#download').hidden=false;try{await fetch('/__report__',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(report)});}catch{}button.disabled=false;};
