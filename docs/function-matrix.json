@@ -293,7 +293,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-int64.json",
+          "path": "tests/results/function-audit-ci-20261104-gui.json",
           "pattern": "last coding workspace"
         },
         {
@@ -303,7 +303,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-int64.json",
+          "path": "tests/results/function-audit-ci-20261104-gui.json",
           "pattern": "local starter: account"
         }
       ]
@@ -731,7 +731,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-int64.json",
+          "path": "tests/results/function-audit-ci-20261104-gui.json",
           "pattern": "physical zoom"
         }
       ]
@@ -756,7 +756,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-int64.json",
+          "path": "tests/results/function-audit-ci-20261104-gui.json",
           "pattern": "physical zoom"
         }
       ]
@@ -819,7 +819,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-int64.json",
+          "path": "tests/results/function-audit-ci-20261104-gui.json",
           "pattern": "physical zoom"
         }
       ]
@@ -848,7 +848,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-int64.json",
+          "path": "tests/results/function-audit-ci-20261104-gui.json",
           "pattern": "shared position"
         }
       ]
@@ -867,7 +867,7 @@
         "src/coding.js"
       ],
       "assessment": "implemented",
-      "note": " Zusätzlich 22 Ergebnisdateien in beiden Richtungen mit Originalserializer/-Reader geprüft; zwei XML-Steuerzeichenfälle werden beidseitig abgewiesen.",
+      "note": " Zusätzlich 22 Ergebnisdateien in beiden Richtungen mit Originalserializer/-Reader geprüft; zwei XML-Steuerzeichenfälle werden beidseitig abgewiesen. Direkter GUI-Beleg vom 04.11.2026: Originaldatei mit Code 0, Kommentar und Code 1 nach Neustart; Ergebnisbezeichnung und sämtliche importierten Zeitstempel bleiben erhalten.",
       "acceptance": "Original-Ergebnisdateien Version 5 lesen.",
       "evidence": [
         {
@@ -883,6 +883,11 @@
           "kind": "node",
           "file": "tests/windows-edges.test.js",
           "pattern": "Original CodingResults codec reads"
+        },
+        {
+          "kind": "node",
+          "file": "tests/gui-reference.test.js",
+          "pattern": "^Windows coding GUI capture:"
         }
       ]
     },
@@ -900,7 +905,7 @@
         "src/coding.js"
       ],
       "assessment": "implemented",
-      "note": " Zusätzlich 22 Ergebnisdateien in beiden Richtungen mit Originalserializer/-Reader geprüft; zwei XML-Steuerzeichenfälle werden beidseitig abgewiesen.",
+      "note": " Zusätzlich 22 Ergebnisdateien in beiden Richtungen mit Originalserializer/-Reader geprüft; zwei XML-Steuerzeichenfälle werden beidseitig abgewiesen. Direkter GUI-Beleg vom 04.11.2026: Originaldatei mit Code 0, Kommentar und Code 1 nach Neustart; Ergebnisbezeichnung und sämtliche importierten Zeitstempel bleiben erhalten.",
       "acceptance": "Original-Ergebnisdateien schreiben und mit Windows öffnen.",
       "evidence": [
         {
@@ -911,6 +916,11 @@
           "kind": "node",
           "file": "tests/windows-edges.test.js",
           "pattern": "Original CodingResults codec reads"
+        },
+        {
+          "kind": "node",
+          "file": "tests/gui-reference.test.js",
+          "pattern": "^Windows coding GUI capture:"
         }
       ]
     },
@@ -929,7 +939,7 @@
         "src/main.js"
       ],
       "assessment": "implemented",
-      "note": "",
+      "note": " Direkter GUI-Beleg vom 04.11.2026: Originaldatei mit Code 0, Kommentar und Code 1 nach Neustart; Ergebnisbezeichnung und sämtliche importierten Zeitstempel bleiben erhalten.",
       "acceptance": "Ergebnisse beim Joböffnen bzw. nachträglich übernehmen.",
       "evidence": [
         {
@@ -940,6 +950,11 @@
         {
           "kind": "browser",
           "pattern": "GZip-Ergebnisse"
+        },
+        {
+          "kind": "node",
+          "file": "tests/gui-reference.test.js",
+          "pattern": "^Windows coding GUI capture:"
         }
       ]
     },
@@ -966,7 +981,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-int64.json",
+          "path": "tests/results/function-audit-ci-20261104-gui.json",
           "pattern": "original result boundary"
         }
       ]
@@ -999,7 +1014,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-int64.json",
+          "path": "tests/results/function-audit-ci-20261104-gui.json",
           "pattern": "last coding workspace"
         },
         {
@@ -1009,7 +1024,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-int64.json",
+          "path": "tests/results/function-audit-ci-20261104-gui.json",
           "pattern": "local starter: account"
         }
       ]
@@ -1033,7 +1048,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-int64.json",
+          "path": "tests/results/function-audit-ci-20261104-gui.json",
           "pattern": "physical zoom"
         }
       ]
@@ -1057,7 +1072,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-int64.json",
+          "path": "tests/results/function-audit-ci-20261104-gui.json",
           "pattern": "completed job flashes"
         }
       ]
@@ -1131,7 +1146,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-int64.json",
+          "path": "tests/results/function-audit-ci-20261104-gui.json",
           "pattern": "codes and booklets"
         }
       ]
@@ -1512,7 +1527,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-int64.json",
+          "path": "tests/results/function-audit-ci-20261104-gui.json",
           "pattern": "without XML match Windows"
         }
       ]
@@ -1645,7 +1660,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-int64.json",
+          "path": "tests/results/function-audit-ci-20261104-gui.json",
           "pattern": "full diagnostics"
         }
       ]
@@ -1737,7 +1752,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-int64.json",
+          "path": "tests/results/function-audit-ci-20261104-gui.json",
           "pattern": "Windows mode: raw API files"
         },
         {
@@ -1985,7 +2000,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-int64.json",
+          "path": "tests/results/function-audit-ci-20261104-gui.json",
           "pattern": "Windows mode: raw API files"
         }
       ],
@@ -2012,12 +2027,17 @@
         "src/data.js"
       ],
       "assessment": "implemented",
-      "note": "",
+      "note": " Direkter GUI-Beleg vom 04.11.2026: Original-Toolbox exportiert dieselbe Drei-Personen-SQLite-Datei mit allen 20 Zelltexten identisch.",
       "acceptance": "Breites Excel: Unterformulare ignorieren.",
       "evidence": [
         {
           "kind": "windows-files",
           "pattern": "Toolbox Excel: none"
+        },
+        {
+          "kind": "node",
+          "file": "tests/gui-reference.test.js",
+          "pattern": "^Windows Toolbox GUI capture:"
         }
       ]
     },
@@ -2454,7 +2474,7 @@
         "src/extended-ui.js"
       ],
       "assessment": "implemented",
-      "note": "",
+      "note": " Direkter GUI-Beleg vom 04.11.2026: Original-Toolbox exportiert dieselbe Drei-Personen-SQLite-Datei mit allen 20 Zelltexten identisch.",
       "acceptance": "Datenbank nach Excel, Antwort-CSV und Sessions ausgeben.",
       "evidence": [
         {
@@ -2466,6 +2486,11 @@
           "kind": "node",
           "file": "tests/extended.test.js",
           "pattern": "long and multi-session"
+        },
+        {
+          "kind": "node",
+          "file": "tests/gui-reference.test.js",
+          "pattern": "^Windows Toolbox GUI capture:"
         }
       ]
     },
@@ -2544,7 +2569,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-int64.json",
+          "path": "tests/results/function-audit-ci-20261104-gui.json",
           "pattern": "group selection and workspace changes"
         }
       ]
@@ -2742,7 +2767,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-int64.json",
+          "path": "tests/results/function-audit-ci-20261104-gui.json",
           "pattern": "access can be remembered"
         }
       ]
@@ -2768,7 +2793,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-int64.json",
+          "path": "tests/results/function-audit-ci-20261104-gui.json",
           "pattern": "preparation cancellation"
         }
       ]
@@ -2797,12 +2822,12 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-int64.json",
+          "path": "tests/results/function-audit-ci-20261104-gui.json",
           "pattern": "last coding workspace"
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-int64.json",
+          "path": "tests/results/function-audit-ci-20261104-gui.json",
           "pattern": "selected Toolbox input files"
         },
         {
@@ -2812,7 +2837,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-int64.json",
+          "path": "tests/results/function-audit-ci-20261104-gui.json",
           "pattern": "local starter: account"
         }
       ]
@@ -3043,7 +3068,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-int64.json",
+          "path": "tests/results/function-audit-ci-20261104-gui.json",
           "pattern": "physical zoom"
         }
       ]
@@ -3068,7 +3093,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-int64.json",
+          "path": "tests/results/function-audit-ci-20261104-gui.json",
           "pattern": "startup defaults"
         }
       ],
@@ -3116,5 +3141,5 @@
     "Firefox wird in GitHub Actions auf Linux geprüft; der macOS-Playwright-Build startet in dieser Umgebung mit einem Profilordnerfehler nicht. WebKit-Prüfungen sind kein Test einer installierten Safari-Version.",
     "Die historischen sechs ARM/x86-Abweichungen sind keine allgemeinen Windows-x86-Abweichungen. Der neue Windows-x64-Runner prüft beide Bitbreiten direkt: 1214/1214 im 64-Bit-Profil, 1214/1214 im 32-Bit-Profil. Die früheren G17-Textabweichungen sind durch Nachbildung der x87-/BCD-Rundung behoben. Zusätzliche CLR-Zahlenproben sind getrennt von den vollständigen Konverterfällen ausgewiesen."
   ],
-  "ciReport": "tests/results/function-audit-ci-20261104-int64.json"
+  "ciReport": "tests/results/function-audit-ci-20261104-gui.json"
 }

@@ -1,12 +1,12 @@
 {
-  "sourceCommit": "785aa2e6d79516d774d2ec262a57f80c3d61a8b3",
+  "sourceCommit": "3a1358afa0b8577c8a98686eb16f708e5ecdcebf",
   "synthetic": true,
   "empiricalStudy": false,
   "physicalMobileDevices": false,
   "platform": "macOS ARM64",
   "applicationFiles": {
     "src/coding-box-database.js": "ef79bf7deb0aefe7b555bc4185f84186e49c12acd6f1aa57fd7134e261614eae",
-    "src/coding.js": "a3b5f6ee9367b59806e57932fdafaf2eb7efada994b53dc670bda93d9d4b3f79",
+    "src/coding.js": "3302fa069ce655f54a3d598a35e005962ead4956ea3d46fa3289744583816ab7",
     "src/data.js": "436de03faec3c0b55b7f3775960fb0a65b5663daf7976e1aead81ba1c48bf7a5",
     "src/data.worker.js": "24dd913dbb486febf9ace2bd803a62e4bf5a18e88c93b326eac5ae9e9aa206ac",
     "src/database-view.js": "03b59ffda3421667de61055284a0f5bde57e3b9e943ce303e5e27f7ee8a8d93e",
@@ -19,7 +19,7 @@
     "src/image.js": "dc64dbaa232f29908ec70ec5a15eeaa8a28e2dd5048713a87c82cde4068a8ba2",
     "src/json.js": "133abe6653964b73660d81863de7c2b0ff06be9a882784efca44794c9b3d2851",
     "src/local-connection.js": "b397a4b34ee4e662aef4dc8476c4cc792d7a5516117042657828ff64f317347e",
-    "src/main.js": "b91a326e5f7687dc0c470b0c60ef7e0feeeaf02064e0081d35969fd5768e3664",
+    "src/main.js": "cdb1d59c442e63311980236f80d0d29fd6711b8e5295fa0ee029776fa76b4985",
     "src/preparation.js": "f7e235a7120afecc401004976e0bb7bc6575f68dc1a4291f648e0687b6a8cbc0",
     "src/qr-bmp.js": "1b9f35184e150455390a4dcafe283702b2e05155d5bf46e140a5b4296bce7457",
     "src/schema.js": "afefd38dd58b1a9257dd010d2e4608ab530526346568fc0dc64726172c90a61d",
@@ -46,53 +46,53 @@
       "title": "@mobile touch coding, result round trip, restart and orientation",
       "project": "mobile-ios-webkit",
       "status": "expected",
-      "duration": 5641
+      "duration": 3704
     },
     {
       "title": "@mobile Toolbox exact CSV export, invalid input and recovery by touch",
       "project": "mobile-ios-webkit",
       "status": "expected",
-      "duration": 3385
+      "duration": 1424
     },
     {
       "title": "@mobile SQLite open, inspect and export without page overflow",
       "project": "mobile-ios-webkit",
       "status": "expected",
-      "duration": 2408
+      "duration": 1621
     },
     {
       "title": "@mobile touch coding, result round trip, restart and orientation",
       "project": "mobile-android-chromium",
       "status": "expected",
-      "duration": 2440
+      "duration": 2243
     },
     {
       "title": "@mobile Toolbox exact CSV export, invalid input and recovery by touch",
       "project": "mobile-android-chromium",
       "status": "expected",
-      "duration": 1195
+      "duration": 1659
     },
     {
       "title": "@mobile SQLite open, inspect and export without page overflow",
       "project": "mobile-android-chromium",
       "status": "expected",
-      "duration": 1110
+      "duration": 1260
     },
     {
       "title": "@load 250 scan files load through the real coding worker",
       "project": "large-workloads-chromium",
       "status": "expected",
-      "duration": 596
+      "duration": 701
     },
     {
       "title": "@load 10000 people, 60000 responses, Excel, cancellation and checkpoint recovery",
       "project": "large-workloads-chromium",
       "status": "expected",
-      "duration": 26751
+      "duration": 26817
     }
   ],
-  "started": "2026-11-04T14:03:19.763Z",
-  "milliseconds": 51799.147000000004,
+  "started": "2026-11-04T14:51:36.651Z",
+  "milliseconds": 49771.473000000005,
   "passed": 8,
   "total": 8,
   "dataWorkload": {
@@ -100,9 +100,9 @@
       "name": "IQB-Testcenter-Output",
       "version": "2",
       "created_By": "Browser",
-      "created_DateTime": "2026-11-04T14:03:45.638Z",
+      "created_DateTime": "2026-11-04T14:52:00.048Z",
       "lastchanged_By": "Browser",
-      "lastchanged_DateTime": "2026-11-04T14:03:55.484Z",
+      "lastchanged_DateTime": "2026-11-04T14:52:12.118Z",
       "number_of_people": "10000",
       "number_of_responses": "60000",
       "has_subforms": "False",
@@ -130,9 +130,9 @@
       "name": "IQB-Testcenter-Output",
       "version": "2",
       "created_By": "Browser",
-      "created_DateTime": "2026-11-04T14:03:45.638Z",
+      "created_DateTime": "2026-11-04T14:52:00.048Z",
       "lastchanged_By": "Browser",
-      "lastchanged_DateTime": "2026-11-04T14:03:56.496Z",
+      "lastchanged_DateTime": "2026-11-04T14:52:13.259Z",
       "number_of_people": "10000",
       "number_of_responses": "60000",
       "has_subforms": "False",
@@ -153,8 +153,9 @@
       }
     },
     "sqliteBytes": 4530176,
-    "heartbeat": 707,
-    "milliseconds": 14178
+    "heartbeat": 820,
+    "milliseconds": 16449.09999999404,
+    "excelBytes": 1391057
   },
   "scanWorkload": {
     "metadata": {
@@ -171,7 +172,7 @@
       "width": 850,
       "height": 660
     },
-    "heartbeat": 18,
-    "milliseconds": 368.7000000178814
+    "heartbeat": 17,
+    "milliseconds": 359.7000000178814
   }
 }

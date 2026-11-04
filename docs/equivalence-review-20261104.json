@@ -1,14 +1,14 @@
 {
   "checkedOn": "2026-11-04",
   "applicationVersion": "0.4.7",
-  "applicationCommit": "785aa2e6d79516d774d2ec262a57f80c3d61a8b3",
+  "applicationCommit": "3a1358afa0b8577c8a98686eb16f708e5ecdcebf",
   "completeEquivalence": false,
   "empiricalDataTested": false,
-  "scope": "Ordered follow-up: Int64 fix and original x86/x64 capture; installed Safari, mobile emulation and workload acceptance. Empirical data absent; native manual coding job creation declined by the MCP approval layer.",
+  "scope": "Ordered follow-up: lossless Int64 native reference; paired normal Windows GUI workflows and browser regressions; installed Safari on prior source, mobile emulation and workload acceptance. Empirical data absent; native manual coding job creation automatically declined.",
   "verification": {
     "node": {
-      "passed": 123,
-      "total": 123,
+      "passed": 125,
+      "total": 125,
       "exitCode": 0
     },
     "matrixCounts": {
@@ -29,7 +29,7 @@
         32,
         64
       ],
-      "verificationRun": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41844019523"
+      "verificationRun": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41851284624"
     },
     "browsers": {
       "engines": [
@@ -37,9 +37,9 @@
         "firefox",
         "webkit"
       ],
-      "playwrightSpecsPerEngine": 18,
+      "playwrightSpecsPerEngine": 19,
       "harnessChecksPerEngine": 53,
-      "run": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41844019582"
+      "run": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41851284753"
     },
     "nativeConverters": {
       "numericDiagnostics": {
@@ -96,13 +96,24 @@
       "passed": 53,
       "total": 53,
       "version": "27.0.1",
-      "report": "tests/results/function-audit-20261104-140600-safari.json"
+      "report": "tests/results/function-audit-20261104-140600-safari.json",
+      "sourceCommit": "785aa2e6d79516d774d2ec262a57f80c3d61a8b3",
+      "latestRepeat": "Page reloaded successfully, but UI automation did not trigger its start button. No new Safari pass is claimed for the label correction."
     },
     "practicalAcceptance": {
       "passed": 8,
       "total": 8,
       "mobileHardware": false,
       "report": "tests/results/practical-acceptance-20261104.json"
+    },
+    "windowsGUI": {
+      "report": "tests/results/windows-gui-20261104.json",
+      "codingCases": 4,
+      "ratingsEntered": 2,
+      "comment": "gui probe",
+      "restartRestored": true,
+      "excelCellTexts": 20,
+      "excelEqual": true
     }
   },
   "codingPilotCurrent": {
@@ -201,8 +212,17 @@
       "id": "EQUIV-03",
       "status": "resolved",
       "type": "evidence freshness",
-      "actual": "14 matrix rows pointed only at older browser evidence. Current main artifacts are SHA256-verified; 3 original 52-check reports and the 18-spec-per-engine results are now bound to the exact source hashes.",
+      "actual": "Current source is bound to three SHA256-verified original 53-check reports and the 19-spec-per-engine results, including the paired GUI capture regression.",
       "remainingOpenMatrixRows": []
+    },
+    {
+      "id": "EQUIV-04",
+      "status": "resolved",
+      "type": "direct GUI comparison",
+      "scope": "CodingResults label metadata",
+      "previousFinding": "The browser wrote modern Job (ZIP plus XML stem); the normal Windows GUI wrote Job.xml.",
+      "actual": "New modern jobs use the XML filename in result metadata. Imported native labels survive local saves and result exports; independent interaction fields and exact imported timestamps are regression-tested.",
+      "proof": "tests/results/windows-gui-20261104.json"
     }
   ],
   "remainingAcceptance": [
@@ -215,7 +235,11 @@
       "priority": 2,
       "action": "Complete a paired end-to-end coding flow against a fixed, authorised reference coding: job opening, code changes, comments, restart, result import and export; apply native v2/v3 only after the required review and approvals.",
       "currentBlocker": "137 manual responses remain. coding_job_create was rejected with APPROVAL_DECLINED twice, including after the user enabled dialogs; second rejection took 21 ms. No job was created and no ratings were submitted.",
-      "status": "blocked"
+      "status": "blocked",
+      "completed": [
+        "Normal Windows coding GUI: code 0, comment, code 1, close/relaunch, first open case 3 and restored values.",
+        "Paired browser workflow plus import/export of the original result including every timestamp."
+      ]
     },
     {
       "priority": 3,
@@ -226,14 +250,21 @@
     {
       "priority": 4,
       "action": "Perform direct Windows-GUI acceptance and installed Safari/mobile-device checks for the agreed supported browser/platform matrix; add representative large scans and failure/recovery cases.",
-      "status": "partial",
+      "status": "complete_with_scope_limits",
       "completed": [
         "Installed Safari 27.0.1: 53/53",
         "WebKit iPhone 13 and Chromium Pixel 5 touch emulation: 6/6",
         "250 scan files",
-        "10000 people / 60000 responses; Excel; AbortError; SQLite checkpoint recovery"
+        "10000 people / 60000 responses; Excel; AbortError; SQLite checkpoint recovery",
+        "Normal Windows Toolbox GUI: three-person SQLite database to Excel, all 20 cell texts equal.",
+        "Normal Windows coding GUI and paired browser restart/result roundtrip."
       ],
-      "currentBlocker": "Physical mobile hardware unavailable; full Windows GUI acceptance is separately scoped in practical report."
+      "limits": [
+        "User requested mobile emulation; physical mobile devices unavailable.",
+        "250 scans are 850x660 PNG images, not a high-resolution scan stress corpus.",
+        "Installed Safari 53/53 is bound to source 785aa2e; the newest metadata correction has browser-engine coverage and a failed repeat-start attempt through native UI automation.",
+        "Finite synthetic acceptance does not establish equivalence for every GUI path or input."
+      ]
     }
   ],
   "knownScopeDifferences": {
