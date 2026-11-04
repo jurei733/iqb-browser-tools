@@ -1,0 +1,20 @@
+{
+  "synthetic": true,
+  "empiricalStudy": false,
+  "sourceCommit": "1c76ed38714dad3770e05a388d1e111b8243e667",
+  "run": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41839555938",
+  "artifactId": 13327129910,
+  "artifactSHA256": "7013adc77de9b13437561fb08d9842effae380d885c1b239b937ad606ecb3a45",
+  "uniqueTimestampInputs": 64,
+  "architectures": [
+    32,
+    64
+  ],
+  "files": {
+    "x86-native-int64-probe.json": "751292278f7aae6439d0d478c2babc3ce3f19042d6035f84ea3d717aef86da3a",
+    "x86-native-int64-people.json": "8be28fcbc2b0b4bc5241a8b427b0baf449e6d7091a3bfd035f44ecd37f0f32e6",
+    "x64-native-int64-probe.json": "751292278f7aae6439d0d478c2babc3ce3f19042d6035f84ea3d717aef86da3a",
+    "x64-native-int64-people.json": "8be28fcbc2b0b4bc5241a8b427b0baf449e6d7091a3bfd035f44ecd37f0f32e6"
+  },
+  "scope": "Original API, CSV and native SQLite provider probe; complete Int64 graphs and all domain SQLite fields. Native execution repeated for both synthetic cohorts."
+}

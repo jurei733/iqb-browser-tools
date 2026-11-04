@@ -43,3 +43,20 @@ test('large chunk timestamps retain ordering, choose the latest response and sur
   const SQL=await initSqlJs(),db=new OutputDatabase(SQL);try{db.import(people);assert.equal(responseRecords(db.people())[0].ts,'9007199254740993');}finally{db.close();}
   const workbook=await loadWorkbook(await wideWorkbook(people));assert.equal(workbook.getWorksheet('Antworten').getCell(2,4).text,'latest');
 });
+
+test('captured original x86/x64 methods match all 64 Int64 values and the full browser graph',async()=>{
+  const {readFile}=await import('node:fs/promises');
+  const {int64LogCorpus}=await import('../scripts/int64-corpus.mjs');
+  const {createHash}=await import('node:crypto');
+  const root=new URL('./fixtures/int64-native/',import.meta.url);
+  const source=JSON.parse(await readFile(new URL('source.json',root),'utf8'));
+  const logs=int64LogCorpus();
+  assert.equal(new Set(logs.map(l=>String(l.timestamp))).size,64);
+  for(const [name,sha]of Object.entries(source.files))assert.equal(createHash('sha256').update(await readFile(new URL(name,root))).digest('hex'),sha,'Untouched original capture '+name);
+  for(const [arch,windows]of [['x86',true],['x64','64']]){
+    const probe=JSON.parse(await readFile(new URL(arch+'-native-int64-probe.json',root),'utf8'));
+    for(const path of ['api','csv','browserSqlite'])assert.deepEqual(probe[path],logs.map(l=>String(l.timestamp)));
+    const captured=parseJSON(await readFile(new URL(arch+'-native-int64-people.json',root),'utf8'));
+    assert.equal(modelHash(peopleFromDTO([],logs,{windows})),modelHash(captured),'Complete native graph '+arch);
+  }
+});
