@@ -6,4 +6,4 @@ export const parseJSON=source=>parse(source,undefined,{
   parseNumber:value=>/^-?\d+$/.test(value)&&!Number.isSafeInteger(Number(value))?BigInt(value):Number(value),
   onDuplicateKey:({newValue})=>newValue
 });
-export const stringifyJSON=value=>stringify(value);
+export const stringifyJSON=(value,replacer,space)=>stringify(value,replacer,space);

@@ -7,6 +7,7 @@ import {OutputDatabase} from './database.js';
 import {databasePage} from './database-view.js';
 import {readDataFiles,normalizePeople,wideWorkbook,longCSV,sessionTable,reviewsWorkbook,peopleFromDTO} from './data.js';
 import {readCodingFiles} from './coding.js';
+import {stringifyJSON} from './json.js';
 import {strToU8,zipSync} from 'fflate';
 import {tableWorkbook,csvString} from './toolbox.js';
 globalThis.DOMParser=DOMParser;globalThis.XMLSerializer=XMLSerializer;
@@ -40,8 +41,8 @@ async function exportData(format,data,options={},sizes={}) {
   if(format==='long')return strToU8(longCSV(data,options));
   if(format==='sessions')return strToU8(csvString(sessionTable(data,sizes)));
   if(format==='session-xlsx')return tableWorkbook(sessionTable(data,sizes),'Sitzungen');
-  if(format==='json')return strToU8(JSON.stringify(data,null,2));
-  if(format==='json-groups'){const groups=new Map();for(const p of data){if(!groups.has(p.group))groups.set(p.group,[]);groups.get(p.group).push(p);}const entries={};for(const [g,list]of groups){const name=g.replace(/[<>:"/\\|?*\x00-\x1f]/g,'_')||'Gruppe';let target=name+'.json',i=1;while(entries[target])target=name+'_'+i+++'.json';entries[target]=strToU8(JSON.stringify(list,null,2));}return zipSync(entries);}
+  if(format==='json')return strToU8(stringifyJSON(data,null,2));
+  if(format==='json-groups'){const groups=new Map();for(const p of data){if(!groups.has(p.group))groups.set(p.group,[]);groups.get(p.group).push(p);}const entries={};for(const [g,list]of groups){const name=g.replace(/[<>:"/\\|?*\x00-\x1f]/g,'_')||'Gruppe';let target=name+'.json',i=1;while(entries[target])target=name+'_'+i+++'.json';entries[target]=strToU8(stringifyJSON(list,null,2));}return zipSync(entries);}
   throw new Error('Unbekanntes Exportformat.');
 }
 let queue=Promise.resolve();

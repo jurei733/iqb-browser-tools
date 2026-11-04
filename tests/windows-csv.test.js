@@ -28,6 +28,6 @@ test('Windows log splitting retains escaped text and equals parameters exactly a
 });
 test('Windows CSV validates Int64 timestamp limits before converting to the numeric event model',()=>{
   const parse=stamp=>parseWindowsLogCSV(header+'\n'+row('OK').replace('"123"','"'+stamp+'"'))[0].timestamp;
-  for(const stamp of ['9223372036854775807','-9223372036854775808','9,223372036854775807E+18','1,230E+3','0E+999999'])assert.equal(parse(stamp),Number(stamp.replace(',','.')));
+  for(const [stamp,expected]of [['9223372036854775807',9223372036854775807n],['-9223372036854775808',-9223372036854775808n],['9,223372036854775807E+18',9223372036854775807n],['1,230E+3',1230],['0E+999999',0]])assert.equal(parse(stamp),expected);
   for(const stamp of ['9223372036854775808','-9223372036854775809','9,223372036854775808E+18','1,23E+1'])assert.throws(()=>parse(stamp),/Int64-Zeitstempel/);
 });

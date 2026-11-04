@@ -4,20 +4,21 @@ import {parseJSON,stringifyJSON} from './json.js';
 import {parseWindowsChunk} from './windows-responses.js';
 import {parseWindowsJSON,isContainer,orderedEntries,windowsTokenText} from './windows-tokens.js';
 import {parseWindowsLogCSV,splitWindowsLog} from './windows-csv.js';
+import {exactTime,compareTime,maxTime,minTime} from './timestamps.js';
 
 export const STATUS=['UNSET','NOT_REACHED','DISPLAYED','VALUE_CHANGED','DERIVE_ERROR','CODING_COMPLETE','NO_CODING','INVALID','CODING_INCOMPLETE','CODING_ERROR','PARTLY_DISPLAYED','DERIVE_PENDING','INTENDED_INCOMPLETE','CODE_SELECTION_PENDING'];
 export const asText=v=>v===null?'#null#':typeof v==='object'?stringifyJSON(v):String(v??'');
 const json=v=>typeof v==='string'?parseJSON(v):v;
 const key=(...parts)=>JSON.stringify(parts);
-const stable=value=>JSON.stringify(value,(_k,v)=>v&&typeof v==='object'&&!Array.isArray(v)?Object.fromEntries(Object.keys(v).sort().map(k=>[k,v[k]])):v);
+const stable=value=>stringifyJSON(value,(_k,v)=>v&&typeof v==='object'&&!Array.isArray(v)?Object.fromEntries(Object.keys(v).sort().map(k=>[k,v[k]])):v);
 export const nullableNumeric=v=>v===null?null:typeof v==='string'&&/^[+-]?\d+$/.test(v)&&!Number.isSafeInteger(Number(v))?v:numeric(v);
 const numeric=v=>Number.isFinite(Number(v))?Number(v):0;
-const responseTime=(u,sf,id)=>u.chunks.reduce((t,c)=>c.variables.includes(sf?sf+'##'+id:id)?Math.max(t,numeric(c.ts)):t,0);
+const responseTime=(u,sf,id)=>u.chunks.reduce((t,c)=>c.variables.includes(sf?sf+'##'+id:id)?maxTime(t,c.ts):t,0);
 function mergeUnit(unit,incoming){
-  for(const sf of incoming.subforms){let sub=unit.subforms.find(v=>v.id===sf.id);if(!sub){unit.subforms.push(structuredClone(sf));continue;}for(const r of sf.responses){const i=sub.responses.findIndex(v=>v.id===r.id);if(i<0)sub.responses.push(structuredClone(r));else if(responseTime(incoming,sf.id,r.id)>=responseTime(unit,sf.id,r.id))sub.responses[i]=structuredClone(r);}}
+  for(const sf of incoming.subforms){let sub=unit.subforms.find(v=>v.id===sf.id);if(!sub){unit.subforms.push(structuredClone(sf));continue;}for(const r of sf.responses){const i=sub.responses.findIndex(v=>v.id===r.id);if(i<0)sub.responses.push(structuredClone(r));else if(compareTime(responseTime(incoming,sf.id,r.id),responseTime(unit,sf.id,r.id))>=0)sub.responses[i]=structuredClone(r);}}
   if(incoming.laststate.length)unit.laststate=structuredClone(incoming.laststate);
   for(const field of ['logs','chunks']){const seen=new Set(unit[field].map(stable));for(const item of incoming[field])if(!seen.has(stable(item))){unit[field].push(structuredClone(item));seen.add(stable(item));}}
-  unit.chunks.sort((a,b)=>numeric(a.ts)-numeric(b.ts));
+  unit.chunks.sort((a,b)=>compareTime(a.ts,b.ts));
   if(unit.id===unit.alias&&incoming.id!==incoming.alias)unit.id=incoming.id;
 }
 const sameUnit=(a,b)=>a.alias===b.alias&&(a.id===b.id||a.id===a.alias||b.id===b.alias);
@@ -68,7 +69,7 @@ export function responseUnit(dto,{windows=false}={}) {
   if(typeof chunks==='string'){try{chunks=parseJSON(chunks);}catch(error){chunks=[{id:'all-error',content:JSON.stringify({ERROR:String(chunks)}),responseType:'?',ts:0}];}}
   if(!Array.isArray(chunks))throw new Error('Antwort-Chunks müssen ein Array sein.');
   const latest=new Map(),originalForms=[];
-  for(const ch of windows?chunks:[...chunks].sort((a,b)=>numeric(a.ts)-numeric(b.ts))) {
+  for(const ch of windows?chunks:[...chunks].sort((a,b)=>compareTime(a.ts,b.ts))) {
     const type=ch.responseType??ch.type??'',forms=parseChunk(ch.content,type,{windows}),variables=[];if(windows)originalForms.push(...forms);
     for(const sf of forms)for(const response of sf.responses){latest.set(windows?String(latest.size):key(sf.id,response.id),{subform:sf.id,response});variables.push(sf.id?sf.id+'##'+response.id:response.id);}
     unit.chunks.push({id:String(ch.id??''),type,ts:String(ch.ts??0),variables});
@@ -89,21 +90,21 @@ export function splitLog(logentry) {
 }
 export function normalizePeople(input,{windows=false}={}) {
   if(!Array.isArray(input))throw new Error('Erwartet wird eine Liste von Testpersonen.');
-  return input.map(p=>({group:String(p.group??''),login:String(p.login??''),code:String(p.code??''),booklets:(p.booklets||[]).map(b=>({id:String(b.id??''),firstTS:numeric(b.firstTS),lastTS:numeric(b.lastTS),sessions:(b.sessions||[]).map(s=>({...s,ts:numeric(s.ts),loadCompleteMS:numeric(s.loadCompleteMS)})),logs:(b.logs||[]).map(l=>({...l,ts:numeric(l.ts)})),units:(b.units||[]).map(u=>({id:String(u.id??u.alias??''),alias:String(u.alias??u.id??''),laststate:lastState(u.laststate,{windows}),chunks:(u.chunks||[]).map(c=>({...c,ts:String(c.ts??0),variables:c.variables||[]})),logs:(u.logs||[]).map(l=>({...l,ts:numeric(l.ts)})),subforms:(u.subforms||[]).map(sf=>({id:String(sf.id??''),responses:(sf.responses||[]).map(r=>({...r,id:String(r.id),value:windows&&r.value===null?null:asText(r.value),status:String(r.status||'UNSET'),code:nullableNumeric(r.code),score:nullableNumeric(r.score)}))}))}))}))}));
+  return input.map(p=>({group:String(p.group??''),login:String(p.login??''),code:String(p.code??''),booklets:(p.booklets||[]).map(b=>({id:String(b.id??''),firstTS:exactTime(b.firstTS),lastTS:exactTime(b.lastTS),sessions:(b.sessions||[]).map(s=>({...s,ts:exactTime(s.ts),loadCompleteMS:exactTime(s.loadCompleteMS)})),logs:(b.logs||[]).map(l=>({...l,ts:exactTime(l.ts)})),units:(b.units||[]).map(u=>({id:String(u.id??u.alias??''),alias:String(u.alias??u.id??''),laststate:lastState(u.laststate,{windows}),chunks:(u.chunks||[]).map(c=>({...c,ts:String(c.ts??0),variables:c.variables||[]})),logs:(u.logs||[]).map(l=>({...l,ts:exactTime(l.ts)})),subforms:(u.subforms||[]).map(sf=>({id:String(sf.id??''),responses:(sf.responses||[]).map(r=>({...r,id:String(r.id),value:windows&&r.value===null?null:asText(r.value),status:String(r.status||'UNSET'),code:nullableNumeric(r.code),score:nullableNumeric(r.score)}))}))}))}))}));
 }
-export function refreshTimes(people) {
-  for(const p of people)for(const b of p.booklets){for(const l of [...b.logs,...b.sessions,...b.units.flatMap(u=>[...u.logs,...u.chunks])]){const t=numeric(l.ts);if(t>0){b.firstTS=b.firstTS?Math.min(b.firstTS,t):t;b.lastTS=Math.max(b.lastTS||0,t);}}}
+export function refreshTimes(people,{windows=false}={}) {
+  for(const p of people)for(const b of p.booklets){for(const l of [...b.sessions,...b.logs,...b.units.flatMap(u=>[...u.logs,...u.chunks])]){const t=exactTime(l.ts);if(windows||t>0){b.firstTS=b.firstTS?minTime(b.firstTS,t):t;b.lastTS=maxTime(b.lastTS||0,t);}}}
   return people;
 }
 export function peopleFromDTO(responses=[],logs=[],{windows=false}={}) {
   const people=new Map();
   function location(d){const group=String(d.groupname??''),login=String(d.loginname??''),code=String(d.code??''),booklet=String(d.bookletname??''),pk=windows?group+login+code:key(group,login,code);if(!people.has(pk))people.set(pk,{group,login,code,booklets:[]});const p=people.get(pk);let b=p.booklets.find(b=>b.id===booklet);if(!b){b={id:booklet,sessions:[],logs:[],units:[],firstTS:0,lastTS:0};p.booklets.push(b);}return b;}
   for(const d of responses){const b=location(d),u=responseUnit(d,{windows});const old=b.units.find(v=>sameUnit(v,u));if(old&&(!windows||!old.subforms.length&&!old.laststate.length&&!old.chunks.length)){if(windows)Object.assign(old,{chunks:u.chunks,laststate:u.laststate,subforms:u.subforms});else mergeUnit(old,u);}else b.units.push(u);}
-  for(const d of logs){const b=location(d),event={ts:numeric(d.timestamp),...(windows?splitWindowsLog(d.logentry):splitLog(d.logentry))};
+  for(const d of logs){const b=location(d),event={ts:exactTime(d.timestamp),...(windows?splitWindowsLog(d.logentry):splitLog(d.logentry))};
     if(d.unitname){let u=b.units.find(v=>v.alias===d.unitname&&(!d.originalUnitId||v.id===d.originalUnitId||v.id===v.alias));if(!u){u={id:d.originalUnitId||d.unitname,alias:d.unitname,laststate:[],chunks:[],subforms:[],logs:[]};b.units.push(u);}else if(d.originalUnitId&&u.id===u.alias)u.id=d.originalUnitId;u.logs.push(event);}
     else {b.logs.push(event);if(event.key==='LOADCOMPLETE'){let info={};try{info=JSON.parse(event.parameter.replace(/\\"/g,'"'));}catch{}b.sessions.push({ts:event.ts,loadCompleteMS:numeric(info.loadTime),browser:info.browser||[info.browserName,info.browserVersion].filter(Boolean).join(' ')||'?',os:String(info.os??info.osName??'?'),screen:info.screen||(info.screenSizeWidth?`${info.screenSizeWidth} x ${info.screenSizeHeight}`:'?')});}}
   }
-  return refreshTimes([...people.values()]);
+  return refreshTimes([...people.values()],{windows});
 }
 export function importCSV(source,delimiter='auto',options={}) {
   if(options.windows&&String(source).split(/\r\n|\n|\r/,1)[0].replace(/"/g,'').endsWith(';logentry'))return peopleFromDTO([],parseWindowsLogCSV(source,options),options);
@@ -131,7 +132,7 @@ export async function readDataFiles(files,{encoding='utf-8',delimiter='auto',win
     if(/\.json$/i.test(f.name)){const data=parseJSON(source);if(Array.isArray(data)&&data[0]?.booklets!==undefined)batches.push(normalizePeople(data,{windows}));else if(Array.isArray(data)&&data[0]?.groupname!==undefined)batches.push(data[0].logentry!==undefined?peopleFromDTO([],data,{windows}):peopleFromDTO(data,[],{windows}));else if(Array.isArray(data)&&!data.length)batches.push([]);else throw new Error(`${f.name}: Unbekanntes JSON-Format.`);}
     else batches.push(importCSV(source,delimiter,{windows,onWarning:message=>onWarning(`${f.name}: ${message}`)}));
   }
-  if(windows){const map=new Map();for(const [index,batch]of batches.entries())for(const p of batch){const k=p.group+p.login+p.code;if(!map.has(k)){map.set(k,structuredClone(p));continue;}if(/\.json$/i.test(files[index].name)){onWarning(`${files[index].name}: Personenkennung doppelt (${k}); übrige Personen dieser Datei wie im Original übersprungen.`);break;}const target=map.get(k);for(const b of p.booklets){let old=target.booklets.find(v=>v.id===b.id);if(!old){target.booklets.push(structuredClone(b));continue;}old.logs.push(...b.logs);old.sessions.push(...b.sessions);for(const u of b.units){const unit=old.units.find(v=>v.alias===u.alias);if(unit&&!u.subforms.length&&!u.chunks.length&&!u.laststate.length)unit.logs.push(...u.logs);else if(unit&&!unit.subforms.length&&!unit.chunks.length&&!unit.laststate.length)Object.assign(unit,{chunks:u.chunks,laststate:u.laststate,subforms:u.subforms});else old.units.push(structuredClone(u));}}}return refreshTimes([...map].sort(([a],[b])=>a.localeCompare(b,'de')).map(([,p])=>p));}
+  if(windows){const map=new Map();for(const [index,batch]of batches.entries())for(const p of batch){const k=p.group+p.login+p.code;if(!map.has(k)){map.set(k,structuredClone(p));continue;}if(/\.json$/i.test(files[index].name)){onWarning(`${files[index].name}: Personenkennung doppelt (${k}); übrige Personen dieser Datei wie im Original übersprungen.`);break;}const target=map.get(k);for(const b of p.booklets){let old=target.booklets.find(v=>v.id===b.id);if(!old){target.booklets.push(structuredClone(b));continue;}old.logs.push(...b.logs);old.sessions.push(...b.sessions);for(const u of b.units){const unit=old.units.find(v=>v.alias===u.alias);if(unit&&!u.subforms.length&&!u.chunks.length&&!u.laststate.length)unit.logs.push(...u.logs);else if(unit&&!unit.subforms.length&&!unit.chunks.length&&!unit.laststate.length)Object.assign(unit,{chunks:u.chunks,laststate:u.laststate,subforms:u.subforms});else old.units.push(structuredClone(u));}}}return refreshTimes([...map].sort(([a],[b])=>a.localeCompare(b,'de')).map(([,p])=>p),{windows});}
   return mergePeople(...batches);
 }
 export function responseRecords(people,{ignoreDisplayed=false,ignoreNotReached=false}={}) {
@@ -154,7 +155,7 @@ export async function wideWorkbook(people,{subformMode='rows',values=true,status
   const filtered=subformMode==='none'?records.filter(r=>!r.responseSubform):records;
   const variables=[...new Set(records.map(column))].sort(),rows=new Map();
   if(variables.length>16381)throw new Error('Zu viele Variablen für Excel. Bitte Unterformulare zeilenweise oder CSV verwenden.');
-  for(const r of filtered){const k=key(r.group,r.login,r.code,subformMode==='rows'?r.responseSubform:'');if(!rows.has(k))rows.set(k,{id:r.group+r.login+r.code,group:r.group,subform:r.responseSubform,login:r.login+r.code+(subformMode==='rows'&&r.responseSubform?'_'+r.responseSubform:''),responses:new Map()});const row=rows.get(k),previous=row.responses.get(column(r));if(!previous||numeric(r.ts)>=numeric(previous.ts))row.responses.set(column(r),r);}
+  for(const r of filtered){const k=key(r.group,r.login,r.code,subformMode==='rows'?r.responseSubform:'');if(!rows.has(k))rows.set(k,{id:r.group+r.login+r.code,group:r.group,subform:r.responseSubform,login:r.login+r.code+(subformMode==='rows'&&r.responseSubform?'_'+r.responseSubform:''),responses:new Map()});const row=rows.get(k),previous=row.responses.get(column(r));if(!previous||compareTime(r.ts,previous.ts)>=0)row.responses.set(column(r),r);}
   for(const [enabled,name,field]of [[values,'Antworten','responseValue'],[status,'Status','responseStatus'],[codes,'Codes','responseCode'],[scores,'Scores','responseScore']])if(enabled){const sheet=workbook.addWorksheet(name);sheet.addRow(['ID','Group','Login+Code',...variables]);for(const r of [...rows.values()].sort((a,b)=>a.id.localeCompare(b.id)||a.subform.localeCompare(b.subform)))sheet.addRow([r.id,r.group,r.login,...variables.map(v=>r.responses.has(v)?r.responses.get(v)[field]===null?'':String(r.responses.get(v)[field]):'')]);style(sheet);}
   if(!workbook.worksheets.length)throw new Error('Bitte mindestens eine Ausgabetabelle auswählen.');return new Uint8Array(await workbook.xlsx.writeBuffer());
 }

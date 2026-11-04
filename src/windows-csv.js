@@ -1,5 +1,6 @@
 // itc-ToolBox 3.3.0.2 uses physical lines and String.Split here, rather than
 // an RFC CSV reader. Keep its lossy behaviour confined to Windows mode.
+import {compactInteger} from './timestamps.js';
 export function splitWindowsLog(value) {
   const text=String(value??'');let at=text.indexOf(' : ');
   if(at>0){let parameter=text.slice(at+3);if(parameter.startsWith('"')&&parameter.endsWith('"'))parameter=parameter.slice(1,-1).replace(/""/g,'"').replace(/\\\\/g,'\\');return {key:text.slice(0,at),parameter};}
@@ -20,7 +21,7 @@ function logTimestamp(stamp,line) {
     if(parts[1]==='-')value=-value;
   }
   if(value < -9223372036854775808n||value > 9223372036854775807n)throw invalid();
-  return Number(value);
+  return compactInteger(value);
 }
 
 export function parseWindowsLogCSV(source,{onWarning=()=>{}}={}) {
