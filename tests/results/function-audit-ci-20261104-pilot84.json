@@ -1,0 +1,2125 @@
+{
+  "runId": 41826330136,
+  "runUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41826330136",
+  "headSha": "c31bfe884bfd193bda3c41e85bef1321fcd69b0b",
+  "evidenceSource": "Completed main CI for this exact source commit. Browser reports decoded from verified SHA256 artifact ZIPs. Snapshot covers current application and exercised test inputs. This evidence does not establish universal equivalence.",
+  "jobs": [
+    {
+      "jobId": 126561881594,
+      "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41826330136/job/126561881594",
+      "conclusion": "success",
+      "browser": "chromium",
+      "passed": 18,
+      "total": 18,
+      "compatibility": {
+        "passed": 52,
+        "total": 52
+      },
+      "checks": [
+        {
+          "name": "original templates, image decoders, workers, exports and browser storage",
+          "passed": true
+        },
+        {
+          "name": "local starter: account, direct overwrite and remembered fresh Toolbox paths",
+          "passed": true
+        },
+        {
+          "name": "Windows mode: raw API files retain original values and chunk order through the real worker",
+          "passed": true
+        },
+        {
+          "name": "coding: keyboard, modal guard, result download and stored progress",
+          "passed": true
+        },
+        {
+          "name": "coding: upload a job and move, rotate and reset its template",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: retain login inputs and downloads, then create QR Word handouts",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: CSV keeps exact values and rejects invalid input without stale downloads",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: codes and booklets produce downloadable original formats",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: answers, SQLite exports, rejected database and offline recovery",
+          "passed": true
+        },
+        {
+          "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
+          "passed": true
+        },
+        {
+          "name": "parity: startup defaults and login regeneration without XML match Windows",
+          "passed": true
+        },
+        {
+          "name": "parity: full diagnostics survive module changes and export every validation error",
+          "passed": true
+        },
+        {
+          "name": "parity: preparation cancellation preserves the SQLite working copy",
+          "passed": true
+        },
+        {
+          "name": "parity: the last coding workspace reopens after reload without selecting the source files again",
+          "passed": true
+        },
+        {
+          "name": "parity: original result boundary is selectable and the completed job flashes for one second",
+          "passed": true
+        },
+        {
+          "name": "parity: selected Toolbox input files and options survive closing and reopening the page",
+          "passed": true
+        },
+        {
+          "name": "Testcenter: group selection and workspace changes cannot export stale groups",
+          "passed": true
+        },
+        {
+          "name": "parity: Testcenter access can be remembered explicitly and deleted again",
+          "passed": true
+        }
+      ],
+      "artifactUploaded": true,
+      "artifact": {
+        "id": 13318564374,
+        "name": "browser-results-chromium",
+        "size_in_bytes": 580040,
+        "url": "https://api.github.com/repos/jurei733/iqb-browser-tools/actions/artifacts/13318564374",
+        "archive_download_url": "https://api.github.com/repos/jurei733/iqb-browser-tools/actions/artifacts/13318564374/zip",
+        "expired": false,
+        "created_at": "2026-11-04T12:08:01Z",
+        "expires_at": "2026-11-18T12:07:59Z",
+        "updated_at": "2026-11-04T12:08:01Z",
+        "digest": "sha256:538bcd671231c1da91a53a713d7fd31d9ff61838d77c2465ad42522f36d2fbaf",
+        "workflow_run": {
+          "id": 41826330136,
+          "repository_id": 1431223398,
+          "head_repository_id": 1431223398,
+          "head_branch": "main",
+          "head_sha": "c31bfe884bfd193bda3c41e85bef1321fcd69b0b"
+        }
+      },
+      "browserReport": "tests/results/function-audit-20261104-120701-chromium.json"
+    },
+    {
+      "jobId": 126561881611,
+      "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41826330136/job/126561881611",
+      "conclusion": "success",
+      "browser": "firefox",
+      "passed": 18,
+      "total": 18,
+      "compatibility": {
+        "passed": 52,
+        "total": 52
+      },
+      "checks": [
+        {
+          "name": "original templates, image decoders, workers, exports and browser storage",
+          "passed": true
+        },
+        {
+          "name": "local starter: account, direct overwrite and remembered fresh Toolbox paths",
+          "passed": true
+        },
+        {
+          "name": "Windows mode: raw API files retain original values and chunk order through the real worker",
+          "passed": true
+        },
+        {
+          "name": "coding: keyboard, modal guard, result download and stored progress",
+          "passed": true
+        },
+        {
+          "name": "coding: upload a job and move, rotate and reset its template",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: retain login inputs and downloads, then create QR Word handouts",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: CSV keeps exact values and rejects invalid input without stale downloads",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: codes and booklets produce downloadable original formats",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: answers, SQLite exports, rejected database and offline recovery",
+          "passed": true
+        },
+        {
+          "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
+          "passed": true
+        },
+        {
+          "name": "parity: startup defaults and login regeneration without XML match Windows",
+          "passed": true
+        },
+        {
+          "name": "parity: full diagnostics survive module changes and export every validation error",
+          "passed": true
+        },
+        {
+          "name": "parity: preparation cancellation preserves the SQLite working copy",
+          "passed": true
+        },
+        {
+          "name": "parity: the last coding workspace reopens after reload without selecting the source files again",
+          "passed": true
+        },
+        {
+          "name": "parity: original result boundary is selectable and the completed job flashes for one second",
+          "passed": true
+        },
+        {
+          "name": "parity: selected Toolbox input files and options survive closing and reopening the page",
+          "passed": true
+        },
+        {
+          "name": "Testcenter: group selection and workspace changes cannot export stale groups",
+          "passed": true
+        },
+        {
+          "name": "parity: Testcenter access can be remembered explicitly and deleted again",
+          "passed": true
+        }
+      ],
+      "artifactUploaded": true,
+      "artifact": {
+        "id": 13319497254,
+        "name": "browser-results-firefox",
+        "size_in_bytes": 579962,
+        "url": "https://api.github.com/repos/jurei733/iqb-browser-tools/actions/artifacts/13319497254",
+        "archive_download_url": "https://api.github.com/repos/jurei733/iqb-browser-tools/actions/artifacts/13319497254/zip",
+        "expired": false,
+        "created_at": "2026-11-04T12:07:59Z",
+        "expires_at": "2026-11-18T12:07:58Z",
+        "updated_at": "2026-11-04T12:07:59Z",
+        "digest": "sha256:64b4ad020e76cbb829a41ef8d5405530ef0ed585aed3a9629cb9264e10fbc80e",
+        "workflow_run": {
+          "id": 41826330136,
+          "repository_id": 1431223398,
+          "head_repository_id": 1431223398,
+          "head_branch": "main",
+          "head_sha": "c31bfe884bfd193bda3c41e85bef1321fcd69b0b"
+        }
+      },
+      "browserReport": "tests/results/function-audit-20261104-120700-firefox.json"
+    },
+    {
+      "jobId": 126561881627,
+      "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41826330136/job/126561881627",
+      "conclusion": "success",
+      "browser": "webkit",
+      "passed": 18,
+      "total": 18,
+      "compatibility": {
+        "passed": 52,
+        "total": 52
+      },
+      "checks": [
+        {
+          "name": "original templates, image decoders, workers, exports and browser storage",
+          "passed": true
+        },
+        {
+          "name": "local starter: account, direct overwrite and remembered fresh Toolbox paths",
+          "passed": true
+        },
+        {
+          "name": "Windows mode: raw API files retain original values and chunk order through the real worker",
+          "passed": true
+        },
+        {
+          "name": "coding: keyboard, modal guard, result download and stored progress",
+          "passed": true
+        },
+        {
+          "name": "coding: upload a job and move, rotate and reset its template",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: retain login inputs and downloads, then create QR Word handouts",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: CSV keeps exact values and rejects invalid input without stale downloads",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: codes and booklets produce downloadable original formats",
+          "passed": true
+        },
+        {
+          "name": "Toolbox: answers, SQLite exports, rejected database and offline recovery",
+          "passed": true
+        },
+        {
+          "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
+          "passed": true
+        },
+        {
+          "name": "parity: startup defaults and login regeneration without XML match Windows",
+          "passed": true
+        },
+        {
+          "name": "parity: full diagnostics survive module changes and export every validation error",
+          "passed": true
+        },
+        {
+          "name": "parity: preparation cancellation preserves the SQLite working copy",
+          "passed": true
+        },
+        {
+          "name": "parity: the last coding workspace reopens after reload without selecting the source files again",
+          "passed": true
+        },
+        {
+          "name": "parity: original result boundary is selectable and the completed job flashes for one second",
+          "passed": true
+        },
+        {
+          "name": "parity: selected Toolbox input files and options survive closing and reopening the page",
+          "passed": true
+        },
+        {
+          "name": "Testcenter: group selection and workspace changes cannot export stale groups",
+          "passed": true
+        },
+        {
+          "name": "parity: Testcenter access can be remembered explicitly and deleted again",
+          "passed": true
+        }
+      ],
+      "artifactUploaded": true,
+      "artifact": {
+        "id": 13320305045,
+        "name": "browser-results-webkit",
+        "size_in_bytes": 580132,
+        "url": "https://api.github.com/repos/jurei733/iqb-browser-tools/actions/artifacts/13320305045",
+        "archive_download_url": "https://api.github.com/repos/jurei733/iqb-browser-tools/actions/artifacts/13320305045/zip",
+        "expired": false,
+        "created_at": "2026-11-04T12:08:09Z",
+        "expires_at": "2026-11-18T12:08:09Z",
+        "updated_at": "2026-11-04T12:08:09Z",
+        "digest": "sha256:27aad7814a9cc2efc23be0360bba1834c495fdd0e982e7e3d7de6a998c670d9e",
+        "workflow_run": {
+          "id": 41826330136,
+          "repository_id": 1431223398,
+          "head_repository_id": 1431223398,
+          "head_branch": "main",
+          "head_sha": "c31bfe884bfd193bda3c41e85bef1321fcd69b0b"
+        }
+      },
+      "browserReport": "tests/results/function-audit-20261104-120713-webkit.json"
+    }
+  ],
+  "localStarter": [
+    {
+      "jobId": 126561881213,
+      "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41826330136/job/126561881213",
+      "conclusion": "success",
+      "platform": "ubuntu-latest",
+      "passed": 6,
+      "total": 6
+    },
+    {
+      "jobId": 126561881513,
+      "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41826330136/job/126561881513",
+      "conclusion": "success",
+      "platform": "macos-latest",
+      "passed": 6,
+      "total": 6
+    },
+    {
+      "jobId": 126561881640,
+      "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41826330136/job/126561881640",
+      "conclusion": "success",
+      "platform": "windows-latest",
+      "passed": 6,
+      "total": 6
+    }
+  ],
+  "buildJobs": [
+    {
+      "jobId": 126561881610,
+      "name": "Tests and build (Node 24)",
+      "conclusion": "success",
+      "nodeTests": 118
+    },
+    {
+      "jobId": 126561881776,
+      "name": "Tests and build (Node 22)",
+      "conclusion": "success",
+      "nodeTests": 118
+    }
+  ],
+  "applicationFiles": {
+    "scripts/lib/local-server.mjs": "b0c829fe87911919c0f6d34e3d404e797d186eb29d8b5c23b200c8ee92be454c",
+    "scripts/local-app.mjs": "d27b31fec5e3955ee9f0e87ae5808e8ab0166878c5cea054dca597425e2e449b",
+    "src/coding-box-database.js": "3ddbc12bd6049a66c812ad5d053991d57bad80e8ea2ea56cceca3e882bb3ad32",
+    "src/coding.js": "a3b5f6ee9367b59806e57932fdafaf2eb7efada994b53dc670bda93d9d4b3f79",
+    "src/data.js": "a6783b451ae97454ffa6ad9d82bec737ac9792da1c3835496d1e54a5e3ae472d",
+    "src/data.worker.js": "7d9a9f8fb184cb240dc0e6e420f0097f7bd45c211c21d42f35e785f89542705e",
+    "src/database-view.js": "03b59ffda3421667de61055284a0f5bde57e3b9e943ce303e5e27f7ee8a8d93e",
+    "src/database.js": "6ea6af1d460ce3a1cc173864894ec7f4b9f0af75690ccec5170fb04ea2bdee79",
+    "src/diagnostics.js": "0ed689ce6ae85bf7a4eef11d6120c57de91a5fe4f1b273bc0a45eedb3fb4554f",
+    "src/docx.js": "6297dd6e2fee3f8caf04f73c9532f67839d3ec4fa0fa5b4a9fbba18ca4f7a777",
+    "src/extended-ui.js": "f982d32d1f52af7dc77318aad3832736867e7bba9dae2e12deebcca153a0e260",
+    "src/file-workspace.js": "a62b5dae86c3189b35c453d84dc7f156dc18d77787f50bf90801e56a1e1486b3",
+    "src/form-state.js": "70f981db7537023a712b9482cdc3980c9d5dc6c404db215e84bb957a31c49883",
+    "src/image.js": "dc64dbaa232f29908ec70ec5a15eeaa8a28e2dd5048713a87c82cde4068a8ba2",
+    "src/json.js": "a0074e5e42877c08aea5217894076953d817b89978a5705aadda598ac41865e4",
+    "src/local-connection.js": "b397a4b34ee4e662aef4dc8476c4cc792d7a5516117042657828ff64f317347e",
+    "src/main.js": "9ca1dc66e2ef2f2fa1e1a088c7a2d4ff1d512f5c79710f467663bc4e0ecff52e",
+    "src/preparation.js": "f7e235a7120afecc401004976e0bb7bc6575f68dc1a4291f648e0687b6a8cbc0",
+    "src/qr-bmp.js": "1b9f35184e150455390a4dcafe283702b2e05155d5bf46e140a5b4296bce7457",
+    "src/schema.js": "afefd38dd58b1a9257dd010d2e4608ab530526346568fc0dc64726172c90a61d",
+    "src/style.css": "3e85c7d6e16194f076fd8525c9b3d3bdbb2e7de29f81a6abbf7d7bec63078498",
+    "src/testcenter.js": "c6ec30c15639685d4838b90399b40a01f28c1da3bc10a234c9e236944e8f5746",
+    "src/toolbox.js": "c534b02ee76f20140fc32c39ea4ba5164194126b94e5bfb37c24800d84585e21",
+    "src/vendor.js": "a978d03a177b68b7308b21ec07b258028248717bb237d3b72921e4425f40678f",
+    "src/viewer.js": "9def9bb19d44f015ca22763004047df08afcedfbf9ce1bf2cb6062b7d592d278",
+    "src/windows-compatibility.js": "2f427150e996d55aa049b1d7fbb5ce01f83d6becffaccceadcf1384c20e43559",
+    "src/windows-csv.js": "1fd21874bc6db3378a102e29b5b7af707489baa8a3ac36306ab7404b87ba559f",
+    "src/windows-number-x86.js": "075c2e4425d85d4808aaf941cf0106e3daa29e8b008da11e60a19de0773c4c27",
+    "src/windows-number.js": "0d4376c9eda90b0d97ccfdd3d108d542091bed851ab52483db8797324e8ec571",
+    "src/windows-responses.js": "f510eebf3b8624dc1420c0dac93f7f10c4fdc11752b6a23d4665596045722de8",
+    "src/windows-tokens.js": "982553e0e73f306aefe67f4d09d098d525d0d60492c829933fa4e6e8b30a55bd",
+    "src/worker-client.js": "bdd1223666dfde8ddd7c9f2ede1acfc3c97fd862d2ff1d5ebcb0aff46a87f416",
+    "src/workspace-ui.js": "3f620a7dff35da2e0121c751d04aa6ea74d30101d246187ff8b5e95a52f145d1",
+    "src/xml.js": "f1213427cc5c484b98e72974d5169db17e96bdc3ba641d75f5881877d2323acb"
+  },
+  "testFiles": {
+    ".github/workflows/ci.yml": "be845832754ca84b806df3043fa36f712799bf26efbb4ffbe357b73735a7c8d3",
+    ".github/workflows/windows-reference.yml": "8d1be3462cf6428f031726e14ac2d7d3c7ba5454e636836a9720f10ba4d9e601",
+    "package.json": "876f0a6942f5b93f0c525e56463bf41e6813fe254bff8caeda36e00eff7cc50c",
+    "playwright.config.js": "9d8b99502c4832ed855b49e058c5d96eb9375aac7f0db831bec83dbf4608722b",
+    "pnpm-lock.yaml": "e432ea75e1054f4e288b0d1ce07ba7790c634560d542e948a79e960cf8c4c95f",
+    "scripts/Run-Native-Study.ps1": "77518b6e7656f60ce8dd017bb933c746db467277c4bf77d9dbd4e251b2324c38",
+    "scripts/Run-Native-Windows.ps1": "0a090df30fef8bb7778b759bd8071eb54254c9c94848abc02a97bad060434d27",
+    "scripts/Run-Windows-CodingCorpus.ps1": "bb038b43ce82aeeec81654b9d37a2e17ab5a2cfb275156c4d554d7c55f991b3f",
+    "scripts/Run-Windows-ConverterCorpus.ps1": "140fc06b2f72559bfc641db05b1e848079db1154c6c3f6aed1bf540a09aa9da6",
+    "scripts/TestcenterStudyReference.cs": "30b3326a797e9ef244027f962e4238af04e5e2143c9a0aaa97ebd5e84eac4bfe",
+    "scripts/WindowsPrecisionReference.cs": "a873dbe2cb8a827e7cee749d0544b60e9146060f19269be58a7a982d342dd360",
+    "scripts/analyze-windows-edges.mjs": "5f8fae49bd8f4994c34cf7132d3b728a98189a67451fdc2e5608bf1eefbdbae7",
+    "scripts/build-browser-tests.mjs": "5fcb6b725967ba4c6799613dd78bea7e5f36b4a9704223550b9e3c6f9914e3f6",
+    "scripts/bundle-native-windows.mjs": "8328d6c99384cc40f1dfc7ce130baa63c2c6d5f63753b7f5bebab8d39ff9cdfb",
+    "scripts/compare-native-windows.mjs": "f9dadbf6710894370068dad746f7600fb4bc67811ce966deebefa17cee6c876e",
+    "scripts/converter-corpus.mjs": "a7652098718859970e50edef39e358b0e189bd9a73e72aacb8f8c082f948ff09",
+    "scripts/native-study.mjs": "944bcab311514df1de6960faa39c7c221041fce2acc9508c6f251d39d2a2c4ac",
+    "scripts/native-windows-checks.mjs": "c7554b1bd27592bf8c1930b21ad19f4c1699ea9514b20738b5ac5224fae8bf0a",
+    "scripts/prepare-native-windows.mjs": "ebfa35dc4b2924eb434e04796d9c5f95f2ff088a3ba6f2835f25e95adb0c8d19",
+    "scripts/testcenter-study.mjs": "a96933b2dc6f3c02c5409dc77d7d3f261f757a0878142606d2c5579c78e07a82",
+    "scripts/verify-numeric-probes.mjs": "94dcb1fe000173af489de7b6b3d8b42c9988e31034f548fbb409a81d0b2edcf4",
+    "scripts/windows-coding-corpus.mjs": "e3a2e0ec52a702d548116d19592952d0d62acbce1e7401be8401f12ff9e103e3",
+    "scripts/windows-edge-corpus.mjs": "d4466febe8c633235af2377be179f442199bd064ceb2b82d7ded1bf16d4dde83",
+    "scripts/windows-native-corpus.mjs": "e42b38a12a74abcd88c3396ce9ff090417c77a85c8394a53cd4f46125a40576f",
+    "scripts/windows-number-corpus.mjs": "84cfc0d4bef49eeadddf2c56295764da1ae235bb0e24d85495d27ee157b097d9",
+    "scripts/windows-numeric-probes.mjs": "6abe326b8e3cb89602b18263282ee7fbb9c5cff74224a091132591d992c6b3d8",
+    "tests/browser.js": "b336968e09f00f56a8d3b914b50217cfd5c6a24c19be2ab481b94ed994bdbfe3",
+    "tests/e2e/browser.spec.js": "d22a3aa0a3075faececedb9ce3974aa450ec35938cb1661b496616223eccaf08",
+    "tests/e2e/local-starter.spec.js": "f01b5f8cf97bb31a2cd7151d000b2298cf581f4e702146cfdb691b07d3e278ff",
+    "tests/e2e/windows-differential.spec.js": "8769d783901e566f67f6ce509cf554098d119768bad806620d3267ee91dc9001",
+    "tests/e2e/workflows.spec.js": "671c63838a248a105f119d66ac43d529d47c21ac5e6dd4672994e899579ed9d4",
+    "tests/fixtures/testcenter-pilot84/input.json.gz": "f4a44299ea01ebfd6af8538e47bc9fa07ea17985e195e7d42d65fb74e720e095",
+    "tests/fixtures/testcenter-pilot84/reference.json": "a97168f12c845c69cac66e4e6d9a8fbe3de39102524c11eb622482546e94486a",
+    "tests/fixtures/testcenter-pilot84/source.json": "c4f76455021b1fb49134ff047bb4dcaa1ed0e4d7bdb15482200e1f354641a13d",
+    "tests/fixtures/testcenter-study/input.json.gz": "c040aba7fdb5598f546853b19484d8f6855c629f4278a15740636cb090513282",
+    "tests/fixtures/testcenter-study/reference.json": "3f2f493d7e5e964e07d26749574e512bd51db940728200b807560690aacbcafd",
+    "tests/fixtures/windows-differential/native-converters.json": "c060bb017700a1db2f156084d2c944a09282c5ea3b4d7887ee0e9637d9785132",
+    "tests/fixtures/windows-edge/coding-inputs.json": "fa9ea1b949cfff76ce18ca68a1bd9d959b2119ea5fc7cc076efa38a3bc587332",
+    "tests/fixtures/windows-edge/native-32.json": "43212520114d9b986778b520540140f805be9ba6cd01ead79c9eb261ea9d0380",
+    "tests/fixtures/windows-edge/native-64.json": "8ff52d3200b5c966e5c28c57c13dd0739e92f9eec4c50c358f76b0e5b7779674",
+    "tests/fixtures/windows-edge/native-coding.json": "65d5e46a170d42142df70b6fdff419ea3f969c9769c98a8b176c5dc5c9342b57",
+    "tests/fixtures/windows-native/reference.json": "95ebf38fa75fa851f4b3ebb03ec3a9b0458bad3703f061bcff49f4150b245685",
+    "tests/local-app.test.js": "f0db4be01622a88c0d4673cffc18f1ae6f1b1e35baea6bbc3aef1fd42fcf127c",
+    "tests/testcenter-study.test.js": "c578079203a37c6fc7aa48f155bfff0e9caf4aa70fc6d8fd101307825102e0d9",
+    "tests/windows-csv.test.js": "0dbf41770eb3e9b51691da44b4e16c54ab93aac6c3077c44a852bf1c9c10129d",
+    "tests/windows-differential.test.js": "72a477af807602041004ff4384ecf7413e822021bd765234e157baea199558c4",
+    "tests/windows-edges.test.js": "e24d43855f11b9e64dcce824b1bff2b970be2720a6a32b4c16da3986bf788614",
+    "tests/windows-native.test.js": "9431b22784205192e46c332063fc229033467a866a9a02eb15abd2096b986a43",
+    "tests/windows-number.test.js": "b06e68cf5a47feafb254a6cf8d2a9fef486937fd758273cfd0265599be53be63"
+  },
+  "nativeReference": {
+    "runId": 41826330172,
+    "runUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41826330172",
+    "headSha": "c31bfe884bfd193bda3c41e85bef1321fcd69b0b",
+    "jobId": 126561882983,
+    "conclusion": "success",
+    "completeEquivalence": false,
+    "policy": "Strict finite-corpus comparison; no universal identity claim. Int64 log timestamp precision outside the corpus remains open.",
+    "artifact": {
+      "id": 13320530443,
+      "name": "windows-native-reference",
+      "size_in_bytes": 7060533,
+      "url": "https://api.github.com/repos/jurei733/iqb-browser-tools/actions/artifacts/13320530443",
+      "archive_download_url": "https://api.github.com/repos/jurei733/iqb-browser-tools/actions/artifacts/13320530443/zip",
+      "expired": false,
+      "created_at": "2026-11-04T12:09:51Z",
+      "expires_at": "2026-11-18T12:09:48Z",
+      "updated_at": "2026-11-04T12:09:51Z",
+      "digest": "sha256:802389b834d84957d08d13023ecf8325730d232404af7f95c099fc94d36480f5",
+      "workflow_run": {
+        "id": 41826330172,
+        "repository_id": 1431223398,
+        "head_repository_id": 1431223398,
+        "head_branch": "main",
+        "head_sha": "c31bfe884bfd193bda3c41e85bef1321fcd69b0b"
+      }
+    },
+    "study": {
+      "synthetic": true,
+      "empiricalStudy": false,
+      "completeEquivalence": false,
+      "checks": [
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "native x64 host",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "process bits",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "original Toolbox SHA256",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "original CodingResults library SHA256",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "input existing-responses.json",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "input responses.csv",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "input logs.csv",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "input logs-api.json",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "input browser.sqlite",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "input browser.result",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "input blank-native.xlsx",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "toolbox-api-import",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "toolbox-csv-import",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "toolbox-read-browser-sqlite",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "toolbox-write-sqlite",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "toolbox-excel-export",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "coding-original-archive-codec",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "API full graph",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "CSV full graph",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "CSV skipped log rows",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "CSV skipped response rows",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "original limited SQLite reader",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "original database integrity",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "browser reads full original database",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "SQLite all fields person",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "SQLite all fields bookletInfo",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "SQLite all fields booklet",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "SQLite all fields session",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "SQLite all fields bookletLog",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "SQLite all fields unit",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "SQLite all fields unitLog",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "SQLite all fields unitLastState",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "SQLite all fields chunk",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "SQLite all fields response",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "Excel all sheets and cells",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "name": "unscored comment archive",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "native x64 host",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "process bits",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "original Toolbox SHA256",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "original CodingResults library SHA256",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "input existing-responses.json",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "input responses.csv",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "input logs.csv",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "input logs-api.json",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "input browser.sqlite",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "input browser.result",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "input blank-native.xlsx",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "toolbox-api-import",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "toolbox-csv-import",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "toolbox-read-browser-sqlite",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "toolbox-write-sqlite",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "toolbox-excel-export",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "coding-original-archive-codec",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "API full graph",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "CSV full graph",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "CSV skipped log rows",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "CSV skipped response rows",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "original limited SQLite reader",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "original database integrity",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "browser reads full original database",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "SQLite all fields person",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "SQLite all fields bookletInfo",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "SQLite all fields booklet",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "SQLite all fields session",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "SQLite all fields bookletLog",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "SQLite all fields unit",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "SQLite all fields unitLog",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "SQLite all fields unitLastState",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "SQLite all fields chunk",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "SQLite all fields response",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "Excel all sheets and cells",
+          "passed": true
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "name": "unscored comment archive",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "native x64 host",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "process bits",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "original Toolbox SHA256",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "original CodingResults library SHA256",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "input existing-responses.json",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "input responses.csv",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "input logs.csv",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "input logs-api.json",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "input browser.sqlite",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "input browser.result",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "input blank-native.xlsx",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "toolbox-api-import",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "toolbox-csv-import",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "toolbox-read-browser-sqlite",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "toolbox-write-sqlite",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "toolbox-excel-export",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "coding-original-archive-codec",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "API full graph",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "CSV full graph",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "CSV skipped log rows",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "CSV skipped response rows",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "original limited SQLite reader",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "original database integrity",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "browser reads full original database",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "SQLite all fields person",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "SQLite all fields bookletInfo",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "SQLite all fields booklet",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "SQLite all fields session",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "SQLite all fields bookletLog",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "SQLite all fields unit",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "SQLite all fields unitLog",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "SQLite all fields unitLastState",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "SQLite all fields chunk",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "SQLite all fields response",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "Excel all sheets and cells",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "name": "unscored comment archive",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "native x64 host",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "process bits",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "original Toolbox SHA256",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "original CodingResults library SHA256",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "input existing-responses.json",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "input responses.csv",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "input logs.csv",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "input logs-api.json",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "input browser.sqlite",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "input browser.result",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "input blank-native.xlsx",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "toolbox-api-import",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "toolbox-csv-import",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "toolbox-read-browser-sqlite",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "toolbox-write-sqlite",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "toolbox-excel-export",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "coding-original-archive-codec",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "API full graph",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "CSV full graph",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "CSV skipped log rows",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "CSV skipped response rows",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "original limited SQLite reader",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "original database integrity",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "browser reads full original database",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "SQLite all fields person",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "SQLite all fields bookletInfo",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "SQLite all fields booklet",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "SQLite all fields session",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "SQLite all fields bookletLog",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "SQLite all fields unit",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "SQLite all fields unitLog",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "SQLite all fields unitLastState",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "SQLite all fields chunk",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "SQLite all fields response",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "Excel all sheets and cells",
+          "passed": true
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "name": "unscored comment archive",
+          "passed": true
+        }
+      ],
+      "captures": [
+        {
+          "study": "cohort1000",
+          "arch": "x86",
+          "counts": {
+            "people": 1000,
+            "booklets": 1000,
+            "unitRows": 6000,
+            "responses": 9000,
+            "logs": 44954,
+            "sqlDomainRows": 79955,
+            "excelCells": 48048,
+            "codingComments": 1823
+          },
+          "report": {
+            "synthetic": true,
+            "empiricalStudy": false,
+            "started": "2026-11-04T12:08:54.3408366Z",
+            "processBits": 32,
+            "nativeMachine": "8664",
+            "processMachine": "014c",
+            "culture": "de-DE",
+            "timezone": "W. Europe Standard Time",
+            "toolboxSHA256": "c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1",
+            "codingCommonSHA256": "4845bf183b80509f743dc87d6e5b211bd5c9757417a9ff08665278f27fda20a6",
+            "inputSHA256": {
+              "existing-responses.json": "cdeefd8d9e9806afd4455e2ba59e45efe78b721b02413070cc083cffd95aaa0a",
+              "responses.csv": "e022067d780a63a29d5a6a3eda79a694be81c715450172f7b01a91eac99fd90e",
+              "logs.csv": "9f57ada4a14ccf40f9b0c6f90609f3c9356362dd5ac536829e84a7884516c4a8",
+              "logs-api.json": "b36dd5a436abb726b1cbb5c2c75b1423d14a0de3a8b9f5077391dff103435469",
+              "browser.sqlite": "26b23c1b8431c7eefd3f91a2d36b33ccaee4850e93f50767d0fb2b3980d008f6",
+              "browser.result": "fd401242c4eeeef0cad653b34a151839acee0845daee2d9abfb647c4aedac3a3",
+              "blank-native.xlsx": "acb5e92ec4de302b2f00cca11a6a1b3c384ea9542aa0e47ac85ef26a9df5b384"
+            },
+            "people": 1000,
+            "toolbox-api-import": "passed",
+            "csvSkippedResponseRows": 0,
+            "csvSkippedLogRows": 0,
+            "toolbox-csv-import": "passed",
+            "toolbox-read-browser-sqlite": "passed",
+            "toolbox-write-sqlite": "passed",
+            "toolbox-excel-export": "passed",
+            "coding-original-archive-codec": "passed",
+            "finished": "2026-11-04T12:09:15.6551592Z"
+          },
+          "fullGraphSHA256": "fbc12e1fec21a917f3233426e65c391d5ed93e6b861fe1cb6cddad616bebb5a9",
+          "csvGraphSHA256": "fbc12e1fec21a917f3233426e65c391d5ed93e6b861fe1cb6cddad616bebb5a9",
+          "sqlTables": [
+            {
+              "name": "person",
+              "columns": [
+                "id",
+                "group",
+                "login",
+                "code"
+              ],
+              "rows": 1000,
+              "sha256": "274eb7e689bc16b4957b454eed9af0e7d1a93ae2771c3146796fac4b534530a1"
+            },
+            {
+              "name": "bookletInfo",
+              "columns": [
+                "id",
+                "name",
+                "size"
+              ],
+              "rows": 1,
+              "sha256": "03cf5aedf78ee0f0fb696a726ba9b547eb429268b2330c7460626bf5c032418e"
+            },
+            {
+              "name": "booklet",
+              "columns": [
+                "id",
+                "infoId",
+                "personId",
+                "lastTs",
+                "firstTs"
+              ],
+              "rows": 1000,
+              "sha256": "7abf31eacf7096cb9508fc888bf3fe63038f3822271f76129a53eaf3fd643bee"
+            },
+            {
+              "name": "session",
+              "columns": [
+                "bookletId",
+                "browser",
+                "os",
+                "screen",
+                "ts",
+                "loadCompleteMS"
+              ],
+              "rows": 0,
+              "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+            },
+            {
+              "name": "bookletLog",
+              "columns": [
+                "bookletId",
+                "key",
+                "parameter",
+                "ts"
+              ],
+              "rows": 11794,
+              "sha256": "1c1ef7695745f5b7fe749ca5560e8782decde9bff5084475b1fdb5e3f44678ef"
+            },
+            {
+              "name": "unit",
+              "columns": [
+                "id",
+                "bookletId",
+                "name",
+                "alias"
+              ],
+              "rows": 6000,
+              "sha256": "12de8b8742a00e3bb0e0972790af41e7916134f94f5521b235d036e257534b50"
+            },
+            {
+              "name": "unitLog",
+              "columns": [
+                "unitId",
+                "key",
+                "parameter",
+                "ts"
+              ],
+              "rows": 33160,
+              "sha256": "9437682c86a1cbedaf3bd48206da2c0d87d454ed5a6d04001cc5fd3a811f5e8d"
+            },
+            {
+              "name": "unitLastState",
+              "columns": [
+                "unitId",
+                "key",
+                "value"
+              ],
+              "rows": 12000,
+              "sha256": "182d46379f4a1906658562dd341b9502330dc9b8b23e9a59bb7b5ff486b6b0c8"
+            },
+            {
+              "name": "chunk",
+              "columns": [
+                "unitId",
+                "key",
+                "type",
+                "variables",
+                "ts"
+              ],
+              "rows": 6000,
+              "sha256": "6b5251727a515dd7562b26bbc9099ab4b284ef77a73e860b2a15f8a55088aed0"
+            },
+            {
+              "name": "response",
+              "columns": [
+                "unitId",
+                "variableId",
+                "status",
+                "value",
+                "subform",
+                "code",
+                "score"
+              ],
+              "rows": 9000,
+              "sha256": "a04d77bf778f3b6ac131c4be54af98ed5bbd7491b045c3877ecd838729dc8275"
+            }
+          ],
+          "excelSheets": [
+            {
+              "name": "Antworten",
+              "rows": 1001,
+              "columns": 12,
+              "sha256": "5a68b9b1cf9f8da2dea73bb546c65dda8de832f8c3f47ffe17da07518acffdc1"
+            },
+            {
+              "name": "Status",
+              "rows": 1001,
+              "columns": 12,
+              "sha256": "671e6e5a349c51c75b20afaf878dc3e7b5769b10e22ed60cf0971d9309c3680c"
+            },
+            {
+              "name": "Codes",
+              "rows": 1001,
+              "columns": 12,
+              "sha256": "ac6c6dedae03d0d7741c5ca399100a0c2e1b764327516b8584bcf0030773f323"
+            },
+            {
+              "name": "Scores",
+              "rows": 1001,
+              "columns": 12,
+              "sha256": "ac6c6dedae03d0d7741c5ca399100a0c2e1b764327516b8584bcf0030773f323"
+            }
+          ],
+          "codingModelSHA256": "6d979e6c2660e32e6c0c213067be2b3f587a40499c3cc3f4a724e76d51670cb2"
+        },
+        {
+          "study": "cohort1000",
+          "arch": "x64",
+          "counts": {
+            "people": 1000,
+            "booklets": 1000,
+            "unitRows": 6000,
+            "responses": 9000,
+            "logs": 44954,
+            "sqlDomainRows": 79955,
+            "excelCells": 48048,
+            "codingComments": 1823
+          },
+          "report": {
+            "synthetic": true,
+            "empiricalStudy": false,
+            "started": "2026-11-04T12:09:15.9647285Z",
+            "processBits": 64,
+            "nativeMachine": "8664",
+            "processMachine": "0000",
+            "culture": "de-DE",
+            "timezone": "W. Europe Standard Time",
+            "toolboxSHA256": "c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1",
+            "codingCommonSHA256": "4845bf183b80509f743dc87d6e5b211bd5c9757417a9ff08665278f27fda20a6",
+            "inputSHA256": {
+              "existing-responses.json": "cdeefd8d9e9806afd4455e2ba59e45efe78b721b02413070cc083cffd95aaa0a",
+              "responses.csv": "e022067d780a63a29d5a6a3eda79a694be81c715450172f7b01a91eac99fd90e",
+              "logs.csv": "9f57ada4a14ccf40f9b0c6f90609f3c9356362dd5ac536829e84a7884516c4a8",
+              "logs-api.json": "b36dd5a436abb726b1cbb5c2c75b1423d14a0de3a8b9f5077391dff103435469",
+              "browser.sqlite": "c6caa3e7c3ab31e24de9ea84ae117c342bb688cd750f385fa3a34de15da0272f",
+              "browser.result": "4fea3c9f7519b8decbea25c60c2e4b731e7b619ffc89ada21d50dd34cf0dd869",
+              "blank-native.xlsx": "acb5e92ec4de302b2f00cca11a6a1b3c384ea9542aa0e47ac85ef26a9df5b384"
+            },
+            "people": 1000,
+            "toolbox-api-import": "passed",
+            "csvSkippedResponseRows": 0,
+            "csvSkippedLogRows": 0,
+            "toolbox-csv-import": "passed",
+            "toolbox-read-browser-sqlite": "passed",
+            "toolbox-write-sqlite": "passed",
+            "toolbox-excel-export": "passed",
+            "coding-original-archive-codec": "passed",
+            "finished": "2026-11-04T12:09:33.4629922Z"
+          },
+          "fullGraphSHA256": "fbc12e1fec21a917f3233426e65c391d5ed93e6b861fe1cb6cddad616bebb5a9",
+          "csvGraphSHA256": "fbc12e1fec21a917f3233426e65c391d5ed93e6b861fe1cb6cddad616bebb5a9",
+          "sqlTables": [
+            {
+              "name": "person",
+              "columns": [
+                "id",
+                "group",
+                "login",
+                "code"
+              ],
+              "rows": 1000,
+              "sha256": "274eb7e689bc16b4957b454eed9af0e7d1a93ae2771c3146796fac4b534530a1"
+            },
+            {
+              "name": "bookletInfo",
+              "columns": [
+                "id",
+                "name",
+                "size"
+              ],
+              "rows": 1,
+              "sha256": "03cf5aedf78ee0f0fb696a726ba9b547eb429268b2330c7460626bf5c032418e"
+            },
+            {
+              "name": "booklet",
+              "columns": [
+                "id",
+                "infoId",
+                "personId",
+                "lastTs",
+                "firstTs"
+              ],
+              "rows": 1000,
+              "sha256": "7abf31eacf7096cb9508fc888bf3fe63038f3822271f76129a53eaf3fd643bee"
+            },
+            {
+              "name": "session",
+              "columns": [
+                "bookletId",
+                "browser",
+                "os",
+                "screen",
+                "ts",
+                "loadCompleteMS"
+              ],
+              "rows": 0,
+              "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+            },
+            {
+              "name": "bookletLog",
+              "columns": [
+                "bookletId",
+                "key",
+                "parameter",
+                "ts"
+              ],
+              "rows": 11794,
+              "sha256": "1c1ef7695745f5b7fe749ca5560e8782decde9bff5084475b1fdb5e3f44678ef"
+            },
+            {
+              "name": "unit",
+              "columns": [
+                "id",
+                "bookletId",
+                "name",
+                "alias"
+              ],
+              "rows": 6000,
+              "sha256": "12de8b8742a00e3bb0e0972790af41e7916134f94f5521b235d036e257534b50"
+            },
+            {
+              "name": "unitLog",
+              "columns": [
+                "unitId",
+                "key",
+                "parameter",
+                "ts"
+              ],
+              "rows": 33160,
+              "sha256": "9437682c86a1cbedaf3bd48206da2c0d87d454ed5a6d04001cc5fd3a811f5e8d"
+            },
+            {
+              "name": "unitLastState",
+              "columns": [
+                "unitId",
+                "key",
+                "value"
+              ],
+              "rows": 12000,
+              "sha256": "182d46379f4a1906658562dd341b9502330dc9b8b23e9a59bb7b5ff486b6b0c8"
+            },
+            {
+              "name": "chunk",
+              "columns": [
+                "unitId",
+                "key",
+                "type",
+                "variables",
+                "ts"
+              ],
+              "rows": 6000,
+              "sha256": "6b5251727a515dd7562b26bbc9099ab4b284ef77a73e860b2a15f8a55088aed0"
+            },
+            {
+              "name": "response",
+              "columns": [
+                "unitId",
+                "variableId",
+                "status",
+                "value",
+                "subform",
+                "code",
+                "score"
+              ],
+              "rows": 9000,
+              "sha256": "a04d77bf778f3b6ac131c4be54af98ed5bbd7491b045c3877ecd838729dc8275"
+            }
+          ],
+          "excelSheets": [
+            {
+              "name": "Antworten",
+              "rows": 1001,
+              "columns": 12,
+              "sha256": "5a68b9b1cf9f8da2dea73bb546c65dda8de832f8c3f47ffe17da07518acffdc1"
+            },
+            {
+              "name": "Status",
+              "rows": 1001,
+              "columns": 12,
+              "sha256": "671e6e5a349c51c75b20afaf878dc3e7b5769b10e22ed60cf0971d9309c3680c"
+            },
+            {
+              "name": "Codes",
+              "rows": 1001,
+              "columns": 12,
+              "sha256": "ac6c6dedae03d0d7741c5ca399100a0c2e1b764327516b8584bcf0030773f323"
+            },
+            {
+              "name": "Scores",
+              "rows": 1001,
+              "columns": 12,
+              "sha256": "ac6c6dedae03d0d7741c5ca399100a0c2e1b764327516b8584bcf0030773f323"
+            }
+          ],
+          "codingModelSHA256": "6d979e6c2660e32e6c0c213067be2b3f587a40499c3cc3f4a724e76d51670cb2"
+        },
+        {
+          "study": "pilot84",
+          "arch": "x86",
+          "counts": {
+            "people": 84,
+            "booklets": 84,
+            "unitRows": 504,
+            "responses": 756,
+            "logs": 3672,
+            "codingComments": 137
+          },
+          "report": {
+            "synthetic": true,
+            "empiricalStudy": false,
+            "started": "2026-11-04T12:09:33.8124760Z",
+            "processBits": 32,
+            "nativeMachine": "8664",
+            "processMachine": "014c",
+            "culture": "de-DE",
+            "timezone": "W. Europe Standard Time",
+            "toolboxSHA256": "c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1",
+            "codingCommonSHA256": "4845bf183b80509f743dc87d6e5b211bd5c9757417a9ff08665278f27fda20a6",
+            "inputSHA256": {
+              "existing-responses.json": "f000d3333ea08340a77a9e56d94b1a223c44bce9511d1dcd1a6749eee29987ab",
+              "responses.csv": "c1d4a5412a4836580e145d7d12e03fa0cf384a748718eb01dbb3e4e58ce0c93f",
+              "logs.csv": "e80c380481dfad51e24439becaa286d5a41845aac936adc91f05937e5c160143",
+              "logs-api.json": "4f245e0f89f48862db242c8f520d97c222a3676194454642bdff73582d32afc9",
+              "browser.sqlite": "17d8c06e6c7020ab9ae7eb7b3c38fc6db73514be78a65bd4110ff8d371817b0d",
+              "browser.result": "5f24aea367db5151d94ba25241869d9c89c3bc8126332c1806f661c5b5e24ab7",
+              "blank-native.xlsx": "acb5e92ec4de302b2f00cca11a6a1b3c384ea9542aa0e47ac85ef26a9df5b384"
+            },
+            "people": 84,
+            "toolbox-api-import": "passed",
+            "csvSkippedResponseRows": 0,
+            "csvSkippedLogRows": 24,
+            "toolbox-csv-import": "passed",
+            "toolbox-read-browser-sqlite": "passed",
+            "toolbox-write-sqlite": "passed",
+            "toolbox-excel-export": "passed",
+            "coding-original-archive-codec": "passed",
+            "finished": "2026-11-04T12:09:35.4428264Z"
+          },
+          "fullGraphSHA256": "e47d9006068e8feb2501d9ebbe6fda2198006e719efa41aa2cba5e4aa47504cb",
+          "csvGraphSHA256": "9abec62391db813fce3723ff4ac771394e3648cf40b33d8c2e3766ab3b9ec2b8",
+          "sqlTables": [
+            {
+              "name": "person",
+              "columns": [
+                "id",
+                "group",
+                "login",
+                "code"
+              ],
+              "rows": 84,
+              "sha256": "3941517983138f3cd84cf72c725dcf9d22df0c0121a27477fbc501fb90ee5c73"
+            },
+            {
+              "name": "bookletInfo",
+              "columns": [
+                "id",
+                "name",
+                "size"
+              ],
+              "rows": 1,
+              "sha256": "84403fc4b417515db3607f72f39def50581c96a13adfcd4844500595c1aa2614"
+            },
+            {
+              "name": "booklet",
+              "columns": [
+                "id",
+                "infoId",
+                "personId",
+                "lastTs",
+                "firstTs"
+              ],
+              "rows": 84,
+              "sha256": "38257fcc257ce7235a0eb29ede485f9579c16fa791d45fe1bb16d70b1a547cb8"
+            },
+            {
+              "name": "session",
+              "columns": [
+                "bookletId",
+                "browser",
+                "os",
+                "screen",
+                "ts",
+                "loadCompleteMS"
+              ],
+              "rows": 0,
+              "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+            },
+            {
+              "name": "bookletLog",
+              "columns": [
+                "bookletId",
+                "key",
+                "parameter",
+                "ts"
+              ],
+              "rows": 960,
+              "sha256": "4d1f9c689fbc815ba2a087d8191a532b8e8210ef3369945202756219463b0b2d"
+            },
+            {
+              "name": "unit",
+              "columns": [
+                "id",
+                "bookletId",
+                "name",
+                "alias"
+              ],
+              "rows": 504,
+              "sha256": "50f20f05256c506ae92bcfa09391f3975b48863479e83416dcd76232248acb89"
+            },
+            {
+              "name": "unitLog",
+              "columns": [
+                "unitId",
+                "key",
+                "parameter",
+                "ts"
+              ],
+              "rows": 2712,
+              "sha256": "a73b2f599f6f7a2590df7a25df12ce2bd4a7602c9cb0c3c7f66ac7d2a94bc1f1"
+            },
+            {
+              "name": "unitLastState",
+              "columns": [
+                "unitId",
+                "key",
+                "value"
+              ],
+              "rows": 1008,
+              "sha256": "e871fc45fda16b906ee525ecf362493bc80c4cd9cf13d053846f3234792f564b"
+            },
+            {
+              "name": "chunk",
+              "columns": [
+                "unitId",
+                "key",
+                "type",
+                "variables",
+                "ts"
+              ],
+              "rows": 504,
+              "sha256": "1983be4345f86a833b2a7215244b26a559a2198cb3c075d1a9b3ae0214973c9c"
+            },
+            {
+              "name": "response",
+              "columns": [
+                "unitId",
+                "variableId",
+                "status",
+                "value",
+                "subform",
+                "code",
+                "score"
+              ],
+              "rows": 756,
+              "sha256": "097d5ffb8a2f00b4a57b44d6103d1453aeac83bb432bb114fbbd45d4572b5284"
+            }
+          ],
+          "excelSheets": [
+            {
+              "name": "Antworten",
+              "rows": 85,
+              "columns": 12,
+              "sha256": "86e6a337cce83e4999989e7a80468ef9f8ca1aee8269729fd25d4a52cb39b66b"
+            },
+            {
+              "name": "Status",
+              "rows": 85,
+              "columns": 12,
+              "sha256": "75bf6ef5736fc9c795c559827eb629dd930d1c548e29932f637ef5b23cee4b61"
+            },
+            {
+              "name": "Codes",
+              "rows": 85,
+              "columns": 12,
+              "sha256": "a448ec3652f1a6296584fd50ce0d9abc39760fccb8208eae26d7f6000eef41d7"
+            },
+            {
+              "name": "Scores",
+              "rows": 85,
+              "columns": 12,
+              "sha256": "a448ec3652f1a6296584fd50ce0d9abc39760fccb8208eae26d7f6000eef41d7"
+            }
+          ],
+          "codingModelSHA256": "0df47527a393e7f3dce08f44031ae955f13f76c4e630de68f3f6e81da5a9ae39"
+        },
+        {
+          "study": "pilot84",
+          "arch": "x64",
+          "counts": {
+            "people": 84,
+            "booklets": 84,
+            "unitRows": 504,
+            "responses": 756,
+            "logs": 3672,
+            "codingComments": 137
+          },
+          "report": {
+            "synthetic": true,
+            "empiricalStudy": false,
+            "started": "2026-11-04T12:09:35.7336952Z",
+            "processBits": 64,
+            "nativeMachine": "8664",
+            "processMachine": "0000",
+            "culture": "de-DE",
+            "timezone": "W. Europe Standard Time",
+            "toolboxSHA256": "c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1",
+            "codingCommonSHA256": "4845bf183b80509f743dc87d6e5b211bd5c9757417a9ff08665278f27fda20a6",
+            "inputSHA256": {
+              "existing-responses.json": "f000d3333ea08340a77a9e56d94b1a223c44bce9511d1dcd1a6749eee29987ab",
+              "responses.csv": "c1d4a5412a4836580e145d7d12e03fa0cf384a748718eb01dbb3e4e58ce0c93f",
+              "logs.csv": "e80c380481dfad51e24439becaa286d5a41845aac936adc91f05937e5c160143",
+              "logs-api.json": "4f245e0f89f48862db242c8f520d97c222a3676194454642bdff73582d32afc9",
+              "browser.sqlite": "d084393c391deae979bf8f93909fb209260540c936f2d79e37fd94223d373062",
+              "browser.result": "9562f570531267869ae549b5eebe470dae25067332a1b351e7596605b86c5ade",
+              "blank-native.xlsx": "acb5e92ec4de302b2f00cca11a6a1b3c384ea9542aa0e47ac85ef26a9df5b384"
+            },
+            "people": 84,
+            "toolbox-api-import": "passed",
+            "csvSkippedResponseRows": 0,
+            "csvSkippedLogRows": 24,
+            "toolbox-csv-import": "passed",
+            "toolbox-read-browser-sqlite": "passed",
+            "toolbox-write-sqlite": "passed",
+            "toolbox-excel-export": "passed",
+            "coding-original-archive-codec": "passed",
+            "finished": "2026-11-04T12:09:37.3852790Z"
+          },
+          "fullGraphSHA256": "e47d9006068e8feb2501d9ebbe6fda2198006e719efa41aa2cba5e4aa47504cb",
+          "csvGraphSHA256": "9abec62391db813fce3723ff4ac771394e3648cf40b33d8c2e3766ab3b9ec2b8",
+          "sqlTables": [
+            {
+              "name": "person",
+              "columns": [
+                "id",
+                "group",
+                "login",
+                "code"
+              ],
+              "rows": 84,
+              "sha256": "3941517983138f3cd84cf72c725dcf9d22df0c0121a27477fbc501fb90ee5c73"
+            },
+            {
+              "name": "bookletInfo",
+              "columns": [
+                "id",
+                "name",
+                "size"
+              ],
+              "rows": 1,
+              "sha256": "84403fc4b417515db3607f72f39def50581c96a13adfcd4844500595c1aa2614"
+            },
+            {
+              "name": "booklet",
+              "columns": [
+                "id",
+                "infoId",
+                "personId",
+                "lastTs",
+                "firstTs"
+              ],
+              "rows": 84,
+              "sha256": "38257fcc257ce7235a0eb29ede485f9579c16fa791d45fe1bb16d70b1a547cb8"
+            },
+            {
+              "name": "session",
+              "columns": [
+                "bookletId",
+                "browser",
+                "os",
+                "screen",
+                "ts",
+                "loadCompleteMS"
+              ],
+              "rows": 0,
+              "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+            },
+            {
+              "name": "bookletLog",
+              "columns": [
+                "bookletId",
+                "key",
+                "parameter",
+                "ts"
+              ],
+              "rows": 960,
+              "sha256": "4d1f9c689fbc815ba2a087d8191a532b8e8210ef3369945202756219463b0b2d"
+            },
+            {
+              "name": "unit",
+              "columns": [
+                "id",
+                "bookletId",
+                "name",
+                "alias"
+              ],
+              "rows": 504,
+              "sha256": "50f20f05256c506ae92bcfa09391f3975b48863479e83416dcd76232248acb89"
+            },
+            {
+              "name": "unitLog",
+              "columns": [
+                "unitId",
+                "key",
+                "parameter",
+                "ts"
+              ],
+              "rows": 2712,
+              "sha256": "a73b2f599f6f7a2590df7a25df12ce2bd4a7602c9cb0c3c7f66ac7d2a94bc1f1"
+            },
+            {
+              "name": "unitLastState",
+              "columns": [
+                "unitId",
+                "key",
+                "value"
+              ],
+              "rows": 1008,
+              "sha256": "e871fc45fda16b906ee525ecf362493bc80c4cd9cf13d053846f3234792f564b"
+            },
+            {
+              "name": "chunk",
+              "columns": [
+                "unitId",
+                "key",
+                "type",
+                "variables",
+                "ts"
+              ],
+              "rows": 504,
+              "sha256": "1983be4345f86a833b2a7215244b26a559a2198cb3c075d1a9b3ae0214973c9c"
+            },
+            {
+              "name": "response",
+              "columns": [
+                "unitId",
+                "variableId",
+                "status",
+                "value",
+                "subform",
+                "code",
+                "score"
+              ],
+              "rows": 756,
+              "sha256": "097d5ffb8a2f00b4a57b44d6103d1453aeac83bb432bb114fbbd45d4572b5284"
+            }
+          ],
+          "excelSheets": [
+            {
+              "name": "Antworten",
+              "rows": 85,
+              "columns": 12,
+              "sha256": "86e6a337cce83e4999989e7a80468ef9f8ca1aee8269729fd25d4a52cb39b66b"
+            },
+            {
+              "name": "Status",
+              "rows": 85,
+              "columns": 12,
+              "sha256": "75bf6ef5736fc9c795c559827eb629dd930d1c548e29932f637ef5b23cee4b61"
+            },
+            {
+              "name": "Codes",
+              "rows": 85,
+              "columns": 12,
+              "sha256": "a448ec3652f1a6296584fd50ce0d9abc39760fccb8208eae26d7f6000eef41d7"
+            },
+            {
+              "name": "Scores",
+              "rows": 85,
+              "columns": 12,
+              "sha256": "a448ec3652f1a6296584fd50ce0d9abc39760fccb8208eae26d7f6000eef41d7"
+            }
+          ],
+          "codingModelSHA256": "0df47527a393e7f3dce08f44031ae955f13f76c4e630de68f3f6e81da5a9ae39"
+        }
+      ],
+      "passed": 144,
+      "total": 144,
+      "excluded": [
+        "SQLite db_info and sqlite_sequence metadata",
+        "XLSX styles and ZIP metadata; cells compared as text",
+        "Manual coding decisions and scan workflows",
+        "Empirical human study data"
+      ]
+    }
+  }
+}

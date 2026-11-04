@@ -1,0 +1,229 @@
+{
+  "checkedOn": "2026-11-04",
+  "applicationVersion": "0.4.6",
+  "applicationCommit": "c31bfe884bfd193bda3c41e85bef1321fcd69b0b",
+  "completeEquivalence": false,
+  "empiricalDataTested": false,
+  "scope": "Audit of the present implementation, verified main CI artifacts, current read-only IQB inventories, native pilot plan, and an additional local Int64 counterexample. No manual coding submitted.",
+  "verification": {
+    "node": {
+      "passed": 118,
+      "total": 118,
+      "exitCode": 0
+    },
+    "matrixCounts": {
+      "Browser-/Modultest bestanden": 54,
+      "Windows-Vergleich bestanden": 41,
+      "Dokumentierte Abweichung": 3,
+      "Im Original nicht erreichbar": 4,
+      "Teilnachweis / offen": 1,
+      "Browser-Erweiterung": 7
+    },
+    "featureCount": 110,
+    "nativeStudy": {
+      "passed": 144,
+      "total": 144,
+      "run": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41826330172"
+    },
+    "browsers": {
+      "engines": [
+        "chromium",
+        "firefox",
+        "webkit"
+      ],
+      "playwrightSpecsPerEngine": 18,
+      "harnessChecksPerEngine": 52,
+      "run": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41826330136"
+    },
+    "nativeConverters": {
+      "numericDiagnostics": {
+        "uniqueInputs": 8373,
+        "architectures": [
+          {
+            "bits": 32,
+            "passed": 8373,
+            "total": 8373,
+            "values": 8370,
+            "errorOutcomes": 3
+          },
+          {
+            "bits": 64,
+            "passed": 8373,
+            "total": 8373,
+            "values": 8370,
+            "errorOutcomes": 3
+          }
+        ]
+      },
+      "uniqueConverterInputs": 1214,
+      "architectures": [
+        {
+          "bits": 32,
+          "passed": 1214,
+          "total": 1214,
+          "values": 1049,
+          "valuesPassed": 1049,
+          "errorOutcomes": 165
+        },
+        {
+          "bits": 64,
+          "passed": 1214,
+          "total": 1214,
+          "values": 1049,
+          "valuesPassed": 1049,
+          "errorOutcomes": 165
+        }
+      ],
+      "api": {
+        "passed": 26,
+        "total": 26,
+        "cases": 13
+      },
+      "coding": {
+        "passed": 24,
+        "total": 24,
+        "bidirectional": 22,
+        "errorDetection": 2
+      }
+    }
+  },
+  "codingPilotCurrent": {
+    "workspace_id": 14,
+    "group_ids": [
+      "MCP_SIM_1574B8D03210"
+    ],
+    "revision": "f76cdae1ba505ab46db95956adaab3231ab0d1b812d4fcac07ad009e73d27c76",
+    "responses": 756,
+    "unresolved_manual_responses": 137,
+    "pending_jobs": [],
+    "eligible": false,
+    "final_responses": 0,
+    "result_version": "v3"
+  },
+  "accessibleInventories": [
+    {
+      "workspaceId": 2,
+      "counts": {
+        "Resource": 7,
+        "Unit": 3,
+        "Booklet": 1,
+        "Testtakers": 1
+      },
+      "testtakerDescriptions": [
+        "Synthetischer MCP Pilot ohne reale Testpersonen"
+      ]
+    },
+    {
+      "workspaceId": 3,
+      "counts": {
+        "Resource": 90,
+        "Unit": 35,
+        "Booklet": 8,
+        "Testtakers": 9
+      },
+      "testtakerDescriptions": [
+        "Separate Browser-Sichtprüfung, nicht Bestandteil der 1000-Personen-Studie.",
+        "Synthetische MCP-Pilotstudie. Keine realen Testpersonen. Antworten über Testcenter-Teilnehmer-API.",
+        "Synthetische MCP-Pilotstudie. Keine realen Testpersonen. Antworten über Testcenter-Teilnehmer-API.",
+        "Synthetische MCP-Pilotstudie. Keine realen Testpersonen. Antworten über Testcenter-Teilnehmer-API.",
+        "Synthetische MCP-Pilotstudie. Keine realen Testpersonen. Antworten über Testcenter-Teilnehmer-API.",
+        "Synthetische MCP-Pilotstudie. Keine realen Testpersonen. Antworten über Testcenter-Teilnehmer-API.",
+        "Synthetische MCP-Pilotstudie. Keine realen Testpersonen. Antworten über Testcenter-Teilnehmer-API.",
+        "Synthetische MCP-Pilotstudie. Keine realen Testpersonen. Antworten über Testcenter-Teilnehmer-API.",
+        ""
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "EQUIV-01",
+      "status": "open",
+      "type": "local counterexample",
+      "scope": "T-25: Int64 log timestamps outside usual calendar dates",
+      "actual": {
+        "records": [
+          {
+            "input": "9007199254740992",
+            "exactInput": "9007199254740992",
+            "browser": 9007199254740992
+          },
+          {
+            "input": "9007199254740993",
+            "exactInput": "9007199254740993",
+            "browser": 9007199254740992
+          }
+        ],
+        "collision": true,
+        "oracleCollision": true,
+        "originalContract": "UnitLineDataLog.timestamp: System.Int64",
+        "nativeExecutionForTheseInputs": false,
+        "usualCalendarTimestamp": false
+      },
+      "source": [
+        "src/windows-csv.js:23",
+        "src/data.js:102"
+      ],
+      "limitation": "The two inputs have not yet been run through the original Windows assembly. The observed browser precision loss is directly reproducible. This is not a failure of the unchanged pilot corpus.",
+      "nextAction": "Preserve Int64 event timestamps through DTO, graph and SQLite; then capture these same inputs with the original x86/x64 methods."
+    },
+    {
+      "id": "EQUIV-02",
+      "status": "open",
+      "type": "reference comparison blind spot",
+      "source": [
+        "scripts/native-study.mjs:18",
+        "scripts/native-study.mjs:29",
+        "scripts/native-study.mjs:34"
+      ],
+      "actual": "JSON.parse collapses the same pair of distinct Int64 numbers in the reference reader. An otherwise strict graph hash can therefore miss this class of difference.",
+      "nextAction": "Use lossless integer parsing in input/reference capture and add a negative-control test that must distinguish the two values."
+    },
+    {
+      "id": "EQUIV-03",
+      "status": "resolved",
+      "type": "evidence freshness",
+      "actual": "14 matrix rows pointed only at older browser evidence. Current main artifacts are SHA256-verified; 3 original 52-check reports and the 18-spec-per-engine results are now bound to the exact source hashes.",
+      "remainingOpenMatrixRows": [
+        "T-25"
+      ]
+    }
+  ],
+  "remainingAcceptance": [
+    {
+      "priority": 1,
+      "action": "Repair and validate the lossless timestamp/reference comparison findings above."
+    },
+    {
+      "priority": 2,
+      "action": "Complete a paired end-to-end coding flow against a fixed, authorised reference coding: job opening, code changes, comments, restart, result import and export; apply native v2/v3 only after the required review and approvals.",
+      "currentBlocker": "137 unresolved manual responses; no pending manual job is listed for this group by the finalisation plan. v3 finalisation is not eligible."
+    },
+    {
+      "priority": 3,
+      "action": "Run original Windows and browser workflows on representative anonymised original coding packages and raw study exports with independently established expected outputs.",
+      "currentBlocker": "Accessible IQB inventories identify pilots and simulations; empirical or anonymised study provenance is not established."
+    },
+    {
+      "priority": 4,
+      "action": "Perform direct Windows-GUI acceptance and installed Safari/mobile-device checks for the agreed supported browser/platform matrix; add representative large scans and failure/recovery cases."
+    }
+  ],
+  "knownScopeDifferences": {
+    "onlinePlatformRows": [
+      "K-11",
+      "K-35",
+      "T-61"
+    ],
+    "extensionRows": 7,
+    "unreachableOriginalRows": 4,
+    "sqliteComparisonExcludes": [
+      "db_info",
+      "sqlite_sequence"
+    ],
+    "excelComparisonExcludes": [
+      "styles",
+      "XML/ZIP metadata"
+    ],
+    "manualCodingArchiveOnly": "The 137 free-text comments have been transported through the original archive reader/writer without ratings; this is not proof of completed rubric-based coding."
+  }
+}
