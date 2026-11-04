@@ -22,7 +22,21 @@ class StudyReference {
  static void Step(string name,Action run){try{run();report[name]="passed";}catch(Exception e){while(e.InnerException!=null)e=e.InnerException;report[name]=new JObject(new JProperty("error",e.ToString()));}File.WriteAllText(Path.Combine(root,"native-report.json"),report.ToString());}
  static List<object> People(object list){var result=new List<object>();foreach(var person in Items(list.GetType().GetProperty("Values").GetValue(list,null))){foreach(var b in Items(person.GetType().GetField("booklets").GetValue(person)))Call(b,"setTimestamps");result.Add(person);}return result;}
  static List<object> FromAPI(){var people=Activator.CreateInstance(T("PersonList"));foreach(var pair in new[]{new[]{"existing-responses.json","ResponseDTO","UnitLineDataResponses","AddUnitData"},new[]{"logs-api.json","LogEntryDTO","UnitLineDataLog","AddLogEntry"}}){var type=typeof(List<>).MakeGenericType(T(pair[1]));var data=JsonConvert.DeserializeObject(File.ReadAllText(Path.Combine(root,pair[0])),type);foreach(var row in Items(data))Call(people,pair[3],Static(pair[2],"fromTestcenterAPI",row));}return People(people);}
- static List<object> FromCSV(){var people=Activator.CreateInstance(T("PersonList"));foreach(var line in File.ReadLines(Path.Combine(root,"responses.csv")).Skip(1)){var unit=Static("UnitLineDataResponses","fromCsvLine",line,";",Enum.Parse(T("CsvResponseFileType"),"Legacy"));if(unit==null)throw new Exception("Missing CSV response");Call(people,"AddUnitData",unit);}foreach(var line in File.ReadLines(Path.Combine(root,"logs.csv")).Skip(1)){var entry=Static("UnitLineDataLog","fromCsvLine",line,Enum.Parse(T("CsvLogFileType"),"Legacy"));if(entry==null)throw new Exception("Missing CSV log");Call(people,"AddLogEntry",entry);}return People(people);}
+ static List<object> FromCSV(){
+  var people=Activator.CreateInstance(T("PersonList"));int skippedResponses=0,skippedLogs=0;
+  foreach(var line in File.ReadLines(Path.Combine(root,"responses.csv")).Skip(1)){
+   var unit=Static("UnitLineDataResponses","fromCsvLine",line,";",Enum.Parse(T("CsvResponseFileType"),"Legacy"));
+   var forms=unit==null?null:(IList)unit.GetType().GetField("subforms").GetValue(unit);
+   if(forms==null||forms.Count==0||((IList)forms[0].GetType().GetField("responses").GetValue(forms[0])).Count==0){skippedResponses++;continue;}
+   Call(people,"AddUnitData",unit);
+  }
+  foreach(var line in File.ReadLines(Path.Combine(root,"logs.csv")).Skip(1)){
+   var entry=Static("UnitLineDataLog","fromCsvLine",line,Enum.Parse(T("CsvLogFileType"),"Legacy"));
+   // LoadDataFromCsvPage2Result skips null rows returned by the original parser.
+   if(entry==null){skippedLogs++;continue;}Call(people,"AddLogEntry",entry);
+  }
+  report["csvSkippedResponseRows"]=skippedResponses;report["csvSkippedLogRows"]=skippedLogs;return People(people);
+ }
  static List<object> ReadDB(string filename){var db=Activator.CreateInstance(T("SQLiteConnector"),new object[]{Path.Combine(root,filename),false});try{var ids=Call(db,"getPeopleList");var result=new List<object>();foreach(var id in Items(ids.GetType().GetProperty("Values").GetValue(ids,null)))result.Add(Call(db,"getPersonResponses",id));return result;}finally{Call(db,"CloseConnection");}}
  [STAThread] static int Main(string[] args){
   originals=args[0];root=args[1];toolPath=Path.Combine(originals,"itc-ToolBox");

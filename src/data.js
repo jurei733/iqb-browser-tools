@@ -3,6 +3,7 @@ import {parseCSV,csvString} from './toolbox.js';
 import {parseJSON,stringifyJSON} from './json.js';
 import {parseWindowsChunk} from './windows-responses.js';
 import {parseWindowsJSON,isContainer,orderedEntries,windowsTokenText} from './windows-tokens.js';
+import {parseWindowsLogCSV,splitWindowsLog} from './windows-csv.js';
 
 export const STATUS=['UNSET','NOT_REACHED','DISPLAYED','VALUE_CHANGED','DERIVE_ERROR','CODING_COMPLETE','NO_CODING','INVALID','CODING_INCOMPLETE','CODING_ERROR','PARTLY_DISPLAYED','DERIVE_PENDING','INTENDED_INCOMPLETE','CODE_SELECTION_PENDING'];
 export const asText=v=>v===null?'#null#':typeof v==='object'?stringifyJSON(v):String(v??'');
@@ -98,13 +99,14 @@ export function peopleFromDTO(responses=[],logs=[],{windows=false}={}) {
   const people=new Map();
   function location(d){const group=String(d.groupname??''),login=String(d.loginname??''),code=String(d.code??''),booklet=String(d.bookletname??''),pk=windows?group+login+code:key(group,login,code);if(!people.has(pk))people.set(pk,{group,login,code,booklets:[]});const p=people.get(pk);let b=p.booklets.find(b=>b.id===booklet);if(!b){b={id:booklet,sessions:[],logs:[],units:[],firstTS:0,lastTS:0};p.booklets.push(b);}return b;}
   for(const d of responses){const b=location(d),u=responseUnit(d,{windows});const old=b.units.find(v=>sameUnit(v,u));if(old&&(!windows||!old.subforms.length&&!old.laststate.length&&!old.chunks.length)){if(windows)Object.assign(old,{chunks:u.chunks,laststate:u.laststate,subforms:u.subforms});else mergeUnit(old,u);}else b.units.push(u);}
-  for(const d of logs){const b=location(d),event={ts:numeric(d.timestamp),...splitLog(d.logentry)};
+  for(const d of logs){const b=location(d),event={ts:numeric(d.timestamp),...(windows?splitWindowsLog(d.logentry):splitLog(d.logentry))};
     if(d.unitname){let u=b.units.find(v=>v.alias===d.unitname&&(!d.originalUnitId||v.id===d.originalUnitId||v.id===v.alias));if(!u){u={id:d.originalUnitId||d.unitname,alias:d.unitname,laststate:[],chunks:[],subforms:[],logs:[]};b.units.push(u);}else if(d.originalUnitId&&u.id===u.alias)u.id=d.originalUnitId;u.logs.push(event);}
     else {b.logs.push(event);if(event.key==='LOADCOMPLETE'){let info={};try{info=JSON.parse(event.parameter.replace(/\\"/g,'"'));}catch{}b.sessions.push({ts:event.ts,loadCompleteMS:numeric(info.loadTime),browser:info.browser||[info.browserName,info.browserVersion].filter(Boolean).join(' ')||'?',os:String(info.os??info.osName??'?'),screen:info.screen||(info.screenSizeWidth?`${info.screenSizeWidth} x ${info.screenSizeHeight}`:'?')});}}
   }
   return refreshTimes([...people.values()]);
 }
 export function importCSV(source,delimiter='auto',options={}) {
+  if(options.windows&&String(source).split(/\r\n|\n|\r/,1)[0].replace(/"/g,'').endsWith(';logentry'))return peopleFromDTO([],parseWindowsLogCSV(source,options),options);
   const table=parseCSV(source,delimiter),headers=table.shift().map(h=>h.trim().replace(/^\uFEFF/,'')),data=table.filter(r=>r.some(Boolean)).map((r,i)=>{if(r.length!==headers.length)throw new Error(`CSV-Zeile ${i+2}: ${r.length} statt ${headers.length} Felder.`);return Object.fromEntries(headers.map((h,j)=>[h,r[j]]));});
   for(const h of ['groupname','loginname','bookletname','unitname'])if(!headers.includes(h))throw new Error(`CSV-Kopf „${h}“ fehlt.`);
   if(headers.includes('logentry'))return peopleFromDTO([],data,options);
@@ -127,7 +129,7 @@ export function mergePeople(...groups) {
 export async function readDataFiles(files,{encoding='utf-8',delimiter='auto',windows=false,onWarning=()=>{}}={}) {
   const batches=[];for(const f of files){const source=typeof f.text==='string'?f.text:new TextDecoder(encoding,{fatal:true}).decode(f.bytes??await f.arrayBuffer());
     if(/\.json$/i.test(f.name)){const data=parseJSON(source);if(Array.isArray(data)&&data[0]?.booklets!==undefined)batches.push(normalizePeople(data,{windows}));else if(Array.isArray(data)&&data[0]?.groupname!==undefined)batches.push(data[0].logentry!==undefined?peopleFromDTO([],data,{windows}):peopleFromDTO(data,[],{windows}));else if(Array.isArray(data)&&!data.length)batches.push([]);else throw new Error(`${f.name}: Unbekanntes JSON-Format.`);}
-    else batches.push(importCSV(source,delimiter,{windows}));
+    else batches.push(importCSV(source,delimiter,{windows,onWarning:message=>onWarning(`${f.name}: ${message}`)}));
   }
   if(windows){const map=new Map();for(const [index,batch]of batches.entries())for(const p of batch){const k=p.group+p.login+p.code;if(!map.has(k)){map.set(k,structuredClone(p));continue;}if(/\.json$/i.test(files[index].name)){onWarning(`${files[index].name}: Personenkennung doppelt (${k}); übrige Personen dieser Datei wie im Original übersprungen.`);break;}const target=map.get(k);for(const b of p.booklets){let old=target.booklets.find(v=>v.id===b.id);if(!old){target.booklets.push(structuredClone(b));continue;}old.logs.push(...b.logs);old.sessions.push(...b.sessions);for(const u of b.units){const unit=old.units.find(v=>v.alias===u.alias);if(unit&&!u.subforms.length&&!u.chunks.length&&!u.laststate.length)unit.logs.push(...u.logs);else if(unit&&!unit.subforms.length&&!unit.chunks.length&&!unit.laststate.length)Object.assign(unit,{chunks:u.chunks,laststate:u.laststate,subforms:u.subforms});else old.units.push(structuredClone(u));}}}return refreshTimes([...map].sort(([a],[b])=>a.localeCompare(b,'de')).map(([,p])=>p));}
   return mergePeople(...batches);
