@@ -1,0 +1,296 @@
+{
+  "synthetic": true,
+  "empiricalStudy": false,
+  "capturedOn": "2026-11-04",
+  "source": "Fresh MCP export of the existing Testcenter participant-API cohort MCP_SIM_A85A58E88AE4_G01..G10; generated responses, not human observations.",
+  "sourceExport": {
+    "responseArtifact": "72710180-6679-420a-b570-abeb1789edaf",
+    "rawFilesArtifact": "8f06c8ea-d69b-4cdb-814a-4318a33f75d5",
+    "rawZipSHA256": "e1b42020c89b9a621a849daefbd7ff0f0816b28a3014db5aa5e352d615b41147",
+    "completionVerified": false
+  },
+  "inputArchiveSHA256": "c040aba7fdb5598f546853b19484d8f6855c629f4278a15740636cb090513282",
+  "blankTemplateSHA256": "acb5e92ec4de302b2f00cca11a6a1b3c384ea9542aa0e47ac85ef26a9df5b384",
+  "rawFileSHA256": {
+    "existing-responses.json": "cdeefd8d9e9806afd4455e2ba59e45efe78b721b02413070cc083cffd95aaa0a",
+    "responses.csv": "e022067d780a63a29d5a6a3eda79a694be81c715450172f7b01a91eac99fd90e",
+    "logs.csv": "9f57ada4a14ccf40f9b0c6f90609f3c9356362dd5ac536829e84a7884516c4a8"
+  },
+  "fullGraphSHA256": "fbc12e1fec21a917f3233426e65c391d5ed93e6b861fe1cb6cddad616bebb5a9",
+  "sqlTables": [
+    {
+      "name": "person",
+      "columns": [
+        "id",
+        "group",
+        "login",
+        "code"
+      ],
+      "rows": 1000,
+      "sha256": "274eb7e689bc16b4957b454eed9af0e7d1a93ae2771c3146796fac4b534530a1"
+    },
+    {
+      "name": "bookletInfo",
+      "columns": [
+        "id",
+        "name",
+        "size"
+      ],
+      "rows": 1,
+      "sha256": "03cf5aedf78ee0f0fb696a726ba9b547eb429268b2330c7460626bf5c032418e"
+    },
+    {
+      "name": "booklet",
+      "columns": [
+        "id",
+        "infoId",
+        "personId",
+        "lastTs",
+        "firstTs"
+      ],
+      "rows": 1000,
+      "sha256": "7abf31eacf7096cb9508fc888bf3fe63038f3822271f76129a53eaf3fd643bee"
+    },
+    {
+      "name": "session",
+      "columns": [
+        "bookletId",
+        "browser",
+        "os",
+        "screen",
+        "ts",
+        "loadCompleteMS"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "bookletLog",
+      "columns": [
+        "bookletId",
+        "key",
+        "parameter",
+        "ts"
+      ],
+      "rows": 11794,
+      "sha256": "1c1ef7695745f5b7fe749ca5560e8782decde9bff5084475b1fdb5e3f44678ef"
+    },
+    {
+      "name": "unit",
+      "columns": [
+        "id",
+        "bookletId",
+        "name",
+        "alias"
+      ],
+      "rows": 6000,
+      "sha256": "12de8b8742a00e3bb0e0972790af41e7916134f94f5521b235d036e257534b50"
+    },
+    {
+      "name": "unitLog",
+      "columns": [
+        "unitId",
+        "key",
+        "parameter",
+        "ts"
+      ],
+      "rows": 33160,
+      "sha256": "9437682c86a1cbedaf3bd48206da2c0d87d454ed5a6d04001cc5fd3a811f5e8d"
+    },
+    {
+      "name": "unitLastState",
+      "columns": [
+        "unitId",
+        "key",
+        "value"
+      ],
+      "rows": 12000,
+      "sha256": "182d46379f4a1906658562dd341b9502330dc9b8b23e9a59bb7b5ff486b6b0c8"
+    },
+    {
+      "name": "chunk",
+      "columns": [
+        "unitId",
+        "key",
+        "type",
+        "variables",
+        "ts"
+      ],
+      "rows": 6000,
+      "sha256": "6b5251727a515dd7562b26bbc9099ab4b284ef77a73e860b2a15f8a55088aed0"
+    },
+    {
+      "name": "response",
+      "columns": [
+        "unitId",
+        "variableId",
+        "status",
+        "value",
+        "subform",
+        "code",
+        "score"
+      ],
+      "rows": 9000,
+      "sha256": "a04d77bf778f3b6ac131c4be54af98ed5bbd7491b045c3877ecd838729dc8275"
+    }
+  ],
+  "excelSheets": [
+    {
+      "name": "Antworten",
+      "cells": {
+        "rows": 1001,
+        "columns": 12,
+        "sha256": "5a68b9b1cf9f8da2dea73bb546c65dda8de832f8c3f47ffe17da07518acffdc1"
+      }
+    },
+    {
+      "name": "Status",
+      "cells": {
+        "rows": 1001,
+        "columns": 12,
+        "sha256": "671e6e5a349c51c75b20afaf878dc3e7b5769b10e22ed60cf0971d9309c3680c"
+      }
+    },
+    {
+      "name": "Codes",
+      "cells": {
+        "rows": 1001,
+        "columns": 12,
+        "sha256": "ac6c6dedae03d0d7741c5ca399100a0c2e1b764327516b8584bcf0030773f323"
+      }
+    },
+    {
+      "name": "Scores",
+      "cells": {
+        "rows": 1001,
+        "columns": 12,
+        "sha256": "ac6c6dedae03d0d7741c5ca399100a0c2e1b764327516b8584bcf0030773f323"
+      }
+    }
+  ],
+  "codingModelSHA256": "6d979e6c2660e32e6c0c213067be2b3f587a40499c3cc3f4a724e76d51670cb2",
+  "counts": {
+    "people": 1000,
+    "booklets": 1000,
+    "unitRows": 6000,
+    "responses": 9000,
+    "logs": 44954,
+    "sqlDomainRows": 79955,
+    "excelCells": 48048,
+    "codingComments": 1823
+  },
+  "captures": [
+    {
+      "profile": "x86",
+      "report": {
+        "synthetic": true,
+        "empiricalStudy": false,
+        "started": "2026-11-04T09:32:05.1308058Z",
+        "processBits": 32,
+        "nativeMachine": "aa64",
+        "processMachine": "014c",
+        "culture": "de-DE",
+        "timezone": "W. Europe Standard Time",
+        "toolboxSHA256": "c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1",
+        "codingCommonSHA256": "4845bf183b80509f743dc87d6e5b211bd5c9757417a9ff08665278f27fda20a6",
+        "inputSHA256": {
+          "existing-responses.json": "cdeefd8d9e9806afd4455e2ba59e45efe78b721b02413070cc083cffd95aaa0a",
+          "responses.csv": "e022067d780a63a29d5a6a3eda79a694be81c715450172f7b01a91eac99fd90e",
+          "logs.csv": "9f57ada4a14ccf40f9b0c6f90609f3c9356362dd5ac536829e84a7884516c4a8",
+          "logs-api.json": "b36dd5a436abb726b1cbb5c2c75b1423d14a0de3a8b9f5077391dff103435469",
+          "browser.sqlite": "c4df664012b1f24e365693460f809caae708bb1e72f252b8a27b0653bc51907d",
+          "browser.result": "218a2a8505af6d95daebad197fe1f6821a12bf8e72a48cde34fb95715e80f807",
+          "blank-native.xlsx": "acb5e92ec4de302b2f00cca11a6a1b3c384ea9542aa0e47ac85ef26a9df5b384"
+        },
+        "people": 1000,
+        "toolbox-api-import": "passed",
+        "toolbox-csv-import": "passed",
+        "toolbox-read-browser-sqlite": "passed",
+        "toolbox-write-sqlite": "passed",
+        "toolbox-excel-export": "passed",
+        "coding-original-archive-codec": "passed",
+        "finished": "2026-11-04T09:32:41.3841522Z"
+      },
+      "outputSHA256": {
+        "native-report.json": "2ab32044ff2cdac799bc72eb91c5348ac0eb15732a16e0d285e865278eee7462",
+        "native-api-people.json": "7d9218078861015ef43b19731b367003473524e0ba7a80aebb22481fe69bce68",
+        "native-csv-people.json": "7d9218078861015ef43b19731b367003473524e0ba7a80aebb22481fe69bce68",
+        "native-browser-db-people.json": "951fe16a025507beb0e57fbbdcf3b19b434b8304de4a0b6716f826215d945c47",
+        "native-own-db-people.json": "951fe16a025507beb0e57fbbdcf3b19b434b8304de4a0b6716f826215d945c47",
+        "native.sqlite": "92ef302ebd1fb5bd8277103bfffa84eec90154b34235ef13768d2b58aeb3da9b",
+        "native-wide.xlsx": "102c9f6d5d6e894a90dc2840becbed79f373314b2ef3d08e6eca0c3482e1e93d",
+        "native-codec.result": "f441ddaeac829f77747198904579badbb832f9b643993bbbce3902a97e8877fb"
+      },
+      "fullGraphSHA256": "fbc12e1fec21a917f3233426e65c391d5ed93e6b861fe1cb6cddad616bebb5a9",
+      "originalReaderProjectionMatches": true,
+      "browserReadsNativeFullGraph": true,
+      "allDomainTablesMatch": true,
+      "excelCellsMatch": true,
+      "unscoredArchiveModelMatches": true
+    },
+    {
+      "profile": "x64",
+      "report": {
+        "synthetic": true,
+        "empiricalStudy": false,
+        "started": "2026-11-04T09:32:43.6521355Z",
+        "processBits": 64,
+        "nativeMachine": "aa64",
+        "processMachine": "0000",
+        "culture": "de-DE",
+        "timezone": "W. Europe Standard Time",
+        "toolboxSHA256": "c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1",
+        "codingCommonSHA256": "4845bf183b80509f743dc87d6e5b211bd5c9757417a9ff08665278f27fda20a6",
+        "inputSHA256": {
+          "existing-responses.json": "cdeefd8d9e9806afd4455e2ba59e45efe78b721b02413070cc083cffd95aaa0a",
+          "responses.csv": "e022067d780a63a29d5a6a3eda79a694be81c715450172f7b01a91eac99fd90e",
+          "logs.csv": "9f57ada4a14ccf40f9b0c6f90609f3c9356362dd5ac536829e84a7884516c4a8",
+          "logs-api.json": "b36dd5a436abb726b1cbb5c2c75b1423d14a0de3a8b9f5077391dff103435469",
+          "browser.sqlite": "c4df664012b1f24e365693460f809caae708bb1e72f252b8a27b0653bc51907d",
+          "browser.result": "218a2a8505af6d95daebad197fe1f6821a12bf8e72a48cde34fb95715e80f807",
+          "blank-native.xlsx": "acb5e92ec4de302b2f00cca11a6a1b3c384ea9542aa0e47ac85ef26a9df5b384"
+        },
+        "people": 1000,
+        "toolbox-api-import": "passed",
+        "toolbox-csv-import": "passed",
+        "toolbox-read-browser-sqlite": "passed",
+        "toolbox-write-sqlite": "passed",
+        "toolbox-excel-export": "passed",
+        "coding-original-archive-codec": "passed",
+        "finished": "2026-11-04T09:33:18.2025742Z"
+      },
+      "outputSHA256": {
+        "native-report.json": "eae07d0da7fc274a4f8d0477013ef8b7a9159bfdeee8c0d4f8145f7ec6e365de",
+        "native-api-people.json": "7d9218078861015ef43b19731b367003473524e0ba7a80aebb22481fe69bce68",
+        "native-csv-people.json": "7d9218078861015ef43b19731b367003473524e0ba7a80aebb22481fe69bce68",
+        "native-browser-db-people.json": "951fe16a025507beb0e57fbbdcf3b19b434b8304de4a0b6716f826215d945c47",
+        "native-own-db-people.json": "951fe16a025507beb0e57fbbdcf3b19b434b8304de4a0b6716f826215d945c47",
+        "native.sqlite": "29e4fbc84ecd40c8ba19e2cafbd1958fe20042813320eb04439e345b90e9867f",
+        "native-wide.xlsx": "de9a000dd438dff2de13e01cb0cb14cd1821ab22a6b5a25ced9ec4aeda12b057",
+        "native-codec.result": "f441ddaeac829f77747198904579badbb832f9b643993bbbce3902a97e8877fb"
+      },
+      "fullGraphSHA256": "fbc12e1fec21a917f3233426e65c391d5ed93e6b861fe1cb6cddad616bebb5a9",
+      "originalReaderProjectionMatches": true,
+      "browserReadsNativeFullGraph": true,
+      "allDomainTablesMatch": true,
+      "excelCellsMatch": true,
+      "unscoredArchiveModelMatches": true
+    }
+  ],
+  "comparisonRules": [
+    "JSON object keys are sorted for hashes; array order, all fields, strings and numbers remain unchanged.",
+    "SQLite compares all columns of ten domain tables in rowid order. db_info and sqlite_sequence are excluded: creator, dates, locale-formatted counters, status vocabulary and allocation metadata differ.",
+    "Excel compares sheet names/order, dimensions and every cell as text. Omitted and explicitly empty cells both read as empty text; styles, ZIP metadata and XML prefix choices are excluded.",
+    "The log API input is reconstructed from the unchanged logs.csv by CSV unescaping only; the response API input is the direct MCP response JSON export.",
+    "CodingResults transports unscored source text as comments through the original IQB-Common archive reader/writer. It does not test manual coding decisions or scan workflows."
+  ],
+  "limitations": [
+    "Synthetic participant-API sessions are not empirical study data or evidence of human browser usage.",
+    "No aggregate completion claim: the current Testcenter status reports completion_verified=false.",
+    "Windows 11 on ARM64 VM: a 32-bit x86 process (processMachine=014c) and a 64-bit .NET process (processMachine=0000), de-DE, W. Europe Standard Time. This is not a fresh native x64 hardware run.",
+    "The original getPersonResponses reader is a partial response projection with booklet XYZ; its equality is recorded separately, not used as proof of full graph preservation.",
+    "Frozen reference tests rerun the browser import/export code in CI; the original assemblies were executed when capturing this reference, not in each Linux test.",
+    "A new 84-person enriched pilot was planned but not started: the MCP write approval was declined. No local API bypass was used.",
+    "This corpus does not establish equality for all functions, files, real populations or edge cases."
+  ]
+}

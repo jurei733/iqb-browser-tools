@@ -2,6 +2,14 @@
 
 Portierung der Arbeitsabläufe von **IQB-Kodieren 4.3.0.3** und **itc-ToolBox 3.3.0.2**. Die Anwendung läuft als statische Website mit lokaler Dateiverarbeitung; eine Windows-Installation ist nicht erforderlich.
 
+## Testcenter-Pilotdaten vom 04.11.2026
+
+Ein frisch exportierter vorhandener Testcenter-Pilot umfasst **1.000 simulierte Personen, 6.000 Unit-Datensätze, 9.000 Antworten und 44.954 Logs**. Die unveränderten Windows-Assemblies wurden mit diesen Daten in einem 32- und einem 64-Bit-Prozess unter Windows 11 auf ARM64 ausgeführt. Beide Browser-Windows-Profile bestehen **66 wiederholbare Prüfungen** gegen die erfassten Originalausgaben: vollständiger API-/CSV-Datengraph, alle Werte der zehn fachlichen SQLite-Tabellen (79.955 Zeilen), vier Excel-Blätter (48.048 Zellen einschließlich Überschriften) und der Archivtransport von 1.823 unbewerteten Freitextkommentaren.
+
+Der Test läuft über `pnpm test` automatisch in der bestehenden CI. `pnpm test:study -- work/study-export` erzeugt zusätzlich die Eingabe- und Browser-Exportdateien. [Herkunft, Prüfumfang und erneuter Windows-Lauf](demo/testcenter/STUDY-PARITY.md); [Referenz mit Original-Prüfsummen](tests/fixtures/testcenter-study/reference.json).
+
+**Die Sitzungen liegen im echten Testcenter, ihre Antworten sind synthetisch.** Sie ersetzen keine empirischen Studiendaten. Vollständiger Studienabschluss, fachliche Freitextbewertungen und sämtliche GUI-Arbeitsabläufe werden durch diesen Datensatzvergleich nicht nachgewiesen. Ein zusätzlich geplanter 84-Personen-Pilot wurde wegen abgelehnter MCP-Schreibfreigabe nicht gestartet.
+
 ## Windows-Zahlenverarbeitung 0.4.5 vom 04.11.2026
 
 Die beiden früheren 32-Bit-Textabweichungen sind behoben. Das 32-Bit-Profil bildet die **x87-Rechenschritte mit 64-Bit-Signifikand, Skalierung durch Multiplikation/Division, Rundung auf eine BCD-Ganzzahl und anschließende G15/G17-Rundung** nach. Der Algorithmus stammt aus dem offiziellen MIT-lizenzierten CoreCLR-Quellcode; [Quellstand, Dateiprüfsumme und Lizenz](docs/windows-x87-provenance.json) sind festgehalten. Es gibt keine Nachschlagetabelle für einzelne Zahlenwerte.
