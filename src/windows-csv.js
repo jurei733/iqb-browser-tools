@@ -7,6 +7,22 @@ export function splitWindowsLog(value) {
   return at>0?{key:text.slice(0,at),parameter:text.slice(at+3)}:{key:text,parameter:''};
 }
 
+function logTimestamp(stamp,line) {
+  const parts=(stamp.includes('E+')?/^([+-]?)(\d+)(?:,(\d*))?E\+(\d+)$/:/^([+-]?)(\d+)$/).exec(stamp);
+  const invalid=()=>new Error(`Windows-Log-CSV, Zeile ${line}: Ungültiger Int64-Zeitstempel.`);
+  if(!parts)throw invalid();
+  let value=BigInt(parts[2]+(parts[3]||''));
+  if(value!==0n){
+    const scale=Number(parts[4]||0)-(parts[3]||'').length,digits=value.toString().length;
+    if(scale+digits>19||-scale>digits)throw invalid();
+    if(scale<0){const divisor=10n**BigInt(-scale);if(value%divisor!==0n)throw invalid();value/=divisor;}
+    else value*=10n**BigInt(scale);
+    if(parts[1]==='-')value=-value;
+  }
+  if(value < -9223372036854775808n||value > 9223372036854775807n)throw invalid();
+  return Number(value);
+}
+
 export function parseWindowsLogCSV(source,{onWarning=()=>{}}={}) {
   const lines=String(source).replace(/^\uFEFF/,'').split(/\r\n|\n|\r/),header=lines.shift().replace(/"/g,'');
   if(lines.at(-1)==='')lines.pop();
@@ -16,10 +32,7 @@ export function parseWindowsLogCSV(source,{onWarning=()=>{}}={}) {
   for(const [index,line]of lines.entries()){
     let fields=line.split('";').filter(Boolean);if(fields.length!==count)fields=line.split(';');
     if(fields.length!==count){skipped++;continue;}
-    const stamp=strip(fields[5+offset]).trim(),exponent=stamp.indexOf('E+')>0;
-    if(!(exponent?/^[+-]?\d+(?:,\d+)?E\+\d+$/:/^[+-]?\d+$/).test(stamp))throw new Error(`Windows-Log-CSV, Zeile ${index+2}: Ungültiger Zeitstempel.`);
-    const timestamp=Number(stamp.replace(',','.'));
-    if(!Number.isInteger(timestamp)||timestamp < -9223372036854775808||timestamp >= 9223372036854775808)throw new Error(`Windows-Log-CSV, Zeile ${index+2}: Zeitstempel außerhalb von Int64.`);
+    const timestamp=logTimestamp(strip(fields[5+offset]).trim(),index+2);
     let logentry=fields[6+offset];if(logentry.startsWith('"'))logentry=logentry.slice(1,-1).replace(/""/g,'"');
     const unitname=strip(fields[4]);
     // Preserve the original v2024 fallback to field 4 for unquoted unit IDs.
