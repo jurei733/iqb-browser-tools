@@ -1,29 +1,35 @@
 {
   "checkedOn": "2026-11-04",
-  "applicationVersion": "0.4.6",
-  "applicationCommit": "c31bfe884bfd193bda3c41e85bef1321fcd69b0b",
+  "applicationVersion": "0.4.7",
+  "applicationCommit": "785aa2e6d79516d774d2ec262a57f80c3d61a8b3",
   "completeEquivalence": false,
   "empiricalDataTested": false,
-  "scope": "Audit of the present implementation, verified main CI artifacts, current read-only IQB inventories, native pilot plan, and an additional local Int64 counterexample. No manual coding submitted.",
+  "scope": "Ordered follow-up: Int64 fix and original x86/x64 capture; installed Safari, mobile emulation and workload acceptance. Empirical data absent; native manual coding job creation declined by the MCP approval layer.",
   "verification": {
     "node": {
-      "passed": 118,
-      "total": 118,
+      "passed": 123,
+      "total": 123,
       "exitCode": 0
     },
     "matrixCounts": {
       "Browser-/Modultest bestanden": 54,
-      "Windows-Vergleich bestanden": 41,
+      "Windows-Vergleich bestanden": 42,
       "Dokumentierte Abweichung": 3,
       "Im Original nicht erreichbar": 4,
-      "Teilnachweis / offen": 1,
       "Browser-Erweiterung": 7
     },
     "featureCount": 110,
     "nativeStudy": {
-      "passed": 144,
-      "total": 144,
-      "run": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41826330172"
+      "passed": 216,
+      "total": 216,
+      "run": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41839555938",
+      "sourceCommit": "1c76ed38714dad3770e05a388d1e111b8243e667",
+      "uniqueInt64LogInputs": 64,
+      "processArchitectures": [
+        32,
+        64
+      ],
+      "verificationRun": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41844019523"
     },
     "browsers": {
       "engines": [
@@ -32,8 +38,8 @@
         "webkit"
       ],
       "playwrightSpecsPerEngine": 18,
-      "harnessChecksPerEngine": 52,
-      "run": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41826330136"
+      "harnessChecksPerEngine": 53,
+      "run": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41844019582"
     },
     "nativeConverters": {
       "numericDiagnostics": {
@@ -85,6 +91,18 @@
         "bidirectional": 22,
         "errorDetection": 2
       }
+    },
+    "installedSafari": {
+      "passed": 53,
+      "total": 53,
+      "version": "27.0.1",
+      "report": "tests/results/function-audit-20261104-140600-safari.json"
+    },
+    "practicalAcceptance": {
+      "passed": 8,
+      "total": 8,
+      "mobileHardware": false,
+      "report": "tests/results/practical-acceptance-20261104.json"
     }
   },
   "codingPilotCurrent": {
@@ -137,10 +155,14 @@
   "findings": [
     {
       "id": "EQUIV-01",
-      "status": "open",
+      "status": "resolved",
       "type": "local counterexample",
       "scope": "T-25: Int64 log timestamps outside usual calendar dates",
-      "actual": {
+      "source": [
+        "src/windows-csv.js:23",
+        "src/data.js:102"
+      ],
+      "previousFinding": {
         "records": [
           {
             "input": "9007199254740992",
@@ -159,53 +181,59 @@
         "nativeExecutionForTheseInputs": false,
         "usualCalendarTimestamp": false
       },
-      "source": [
-        "src/windows-csv.js:23",
-        "src/data.js:102"
-      ],
-      "limitation": "The two inputs have not yet been run through the original Windows assembly. The observed browser precision loss is directly reproducible. This is not a failure of the unchanged pilot corpus.",
-      "nextAction": "Preserve Int64 event timestamps through DTO, graph and SQLite; then capture these same inputs with the original x86/x64 methods."
+      "actual": "Distinct Int64 values retained through raw JSON/API/CSV/SQLite; lossless graph hash rejects the former collision. All 64 native inputs match original x86/x64 methods.",
+      "proof": "tests/results/testcenter-native-int64-20261104.json"
     },
     {
       "id": "EQUIV-02",
-      "status": "open",
+      "status": "resolved",
       "type": "reference comparison blind spot",
       "source": [
         "scripts/native-study.mjs:18",
         "scripts/native-study.mjs:29",
         "scripts/native-study.mjs:34"
       ],
-      "actual": "JSON.parse collapses the same pair of distinct Int64 numbers in the reference reader. An otherwise strict graph hash can therefore miss this class of difference.",
-      "nextAction": "Use lossless integer parsing in input/reference capture and add a negative-control test that must distinguish the two values."
+      "previousFinding": "JSON.parse collapses the same pair of distinct Int64 numbers in the reference reader. An otherwise strict graph hash can therefore miss this class of difference.",
+      "actual": "Distinct Int64 values retained through raw JSON/API/CSV/SQLite; lossless graph hash rejects the former collision. All 64 native inputs match original x86/x64 methods.",
+      "proof": "tests/results/testcenter-native-int64-20261104.json"
     },
     {
       "id": "EQUIV-03",
       "status": "resolved",
       "type": "evidence freshness",
       "actual": "14 matrix rows pointed only at older browser evidence. Current main artifacts are SHA256-verified; 3 original 52-check reports and the 18-spec-per-engine results are now bound to the exact source hashes.",
-      "remainingOpenMatrixRows": [
-        "T-25"
-      ]
+      "remainingOpenMatrixRows": []
     }
   ],
   "remainingAcceptance": [
     {
       "priority": 1,
-      "action": "Repair and validate the lossless timestamp/reference comparison findings above."
+      "action": "Int64 fix and lossless oracle validated against original x86/x64 methods.",
+      "status": "complete"
     },
     {
       "priority": 2,
       "action": "Complete a paired end-to-end coding flow against a fixed, authorised reference coding: job opening, code changes, comments, restart, result import and export; apply native v2/v3 only after the required review and approvals.",
-      "currentBlocker": "137 unresolved manual responses; no pending manual job is listed for this group by the finalisation plan. v3 finalisation is not eligible."
+      "currentBlocker": "137 manual responses remain. coding_job_create was rejected with APPROVAL_DECLINED twice, including after the user enabled dialogs; second rejection took 21 ms. No job was created and no ratings were submitted.",
+      "status": "blocked"
     },
     {
       "priority": 3,
       "action": "Run original Windows and browser workflows on representative anonymised original coding packages and raw study exports with independently established expected outputs.",
-      "currentBlocker": "Accessible IQB inventories identify pilots and simulations; empirical or anonymised study provenance is not established."
+      "currentBlocker": "User confirmed no empirical/anonymised datasets are available. Accessible sources are synthetic pilots.",
+      "status": "blocked"
     },
     {
       "priority": 4,
-      "action": "Perform direct Windows-GUI acceptance and installed Safari/mobile-device checks for the agreed supported browser/platform matrix; add representative large scans and failure/recovery cases."
+      "action": "Perform direct Windows-GUI acceptance and installed Safari/mobile-device checks for the agreed supported browser/platform matrix; add representative large scans and failure/recovery cases.",
+      "status": "partial",
+      "completed": [
+        "Installed Safari 27.0.1: 53/53",
+        "WebKit iPhone 13 and Chromium Pixel 5 touch emulation: 6/6",
+        "250 scan files",
+        "10000 people / 60000 responses; Excel; AbortError; SQLite checkpoint recovery"
+      ],
+      "currentBlocker": "Physical mobile hardware unavailable; full Windows GUI acceptance is separately scoped in practical report."
     }
   ],
   "knownScopeDifferences": {

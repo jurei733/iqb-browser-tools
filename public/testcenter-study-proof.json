@@ -72,6 +72,18 @@
     {
       "study": "cohort1000",
       "arch": "x86",
+      "name": "input int64-input.json",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x86",
+      "name": "input browser-int64.sqlite",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x86",
       "name": "toolbox-api-import",
       "passed": true
     },
@@ -103,6 +115,102 @@
       "study": "cohort1000",
       "arch": "x86",
       "name": "coding-original-archive-codec",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x86",
+      "name": "original Int64 probe operations",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x86",
+      "name": "Int64 API timestamps as exact decimal text",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x86",
+      "name": "Int64 CSV timestamps as exact decimal text",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x86",
+      "name": "native SQLite provider reads browser Int64 values",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x86",
+      "name": "Int64 original full graph",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x86",
+      "name": "Int64 original SQLite full graph",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x86",
+      "name": "Int64 SQLite all fields person",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x86",
+      "name": "Int64 SQLite all fields bookletInfo",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x86",
+      "name": "Int64 SQLite all fields booklet",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x86",
+      "name": "Int64 SQLite all fields session",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x86",
+      "name": "Int64 SQLite all fields bookletLog",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x86",
+      "name": "Int64 SQLite all fields unit",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x86",
+      "name": "Int64 SQLite all fields unitLog",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x86",
+      "name": "Int64 SQLite all fields unitLastState",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x86",
+      "name": "Int64 SQLite all fields chunk",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x86",
+      "name": "Int64 SQLite all fields response",
       "passed": true
     },
     {
@@ -288,6 +396,18 @@
     {
       "study": "cohort1000",
       "arch": "x64",
+      "name": "input int64-input.json",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x64",
+      "name": "input browser-int64.sqlite",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x64",
       "name": "toolbox-api-import",
       "passed": true
     },
@@ -319,6 +439,102 @@
       "study": "cohort1000",
       "arch": "x64",
       "name": "coding-original-archive-codec",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x64",
+      "name": "original Int64 probe operations",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x64",
+      "name": "Int64 API timestamps as exact decimal text",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x64",
+      "name": "Int64 CSV timestamps as exact decimal text",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x64",
+      "name": "native SQLite provider reads browser Int64 values",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x64",
+      "name": "Int64 original full graph",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x64",
+      "name": "Int64 original SQLite full graph",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x64",
+      "name": "Int64 SQLite all fields person",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x64",
+      "name": "Int64 SQLite all fields bookletInfo",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x64",
+      "name": "Int64 SQLite all fields booklet",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x64",
+      "name": "Int64 SQLite all fields session",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x64",
+      "name": "Int64 SQLite all fields bookletLog",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x64",
+      "name": "Int64 SQLite all fields unit",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x64",
+      "name": "Int64 SQLite all fields unitLog",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x64",
+      "name": "Int64 SQLite all fields unitLastState",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x64",
+      "name": "Int64 SQLite all fields chunk",
+      "passed": true
+    },
+    {
+      "study": "cohort1000",
+      "arch": "x64",
+      "name": "Int64 SQLite all fields response",
       "passed": true
     },
     {
@@ -504,6 +720,18 @@
     {
       "study": "pilot84",
       "arch": "x86",
+      "name": "input int64-input.json",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x86",
+      "name": "input browser-int64.sqlite",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x86",
       "name": "toolbox-api-import",
       "passed": true
     },
@@ -535,6 +763,102 @@
       "study": "pilot84",
       "arch": "x86",
       "name": "coding-original-archive-codec",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x86",
+      "name": "original Int64 probe operations",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x86",
+      "name": "Int64 API timestamps as exact decimal text",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x86",
+      "name": "Int64 CSV timestamps as exact decimal text",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x86",
+      "name": "native SQLite provider reads browser Int64 values",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x86",
+      "name": "Int64 original full graph",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x86",
+      "name": "Int64 original SQLite full graph",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x86",
+      "name": "Int64 SQLite all fields person",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x86",
+      "name": "Int64 SQLite all fields bookletInfo",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x86",
+      "name": "Int64 SQLite all fields booklet",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x86",
+      "name": "Int64 SQLite all fields session",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x86",
+      "name": "Int64 SQLite all fields bookletLog",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x86",
+      "name": "Int64 SQLite all fields unit",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x86",
+      "name": "Int64 SQLite all fields unitLog",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x86",
+      "name": "Int64 SQLite all fields unitLastState",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x86",
+      "name": "Int64 SQLite all fields chunk",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x86",
+      "name": "Int64 SQLite all fields response",
       "passed": true
     },
     {
@@ -720,6 +1044,18 @@
     {
       "study": "pilot84",
       "arch": "x64",
+      "name": "input int64-input.json",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x64",
+      "name": "input browser-int64.sqlite",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x64",
       "name": "toolbox-api-import",
       "passed": true
     },
@@ -751,6 +1087,102 @@
       "study": "pilot84",
       "arch": "x64",
       "name": "coding-original-archive-codec",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x64",
+      "name": "original Int64 probe operations",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x64",
+      "name": "Int64 API timestamps as exact decimal text",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x64",
+      "name": "Int64 CSV timestamps as exact decimal text",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x64",
+      "name": "native SQLite provider reads browser Int64 values",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x64",
+      "name": "Int64 original full graph",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x64",
+      "name": "Int64 original SQLite full graph",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x64",
+      "name": "Int64 SQLite all fields person",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x64",
+      "name": "Int64 SQLite all fields bookletInfo",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x64",
+      "name": "Int64 SQLite all fields booklet",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x64",
+      "name": "Int64 SQLite all fields session",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x64",
+      "name": "Int64 SQLite all fields bookletLog",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x64",
+      "name": "Int64 SQLite all fields unit",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x64",
+      "name": "Int64 SQLite all fields unitLog",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x64",
+      "name": "Int64 SQLite all fields unitLastState",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x64",
+      "name": "Int64 SQLite all fields chunk",
+      "passed": true
+    },
+    {
+      "study": "pilot84",
+      "arch": "x64",
+      "name": "Int64 SQLite all fields response",
       "passed": true
     },
     {
@@ -885,7 +1317,7 @@
       "report": {
         "synthetic": true,
         "empiricalStudy": false,
-        "started": "2026-11-04T11:44:37.9145291Z",
+        "started": "2026-11-04T13:39:31.6679899Z",
         "processBits": 32,
         "nativeMachine": "8664",
         "processMachine": "014c",
@@ -898,10 +1330,14 @@
           "responses.csv": "e022067d780a63a29d5a6a3eda79a694be81c715450172f7b01a91eac99fd90e",
           "logs.csv": "9f57ada4a14ccf40f9b0c6f90609f3c9356362dd5ac536829e84a7884516c4a8",
           "logs-api.json": "b36dd5a436abb726b1cbb5c2c75b1423d14a0de3a8b9f5077391dff103435469",
-          "browser.sqlite": "8e70d85376800720d21f3d452f9f075e4c485bb21a1f7bd42cafc92e07f1cc84",
-          "browser.result": "e2dbb412df06f039e7ae15b145564dc5e326506c79e570535d852a240502b437",
-          "blank-native.xlsx": "acb5e92ec4de302b2f00cca11a6a1b3c384ea9542aa0e47ac85ef26a9df5b384"
+          "browser.sqlite": "14a3416dcbadddbefb169613cb65a7380762f2b2b0fe6f1458584798d02e4956",
+          "browser.result": "6a3246b24c8cecb14970ca9e84e6d40ca7e612a13e3b079fecf094cfe4981063",
+          "blank-native.xlsx": "acb5e92ec4de302b2f00cca11a6a1b3c384ea9542aa0e47ac85ef26a9df5b384",
+          "int64-input.json": "d2bb07f37c3c131264a341a2f10e1e95744ab23e5b82467cbcfccfe1d4f1de22",
+          "browser-int64.sqlite": "3e0717de3baff4d1ab7c77c76822dd31b760a56105acd681d4c96244c6fd0e2d"
         },
+        "int64Probes": 64,
+        "toolbox-int64-log-probe": "passed",
         "people": 1000,
         "toolbox-api-import": "passed",
         "csvSkippedResponseRows": 0,
@@ -911,7 +1347,7 @@
         "toolbox-write-sqlite": "passed",
         "toolbox-excel-export": "passed",
         "coding-original-archive-codec": "passed",
-        "finished": "2026-11-04T11:44:58.5752477Z"
+        "finished": "2026-11-04T13:39:58.8307902Z"
       },
       "fullGraphSHA256": "fbc12e1fec21a917f3233426e65c391d5ed93e6b861fe1cb6cddad616bebb5a9",
       "csvGraphSHA256": "fbc12e1fec21a917f3233426e65c391d5ed93e6b861fe1cb6cddad616bebb5a9",
@@ -1076,7 +1512,7 @@
       "report": {
         "synthetic": true,
         "empiricalStudy": false,
-        "started": "2026-11-04T11:44:58.8512285Z",
+        "started": "2026-11-04T13:39:59.1427597Z",
         "processBits": 64,
         "nativeMachine": "8664",
         "processMachine": "0000",
@@ -1089,10 +1525,14 @@
           "responses.csv": "e022067d780a63a29d5a6a3eda79a694be81c715450172f7b01a91eac99fd90e",
           "logs.csv": "9f57ada4a14ccf40f9b0c6f90609f3c9356362dd5ac536829e84a7884516c4a8",
           "logs-api.json": "b36dd5a436abb726b1cbb5c2c75b1423d14a0de3a8b9f5077391dff103435469",
-          "browser.sqlite": "b41e820713ca73e4dc4a1a57be45a3a265d92f4864218a2559a6f3b7aa60df27",
-          "browser.result": "76d7b835016e4a3c645a20e68dee1a814fe09c1f611798d146e3885446f6a4da",
-          "blank-native.xlsx": "acb5e92ec4de302b2f00cca11a6a1b3c384ea9542aa0e47ac85ef26a9df5b384"
+          "browser.sqlite": "cb9555cd7ab04007c8d7ba63cc318849c3feca23269ddfd0edb7e9f26e590524",
+          "browser.result": "0a759053d07c7fc73376692b2e4a96381c20074c14a283b5dd8b0f50c86311b9",
+          "blank-native.xlsx": "acb5e92ec4de302b2f00cca11a6a1b3c384ea9542aa0e47ac85ef26a9df5b384",
+          "int64-input.json": "d2bb07f37c3c131264a341a2f10e1e95744ab23e5b82467cbcfccfe1d4f1de22",
+          "browser-int64.sqlite": "71a7c70cb4e0e341aac6b6bb252b2919d543f5e85f54b51389ca7675dbdd42cb"
         },
+        "int64Probes": 64,
+        "toolbox-int64-log-probe": "passed",
         "people": 1000,
         "toolbox-api-import": "passed",
         "csvSkippedResponseRows": 0,
@@ -1102,7 +1542,7 @@
         "toolbox-write-sqlite": "passed",
         "toolbox-excel-export": "passed",
         "coding-original-archive-codec": "passed",
-        "finished": "2026-11-04T11:45:15.7717636Z"
+        "finished": "2026-11-04T13:40:18.5307563Z"
       },
       "fullGraphSHA256": "fbc12e1fec21a917f3233426e65c391d5ed93e6b861fe1cb6cddad616bebb5a9",
       "csvGraphSHA256": "fbc12e1fec21a917f3233426e65c391d5ed93e6b861fe1cb6cddad616bebb5a9",
@@ -1265,7 +1705,7 @@
       "report": {
         "synthetic": true,
         "empiricalStudy": false,
-        "started": "2026-11-04T11:45:16.1175805Z",
+        "started": "2026-11-04T13:40:18.8901753Z",
         "processBits": 32,
         "nativeMachine": "8664",
         "processMachine": "014c",
@@ -1278,10 +1718,14 @@
           "responses.csv": "c1d4a5412a4836580e145d7d12e03fa0cf384a748718eb01dbb3e4e58ce0c93f",
           "logs.csv": "e80c380481dfad51e24439becaa286d5a41845aac936adc91f05937e5c160143",
           "logs-api.json": "4f245e0f89f48862db242c8f520d97c222a3676194454642bdff73582d32afc9",
-          "browser.sqlite": "3d86064596a4a713062f809cc214c0b8b5c7cc90800e718b5fc8bb4ad0a7303a",
-          "browser.result": "dbb3f74bb2c57f316223dddcd52aa2a109de3d5ac2e29308d05abf764630bce3",
-          "blank-native.xlsx": "acb5e92ec4de302b2f00cca11a6a1b3c384ea9542aa0e47ac85ef26a9df5b384"
+          "browser.sqlite": "b1dfb49a81873e41b892a78ad424711019dc167f20714b6ac0e6cb0db0f6c8d5",
+          "browser.result": "0a4f9ad7e6b1e0a5fa40eb1c577d64dc08119a38a427e9a8483a9bf2135ec31f",
+          "blank-native.xlsx": "acb5e92ec4de302b2f00cca11a6a1b3c384ea9542aa0e47ac85ef26a9df5b384",
+          "int64-input.json": "d2bb07f37c3c131264a341a2f10e1e95744ab23e5b82467cbcfccfe1d4f1de22",
+          "browser-int64.sqlite": "c18171ac0f02dac56003471ff5b70cdf4b1d9e59f992ff7ec87cae20fa3088b6"
         },
+        "int64Probes": 64,
+        "toolbox-int64-log-probe": "passed",
         "people": 84,
         "toolbox-api-import": "passed",
         "csvSkippedResponseRows": 0,
@@ -1291,7 +1735,7 @@
         "toolbox-write-sqlite": "passed",
         "toolbox-excel-export": "passed",
         "coding-original-archive-codec": "passed",
-        "finished": "2026-11-04T11:45:17.6989680Z"
+        "finished": "2026-11-04T13:40:20.6449436Z"
       },
       "fullGraphSHA256": "e47d9006068e8feb2501d9ebbe6fda2198006e719efa41aa2cba5e4aa47504cb",
       "csvGraphSHA256": "9abec62391db813fce3723ff4ac771394e3648cf40b33d8c2e3766ab3b9ec2b8",
@@ -1454,7 +1898,7 @@
       "report": {
         "synthetic": true,
         "empiricalStudy": false,
-        "started": "2026-11-04T11:45:17.9649622Z",
+        "started": "2026-11-04T13:40:20.9297337Z",
         "processBits": 64,
         "nativeMachine": "8664",
         "processMachine": "0000",
@@ -1467,10 +1911,14 @@
           "responses.csv": "c1d4a5412a4836580e145d7d12e03fa0cf384a748718eb01dbb3e4e58ce0c93f",
           "logs.csv": "e80c380481dfad51e24439becaa286d5a41845aac936adc91f05937e5c160143",
           "logs-api.json": "4f245e0f89f48862db242c8f520d97c222a3676194454642bdff73582d32afc9",
-          "browser.sqlite": "45ad7cfbb8db4fcc2d7af4401c939d4649bd1a2ee757523d761de09b886a62a5",
-          "browser.result": "6699b35bf3b315ac69aae507c206a7b6a13568584599c78d4f64ff48b8ab58b2",
-          "blank-native.xlsx": "acb5e92ec4de302b2f00cca11a6a1b3c384ea9542aa0e47ac85ef26a9df5b384"
+          "browser.sqlite": "78c6b677897fccef5356c0e67cbe2f49ec0108e9aacb5c932147d23975126180",
+          "browser.result": "176f669210ed80faa05a1a4fda82c12ea75276cfe27a4e418ace93cf3fabcc4f",
+          "blank-native.xlsx": "acb5e92ec4de302b2f00cca11a6a1b3c384ea9542aa0e47ac85ef26a9df5b384",
+          "int64-input.json": "d2bb07f37c3c131264a341a2f10e1e95744ab23e5b82467cbcfccfe1d4f1de22",
+          "browser-int64.sqlite": "55689f07852563d45ed052cf0ef3f80d172b5ca8c473ea572302c61c005d79b8"
         },
+        "int64Probes": 64,
+        "toolbox-int64-log-probe": "passed",
         "people": 84,
         "toolbox-api-import": "passed",
         "csvSkippedResponseRows": 0,
@@ -1480,7 +1928,7 @@
         "toolbox-write-sqlite": "passed",
         "toolbox-excel-export": "passed",
         "coding-original-archive-codec": "passed",
-        "finished": "2026-11-04T11:45:19.6021472Z"
+        "finished": "2026-11-04T13:40:22.7079267Z"
       },
       "fullGraphSHA256": "e47d9006068e8feb2501d9ebbe6fda2198006e719efa41aa2cba5e4aa47504cb",
       "csvGraphSHA256": "9abec62391db813fce3723ff4ac771394e3648cf40b33d8c2e3766ab3b9ec2b8",
@@ -1630,16 +2078,36 @@
       "codingModelSHA256": "0df47527a393e7f3dce08f44031ae955f13f76c4e630de68f3f6e81da5a9ae39"
     }
   ],
-  "passed": 144,
-  "total": 144,
+  "passed": 216,
+  "total": 216,
   "excluded": [
     "SQLite db_info and sqlite_sequence metadata",
     "XLSX styles and ZIP metadata; cells compared as text",
     "Manual coding decisions and scan workflows",
     "Empirical human study data"
   ],
-  "workflowRun": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41823004471",
-  "sourceCommit": "d198986ffac63e75810fc6b5f7755ea8c685b032",
+  "provenance": {
+    "synthetic": true,
+    "empiricalStudy": false,
+    "sourceCommit": "1c76ed38714dad3770e05a388d1e111b8243e667",
+    "run": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41839555938",
+    "artifactId": 13327129910,
+    "artifactSHA256": "7013adc77de9b13437561fb08d9842effae380d885c1b239b937ad606ecb3a45",
+    "uniqueTimestampInputs": 64,
+    "architectures": [
+      32,
+      64
+    ],
+    "files": {
+      "x86-native-int64-probe.json": "751292278f7aae6439d0d478c2babc3ce3f19042d6035f84ea3d717aef86da3a",
+      "x86-native-int64-people.json": "8be28fcbc2b0b4bc5241a8b427b0baf449e6d7091a3bfd035f44ecd37f0f32e6",
+      "x64-native-int64-probe.json": "751292278f7aae6439d0d478c2babc3ce3f19042d6035f84ea3d717aef86da3a",
+      "x64-native-int64-people.json": "8be28fcbc2b0b4bc5241a8b427b0baf449e6d7091a3bfd035f44ecd37f0f32e6"
+    },
+    "scope": "Original API, CSV and native SQLite provider probe; complete Int64 graphs and all domain SQLite fields. Native execution repeated for both synthetic cohorts."
+  },
+  "workflowRun": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41839555938",
+  "sourceCommit": "1c76ed38714dad3770e05a388d1e111b8243e667",
   "pilot84Source": {
     "synthetic": true,
     "empiricalStudy": false,
@@ -1709,5 +2177,11 @@
       "Simulated participant-API data, not empirical human study data or a browser/player interaction test.",
       "137 free-text ratings remain pending; no manual scores were invented."
     ]
+  },
+  "verificationRun": {
+    "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41844019523",
+    "sourceCommit": "785aa2e6d79516d774d2ec262a57f80c3d61a8b3",
+    "passed": 216,
+    "total": 216
   }
 }

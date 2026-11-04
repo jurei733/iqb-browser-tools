@@ -82,6 +82,10 @@ const resolveEvidence=async evidence=>{
     current=Object.keys(snapshot).every(p=>report.applicationFiles?.[p]===snapshot[p]);
     for(const [path,sha]of Object.entries(report.testFiles))if(hash(await readFile(path))!==sha)current=false;
     checks=report.jobs.flatMap(job=>job.checks.filter(c=>pattern.test(c.name)).map(c=>({...c,browser:job.browser,jobUrl:job.url})));
+  }else if(evidence.kind==='windows-study'){
+    const report=await json(evidence.path);
+    checks=report.checks.filter(c=>pattern.test(c.name));
+    for(const [path,sha]of Object.entries(report.provenance?.applicationFiles||{}))if(hash(await readFile(path))!==sha)current=false;
   }else if(evidence.kind==='historical-browser'){
     const report=await json(evidence.path);checks=report.checks.filter(c=>pattern.test(c.name));current=false;
   }else throw new Error('Unknown evidence kind '+evidence.kind);
