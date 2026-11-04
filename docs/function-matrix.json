@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "windowsVersions": {
     "IQB-Kodieren": "4.3.0.3",
     "itc-ToolBox": "3.3.0.2"
@@ -293,7 +293,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-native.json",
+          "path": "tests/results/function-audit-ci-20261104-x87.json",
           "pattern": "last coding workspace"
         },
         {
@@ -303,7 +303,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-native.json",
+          "path": "tests/results/function-audit-ci-20261104-x87.json",
           "pattern": "local starter: account"
         }
       ]
@@ -731,7 +731,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-native.json",
+          "path": "tests/results/function-audit-ci-20261104-x87.json",
           "pattern": "physical zoom"
         }
       ]
@@ -756,7 +756,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-native.json",
+          "path": "tests/results/function-audit-ci-20261104-x87.json",
           "pattern": "physical zoom"
         }
       ]
@@ -819,7 +819,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-native.json",
+          "path": "tests/results/function-audit-ci-20261104-x87.json",
           "pattern": "physical zoom"
         }
       ]
@@ -848,7 +848,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-native.json",
+          "path": "tests/results/function-audit-ci-20261104-x87.json",
           "pattern": "shared position"
         }
       ]
@@ -966,7 +966,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-native.json",
+          "path": "tests/results/function-audit-ci-20261104-x87.json",
           "pattern": "original result boundary"
         }
       ]
@@ -999,7 +999,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-native.json",
+          "path": "tests/results/function-audit-ci-20261104-x87.json",
           "pattern": "last coding workspace"
         },
         {
@@ -1009,7 +1009,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-native.json",
+          "path": "tests/results/function-audit-ci-20261104-x87.json",
           "pattern": "local starter: account"
         }
       ]
@@ -1033,7 +1033,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-native.json",
+          "path": "tests/results/function-audit-ci-20261104-x87.json",
           "pattern": "physical zoom"
         }
       ]
@@ -1057,7 +1057,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-native.json",
+          "path": "tests/results/function-audit-ci-20261104-x87.json",
           "pattern": "completed job flashes"
         }
       ]
@@ -1131,7 +1131,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-native.json",
+          "path": "tests/results/function-audit-ci-20261104-x87.json",
           "pattern": "codes and booklets"
         }
       ]
@@ -1512,7 +1512,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-native.json",
+          "path": "tests/results/function-audit-ci-20261104-x87.json",
           "pattern": "without XML match Windows"
         }
       ]
@@ -1645,7 +1645,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-native.json",
+          "path": "tests/results/function-audit-ci-20261104-x87.json",
           "pattern": "full diagnostics"
         }
       ]
@@ -1735,7 +1735,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-native.json",
+          "path": "tests/results/function-audit-ci-20261104-x87.json",
           "pattern": "Windows mode: raw API files"
         }
       ]
@@ -1772,8 +1772,8 @@
         "src/data.js",
         "src/windows-responses.js"
       ],
-      "assessment": "partial",
-      "note": "Explizite 32-/64-Bit-Profile prüfen Originalwerte und Listenreihenfolge ohne Wertnormalisierung. Der neue native Windows-x64-Lauf enthält 1214 unterschiedliche Konvertereingaben. Das 64-Bit-Profil besteht alle geprüften Vergleiche. Im 32-Bit-Profil bleibt in dieser Konverterfamilie die letzte G17-Dezimalstelle einer verschachtelten JSON-Zahl abweichend. Fehlerfälle belegen ERROR-Antwort versus Ausnahme; identische Meldungstexte und Windows-Dialoge sind nicht nachgewiesen.",
+      "assessment": "implemented",
+      "note": "Explizite 32-/64-Bit-Profile prüfen Originalwerte und Listenreihenfolge ohne Wertnormalisierung. Beide Profile bestehen die 1214 Eingaben des nativen Windows-Korpus, einschließlich der früheren G17-Textabweichungen. Das 32-Bit-Profil bildet die x87-Zwischenrechnungen und BCD-Rundung nach. Separate CLR-Proben prüfen Zahlenbits und G15/G17/R. Fehlerfälle belegen ERROR-Antwort versus Ausnahme; identische Meldungstexte und Windows-Dialoge sind nicht nachgewiesen.",
       "acceptance": "Standard-/Aspect-Antwortkonverter.",
       "evidence": [
         {
@@ -1798,6 +1798,11 @@
           "kind": "node",
           "file": "tests/windows-native.test.js",
           "pattern": "Native Windows x64 hardware"
+        },
+        {
+          "kind": "node",
+          "file": "tests/windows-number.test.js",
+          "pattern": "Windows x86 x87 rounding"
         }
       ]
     },
@@ -1853,8 +1858,8 @@
         "src/data.js",
         "src/windows-responses.js"
       ],
-      "assessment": "partial",
-      "note": "Explizite 32-/64-Bit-Profile prüfen Originalwerte und Listenreihenfolge ohne Wertnormalisierung. Der neue native Windows-x64-Lauf enthält 1214 unterschiedliche Konvertereingaben. Das 64-Bit-Profil besteht alle geprüften Vergleiche. Im 32-Bit-Profil bleibt in dieser Konverterfamilie die letzte G17-Dezimalstelle einer verschachtelten JSON-Zahl abweichend. Fehlerfälle belegen ERROR-Antwort versus Ausnahme; identische Meldungstexte und Windows-Dialoge sind nicht nachgewiesen.",
+      "assessment": "implemented",
+      "note": "Explizite 32-/64-Bit-Profile prüfen Originalwerte und Listenreihenfolge ohne Wertnormalisierung. Beide Profile bestehen die 1214 Eingaben des nativen Windows-Korpus, einschließlich der früheren G17-Textabweichungen. Das 32-Bit-Profil bildet die x87-Zwischenrechnungen und BCD-Rundung nach. Separate CLR-Proben prüfen Zahlenbits und G15/G17/R. Fehlerfälle belegen ERROR-Antwort versus Ausnahme; identische Meldungstexte und Windows-Dialoge sind nicht nachgewiesen.",
       "acceptance": "Dan-Konverter und Meta-Angaben.",
       "evidence": [
         {
@@ -1879,6 +1884,11 @@
           "kind": "node",
           "file": "tests/windows-native.test.js",
           "pattern": "Native Windows x64 hardware"
+        },
+        {
+          "kind": "node",
+          "file": "tests/windows-number.test.js",
+          "pattern": "Windows x86 x87 rounding"
         }
       ]
     },
@@ -1963,7 +1973,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-native.json",
+          "path": "tests/results/function-audit-ci-20261104-x87.json",
           "pattern": "Windows mode: raw API files"
         }
       ],
@@ -2522,7 +2532,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-native.json",
+          "path": "tests/results/function-audit-ci-20261104-x87.json",
           "pattern": "group selection and workspace changes"
         }
       ]
@@ -2720,7 +2730,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-native.json",
+          "path": "tests/results/function-audit-ci-20261104-x87.json",
           "pattern": "access can be remembered"
         }
       ]
@@ -2746,7 +2756,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-native.json",
+          "path": "tests/results/function-audit-ci-20261104-x87.json",
           "pattern": "preparation cancellation"
         }
       ]
@@ -2775,12 +2785,12 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-native.json",
+          "path": "tests/results/function-audit-ci-20261104-x87.json",
           "pattern": "last coding workspace"
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-native.json",
+          "path": "tests/results/function-audit-ci-20261104-x87.json",
           "pattern": "selected Toolbox input files"
         },
         {
@@ -2790,7 +2800,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-native.json",
+          "path": "tests/results/function-audit-ci-20261104-x87.json",
           "pattern": "local starter: account"
         }
       ]
@@ -3021,7 +3031,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-native.json",
+          "path": "tests/results/function-audit-ci-20261104-x87.json",
           "pattern": "physical zoom"
         }
       ]
@@ -3046,7 +3056,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261103-native.json",
+          "path": "tests/results/function-audit-ci-20261104-x87.json",
           "pattern": "startup defaults"
         }
       ],
@@ -3092,7 +3102,7 @@
     "Reale Arbeitsbestände und alle Eingabe-/Fehlerkombinationen sind durch synthetische Referenzfälle nicht vollständig abgedeckt.",
     "Die lokale Coding-Box-Erweiterung bleibt vom Windows-Funktionsumfang getrennt.",
     "Firefox wird in GitHub Actions auf Linux geprüft; der macOS-Playwright-Build startet in dieser Umgebung mit einem Profilordnerfehler nicht. WebKit-Prüfungen sind kein Test einer installierten Safari-Version.",
-    "Die historischen sechs ARM/x86-Abweichungen sind keine allgemeinen Windows-x86-Abweichungen. Der neue Windows-x64-Runner prüft beide Bitbreiten direkt: 1214/1214 im 64-Bit-Profil, 1212/1214 im 32-Bit-Profil. Zwei G17-Textdarstellungen bleiben strikt abweichend, obwohl dieselben Double-Bits gespeichert sind."
+    "Die historischen sechs ARM/x86-Abweichungen sind keine allgemeinen Windows-x86-Abweichungen. Der neue Windows-x64-Runner prüft beide Bitbreiten direkt: 1214/1214 im 64-Bit-Profil, 1214/1214 im 32-Bit-Profil. Die früheren G17-Textabweichungen sind durch Nachbildung der x87-/BCD-Rundung behoben. Zusätzliche CLR-Zahlenproben sind getrennt von den vollständigen Konverterfällen ausgewiesen."
   ],
-  "ciReport": "tests/results/function-audit-ci-20261103-native.json"
+  "ciReport": "tests/results/function-audit-ci-20261104-x87.json"
 }

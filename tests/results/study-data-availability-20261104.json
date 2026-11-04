@@ -1,0 +1,48 @@
+{
+  "checkedAt": "2026-11-04 08:19:11 UTC",
+  "methods": [
+    "testcenter_list_workspaces",
+    "testcenter_list_files",
+    "coding_list_workspaces"
+  ],
+  "scope": "Only the workspaces configured and readable through the current IQB connection; metadata inspection, no response export.",
+  "realProductionDataTested": false,
+  "empiricalStudyDatasetIdentified": false,
+  "testcenter": [
+    {
+      "workspaceId": 2,
+      "inventoryCounts": {
+        "Resource": 7,
+        "Unit": 3,
+        "Booklet": 1,
+        "Testtakers": 1
+      },
+      "testtakerDescriptions": [
+        "Synthetischer MCP Pilot ohne reale Testpersonen"
+      ]
+    },
+    {
+      "workspaceId": 3,
+      "inventoryCounts": {
+        "Resource": 72,
+        "Unit": 29,
+        "Booklet": 7,
+        "Testtakers": 8
+      },
+      "testtakerDescriptions": [
+        "Separate Browser-Sichtprüfung, nicht Bestandteil der 1000-Personen-Studie.",
+        "Synthetische MCP-Pilotstudie. Keine realen Testpersonen. Antworten über Testcenter-Teilnehmer-API.",
+        "Synthetische MCP-Pilotstudie. Keine realen Testpersonen. Antworten über Testcenter-Teilnehmer-API.",
+        "Synthetische MCP-Pilotstudie. Keine realen Testpersonen. Antworten über Testcenter-Teilnehmer-API.",
+        "Synthetische MCP-Pilotstudie. Keine realen Testpersonen. Antworten über Testcenter-Teilnehmer-API.",
+        "Synthetische MCP-Pilotstudie. Keine realen Testpersonen. Antworten über Testcenter-Teilnehmer-API.",
+        "Synthetische MCP-Pilotstudie. Keine realen Testpersonen. Antworten über Testcenter-Teilnehmer-API."
+      ]
+    }
+  ],
+  "coding": {
+    "workspacesListed": 7,
+    "scope": "Known pilot, simulation and SQLite round-trip workspaces; no empirical provenance established."
+  },
+  "assessment": "Accessible metadata identifies pilot/simulation stocks. Empirical or anonymised study files are still unavailable for the reference comparison. This inspection does not establish the absence of such files elsewhere."
+}

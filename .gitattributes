@@ -14,3 +14,8 @@
 # Keep raw Windows evidence byte-stable across checkouts.
 tests/fixtures/windows-edge/*.json -text
 tests/fixtures/windows-native/*.json -text
+
+# Generated comparison reports are retained for reproducibility.
+public/equivalence-proof.json linguist-generated=true
+docs/function-audit.json linguist-generated=true
+tests/fixtures/windows-native/*.json linguist-generated=true
