@@ -1,10 +1,10 @@
 {
   "checkedOn": "2026-11-04",
   "applicationVersion": "0.4.7",
-  "applicationCommit": "3a1358afa0b8577c8a98686eb16f708e5ecdcebf",
+  "applicationCommit": "27771db7c042221dfb8c50581631018fbc12d44e",
   "completeEquivalence": false,
   "empiricalDataTested": false,
-  "scope": "Ordered follow-up: lossless Int64 native reference; paired normal Windows GUI workflows and browser regressions; installed Safari on prior source, mobile emulation and workload acceptance. Empirical data absent; native manual coding job creation automatically declined.",
+  "scope": "Ordered follow-up: lossless Int64 native reference; paired normal Windows GUI workflows and browser regressions; current installed Safari, mobile emulation and workload acceptance. Empirical data absent; native manual coding job creation automatically declined.",
   "verification": {
     "node": {
       "passed": 125,
@@ -29,7 +29,7 @@
         32,
         64
       ],
-      "verificationRun": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41851284624"
+      "verificationRun": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41855727586"
     },
     "browsers": {
       "engines": [
@@ -39,7 +39,7 @@
       ],
       "playwrightSpecsPerEngine": 19,
       "harnessChecksPerEngine": 53,
-      "run": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41851284753"
+      "run": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41855728143"
     },
     "nativeConverters": {
       "numericDiagnostics": {
@@ -96,15 +96,16 @@
       "passed": 53,
       "total": 53,
       "version": "27.0.1",
-      "report": "tests/results/function-audit-20261104-140600-safari.json",
-      "sourceCommit": "785aa2e6d79516d774d2ec262a57f80c3d61a8b3",
-      "latestRepeat": "Page reloaded successfully, but UI automation did not trigger its start button. No new Safari pass is claimed for the label correction."
+      "report": "tests/results/function-audit-20261104-151314-safari.json",
+      "sourceCommit": "aadbdc26cac17eaf981dc655784548638e4bbc54",
+      "latestRepeat": "Passed on 2026-11-04 at 15:13 UTC in the installed Safari 27.0.1, using the current application files and the documented test-only run=1 entry point."
     },
     "practicalAcceptance": {
       "passed": 8,
       "total": 8,
       "mobileHardware": false,
-      "report": "tests/results/practical-acceptance-20261104.json"
+      "report": "tests/results/practical-acceptance-20261104.json",
+      "verificationRun": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41855728143"
     },
     "windowsGUI": {
       "report": "tests/results/windows-gui-20261104.json",
@@ -114,6 +115,24 @@
       "restartRestored": true,
       "excelCellTexts": 20,
       "excelEqual": true
+    },
+    "localStarter": {
+      "platforms": [
+        "ubuntu-latest",
+        "macos-15-intel",
+        "windows-latest"
+      ],
+      "passedPerPlatform": 6,
+      "totalPerPlatform": 6,
+      "run": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41855728143",
+      "macOSNote": "Pinned to the supported standard Intel pool after the rolling ARM pool did not assign a runner for 20+ minutes. Current application was also checked in installed Safari on macOS ARM64."
+    },
+    "ciEnvironment": {
+      "browserAndTouchRunner": "ubuntu-latest",
+      "macOSStarterRunner": "macos-15-intel",
+      "acceptedCIConfigurationCommit": "27771db7c042221dfb8c50581631018fbc12d44e",
+      "reason": "The standard Intel pool completed all six macOS starter tests. The accepted 12-job run includes all three browser engines; Firefox passed after a delayed system-package download.",
+      "macOSSource": "https://github.com/actions/runner-images/blob/main/README.md"
     }
   },
   "codingPilotCurrent": {
@@ -234,12 +253,13 @@
     {
       "priority": 2,
       "action": "Complete a paired end-to-end coding flow against a fixed, authorised reference coding: job opening, code changes, comments, restart, result import and export; apply native v2/v3 only after the required review and approvals.",
-      "currentBlocker": "137 manual responses remain. coding_job_create was rejected with APPROVAL_DECLINED twice, including after the user enabled dialogs; second rejection took 21 ms. No job was created and no ratings were submitted.",
+      "currentBlocker": "137 manual responses remain. coding_job_create was rejected with APPROVAL_DECLINED three times. Latest request: 2026-11-04T15:10:37.030Z; declined at 15:10:37.063Z (33 ms). No job was created and no ratings were submitted.",
       "status": "blocked",
       "completed": [
         "Normal Windows coding GUI: code 0, comment, code 1, close/relaunch, first open case 3 and restored values.",
         "Paired browser workflow plus import/export of the original result including every timestamp."
-      ]
+      ],
+      "blockerReport": "docs/manual-coding-blocker-20261104.json"
     },
     {
       "priority": 3,
@@ -262,7 +282,6 @@
       "limits": [
         "User requested mobile emulation; physical mobile devices unavailable.",
         "250 scans are 850x660 PNG images, not a high-resolution scan stress corpus.",
-        "Installed Safari 53/53 is bound to source 785aa2e; the newest metadata correction has browser-engine coverage and a failed repeat-start attempt through native UI automation.",
         "Finite synthetic acceptance does not establish equivalence for every GUI path or input."
       ]
     }

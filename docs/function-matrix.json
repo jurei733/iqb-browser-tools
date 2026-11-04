@@ -293,7 +293,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-gui.json",
+          "path": "tests/results/function-audit-ci-20261104-safari.json",
           "pattern": "last coding workspace"
         },
         {
@@ -303,7 +303,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-gui.json",
+          "path": "tests/results/function-audit-ci-20261104-safari.json",
           "pattern": "local starter: account"
         }
       ]
@@ -731,7 +731,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-gui.json",
+          "path": "tests/results/function-audit-ci-20261104-safari.json",
           "pattern": "physical zoom"
         }
       ]
@@ -756,7 +756,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-gui.json",
+          "path": "tests/results/function-audit-ci-20261104-safari.json",
           "pattern": "physical zoom"
         }
       ]
@@ -819,7 +819,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-gui.json",
+          "path": "tests/results/function-audit-ci-20261104-safari.json",
           "pattern": "physical zoom"
         }
       ]
@@ -848,7 +848,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-gui.json",
+          "path": "tests/results/function-audit-ci-20261104-safari.json",
           "pattern": "shared position"
         }
       ]
@@ -981,7 +981,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-gui.json",
+          "path": "tests/results/function-audit-ci-20261104-safari.json",
           "pattern": "original result boundary"
         }
       ]
@@ -1014,7 +1014,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-gui.json",
+          "path": "tests/results/function-audit-ci-20261104-safari.json",
           "pattern": "last coding workspace"
         },
         {
@@ -1024,7 +1024,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-gui.json",
+          "path": "tests/results/function-audit-ci-20261104-safari.json",
           "pattern": "local starter: account"
         }
       ]
@@ -1048,7 +1048,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-gui.json",
+          "path": "tests/results/function-audit-ci-20261104-safari.json",
           "pattern": "physical zoom"
         }
       ]
@@ -1072,7 +1072,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-gui.json",
+          "path": "tests/results/function-audit-ci-20261104-safari.json",
           "pattern": "completed job flashes"
         }
       ]
@@ -1146,7 +1146,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-gui.json",
+          "path": "tests/results/function-audit-ci-20261104-safari.json",
           "pattern": "codes and booklets"
         }
       ]
@@ -1527,7 +1527,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-gui.json",
+          "path": "tests/results/function-audit-ci-20261104-safari.json",
           "pattern": "without XML match Windows"
         }
       ]
@@ -1660,7 +1660,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-gui.json",
+          "path": "tests/results/function-audit-ci-20261104-safari.json",
           "pattern": "full diagnostics"
         }
       ]
@@ -1752,7 +1752,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-gui.json",
+          "path": "tests/results/function-audit-ci-20261104-safari.json",
           "pattern": "Windows mode: raw API files"
         },
         {
@@ -2000,7 +2000,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-gui.json",
+          "path": "tests/results/function-audit-ci-20261104-safari.json",
           "pattern": "Windows mode: raw API files"
         }
       ],
@@ -2569,7 +2569,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-gui.json",
+          "path": "tests/results/function-audit-ci-20261104-safari.json",
           "pattern": "group selection and workspace changes"
         }
       ]
@@ -2767,7 +2767,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-gui.json",
+          "path": "tests/results/function-audit-ci-20261104-safari.json",
           "pattern": "access can be remembered"
         }
       ]
@@ -2793,7 +2793,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-gui.json",
+          "path": "tests/results/function-audit-ci-20261104-safari.json",
           "pattern": "preparation cancellation"
         }
       ]
@@ -2822,12 +2822,12 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-gui.json",
+          "path": "tests/results/function-audit-ci-20261104-safari.json",
           "pattern": "last coding workspace"
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-gui.json",
+          "path": "tests/results/function-audit-ci-20261104-safari.json",
           "pattern": "selected Toolbox input files"
         },
         {
@@ -2837,7 +2837,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-gui.json",
+          "path": "tests/results/function-audit-ci-20261104-safari.json",
           "pattern": "local starter: account"
         }
       ]
@@ -3068,7 +3068,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-gui.json",
+          "path": "tests/results/function-audit-ci-20261104-safari.json",
           "pattern": "physical zoom"
         }
       ]
@@ -3093,7 +3093,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-gui.json",
+          "path": "tests/results/function-audit-ci-20261104-safari.json",
           "pattern": "startup defaults"
         }
       ],
@@ -3141,5 +3141,5 @@
     "Firefox wird in GitHub Actions auf Linux geprüft; der macOS-Playwright-Build startet in dieser Umgebung mit einem Profilordnerfehler nicht. WebKit-Prüfungen sind kein Test einer installierten Safari-Version.",
     "Die historischen sechs ARM/x86-Abweichungen sind keine allgemeinen Windows-x86-Abweichungen. Der neue Windows-x64-Runner prüft beide Bitbreiten direkt: 1214/1214 im 64-Bit-Profil, 1214/1214 im 32-Bit-Profil. Die früheren G17-Textabweichungen sind durch Nachbildung der x87-/BCD-Rundung behoben. Zusätzliche CLR-Zahlenproben sind getrennt von den vollständigen Konverterfällen ausgewiesen."
   ],
-  "ciReport": "tests/results/function-audit-ci-20261104-gui.json"
+  "ciReport": "tests/results/function-audit-ci-20261104-safari.json"
 }

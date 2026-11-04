@@ -1,0 +1,38 @@
+{
+  "checkedOn": "2026-11-04",
+  "syntheticDataOnly": true,
+  "workspaceId": 14,
+  "groupIds": ["MCP_SIM_1574B8D03210"],
+  "responses": 756,
+  "unresolvedManualResponses": 137,
+  "pendingJobs": [],
+  "finalResponses": 0,
+  "eligibleForV3": false,
+  "revision": "f76cdae1ba505ab46db95956adaab3231ab0d1b812d4fcac07ad009e73d27c76",
+  "guardedAction": "coding_job_create",
+  "requestKey": "browser-parity-manual84-20261104",
+  "inputSHA256": "2800e4e475ac21dd2ba9f099f79dc2d87ed4372dd6f8aa0f1dde521258d5033d",
+  "plannedJob": {
+    "name": "Browser-Parität Pilot84 – Freitextabnahme",
+    "variables": [
+      {"unitName": "S1574B8D03210U5", "variableId": "reason"},
+      {"unitName": "S1574B8D03210U6", "variableId": "critique"}
+    ],
+    "coderIds": [1],
+    "missingsProfileId": 11,
+    "maxCases": 137
+  },
+  "latestApprovalAttempt": {
+    "approvalMode": "live",
+    "requestedAt": "2026-11-04T15:10:37.030Z",
+    "declinedAt": "2026-11-04T15:10:37.063Z",
+    "failedAt": "2026-11-04T15:10:37.064Z",
+    "decisionLatencyMs": 33,
+    "code": "APPROVAL_DECLINED",
+    "message": "Die Aktion wurde nicht freigegeben.",
+    "outcome": "known",
+    "jobCreated": false,
+    "ratingsSubmitted": false
+  },
+  "continuation": "Requires a functioning interactive MCP approval response for the prepared job. Then read each assigned native case and its current rubric, save justified decisions under revision checks, submit/review, apply v2, read finalize_plan and finalize v3 when eligible. This report contains no grading decisions."
+}

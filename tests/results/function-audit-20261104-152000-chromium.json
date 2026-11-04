@@ -1,0 +1,282 @@
+{
+  "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
+  "started": "2026-11-04T15:19:20.603Z",
+  "checks": [
+    {
+      "name": "XML: native Parser, Sonderzeichen und fehlerhafte XML",
+      "passed": true
+    },
+    {
+      "name": "XML: historische UTF-16-Kodierung",
+      "passed": true
+    },
+    {
+      "name": "Kodieren: ZIP im echten Module-Worker importieren",
+      "passed": true
+    },
+    {
+      "name": "Kodieren: Scan, DPI und transparente Schablone zeichnen",
+      "passed": true
+    },
+    {
+      "name": "Kodieren: unterschiedliche X/Y-DPI behalten die physischen Scan- und Schablonenproportionen",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: scan.png",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: scan.jpg",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: scan.bmp",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: scan.gif",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: scan.webp",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: scan.tif",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation2.jpg",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation3.jpg",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation4.jpg",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation5.jpg",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation6.jpg",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation7.jpg",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation8.jpg",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation6.png",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: orientation6.webp",
+      "passed": true
+    },
+    {
+      "name": "Bilddekoder: HTML-Image-Fallback nach Bitmap-Fehler",
+      "passed": true
+    },
+    {
+      "name": "Kodieren: GZip-Ergebnisse mit Code 0 und Kommentar",
+      "passed": true
+    },
+    {
+      "name": "Safari-Ergebnisdateinamen: .result-2 im Worker importieren",
+      "passed": true
+    },
+    {
+      "name": "Codes: Excel-Datei im Browser erzeugen und erneut lesen",
+      "passed": true
+    },
+    {
+      "name": "Booklets: Original-Xlsx zu gültigen Booklet-XML-Dateien",
+      "passed": true
+    },
+    {
+      "name": "Windows-Originalexport: SpreadsheetML mit Namespace-Präfix und führenden Nullen einlesen",
+      "passed": true
+    },
+    {
+      "name": "Logins: Originalvorlage, Präfixe und Testtaker-XML",
+      "passed": true
+    },
+    {
+      "name": "Word: Originalvorlage 1",
+      "passed": true
+    },
+    {
+      "name": "Word: Originalvorlage 2 mit QR-Code",
+      "passed": true
+    },
+    {
+      "name": "Antworten: CSV und Logs gemeinsam im Worker einlesen",
+      "passed": true
+    },
+    {
+      "name": "Antworten: breite Excel-Datei, Unterformulare rows",
+      "passed": true
+    },
+    {
+      "name": "Antworten: breite Excel-Datei, Unterformulare columns",
+      "passed": true
+    },
+    {
+      "name": "Antworten: breite Excel-Datei, Unterformulare none",
+      "passed": true
+    },
+    {
+      "name": "Antworten: CSV, gruppiertes JSON und Sitzungsberichte",
+      "passed": true
+    },
+    {
+      "name": "SQLite: WASM, Import und Integritätsprüfung",
+      "passed": true
+    },
+    {
+      "name": "SQLite: exportierte Datei erneut öffnen und auswerten",
+      "passed": true
+    },
+    {
+      "name": "Worker: nach Abbruch neu starten und Datenbank wiederherstellen",
+      "passed": true
+    },
+    {
+      "name": "Browser-Speicher: IndexedDB schreiben und wieder lesen",
+      "passed": true
+    },
+    {
+      "name": "Testcenter: Web-Crypto-Challenge und Browser-fetch",
+      "passed": true
+    },
+    {
+      "name": "Reviews: Export mit Kategorien und gültigen Blattnamen",
+      "passed": true
+    },
+    {
+      "name": "Kodieroptionen: Leerzeichen bei True und False im Worker",
+      "passed": true
+    },
+    {
+      "name": "Antwortkonverter: alte numerische Unterformulare und Boolean-Schreibweise",
+      "passed": true
+    },
+    {
+      "name": "Große Antwortzahlen: API, Module-Worker, JSON, SQLite und Excel ohne Rundung",
+      "passed": true
+    },
+    {
+      "name": "Funktionsmatrix Oberfläche: Joboptionen, fortlaufende Navigation, Rahmen und Zoom",
+      "passed": true
+    },
+    {
+      "name": "Funktionsmatrix Oberfläche: Code 0, sortierte Fallliste, richtiger Sprung und Dialog-Tastensperre",
+      "passed": true
+    },
+    {
+      "name": "Funktionsmatrix Oberfläche: Jobwechsel erhält Fortschritt und vollständig kodierte Jobs öffnen am letzten Fall",
+      "passed": true
+    },
+    {
+      "name": "Windows-Differenzial: 547 unterschiedliche Eingaben und sieben originale API-Konvertierungen ohne Wertanpassungen",
+      "passed": true
+    },
+    {
+      "name": "Windows-Grenzen: 118 Eingaben im 64-Bit-Profil; sechs abweichende 32-Bit-Ausgaben bleiben ausgewiesen",
+      "passed": true
+    },
+    {
+      "name": "Windows-Kodierer: 22 Ergebnisdateien in beide Richtungen und zwei Steuerzeichen-Ablehnungen",
+      "passed": true
+    },
+    {
+      "name": "Windows-x64-Runner: 1214 Eingaben je Profil, 13 API-Fälle und Kodierer; beide Profile stimmen strikt überein",
+      "passed": true
+    },
+    {
+      "name": "CLR-Zahlenprofile: je 8373 feste Proben mit identischen Binärwerten und G15/G17/R",
+      "passed": true
+    },
+    {
+      "name": "Testcenter-Pilot84: API, Windows-CSV mit 24 übersprungenen Logs und Standardmodus im Worker",
+      "passed": true
+    },
+    {
+      "name": "Int64-Zeitstempel: 64 Werte im Worker, JSON und beiden SQLite-Formaten ohne Rundung",
+      "passed": true
+    }
+  ],
+  "passed": 53,
+  "total": 53,
+  "finished": "2026-11-04T15:19:26.800Z",
+  "applicationFiles": {
+    "src/coding-box-database.js": "ef79bf7deb0aefe7b555bc4185f84186e49c12acd6f1aa57fd7134e261614eae",
+    "src/coding.js": "3302fa069ce655f54a3d598a35e005962ead4956ea3d46fa3289744583816ab7",
+    "src/data.js": "436de03faec3c0b55b7f3775960fb0a65b5663daf7976e1aead81ba1c48bf7a5",
+    "src/data.worker.js": "24dd913dbb486febf9ace2bd803a62e4bf5a18e88c93b326eac5ae9e9aa206ac",
+    "src/database-view.js": "03b59ffda3421667de61055284a0f5bde57e3b9e943ce303e5e27f7ee8a8d93e",
+    "src/database.js": "9807e0399c855d10c2c13aa3ef35080658116bf098093da953ffcdd830e0baa2",
+    "src/diagnostics.js": "0ed689ce6ae85bf7a4eef11d6120c57de91a5fe4f1b273bc0a45eedb3fb4554f",
+    "src/docx.js": "6297dd6e2fee3f8caf04f73c9532f67839d3ec4fa0fa5b4a9fbba18ca4f7a777",
+    "src/extended-ui.js": "a168db4970048e16f4353a6d8b30411f574b4be06a5f021863177fd29029131a",
+    "src/file-workspace.js": "a62b5dae86c3189b35c453d84dc7f156dc18d77787f50bf90801e56a1e1486b3",
+    "src/form-state.js": "70f981db7537023a712b9482cdc3980c9d5dc6c404db215e84bb957a31c49883",
+    "src/image.js": "dc64dbaa232f29908ec70ec5a15eeaa8a28e2dd5048713a87c82cde4068a8ba2",
+    "src/json.js": "133abe6653964b73660d81863de7c2b0ff06be9a882784efca44794c9b3d2851",
+    "src/local-connection.js": "b397a4b34ee4e662aef4dc8476c4cc792d7a5516117042657828ff64f317347e",
+    "src/main.js": "cdb1d59c442e63311980236f80d0d29fd6711b8e5295fa0ee029776fa76b4985",
+    "src/preparation.js": "f7e235a7120afecc401004976e0bb7bc6575f68dc1a4291f648e0687b6a8cbc0",
+    "src/qr-bmp.js": "1b9f35184e150455390a4dcafe283702b2e05155d5bf46e140a5b4296bce7457",
+    "src/schema.js": "afefd38dd58b1a9257dd010d2e4608ab530526346568fc0dc64726172c90a61d",
+    "src/style.css": "6a679317f4f70a90096ef586093567be1aea193da61a523b0b346dccae96fadb",
+    "src/testcenter.js": "c6ec30c15639685d4838b90399b40a01f28c1da3bc10a234c9e236944e8f5746",
+    "src/timestamps.js": "67f215dfbf9cf39506062e5039d0afdd222e72a5cf8b8d61b5fdce0ee0118ea8",
+    "src/toolbox.js": "c534b02ee76f20140fc32c39ea4ba5164194126b94e5bfb37c24800d84585e21",
+    "src/vendor.js": "a978d03a177b68b7308b21ec07b258028248717bb237d3b72921e4425f40678f",
+    "src/viewer.js": "9def9bb19d44f015ca22763004047df08afcedfbf9ce1bf2cb6062b7d592d278",
+    "src/windows-compatibility.js": "2f427150e996d55aa049b1d7fbb5ce01f83d6becffaccceadcf1384c20e43559",
+    "src/windows-csv.js": "6beca2259aac7b1bf5ddb8768fda21ebffbe19c4cce0eb5326b86d1c034b3b21",
+    "src/windows-number-x86.js": "075c2e4425d85d4808aaf941cf0106e3daa29e8b008da11e60a19de0773c4c27",
+    "src/windows-number.js": "0d4376c9eda90b0d97ccfdd3d108d542091bed851ab52483db8797324e8ec571",
+    "src/windows-responses.js": "f510eebf3b8624dc1420c0dac93f7f10c4fdc11752b6a23d4665596045722de8",
+    "src/windows-tokens.js": "982553e0e73f306aefe67f4d09d098d525d0d60492c829933fa4e6e8b30a55bd",
+    "src/worker-client.js": "bdd1223666dfde8ddd7c9f2ede1acfc3c97fd862d2ff1d5ebcb0aff46a87f416",
+    "src/workspace-ui.js": "3f620a7dff35da2e0121c751d04aa6ea74d30101d246187ff8b5e95a52f145d1",
+    "src/xml.js": "f1213427cc5c484b98e72974d5169db17e96bdc3ba641d75f5881877d2323acb",
+    "scripts/local-app.mjs": "d27b31fec5e3955ee9f0e87ae5808e8ab0166878c5cea054dca597425e2e449b",
+    "scripts/lib/local-server.mjs": "b0c829fe87911919c0f6d34e3d404e797d186eb29d8b5c23b200c8ee92be454c"
+  },
+  "testFiles": {
+    "tests/browser.js": "a7bbd3eb4b97f998a03ef42230e7af733fe4547d70f7c202339261c994fb6843",
+    "tests/browser.html": "fb556fd593e3a484a6171c847efe76072748e08ca33ae1917bd4cb88539f4b60",
+    "scripts/build-browser-tests.mjs": "1dbaa705bb4287bd8f258fc3db9de996d298ce67deaa1868f3b7d2cd46572a82",
+    "playwright.config.js": "9d8b99502c4832ed855b49e058c5d96eb9375aac7f0db831bec83dbf4608722b",
+    "package.json": "95c440c9c94f353e24baf7f5d62b1fccfaa7ebea7e07f637fd6a548c8efc4dd2",
+    "pnpm-lock.yaml": "e432ea75e1054f4e288b0d1ce07ba7790c634560d542e948a79e960cf8c4c95f",
+    "scripts/int64-corpus.mjs": "1d4cf4bb697617ab0492df8581a4e4a89d56debf9cabfaa42fa1762e012d84a8",
+    "tests/fixtures/gui-reference-20261104.json": "835e9ef5a40c3e3c569d3810f07491a5c2f804c549e6317884c247d252b6693f",
+    ".github/workflows/ci.yml": "7ed6129abb4f20542bab87844f7f9c9bec48658e6a8cc03ffa5b1c9bc2a6a92f",
+    "tests/e2e/browser.spec.js": "1e54731e11303c0aa9ccc0e307debc475b3c7dbf017c3fa4ba215cbe57c3a828",
+    "tests/e2e/gui-reference.spec.js": "9ba2fc2ee9efcbc9c59f18642dda8b64541b9c5cd0317e75f8d34a7b6a0789c5",
+    "tests/e2e/local-starter.spec.js": "f01b5f8cf97bb31a2cd7151d000b2298cf581f4e702146cfdb691b07d3e278ff",
+    "tests/e2e/windows-differential.spec.js": "8769d783901e566f67f6ce509cf554098d119768bad806620d3267ee91dc9001",
+    "tests/e2e/workflows.spec.js": "671c63838a248a105f119d66ac43d529d47c21ac5e6dd4672994e899579ed9d4"
+  },
+  "provenance": {
+    "runId": 41855728143,
+    "headSha": "27771db7c042221dfb8c50581631018fbc12d44e",
+    "jobId": 126663703797,
+    "artifactId": 13338925329,
+    "artifactDigest": "sha256:b133c0dfc43b828f34032b61e3206f374a37fd27b4403dd8ea17b0d4f4fa3685",
+    "extractedFrom": "test-results/results.json attachment browser-compatibility.json"
+  }
+}

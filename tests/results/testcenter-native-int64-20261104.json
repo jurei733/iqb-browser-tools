@@ -1317,7 +1317,7 @@
       "report": {
         "synthetic": true,
         "empiricalStudy": false,
-        "started": "2026-11-04T14:51:32.0798261Z",
+        "started": "2026-11-04T15:19:27.8666435Z",
         "processBits": 32,
         "nativeMachine": "8664",
         "processMachine": "014c",
@@ -1330,11 +1330,11 @@
           "responses.csv": "e022067d780a63a29d5a6a3eda79a694be81c715450172f7b01a91eac99fd90e",
           "logs.csv": "9f57ada4a14ccf40f9b0c6f90609f3c9356362dd5ac536829e84a7884516c4a8",
           "logs-api.json": "b36dd5a436abb726b1cbb5c2c75b1423d14a0de3a8b9f5077391dff103435469",
-          "browser.sqlite": "7fd7827490ed49456202f812bf1c292a5bc816f8eefb3043fedee6ab9105636b",
-          "browser.result": "57b9099e5b6d7e47d944d01a3411aea7c822b8f94a04e756ef44b99f2e7b62e6",
+          "browser.sqlite": "dfb8d4c96463f8bd993f4fe38d7b083cbe061dbb2a27b50a56e6cd922ec89ac3",
+          "browser.result": "e5405d18e2609b1070b915bda1d18e7df8cae03942abaf045a900f9b3c37c2aa",
           "blank-native.xlsx": "acb5e92ec4de302b2f00cca11a6a1b3c384ea9542aa0e47ac85ef26a9df5b384",
           "int64-input.json": "d2bb07f37c3c131264a341a2f10e1e95744ab23e5b82467cbcfccfe1d4f1de22",
-          "browser-int64.sqlite": "e32e6fc3130276da64bf3df0d6fdd2dd0632c9ffcdcaaf6e093f3bbd8a1a36a3"
+          "browser-int64.sqlite": "649a6c5ab11b90e9bd413360a5ec86b910ae3fcafcc6fdce3c866ef09bf38837"
         },
         "int64Probes": 64,
         "toolbox-int64-log-probe": "passed",
@@ -1347,7 +1347,7 @@
         "toolbox-write-sqlite": "passed",
         "toolbox-excel-export": "passed",
         "coding-original-archive-codec": "passed",
-        "finished": "2026-11-04T14:51:55.1933620Z"
+        "finished": "2026-11-04T15:19:50.8480019Z"
       },
       "fullGraphSHA256": "fbc12e1fec21a917f3233426e65c391d5ed93e6b861fe1cb6cddad616bebb5a9",
       "csvGraphSHA256": "fbc12e1fec21a917f3233426e65c391d5ed93e6b861fe1cb6cddad616bebb5a9",
@@ -1512,7 +1512,7 @@
       "report": {
         "synthetic": true,
         "empiricalStudy": false,
-        "started": "2026-11-04T14:51:55.4238013Z",
+        "started": "2026-11-04T15:19:51.2444652Z",
         "processBits": 64,
         "nativeMachine": "8664",
         "processMachine": "0000",
@@ -1525,11 +1525,11 @@
           "responses.csv": "e022067d780a63a29d5a6a3eda79a694be81c715450172f7b01a91eac99fd90e",
           "logs.csv": "9f57ada4a14ccf40f9b0c6f90609f3c9356362dd5ac536829e84a7884516c4a8",
           "logs-api.json": "b36dd5a436abb726b1cbb5c2c75b1423d14a0de3a8b9f5077391dff103435469",
-          "browser.sqlite": "0c545c7fd4ae83c5e57afa85028fc0f88de43a4caf6a9da26e36af649c4bf3c6",
-          "browser.result": "44a4e9b6b1346ad79ecc2dea7805f1eb7d008bb2b6659201286a0be22694acb0",
+          "browser.sqlite": "635f4a387043d5241871dfa479e39bb01a2e80f57bab3be019831e4a838151ed",
+          "browser.result": "43ec0bccefd1d3559ea0106bc7550d5073cead8c2fc09d684f050acf814a3974",
           "blank-native.xlsx": "acb5e92ec4de302b2f00cca11a6a1b3c384ea9542aa0e47ac85ef26a9df5b384",
           "int64-input.json": "d2bb07f37c3c131264a341a2f10e1e95744ab23e5b82467cbcfccfe1d4f1de22",
-          "browser-int64.sqlite": "29c947fdb2cd7b8679a9e63eab10237bc5cd1759c7a54c15d0811647dfc3403c"
+          "browser-int64.sqlite": "89abe30a29742d93635147d4947d218fa82e5d22f3feaa04200452031b7d14bb"
         },
         "int64Probes": 64,
         "toolbox-int64-log-probe": "passed",
@@ -1542,7 +1542,7 @@
         "toolbox-write-sqlite": "passed",
         "toolbox-excel-export": "passed",
         "coding-original-archive-codec": "passed",
-        "finished": "2026-11-04T14:52:08.7439361Z"
+        "finished": "2026-11-04T15:20:09.7833016Z"
       },
       "fullGraphSHA256": "fbc12e1fec21a917f3233426e65c391d5ed93e6b861fe1cb6cddad616bebb5a9",
       "csvGraphSHA256": "fbc12e1fec21a917f3233426e65c391d5ed93e6b861fe1cb6cddad616bebb5a9",
@@ -1705,7 +1705,7 @@
       "report": {
         "synthetic": true,
         "empiricalStudy": false,
-        "started": "2026-11-04T14:52:09.0334001Z",
+        "started": "2026-11-04T15:20:10.1555093Z",
         "processBits": 32,
         "nativeMachine": "8664",
         "processMachine": "014c",
@@ -1718,11 +1718,11 @@
           "responses.csv": "c1d4a5412a4836580e145d7d12e03fa0cf384a748718eb01dbb3e4e58ce0c93f",
           "logs.csv": "e80c380481dfad51e24439becaa286d5a41845aac936adc91f05937e5c160143",
           "logs-api.json": "4f245e0f89f48862db242c8f520d97c222a3676194454642bdff73582d32afc9",
-          "browser.sqlite": "25430e95dc60ae7706029506e67fa70451e370bd876927b82563019298dda90f",
-          "browser.result": "8763f012bd055520f5fbbdca9f246d4e0bb91b1789f0f42bd6f3dee78aefaf5b",
+          "browser.sqlite": "70a9638d47d214b630bdeb596855d8fe8646ba1ef2479bb01fe9034ef0f6c2df",
+          "browser.result": "566106e3d9b6e41620eb798e4d3c71708ac672e1241815baa8c9dc7ac5d949d2",
           "blank-native.xlsx": "acb5e92ec4de302b2f00cca11a6a1b3c384ea9542aa0e47ac85ef26a9df5b384",
           "int64-input.json": "d2bb07f37c3c131264a341a2f10e1e95744ab23e5b82467cbcfccfe1d4f1de22",
-          "browser-int64.sqlite": "36d4a3885fef7eeb7a925bf9d71bde13fbb025deb5bb3e3edd471a033900aa7a"
+          "browser-int64.sqlite": "87632d2ab52a8a1825a9b5fe9c41e65efb920be82c37e8017f074b7c56f5666b"
         },
         "int64Probes": 64,
         "toolbox-int64-log-probe": "passed",
@@ -1735,7 +1735,7 @@
         "toolbox-write-sqlite": "passed",
         "toolbox-excel-export": "passed",
         "coding-original-archive-codec": "passed",
-        "finished": "2026-11-04T14:52:10.3502844Z"
+        "finished": "2026-11-04T15:20:11.8736087Z"
       },
       "fullGraphSHA256": "e47d9006068e8feb2501d9ebbe6fda2198006e719efa41aa2cba5e4aa47504cb",
       "csvGraphSHA256": "9abec62391db813fce3723ff4ac771394e3648cf40b33d8c2e3766ab3b9ec2b8",
@@ -1898,7 +1898,7 @@
       "report": {
         "synthetic": true,
         "empiricalStudy": false,
-        "started": "2026-11-04T14:52:10.5800666Z",
+        "started": "2026-11-04T15:20:12.1626037Z",
         "processBits": 64,
         "nativeMachine": "8664",
         "processMachine": "0000",
@@ -1911,11 +1911,11 @@
           "responses.csv": "c1d4a5412a4836580e145d7d12e03fa0cf384a748718eb01dbb3e4e58ce0c93f",
           "logs.csv": "e80c380481dfad51e24439becaa286d5a41845aac936adc91f05937e5c160143",
           "logs-api.json": "4f245e0f89f48862db242c8f520d97c222a3676194454642bdff73582d32afc9",
-          "browser.sqlite": "188dc4016c5a1eedcc498a103b72eb16b594be8684d70913c9dfa0ea11721fe8",
-          "browser.result": "62b7aaa05ee5e7bc74df7ff9e14db60993e761b446929f3885f3365923920794",
+          "browser.sqlite": "de9b9e1c31533867c48eb433cde7a0db3fa574928362aa30c390ed7cc6407d4d",
+          "browser.result": "ce153cf970083fd0d155b2bee08b7acd9aa609e393d1bd45996f2884acde5550",
           "blank-native.xlsx": "acb5e92ec4de302b2f00cca11a6a1b3c384ea9542aa0e47ac85ef26a9df5b384",
           "int64-input.json": "d2bb07f37c3c131264a341a2f10e1e95744ab23e5b82467cbcfccfe1d4f1de22",
-          "browser-int64.sqlite": "62001411a116480c6589240172fbf0726862482d46244606106a84fc2fec7e5c"
+          "browser-int64.sqlite": "52967988164c5dd34b14df398692057c430e7c6ef1d4a27d21f19c316a5f7985"
         },
         "int64Probes": 64,
         "toolbox-int64-log-probe": "passed",
@@ -1928,7 +1928,7 @@
         "toolbox-write-sqlite": "passed",
         "toolbox-excel-export": "passed",
         "coding-original-archive-codec": "passed",
-        "finished": "2026-11-04T14:52:11.9375495Z"
+        "finished": "2026-11-04T15:20:13.9690133Z"
       },
       "fullGraphSHA256": "e47d9006068e8feb2501d9ebbe6fda2198006e719efa41aa2cba5e4aa47504cb",
       "csvGraphSHA256": "9abec62391db813fce3723ff4ac771394e3648cf40b33d8c2e3766ab3b9ec2b8",
@@ -2118,11 +2118,11 @@
     }
   },
   "verificationRun": {
-    "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41851284624",
-    "sourceCommit": "3a1358afa0b8577c8a98686eb16f708e5ecdcebf",
+    "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/41855727586",
+    "sourceCommit": "27771db7c042221dfb8c50581631018fbc12d44e",
     "passed": 216,
     "total": 216,
-    "artifactId": 13335426850,
-    "artifactSHA256": "9616475059583c76e19a327539a9a364cc1f505db72ab4b24fe51389d6eaeeaf"
+    "artifactId": 13338156278,
+    "artifactSHA256": "2b7699e0c7cf5db3b50bf31938fb29c354d65d86cf83270b0b5df46387cb8b57"
   }
 }
