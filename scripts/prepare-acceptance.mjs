@@ -1,0 +1,10 @@
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {resolve,join} from 'node:path';
+import {unzipSync,zipSync,strToU8} from 'fflate';
+const out=resolve(process.argv[2]||'work/browser-tests'),source=unzipSync(await readFile('public/examples/Kodierjob-Schablone.zip'));
+const image=Object.entries(source).find(([name])=>/\.(png|jpg)$/i.test(name)&&!/(CT_|Testschablone)/i.test(name))[1];
+const people=Array.from({length:125},(_,i)=>String(i+1).padStart(3,'0'));
+const entries={'Job.xml':strToU8('<CodingJob id="large-acceptance"><jobOpts enableComments="true"/><Variablen>'+['A','B'].map((id,i)=>'<v id="'+id+'"><c id="0"/><c id="1"/><loc b="BOOK" p="'+(i+1)+'"/></v>').join('')+'</Variablen><Cases>'+people.join(' ')+'</Cases></CodingJob>')};
+for(const p of people)for(const page of [1,2])entries['BOOK-'+page+'_'+p+'.png']=image;
+const dir=join(out,'fixtures/acceptance');await mkdir(dir,{recursive:true});const bytes=zipSync(entries);await writeFile(join(dir,'large-job.zip'),bytes);await writeFile(join(dir,'large-job.json'),JSON.stringify({synthetic:true,people:125,cases:250,scanFiles:250,compressedBytes:bytes.length,uncompressedScanBytes:image.length*250}));
+console.log('Prepared synthetic acceptance job: 250 scan files,',bytes.length,'ZIP bytes');

@@ -107,6 +107,58 @@ jobs:
           echo '::warning::Browser artifact upload failed. Test results remain in the job summary and logs; check the upload step for the storage error.'
           echo 'Browser artifacts could not be uploaded. The test results above remain valid; see the upload step for the storage error.' >> "$GITHUB_STEP_SUMMARY"
 
+  acceptance-tests:
+    name: Practical acceptance (${{ matrix.project }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - project: mobile-ios-webkit
+            browser: webkit
+          - project: mobile-android-chromium
+            browser: chromium
+          - project: large-workloads-chromium
+            browser: chromium
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+          package-manager-cache: false
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+        with:
+          run_install: false
+          cache: true
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Install browser and system dependencies
+        run: pnpm exec playwright install --with-deps ${{ matrix.browser }}
+
+      - name: Run touch or workload acceptance
+        run: pnpm test:acceptance --project=${{ matrix.project }}
+
+      - name: Retain acceptance reports and failure traces
+        if: ${{ !cancelled() }}
+        continue-on-error: true
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: acceptance-results-${{ matrix.project }}
+          path: test-results/
+          retention-days: 7
+          if-no-files-found: warn
+
   local-starter:
     name: Local starter (${{ matrix.os }})
     runs-on: ${{ matrix.os }}

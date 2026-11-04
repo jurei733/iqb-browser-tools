@@ -13,7 +13,8 @@
     "test:reference": "node scripts/test-reference.mjs",
     "test:study": "node scripts/testcenter-study.mjs",
     "test:differential": "node scripts/analyze-windows-differential.mjs",
-    "audit:functions": "node scripts/audit-functions.mjs"
+    "audit:functions": "node scripts/audit-functions.mjs",
+    "test:acceptance": "pnpm build && node scripts/build-browser-tests.mjs work/browser-tests && playwright test -c playwright.acceptance.config.js"
   },
   "dependencies": {
     "exceljs": "^4.4.0",
