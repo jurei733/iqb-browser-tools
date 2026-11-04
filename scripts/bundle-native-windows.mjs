@@ -6,5 +6,6 @@ const bundle={runId:process.env.GITHUB_RUN_ID,commit:process.env.GITHUB_SHA,inpu
 for(const name of ['native-32','native-64','native-coding'])try{const bytes=await readFile(directory+'/'+name+'.json');JSON.parse(bytes);bundle.rawCaptures[name]=bytes.toString('base64');bundle.captureHashes[name]=hash(bytes);}catch(error){if(error.code!=='ENOENT')throw error;console.log('Missing native capture:',name);}
 const bytes=Buffer.from(JSON.stringify(bundle));await writeFile(directory+'/bundle.json',bytes);
 // Synthetic data, lossless transport, no token or repository write permission.
-console.log('IQB_NATIVE_GZIP:'+gzipSync(bytes).toString('base64'));
+const data=gzipSync(bytes).toString('base64'),width=60000;console.log('IQB_NATIVE_GZIP_PARTS:'+Math.ceil(data.length/width));
+for(let i=0;i<data.length;i+=width)console.log('IQB_NATIVE_GZIP_PART:'+Math.floor(i/width)+':'+data.slice(i,i+width));
 console.log('IQB_NATIVE_SHA256:'+hash(bytes));

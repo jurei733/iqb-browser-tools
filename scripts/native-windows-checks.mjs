@@ -1,3 +1,4 @@
+import {verifyNumericProbes} from './verify-numeric-probes.mjs';
 import {gunzipSync} from 'fflate';
 import {nativeConverterCorpus,nativePipelineCases} from './windows-native-corpus.mjs';
 import {converterTypes} from './converter-corpus.mjs';
@@ -8,7 +9,6 @@ const canonical=value=>JSON.stringify(value,(_key,item)=>item&&typeof item==='ob
 const bytes=value=>Uint8Array.from(atob(value),c=>c.charCodeAt(0));
 const same=(a,b)=>canonical(a)===canonical(b);
 const ensure=(condition,message)=>{if(!condition)throw new Error(message);};
-export const knownX86FormattingGaps=['number-36-setResponsesIqbStandard-nested','number-36-setResponsesDan-nested'];
 const hash=async input=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',input))).map(n=>n.toString(16).padStart(2,'0')).join('');
 const outcome=result=>{
  if(result.exceptionType)return {kind:'exception'};
@@ -18,9 +18,9 @@ export async function verifyNativeWindows(bundle,codingInputBytes){
  const captures={};for(const name of ['native-32','native-64','native-coding']){ensure(bundle.rawCaptures[name],'Missing '+name);const raw=bytes(bundle.rawCaptures[name]);ensure(await hash(raw)===bundle.captureHashes[name],'Changed raw capture '+name);captures[name]=JSON.parse(new TextDecoder().decode(raw));}
  const inputs=nativeConverterCorpus(),pipelines=nativePipelineCases(),inputHash=await hash(new TextEncoder().encode(JSON.stringify(inputs))),pipelineHash=await hash(new TextEncoder().encode(JSON.stringify(pipelines)));
  ensure(inputHash===bundle.inputsSHA256,'Native input corpus changed');
- const checks=[],api=[];
+ const checks=[],api=[],numericChecks=[];
  for(const bits of [32,64]){
-  const native=captures['native-'+bits];ensure(native.nativeMachine==='8664'&&native.processBits===bits,'Expected native x64 host / '+bits+'-bit process');ensure(native.inputSHA256===inputHash&&native.pipelineInputSHA256===pipelineHash,'Native capture input hash mismatch');ensure(native.timezone==='W. Europe Standard Time'&&native.culture==='de-DE','Reference locale changed');ensure(native.assemblySHA256==='c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1','Changed Toolbox original');ensure(native.results.length===inputs.length,'Missing native inputs');
+  const native=captures['native-'+bits];ensure(native.nativeMachine==='8664'&&native.processBits===bits,'Expected native x64 host / '+bits+'-bit process');ensure(native.inputSHA256===inputHash&&native.pipelineInputSHA256===pipelineHash,'Native capture input hash mismatch');ensure(native.timezone==='W. Europe Standard Time'&&native.culture==='de-DE','Reference locale changed');ensure(native.assemblySHA256==='c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1','Changed Toolbox original');ensure(native.results.length===inputs.length,'Missing native inputs');numericChecks.push(...await verifyNumericProbes(native,bits));
   for(const input of inputs){
    const found=native.results.find(r=>r.id===input.id);ensure(found,'Missing native result '+input.id);const expected=outcome(found);let actual,kind='value';
    try{actual=parseChunk(input.contentJSON,converterTypes[input.method],{windows:bits===64?'64':true});if(actual.some(sf=>sf.responses.some(r=>r.status==='ERROR')))kind='error-response';}catch{kind='exception';}
@@ -37,12 +37,10 @@ export async function verifyNativeWindows(bundle,codingInputBytes){
   const nativeToBrowser=same(decodeResult(bytes(found.nativeBase64)),found.nativeModel),browserToNative=same(found.browserModel,found.nativeModel),currentXML=!rejected&&same(gunzipSync(exported),gunzipSync(bytes(input.browserBase64)));
   return {id:input.id,proof:'bidirectional-field-values-and-list-order',passed:nativeToBrowser&&browserToNative&&currentXML};
  });
- return {completeEquivalence:false,realProductionDataTested:false,referenceCommit:bundle.commit,referenceRunId:bundle.runId,inputSHA256:inputHash,summary:{uniqueConverterInputs:inputs.length,architectures:[32,64].map(bits=>({bits,passed:checks.filter(c=>c.bits===bits&&c.passed).length,total:inputs.length,values:checks.filter(c=>c.bits===bits&&c.proof==='exact-values-and-list-order').length,valuesPassed:checks.filter(c=>c.bits===bits&&c.proof==='exact-values-and-list-order'&&c.passed).length,errorOutcomes:checks.filter(c=>c.bits===bits&&c.proof==='error-outcome-only').length})),api:{passed:api.filter(c=>c.passed).length,total:api.length,cases:pipelines.length},coding:{passed:codec.filter(c=>c.passed).length,total:codec.length,bidirectional:codec.filter(c=>c.passed&&c.proof==='bidirectional-field-values-and-list-order').length,errorDetection:codec.filter(c=>c.passed&&c.proof==='error-detection-only').length}},checks,api,codec};
+ return {completeEquivalence:false,realProductionDataTested:false,referenceCommit:bundle.commit,referenceRunId:bundle.runId,inputSHA256:inputHash,summary:{numericDiagnostics:{uniqueInputs:numericChecks.length/2,architectures:[32,64].map(bits=>({bits,passed:numericChecks.filter(c=>c.bits===bits&&c.passed).length,total:numericChecks.filter(c=>c.bits===bits).length,values:numericChecks.filter(c=>c.bits===bits&&c.proof==='binary64-and-G15-G17-R').length,errorOutcomes:numericChecks.filter(c=>c.bits===bits&&c.proof==='error-outcome-only').length}))},uniqueConverterInputs:inputs.length,architectures:[32,64].map(bits=>({bits,passed:checks.filter(c=>c.bits===bits&&c.passed).length,total:inputs.length,values:checks.filter(c=>c.bits===bits&&c.proof==='exact-values-and-list-order').length,valuesPassed:checks.filter(c=>c.bits===bits&&c.proof==='exact-values-and-list-order'&&c.passed).length,errorOutcomes:checks.filter(c=>c.bits===bits&&c.proof==='error-outcome-only').length})),api:{passed:api.filter(c=>c.passed).length,total:api.length,cases:pipelines.length},coding:{passed:codec.filter(c=>c.passed).length,total:codec.length,bidirectional:codec.filter(c=>c.passed&&c.proof==='bidirectional-field-values-and-list-order').length,errorDetection:codec.filter(c=>c.passed&&c.proof==='error-detection-only').length}},checks,api,codec,numericChecks};
 }
 export function assertNativeRegressionScope(report){
- const failures=[...report.checks,...report.api,...report.codec].filter(c=>!c.passed);
- ensure(failures.length===knownX86FormattingGaps.length,'Unexpected number of native differences');
- for(const failure of failures)ensure(failure.bits===32&&failure.sources?.some(s=>s.group==='numbers'&&knownX86FormattingGaps.includes(s.id)),'New native Windows regression');
- for(const id of knownX86FormattingGaps)ensure(failures.some(f=>f.sources.some(s=>s.id===id)),'Known gap changed; review the strict comparison');
+ const failures=[...report.checks,...report.api,...report.codec,...report.numericChecks].filter(c=>!c.passed);
+ ensure(failures.length===0,'Native Windows comparison differs: '+failures.length);
  return failures;
 }

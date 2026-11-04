@@ -15,7 +15,7 @@ export function parseWindowsDouble(raw){
  // round-trip probe keeps its full precision buffer, so it must stay separate.
  const [mantissa,exponent='0']=raw.toLowerCase().split('e'),[whole,fraction='']=mantissa.split('.'),digits=whole+fraction,trimmed=digits.replace(/0+$/,'');
  if(!trimmed||trimmed==='-')return 0;
- return legacyDouble(trimmed+'e'+(Number(exponent)-fraction.length+digits.length-trimmed.length));
+ const value=legacyDouble(trimmed+'e'+(Number(exponent)-fraction.length+digits.length-trimmed.length));return value===0?0:value;
 }
 export function legacyDouble(raw){
  const negative=raw[0]==='-',unsigned=negative?raw.slice(1):raw;

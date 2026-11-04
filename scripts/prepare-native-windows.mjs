@@ -1,8 +1,11 @@
 import {mkdir,writeFile,readFile} from 'node:fs/promises';
 import {resolve} from 'node:path';
+import {windowsNumericProbes} from './windows-numeric-probes.mjs';
 import {nativeConverterCorpus,nativePipelineCases} from './windows-native-corpus.mjs';
 const directory=resolve(process.argv[2]||'work/native-windows');await mkdir(directory,{recursive:true});
 await writeFile(directory+'/inputs.json',JSON.stringify(nativeConverterCorpus()));
 await writeFile(directory+'/coding-inputs.json',await readFile('tests/fixtures/windows-edge/coding-inputs.json'));
 await writeFile(directory+'/pipeline-inputs.json',JSON.stringify(nativePipelineCases()));
 console.log('Native Windows input count:',nativeConverterCorpus().length);
+await writeFile(directory+'/numeric-inputs.json',JSON.stringify(windowsNumericProbes()));
+console.log('Separate CLR numeric diagnostic count:',windowsNumericProbes().length);

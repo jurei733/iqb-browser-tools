@@ -51,6 +51,16 @@ public class WindowsPrecisionReference {
    }catch(Exception e){while(e.InnerException!=null)e=e.InnerException;entry["exceptionType"]=e.GetType().FullName;entry["message"]=e.Message;}outputs.Add(entry);}
    report["pipelineResults"]=outputs;report["pipelineInputSHA256"]=Hash(args[4]);
   }
+  if(args.Length>5){
+   var inputs=JArray.Parse(File.ReadAllText(args[5]));var outputs=new JArray();
+   for(int i=0;i<inputs.Count;i++){
+    var p=new JObject();p["index"]=i;
+    try{var value=(double)JToken.Parse((string)inputs[i]);p["bits"]=BitConverter.DoubleToInt64Bits(value).ToString("x16");p["g15"]=value.ToString("G15",CultureInfo.InvariantCulture);p["g17"]=value.ToString("G17",CultureInfo.InvariantCulture);p["roundTrip"]=value.ToString("R",CultureInfo.InvariantCulture);}
+    catch(Exception e){p["exceptionType"]=e.GetType().FullName;}
+    outputs.Add(p);
+   }
+   report["numericProbes"]=outputs;report["numericInputSHA256"]=Hash(args[5]);report["jsonSHA256"]=Hash(Path.Combine(toolPath,"Newtonsoft.Json.dll"));
+  }
   File.WriteAllText(args[2],report.ToString(),new System.Text.UTF8Encoding(false));
  }
 }

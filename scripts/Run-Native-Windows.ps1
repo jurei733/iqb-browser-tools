@@ -20,7 +20,7 @@ foreach($bits in @(32,64)){
  & $compiler /nologo ('/platform:'+$target) ('/out:'+$exe) ('/reference:'+$json) 'scripts\WindowsPrecisionReference.cs'
  if($LASTEXITCODE){throw 'Reference harness compilation failed'}
  Write-Output ('Capturing Toolbox in '+$bits+'-bit process')
- & $exe $Root (Join-Path $Root 'inputs.json') (Join-Path $Root ('native-'+$bits+'.json')) 'native-windows-x64-host' (Join-Path $Root 'pipeline-inputs.json')
+ & $exe $Root (Join-Path $Root 'inputs.json') (Join-Path $Root ('native-'+$bits+'.json')) 'native-windows-x64-host' (Join-Path $Root 'pipeline-inputs.json') (Join-Path $Root 'numeric-inputs.json')
  if($LASTEXITCODE){throw 'Original reference execution failed'}
 }
 Write-Output 'Capturing CodingResults in an isolated Windows PowerShell process'

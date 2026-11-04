@@ -20,3 +20,9 @@ test('Windows state values retain numeric lexemes, property order and null throu
  assert.deepEqual(reloaded[0].booklets[0].units[0].laststate,expected);
  const db=new OutputDatabase(await initSqlJs());try{db.import(people,{windows:true});assert.deepEqual(db.people()[0].booklets[0].units[0].laststate,expected);}finally{db.close();}
 });
+test('Windows x86 x87 rounding reproduces the former G17 text differences',()=>{
+ const raw='-1.4626270185260474e-164';
+ assert.equal(parseChunk(`[{"id":"v","value":{"n":${raw}}}]`,'iqb-standard@1.1',{windows:true})[0].responses[0].value,'{  "n": -1.4626270185260475E-164}');
+ assert.equal(parseChunk(`{"v":{"n":${raw}}}`,'IQBVisualUnitPlayerV2.1.0',{windows:true})[0].responses[0].value,'{\r\n  "n": -1.4626270185260475E-164\r\n}');
+ assert.equal(parseChunk(`[{"id":"v","value":{"n":${raw}}}]`,'iqb-standard@1.1',{windows:'64'})[0].responses[0].value,'{  "n": -1.4626270185260474E-164}');
+});

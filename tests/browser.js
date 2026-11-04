@@ -122,9 +122,9 @@ check('Windows-Kodierer: 22 Ergebnisdateien in beide Richtungen und zwei Steuerz
  for(const fixture of inputs){const original=native.results.find(c=>c.id===fixture.id);let encoded,error=false;try{encoded=C.encodeResult(fixture.job,fixture.coder,fixture.globalComment,{windows:true});}catch{error=true;}if(original.nativeError){assert(error,fixture.id);rejected++;continue;}assert(!error,fixture.id);assert(strFromU8(gunzipSync(encoded))===strFromU8(gunzipSync(bytes(fixture.browserBase64))),fixture.id+' aktuelle Export-XML');assert(canonical(C.decodeResult(bytes(original.nativeBase64)))===canonical(original.nativeModel),fixture.id+' Windows → Browser');assert(canonical(original.browserModel)===canonical(original.nativeModel),fixture.id+' Browser → Windows');valid++;}
  assert(valid===22&&rejected===2);
 });
-check('Windows-x64-Runner: 1214 Eingaben je Profil, 13 API-Fälle und Kodierer; zwei x86-Textabweichungen bleiben offen',async()=>{
+check('Windows-x64-Runner: 1214 Eingaben je Profil, 13 API-Fälle und Kodierer; beide Profile stimmen strikt überein',async()=>{
  const bundle=JSON.parse(strFromU8(await get('/fixtures/windows-native/reference.json'))),report=await verifyNativeWindows(bundle,await get('/fixtures/windows-edge/coding-inputs.json'));
- assertNativeRegressionScope(report);assert(report.summary.architectures[1].passed===1214&&report.summary.architectures[0].passed===1212);assert(report.summary.api.passed===26&&report.summary.coding.passed===24);
+ assertNativeRegressionScope(report);assert(report.summary.architectures[1].passed===1214&&report.summary.architectures[0].passed===1214);assert(report.summary.api.passed===26&&report.summary.coding.passed===24);
  await task('new-db');await task('dto',{responses:[{groupname:'G',loginname:'L',code:'0',bookletname:'B',unitname:'U',originalUnitId:'U',laststate:'{"n":null}',responses:[{id:'c',responseType:'unknown',ts:1,content:'{"v":null}'}]}],logs:[],windows:'64'});await task('db-import',{windows:'64'});
  const saved=JSON.parse(strFromU8(await task('db-export',{format:'json'})));assert(saved[0].booklets[0].units[0].subforms[0].responses[0].value===null,'Worker verlor SQL-NULL');assert(saved[0].booklets[0].units[0].laststate[0].value===null,'Worker verlor Zustands-NULL');
 });
