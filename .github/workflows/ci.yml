@@ -50,7 +50,7 @@ jobs:
 
   browser-tests:
     name: Browser tests (${{ matrix.browser }})
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
     strategy:
       fail-fast: false
@@ -109,7 +109,7 @@ jobs:
 
   acceptance-tests:
     name: Practical acceptance (${{ matrix.project }})
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
     strategy:
       fail-fast: false
