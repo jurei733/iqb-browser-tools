@@ -1,6 +1,6 @@
 // x87 NumberToDouble / DoubleToNumber adapted from .NET CoreCLR (MIT).
 // Copyright (c) .NET Foundation and Contributors.
-// https://github.com/dotnet/coreclr/blob/release/2.0.0/src/vm/i386/fptext.asm
+// https://github.com/dotnet/coreclr/blob/584dea5fdf77c60cfa7bf80fbf974e77e57dee66/src/vm/i386/fptext.asm
 // License: public/coreclr-number-LICENSE.txt
 // Each x87 operation rounds to a 64-bit significand; FBSTP then rounds
 // to an integer before the decimal G15/G17 rounding. No fixture lookup.

@@ -1,0 +1,16 @@
+{
+  "upstreamRepository": "https://github.com/dotnet/coreclr",
+  "revision": "584dea5fdf77c60cfa7bf80fbf974e77e57dee66",
+  "sourcePath": "src/vm/i386/fptext.asm",
+  "sourceURL": "https://github.com/dotnet/coreclr/blob/584dea5fdf77c60cfa7bf80fbf974e77e57dee66/src/vm/i386/fptext.asm",
+  "sourceSHA256": "f2ed89e5684e062ca8d6aed2f465f61e0b1b6db113234dcab016a0383be5a41f",
+  "license": "MIT",
+  "licenseFile": "public/coreclr-number-LICENSE.txt",
+  "implementation": "src/windows-number-x86.js",
+  "algorithms": [
+    "ScaleByPow10: rounded binary80 multiply/divide",
+    "DoubleToNumber: FBSTP integer rounding, then decimal G15/G17 rounding",
+    "NumberToDouble: first 18 decimal digits, then scaled binary80 arithmetic"
+  ],
+  "scope": "Numeric conversion only; finite test corpora and no empirical study claim."
+}

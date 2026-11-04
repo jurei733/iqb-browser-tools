@@ -1,5 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+import {windowsNumericProbes} from '../scripts/windows-numeric-probes.mjs';
 import {readFile} from 'node:fs/promises';
 import {DOMParser} from '@xmldom/xmldom';
 import {verifyNativeWindows,assertNativeRegressionScope} from '../scripts/native-windows-checks.mjs';
@@ -8,3 +10,4 @@ const reference=JSON.parse(await readFile(new URL('./fixtures/windows-native/ref
 test('Native Windows x64 hardware: all 1214 inputs match the 64-bit converter profile',()=>{assert.deepEqual(report.summary.architectures[1],{bits:64,passed:1214,total:1214,values:1049,valuesPassed:1049,errorOutcomes:165});});
 test('Native Windows x86: all 1214 inputs match including the former G17 text differences',()=>{assertNativeRegressionScope(report);assert.equal(report.summary.architectures[0].passed,1214);assert.equal(report.completeEquivalence,false);assert.equal(report.realProductionDataTested,false);});
 test('Native Windows APIs and CodingResults: both architectures and bidirectional exports',()=>{assert.deepEqual(report.summary.api,{passed:26,total:26,cases:13});assert.deepEqual(report.summary.coding,{passed:24,total:24,bidirectional:22,errorDetection:2});});
+test('Numeric diagnostic inputs are stable across operating systems and architectures',()=>{assert.equal(windowsNumericProbes().length,8373);assert.equal(createHash('sha256').update(JSON.stringify(windowsNumericProbes())).digest('hex'),'7dd5f75b1ff15c560453dd0f1e68b378c5a7eae495a05b8f36a0027331f16988');});
