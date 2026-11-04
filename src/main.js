@@ -31,7 +31,7 @@ async function storage() {
 }
 async function store(key,content) {const database=await storage();return new Promise((resolve,reject)=>{const tx=database.transaction('progress','readwrite');tx.objectStore('progress').put(content,key);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);});}
 async function retrieve(key) {const database=await storage();return new Promise((resolve,reject)=>{const req=database.transaction('progress').objectStore('progress').get(key);req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error);});}
-const resultTargetKey=job=>JSON.stringify([job.id,job.label]);
+const resultTargetKey=job=>JSON.stringify([job.id,job.resultLabel??job.label]);
 const jobKey=job=>'job:'+JSON.stringify([job.id,job.label,job.cases.map(c=>[c.testee,c.variable.id])]);
 function notify(message,error=false) {diagnostics.add(message,{level:error?'error':'info',operation:state.module==='coding'?'Kodieren':state.tool});const el=$('#notice');el.textContent=message;el.className=error?'notice error':'notice';el.hidden=false;}
 async function action(fn) {try {await fn();}catch(failure){const error=failure&&typeof failure==='object'?failure:new Error(String(failure||'Die Verarbeitung wurde unterbrochen.'));for(const message of error.messages||[])if(message!==error.message)diagnostics.add(message,{level:'error',operation:state.module==='coding'?'Kodieren':state.tool});notify(error.message,error.name!=='AbortError');if(error.name!=='AbortError')console.error(error);}}
@@ -100,7 +100,7 @@ async function selectJob(job) {
   if(results.length){Coding.applyResult(job,results[0]);state.coder=results[0].coder;state.globalComment=results[0].globalComment;state.appliedResults?.add(jobKey(job));await saveProgress();}
   state.index=Coding.initialCaseIndex(job);renderCoding();try{await store('workspace',{jobs:state.jobs,selected:job.id});}catch(e){notify('Arbeitsdateien konnten nicht für den nächsten Start gespeichert werden: '+e.message,true);}
 }
-async function saveProgress(){if(!state.job)return;pendingSaves++;if($('#saved'))$('#saved').textContent='Wird gespeichert …';const j=state.job;const result={id:j.id,label:j.label,coder:state.coder,globalComment:state.globalComment,transforms:state.transforms,entries:j.cases.filter(c=>c.code||c.comment).map(c=>({testee:c.testee,variable:c.variable.id,code:c.code,comment:c.comment,time:c.time}))};
+async function saveProgress(){if(!state.job)return;pendingSaves++;if($('#saved'))$('#saved').textContent='Wird gespeichert …';const j=state.job;const result={id:j.id,label:j.resultLabel??j.label,coder:state.coder,globalComment:state.globalComment,transforms:state.transforms,entries:j.cases.filter(c=>c.code||c.comment).map(c=>({testee:c.testee,variable:c.variable.id,code:c.code,comment:c.comment,time:c.time}))};
   try{await store(jobKey(j),result);if(fileWorkspace&&result.coder.trim()){await fileWorkspace.save(j.label,Coding.encodeResult({...j,cases:result.entries.map(e=>({...e,variable:{id:e.variable}}))},result.coder,result.globalComment),resultTargetKey(j));if($('#saved'))$('#saved').textContent='Im Arbeitsordner gespeichert';}else if($('#saved'))$('#saved').textContent='Lokal gespeichert';}catch(e){if($('#saved'))$('#saved').textContent='Speichern fehlgeschlagen';throw new Error('Speichern fehlgeschlagen. Bitte die Ergebnisdatei herunterladen.');}finally{pendingSaves--;}
 }
 async function chooseCode(code){const c=state.job.cases[state.index];c.code=code;c.time=Coding.localTimestamp();renderCoding();await saveProgress();}

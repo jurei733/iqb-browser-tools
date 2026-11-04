@@ -1,0 +1,74 @@
+{
+  "capturedOn": "2026-11-04",
+  "synthetic": true,
+  "empiricalDataTested": false,
+  "applicationCommit": "785aa2e6d79516d774d2ec262a57f80c3d61a8b3",
+  "environment": "UTM Windows 11 ARM64, original Windows applications through their normal GUI; separate x86/x64 converter evidence is captured by CI.",
+  "originals": {
+    "itc-ToolBox": {
+      "executable": {
+        "path": "itc-Toolbox.exe",
+        "url": "https://www2.iqb.hu-berlin.de/it/dl/itc-ToolBox/Application%20Files/itc-Toolbox_3_3_0_2/itc-Toolbox.exe.deploy",
+        "size": 505344,
+        "sha256": "c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1",
+        "manifest_hash_verified": true
+      }
+    },
+    "IQB-Kodieren": {
+      "executable": {
+        "path": "IQB-Kodieren.exe",
+        "url": "https://www2.iqb.hu-berlin.de/it/dl/IQB-Kodieren/Application%20Files/IQB-Kodieren_4_3_0_3/IQB-Kodieren.exe.deploy",
+        "size": 214016,
+        "sha256": "7b8fdb074669c5e0ba267c2e924b484a322abb32cb733bae2c659b38191d3407",
+        "manifest_hash_verified": true
+      }
+    }
+  },
+  "coding": {
+    "input": {
+      "path": "tests/fixtures/windows-reference/inputs/coding/modern.zip",
+      "sha256": "347366fd304d7abc6aa4d22ccd2dc6890e8e1638089965466a65058d3db573cb"
+    },
+    "capture": {
+      "sha256": "dafc9145803b4f5d1f8898038fae6f5bc7bcfc486ca5a7b79b4d891fc618fb0d",
+      "bytes": 198,
+      "base64": "H4sIAAAAAAAEAIWPTQ6CMBCF9ybeYTL7QgtiDGkh6kp3Gi8gMBASaEn5iXdz4ZG8goWNceVqXmbmfS/v/XzJ9NE2MJHta6MVCo8jkM5NUetK4TiUbIdpsl7J47K6Uj82Q/81RAh1odBSSdb5iLWmIKsR8nkqPF0OCM09o0bh2WSeS0OHA5A5TAr3XCAMnUK+iFZhwIMtE4LxzU1EcchjETqYe8CkGmvorMlI+vkPI/jHCKKF4c7+3MX/KZN8AP9NBZMHAQAA"
+    },
+    "observed": [
+      "Loaded Job.xml and four cases with scans, score and comment controls.",
+      "Coded person 001 / A01 as 0; entered gui probe; moved to A02 and coded 1.",
+      "Closed and relaunched the original application; it selected the first open case (3/4).",
+      "Navigated back: case 1 retained code 0 and gui probe, case 2 retained code 1."
+    ],
+    "timestamps": "Independent live interactions have different wall-clock timestamps; the native result import/export roundtrip must preserve every timestamp exactly."
+  },
+  "toolbox": {
+    "input": {
+      "path": "public/examples/Beispiel.sqlite",
+      "sha256": "b4ccc03c425185c1b6fdea9c0b26ab4f862e552e879ab1dbd92eaffc6595a6bc"
+    },
+    "capture": {
+      "sha256": "3fe9edd8ca407b8d5043e9c673a835a7856068e2763baede63cb3ece0921f991",
+      "bytes": 2987,
+      "base64": "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"
+    },
+    "options": {
+      "subformMode": "none",
+      "values": true,
+      "status": false,
+      "codes": false,
+      "scores": false
+    },
+    "observed": [
+      "Opened SQLite version 2 in the original Database tab; three people and six responses.",
+      "Selected Excel export, ignored subforms, exported answer values only.",
+      "Export to local C: completed; worksheet Antworten has four rows and five columns."
+    ],
+    "transferLimitation": "VM WebDAV share rejected native XLSX writes with 0x80070021. Export to the local Windows disk worked; the resulting file was transferred over the VM-only bridge.",
+    "excluded": [
+      "Excel styles",
+      "ZIP/XML metadata"
+    ]
+  },
+  "completeEquivalence": false
+}

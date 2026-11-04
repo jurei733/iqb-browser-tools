@@ -29,7 +29,7 @@ export function encodeResult(job, coder, globalComment = '',{windows=false}={}) 
   if (windows?!coder:!coder.trim()) throw new Error('Bitte einen Kodierernamen eingeben.');
   let cases=job.cases;if(windows){const groups=[];for(const c of cases){let group=groups.find(g=>g[0]?.testee===c.testee);if(!group){group=[];groups.push(group);}group.push(c);}cases=[];for(const group of groups){if(!group.some(c=>c.code||c.comment))break;cases.push(...group);}}
   const body = (globalComment ? node('globalcomment',{},text(globalComment)) : '') + cases.filter(c => c.code || c.comment).map(c => node('c', {v:c.variable.id,tp:c.testee,tm:c.time || localTimestamp(),c:c.code || ''},text(c.comment || ''))).join('\n');
-  return gzipSync(strToU8(documentXML(node('CodingResults',{version:'5',id:job.id,coder,label:job.label},body))));
+  return gzipSync(strToU8(documentXML(node('CodingResults',{version:'5',id:job.id,coder,label:job.resultLabel??job.label},body))));
 }
 export function localTimestamp(date = new Date()) {
   const p = n => String(n).padStart(2,'0');
@@ -48,6 +48,7 @@ export function applyResult(job, result) {
     const c = cases.get(JSON.stringify([e.testee,e.variable.toUpperCase()]));
     if (c) Object.assign(c,{code:e.code,comment:e.comment,time:e.time});
   }
+  if(result.label!==undefined)job.resultLabel=result.label;
   return ignored;
 }
 export function safeUnzip(bytes) {
@@ -133,7 +134,7 @@ export async function readCodingFiles(files) {
         }
         if(!cases.length){warnings.push(`${path}: Keine passenden Scans gefunden.`);continue;}
         const label=legacy?`${stem(path)} ${selected.map(v=>v.id).join(' ')}`:`${bundle.name} ${stem(path)}`;
-        const job={id:attr(root,'id'),label,settings:{...options},variables:selected,cases};if(!job.id)throw new Error(`Job-ID fehlt in ${path}.`);jobs.push(job);
+        const job={id:attr(root,'id'),label,resultLabel:legacy?label:path.split('/').at(-1),settings:{...options},variables:selected,cases};if(!job.id)throw new Error(`Job-ID fehlt in ${path}.`);jobs.push(job);
       }
     }
   }
