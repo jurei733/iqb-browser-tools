@@ -11,3 +11,9 @@ test('Native Windows x64 hardware: all 1214 inputs match the 64-bit converter pr
 test('Native Windows x86: all 1214 inputs match including the former G17 text differences',()=>{assertNativeRegressionScope(report);assert.equal(report.summary.architectures[0].passed,1214);assert.equal(report.completeEquivalence,false);assert.equal(report.realProductionDataTested,false);});
 test('Native Windows APIs and CodingResults: both architectures and bidirectional exports',()=>{assert.deepEqual(report.summary.api,{passed:26,total:26,cases:13});assert.deepEqual(report.summary.coding,{passed:24,total:24,bidirectional:22,errorDetection:2});});
 test('Numeric diagnostic inputs are stable across operating systems and architectures',()=>{assert.equal(windowsNumericProbes().length,8373);assert.equal(createHash('sha256').update(JSON.stringify(windowsNumericProbes())).digest('hex'),'7dd5f75b1ff15c560453dd0f1e68b378c5a7eae495a05b8f36a0027331f16988');});
+test('Native CLR numeric diagnostics: exact bits and G15/G17/R with no allowed counterexamples',()=>{
+ assert.deepEqual(report.summary.numericDiagnostics,{uniqueInputs:8373,architectures:[32,64].map(bits=>({bits,passed:8373,total:8373,values:8370,errorOutcomes:3}))});
+ assert.equal(report.numericInputSHA256,'7dd5f75b1ff15c560453dd0f1e68b378c5a7eae495a05b8f36a0027331f16988');
+ const checks=report.checks.map(c=>c.bits===32&&c.sources.some(s=>s.id==='number-36-setResponsesIqbStandard-nested')?{...c,passed:false}:c);
+ assert.throws(()=>assertNativeRegressionScope({...report,checks}),/comparison differs/);
+});

@@ -16,6 +16,7 @@ const $=s=>document.querySelector(s),checks=[];
 const assert=(condition,message='Prüfung fehlgeschlagen')=>{if(!condition)throw new Error(message);};
 const get=async url=>{const r=await fetch(url);if(!r.ok)throw new Error(`${url}: HTTP ${r.status}`);return new Uint8Array(await r.arrayBuffer());};
 const check=(name,fn)=>checks.push({name,fn});
+let nativeReferenceReport;const nativeReport=()=>nativeReferenceReport??=(async()=>verifyNativeWindows(JSON.parse(strFromU8(await get('/fixtures/windows-native/reference.json'))),await get('/fixtures/windows-edge/coding-inputs.json')))();
 const file=(name,bytes)=>({name,bytes});
 $('#browser').textContent=navigator.userAgent;
 let job,resultBytes,peopleBytes,sqlite,logins;
@@ -123,9 +124,10 @@ check('Windows-Kodierer: 22 Ergebnisdateien in beide Richtungen und zwei Steuerz
  assert(valid===22&&rejected===2);
 });
 check('Windows-x64-Runner: 1214 Eingaben je Profil, 13 API-Fälle und Kodierer; beide Profile stimmen strikt überein',async()=>{
- const bundle=JSON.parse(strFromU8(await get('/fixtures/windows-native/reference.json'))),report=await verifyNativeWindows(bundle,await get('/fixtures/windows-edge/coding-inputs.json'));
+ const report=await nativeReport();
  assertNativeRegressionScope(report);assert(report.summary.architectures[1].passed===1214&&report.summary.architectures[0].passed===1214);assert(report.summary.api.passed===26&&report.summary.coding.passed===24);
  await task('new-db');await task('dto',{responses:[{groupname:'G',loginname:'L',code:'0',bookletname:'B',unitname:'U',originalUnitId:'U',laststate:'{"n":null}',responses:[{id:'c',responseType:'unknown',ts:1,content:'{"v":null}'}]}],logs:[],windows:'64'});await task('db-import',{windows:'64'});
  const saved=JSON.parse(strFromU8(await task('db-export',{format:'json'})));assert(saved[0].booklets[0].units[0].subforms[0].responses[0].value===null,'Worker verlor SQL-NULL');assert(saved[0].booklets[0].units[0].laststate[0].value===null,'Worker verlor Zustands-NULL');
 });
+check('CLR-Zahlenprofile: je 8373 feste Proben mit identischen Binärwerten und G15/G17/R',async()=>{const report=await nativeReport();assert(report.summary.numericDiagnostics.uniqueInputs===8373);assert(report.numericChecks.length===16746&&report.numericChecks.every(c=>c.passed));assertNativeRegressionScope(report);});
 $('#run').onclick=async()=>{const button=$('#run');button.disabled=true;$('#results').replaceChildren();const report={userAgent:navigator.userAgent,started:new Date().toISOString(),checks:[]};let passed=0;for(const {name,fn}of checks){$('#status').textContent=name;const li=document.createElement('li');try{await fn();passed++;li.className='ok';li.textContent='✓ '+name;report.checks.push({name,passed:true});}catch(e){li.className='fail';li.textContent='✗ '+name+' — '+e.message;report.checks.push({name,passed:false,error:e.message,stack:e.stack});}$('#results').append(li);}report.passed=passed;report.total=checks.length;report.finished=new Date().toISOString();$('#status').textContent=`${passed} / ${checks.length} erfolgreich`;$('#download').href=URL.createObjectURL(new Blob([JSON.stringify(report,null,2)],{type:'application/json'}));$('#download').download='Browser-Pruefbericht.json';$('#download').hidden=false;try{await fetch('/__report__',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(report)});}catch{}button.disabled=false;};
