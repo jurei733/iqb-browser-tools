@@ -32,10 +32,23 @@ jobs:
         run: node scripts/bundle-native-windows.mjs
       - name: Strictly compare current browser code with both Windows profiles
         run: node scripts/compare-native-windows.mjs work/native-windows/bundle.json work/native-windows/comparison.json --require-numeric-probes
+      - name: Prepare both synthetic Testcenter cohorts
+        run: node scripts/native-study.mjs prepare work/native-studies
+      - name: Run original imports, SQLite, Excel and comment archive for both cohorts
+        id: native-studies
+        shell: powershell
+        run: ./scripts/Run-Native-Study.ps1 -OriginalRoot work/native-windows/originals -StudyRoot work/native-studies
+      - name: Compare every study graph, SQL field and Excel cell
+        if: ${{ !cancelled() && steps.native-studies.outcome != 'skipped' }}
+        run: node scripts/native-study.mjs compare work/native-studies
       - name: Retain synthetic native reference files
         if: ${{ !cancelled() }}
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
           name: windows-native-reference
-          path: work/native-windows/*.json
+          path: |
+            work/native-windows/*.json
+            work/native-studies/**/native*
+            work/native-studies/**/expected.json
+            work/native-studies/comparison.json
           retention-days: 14

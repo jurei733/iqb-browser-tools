@@ -1,0 +1,70 @@
+{
+  "synthetic": true,
+  "empiricalStudy": false,
+  "source": "MCP participant-API pilot on 2026-11-04",
+  "group_id": "MCP_SIM_1574B8D03210",
+  "job_id": "187fe223-2be4-4a81-815d-116c47982173",
+  "codecId": "Testcenter-Codec-1574B8D03210",
+  "inputArchiveSHA256": "f4a44299ea01ebfd6af8538e47bc9fa07ea17985e195e7d42d65fb74e720e095",
+  "blankTemplateSHA256": "acb5e92ec4de302b2f00cca11a6a1b3c384ea9542aa0e47ac85ef26a9df5b384",
+  "rawFileSHA256": {
+    "existing-responses.json": "f000d3333ea08340a77a9e56d94b1a223c44bce9511d1dcd1a6749eee29987ab",
+    "responses.csv": "c1d4a5412a4836580e145d7d12e03fa0cf384a748718eb01dbb3e4e58ce0c93f",
+    "logs.csv": "e80c380481dfad51e24439becaa286d5a41845aac936adc91f05937e5c160143",
+    "logs-api.json": "4f245e0f89f48862db242c8f520d97c222a3676194454642bdff73582d32afc9"
+  },
+  "counts": {
+    "people": 84,
+    "booklets": 84,
+    "unitRows": 504,
+    "responses": 756,
+    "logs": 3672,
+    "codingComments": 137
+  },
+  "verification": {
+    "locked_persons": 84,
+    "early_ends": 12,
+    "testcenter": {
+      "persons": 84,
+      "unit_sessions": 504,
+      "response_values_verified": 756,
+      "source_sha256": "2819b205d9afa35543159fcebb77a0c8dc8d3410ffb0e086b94ca4608077c0ba"
+    },
+    "logs": {
+      "log_rows": 3672,
+      "simulation_events_verified": 1872,
+      "groups": 1,
+      "virtual_timeline": true
+    },
+    "coding": {
+      "variables_verified": 756,
+      "codes_verified": 756,
+      "scores_verified": 756,
+      "statuses_verified": 756,
+      "total_score": 294,
+      "manual_pending": 137,
+      "automatic_complete": 518,
+      "status_counts": {
+        "CODING_COMPLETE": 518,
+        "NOT_REACHED": 72,
+        "DISPLAYED": 29,
+        "CODING_INCOMPLETE": 137
+      },
+      "uncoded_derived_variables": [],
+      "uncoded_derived_output_cases_not_exported": 0
+    }
+  },
+  "behaviors": {
+    "dropout": 12,
+    "navigation": 12,
+    "pause_resume": 12,
+    "rapid": 12,
+    "normal": 12,
+    "answer_changes": 12,
+    "distracted": 12
+  },
+  "limitations": [
+    "Simulated participant-API data, not empirical human study data or a browser/player interaction test.",
+    "137 free-text ratings remain pending; no manual scores were invented."
+  ]
+}
