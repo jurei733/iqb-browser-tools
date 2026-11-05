@@ -2,7 +2,9 @@
   "checkedOn": "2026-11-04",
   "syntheticDataOnly": true,
   "workspaceId": 14,
-  "groupIds": ["MCP_SIM_1574B8D03210"],
+  "groupIds": [
+    "MCP_SIM_1574B8D03210"
+  ],
   "responses": 756,
   "unresolvedManualResponses": 137,
   "pendingJobs": [],
@@ -15,10 +17,18 @@
   "plannedJob": {
     "name": "Browser-Parität Pilot84 – Freitextabnahme",
     "variables": [
-      {"unitName": "S1574B8D03210U5", "variableId": "reason"},
-      {"unitName": "S1574B8D03210U6", "variableId": "critique"}
+      {
+        "unitName": "S1574B8D03210U5",
+        "variableId": "reason"
+      },
+      {
+        "unitName": "S1574B8D03210U6",
+        "variableId": "critique"
+      }
     ],
-    "coderIds": [1],
+    "coderIds": [
+      1
+    ],
     "missingsProfileId": 11,
     "maxCases": 137
   },
@@ -34,5 +44,15 @@
     "jobCreated": false,
     "ratingsSubmitted": false
   },
-  "continuation": "Requires a functioning interactive MCP approval response for the prepared job. Then read each assigned native case and its current rubric, save justified decisions under revision checks, submit/review, apply v2, read finalize_plan and finalize v3 when eligible. This report contains no grading decisions."
+  "continuation": "Resolved: interactive MCP approvals worked on 2026-11-05. All 12 aggregated cases were justified, submitted and applied to 137 v2 responses; all 756 responses finalized in v3. Original fields above describe the blocked snapshot on 2026-11-04.",
+  "historicalSnapshot": true,
+  "status": "resolved",
+  "resolvedOn": "2026-11-05",
+  "resolution": {
+    "jobId": 22,
+    "manualResponsesApplied": 137,
+    "unresolvedManualResponses": 0,
+    "finalResponses": 756,
+    "proof": "tests/results/manual-coding-completion-20261105.json"
+  }
 }

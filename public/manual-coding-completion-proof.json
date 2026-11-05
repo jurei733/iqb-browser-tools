@@ -1,0 +1,148 @@
+{
+  "checkedOn": "2026-11-05",
+  "verifiedAtUTC": "2026-11-05T22:10:00Z",
+  "applicationVersion": "0.4.7",
+  "applicationCommit": "7ba855429883d6838a0e53aa1413d5bc86d458ef",
+  "synthetic": true,
+  "empiricalStudy": false,
+  "completeEquivalence": false,
+  "workspaceId": 14,
+  "group": "MCP_SIM_1574B8D03210",
+  "people": 84,
+  "responses": 756,
+  "interactiveApprovals": {
+    "status": "confirmed_working",
+    "approvalPolicy": "granular",
+    "mcpElicitations": true,
+    "proof": "The approved native coding_job_create created job 22. Subsequent manual save, submit, apply and finalize actions completed; final target reread."
+  },
+  "manualCoding": {
+    "jobId": 22,
+    "status": "results_applied",
+    "aggregatedCases": 12,
+    "appliedResponses": 137,
+    "variables": {
+      "reason": 71,
+      "critique": 66
+    },
+    "openCases": 0,
+    "unresolvedManualResponses": 0,
+    "codeId": 0,
+    "nativeRubricScore": 0,
+    "scoreSource": "native-coding-scheme",
+    "decisionBasis": "All twelve distinct variable/value combinations were read with the current native rubric. Synthetic format-stress texts contain no required mathematical criteria. Each has an individual justification; native aggregation propagated the twelve decisions to 137 repeated responses. This is not 137 independently worded empirical answers.",
+    "decisionsFixture": "tests/fixtures/pilot84-finalized.json",
+    "requiresReview": false,
+    "reviewRequested": false
+  },
+  "v2Application": {
+    "success": true,
+    "updatedResponsesCount": 137,
+    "skippedReviewCount": 0,
+    "skippedAlreadyCodedCount": 0,
+    "overwrittenExistingCount": 0,
+    "messageKey": "coding-results.apply.success.bulk",
+    "messageParams": {
+      "count": 137,
+      "skipped": 0,
+      "skippedAlreadyCoded": 0,
+      "overwrittenExisting": 0
+    }
+  },
+  "v3Finalization": {
+    "status": "succeeded",
+    "id": "5a84c252-e95a-442e-aee1-ec73aa2d2552",
+    "kind": "bridge-coding",
+    "workspace": 14,
+    "externalId": "d445f3e5-c069-47bf-9a3f-9fa0bc0921a9",
+    "progress": 100,
+    "statistics": {
+      "statusCounts": {
+        "DISPLAYED": 29,
+        "NOT_REACHED": 72,
+        "CODING_COMPLETE": 655
+      },
+      "result_version": "v3",
+      "totalResponses": 756
+    }
+  },
+  "finalPlan": {
+    "workspace_id": 14,
+    "group_ids": [
+      "MCP_SIM_1574B8D03210"
+    ],
+    "revision": "707b9821af4cbabf9b2f8280ae7181d868f26bb0492e18d21d0507745c9b5195",
+    "responses": 756,
+    "unresolved_manual_responses": 0,
+    "pending_jobs": [],
+    "eligible": true,
+    "final_responses": 756,
+    "result_version": "v3"
+  },
+  "exports": {
+    "nativeArtifacts": {
+      "v2CSV": {
+        "bytes": 1748627,
+        "sha256": "c93a0cd253487efc70fdfac441cd2c288f66963b78abe463c40154b3d30a6ecd"
+      },
+      "v3CSV": {
+        "bytes": 1941926,
+        "sha256": "f55d491c4d3f6ec85a3b9f60e1b27459fe40e056491de14bffe52613cef07b02"
+      },
+      "v3Excel": {
+        "bytes": 987767,
+        "sha256": "4fc07f83d2930835cb56b9e58459e4cda7bea517a1295c9282bba783fc2362c1"
+      },
+      "sqlite": {
+        "bytes": 18264064,
+        "sha256": "c35851c2158074a12daa0a7fa09f65e85f522494a85e14d5c9d5171dea2c2cd2"
+      }
+    },
+    "csv": {
+      "pilotRows": 756,
+      "manualRows": 137,
+      "unchangedAutomaticOrMissingRows": 619,
+      "v3Precedence": "v2 when present, otherwise v1; all 756 rows and status/code/score fields checked",
+      "missingsProfileId": 11,
+      "missingMapping": {
+        "NOT_REACHED": {
+          "count": 72,
+          "code": -96,
+          "score": "NA"
+        },
+        "DISPLAYED": {
+          "count": 29,
+          "code": -99,
+          "score": 0
+        }
+      }
+    },
+    "excel": {
+      "nativeCellTextsChecked": 14364,
+      "browserResponseCellsChecked": 3024,
+      "nativeXMLCRLFNormalizations": 20,
+      "gradingDifferences": 0,
+      "textFinding": "20 native worksheet XML response values contain literal CRLF. XML readers normalize those to LF. All other native CSV/Excel cell texts are equal. Browser wide Excel reproduces the native text cells, with raw nullable SQLite grades rather than profile-derived missing codes."
+    },
+    "sqlite": {
+      "v1v2v3Checked": true,
+      "originalValuesExact": true,
+      "fullWorkspaceBrowserRoundtripByteEqual": true,
+      "fullWorkspaceBytes": 18264064,
+      "regressionFixture": "Seven-table native-schema projection filtered to the synthetic pilot. Workspace settings/name and optional person metadata sanitized. The complete workspace export is not published."
+    }
+  },
+  "regression": {
+    "script": "scripts/finalized-pilot.mjs",
+    "test": "tests/finalized-pilot.test.js",
+    "fixture": "tests/fixtures/pilot84-finalized.json",
+    "fixtureCaptureSHA256": "29a2ae1dcc41e3790f6e390bc53c098b2fde234d759ea8cf8e461372724d8967",
+    "negativeControl": "An altered native v3 score is rejected."
+  },
+  "limitations": [
+    "Synthetic participant-API data, not empirical human study data.",
+    "The new native reference here is the Coding-Box finalization/export workflow; existing Windows-original comparisons remain separate evidence.",
+    "Twenty native Excel line endings differ from raw CSV/SQLite at XML-read time, explicitly recorded above.",
+    "Finite test corpora do not prove equality for every file, GUI path or platform."
+  ]
+}

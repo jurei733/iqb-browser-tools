@@ -2185,5 +2185,14 @@
     "total": 216,
     "artifactId": 13338156278,
     "artifactSHA256": "2b7699e0c7cf5db3b50bf31938fb29c354d65d86cf83270b0b5df46387cb8b57"
+  },
+  "manualCompletion": {
+    "checkedOn": "2026-11-05",
+    "jobId": 22,
+    "manualResponsesApplied": 137,
+    "unresolvedManualResponses": 0,
+    "finalResponses": 756,
+    "proof": "/manual-coding-completion-proof.json",
+    "note": "Earlier counts/captures in this report describe the original 04.11.2026 capture, before the separately verified manual completion."
   }
 }

@@ -89,7 +89,7 @@
   "limitations": [
     "One four-case coding job and one three-person SQLite file; finite synthetic GUI acceptance.",
     "No empirical/anonymised study files available.",
-    "The 137 native manual Coding-Box ratings remain unsubmitted because coding_job_create was automatically declined."
+    "The GUI capture predates manual Coding-Box completion. All 137 manual responses are now applied and v3 finalized; see manualCompletion."
   ],
   "applicationFiles": {
     "src/coding-box-database.js": "ef79bf7deb0aefe7b555bc4185f84186e49c12acd6f1aa57fd7134e261614eae",
@@ -125,5 +125,14 @@
     "src/worker-client.js": "bdd1223666dfde8ddd7c9f2ede1acfc3c97fd862d2ff1d5ebcb0aff46a87f416",
     "src/workspace-ui.js": "3f620a7dff35da2e0121c751d04aa6ea74d30101d246187ff8b5e95a52f145d1",
     "src/xml.js": "f1213427cc5c484b98e72974d5169db17e96bdc3ba641d75f5881877d2323acb"
+  },
+  "manualCompletion": {
+    "checkedOn": "2026-11-05",
+    "jobId": 22,
+    "manualResponsesApplied": 137,
+    "unresolvedManualResponses": 0,
+    "finalResponses": 756,
+    "proof": "/manual-coding-completion-proof.json",
+    "note": "Earlier counts/captures in this report describe the original 04.11.2026 capture, before the separately verified manual completion."
   }
 }

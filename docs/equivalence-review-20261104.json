@@ -4,11 +4,11 @@
   "applicationCommit": "27771db7c042221dfb8c50581631018fbc12d44e",
   "completeEquivalence": false,
   "empiricalDataTested": false,
-  "scope": "Ordered follow-up: lossless Int64 native reference; paired normal Windows GUI workflows and browser regressions; current installed Safari, mobile emulation and workload acceptance. Empirical data absent; native manual coding job creation automatically declined.",
+  "scope": "Ordered follow-up completed for the synthetic Pilot84 manual coding and native v2/v3 finalization. Existing original Windows comparisons, installed Safari and emulation retain their stated scopes. Empirical data absent.",
   "verification": {
     "node": {
-      "passed": 125,
-      "total": 125,
+      "passed": 127,
+      "total": 127,
       "exitCode": 0
     },
     "matrixCounts": {
@@ -133,6 +133,13 @@
       "acceptedCIConfigurationCommit": "27771db7c042221dfb8c50581631018fbc12d44e",
       "reason": "The standard Intel pool completed all six macOS starter tests. The accepted 12-job run includes all three browser engines; Firefox passed after a delayed system-package download.",
       "macOSSource": "https://github.com/actions/runner-images/blob/main/README.md"
+    },
+    "manualCompletion": {
+      "report": "tests/results/manual-coding-completion-20261105.json",
+      "aggregatedCases": 12,
+      "appliedManualResponses": 137,
+      "finalResponses": 756,
+      "pendingManualResponses": 0
     }
   },
   "codingPilotCurrent": {
@@ -140,12 +147,12 @@
     "group_ids": [
       "MCP_SIM_1574B8D03210"
     ],
-    "revision": "f76cdae1ba505ab46db95956adaab3231ab0d1b812d4fcac07ad009e73d27c76",
+    "revision": "707b9821af4cbabf9b2f8280ae7181d868f26bb0492e18d21d0507745c9b5195",
     "responses": 756,
-    "unresolved_manual_responses": 137,
+    "unresolved_manual_responses": 0,
     "pending_jobs": [],
-    "eligible": false,
-    "final_responses": 0,
+    "eligible": true,
+    "final_responses": 756,
     "result_version": "v3"
   },
   "accessibleInventories": [
@@ -253,13 +260,15 @@
     {
       "priority": 2,
       "action": "Complete a paired end-to-end coding flow against a fixed, authorised reference coding: job opening, code changes, comments, restart, result import and export; apply native v2/v3 only after the required review and approvals.",
-      "currentBlocker": "137 manual responses remain. coding_job_create was rejected with APPROVAL_DECLINED three times. Latest request: 2026-11-04T15:10:37.030Z; declined at 15:10:37.063Z (33 ms). No job was created and no ratings were submitted.",
-      "status": "blocked",
+      "status": "complete_with_scope_limits",
       "completed": [
         "Normal Windows coding GUI: code 0, comment, code 1, close/relaunch, first open case 3 and restored values.",
-        "Paired browser workflow plus import/export of the original result including every timestamp."
+        "Paired browser workflow plus import/export of the original result including every timestamp.",
+        "Native job 22: twelve justified aggregated cases applied to 137 manual v2 responses; no cases left open.",
+        "All 756 responses finalized in v3, final target reread; native CSV, Excel and complete SQLite roundtrip verified."
       ],
-      "blockerReport": "docs/manual-coding-blocker-20261104.json"
+      "blockerReport": "docs/manual-coding-blocker-20261104.json",
+      "completionReport": "tests/results/manual-coding-completion-20261105.json"
     },
     {
       "priority": 3,
@@ -302,6 +311,7 @@
       "styles",
       "XML/ZIP metadata"
     ],
-    "manualCodingArchiveOnly": "The 137 free-text comments have been transported through the original archive reader/writer without ratings; this is not proof of completed rubric-based coding."
-  }
+    "manualCodingArchiveOnly": "The original 04.11.2026 Windows codec transport remains an unrated archive capture. Native Coding-Box manual coding and v2/v3 completion are separately proven on 05.11.2026; see completion report."
+  },
+  "updatedOn": "2026-11-05"
 }
