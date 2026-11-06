@@ -1,6 +1,6 @@
 {
   "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36",
-  "started": "2026-11-06T00:16:29.416Z",
+  "started": "2026-11-06T00:57:51.074Z",
   "checks": [
     {
       "name": "XML: native Parser, Sonderzeichen und fehlerhafte XML",
@@ -217,7 +217,7 @@
   ],
   "passed": 53,
   "total": 53,
-  "finished": "2026-11-06T00:16:33.353Z",
+  "finished": "2026-11-06T00:57:56.741Z",
   "applicationFiles": {
     "src/coding-box-database.js": "ef79bf7deb0aefe7b555bc4185f84186e49c12acd6f1aa57fd7134e261614eae",
     "src/coding.js": "67801a5b1b6399f91b09c6103722ae59caa18cc4141974c877bbd6a5fd99a35a",
@@ -233,7 +233,7 @@
     "src/image.js": "dc64dbaa232f29908ec70ec5a15eeaa8a28e2dd5048713a87c82cde4068a8ba2",
     "src/json.js": "133abe6653964b73660d81863de7c2b0ff06be9a882784efca44794c9b3d2851",
     "src/local-connection.js": "b397a4b34ee4e662aef4dc8476c4cc792d7a5516117042657828ff64f317347e",
-    "src/main.js": "75d54ef90c174a0818d7094a771761f4d79345145d2dcb5ba23ea2f531f9af0b",
+    "src/main.js": "932d815aad9db782b9e7c28cc5bee2c52734b980a119fc0ed8286da5dcd48125",
     "src/preparation.js": "85f41b69475cd17fc9ea5fe3fdf7733000b1b833743d7a62e5118e1dbdcd7835",
     "src/qr-bmp.js": "1b9f35184e150455390a4dcafe283702b2e05155d5bf46e140a5b4296bce7457",
     "src/schema.js": "afefd38dd58b1a9257dd010d2e4608ab530526346568fc0dc64726172c90a61d",
@@ -267,17 +267,17 @@
     "tests/fixtures/gui-extended-20261105.json": "cb3bbea13b183f2a07582a86f659b0306dcd678313942a3ad99431bdac1175ca",
     "tests/helpers/native-logins.js": "334d085a5a09d8bd65b249e6e99a51e723761119844ab80a2a5f394bba7b285c",
     "tests/e2e/local-starter.spec.js": "f01b5f8cf97bb31a2cd7151d000b2298cf581f4e702146cfdb691b07d3e278ff",
-    "tests/e2e/workflows.spec.js": "abbc5676ce2e8d9d020992effeeeb97644cdd1a3a7b00c303b24bb9675d4f1a4",
+    "tests/e2e/workflows.spec.js": "93fc327c9a2359a1779466460ba722fb17899c578639320e57e2c59bc9c3d04d",
     "tests/e2e/windows-differential.spec.js": "8769d783901e566f67f6ce509cf554098d119768bad806620d3267ee91dc9001",
     "tests/e2e/gui-reference.spec.js": "8bfeac123d4991368bfcec32066c7a6758ae068a7bb439006ac0d49ed68cba16",
     "tests/e2e/browser.spec.js": "1e54731e11303c0aa9ccc0e307debc475b3c7dbf017c3fa4ba215cbe57c3a828"
   },
   "provenance": {
-    "runId": 42135512580,
-    "headSha": "827fa1b5d711e47e731e49e714d3337fb1a5b5ae",
-    "jobId": 127622504780,
-    "artifactId": 13466330545,
-    "artifactDigest": "sha256:7647e47d3d1b08fa234cc8f7f7688e46039e5529a36eefb533670e8204f07255",
+    "runId": 42140409533,
+    "headSha": "558a843f9149cbe0341fff15b57979f294dbc890",
+    "jobId": 127639032747,
+    "artifactId": 13467242961,
+    "artifactDigest": "sha256:84826e912429724d7c1a49c37f5312ef333d4702a78b8101612cc46d41842742",
     "extractedFrom": "test-results/results.json attachment browser-compatibility.json"
   }
 }

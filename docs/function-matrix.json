@@ -835,7 +835,7 @@
         "src/viewer.js"
       ],
       "assessment": "implemented",
-      "note": "Begrenzung in logischen Seitenkoordinaten, native Drag-Schwelle, Strg-Drehung mit WPF-Rundung (Umschalt zusätzlich im Browser) und Zurücksetzen des Winkels beim Fallwechsel.",
+      "note": "Begrenzung in logischen Seitenkoordinaten, native Drag-Schwelle, Strg-Drehung mit WPF-Rundung (Umschalt zusätzlich im Browser) und Zurücksetzen des Winkels beim Fallwechsel. Der native Dateivergleich belegt Schablonenmetadaten. Der Strg-Modifikator folgt dem Originalhandler; die direkte gepaarte GUI-Abnahme dieser Drehbedienung steht noch aus.",
       "acceptance": "Schablone begrenzt verschieben und mit Strg drehen; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
       "evidence": [
         {

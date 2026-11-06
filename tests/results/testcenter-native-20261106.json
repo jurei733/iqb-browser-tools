@@ -1317,7 +1317,7 @@
       "report": {
         "synthetic": true,
         "empiricalStudy": false,
-        "started": "2026-11-06T00:20:15.4739079Z",
+        "started": "2026-11-06T00:59:21.0105707Z",
         "processBits": 32,
         "nativeMachine": "8664",
         "processMachine": "014c",
@@ -1330,11 +1330,11 @@
           "responses.csv": "e022067d780a63a29d5a6a3eda79a694be81c715450172f7b01a91eac99fd90e",
           "logs.csv": "9f57ada4a14ccf40f9b0c6f90609f3c9356362dd5ac536829e84a7884516c4a8",
           "logs-api.json": "b36dd5a436abb726b1cbb5c2c75b1423d14a0de3a8b9f5077391dff103435469",
-          "browser.sqlite": "be80da8fec50b2f1630029330a069af150ffdd753679581f7699ca37f41eb3ac",
-          "browser.result": "c0e2202fb091a7f4459dee4aa5a31a9ec189b5c9caf5ccffa390ab3cb022d943",
+          "browser.sqlite": "e7c4c26aac5e5183021827a6705e5c327583130fa535edd930f4deaa4d607534",
+          "browser.result": "9ed4eef8d53c2fb4d1efb36d0977fd027a46115f10f5a0a4a2532f4eda2289e9",
           "blank-native.xlsx": "acb5e92ec4de302b2f00cca11a6a1b3c384ea9542aa0e47ac85ef26a9df5b384",
           "int64-input.json": "d2bb07f37c3c131264a341a2f10e1e95744ab23e5b82467cbcfccfe1d4f1de22",
-          "browser-int64.sqlite": "2378d73cfc20397ef0aad66f3b68d81bd4f7d47911685fe7ff9016aa227bc330"
+          "browser-int64.sqlite": "8bdc57c7b9a18f1be8657025f1c8d8ee2817135b93c1fa4150999ba018358a3a"
         },
         "int64Probes": 64,
         "toolbox-int64-log-probe": "passed",
@@ -1347,7 +1347,7 @@
         "toolbox-write-sqlite": "passed",
         "toolbox-excel-export": "passed",
         "coding-original-archive-codec": "passed",
-        "finished": "2026-11-06T00:20:47.4395459Z"
+        "finished": "2026-11-06T00:59:41.3619568Z"
       },
       "fullGraphSHA256": "fbc12e1fec21a917f3233426e65c391d5ed93e6b861fe1cb6cddad616bebb5a9",
       "csvGraphSHA256": "fbc12e1fec21a917f3233426e65c391d5ed93e6b861fe1cb6cddad616bebb5a9",
@@ -1512,7 +1512,7 @@
       "report": {
         "synthetic": true,
         "empiricalStudy": false,
-        "started": "2026-11-06T00:20:47.8065946Z",
+        "started": "2026-11-06T00:59:41.6257990Z",
         "processBits": 64,
         "nativeMachine": "8664",
         "processMachine": "0000",
@@ -1525,11 +1525,11 @@
           "responses.csv": "e022067d780a63a29d5a6a3eda79a694be81c715450172f7b01a91eac99fd90e",
           "logs.csv": "9f57ada4a14ccf40f9b0c6f90609f3c9356362dd5ac536829e84a7884516c4a8",
           "logs-api.json": "b36dd5a436abb726b1cbb5c2c75b1423d14a0de3a8b9f5077391dff103435469",
-          "browser.sqlite": "46b214a6af53959c9b7938b7fbb9c1ba634344072f3823f960398cb0f8c78e80",
-          "browser.result": "b0644bcfb29d3be1f1a3d25484440f961ca05668f683c0279ccdd5e2b84133d5",
+          "browser.sqlite": "0c30a00d37ee12ca9ea67a53287acd073d380bea392cc9dc8798d11d8ae7ed96",
+          "browser.result": "108aabf756c16639c7fbba02673556d081d5650051ce34a52bbb80c28cbd8bf7",
           "blank-native.xlsx": "acb5e92ec4de302b2f00cca11a6a1b3c384ea9542aa0e47ac85ef26a9df5b384",
           "int64-input.json": "d2bb07f37c3c131264a341a2f10e1e95744ab23e5b82467cbcfccfe1d4f1de22",
-          "browser-int64.sqlite": "d3145961c8d674a9d8138020ffdab91114bc15054c60c9c9262982fcf5eee574"
+          "browser-int64.sqlite": "17b8045d3f738bbd739bb0ce1dfbb900c6e94887a3bac7e833fa100fab32298f"
         },
         "int64Probes": 64,
         "toolbox-int64-log-probe": "passed",
@@ -1542,7 +1542,7 @@
         "toolbox-write-sqlite": "passed",
         "toolbox-excel-export": "passed",
         "coding-original-archive-codec": "passed",
-        "finished": "2026-11-06T00:21:08.9165406Z"
+        "finished": "2026-11-06T00:59:57.5051266Z"
       },
       "fullGraphSHA256": "fbc12e1fec21a917f3233426e65c391d5ed93e6b861fe1cb6cddad616bebb5a9",
       "csvGraphSHA256": "fbc12e1fec21a917f3233426e65c391d5ed93e6b861fe1cb6cddad616bebb5a9",
@@ -1705,7 +1705,7 @@
       "report": {
         "synthetic": true,
         "empiricalStudy": false,
-        "started": "2026-11-06T00:21:09.2748958Z",
+        "started": "2026-11-06T00:59:57.8243997Z",
         "processBits": 32,
         "nativeMachine": "8664",
         "processMachine": "014c",
@@ -1718,11 +1718,11 @@
           "responses.csv": "c1d4a5412a4836580e145d7d12e03fa0cf384a748718eb01dbb3e4e58ce0c93f",
           "logs.csv": "e80c380481dfad51e24439becaa286d5a41845aac936adc91f05937e5c160143",
           "logs-api.json": "4f245e0f89f48862db242c8f520d97c222a3676194454642bdff73582d32afc9",
-          "browser.sqlite": "9e42d98c93f1f8bea6ab5b2b072214a69018a16792d77bfec02d5e61c00d1919",
-          "browser.result": "f39fc06864399477e77a94d60a93d7cba844fb3b493f24424f68ebc18d0885f6",
+          "browser.sqlite": "e21a5da7dbe9f195de68793d40faadde1e1e90bcd53fbef722c80290d9be344a",
+          "browser.result": "19ebb79916ff46d52ca76eb43e6a2bead6c69eb1ad29598975ac84a271fc5583",
           "blank-native.xlsx": "acb5e92ec4de302b2f00cca11a6a1b3c384ea9542aa0e47ac85ef26a9df5b384",
           "int64-input.json": "d2bb07f37c3c131264a341a2f10e1e95744ab23e5b82467cbcfccfe1d4f1de22",
-          "browser-int64.sqlite": "0ecb6c2ab1a179996ee5a2df7deaf0ce04121c7788399b75061f4fd7cdce6636"
+          "browser-int64.sqlite": "68841322c130cf63c98c00c4f29899b86292ae37898f9d2944c438869de7e817"
         },
         "int64Probes": 64,
         "toolbox-int64-log-probe": "passed",
@@ -1735,7 +1735,7 @@
         "toolbox-write-sqlite": "passed",
         "toolbox-excel-export": "passed",
         "coding-original-archive-codec": "passed",
-        "finished": "2026-11-06T00:21:11.0206822Z"
+        "finished": "2026-11-06T00:59:59.3321005Z"
       },
       "fullGraphSHA256": "e47d9006068e8feb2501d9ebbe6fda2198006e719efa41aa2cba5e4aa47504cb",
       "csvGraphSHA256": "9abec62391db813fce3723ff4ac771394e3648cf40b33d8c2e3766ab3b9ec2b8",
@@ -1898,7 +1898,7 @@
       "report": {
         "synthetic": true,
         "empiricalStudy": false,
-        "started": "2026-11-06T00:21:11.2918979Z",
+        "started": "2026-11-06T00:59:59.5793738Z",
         "processBits": 64,
         "nativeMachine": "8664",
         "processMachine": "0000",
@@ -1911,11 +1911,11 @@
           "responses.csv": "c1d4a5412a4836580e145d7d12e03fa0cf384a748718eb01dbb3e4e58ce0c93f",
           "logs.csv": "e80c380481dfad51e24439becaa286d5a41845aac936adc91f05937e5c160143",
           "logs-api.json": "4f245e0f89f48862db242c8f520d97c222a3676194454642bdff73582d32afc9",
-          "browser.sqlite": "bba84457e17369f33841fc7c92953bf284e6ec773d53e9c2e2414fb520beef4d",
-          "browser.result": "ae8cf9c044b6d8741181d9f694169f9e55383974e44942c39e66c609257fac99",
+          "browser.sqlite": "ffeeccae9d2fa97c29de12e06a16f54df66d84eff414d21fcee7d66247836e28",
+          "browser.result": "dd1279fd04cc220430baaaa3493d403bf9d3a51fb7a8b90b85720e9b65e0ce51",
           "blank-native.xlsx": "acb5e92ec4de302b2f00cca11a6a1b3c384ea9542aa0e47ac85ef26a9df5b384",
           "int64-input.json": "d2bb07f37c3c131264a341a2f10e1e95744ab23e5b82467cbcfccfe1d4f1de22",
-          "browser-int64.sqlite": "47f8b52162adf365be095d42ebdcc9ac47b4d6cbd421fab8e7ab7137dd8226af"
+          "browser-int64.sqlite": "46e3e48b71ded99a8eda252396d53ef371e6ef21f98d83af1024495db46340db"
         },
         "int64Probes": 64,
         "toolbox-int64-log-probe": "passed",
@@ -1928,7 +1928,7 @@
         "toolbox-write-sqlite": "passed",
         "toolbox-excel-export": "passed",
         "coding-original-archive-codec": "passed",
-        "finished": "2026-11-06T00:21:13.0187586Z"
+        "finished": "2026-11-06T01:00:01.1683694Z"
       },
       "fullGraphSHA256": "e47d9006068e8feb2501d9ebbe6fda2198006e719efa41aa2cba5e4aa47504cb",
       "csvGraphSHA256": "9abec62391db813fce3723ff4ac771394e3648cf40b33d8c2e3766ab3b9ec2b8",
@@ -2102,7 +2102,7 @@
       "src/image.js": "dc64dbaa232f29908ec70ec5a15eeaa8a28e2dd5048713a87c82cde4068a8ba2",
       "src/json.js": "133abe6653964b73660d81863de7c2b0ff06be9a882784efca44794c9b3d2851",
       "src/local-connection.js": "b397a4b34ee4e662aef4dc8476c4cc792d7a5516117042657828ff64f317347e",
-      "src/main.js": "75d54ef90c174a0818d7094a771761f4d79345145d2dcb5ba23ea2f531f9af0b",
+      "src/main.js": "932d815aad9db782b9e7c28cc5bee2c52734b980a119fc0ed8286da5dcd48125",
       "src/preparation.js": "85f41b69475cd17fc9ea5fe3fdf7733000b1b833743d7a62e5118e1dbdcd7835",
       "src/qr-bmp.js": "1b9f35184e150455390a4dcafe283702b2e05155d5bf46e140a5b4296bce7457",
       "src/schema.js": "afefd38dd58b1a9257dd010d2e4608ab530526346568fc0dc64726172c90a61d",
@@ -2124,10 +2124,10 @@
       "scripts/local-app.mjs": "d27b31fec5e3955ee9f0e87ae5808e8ab0166878c5cea054dca597425e2e449b",
       "scripts/lib/local-server.mjs": "b0c829fe87911919c0f6d34e3d404e797d186eb29d8b5c23b200c8ee92be454c"
     },
-    "headSha": "827fa1b5d711e47e731e49e714d3337fb1a5b5ae",
-    "runId": 42135512656,
-    "artifactId": 13465666864,
-    "artifactDigest": "sha256:b38838de72a9b52b166ac153d4693b817bda9227cca3394446bd61c4b003ccf5",
+    "headSha": "558a843f9149cbe0341fff15b57979f294dbc890",
+    "runId": 42140409551,
+    "artifactId": 13467063346,
+    "artifactDigest": "sha256:cac076bbc301dd9370b2ced00023419ae0106171a53fcba0a3fbe7b3c1104362",
     "extractedFrom": "native-studies/comparison.json"
   }
 }

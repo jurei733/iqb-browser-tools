@@ -5,7 +5,7 @@
   "empiricalStudyDataTested": false,
   "scope": "Follow-up of the 54 functions previously supported only by browser/module tests. Twenty now have additional finite original-runtime comparisons; six have partial GUI observations; 28 still lack the requested new direct comparison.",
   "baselineCommit": "86e8e5cdfb02c338975fb79d899ebb44209d066b",
-  "applicationCommit": "827fa1b5d711e47e731e49e714d3337fb1a5b5ae",
+  "applicationCommit": "558a843f9149cbe0341fff15b57979f294dbc890",
   "originalVersions": {
     "IQB-Kodieren": "4.3.0.3",
     "itc-ToolBox": "3.3.0.2"
@@ -36,11 +36,11 @@
       "passed": 14,
       "total": 14,
       "bits": 64,
-      "finished": "2026-11-06T00:21:33.5837247Z",
-      "run": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512656",
-      "jobId": 127622504785,
-      "artifactId": 13465666864,
-      "artifactDigest": "sha256:b38838de72a9b52b166ac153d4693b817bda9227cca3394446bd61c4b003ccf5"
+      "finished": "2026-11-06T01:00:18.5987434Z",
+      "run": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409551",
+      "jobId": 127639032376,
+      "artifactId": 13467063346,
+      "artifactDigest": "sha256:cac076bbc301dd9370b2ced00023419ae0106171a53fcba0a3fbe7b3c1104362"
     },
     "bookletGUI": {
       "readUnits": 20,
@@ -59,12 +59,22 @@
     }
   },
   "fixedDifferences": [
+    "Ctrl-drag rotates templates as specified by the original handler; Shift is an additional browser alias. Paired original GUI rotation remains pending.",
     "ZIP job/result label includes archive stem and full XML filename; loose files retain their full filename.",
     "Windows login preparation rejects generated usernames shorter than five characters.",
     "Single Testtaker XML uses the input workbook stem, as in the original.",
     "Windows mode reproduces mode loss after clearing an existing shared-string password cell. Extended mode retains valid modes.",
     "Booklet validation retains later phase diagnostics; complete Booklet/Login messages can be exported with original wording, CRLF and UTF-16 LE."
   ],
+  "additionalSourceCorrection": {
+    "feature": "K-29",
+    "originalSource": "scans/MovingTemplateCanvas.cs: Me_MouseLeftButtonDown checks Key 118/119 (LeftCtrl/RightCtrl)",
+    "keyEnumeration": "https://learn.microsoft.com/en-us/dotnet/api/system.windows.input.key",
+    "browserCorrection": "Ctrl-drag now rotates. Shift-drag is retained as an additional browser shortcut.",
+    "browserAssertion": "At 200% scale, a 40 CSS-pixel downward drag rotates -20 degrees and preserves translation. Both modifiers and reset-on-case-change are tested.",
+    "nativeGUIRotationVerified": false,
+    "reason": "Original-source contract verified; an observed paired native Ctrl-drag GUI run is still pending."
+  },
   "checks": [
     {
       "name": "Native ZIP GUI capture: archive stem and XML filename remain in job and result labels",
@@ -265,7 +275,7 @@
           "Native ZIP result import and re-export retain the original label, zero and exact timestamp",
           "Native complete GUI workflow: four codes, both comments, case list and final-case resume"
         ],
-        "browserCI": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580"
+        "browserCI": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533"
       }
     },
     {
@@ -374,7 +384,7 @@
           "Native ZIP result import and re-export retain the original label, zero and exact timestamp",
           "Native complete GUI workflow: four codes, both comments, case list and final-case resume"
         ],
-        "browserCI": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580"
+        "browserCI": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533"
       }
     },
     {
@@ -398,7 +408,7 @@
           "Native ZIP result import and re-export retain the original label, zero and exact timestamp",
           "Native complete GUI workflow: four codes, both comments, case list and final-case resume"
         ],
-        "browserCI": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580"
+        "browserCI": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533"
       }
     },
     {
@@ -422,7 +432,7 @@
           "Native ZIP result import and re-export retain the original label, zero and exact timestamp",
           "Native complete GUI workflow: four codes, both comments, case list and final-case resume"
         ],
-        "browserCI": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580"
+        "browserCI": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533"
       }
     },
     {
@@ -446,7 +456,7 @@
           "Native ZIP result import and re-export retain the original label, zero and exact timestamp",
           "Native complete GUI workflow: four codes, both comments, case list and final-case resume"
         ],
-        "browserCI": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580"
+        "browserCI": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533"
       }
     },
     {
@@ -470,7 +480,7 @@
           "Native ZIP result import and re-export retain the original label, zero and exact timestamp",
           "Native complete GUI workflow: four codes, both comments, case list and final-case resume"
         ],
-        "browserCI": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580"
+        "browserCI": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533"
       }
     },
     {
@@ -554,7 +564,7 @@
           "Native ZIP result import and re-export retain the original label, zero and exact timestamp",
           "Native complete GUI workflow: four codes, both comments, case list and final-case resume"
         ],
-        "browserCI": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580"
+        "browserCI": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533"
       }
     },
     {
@@ -604,7 +614,7 @@
         "nodeChecks": [
           "Native Booklet GUI and Texteditor: XML and complete phased messages match"
         ],
-        "browserCI": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580"
+        "browserCI": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533"
       }
     },
     {
@@ -661,7 +671,7 @@
         "nodeChecks": [
           "Native Booklet GUI and Texteditor: XML and complete phased messages match"
         ],
-        "browserCI": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580"
+        "browserCI": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533"
       }
     },
     {
@@ -718,7 +728,7 @@
         "nodeChecks": [
           "Native Login GUI: minimum length, mixed prefixes, zero passwords, edited workbook and single XML"
         ],
-        "browserCI": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580"
+        "browserCI": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533"
       }
     },
     {
@@ -740,7 +750,7 @@
         "nodeChecks": [
           "Native Login GUI: minimum length, mixed prefixes, zero passwords, edited workbook and single XML"
         ],
-        "browserCI": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580"
+        "browserCI": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533"
       }
     },
     {
@@ -797,7 +807,7 @@
         "nodeChecks": [
           "Native Login GUI: minimum length, mixed prefixes, zero passwords, edited workbook and single XML"
         ],
-        "browserCI": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580"
+        "browserCI": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533"
       }
     },
     {
@@ -854,7 +864,7 @@
         "nodeChecks": [
           "Native Login GUI: minimum length, mixed prefixes, zero passwords, edited workbook and single XML"
         ],
-        "browserCI": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580"
+        "browserCI": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533"
       }
     },
     {
@@ -876,7 +886,7 @@
         "nodeChecks": [
           "Native Login GUI: minimum length, mixed prefixes, zero passwords, edited workbook and single XML"
         ],
-        "browserCI": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580"
+        "browserCI": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533"
       }
     },
     {
@@ -933,7 +943,7 @@
         "nodeChecks": [
           "Native Booklet GUI and Texteditor: XML and complete phased messages match"
         ],
-        "browserCI": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580"
+        "browserCI": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533"
       }
     },
     {
@@ -1269,7 +1279,7 @@
       "src/image.js": "dc64dbaa232f29908ec70ec5a15eeaa8a28e2dd5048713a87c82cde4068a8ba2",
       "src/json.js": "133abe6653964b73660d81863de7c2b0ff06be9a882784efca44794c9b3d2851",
       "src/local-connection.js": "b397a4b34ee4e662aef4dc8476c4cc792d7a5516117042657828ff64f317347e",
-      "src/main.js": "75d54ef90c174a0818d7094a771761f4d79345145d2dcb5ba23ea2f531f9af0b",
+      "src/main.js": "932d815aad9db782b9e7c28cc5bee2c52734b980a119fc0ed8286da5dcd48125",
       "src/preparation.js": "85f41b69475cd17fc9ea5fe3fdf7733000b1b833743d7a62e5118e1dbdcd7835",
       "src/qr-bmp.js": "1b9f35184e150455390a4dcafe283702b2e05155d5bf46e140a5b4296bce7457",
       "src/schema.js": "afefd38dd58b1a9257dd010d2e4608ab530526346568fc0dc64726172c90a61d",

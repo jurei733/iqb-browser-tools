@@ -1,7 +1,7 @@
 {
-  "runId": 42135512580,
-  "runUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580",
-  "headSha": "827fa1b5d711e47e731e49e714d3337fb1a5b5ae",
+  "runId": 42140409533,
+  "runUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533",
+  "headSha": "558a843f9149cbe0341fff15b57979f294dbc890",
   "evidenceSource": "SHA256-verified GitHub artifacts, unmodified Playwright attachments",
   "applicationFiles": {
     "src/coding-box-database.js": "ef79bf7deb0aefe7b555bc4185f84186e49c12acd6f1aa57fd7134e261614eae",
@@ -18,7 +18,7 @@
     "src/image.js": "dc64dbaa232f29908ec70ec5a15eeaa8a28e2dd5048713a87c82cde4068a8ba2",
     "src/json.js": "133abe6653964b73660d81863de7c2b0ff06be9a882784efca44794c9b3d2851",
     "src/local-connection.js": "b397a4b34ee4e662aef4dc8476c4cc792d7a5516117042657828ff64f317347e",
-    "src/main.js": "75d54ef90c174a0818d7094a771761f4d79345145d2dcb5ba23ea2f531f9af0b",
+    "src/main.js": "932d815aad9db782b9e7c28cc5bee2c52734b980a119fc0ed8286da5dcd48125",
     "src/preparation.js": "85f41b69475cd17fc9ea5fe3fdf7733000b1b833743d7a62e5118e1dbdcd7835",
     "src/qr-bmp.js": "1b9f35184e150455390a4dcafe283702b2e05155d5bf46e140a5b4296bce7457",
     "src/schema.js": "afefd38dd58b1a9257dd010d2e4608ab530526346568fc0dc64726172c90a61d",
@@ -52,15 +52,15 @@
     "tests/fixtures/gui-extended-20261105.json": "cb3bbea13b183f2a07582a86f659b0306dcd678313942a3ad99431bdac1175ca",
     "tests/helpers/native-logins.js": "334d085a5a09d8bd65b249e6e99a51e723761119844ab80a2a5f394bba7b285c",
     "tests/e2e/local-starter.spec.js": "f01b5f8cf97bb31a2cd7151d000b2298cf581f4e702146cfdb691b07d3e278ff",
-    "tests/e2e/workflows.spec.js": "abbc5676ce2e8d9d020992effeeeb97644cdd1a3a7b00c303b24bb9675d4f1a4",
+    "tests/e2e/workflows.spec.js": "93fc327c9a2359a1779466460ba722fb17899c578639320e57e2c59bc9c3d04d",
     "tests/e2e/windows-differential.spec.js": "8769d783901e566f67f6ce509cf554098d119768bad806620d3267ee91dc9001",
     "tests/e2e/gui-reference.spec.js": "8bfeac123d4991368bfcec32066c7a6758ae068a7bb439006ac0d49ed68cba16",
     "tests/e2e/browser.spec.js": "1e54731e11303c0aa9ccc0e307debc475b3c7dbf017c3fa4ba215cbe57c3a828"
   },
   "jobs": [
     {
-      "jobId": 127622504780,
-      "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504780",
+      "jobId": 127639032747,
+      "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032747",
       "conclusion": "success",
       "browser": "chromium",
       "passed": 22,
@@ -161,29 +161,29 @@
       ],
       "artifactUploaded": true,
       "artifact": {
-        "id": 13466330545,
+        "id": 13467242961,
         "name": "browser-results-chromium",
-        "size_in_bytes": 632035,
-        "url": "https://api.github.com/repos/jurei733/iqb-browser-tools/actions/artifacts/13466330545",
-        "archive_download_url": "https://api.github.com/repos/jurei733/iqb-browser-tools/actions/artifacts/13466330545/zip",
+        "size_in_bytes": 632913,
+        "url": "https://api.github.com/repos/jurei733/iqb-browser-tools/actions/artifacts/13467242961",
+        "archive_download_url": "https://api.github.com/repos/jurei733/iqb-browser-tools/actions/artifacts/13467242961/zip",
         "expired": false,
-        "created_at": "2026-11-06T00:17:03Z",
-        "expires_at": "2026-11-20T00:17:02Z",
-        "updated_at": "2026-11-06T00:17:03Z",
-        "digest": "sha256:7647e47d3d1b08fa234cc8f7f7688e46039e5529a36eefb533670e8204f07255",
+        "created_at": "2026-11-06T00:58:42Z",
+        "expires_at": "2026-11-20T00:58:41Z",
+        "updated_at": "2026-11-06T00:58:42Z",
+        "digest": "sha256:84826e912429724d7c1a49c37f5312ef333d4702a78b8101612cc46d41842742",
         "workflow_run": {
-          "id": 42135512580,
+          "id": 42140409533,
           "repository_id": 1431223398,
           "head_repository_id": 1431223398,
           "head_branch": "main",
-          "head_sha": "827fa1b5d711e47e731e49e714d3337fb1a5b5ae"
+          "head_sha": "558a843f9149cbe0341fff15b57979f294dbc890"
         }
       },
       "browserReport": "tests/results/function-audit-20261106-002100-chromium.json"
     },
     {
-      "jobId": 127622504759,
-      "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504759",
+      "jobId": 127639032903,
+      "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032903",
       "conclusion": "success",
       "browser": "firefox",
       "passed": 22,
@@ -284,29 +284,29 @@
       ],
       "artifactUploaded": true,
       "artifact": {
-        "id": 13464839995,
+        "id": 13467986586,
         "name": "browser-results-firefox",
-        "size_in_bytes": 632071,
-        "url": "https://api.github.com/repos/jurei733/iqb-browser-tools/actions/artifacts/13464839995",
-        "archive_download_url": "https://api.github.com/repos/jurei733/iqb-browser-tools/actions/artifacts/13464839995/zip",
+        "size_in_bytes": 632376,
+        "url": "https://api.github.com/repos/jurei733/iqb-browser-tools/actions/artifacts/13467986586",
+        "archive_download_url": "https://api.github.com/repos/jurei733/iqb-browser-tools/actions/artifacts/13467986586/zip",
         "expired": false,
-        "created_at": "2026-11-06T00:17:23Z",
-        "expires_at": "2026-11-20T00:17:23Z",
-        "updated_at": "2026-11-06T00:17:23Z",
-        "digest": "sha256:daf4da0c06f2cbf17e563d84dddb49b29ceb1b1ad3c9e4ca04c0fce5d8eabb0e",
+        "created_at": "2026-11-06T00:58:01Z",
+        "expires_at": "2026-11-20T00:58:00Z",
+        "updated_at": "2026-11-06T00:58:01Z",
+        "digest": "sha256:081eb81da5ac3f3c7734391b9b9c0ec6e58a52f870122d6ab245fe5a34a61f8f",
         "workflow_run": {
-          "id": 42135512580,
+          "id": 42140409533,
           "repository_id": 1431223398,
           "head_repository_id": 1431223398,
           "head_branch": "main",
-          "head_sha": "827fa1b5d711e47e731e49e714d3337fb1a5b5ae"
+          "head_sha": "558a843f9149cbe0341fff15b57979f294dbc890"
         }
       },
       "browserReport": "tests/results/function-audit-20261106-002100-firefox.json"
     },
     {
-      "jobId": 127622505096,
-      "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622505096",
+      "jobId": 127639032831,
+      "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032831",
       "conclusion": "success",
       "browser": "webkit",
       "passed": 22,
@@ -407,22 +407,22 @@
       ],
       "artifactUploaded": true,
       "artifact": {
-        "id": 13465986011,
+        "id": 13467817380,
         "name": "browser-results-webkit",
-        "size_in_bytes": 632327,
-        "url": "https://api.github.com/repos/jurei733/iqb-browser-tools/actions/artifacts/13465986011",
-        "archive_download_url": "https://api.github.com/repos/jurei733/iqb-browser-tools/actions/artifacts/13465986011/zip",
+        "size_in_bytes": 632841,
+        "url": "https://api.github.com/repos/jurei733/iqb-browser-tools/actions/artifacts/13467817380",
+        "archive_download_url": "https://api.github.com/repos/jurei733/iqb-browser-tools/actions/artifacts/13467817380/zip",
         "expired": false,
-        "created_at": "2026-11-06T00:19:00Z",
-        "expires_at": "2026-11-20T00:18:58Z",
-        "updated_at": "2026-11-06T00:19:00Z",
-        "digest": "sha256:a541747ef3e7f1a720baf3882b181d9b468dced1330211f1a32c285e2eb2abb3",
+        "created_at": "2026-11-06T00:58:46Z",
+        "expires_at": "2026-11-20T00:58:45Z",
+        "updated_at": "2026-11-06T00:58:46Z",
+        "digest": "sha256:58c86ff24ea80e69266ea46d518e09107f7667634fdaa45828a920b159750ebe",
         "workflow_run": {
-          "id": 42135512580,
+          "id": 42140409533,
           "repository_id": 1431223398,
           "head_repository_id": 1431223398,
           "head_branch": "main",
-          "head_sha": "827fa1b5d711e47e731e49e714d3337fb1a5b5ae"
+          "head_sha": "558a843f9149cbe0341fff15b57979f294dbc890"
         }
       },
       "browserReport": "tests/results/function-audit-20261106-002100-webkit.json"
@@ -430,37 +430,37 @@
   ],
   "localStarter": [
     {
-      "platform": "ubuntu-latest",
-      "conclusion": "success",
-      "passed": 6,
-      "total": 6,
-      "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504846"
-    },
-    {
       "platform": "windows-latest",
       "conclusion": "success",
       "passed": 6,
       "total": 6,
-      "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504934"
+      "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032680"
+    },
+    {
+      "platform": "ubuntu-latest",
+      "conclusion": "success",
+      "passed": 6,
+      "total": 6,
+      "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032741"
     },
     {
       "platform": "macos-15-intel",
       "conclusion": "success",
       "passed": 6,
       "total": 6,
-      "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504962"
+      "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032802"
     }
   ],
   "buildJobs": [
     {
       "name": "Tests and build (Node 22)",
       "conclusion": "success",
-      "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504534"
+      "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032817"
     },
     {
       "name": "Tests and build (Node 24)",
       "conclusion": "success",
-      "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504796"
+      "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032832"
     }
   ]
 }

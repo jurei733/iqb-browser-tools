@@ -1,6 +1,6 @@
 {
   "date": "2026-11-06",
-  "generatedAt": "2026-11-06T00:32:21.943Z",
+  "generatedAt": "2026-11-06T01:01:47.569Z",
   "scope": "Erreichbare Nutzerfunktionen der beiden Originalprogramme; ergänzende Dateiformate, Tastaturpfade und Datenverarbeitung. Bibliothekseditoren anderer Programme und deaktivierte Entwicklungsfunktionen sind ausdrücklich ausgenommen. Keine Aussage über alle möglichen Eingabedaten oder internen Codepfade.",
   "completeEquivalence": false,
   "realProductionDataTested": false,
@@ -19,7 +19,7 @@
     "src/image.js": "dc64dbaa232f29908ec70ec5a15eeaa8a28e2dd5048713a87c82cde4068a8ba2",
     "src/json.js": "133abe6653964b73660d81863de7c2b0ff06be9a882784efca44794c9b3d2851",
     "src/local-connection.js": "b397a4b34ee4e662aef4dc8476c4cc792d7a5516117042657828ff64f317347e",
-    "src/main.js": "75d54ef90c174a0818d7094a771761f4d79345145d2dcb5ba23ea2f531f9af0b",
+    "src/main.js": "932d815aad9db782b9e7c28cc5bee2c52734b980a119fc0ed8286da5dcd48125",
     "src/preparation.js": "85f41b69475cd17fc9ea5fe3fdf7733000b1b833743d7a62e5118e1dbdcd7835",
     "src/qr-bmp.js": "1b9f35184e150455390a4dcafe283702b2e05155d5bf46e140a5b4296bce7457",
     "src/schema.js": "afefd38dd58b1a9257dd010d2e4608ab530526346568fc0dc64726172c90a61d",
@@ -149,29 +149,29 @@
       "fileTotal": 31
     },
     "ci": {
-      "runId": 42135512580,
-      "runUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580",
+      "runId": 42140409533,
+      "runUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533",
       "localStarter": [
-        {
-          "platform": "ubuntu-latest",
-          "conclusion": "success",
-          "passed": 6,
-          "total": 6,
-          "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504846"
-        },
         {
           "platform": "windows-latest",
           "conclusion": "success",
           "passed": 6,
           "total": 6,
-          "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504934"
+          "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032680"
+        },
+        {
+          "platform": "ubuntu-latest",
+          "conclusion": "success",
+          "passed": 6,
+          "total": 6,
+          "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032741"
         },
         {
           "platform": "macos-15-intel",
           "conclusion": "success",
           "passed": 6,
           "total": 6,
-          "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504962"
+          "url": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032802"
         }
       ],
       "jobs": [
@@ -460,7 +460,7 @@
         "current": true,
         "passed": 53,
         "total": 53,
-        "finished": "2026-11-06T00:16:33.353Z"
+        "finished": "2026-11-06T00:57:56.741Z"
       },
       {
         "path": "tests/results/function-audit-20261106-002100-firefox.json",
@@ -468,7 +468,7 @@
         "current": true,
         "passed": 53,
         "total": 53,
-        "finished": "2026-11-06T00:16:36.358Z"
+        "finished": "2026-11-06T00:57:23.072Z"
       },
       {
         "path": "tests/results/function-audit-20261106-002100-webkit.json",
@@ -476,7 +476,7 @@
         "current": true,
         "passed": 53,
         "total": 53,
-        "finished": "2026-11-06T00:18:03.604Z"
+        "finished": "2026-11-06T00:57:53.001Z"
       }
     ]
   },
@@ -1037,19 +1037,19 @@
               "name": "parity: the last coding workspace reopens after reload without selecting the source files again",
               "passed": true,
               "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504780"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032747"
             },
             {
               "name": "parity: the last coding workspace reopens after reload without selecting the source files again",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504759"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032903"
             },
             {
               "name": "parity: the last coding workspace reopens after reload without selecting the source files again",
               "passed": true,
               "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622505096"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032831"
             }
           ]
         },
@@ -1081,19 +1081,19 @@
               "name": "local starter: account, direct overwrite and remembered fresh Toolbox paths",
               "passed": true,
               "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504780"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032747"
             },
             {
               "name": "local starter: account, direct overwrite and remembered fresh Toolbox paths",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504759"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032903"
             },
             {
               "name": "local starter: account, direct overwrite and remembered fresh Toolbox paths",
               "passed": true,
               "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622505096"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032831"
             }
           ]
         }
@@ -2374,19 +2374,19 @@
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
               "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504780"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032747"
             },
             {
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504759"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032903"
             },
             {
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
               "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622505096"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032831"
             }
           ]
         }
@@ -2422,19 +2422,19 @@
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
               "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504780"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032747"
             },
             {
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504759"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032903"
             },
             {
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
               "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622505096"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032831"
             }
           ]
         }
@@ -2507,7 +2507,7 @@
     {
       "id": "K-29",
       "app": "IQB-Kodieren",
-      "function": "Schablone begrenzt verschieben und mit Umschalt drehen",
+      "function": "Schablone begrenzt verschieben und mit Strg drehen",
       "original": {
         "path": "scans/MovingTemplateCanvas.cs",
         "anchor": "Me_MouseMove",
@@ -2519,8 +2519,8 @@
         "src/viewer.js"
       ],
       "assessment": "implemented",
-      "note": "Begrenzung in logischen Seitenkoordinaten, native Drag-Schwelle, Umschalt-Drehung mit WPF-Rundung und Zurücksetzen des Winkels beim Fallwechsel.",
-      "acceptance": "Schablone begrenzt verschieben und mit Umschalt drehen; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
+      "note": "Begrenzung in logischen Seitenkoordinaten, native Drag-Schwelle, Strg-Drehung mit WPF-Rundung (Umschalt zusätzlich im Browser) und Zurücksetzen des Winkels beim Fallwechsel. Der native Dateivergleich belegt Schablonenmetadaten. Der Strg-Modifikator folgt dem Originalhandler; die direkte gepaarte GUI-Abnahme dieser Drehbedienung steht noch aus.",
+      "acceptance": "Schablone begrenzt verschieben und mit Strg drehen; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
       "evidence": [
         {
           "kind": "node",
@@ -2558,19 +2558,19 @@
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
               "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504780"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032747"
             },
             {
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504759"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032903"
             },
             {
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
               "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622505096"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032831"
             }
           ]
         }
@@ -2618,19 +2618,19 @@
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
               "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504780"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032747"
             },
             {
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504759"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032903"
             },
             {
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
               "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622505096"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032831"
             }
           ]
         }
@@ -2896,19 +2896,19 @@
               "name": "parity: original result boundary is selectable and the completed job flashes for one second",
               "passed": true,
               "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504780"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032747"
             },
             {
               "name": "parity: original result boundary is selectable and the completed job flashes for one second",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504759"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032903"
             },
             {
               "name": "parity: original result boundary is selectable and the completed job flashes for one second",
               "passed": true,
               "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622505096"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032831"
             }
           ]
         }
@@ -2960,19 +2960,19 @@
               "name": "parity: the last coding workspace reopens after reload without selecting the source files again",
               "passed": true,
               "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504780"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032747"
             },
             {
               "name": "parity: the last coding workspace reopens after reload without selecting the source files again",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504759"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032903"
             },
             {
               "name": "parity: the last coding workspace reopens after reload without selecting the source files again",
               "passed": true,
               "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622505096"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032831"
             }
           ]
         },
@@ -3008,19 +3008,19 @@
               "name": "local starter: account, direct overwrite and remembered fresh Toolbox paths",
               "passed": true,
               "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504780"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032747"
             },
             {
               "name": "local starter: account, direct overwrite and remembered fresh Toolbox paths",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504759"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032903"
             },
             {
               "name": "local starter: account, direct overwrite and remembered fresh Toolbox paths",
               "passed": true,
               "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622505096"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032831"
             }
           ]
         }
@@ -3055,19 +3055,19 @@
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
               "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504780"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032747"
             },
             {
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504759"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032903"
             },
             {
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
               "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622505096"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032831"
             }
           ]
         }
@@ -3102,19 +3102,19 @@
               "name": "parity: original result boundary is selectable and the completed job flashes for one second",
               "passed": true,
               "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504780"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032747"
             },
             {
               "name": "parity: original result boundary is selectable and the completed job flashes for one second",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504759"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032903"
             },
             {
               "name": "parity: original result boundary is selectable and the completed job flashes for one second",
               "passed": true,
               "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622505096"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032831"
             }
           ]
         }
@@ -3225,19 +3225,19 @@
               "name": "Toolbox: codes and booklets produce downloadable original formats",
               "passed": true,
               "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504780"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032747"
             },
             {
               "name": "Toolbox: codes and booklets produce downloadable original formats",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504759"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032903"
             },
             {
               "name": "Toolbox: codes and booklets produce downloadable original formats",
               "passed": true,
               "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622505096"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032831"
             }
           ]
         }
@@ -3966,19 +3966,19 @@
               "name": "parity: startup defaults and login regeneration without XML match Windows",
               "passed": true,
               "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504780"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032747"
             },
             {
               "name": "parity: startup defaults and login regeneration without XML match Windows",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504759"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032903"
             },
             {
               "name": "parity: startup defaults and login regeneration without XML match Windows",
               "passed": true,
               "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622505096"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032831"
             }
           ]
         },
@@ -4212,19 +4212,19 @@
               "name": "parity: full diagnostics survive module changes and export every validation error",
               "passed": true,
               "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504780"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032747"
             },
             {
               "name": "parity: full diagnostics survive module changes and export every validation error",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504759"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032903"
             },
             {
               "name": "parity: full diagnostics survive module changes and export every validation error",
               "passed": true,
               "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622505096"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032831"
             }
           ]
         },
@@ -4496,19 +4496,19 @@
               "name": "Windows mode: raw API files retain original values and chunk order through the real worker",
               "passed": true,
               "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504780"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032747"
             },
             {
               "name": "Windows mode: raw API files retain original values and chunk order through the real worker",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504759"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032903"
             },
             {
               "name": "Windows mode: raw API files retain original values and chunk order through the real worker",
               "passed": true,
               "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622505096"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032831"
             }
           ]
         },
@@ -5484,19 +5484,19 @@
               "name": "Windows mode: raw API files retain original values and chunk order through the real worker",
               "passed": true,
               "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504780"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032747"
             },
             {
               "name": "Windows mode: raw API files retain original values and chunk order through the real worker",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504759"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032903"
             },
             {
               "name": "Windows mode: raw API files retain original values and chunk order through the real worker",
               "passed": true,
               "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622505096"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032831"
             }
           ]
         }
@@ -6520,19 +6520,19 @@
               "name": "Testcenter: group selection and workspace changes cannot export stale groups",
               "passed": true,
               "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504780"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032747"
             },
             {
               "name": "Testcenter: group selection and workspace changes cannot export stale groups",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504759"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032903"
             },
             {
               "name": "Testcenter: group selection and workspace changes cannot export stale groups",
               "passed": true,
               "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622505096"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032831"
             }
           ]
         }
@@ -6901,19 +6901,19 @@
               "name": "parity: Testcenter access can be remembered explicitly and deleted again",
               "passed": true,
               "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504780"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032747"
             },
             {
               "name": "parity: Testcenter access can be remembered explicitly and deleted again",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504759"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032903"
             },
             {
               "name": "parity: Testcenter access can be remembered explicitly and deleted again",
               "passed": true,
               "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622505096"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032831"
             }
           ]
         }
@@ -6950,19 +6950,19 @@
               "name": "parity: preparation cancellation preserves the SQLite working copy",
               "passed": true,
               "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504780"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032747"
             },
             {
               "name": "parity: preparation cancellation preserves the SQLite working copy",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504759"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032903"
             },
             {
               "name": "parity: preparation cancellation preserves the SQLite working copy",
               "passed": true,
               "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622505096"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032831"
             }
           ]
         }
@@ -7002,19 +7002,19 @@
               "name": "parity: the last coding workspace reopens after reload without selecting the source files again",
               "passed": true,
               "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504780"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032747"
             },
             {
               "name": "parity: the last coding workspace reopens after reload without selecting the source files again",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504759"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032903"
             },
             {
               "name": "parity: the last coding workspace reopens after reload without selecting the source files again",
               "passed": true,
               "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622505096"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032831"
             }
           ]
         },
@@ -7029,19 +7029,19 @@
               "name": "parity: selected Toolbox input files and options survive closing and reopening the page",
               "passed": true,
               "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504780"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032747"
             },
             {
               "name": "parity: selected Toolbox input files and options survive closing and reopening the page",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504759"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032903"
             },
             {
               "name": "parity: selected Toolbox input files and options survive closing and reopening the page",
               "passed": true,
               "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622505096"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032831"
             }
           ]
         },
@@ -7073,19 +7073,19 @@
               "name": "local starter: account, direct overwrite and remembered fresh Toolbox paths",
               "passed": true,
               "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504780"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032747"
             },
             {
               "name": "local starter: account, direct overwrite and remembered fresh Toolbox paths",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504759"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032903"
             },
             {
               "name": "local starter: account, direct overwrite and remembered fresh Toolbox paths",
               "passed": true,
               "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622505096"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032831"
             }
           ]
         }
@@ -7417,19 +7417,19 @@
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
               "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504780"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032747"
             },
             {
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504759"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032903"
             },
             {
               "name": "parity: physical zoom, scan panning, template edges, shared position and reset rotation",
               "passed": true,
               "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622505096"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032831"
             }
           ]
         }
@@ -7465,19 +7465,19 @@
               "name": "parity: startup defaults and login regeneration without XML match Windows",
               "passed": true,
               "browser": "chromium",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504780"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032747"
             },
             {
               "name": "parity: startup defaults and login regeneration without XML match Windows",
               "passed": true,
               "browser": "firefox",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622504759"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032903"
             },
             {
               "name": "parity: startup defaults and login regeneration without XML match Windows",
               "passed": true,
               "browser": "webkit",
-              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42135512580/job/127622505096"
+              "jobUrl": "https://github.com/jurei733/iqb-browser-tools/actions/runs/42140409533/job/127639032831"
             }
           ]
         }
