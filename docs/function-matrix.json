@@ -734,6 +734,11 @@
         {
           "kind": "browser",
           "pattern": "Joboptionen, fortlaufende"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-remaining-20261106.json",
+          "pattern": "^K-25 finite direct"
         }
       ]
     },
@@ -788,6 +793,11 @@
           "kind": "ci-browser",
           "path": "tests/results/function-audit-ci-20261106-gui.json",
           "pattern": "physical zoom"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-remaining-20261106.json",
+          "pattern": "^K-27 finite direct"
         }
       ]
     },
@@ -817,6 +827,11 @@
         {
           "kind": "browser",
           "pattern": "transparente Schablone"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-remaining-20261106.json",
+          "pattern": "^K-28 finite direct"
         }
       ]
     },
@@ -851,6 +866,11 @@
           "kind": "ci-browser",
           "path": "tests/results/function-audit-ci-20261106-gui.json",
           "pattern": "physical zoom"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-remaining-20261106.json",
+          "pattern": "^K-29 finite direct"
         }
       ]
     },
@@ -1109,6 +1129,11 @@
           "kind": "ci-browser",
           "path": "tests/results/function-audit-ci-20261106-gui.json",
           "pattern": "completed job flashes"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-remaining-20261106.json",
+          "pattern": "^K-37 finite direct"
         }
       ]
     },
@@ -2208,6 +2233,11 @@
           "kind": "node",
           "file": "tests/function-matrix.test.js",
           "pattern": "every Excel sheet toggle"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-remaining-20261106.json",
+          "pattern": "^T-35 finite direct"
         }
       ]
     },
@@ -2494,6 +2524,11 @@
         {
           "kind": "browser",
           "pattern": "SQLite"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-remaining-20261106.json",
+          "pattern": "^T-45 finite direct"
         }
       ]
     },
@@ -2591,6 +2626,11 @@
           "kind": "node",
           "file": "tests/gui-reference.test.js",
           "pattern": "^Windows Toolbox GUI capture:"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-remaining-20261106.json",
+          "pattern": "^T-48 finite direct"
         }
       ]
     },
@@ -2616,6 +2656,11 @@
           "kind": "node",
           "file": "tests/extended.test.js",
           "pattern": "Testcenter plain authentication"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-remaining-20261106.json",
+          "pattern": "^T-49 finite direct"
         }
       ]
     },
@@ -2641,6 +2686,11 @@
           "kind": "node",
           "file": "tests/extended.test.js",
           "pattern": "Testcenter plain authentication"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-remaining-20261106.json",
+          "pattern": "^T-50 finite direct"
         }
       ]
     },
@@ -2671,6 +2721,11 @@
           "kind": "ci-browser",
           "path": "tests/results/function-audit-ci-20261106-gui.json",
           "pattern": "group selection and workspace changes"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-remaining-20261106.json",
+          "pattern": "^T-51 finite direct"
         }
       ]
     },
@@ -2696,6 +2751,11 @@
           "kind": "node",
           "file": "tests/testcenter-regressions.test.js",
           "pattern": "real Testcenter"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-remaining-20261106.json",
+          "pattern": "^T-52 finite direct"
         }
       ]
     },
@@ -2770,6 +2830,11 @@
         {
           "kind": "browser",
           "pattern": "gruppiertes JSON"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-remaining-20261106.json",
+          "pattern": "^T-55 finite direct"
         }
       ]
     },
@@ -2869,6 +2934,11 @@
           "kind": "ci-browser",
           "path": "tests/results/function-audit-ci-20261106-gui.json",
           "pattern": "access can be remembered"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-remaining-20261106.json",
+          "pattern": "^T-59 finite direct"
         }
       ]
     },

@@ -325,3 +325,5 @@ Reproduzierbare Einrichtung und Prüflauf: [demo/testcenter/README.md](demo/test
 - ClickOnce-Pakete am 22.10.2026 heruntergeladen; Dateien und SHA256-Prüfsummen in `PROVENANCE.json`, Manifest-Dateihashes beim Download geprüft.
 - IQB-Kodieren, IQB-Scans und IQB-Common mit ILSpyCmd 11.1.0.9782 statisch in lesbares C# und XAML zurückgewonnen. Unveränderte Originalfunktionen und vollständige Exportabläufe wurden unter Windows / .NET Framework ausgeführt; die Browserkorrekturen und Nachweise sind oben beschrieben. Rekonstruierter Code wurde nicht als Windows-Projekt kompiliert.
 - Lizenz: `LICENSE`. Diese Browserfassung verwendet keine KI-API und benötigt keinen API-Schlüssel.
+
+Direkter GUI-Nachtrag vom 6. November: [Prüfbericht](public/windows-gui-remaining.html) und [Dateihashes](tests/results/windows-gui-remaining-20261106.json). 13 der zuvor 34 offenen Punkte wurden zusätzlich endlich gepaart geprüft; 21 bleiben offen. Der begonnene native SQLite-Import ist wegen deaktivierter lokaler Browsersteuerung noch nicht abschließend beobachtet. 157 Modultests und 75 lokale Browsertests bestehen. Empirische Daten fehlen weiterhin.
