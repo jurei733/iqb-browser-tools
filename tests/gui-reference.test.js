@@ -8,6 +8,7 @@ import {readCodingFiles,applyResult,decodeResult,encodeResult,initialCaseIndex} 
 import {OutputDatabase} from '../src/database.js';
 import {wideWorkbook} from '../src/data.js';
 import {loadWorkbook} from '../src/toolbox.js';
+import {unzipSync} from 'fflate';
 import {workbookCells} from '../scripts/testcenter-study.mjs';
 globalThis.DOMParser=DOMParser;globalThis.XMLSerializer=XMLSerializer;
 const reference=JSON.parse(await readFile(new URL('./fixtures/gui-reference-20261104.json',import.meta.url)));
@@ -16,7 +17,9 @@ async function input(section){const bytes=await readFile(new URL('../'+section.i
 function capture(section){const bytes=Buffer.from(section.capture.base64,'base64');assert.equal(sha(bytes),section.capture.sha256);assert.equal(bytes.length,section.capture.bytes);return bytes;}
 
 test('Windows coding GUI capture: zero, comment, restart position and every result timestamp roundtrip',async()=>{
- const source=await input(reference.coding),{jobs}=await readCodingFiles([new File([source],'modern.zip')]);
+ // The original GUI capture opened the extracted directory. The ZIP is only
+ // the fixture transport; native ZIP jobs have a different label.
+ const source=await input(reference.coding),{jobs}=await readCodingFiles(Object.entries(unzipSync(source)).map(([name,bytes])=>new File([bytes],name)));
  const job=jobs[0],native=decodeResult(capture(reference.coding));
  assert.equal(job.cases.length,4);assert.equal(native.coder,'IQB');
  assert.equal(decodeResult(encodeResult(job,'IQB')).label,native.label);

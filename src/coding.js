@@ -133,8 +133,9 @@ export async function readCodingFiles(files) {
             cases.push({testee,variable,pages,template,code:'',comment:'',time:''});}
         }
         if(!cases.length){warnings.push(`${path}: Keine passenden Scans gefunden.`);continue;}
-        const label=legacy?`${stem(path)} ${selected.map(v=>v.id).join(' ')}`:`${bundle.name} ${stem(path)}`;
-        const job={id:attr(root,'id'),label,resultLabel:legacy?label:path.split('/').at(-1),settings:{...options},variables:selected,cases};if(!job.id)throw new Error(`Job-ID fehlt in ${path}.`);jobs.push(job);
+        const xmlName=path.split('/').at(-1);
+        const label=legacy?`${stem(path)} ${selected.map(v=>v.id).join(' ')}`:bundle.zipped?`${bundle.name} ${xmlName}`:xmlName;
+        const job={id:attr(root,'id'),label,resultLabel:label,settings:{...options},variables:selected,cases};if(!job.id)throw new Error(`Job-ID fehlt in ${path}.`);jobs.push(job);
       }
     }
   }

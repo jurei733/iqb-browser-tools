@@ -1,0 +1,71 @@
+{
+  "capturedOn": "2026-11-05",
+  "synthetic": true,
+  "empiricalStudy": false,
+  "nativeGUI": "UTM Windows 11 ARM64, unchanged IQB-Kodieren 4.3.0.3. Normal folder selector opened C:\\IQBGUI20261105 and selected the ZIP job; key 0 entered in the original GUI.",
+  "codingZip": {
+    "input": {
+      "path": "tests/fixtures/windows-reference/inputs/coding/modern.zip",
+      "name": "01-Modern.zip",
+      "sha256": "347366fd304d7abc6aa4d22ccd2dc6890e8e1638089965466a65058d3db573cb"
+    },
+    "capture": {
+      "bytes": 180,
+      "sha256": "afc2fae3f0f604b51f4b483fd84f0286edf6b88275e9c78cd8b39bb7f18445b8",
+      "base64": "H4sIAAAAAAAEAFVOSwrCMBDdC95hmH3apNIipWlRVwouFC9g02kppImkH7ybC4/kFUy7EVfzmPf9vN5Z8ew0TOT61hqJIuAIZJStWtNIHIeabbHI16vssLyu1I966H+GGKGtJDqqyXkfsc5W5AyCmq/E42WPoO8laYlcsPPCwsmWge9FHwyQKZgk7rhAGB5etYBOYsSjhAnBeHyLNmmcpDOhvAAhnBeFf5PyL/NA8rbNAAAA"
+    },
+    "observedLabel": "01-Modern Job.xml",
+    "cases": 4,
+    "caseCode": "0"
+  },
+  "limitations": [
+    "A finite synthetic GUI workflow, not a complete GUI or empirical-data acceptance.",
+    "Independent interactions compare semantic fields; wall-clock timestamps are retained only when importing the actual native file."
+  ],
+  "codingComplete": {
+    "capture": {
+      "bytes": 251,
+      "sha256": "8fe99b1337747ee12caa5638124a02f7cc90d392ca5990c3e365c24bdd0f7c89",
+      "base64": "H4sIAAAAAAAEAI2R3UrDQBCF7wXfYZj7bWYXE0R2U9QLqaCg6AM0m20J7I8k2yK+mhc+kq/gNC1IpKIwsMPMfOcc2M/3Dz1/DR62rh+6FA3KGSG4aFPbxbXBTV6Jc5zXpyf6ehw9umHj8/ANlAhda7B3K9cz50RIresjgt29BhcPVwh+2ThvkKS4G7dwm5oZ+yILA+i1T83S2xSCi7m+eV6I8gz2Q1CkKimp1MX0agQtbA1ekkTILyw/NsHgjhFSCqqeiC6o5OI8fID1fcrdG7AFMKYLO9FRf+nIvQ6vi+MB1G9gdQjwA1T/BA+Oupj8Qv0FE0fCPsABAAA="
+    },
+    "steps": [
+      "Open native ZIP in job directory",
+      "Set case 1 code 0 then 1 then Up to 0",
+      "F4 job comment GUI-54 global 20261105, confirm OK",
+      "Tab from code list to comment; enter Notiz GUI A01; Ctrl+S",
+      "Right to case 2, code 1",
+      "Right to case 3, code 0; Down then Up returns to 0",
+      "Right to case 4, code 1",
+      "F3 shows Nr., Variable, Code, Kommentar with four rows",
+      "Close original with Alt+F4; restart unchanged original via C:\\k.lnk",
+      "Confirm remembered directory; original resumes case 4/4 with code 1"
+    ],
+    "observedList": [
+      {
+        "number": 1,
+        "variable": "A01",
+        "code": "0",
+        "comment": "Notiz GUI A01"
+      },
+      {
+        "number": 2,
+        "variable": "A02",
+        "code": "1",
+        "comment": ""
+      },
+      {
+        "number": 3,
+        "variable": "A01",
+        "code": "0",
+        "comment": ""
+      },
+      {
+        "number": 4,
+        "variable": "A02",
+        "code": "1",
+        "comment": ""
+      }
+    ],
+    "restartCase": 4
+  }
+}
