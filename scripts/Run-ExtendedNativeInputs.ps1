@@ -99,6 +99,12 @@ $cases=@(
  @{id='retain-separate';source='Logins';renew=$false;xml=$true;separate=$true;length=5;password=0;monitor=$false;testee=$false;reserve=$false;review=$false},
  @{id='renew-prefixes-password-proctor';source='Logins-wide';renew=$true;xml=$true;separate=$true;length=5;password=3;monitor=$true;testee=$true;reserve=$true;review=$true},
  @{id='renew-mixed-prefixes';source='Logins-wide';renew=$true;xml=$true;separate=$false;length=5;password=0;monitor=$false;testee=$true;reserve=$false;review=$false},
+ @{id='renew-prefix-none';source='Logins-wide';renew=$true;xml=$true;separate=$false;length=5;password=4;monitor=$false;testee=$false;reserve=$false;review=$false},
+ @{id='renew-prefix-reserve';source='Logins-wide';renew=$true;xml=$true;separate=$false;length=5;password=3;monitor=$false;testee=$false;reserve=$true;review=$false},
+ @{id='renew-prefix-review';source='Logins-wide';renew=$true;xml=$true;separate=$false;length=5;password=3;monitor=$false;testee=$false;reserve=$false;review=$true},
+ @{id='renew-prefix-test-reserve';source='Logins-wide';renew=$true;xml=$true;separate=$false;length=5;password=3;monitor=$false;testee=$true;reserve=$true;review=$false},
+ @{id='renew-prefix-test-review';source='Logins-wide';renew=$true;xml=$true;separate=$false;length=5;password=3;monitor=$false;testee=$true;reserve=$false;review=$true},
+ @{id='renew-prefix-reserve-review';source='Logins-wide';renew=$true;xml=$true;separate=$false;length=5;password=3;monitor=$false;testee=$false;reserve=$true;review=$true},
  @{id='renew-no-xml';source='Logins-wide';renew=$true;xml=$false;separate=$true;length=5;password=0;monitor=$true;testee=$false;reserve=$false;review=$false}
 )
 foreach($case in $cases){

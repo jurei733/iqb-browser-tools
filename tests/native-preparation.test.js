@@ -9,7 +9,7 @@ import {loginRowsShape,loginXMLTree} from './helpers/native-logins.js';
 Object.assign(globalThis,{DOMParser,XMLSerializer});
 const proof=JSON.parse((await readFile(process.env.NATIVE_PREPARATION_REFERENCE||new URL('./fixtures/native-extended-preparation-20261106.json',import.meta.url),'utf8')).replace(/^\ufeff/,''));
 assert.equal(proof.hashes['itc-Toolbox.exe'],'c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1');
-assert.equal(proof.culture,'de-DE');assert.ok([32,64].includes(proof.bits));assert.equal(proof.results.length,8);
+assert.equal(proof.culture,'de-DE');assert.ok([32,64].includes(proof.bits));assert.equal(proof.results.length,process.env.NATIVE_PREPARATION_REFERENCE?14:8);
 function bytes(capture){const raw=Buffer.from(capture.base64,'base64');assert.equal(raw.length,capture.bytes);assert.equal(createHash('sha256').update(raw).digest('hex'),capture.sha256);return raw;}
 const input=name=>bytes(proof.inputFiles.find(f=>f.name===name));
 const xmlTree=el=>({name:el.nodeName,attrs:Object.fromEntries(Array.from(el.attributes).filter(a=>!(el.nodeName==='Testlet'&&a.name==='label'&&a.value==='')).map(a=>[a.name,a.value]).sort()),content:Array.from(el.childNodes).some(c=>c.nodeType===1)?Array.from(el.childNodes).filter(c=>c.nodeType===1).map(xmlTree):el.textContent});
