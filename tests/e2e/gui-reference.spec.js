@@ -73,6 +73,27 @@ test('Windows Toolbox GUI: Booklet XML and complete Texteditor messages',async({
  await testInfo.attach('Booklet XML',{path:xmlPath});await testInfo.attach('Windows Texteditor messages',{path:textPath});
 });
 
+test('Windows multi-job GUI: independent progress, anonymous training, mouse and digit codes',async({page},testInfo)=>{
+ const p=remaining.coding,capture=decodeResult(Buffer.from(p.trainingPartialResult.capture.base64,'base64'));
+ await page.goto('/');await page.locator('#coding-files').setInputFiles([
+  {name:extended.codingZip.input.name,mimeType:'application/zip',buffer:await readFile(job)},
+  {name:'Job.xml.result',mimeType:'application/gzip',buffer:Buffer.from(extended.codingComplete.capture.base64,'base64')},
+  ...[p.templateInput,p.trainingInput].map(f=>({name:f.name,mimeType:'application/zip',buffer:Buffer.from(f.capture.base64,'base64')}))
+ ]);
+ const choices=page.locator('#jobs option');await expect(choices).toHaveCount(3);
+ expect(await choices.allTextContents()).toEqual(['01-Modern Job.xml · 4/4','02-Schablone Schablone.xml · 0/1','03-Anonym-Training Job.xml · 0/4']);
+ await page.locator('#jobs').selectOption('2');await page.locator('#coder').fill('IQB');
+ await expect(page.locator('.coding-panel .muted')).toHaveText('Testperson anonymisiert');
+ await expect(page.locator('.progress')).toContainText('0 von 4 kodiert');
+ await page.locator('[data-code="1"]').click();await page.locator('#next').click();
+ await page.locator('[data-code="0"]').focus();await page.keyboard.press('0');await page.locator('#next').click();
+ await expect(page.locator('#case-number')).toHaveValue('3');await expect(page.locator('.progress')).toContainText('2 von 4 kodiert');
+ expect(fields(await result(page,testInfo,'anonymous-training-paired.result'))).toEqual(fields(capture));
+ await page.locator('#jobs').selectOption('1');await expect(page.locator('.template-layer')).toBeVisible();await expect(page.locator('.progress')).toContainText('0 von 1 kodiert');
+ await page.locator('#jobs').selectOption('0');await expect(page.locator('.progress')).toContainText('4 von 4 kodiert');
+ await page.locator('#jobs').selectOption('2');await expect(page.locator('.progress')).toContainText('2 von 4 kodiert');
+});
+
 test('Windows Toolbox GUI: login minimum, mixed prefixes, edited workbook and native empty-password behavior',async({page},testInfo)=>{
  const proof=extended.toolboxLogins;const {loginXMLTree,loginRowsShape}=await import('../helpers/native-logins.js');const T=await import('../../src/toolbox.js');const {XMLSerializer}=await import('@xmldom/xmldom');globalThis.XMLSerializer=XMLSerializer;
  await page.goto('/');await page.locator('[data-module="toolbox"]').click();await page.locator('[data-tool="logins"]').click();
@@ -136,6 +157,8 @@ test('Windows Testcenter GUI: login, group choices and byte-identical group JSON
   if(path==='/api/session/admin')return route.fulfill({json:{token:'synthetic-native-gui-session',access:{workspaceAdmin:['1']}}});
   if(path==='/api/workspace/1')return route.fulfill({json:{name:p.workspace}});
   if(path==='/api/workspace/1/results')return route.fulfill({json:p.groups.map(groupName=>({groupName,groupLabel:groupName,bookletsStarted:1}))});
+  if(path==='/api/workspace/1/files')return route.fulfill({json:Object.entries(p.bookletSizes).map(([name,size])=>({name,type:'Booklet',size}))});
+  if(path==='/api/workspace/1/files-dependencies')return route.fulfill({json:Object.entries(p.bookletSizes).map(([id,size])=>({id,size,dependencies:[]}))});
   if(path.endsWith('/report/log')||path.endsWith('/report/response'))return route.fulfill({json:reports[path.endsWith('/log')?'logs':'responses'].filter(d=>d.groupname===u.searchParams.get('dataIds'))});
   return route.fulfill({status:404,body:''});
  });
@@ -152,5 +175,41 @@ test('Windows Testcenter GUI: login, group choices and byte-identical group JSON
  const excelWaiting=page.waitForEvent('download');await page.locator('[data-output]').click();const excelDownload=await excelWaiting;const excelPath=testInfo.outputPath('native-gui-direct.xlsx');await excelDownload.saveAs(excelPath);await testInfo.attach('Native direct Excel cells',{path:excelPath});
  const {loadWorkbook}=await import('../../src/toolbox.js'),shape=async b=>(await loadWorkbook(b)).worksheets.map(s=>({name:s.name,rows:Array.from({length:s.rowCount},(_,i)=>{const row=s.getRow(i+1);return Array.from({length:row.cellCount},(_,j)=>row.getCell(j+1).text);})}));
  expect(await shape(await readFile(excelPath))).toEqual(await shape(Buffer.from(p.excel.capture.base64,'base64')));
+ // The original JSON dialog leaves session labels null. Its SQLite writer
+ // converts exactly those labels to empty strings; compare the downloaded DB.
+ await page.locator('#tc-db').click();await expect(page.locator('#tc-db')).toBeEnabled();
+ await expect(page.locator('#notice')).toContainText('Browserdatenbank gesichert');
+ await page.locator('[data-tool="database"]').click();
+ const sqliteWaiting=page.waitForEvent('download');await page.locator('#db-save').click();const sqliteDownload=await sqliteWaiting;
+ const sqlitePath=testInfo.outputPath('native-gui-import.sqlite');await sqliteDownload.saveAs(sqlitePath);await testInfo.attach('Native GUI paired SQLite tables',{path:sqlitePath});
+ const {default:initSqlJs}=await import('sql.js'),{OutputDatabase}=await import('../../src/database.js'),SQL=await initSqlJs();
+ const actual=new OutputDatabase(SQL,await readFile(sqlitePath)),original=new OutputDatabase(SQL,Buffer.from(p.sqlite.capture.base64,'base64'));
+ try{
+  const canonical=rows=>rows.map(row=>Object.fromEntries(Object.entries(row).sort()));
+  for(const table of ['person','bookletInfo','booklet','session','bookletLog','unit','unitLog','unitLastState','chunk','response'])expect(canonical(actual.query('SELECT * FROM ['+table+']')),table).toEqual(canonical(original.query('SELECT * FROM ['+table+']')));
+  expect(actual.check().ok).toBe(true);
+ }finally{actual.close();original.close();}
 });
+});
+
+test('Windows booklet-size GUI: import JSON and preserve all existing SQLite data',async({page},testInfo)=>{
+ const p=remaining.testcenter,size=p.bookletSizesImport;
+ await page.goto('/');await page.locator('[data-module="toolbox"]').click();await page.locator('[data-tool="database"]').click();
+ await page.locator('#db-file').setInputFiles({name:p.sqlite.name,mimeType:'application/octet-stream',buffer:Buffer.from(p.sqlite.capture.base64,'base64')});
+ await expect(page.locator('#db-summary')).toContainText('28Antworten');
+ await page.locator('#db-sizes').setInputFiles({name:size.input.name,mimeType:'application/json',buffer:Buffer.from(size.input.capture.base64,'base64')});await page.locator('#db-import-sizes').click();await expect(page.locator('#db-import-sizes')).toBeEnabled();
+ const waiting=page.waitForEvent('download');await page.locator('#db-save').click();const download=await waiting,path=testInfo.outputPath('native-size-import.sqlite');await download.saveAs(path);await testInfo.attach('Native booklet-size GUI pair',{path});
+ const {default:initSqlJs}=await import('sql.js'),{OutputDatabase}=await import('../../src/database.js'),SQL=await initSqlJs(),actual=new OutputDatabase(SQL,await readFile(path)),original=new OutputDatabase(SQL,Buffer.from(size.sqliteAfter.base64,'base64'));
+ try{for(const table of ['person','bookletInfo','booklet','session','bookletLog','unit','unitLog','unitLastState','chunk','response'])expect(actual.query('SELECT * FROM ['+table+']'),table).toEqual(original.query('SELECT * FROM ['+table+']'));}finally{actual.close();original.close();}
+});
+
+test('Windows JSON import GUI: add people and preserve original SQLite tables',async({page},testInfo)=>{
+ const p=remaining.testcenter,json=p.jsonDatabaseImport;
+ await page.goto('/');await page.locator('[data-module="toolbox"]').click();await page.locator('[data-tool="database"]').click();
+ await page.locator('#db-file').setInputFiles({name:p.sqlite.name,mimeType:'application/octet-stream',buffer:Buffer.from(p.bookletSizesImport.sqliteAfter.base64,'base64')});
+ await page.locator('#db-import-files').setInputFiles({name:json.input.name,mimeType:'application/json',buffer:Buffer.from(json.input.capture.base64,'base64')});await page.locator('#db-import').click();
+ await expect(page.locator('#db-summary')).toContainText('5Testpersonen');await expect(page.locator('#db-summary')).toContainText('34Antworten');
+ const waiting=page.waitForEvent('download');await page.locator('#db-save').click();const download=await waiting,path=testInfo.outputPath('native-json-import.sqlite');await download.saveAs(path);await testInfo.attach('Native JSON GUI pair',{path});
+ const {default:initSqlJs}=await import('sql.js'),{OutputDatabase}=await import('../../src/database.js'),SQL=await initSqlJs(),actual=new OutputDatabase(SQL,await readFile(path)),original=new OutputDatabase(SQL,Buffer.from(json.sqliteAfter.base64,'base64'));
+ try{const canonical=rows=>rows.map(row=>Object.fromEntries(Object.entries(row).sort()));for(const table of ['person','bookletInfo','booklet','session','bookletLog','unit','unitLog','unitLastState','chunk','response'])expect(canonical(actual.query('SELECT * FROM ['+table+']')),table).toEqual(canonical(original.query('SELECT * FROM ['+table+']')));}finally{actual.close();original.close();}
 });

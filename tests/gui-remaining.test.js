@@ -4,7 +4,7 @@ import {readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import initSqlJs from 'sql.js';
 import {OutputDatabase} from '../src/database.js';
-import {wideWorkbook} from '../src/data.js';
+import {wideWorkbook,readDataFiles} from '../src/data.js';
 import {windowsLongCSV,windowsSessionCSV} from '../src/windows-compatibility.js';
 import {loadWorkbook} from '../src/toolbox.js';
 import {windowsTestcenterGUI,windowsGUIJSON} from '../src/windows-testcenter-gui.js';
@@ -35,4 +35,30 @@ for(const c of proof.testcenter.json.filter(c=>c.name!=='booklets.json'))test('N
 test('Native Testcenter direct Excel: German column order and every cell',async()=>{
  const p=windowsTestcenterGUI(reports.responses,reports.logs),c=proof.testcenter.excel;
  assert.deepEqual(await shape(await wideWorkbook(p,c.options)),await shape(bytes(c.capture)));
+});
+test('Native Testcenter GUI SQLite: all ten data tables match the original writer',async()=>{
+ const SQL=await initSqlJs(),native=new OutputDatabase(SQL,bytes(proof.testcenter.sqlite.capture)),web=new OutputDatabase(SQL);
+ try{
+  web.import(windowsTestcenterGUI(reports.responses,reports.logs),{windows:true});web.setSizes(native.sizes());
+  const canonical=rows=>rows.map(row=>Object.fromEntries(Object.entries(row).sort()));
+  for(const table of ['person','bookletInfo','booklet','session','bookletLog','unit','unitLog','unitLastState','chunk','response'])assert.deepEqual(canonical(web.query('SELECT * FROM ['+table+']')),canonical(native.query('SELECT * FROM ['+table+']')),table);
+  assert.equal(web.summary().people,2);assert.equal(web.summary().responses,28);assert.equal(web.check().ok,true);
+ }finally{native.close();web.close();}
+});
+test('Native booklet-size JSON import preserves existing sizes and adds DEMO',async()=>{
+ const p=proof.testcenter.bookletSizesImport,SQL=await initSqlJs(),before=new OutputDatabase(SQL,bytes(proof.testcenter.sqlite.capture)),after=new OutputDatabase(SQL,bytes(p.sqliteAfter));
+ try{
+  before.setSizes(JSON.parse(bytes(p.input.capture).toString('utf8')));
+  assert.deepEqual(before.query('SELECT * FROM bookletInfo'),after.query('SELECT * FROM bookletInfo'));
+  for(const table of ['person','booklet','session','bookletLog','unit','unitLog','unitLastState','chunk','response'])assert.deepEqual(before.query('SELECT * FROM ['+table+']'),after.query('SELECT * FROM ['+table+']'),table);
+ }finally{before.close();after.close();}
+});
+test('Native JSON database import: all ten data tables match after adding J6.json',async()=>{
+ const p=proof.testcenter,SQL=await initSqlJs(),before=new OutputDatabase(SQL,bytes(p.bookletSizesImport.sqliteAfter)),after=new OutputDatabase(SQL,bytes(p.jsonDatabaseImport.sqliteAfter));
+ try{
+  before.import(await readDataFiles([{name:p.jsonDatabaseImport.input.name,bytes:bytes(p.jsonDatabaseImport.input.capture)}],{windows:true}),{windows:true});
+  const canonical=rows=>rows.map(row=>Object.fromEntries(Object.entries(row).sort()));
+  for(const table of ['person','bookletInfo','booklet','session','bookletLog','unit','unitLog','unitLastState','chunk','response'])assert.deepEqual(canonical(before.query('SELECT * FROM ['+table+']')),canonical(after.query('SELECT * FROM ['+table+']')),table);
+  assert.equal(before.summary().people,5);assert.equal(before.summary().responses,34);
+ }finally{before.close();after.close();}
 });
