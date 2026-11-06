@@ -61,6 +61,11 @@
         {
           "kind": "browser",
           "pattern": "Jobwechsel erhält"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-resumed-20261106.json",
+          "pattern": "^K-02 finite direct"
         }
       ]
     },
@@ -249,6 +254,11 @@
         {
           "kind": "browser",
           "pattern": "Joboptionen, fortlaufende"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-resumed-20261106.json",
+          "pattern": "^K-09 finite direct"
         }
       ]
     },
@@ -339,6 +349,11 @@
           "kind": "node",
           "file": "tests/extended.test.js",
           "pattern": "coding crop and DPI"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-resumed-20261106.json",
+          "pattern": "^K-12 finite direct"
         }
       ]
     },
@@ -2433,6 +2448,11 @@
         {
           "kind": "browser",
           "pattern": "SQLite"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-resumed-20261106.json",
+          "pattern": "^T-42 JSON and Testcenter"
         }
       ]
     },
@@ -2494,6 +2514,11 @@
           "kind": "node",
           "file": "tests/extended.test.js",
           "pattern": "SQLite v1 string"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-resumed-20261106.json",
+          "pattern": "^T-44 finite direct"
         }
       ]
     },
@@ -2853,12 +2878,17 @@
         "src/testcenter.js"
       ],
       "assessment": "implemented",
-      "note": "Eigene API-Vertragstests und früherer echter Testcenter-19.0.1-Lauf; kein direkter Windows-Netzwerkvergleich desselben Servers.",
+      "note": "Direkter GUI-Vergleich am selben lokalen Testcenter 19.0.1: Excel-Zellen und zehn SQLite-Datentabellen stimmen überein; fehlende Sitzungsfelder korrigiert.",
       "acceptance": "Testcenter: direktes Excel und SQLite-Import.",
       "evidence": [
         {
           "kind": "browser",
           "pattern": "SQLite"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-resumed-20261106.json",
+          "pattern": "^T-56 finite direct"
         }
       ]
     },

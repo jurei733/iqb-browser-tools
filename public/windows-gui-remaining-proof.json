@@ -1,26 +1,29 @@
 {
   "checkedOn": "2026-11-06",
-  "applicationCommit": "8a3ff0618ac4fae34539e22f7262da25f34f7830",
+  "applicationCommit": "24bb7e854762f6b42226351af00ebd9535614072",
   "completeEquivalence": false,
   "completeGUIAcceptance": false,
   "empiricalStudyDataTested": false,
-  "previousReport": "tests/results/windows-gui-extended-20261106.json",
-  "scope": "Follow-up of the 34 remaining points, plus supplemental Ctrl-drag. Finite paired GUI evidence only.",
+  "previousReport": "tests/results/windows-gui-remaining-20261106.json",
+  "scope": "Resumed direct Windows GUI comparisons through external native Safari; five further finite pairs. Current browser regressions use Chromium and WebKit; local Firefox cannot start.",
   "counts": {
     "initialRemaining": 34,
-    "newFinitePairs": 13,
-    "stillWithoutCompleteDirectPair": 21
+    "previousFinitePairs": 13,
+    "additionalFinitePairsThisResume": 5,
+    "newFinitePairs": 18,
+    "stillWithoutCompleteDirectPair": 16
   },
   "fixedDifferences": [
     "Windows answer/session CSV download lacked the original UTF-8 BOM.",
     "Windows Testcenter GUI JSON used the extended graph rather than logs-first dialog assembly; aliases, zero timestamps, null session metadata, field order, CRLF and booklets.json now match captured original bytes.",
     "Excel column sorting differed for mixed-case aliases; now uses German collation.",
-    "End-of-job feedback lacked the original magenta backdrop."
+    "End-of-job feedback lacked the original magenta backdrop.",
+    "Native Testcenter SQLite stores missing browser/os/screen session fields as empty strings; the browser Windows import now does the same while native-dialog JSON keeps null."
   ],
   "verification": {
     "node": {
-      "passed": 157,
-      "total": 157
+      "passed": 160,
+      "total": 160
     },
     "referenceConverters": {
       "passed": 15,
@@ -31,22 +34,20 @@
       "total": 31
     },
     "targetedBrowser": {
-      "passed": 12,
-      "total": 12,
+      "passed": 18,
+      "total": 18,
       "engines": [
         "chromium",
-        "firefox",
         "webkit"
       ],
-      "workerChecksPerEngine": 56
+      "workflowsPerEngine": 9
     },
     "fullBrowser": {
-      "passed": 75,
-      "total": 75,
-      "workflowsPerEngine": 25,
+      "passed": 56,
+      "total": 56,
+      "workflowsPerEngine": 28,
       "engines": [
         "chromium",
-        "firefox",
         "webkit"
       ],
       "workerChecksPerEngine": 56
@@ -73,12 +74,111 @@
     ],
     "liveDemoExcelCellsEqual": true,
     "ci": {
-      "state": "running",
-      "applicationCommit": "8a3ff0618ac4fae34539e22f7262da25f34f7830",
+      "state": "success",
+      "applicationCommit": "24bb7e854762f6b42226351af00ebd9535614072",
       "runs": [
-        "https://github.com/jurei733/iqb-browser-tools/actions/runs/42207655289",
-        "https://github.com/jurei733/iqb-browser-tools/actions/runs/42207655171"
-      ]
+        "https://github.com/jurei733/iqb-browser-tools/actions/runs/42218486461",
+        "https://github.com/jurei733/iqb-browser-tools/actions/runs/42218486287"
+      ],
+      "jobsPassed": 12,
+      "jobsTotal": 12,
+      "browser": {
+        "passed": 84,
+        "total": 84,
+        "workflowsPerEngine": 28,
+        "workerChecksPerEngine": 56,
+        "engines": [
+          "chromium",
+          "firefox",
+          "webkit"
+        ],
+        "jobURLs": [
+          "https://github.com/jurei733/iqb-browser-tools/actions/runs/42218486461/job/127894352756",
+          "https://github.com/jurei733/iqb-browser-tools/actions/runs/42218486461/job/127894352707",
+          "https://github.com/jurei733/iqb-browser-tools/actions/runs/42218486461/job/127894352540"
+        ]
+      }
+    },
+    "previousVerification": {
+      "node": {
+        "passed": 157,
+        "total": 157
+      },
+      "referenceConverters": {
+        "passed": 15,
+        "total": 15
+      },
+      "referenceFiles": {
+        "passed": 31,
+        "total": 31
+      },
+      "targetedBrowser": {
+        "passed": 12,
+        "total": 12,
+        "engines": [
+          "chromium",
+          "firefox",
+          "webkit"
+        ],
+        "workerChecksPerEngine": 56
+      },
+      "fullBrowser": {
+        "passed": 75,
+        "total": 75,
+        "workflowsPerEngine": 25,
+        "engines": [
+          "chromium",
+          "firefox",
+          "webkit"
+        ],
+        "workerChecksPerEngine": 56
+      },
+      "liveDemoJSON": [
+        {
+          "name": "booklets.json",
+          "bytes": 2,
+          "equal": true,
+          "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+        },
+        {
+          "name": "BROWSER_A.json",
+          "bytes": 7550,
+          "equal": true,
+          "sha256": "a512e72ff8ced1992ab9b688023beb701eaf4b235def376c30557cee65145c85"
+        },
+        {
+          "name": "BROWSER_B.json",
+          "bytes": 7550,
+          "equal": true,
+          "sha256": "3e43b664e7dc91b2d4b3da346e0872c3bdcda4133d9868bc2fe3fa8d2d16d992"
+        }
+      ],
+      "liveDemoExcelCellsEqual": true
+    },
+    "localFirefox": {
+      "state": "launch-failed-before-tests",
+      "error": "Could not find profile folder.",
+      "attempts": "Installed and freshly downloaded official Firefox; default TMPDIR, repository TMPDIR and /tmp all fail before page creation. No application assertion executed."
+    },
+    "nativeSQLite": {
+      "dataTablesCompared": 10,
+      "people": 2,
+      "responses": 28,
+      "equal": true,
+      "byteIdentityClaimed": false,
+      "excluded": "Execution metadata, response_status dictionary population, SQLite page layout and sqlite_sequence are not part of the ten-table equality."
+    },
+    "nativeBookletSizes": {
+      "existingPreserved": true,
+      "added": {
+        "DEMO": 1000000
+      },
+      "allTenDataTablesEqual": true
+    },
+    "nativeJSONImport": {
+      "people": 5,
+      "responses": 34,
+      "allTenDataTablesEqual": true
     }
   },
   "supplementalCtrlDrag": {
@@ -101,10 +201,10 @@
         "line": 71,
         "sha256": "05098ca438c3738f0a8d2e2bf7325bd7157e8965089ede984583afe3dda56003"
       },
-      "state": "native-observation-partial",
-      "nativeCapture": null,
-      "pairedBrowserCapture": null,
-      "observation": "Three jobs and separate progress values observed in the original; no new paired multi-job acceptance yet."
+      "state": "paired-finite-native",
+      "nativeCapture": "docs/evidence/gui-remaining-20261106/native-jobs-dropdown-arrow.png",
+      "pairedBrowserCapture": "tests/e2e/gui-reference.spec.js",
+      "observation": "Three jobs show independent 4/4, 0/1 and 0/4 progress in the original. The browser repeats those choices and preserves each job, then shows training progress 2/4."
     },
     {
       "id": "K-03",
@@ -144,9 +244,10 @@
         "line": 19,
         "sha256": "c8bb7d1e2fa319489c8060ca731b2fde84e8670e450fdd144bdcb7e45aabdb5e"
       },
-      "state": "pending-native-comparison",
-      "nativeCapture": null,
-      "pairedBrowserCapture": null
+      "state": "paired-finite-native",
+      "nativeCapture": "docs/evidence/gui-remaining-20261106/native-anonymous-training-state.png",
+      "pairedBrowserCapture": "tests/e2e/gui-reference.spec.js",
+      "observation": "The same guest-readback training ZIP hides the testperson header in the original and browser. Identity in scan image pixels is not redacted by either application."
     },
     {
       "id": "K-10",
@@ -158,9 +259,10 @@
         "line": 21,
         "sha256": "c8bb7d1e2fa319489c8060ca731b2fde84e8670e450fdd144bdcb7e45aabdb5e"
       },
-      "state": "pending-native-comparison",
+      "state": "native-observation-partial",
       "nativeCapture": null,
-      "pairedBrowserCapture": null
+      "pairedBrowserCapture": null,
+      "observation": "The same training=true job opens and codes in the original GUI. Browser flag parsing has module coverage; no distinct native training UI exists. The flag value was not independently read back from the running original."
     },
     {
       "id": "K-12",
@@ -172,9 +274,10 @@
         "line": 105,
         "sha256": "05098ca438c3738f0a8d2e2bf7325bd7157e8965089ede984583afe3dda56003"
       },
-      "state": "pending-native-comparison",
-      "nativeCapture": null,
-      "pairedBrowserCapture": null
+      "state": "paired-finite-native",
+      "nativeCapture": "docs/evidence/gui-remaining-20261106/native-anonymous-training-state.png",
+      "pairedBrowserCapture": "tests/e2e/gui-reference.spec.js",
+      "observation": "Original mouse code 1 and digit code 0 produce the captured two-entry result. Browser mouse/digit workflow matches all decoded fields except actual execution times."
     },
     {
       "id": "K-21",
@@ -318,9 +421,10 @@
         "line": 51,
         "sha256": "2813bfdcda6910ded413482ad2bbf444dd83703485c99a13a18d8e7144eef94c"
       },
-      "state": "pending-native-comparison",
-      "nativeCapture": null,
-      "pairedBrowserCapture": null
+      "state": "native-observation-partial",
+      "nativeCapture": "docs/evidence/gui-remaining-20261106/safari-native-json-import-completed.jpg",
+      "pairedBrowserCapture": "tests/e2e/gui-reference.spec.js",
+      "observation": "JSON and Testcenter GUI imports match all ten SQLite data tables. Native CSV import from Documents crashes on protected junction Eigene Bilder. A clean folder with exact A6.csv and G6.csv is prepared; native c6.sqlite created. CSV completion remains unobserved after the Mac locked."
     },
     {
       "id": "T-44",
@@ -332,9 +436,10 @@
         "line": 464,
         "sha256": "e21a2238300975ebae24e4262a14da3eec1dc44471c67c2a22178364fc0b21ea"
       },
-      "state": "pending-native-comparison",
-      "nativeCapture": null,
-      "pairedBrowserCapture": null
+      "state": "paired-finite-native",
+      "nativeCapture": "docs/evidence/gui-remaining-20261106/safari-native-booklet-sizes-completed.jpg",
+      "pairedBrowserCapture": "tests/e2e/gui-reference.spec.js",
+      "observation": "B6.json imported through the native menu; original SQLite read back through guest Edge. Existing booklet sizes remain and DEMO=1000000 is added. Browser GUI download matches all ten data tables."
     },
     {
       "id": "T-45",
@@ -494,10 +599,10 @@
         "line": 4,
         "sha256": "4fb1800ec6d34b2585a372fb5ded6cda871ac9377beb8d3796a03c1c384d168d"
       },
-      "state": "native-observation-partial",
-      "nativeCapture": null,
-      "pairedBrowserCapture": null,
-      "observation": "Direct Excel: every cell matches (51 positions). SQLite native import started but final outcome unobserved after UI access was disabled."
+      "state": "paired-finite-native",
+      "nativeCapture": "docs/evidence/gui-remaining-20261106/safari-native-sqlite-completed.jpg",
+      "pairedBrowserCapture": "tests/e2e/gui-reference.spec.js",
+      "observation": "Original direct Testcenter import completed: 2 people and 28 responses. Its SQLite was read back through guest Edge. All ten browser data tables match after fixing null session labels to empty strings. Direct Excel already matches every cell."
     },
     {
       "id": "T-57",
@@ -656,6 +761,36 @@
     {
       "name": "K-29 finite direct Ctrl-drag pair",
       "passed": true
+    },
+    {
+      "name": "K-02 finite direct GUI pair",
+      "passed": true,
+      "detail": "Three jobs show independent 4/4, 0/1 and 0/4 progress in the original. The browser repeats those choices and preserves each job, then shows training progress 2/4."
+    },
+    {
+      "name": "K-09 finite direct GUI pair",
+      "passed": true,
+      "detail": "The same guest-readback training ZIP hides the testperson header in the original and browser. Identity in scan image pixels is not redacted by either application."
+    },
+    {
+      "name": "K-12 finite direct GUI pair",
+      "passed": true,
+      "detail": "Original mouse code 1 and digit code 0 produce the captured two-entry result. Browser mouse/digit workflow matches all decoded fields except actual execution times."
+    },
+    {
+      "name": "T-44 finite direct GUI pair",
+      "passed": true,
+      "detail": "B6.json imported through the native menu; original SQLite read back through guest Edge. Existing booklet sizes remain and DEMO=1000000 is added. Browser GUI download matches all ten data tables."
+    },
+    {
+      "name": "T-56 finite direct GUI pair",
+      "passed": true,
+      "detail": "Original direct Testcenter import completed: 2 people and 28 responses. Its SQLite was read back through guest Edge. All ten browser data tables match after fixing null session labels to empty strings. Direct Excel already matches every cell."
+    },
+    {
+      "name": "T-42 JSON and Testcenter finite subcases",
+      "passed": true,
+      "detail": "All ten data tables match in the two imported native SQLite captures; CSV GUI subcase still pending."
     }
   ],
   "provenance": {
@@ -665,7 +800,7 @@
       "src/data.js": "b485cf0e6c0f4dca87b9203d092cee877b58f2d0736d98082582e0c6faff4538",
       "src/data.worker.js": "6e34ec47762674adbde31d15416e596efec9d5c95ee18869fcdddacb052ced17",
       "src/database-view.js": "03b59ffda3421667de61055284a0f5bde57e3b9e943ce303e5e27f7ee8a8d93e",
-      "src/database.js": "9807e0399c855d10c2c13aa3ef35080658116bf098093da953ffcdd830e0baa2",
+      "src/database.js": "cad5bb293adb3670ff6e74cf65d1f007cc7b3184279bdd2bee78cb2dec413778",
       "src/diagnostics.js": "58586a3372d6b5047ea730411657f69a297bbb29417620b677cfaf8fbdbdaa32",
       "src/docx.js": "6297dd6e2fee3f8caf04f73c9532f67839d3ec4fa0fa5b4a9fbba18ca4f7a777",
       "src/extended-ui.js": "f438b536f92d3a80c300a3d87bc90d7c2775e9ac35c663691b045fd83a40b927",
@@ -696,33 +831,40 @@
       "src/xml.js": "f1213427cc5c484b98e72974d5169db17e96bdc3ba641d75f5881877d2323acb"
     },
     "testFiles": {
-      "tests/gui-remaining.test.js": "4bc6a6442ffae65a80dcc5002c22640acc4c7252b6941a6d50bc99d0529a3ae6",
+      "tests/gui-remaining.test.js": "b4b134de74bf61821f7eb0e61cd5ffffc817e9be873734297c4b9b3d6f59005d",
       "tests/browser.js": "41a5eadda3312957301b649d5457392c9884dfa1e4d7c11e4d3363541375047f",
-      "tests/e2e/gui-reference.spec.js": "02f34258364f7293682a7eee45924c13a4e26918ee8021f5961324289ce5ad1c"
+      "tests/e2e/gui-reference.spec.js": "ca7862c5a9ea7a1a9332232b1dcfbc1c90fe249722435f51a1c2fc9a825be3bf"
     },
     "fixtureFiles": {
-      "tests/fixtures/gui-remaining-20261106.json": "7b2b637896a4c3fdd5ec6c14404068cfd59d584a35115e6f4fb6b274b30824d5"
+      "tests/fixtures/gui-remaining-20261106.json": "960f8e53f27f5481d04811e12c103d6d014162d930543f7b9eafe1b38942808d"
     },
     "screenshots": {
       "docs/evidence/gui-remaining-20261106/browser-live-testcenter-exports.jpg": "78ae2d6f2b6eade9c3e2baee1708356e46fe0e51e2d53e19702992679e84a4ed",
+      "docs/evidence/gui-remaining-20261106/native-anonymous-training-state.png": "84f4f56c2f46f2e62e928e8fa3cb3608b3c0c72e71d17ae054ba8964a88e2a98",
       "docs/evidence/gui-remaining-20261106/native-ctrl-exact200-80.jpg": "d0632cabb1f2ed2700f8e7322c0e308659d35432b4e681e59ede47a0da5eeec0",
       "docs/evidence/gui-remaining-20261106/native-direct-excel-writing.jpg": "f14bbdbf0ae78fffe7eb0a5ec73a7cc192e43f841d4e35abc9e93ba7cba62cf4",
       "docs/evidence/gui-remaining-20261106/native-frame-off.jpg": "c6138b7efb1957987753277430bbf374b56bc980339392d7052dfaac76623747",
+      "docs/evidence/gui-remaining-20261106/native-jobs-dropdown-arrow.png": "64830198fbe2151da45d67375a77d34788fe3ddc8a5b76e675f2bb3b8d84bb49",
       "docs/evidence/gui-remaining-20261106/native-json-fresh-finished.jpg": "eab1342aa63cb2d45e361858c6b5b27789519c1744d0f75264a0b11a05097b43",
       "docs/evidence/gui-remaining-20261106/native-last-case-next.jpg": "9856a0ea08eed7e71f6951546a2ba8211bfbafdbda7a7bed43ce6db543f3881a",
       "docs/evidence/gui-remaining-20261106/native-template-plain-drag.jpg": "7092447d01948cf619cffdb6a943370df708e544fc24ce5048312358a26dc0da",
       "docs/evidence/gui-remaining-20261106/native-template-zoom200.jpg": "dd41dfda0eba46c8e13f633b9d131346026531d3a2ab4a76541ae9c9f377759c",
       "docs/evidence/gui-remaining-20261106/native-toolbox-about-direct.jpg": "f62c3e04da1ce922b6fcfa9ec1939260df954fcf488f7271524f82f6ca4afaf1",
       "docs/evidence/gui-remaining-20261106/native-zoom-full-pan-after.jpg": "d998fc6f2b261bf21e50dc2d1c4a0c989fc470aa4c5ce0cbde292333968b0147",
-      "docs/evidence/gui-remaining-20261106/native-zoom-full-pan-before.jpg": "980ab4d5d198746a8b0a4c6986f891be4d6f7a37a19c4306f52c23fd1d909927"
+      "docs/evidence/gui-remaining-20261106/native-zoom-full-pan-before.jpg": "980ab4d5d198746a8b0a4c6986f891be4d6f7a37a19c4306f52c23fd1d909927",
+      "docs/evidence/gui-remaining-20261106/safari-native-booklet-sizes-completed.jpg": "185d6b0e7895e668dce6991fea122675b2bb74520ce9d847a9da828d2dd845c3",
+      "docs/evidence/gui-remaining-20261106/safari-native-csv-documents-junction-crash.jpg": "8c9b5f05ec1723021a15790401849230326263f8bdc1b9f1abf9ec993af35744",
+      "docs/evidence/gui-remaining-20261106/safari-native-json-import-completed.jpg": "0a9079cce00e2d31b8b0244af50b2ee822c3cff14c96c370cc9b7ca409581f7d",
+      "docs/evidence/gui-remaining-20261106/safari-native-sqlite-completed.jpg": "8bd864fbaf8b1df4e1c975abf143d09f4b07d0bb08ddd51ce13b30db41d5c83f"
     }
   },
-  "blocker": "Local browser use disabled in Work settings. Native SQLite import completion and remaining GUI workflows cannot be observed until browser control is enabled.",
+  "blocker": "The external native Safari path works. The Mac locked during the clean CSV retry; manual unlock is required for further Windows GUI actions.",
   "limitations": [
-    "Synthetic local demo and fixed original files only; no empirical data.",
-    "Twenty-one of the original remaining points still lack complete direct pairs.",
-    "Prior source-bound CI reports refer to earlier revisions and are not relabelled as current.",
-    "Installed Safari and real mobile devices not newly verified.",
+    "Synthetic local demo and fixed original files only; no empirical study data.",
+    "Sixteen of the original 34 points still lack complete direct pairs; finite coverage is not universal equivalence.",
+    "Local Firefox fails before startup; prior successful Firefox runs refer to earlier revisions. Current GitHub Firefox results are tracked separately.",
+    "Installed Safari was used to control the original Windows GUI, not to rerun the browser application on this revision. Real mobile devices remain unavailable.",
+    "Native CSV import crashes when recursively enumerating a protected Documents junction. This original failure is recorded, not reproduced in the browser.",
     "OS identity, unrestricted overwrite and reusable native paths retain documented browser limitations."
   ]
 }
