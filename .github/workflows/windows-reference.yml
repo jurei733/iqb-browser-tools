@@ -41,6 +41,15 @@ jobs:
       - name: Compare every study graph, SQL field and Excel cell
         if: ${{ !cancelled() && steps.native-studies.outcome != 'skipped' }}
         run: node scripts/native-study.mjs compare work/native-studies
+      - name: Prepare native Booklet and Login option cases
+        run: node scripts/build-gui-reference-inputs.mjs work/native-preparation/inputs
+      - name: Execute unchanged Booklet and Login dialog workers
+        shell: powershell
+        run: ./scripts/Run-ExtendedNativeInputs.ps1 -Root work/native-preparation -OriginalRoot work/native-windows/originals
+      - name: Compare fresh preparation files, options and complete messages
+        env:
+          NATIVE_PREPARATION_REFERENCE: work/native-preparation/native-extended-valid/results.json
+        run: node --test tests/native-preparation.test.js
       - name: Retain synthetic native reference files
         if: ${{ !cancelled() }}
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
@@ -51,4 +60,5 @@ jobs:
             work/native-studies/**/native*
             work/native-studies/**/expected.json
             work/native-studies/comparison.json
+            work/native-preparation/native-extended-valid/results.json
           retention-days: 14
