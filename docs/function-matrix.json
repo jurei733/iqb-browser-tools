@@ -823,7 +823,7 @@
     {
       "id": "K-29",
       "app": "IQB-Kodieren",
-      "function": "Schablone begrenzt verschieben und mit Umschalt drehen",
+      "function": "Schablone begrenzt verschieben und mit Strg drehen",
       "original": {
         "path": "scans/MovingTemplateCanvas.cs",
         "anchor": "Me_MouseMove",
@@ -835,8 +835,8 @@
         "src/viewer.js"
       ],
       "assessment": "implemented",
-      "note": "Begrenzung in logischen Seitenkoordinaten, native Drag-Schwelle, Umschalt-Drehung mit WPF-Rundung und Zurücksetzen des Winkels beim Fallwechsel.",
-      "acceptance": "Schablone begrenzt verschieben und mit Umschalt drehen; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
+      "note": "Begrenzung in logischen Seitenkoordinaten, native Drag-Schwelle, Strg-Drehung mit WPF-Rundung (Umschalt zusätzlich im Browser) und Zurücksetzen des Winkels beim Fallwechsel.",
+      "acceptance": "Schablone begrenzt verschieben und mit Strg drehen; die in den Belegen beschriebenen Original- und Browserfälle bestehen.",
       "evidence": [
         {
           "kind": "node",

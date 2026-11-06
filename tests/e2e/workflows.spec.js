@@ -246,9 +246,22 @@ test('parity: physical zoom, scan panning, template edges, shared position and r
   await page.mouse.move(initial.x+40,initial.y+40);await page.mouse.down();await page.mouse.move(initial.x+140,initial.y+100,{steps:5});await page.mouse.up();
   await expect(overlay).toHaveCSS('left','100px');await page.locator('[data-code="0"]').click();await page.locator('#next').click();
   await expect(page.locator('.template-layer')).toHaveCSS('left','100px');
-  const second=await page.locator('.template-layer').boundingBox();await page.keyboard.down('Shift');await page.mouse.move(second.x+30,second.y+30);await page.mouse.down();await page.mouse.move(second.x+30,second.y+70,{steps:5});await page.mouse.up();await page.keyboard.up('Shift');
-  await expect(page.locator('.template-layer')).not.toHaveCSS('transform','matrix(1, 0, 0, 1, 0, 0)');
-  await page.locator('#previous').click();await expect(page.locator('.template-layer')).toHaveCSS('transform','matrix(1, 0, 0, 1, 0, 0)');
+  // WPF Key.LeftCtrl/RightCtrl (118/119) rotates; Shift remains a browser alias.
+  for(const modifier of ['Control','Shift']){
+    const second=await overlay.boundingBox();
+    await page.keyboard.down(modifier);
+    try{
+      await page.mouse.move(second.x+30,second.y+30);await page.mouse.down();
+      await page.mouse.move(second.x+30,second.y+70,{steps:5});await page.mouse.up();
+    }finally{await page.keyboard.up(modifier);}
+    await expect.poll(()=>overlay.evaluate(el=>{
+      const matrix=new DOMMatrix(getComputedStyle(el).transform);
+      return Math.atan2(matrix.b,matrix.a)*180/Math.PI;
+    })).toBeCloseTo(-20,3);
+    await expect(overlay).toHaveCSS('left','100px');
+    await page.locator('#previous').click();await expect(overlay).toHaveCSS('transform','matrix(1, 0, 0, 1, 0, 0)');
+    if(modifier==='Control')await page.locator('#next').click();
+  }
   await page.locator('#template-reset').click();await expect(page.locator('.template-layer')).toHaveCSS('left','0px');
   await page.locator('#next-open').focus();await page.keyboard.press('F1');await expect(page.locator('#about')).toBeVisible();await expect(page.locator('#about')).toContainText('3.3.0.2');await page.locator('#close-about').click();
 });
