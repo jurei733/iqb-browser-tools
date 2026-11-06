@@ -1,6 +1,8 @@
 import Excel from 'exceljs';
+import {DOMParser as WorkbookDOMParser,XMLSerializer as WorkbookXMLSerializer} from '@xmldom/xmldom';
 import {zipSync,unzipSync,strToU8,strFromU8} from 'fflate';
-import {node,text,documentXML,parseXML} from './xml.js';
+import {node,text,documentXML} from './xml.js';
+const nativeCellKinds=new WeakMap();
 
 export const LETTERS = 'abcdefghprqstuvxyz';
 export const NUMBERS = '2345679';
@@ -37,6 +39,7 @@ export async function codeWorkbook() {
   style(sheet); return new Uint8Array(await workbook.xlsx.writeBuffer());
 }
 export async function loadWorkbook(bytes) {
+  const parseWorkbookXML=source=>new WorkbookDOMParser().parseFromString(source,'application/xml');
   const entries=unzipSync(bytes instanceof Uint8Array?bytes:new Uint8Array(bytes));let changed=false;
   // Open XML SDK writes valid prefixed SpreadsheetML (x:workbook, x:row).
   // ExcelJS expects unprefixed element names. Normalize a decode copy by URI;
@@ -44,16 +47,26 @@ export async function loadWorkbook(bytes) {
   const ns='http://schemas.openxmlformats.org/spreadsheetml/2006/main';
   for(const [path,data] of Object.entries(entries))if(/^xl\/.*\.xml$/i.test(path)){
     const source=strFromU8(data);if(!/xmlns:[\w.-]+\s*=\s*["']http:\/\/schemas\.openxmlformats\.org\/spreadsheetml\/2006\/main["']/.test(source))continue;
-    const doc=parseXML(source);let localChange=false;
+    const doc=parseWorkbookXML(source);let localChange=false;
     const visit=el=>{
       let target=el;
       if(el.namespaceURI===ns&&el.prefix){target=doc.createElementNS(ns,el.localName);for(const a of Array.from(el.attributes))target.setAttributeNS(a.namespaceURI,a.name,a.value);while(el.firstChild)target.appendChild(el.firstChild);el.parentNode.replaceChild(target,el);localChange=true;}
       for(const child of Array.from(target.childNodes))if(child.nodeType===1)visit(child);
     };
     visit(doc.documentElement);
-    if(localChange){if(doc.documentElement.namespaceURI===ns)doc.documentElement.setAttribute('xmlns',ns);entries[path]=strToU8(new XMLSerializer().serializeToString(doc));changed=true;}
+    if(localChange){if(doc.documentElement.namespaceURI===ns)doc.documentElement.setAttribute('xmlns',ns);entries[path]=strToU8(new WorkbookXMLSerializer().serializeToString(doc));changed=true;}
   }
-  const w=new Excel.Workbook();await w.xlsx.load(changed?zipSync(entries):bytes);return w;
+  const w=new Excel.Workbook();await w.xlsx.load(changed?zipSync(entries):bytes);
+  const book=parseWorkbookXML(strFromU8(entries['xl/workbook.xml'])),relations=parseWorkbookXML(strFromU8(entries['xl/_rels/workbook.xml.rels']));
+  const targets=new Map(Array.from(relations.getElementsByTagName('Relationship')).map(r=>[r.getAttribute('Id'),r.getAttribute('Target')]));
+  for(const sheet of Array.from(book.getElementsByTagName('sheet'))){
+    const target=targets.get(sheet.getAttribute('r:id'));if(!target)continue;
+    const parts=[];for(const part of (target.startsWith('/')?target.slice(1):'xl/'+target).split('/')){if(part==='..')parts.pop();else if(part!=='.')parts.push(part);}
+    const data=entries[parts.join('/')];if(!data)continue;const kinds=new Map();
+    for(const c of Array.from(parseWorkbookXML(strFromU8(data)).getElementsByTagName('c')))if(c.getAttribute('t')==='s')kinds.set(c.getAttribute('r'),c.getElementsByTagName('v').length?'shared':'shared-missing');
+    const worksheet=w.getWorksheet(sheet.getAttribute('name'));if(worksheet)nativeCellKinds.set(worksheet,kinds);
+  }
+  return w;
 }
 export function named(workbook,name,optional=false) {
   const ref=workbook.definedNames.getRanges(name).ranges[0];
@@ -64,7 +77,7 @@ export function named(workbook,name,optional=false) {
   return {sheet,col:match[3],row:Number(match[4])};
 }
 const cell=(ref,row=ref?.row) => ref ? ref.sheet.getCell(`${ref.col}${row}`).text : '';
-const set=(ref,row,val) => {ref.sheet.getCell(`${ref.col}${row}`).value=String(val);};
+const set=(ref,row,val) => {const address=`${ref.col}${row}`,kinds=nativeCellKinds.get(ref.sheet);ref.sheet.getCell(address).value=String(val);if(String(val))kinds?.set(address,'text');else if(kinds?.get(address)?.startsWith('shared'))kinds.set(address,'shared-missing');};
 function rows(ref) {const list=[];for(let r=ref.row+1;r<=ref.sheet.rowCount;r++) {if(!cell(ref,r)) break;list.push(r);}return list;}
 const colNumber = col => [...col].reduce((n,c)=>n*26+c.charCodeAt(0)-64,0);
 const filename = input => String(input).replace(/[<>:"/\\|?*\x00-\x1f]/g,'_').slice(0,180) || 'export';
@@ -114,7 +127,7 @@ export function loginRows(workbook) {
   const name=named(workbook,'loginsCol.Name'),group=named(workbook,'loginsCol.GroupID'),pw=named(workbook,'loginsCol.Password'),mode=named(workbook,'loginsCol.Mode'),n1=named(workbook,'loginsCol.GroupName1'),n2=named(workbook,'loginsCol.GroupName2');
   return rows(name).map(r=>({name:cell(name,r),group:cell(group,r),password:cell(pw,r),mode:cell(mode,r),name1:cell(n1,r),name2:cell(n2,r)}));
 }
-export function generateLogins(workbook,{length=5,passwordLength=3,monitor=true,prefix,prefixTestee,prefixReserve,prefixReview,suffix}={}) {
+export function prepareLoginGroups(workbook,suffix){
   const name=named(workbook,'groupsCol.Name1'),name2=named(workbook,'groupsCol.Name2'),id=named(workbook,'groupsCol.ID');
   const counts=['NumberTest','NumberPlus','NumberReview'].map(n=>named(workbook,`groupsCol.${n}`));
   const groups=[],used=new Set(),groupSuffix=suffix??('_'+generateCodes(4,1)[0]);
@@ -125,6 +138,10 @@ export function generateLogins(workbook,{length=5,passwordLength=3,monitor=true,
     used.add(gid);set(id,r,gid);
     groups.push({id:gid,n1:cell(name,r),n2:cell(name2,r),numbers});
   }
+  return groups;
+}
+export function generateLogins(workbook,{length=5,passwordLength=3,monitor=true,prefix,prefixTestee,prefixReserve,prefixReview,suffix}={}) {
+  const groups=prepareLoginGroups(workbook,suffix);
   const total=groups.reduce((n,g)=>n+g.numbers.reduce((a,b)=>a+b,0)+(monitor?1:0),0),codes=generateCodes(length,total);
   if(!total)throw new Error('Keine Logins angefordert.');
   if(!Number.isInteger(passwordLength)||passwordLength<0||passwordLength>12)throw new Error('Ungültige Kennwortlänge.');
@@ -143,13 +160,19 @@ export function generateLogins(workbook,{length=5,passwordLength=3,monitor=true,
   }
   return total;
 }
-export function testtakerXML(workbook,{booklet='Booklet1',separate=false}={}) {
+export function testtakerXML(workbook,{booklet='Booklet1',separate=false,windows=false,filename:outputName='Testtaker.xml'}={}) {
   if(!booklet.trim())throw new Error('Bitte eine Testheft-ID angeben.');
   const groups=new Map(),seen=new Set();
-  for(const row of loginRows(workbook)) {
+  const passwordRef=named(workbook,'loginsCol.Password');let rowIndex=passwordRef.row;
+  for(const original of loginRows(workbook)) {
+    const row={...original};rowIndex++;
+    // The original clears a shared-string password without clearing its type.
+    // Its subsequent reader catches the resulting parse error together with
+    // the mode read. Reproduce that observable XML only in Windows mode.
+    if(windows&&!row.password&&nativeCellKinds.get(passwordRef.sheet)?.get(`${passwordRef.col}${rowIndex}`)==='shared-missing')row.mode='';
     if(!row.group)throw new Error('Ein Login enthält keine Gruppen-ID.');
     if(seen.has(row.name))throw new Error(`Doppelter Login ${row.name}.`);seen.add(row.name);
-    if(!row.mode.trim())throw new Error(`Der Modus für ${row.name} fehlt.`);
+    if(!windows&&!row.mode.trim())throw new Error(`Der Modus für ${row.name} fehlt.`);
     if(!groups.has(row.group))groups.set(row.group,{label:`${row.name1} - ${row.name2}`,rows:[]});groups.get(row.group).rows.push(row);
   }
   let custom='';const key=named(workbook,'customText.Key',true),val=named(workbook,'customText.Value',true);
@@ -157,7 +180,7 @@ export function testtakerXML(workbook,{booklet='Booklet1',separate=false}={}) {
   const groupXML=([id,g])=>node('Group',{id,label:g.label},g.rows.map(row=>node('Login',{mode:row.mode,name:row.name,pw:row.password||null},row.mode==='monitor-group'?'':node('Booklet',{},text(booklet)))).join(''));
   const document=body=>strToU8(documentXML(node('Testtakers',{},node('Metadata')+(custom?node('CustomTexts',{},custom):'')+body)));
   if(!groups.size)throw new Error('Keine Logins vorhanden.');
-  return separate?Object.fromEntries([...groups].map(g=>[`${filename(g[0])}.xml`,document(groupXML(g))])):{'Testtaker.xml':document([...groups].map(groupXML).join(''))};
+  return separate?Object.fromEntries([...groups].map(g=>[`${filename(g[0])}.xml`,document(groupXML(g))])):{[filename(outputName)]:document([...groups].map(groupXML).join(''))};
 }
 export function parseCSV(source,delimiter='auto') {
   source=source.replace(/^\uFEFF/,'');

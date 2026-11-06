@@ -34,3 +34,32 @@ test('Native complete GUI workflow: four codes, both comments, case list and fin
  applyResult(job,native);assert.equal(initialCaseIndex(job),complete.restartCase-1);
  assert.deepEqual(decodeResult(encodeResult(job,'IQB',native.globalComment,{windows:true})),native);
 });
+
+const booklet=JSON.parse(await readFile(new URL('./fixtures/gui-extended-20261105.json',import.meta.url))).toolboxBooklet;
+const xmlTree=el=>({name:el.nodeName,attrs:Object.fromEntries(Array.from(el.attributes).filter(a=>!(el.nodeName==='Testlet'&&a.name==='label'&&a.value==='')).map(a=>[a.name,a.value]).sort()),content:Array.from(el.childNodes).some(c=>c.nodeType===1)?Array.from(el.childNodes).filter(c=>c.nodeType===1).map(xmlTree):el.textContent});
+test('Native Booklet GUI and Texteditor: XML and complete phased messages match',async()=>{
+ const {prepare}=await import('../src/preparation.js');const {messageText,windowsTextBytes}=await import('../src/diagnostics.js');
+ const source=await readFile(new URL('../'+booklet.input.path,import.meta.url));assert.equal(sha(source),booklet.input.sha256);
+ const nativeXML=Buffer.from(booklet.xml.base64,'base64'),nativeMessages=Buffer.from(booklet.messages.base64,'base64');
+ for(const [bytes,capture]of[[nativeXML,booklet.xml],[nativeMessages,booklet.messages]]){assert.equal(sha(bytes),capture.sha256);assert.equal(bytes.length,capture.bytes);}
+ const messages=[];const {outputs}=await prepare('booklets',{windows:true,file:{name:booklet.nativeInputPath,bytes:source}},m=>messages.push(m));
+ assert.deepEqual(Object.keys(outputs),[booklet.outputName]);
+ const tree=bytes=>xmlTree(new DOMParser().parseFromString(new TextDecoder().decode(bytes),'text/xml').documentElement);
+ assert.deepEqual(tree(outputs[booklet.outputName]),tree(nativeXML));
+ assert.equal(messageText(messages),nativeMessages.toString('utf16le').replace(/^\ufeff/,''));
+ assert.deepEqual(Buffer.from(windowsTextBytes(messageText(messages))),nativeMessages);
+});
+
+const logins=JSON.parse(await readFile(new URL('./fixtures/gui-extended-20261105.json',import.meta.url))).toolboxLogins;
+test('Native Login GUI: minimum length, mixed prefixes, zero passwords, edited workbook and single XML',async()=>{
+ const T=await import('../src/toolbox.js');const {prepare}=await import('../src/preparation.js');const {messageText}=await import('../src/diagnostics.js');const {loginRowsShape,loginXMLTree}=await import('./helpers/native-logins.js');
+ const bytes=Buffer.from(logins.input.base64,'base64');for(const capture of [logins.input,logins.xml,logins.workbook,logins.messages]){const raw=Buffer.from(capture.base64,'base64');assert.equal(sha(raw),capture.sha256);assert.equal(raw.length,capture.bytes);}
+ const args={windows:true,file:{name:logins.input.name,bytes},renew:true,createXml:true,loginOptions:logins.options,xmlOptions:{booklet:logins.booklet,separate:logins.separate}};
+ await assert.rejects(prepare('logins',{...args,loginOptions:{...logins.options,length:logins.guiMinimum.input}}),{message:logins.guiMinimum.error});
+ const messages=[];const {outputs}=await prepare('logins',args,m=>messages.push(m));assert.deepEqual(Object.keys(outputs),['L6.xml','Logins-browser.xlsx']);
+ assert.deepEqual(loginXMLTree(outputs['L6.xml'],{renew:true,...logins.options}),loginXMLTree(Buffer.from(logins.xml.base64,'base64'),{renew:true,...logins.options}));
+ const browserWorkbook=await T.loadWorkbook(outputs['Logins-browser.xlsx']),nativeWorkbook=await T.loadWorkbook(Buffer.from(logins.workbook.base64,'base64'));
+ assert.deepEqual(loginRowsShape(T.loginRows(browserWorkbook),logins.options),loginRowsShape(T.loginRows(nativeWorkbook),logins.options));
+ const nativeMessages=Buffer.from(logins.messages.base64,'base64').toString('utf16le').replace(/^\ufeff/,'').split(logins.nativeInputPath).join(logins.input.name);assert.equal(messageText(messages),nativeMessages);
+ const extended=await prepare('logins',{...args,windows:false});const xml=new DOMParser().parseFromString(new TextDecoder().decode(extended.outputs['Testtaker.xml']),'text/xml');assert.ok(Array.from(xml.getElementsByTagName('Login')).every(e=>e.getAttribute('mode')));
+});
