@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "date": "2026-11-04",
+  "date": "2026-11-06",
   "windowsVersions": {
     "IQB-Kodieren": "4.3.0.3",
     "itc-ToolBox": "3.3.0.2"
@@ -33,6 +33,11 @@
         {
           "kind": "browser",
           "pattern": "ZIP im echten"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-extended-20261106.json",
+          "pattern": "^K-01:"
         }
       ]
     },
@@ -293,7 +298,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-safari.json",
+          "path": "tests/results/function-audit-ci-20261106-gui.json",
           "pattern": "last coding workspace"
         },
         {
@@ -303,7 +308,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-safari.json",
+          "path": "tests/results/function-audit-ci-20261106-gui.json",
           "pattern": "local starter: account"
         }
       ]
@@ -363,6 +368,11 @@
         {
           "kind": "browser",
           "pattern": "Code 0, sortierte Fallliste"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-extended-20261106.json",
+          "pattern": "^K-13:"
         }
       ]
     },
@@ -421,6 +431,11 @@
         {
           "kind": "browser",
           "pattern": "GZip-Ergebnisse"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-extended-20261106.json",
+          "pattern": "^K-15:"
         }
       ]
     },
@@ -449,6 +464,11 @@
           "kind": "node",
           "file": "tests/compatibility.test.js",
           "pattern": "CodingResults v5"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-extended-20261106.json",
+          "pattern": "^K-16:"
         }
       ]
     },
@@ -544,6 +564,11 @@
         {
           "kind": "browser",
           "pattern": "vollständig kodierte Jobs"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-extended-20261106.json",
+          "pattern": "^K-19:"
         }
       ]
     },
@@ -567,6 +592,11 @@
         {
           "kind": "browser",
           "pattern": "Code 0, sortierte Fallliste"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-extended-20261106.json",
+          "pattern": "^K-20:"
         }
       ]
     },
@@ -731,7 +761,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-safari.json",
+          "path": "tests/results/function-audit-ci-20261106-gui.json",
           "pattern": "physical zoom"
         }
       ]
@@ -756,7 +786,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-safari.json",
+          "path": "tests/results/function-audit-ci-20261106-gui.json",
           "pattern": "physical zoom"
         }
       ]
@@ -819,7 +849,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-safari.json",
+          "path": "tests/results/function-audit-ci-20261106-gui.json",
           "pattern": "physical zoom"
         }
       ]
@@ -848,7 +878,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-safari.json",
+          "path": "tests/results/function-audit-ci-20261106-gui.json",
           "pattern": "shared position"
         }
       ]
@@ -955,6 +985,11 @@
           "kind": "node",
           "file": "tests/gui-reference.test.js",
           "pattern": "^Windows coding GUI capture:"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-extended-20261106.json",
+          "pattern": "^K-33:"
         }
       ]
     },
@@ -981,7 +1016,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-safari.json",
+          "path": "tests/results/function-audit-ci-20261106-gui.json",
           "pattern": "original result boundary"
         }
       ]
@@ -1014,7 +1049,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-safari.json",
+          "path": "tests/results/function-audit-ci-20261106-gui.json",
           "pattern": "last coding workspace"
         },
         {
@@ -1024,7 +1059,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-safari.json",
+          "path": "tests/results/function-audit-ci-20261106-gui.json",
           "pattern": "local starter: account"
         }
       ]
@@ -1048,7 +1083,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-safari.json",
+          "path": "tests/results/function-audit-ci-20261106-gui.json",
           "pattern": "physical zoom"
         }
       ]
@@ -1072,7 +1107,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-safari.json",
+          "path": "tests/results/function-audit-ci-20261106-gui.json",
           "pattern": "completed job flashes"
         }
       ]
@@ -1146,7 +1181,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-safari.json",
+          "path": "tests/results/function-audit-ci-20261106-gui.json",
           "pattern": "codes and booklets"
         }
       ]
@@ -1172,6 +1207,11 @@
           "kind": "node",
           "file": "tests/compatibility.test.js",
           "pattern": "original Booklet"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-extended-20261106.json",
+          "pattern": "^T-03:"
         }
       ]
     },
@@ -1196,6 +1236,11 @@
           "kind": "node",
           "file": "tests/function-matrix.test.js",
           "pattern": "Booklet validation"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-extended-20261106.json",
+          "pattern": "^T-04:"
         }
       ]
     },
@@ -1220,6 +1265,11 @@
           "kind": "node",
           "file": "tests/compatibility.test.js",
           "pattern": "original Booklet"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-extended-20261106.json",
+          "pattern": "^T-05:"
         }
       ]
     },
@@ -1290,6 +1340,11 @@
           "kind": "node",
           "file": "tests/compatibility.test.js",
           "pattern": "original Login template"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-extended-20261106.json",
+          "pattern": "^T-08:"
         }
       ]
     },
@@ -1314,6 +1369,11 @@
           "kind": "node",
           "file": "tests/compatibility.test.js",
           "pattern": "original Login template"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-extended-20261106.json",
+          "pattern": "^T-09:"
         }
       ]
     },
@@ -1338,6 +1398,11 @@
           "kind": "node",
           "file": "tests/function-matrix.test.js",
           "pattern": "login generation honors"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-extended-20261106.json",
+          "pattern": "^T-10:"
         }
       ]
     },
@@ -1367,6 +1432,11 @@
           "kind": "node",
           "file": "tests/compatibility.test.js",
           "pattern": "original Login template"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-extended-20261106.json",
+          "pattern": "^T-11:"
         }
       ]
     },
@@ -1396,6 +1466,11 @@
           "kind": "node",
           "file": "tests/function-matrix.test.js",
           "pattern": "login generation honors"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-extended-20261106.json",
+          "pattern": "^T-12:"
         }
       ]
     },
@@ -1420,6 +1495,11 @@
           "kind": "node",
           "file": "tests/extended.test.js",
           "pattern": "individual login prefixes"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-extended-20261106.json",
+          "pattern": "^T-13:"
         }
       ]
     },
@@ -1448,6 +1528,11 @@
         {
           "kind": "browser",
           "pattern": "Login"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-extended-20261106.json",
+          "pattern": "^T-14:"
         }
       ]
     },
@@ -1500,6 +1585,11 @@
           "kind": "node",
           "file": "tests/function-matrix.test.js",
           "pattern": "Testtaker join"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-extended-20261106.json",
+          "pattern": "^T-16:"
         }
       ]
     },
@@ -1527,8 +1617,13 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-safari.json",
+          "path": "tests/results/function-audit-ci-20261106-gui.json",
           "pattern": "without XML match Windows"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-extended-20261106.json",
+          "pattern": "^T-17:"
         }
       ]
     },
@@ -1660,8 +1755,13 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-safari.json",
+          "path": "tests/results/function-audit-ci-20261106-gui.json",
           "pattern": "full diagnostics"
+        },
+        {
+          "kind": "windows-capture",
+          "path": "tests/results/windows-gui-extended-20261106.json",
+          "pattern": "^T-22:"
         }
       ]
     },
@@ -1752,7 +1852,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-safari.json",
+          "path": "tests/results/function-audit-ci-20261106-gui.json",
           "pattern": "Windows mode: raw API files"
         },
         {
@@ -1762,7 +1862,7 @@
         },
         {
           "kind": "windows-study",
-          "path": "tests/results/testcenter-native-int64-20261104.json",
+          "path": "tests/results/testcenter-native-20261106.json",
           "pattern": "Int64"
         }
       ]
@@ -2000,7 +2100,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-safari.json",
+          "path": "tests/results/function-audit-ci-20261106-gui.json",
           "pattern": "Windows mode: raw API files"
         }
       ],
@@ -2569,7 +2669,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-safari.json",
+          "path": "tests/results/function-audit-ci-20261106-gui.json",
           "pattern": "group selection and workspace changes"
         }
       ]
@@ -2767,7 +2867,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-safari.json",
+          "path": "tests/results/function-audit-ci-20261106-gui.json",
           "pattern": "access can be remembered"
         }
       ]
@@ -2793,7 +2893,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-safari.json",
+          "path": "tests/results/function-audit-ci-20261106-gui.json",
           "pattern": "preparation cancellation"
         }
       ]
@@ -2822,12 +2922,12 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-safari.json",
+          "path": "tests/results/function-audit-ci-20261106-gui.json",
           "pattern": "last coding workspace"
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-safari.json",
+          "path": "tests/results/function-audit-ci-20261106-gui.json",
           "pattern": "selected Toolbox input files"
         },
         {
@@ -2837,7 +2937,7 @@
         },
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-safari.json",
+          "path": "tests/results/function-audit-ci-20261106-gui.json",
           "pattern": "local starter: account"
         }
       ]
@@ -3068,7 +3168,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-safari.json",
+          "path": "tests/results/function-audit-ci-20261106-gui.json",
           "pattern": "physical zoom"
         }
       ]
@@ -3093,7 +3193,7 @@
       "evidence": [
         {
           "kind": "ci-browser",
-          "path": "tests/results/function-audit-ci-20261104-safari.json",
+          "path": "tests/results/function-audit-ci-20261106-gui.json",
           "pattern": "startup defaults"
         }
       ],
@@ -3141,5 +3241,5 @@
     "Firefox wird in GitHub Actions auf Linux geprüft; der macOS-Playwright-Build startet in dieser Umgebung mit einem Profilordnerfehler nicht. WebKit-Prüfungen sind kein Test einer installierten Safari-Version.",
     "Die historischen sechs ARM/x86-Abweichungen sind keine allgemeinen Windows-x86-Abweichungen. Der neue Windows-x64-Runner prüft beide Bitbreiten direkt: 1214/1214 im 64-Bit-Profil, 1214/1214 im 32-Bit-Profil. Die früheren G17-Textabweichungen sind durch Nachbildung der x87-/BCD-Rundung behoben. Zusätzliche CLR-Zahlenproben sind getrennt von den vollständigen Konverterfällen ausgewiesen."
   ],
-  "ciReport": "tests/results/function-audit-ci-20261104-safari.json"
+  "ciReport": "tests/results/function-audit-ci-20261106-gui.json"
 }
