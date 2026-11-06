@@ -153,7 +153,7 @@ export async function wideWorkbook(people,{subformMode='rows',values=true,status
   if(!['none','rows','columns'].includes(subformMode))throw new Error('Unbekannter Unterformular-Modus.');
   const column=r=>(r.unitAlias||r.unitName)+r.responseId+(subformMode==='columns'&&r.responseSubform?'##'+r.responseSubform:'');
   const filtered=subformMode==='none'?records.filter(r=>!r.responseSubform):records;
-  const variables=[...new Set(records.map(column))].sort(),rows=new Map();
+  const variables=[...new Set(records.map(column))].sort((a,b)=>a.localeCompare(b,'de')),rows=new Map();
   if(variables.length>16381)throw new Error('Zu viele Variablen für Excel. Bitte Unterformulare zeilenweise oder CSV verwenden.');
   for(const r of filtered){const k=key(r.group,r.login,r.code,subformMode==='rows'?r.responseSubform:'');if(!rows.has(k))rows.set(k,{id:r.group+r.login+r.code,group:r.group,subform:r.responseSubform,login:r.login+r.code+(subformMode==='rows'&&r.responseSubform?'_'+r.responseSubform:''),responses:new Map()});const row=rows.get(k),previous=row.responses.get(column(r));if(!previous||compareTime(r.ts,previous.ts)>=0)row.responses.set(column(r),r);}
   for(const [enabled,name,field]of [[values,'Antworten','responseValue'],[status,'Status','responseStatus'],[codes,'Codes','responseCode'],[scores,'Scores','responseScore']])if(enabled){const sheet=workbook.addWorksheet(name);sheet.addRow(['ID','Group','Login+Code',...variables]);for(const r of [...rows.values()].sort((a,b)=>a.id.localeCompare(b.id)||a.subform.localeCompare(b.subform)))sheet.addRow([r.id,r.group,r.login,...variables.map(v=>r.responses.has(v)?r.responses.get(v)[field]===null?'':String(r.responses.get(v)[field]):'')]);style(sheet);}

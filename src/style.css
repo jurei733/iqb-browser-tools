@@ -20,3 +20,5 @@
 .local-file-reference{display:block;overflow-wrap:anywhere;margin-bottom:8px;color:var(--muted,#52626a)}
 
 .form-grid>label{min-width:0}
+
+.scan-stage{background:#ff00ff}

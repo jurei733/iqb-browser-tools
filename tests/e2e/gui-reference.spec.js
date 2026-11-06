@@ -10,6 +10,7 @@ const job=fileURLToPath(new URL('../../'+reference.coding.input.path,import.meta
 const looseJob=Object.entries(unzipSync(await readFile(job))).map(([name,buffer])=>({name:name.split('/').at(-1),mimeType:name.endsWith('.xml')?'application/xml':'image/png',buffer:Buffer.from(buffer)}));
 const native=decodeResult(Buffer.from(reference.coding.capture.base64,'base64'));
 const extended=JSON.parse(await readFile(new URL('../fixtures/gui-extended-20261105.json',import.meta.url)));
+const remaining=JSON.parse(await readFile(new URL('../fixtures/gui-remaining-20261106.json',import.meta.url)));
 const xmlTree=el=>({name:el.nodeName,attrs:Object.fromEntries(Array.from(el.attributes).filter(a=>!(el.nodeName==='Testlet'&&a.name==='label'&&a.value==='')).map(a=>[a.name,a.value]).sort()),content:Array.from(el.childNodes).some(c=>c.nodeType===1)?Array.from(el.childNodes).filter(c=>c.nodeType===1).map(xmlTree):el.textContent});
 const fields=result=>({...result,entries:result.entries.map(({time,...entry})=>entry)});
 async function result(page,testInfo,name){
@@ -84,4 +85,72 @@ test('Windows Toolbox GUI: login minimum, mixed prefixes, edited workbook and na
  expect(loginRowsShape(T.loginRows(await T.loadWorkbook(files['Logins-browser.xlsx'])),proof.options)).toEqual(loginRowsShape(T.loginRows(await T.loadWorkbook(Buffer.from(proof.workbook.base64,'base64'))),proof.options));
  await page.locator('#diagnostics').click();const pending=page.waitForEvent('download');await page.locator('#diagnostics-preparation').click();const download=await pending;const path=testInfo.outputPath('login-messages.txt');await download.saveAs(path);
  expect((await readFile(path)).toString('utf16le')).toBe(Buffer.from(proof.messages.base64,'base64').toString('utf16le').split(proof.nativeInputPath).join(proof.input.name));
+});
+
+test('Windows SQLite GUI: five Excel selections and two byte-identical CSV downloads',async({page},testInfo)=>{
+ const {loadWorkbook}=await import('../../src/toolbox.js');
+ const workbookShape=async b=>(await loadWorkbook(b)).worksheets.map(s=>({name:s.name,rows:Array.from({length:s.rowCount},(_,i)=>{const row=s.getRow(i+1),values=Array.from({length:row.cellCount},(_,j)=>row.getCell(j+1).text);while(values.at(-1)==='')values.pop();return values;}).filter(r=>r.length)}));
+ await page.goto('/');await page.locator('[data-module="toolbox"]').click();await page.locator('[data-tool="database"]').click();
+ await page.locator('#db-file').setInputFiles({name:'D6.sqlite',mimeType:'application/octet-stream',buffer:await readFile(fileURLToPath(new URL('../../'+remaining.input.path,import.meta.url)))});
+ await expect(page.locator('#db-summary')).toContainText('3Testpersonen');await expect(page.locator('#db-summary')).toContainText('6Antworten');
+ await expect(page.locator('#db-group')).toContainText('DEMO (3)');
+ await page.locator('#db-check').click();await expect(page.locator('#db-check-result')).toContainText('Keine Fehler gefunden');
+ for(const c of [...remaining.excel.map(c=>({...c,format:'xlsx'})),...remaining.csv]){
+  await page.locator('#format').selectOption(c.format);
+  if(c.options){await page.locator('#subform').selectOption(c.options.subformMode);for(const field of ['values','status','codes','scores'])await page.locator('#'+field).setChecked(c.options[field]);}
+  await page.locator('#db-export').click();await expect(page.locator('#db-export')).toBeEnabled();
+  const waiting=page.waitForEvent('download');await page.locator('[data-output]').click();const download=await waiting;expect(await download.failure()).toBeNull();
+  const path=testInfo.outputPath(c.id+(c.format==='xlsx'?'.xlsx':'.csv'));await download.saveAs(path);await testInfo.attach('Original GUI pair '+c.id,{path});
+  const actual=await readFile(path),native=Buffer.from(c.capture.base64,'base64');
+  if(c.format==='xlsx')expect(await workbookShape(actual)).toEqual(await workbookShape(native));else expect(actual).toEqual(native);
+ }
+});
+
+test('Windows scan GUI: Ctrl rotation, translation, panning, frame toggle and magenta end feedback',async({page},testInfo)=>{
+ const p=remaining.coding,g=p.nativeGestures.ctrlDrag;
+ await page.goto('/');await page.locator('#coding-files').setInputFiles({name:p.templateInput.name,mimeType:'application/zip',buffer:Buffer.from(p.templateInput.capture.base64,'base64')});
+ await expect(page.locator('.template-layer')).toBeVisible();await page.locator('#zoom').selectOption(String(g.zoomPercent));await page.locator('#scans').scrollIntoViewIfNeeded();
+ const overlay=page.locator('.template-layer'),initial=await overlay.boundingBox();
+ await page.keyboard.down('Control');
+ try{await page.mouse.move(initial.x+80,initial.y+80);await page.mouse.down();await page.mouse.move(initial.x+80,initial.y+80+g.deltaY,{steps:8});await page.mouse.up();}finally{await page.keyboard.up('Control');}
+ await expect.poll(()=>overlay.evaluate(el=>{const m=new DOMMatrix(getComputedStyle(el).transform);return Math.atan2(m.b,m.a)*180/Math.PI;})).toBeCloseTo(g.observedRotationDegrees,2);
+ await expect(overlay).toHaveCSS('left','0px');await expect(overlay).toHaveCSS('top','0px');
+ await page.locator('#template-reset').click();const box=await overlay.boundingBox();await page.mouse.move(box.x+80,box.y+80);await page.mouse.down();await page.mouse.move(box.x+130,box.y+110,{steps:5});await page.mouse.up();
+ await expect(overlay).toHaveCSS('left','50px');await expect(overlay).toHaveCSS('top','30px');
+ await page.locator('#frame').uncheck();await expect(page.locator('.scan-frame')).toHaveCount(0);await page.locator('#frame').check();await expect(page.locator('.scan-frame')).toHaveCount(1);
+ const scan=page.locator('#scans'),bounds=await scan.boundingBox(),before=await scan.evaluate(e=>({x:e.scrollLeft,y:e.scrollTop}));
+ await page.mouse.move(bounds.x+Math.min(600,bounds.width-50),bounds.y+Math.min(500,bounds.height-50));await page.mouse.down();await page.mouse.move(bounds.x+Math.min(600,bounds.width-50)-40,bounds.y+Math.min(500,bounds.height-50)-30,{steps:5});await page.mouse.up();
+ await expect.poll(()=>scan.evaluate(e=>e.scrollLeft)).toBe(before.x+40);await expect.poll(()=>scan.evaluate(e=>e.scrollTop)).toBe(before.y+30);
+ await page.locator('[data-code="0"]').click();await page.locator('#next').click();await expect(page.locator('#case-number')).toHaveValue('1');
+ await expect(page.locator('.scan-stage')).toHaveCSS('background-color','rgb(255, 0, 255)');
+ const path=testInfo.outputPath('native-paired-end-feedback.png');await page.screenshot({path});await testInfo.attach('Paired scan GUI',{path});
+});
+
+
+test.describe('Captured native Testcenter API',()=>{
+test.use({serviceWorkers:'block'});
+test('Windows Testcenter GUI: login, group choices and byte-identical group JSON downloads',async({page},testInfo)=>{
+ const p=remaining.testcenter,reports=JSON.parse(Buffer.from(p.input.base64,'base64').toString());
+ await page.route('**/api/**',route=>{
+  const u=new URL(route.request().url()),path=u.pathname;
+  if(path==='/api/session/admin')return route.fulfill({json:{token:'synthetic-native-gui-session',access:{workspaceAdmin:['1']}}});
+  if(path==='/api/workspace/1')return route.fulfill({json:{name:p.workspace}});
+  if(path==='/api/workspace/1/results')return route.fulfill({json:p.groups.map(groupName=>({groupName,groupLabel:groupName,bookletsStarted:1}))});
+  if(path.endsWith('/report/log')||path.endsWith('/report/response'))return route.fulfill({json:reports[path.endsWith('/log')?'logs':'responses'].filter(d=>d.groupname===u.searchParams.get('dataIds'))});
+  return route.fulfill({status:404,body:''});
+ });
+ await page.goto('/');await page.locator('[data-module="toolbox"]').click();await page.locator('[data-tool="testcenter"]').click();
+ await page.locator('#tc-url').fill('http://127.0.0.1:4173');await page.locator('#tc-name').fill('synthetic-native-gui');await page.locator('#tc-password').fill('synthetic-only');await page.locator('#tc-connect').click();
+ await expect(page.locator('#tc-workspace')).toContainText(p.workspace);await page.locator('#tc-compatibility').selectOption('windows');
+ await page.locator('[data-group="1"]').uncheck();await expect(page.locator('#tc-selection')).toHaveText('1 von 2 Gruppen ausgewählt.');
+ await page.locator('#tc-all-groups').check();await expect(page.locator('#tc-selection')).toHaveText('2 von 2 Gruppen ausgewählt.');
+ await page.locator('#format').selectOption('json-groups');await page.locator('#tc-data').click();await expect(page.locator('[data-output]')).toHaveCount(1);
+ const waiting=page.waitForEvent('download');await page.locator('[data-output]').click();const download=await waiting;const path=testInfo.outputPath('native-gui-groups.zip');await download.saveAs(path);await testInfo.attach('Windows GUI paired JSON files',{path});
+ const entries=unzipSync(await readFile(path));expect(Object.keys(entries).sort()).toEqual(p.json.map(c=>c.name).sort());
+ for(const c of p.json)expect(Buffer.from(entries[c.name])).toEqual(Buffer.from(c.capture.base64,'base64'));
+ await page.locator('#format').selectOption('xlsx');await page.locator('#tc-data').click();await expect(page.locator('#tc-data')).toBeEnabled();
+ const excelWaiting=page.waitForEvent('download');await page.locator('[data-output]').click();const excelDownload=await excelWaiting;const excelPath=testInfo.outputPath('native-gui-direct.xlsx');await excelDownload.saveAs(excelPath);await testInfo.attach('Native direct Excel cells',{path:excelPath});
+ const {loadWorkbook}=await import('../../src/toolbox.js'),shape=async b=>(await loadWorkbook(b)).worksheets.map(s=>({name:s.name,rows:Array.from({length:s.rowCount},(_,i)=>{const row=s.getRow(i+1);return Array.from({length:row.cellCount},(_,j)=>row.getCell(j+1).text);})}));
+ expect(await shape(await readFile(excelPath))).toEqual(await shape(Buffer.from(p.excel.capture.base64,'base64')));
+});
 });

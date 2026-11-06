@@ -166,6 +166,28 @@ check('Int64-Zeitstempel: 64 Werte im Worker, JSON und beiden SQLite-Formaten oh
  }
  const a=parseJSON('{"timestamp":9007199254740992}'),b=parseJSON('{"timestamp":9007199254740993}');assert(canonical(a)!==canonical(b),'Referenzleser verschluckt Gegenbeispiel');
 });
+// Original files produced interactively by itc-ToolBox 3.3.0.2 on 2026-11-06.
+const nativeGuiRemaining=async()=>JSON.parse(strFromU8(await get('/fixtures/gui-remaining-20261106.json')));
+const captureBytes=c=>Uint8Array.from(atob(c.base64),v=>v.charCodeAt(0));
+const sameBytes=(a,b)=>a.length===b.length&&a.every((v,i)=>v===b[i]);
+const guiWorkbookShape=async bytes=>(await T.loadWorkbook(bytes)).worksheets.map(s=>({name:s.name,rows:Array.from({length:s.rowCount},(_,i)=>{const row=s.getRow(i+1),values=Array.from({length:row.cellCount},(_,j)=>row.getCell(j+1).text);while(values.at(-1)==='')values.pop();return values;}).filter(r=>r.length)}));
+check('Native Windows GUI: five SQLite Excel options and exact cells in the worker',async()=>{
+ const proof=await nativeGuiRemaining();await task('open-db',{bytes:await get('/'+proof.input.path.replace(/^public\//,''))});
+ for(const c of proof.excel){const result=await task('db-export',{format:'xlsx',options:c.options});assert(JSON.stringify(await guiWorkbookShape(result))===JSON.stringify(await guiWorkbookShape(captureBytes(c.capture))),c.id);}
+});
+check('Native Windows GUI: CSV downloads retain the original UTF-8 BOM and every byte',async()=>{
+ const proof=await nativeGuiRemaining();await task('open-db',{bytes:await get('/'+proof.input.path.replace(/^public\//,''))});
+ const graph=JSON.parse(strFromU8(await task('db-export',{format:'json'})));await task('set-data',{people:graph});
+ for(const c of proof.csv)for(const op of ['db-export','export-data']){const result=await task(op,{format:c.format,sizes:{DEMO:1000000}});assert(sameBytes(result,captureBytes(c.capture)),op+' '+c.id+' differs from native bytes');}
+});
+
+check('Windows Testcenter GUI: original group JSON bytes through the production worker',async()=>{
+ const p=JSON.parse(strFromU8(await get('/fixtures/gui-remaining-20261106.json'))),d=JSON.parse(new TextDecoder().decode(captureBytes(p.testcenter.input)));
+ await task('dto',{...d,windows:true,nativeGUI:true});
+ const entries=unzipSync(await task('export-data',{format:'json-groups',options:{windowsGUI:true}}));
+ assert(Object.keys(entries).length===p.testcenter.json.length,'Fehlende Originaldatei');
+ for(const c of p.testcenter.json)assert(sameBytes(entries[c.name],captureBytes(c.capture)),c.name+' weicht vom Windows-Dialog ab');
+});
 $('#run').onclick=async()=>{const button=$('#run');button.disabled=true;$('#results').replaceChildren();const report={userAgent:navigator.userAgent,started:new Date().toISOString(),checks:[]};let passed=0;for(const {name,fn}of checks){$('#status').textContent=name;const li=document.createElement('li');try{await fn();passed++;li.className='ok';li.textContent='✓ '+name;report.checks.push({name,passed:true});}catch(e){li.className='fail';li.textContent='✗ '+name+' — '+e.message;report.checks.push({name,passed:false,error:e.message,stack:e.stack});}$('#results').append(li);}report.passed=passed;report.total=checks.length;report.finished=new Date().toISOString();$('#status').textContent=`${passed} / ${checks.length} erfolgreich`;$('#download').href=URL.createObjectURL(new Blob([JSON.stringify(report,null,2)],{type:'application/json'}));$('#download').download='Browser-Pruefbericht.json';$('#download').hidden=false;try{await fetch('/__report__',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(report)});}catch{}button.disabled=false;};
 // Test-only entry point for installed browsers whose native UI cannot press the button.
 if(new URLSearchParams(location.search).get('run')==='1')$('#run').click();
