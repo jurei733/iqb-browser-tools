@@ -267,8 +267,9 @@ test('parity: full diagnostics survive module changes and export every validatio
   const namedCell=name=>{const range=w.definedNames.getRanges(name).ranges[0],m=range.match(/'?([^'!]+)'?!\$?([A-Z]+)\$?(\d+)/);return w.getWorksheet(m[1]).getCell(m[2]+(Number(m[3])+1));};
   namedCell('unitsCol.Title').value='';namedCell('testletsCol.Units').value='';
   await page.goto('/');await module(page,'toolbox');await tool(page,'booklets');await page.locator('#tool-file').setInputFiles({name:'Zwei-Fehler.xlsx',mimeType:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',buffer:Buffer.from(await w.xlsx.writeBuffer())});await page.locator('#run-tool').click();await done(page);
-  await expect(page.locator('#notice')).toContainText('Titel fehlt');await expect(page.locator('#notice')).toContainText('fehlende Units');await tool(page,'codes');
-  await page.locator('#diagnostics').click();const log=new TextDecoder().decode(await download(page,'#diagnostics-save',testInfo));expect(log).toContain('Titel fehlt');expect(log).toContain('fehlende Units');expect(log).toContain('booklets');
+  await expect(page.locator('#notice')).toContainText("Unit-Titel fehlt (unit 'EL632', Zeile 3)");await expect(page.locator('#notice')).toContainText("Testlet ohne Units (testlet 'EL1', Zeile 4)");await expect(page.locator('[data-download]')).toHaveCount(0);await tool(page,'codes');
+  await page.locator('#diagnostics').click();const log=new TextDecoder().decode(await download(page,'#diagnostics-save',testInfo));expect(log).toContain('Unit-Titel fehlt');expect(log).toContain('Testlet ohne Units');expect(log).toContain('booklets');
+  const nativeText=Buffer.from(await download(page,'#diagnostics-preparation',testInfo)).toString('utf16le');expect(nativeText).toContain("Unit-Titel fehlt (unit 'EL632', Zeile 3)");expect(nativeText).toContain("Testlet ohne Units (testlet 'EL1', Zeile 4)");expect(nativeText).toContain('19 Units gefunden\r\n');expect(nativeText).toContain('4 Testlets gefunden\r\nbeendet\r\n');
 });
 
 test('parity: preparation cancellation preserves the SQLite working copy',async({page})=>{
