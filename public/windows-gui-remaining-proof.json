@@ -1,184 +1,74 @@
 {
-  "checkedOn": "2026-11-06",
-  "applicationCommit": "24bb7e854762f6b42226351af00ebd9535614072",
+  "checkedOn": "2026-11-08",
+  "applicationCommit": "a7178097e4d638bf91b2f7bbf6bb54bda514f301",
   "completeEquivalence": false,
   "completeGUIAcceptance": false,
   "empiricalStudyDataTested": false,
   "previousReport": "tests/results/windows-gui-remaining-20261106.json",
-  "scope": "Resumed direct Windows GUI comparisons through external native Safari; five further finite pairs. Current browser regressions use Chromium and WebKit; local Firefox cannot start.",
+  "scope": "Direct Windows GUI CSV completion and readback; About and F1 observations. All three browser engines checked in CI. Remaining GUI work interrupted by a renewed Mac lock.",
   "counts": {
     "initialRemaining": 34,
-    "previousFinitePairs": 13,
-    "additionalFinitePairsThisResume": 5,
-    "newFinitePairs": 18,
-    "stillWithoutCompleteDirectPair": 16
+    "previousFinitePairs": 18,
+    "additionalFinitePairsThisResume": 1,
+    "newFinitePairs": 19,
+    "stillWithoutCompleteDirectPair": 15
   },
   "fixedDifferences": [
     "Windows answer/session CSV download lacked the original UTF-8 BOM.",
     "Windows Testcenter GUI JSON used the extended graph rather than logs-first dialog assembly; aliases, zero timestamps, null session metadata, field order, CRLF and booklets.json now match captured original bytes.",
     "Excel column sorting differed for mixed-case aliases; now uses German collation.",
     "End-of-job feedback lacked the original magenta backdrop.",
-    "Native Testcenter SQLite stores missing browser/os/screen session fields as empty strings; the browser Windows import now does the same while native-dialog JSON keeps null."
+    "Native Testcenter SQLite stores missing browser/os/screen session fields as empty strings; the browser Windows import now does the same while native-dialog JSON keeps null.",
+    "Windows CSV database import skips log files before parsing, as the native GUI does.",
+    "Windows CSV graph uses the unit alias for both name and alias, matching the original PersonList mapper."
   ],
   "verification": {
     "node": {
-      "passed": 160,
-      "total": 160
-    },
-    "referenceConverters": {
-      "passed": 15,
-      "total": 15
-    },
-    "referenceFiles": {
-      "passed": 31,
-      "total": 31
+      "passed": 162,
+      "total": 162
     },
     "targetedBrowser": {
-      "passed": 18,
-      "total": 18,
+      "passed": 6,
+      "total": 6,
       "engines": [
         "chromium",
         "webkit"
       ],
-      "workflowsPerEngine": 9
+      "workflowsPerEngine": 3
     },
-    "fullBrowser": {
-      "passed": 56,
-      "total": 56,
-      "workflowsPerEngine": 28,
-      "engines": [
-        "chromium",
-        "webkit"
-      ],
-      "workerChecksPerEngine": 56
-    },
-    "liveDemoJSON": [
-      {
-        "name": "booklets.json",
-        "bytes": 2,
-        "equal": true,
-        "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
-      },
-      {
-        "name": "BROWSER_A.json",
-        "bytes": 7550,
-        "equal": true,
-        "sha256": "a512e72ff8ced1992ab9b688023beb701eaf4b235def376c30557cee65145c85"
-      },
-      {
-        "name": "BROWSER_B.json",
-        "bytes": 7550,
-        "equal": true,
-        "sha256": "3e43b664e7dc91b2d4b3da346e0872c3bdcda4133d9868bc2fe3fa8d2d16d992"
-      }
-    ],
-    "liveDemoExcelCellsEqual": true,
     "ci": {
       "state": "success",
-      "applicationCommit": "24bb7e854762f6b42226351af00ebd9535614072",
+      "applicationCommit": "a7178097e4d638bf91b2f7bbf6bb54bda514f301",
       "runs": [
-        "https://github.com/jurei733/iqb-browser-tools/actions/runs/42218486461",
-        "https://github.com/jurei733/iqb-browser-tools/actions/runs/42218486287"
+        "https://github.com/jurei733/iqb-browser-tools/actions/runs/42519834046",
+        "https://github.com/jurei733/iqb-browser-tools/actions/runs/42519834165"
       ],
       "jobsPassed": 12,
       "jobsTotal": 12,
       "browser": {
-        "passed": 84,
-        "total": 84,
-        "workflowsPerEngine": 28,
+        "passed": 93,
+        "total": 93,
+        "workflowsPerEngine": 31,
         "workerChecksPerEngine": 56,
         "engines": [
           "chromium",
           "firefox",
           "webkit"
-        ],
-        "jobURLs": [
-          "https://github.com/jurei733/iqb-browser-tools/actions/runs/42218486461/job/127894352756",
-          "https://github.com/jurei733/iqb-browser-tools/actions/runs/42218486461/job/127894352707",
-          "https://github.com/jurei733/iqb-browser-tools/actions/runs/42218486461/job/127894352540"
         ]
+      },
+      "freshWindowsStudyComparisons": {
+        "passed": 216,
+        "total": 216
       }
     },
-    "previousVerification": {
-      "node": {
-        "passed": 157,
-        "total": 157
-      },
-      "referenceConverters": {
-        "passed": 15,
-        "total": 15
-      },
-      "referenceFiles": {
-        "passed": 31,
-        "total": 31
-      },
-      "targetedBrowser": {
-        "passed": 12,
-        "total": 12,
-        "engines": [
-          "chromium",
-          "firefox",
-          "webkit"
-        ],
-        "workerChecksPerEngine": 56
-      },
-      "fullBrowser": {
-        "passed": 75,
-        "total": 75,
-        "workflowsPerEngine": 25,
-        "engines": [
-          "chromium",
-          "firefox",
-          "webkit"
-        ],
-        "workerChecksPerEngine": 56
-      },
-      "liveDemoJSON": [
-        {
-          "name": "booklets.json",
-          "bytes": 2,
-          "equal": true,
-          "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
-        },
-        {
-          "name": "BROWSER_A.json",
-          "bytes": 7550,
-          "equal": true,
-          "sha256": "a512e72ff8ced1992ab9b688023beb701eaf4b235def376c30557cee65145c85"
-        },
-        {
-          "name": "BROWSER_B.json",
-          "bytes": 7550,
-          "equal": true,
-          "sha256": "3e43b664e7dc91b2d4b3da346e0872c3bdcda4133d9868bc2fe3fa8d2d16d992"
-        }
-      ],
-      "liveDemoExcelCellsEqual": true
-    },
-    "localFirefox": {
-      "state": "launch-failed-before-tests",
-      "error": "Could not find profile folder.",
-      "attempts": "Installed and freshly downloaded official Firefox; default TMPDIR, repository TMPDIR and /tmp all fail before page creation. No application assertion executed."
-    },
-    "nativeSQLite": {
+    "nativeCSVSQLite": {
+      "people": 3,
+      "responses": 6,
       "dataTablesCompared": 10,
-      "people": 2,
-      "responses": 28,
-      "equal": true,
+      "allEqual": true,
       "byteIdentityClaimed": false,
-      "excluded": "Execution metadata, response_status dictionary population, SQLite page layout and sqlite_sequence are not part of the ten-table equality."
-    },
-    "nativeBookletSizes": {
-      "existingPreserved": true,
-      "added": {
-        "DEMO": 1000000
-      },
-      "allTenDataTablesEqual": true
-    },
-    "nativeJSONImport": {
-      "people": 5,
-      "responses": 34,
-      "allTenDataTablesEqual": true
+      "fixture": "tests/fixtures/gui-final-20261108.json",
+      "excluded": "Execution metadata, response_status dictionary population, SQLite page layout and sqlite_sequence."
     }
   },
   "supplementalCtrlDrag": {
@@ -349,9 +239,10 @@
         "line": 161,
         "sha256": "05098ca438c3738f0a8d2e2bf7325bd7157e8965089ede984583afe3dda56003"
       },
-      "state": "pending-native-comparison",
-      "nativeCapture": null,
-      "pairedBrowserCapture": null
+      "state": "native-observation-partial",
+      "nativeCapture": "docs/evidence/gui-final-20261108/native-coding-f1.png",
+      "pairedBrowserCapture": "tests/e2e/gui-final.spec.js",
+      "observation": "Native F1 opens About 4.3.0.3 with matching purpose text; close works. Browser F1, help button and close pass in all three engines. Mouse help did not visibly reopen the original modal on the empty job window; that native route remains open."
     },
     {
       "id": "K-37",
@@ -421,10 +312,10 @@
         "line": 51,
         "sha256": "2813bfdcda6910ded413482ad2bbf444dd83703485c99a13a18d8e7144eef94c"
       },
-      "state": "native-observation-partial",
-      "nativeCapture": "docs/evidence/gui-remaining-20261106/safari-native-json-import-completed.jpg",
-      "pairedBrowserCapture": "tests/e2e/gui-reference.spec.js",
-      "observation": "JSON and Testcenter GUI imports match all ten SQLite data tables. Native CSV import from Documents crashes on protected junction Eigene Bilder. A clean folder with exact A6.csv and G6.csv is prepared; native c6.sqlite created. CSV completion remains unobserved after the Mac locked."
+      "state": "paired-finite-native",
+      "nativeCapture": "docs/evidence/gui-final-20261108/native-csv-import-completed.png",
+      "pairedBrowserCapture": "tests/e2e/gui-final.spec.js",
+      "observation": "CSV completed in the original GUI from an isolated folder; c6.sqlite, A6.csv and G6.csv read back through guest Edge. All ten data tables match after fixing alias identity and skipping log files. Earlier JSON and Testcenter pairs are retained. Three people and six responses; no SQLite byte-identity claim."
     },
     {
       "id": "T-44",
@@ -672,9 +563,9 @@
         "sha256": "2813bfdcda6910ded413482ad2bbf444dd83703485c99a13a18d8e7144eef94c"
       },
       "state": "native-observation-partial",
-      "nativeCapture": null,
-      "pairedBrowserCapture": null,
-      "observation": "Original About 3.3.0.2 shown. Other help routes remain open."
+      "nativeCapture": "docs/evidence/gui-final-20261108/native-toolbox-f1.png",
+      "pairedBrowserCapture": "tests/e2e/gui-final.spec.js",
+      "observation": "Original About button, F1 and close observed; version 3.3.0.2. Browser routes pass in all three engines. Original online documentation opens the obsolete tba-info/Testcenter/toolbox/ URL and shows Page not found. Browser intentionally retains the maintained coding/toolbox/booklet.html URL; no identical online-documentation result is claimed."
     },
     {
       "id": "T-65",
@@ -866,5 +757,167 @@
     "Installed Safari was used to control the original Windows GUI, not to rerun the browser application on this revision. Real mobile devices remain unavailable.",
     "Native CSV import crashes when recursively enumerating a protected Documents junction. This original failure is recorded, not reproduced in the browser.",
     "OS identity, unrestricted overwrite and reusable native paths retain documented browser limitations."
-  ]
+  ],
+  "previousVerification20261106": {
+    "node": {
+      "passed": 160,
+      "total": 160
+    },
+    "referenceConverters": {
+      "passed": 15,
+      "total": 15
+    },
+    "referenceFiles": {
+      "passed": 31,
+      "total": 31
+    },
+    "targetedBrowser": {
+      "passed": 18,
+      "total": 18,
+      "engines": [
+        "chromium",
+        "webkit"
+      ],
+      "workflowsPerEngine": 9
+    },
+    "fullBrowser": {
+      "passed": 56,
+      "total": 56,
+      "workflowsPerEngine": 28,
+      "engines": [
+        "chromium",
+        "webkit"
+      ],
+      "workerChecksPerEngine": 56
+    },
+    "liveDemoJSON": [
+      {
+        "name": "booklets.json",
+        "bytes": 2,
+        "equal": true,
+        "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+      },
+      {
+        "name": "BROWSER_A.json",
+        "bytes": 7550,
+        "equal": true,
+        "sha256": "a512e72ff8ced1992ab9b688023beb701eaf4b235def376c30557cee65145c85"
+      },
+      {
+        "name": "BROWSER_B.json",
+        "bytes": 7550,
+        "equal": true,
+        "sha256": "3e43b664e7dc91b2d4b3da346e0872c3bdcda4133d9868bc2fe3fa8d2d16d992"
+      }
+    ],
+    "liveDemoExcelCellsEqual": true,
+    "ci": {
+      "state": "success",
+      "applicationCommit": "24bb7e854762f6b42226351af00ebd9535614072",
+      "runs": [
+        "https://github.com/jurei733/iqb-browser-tools/actions/runs/42218486461",
+        "https://github.com/jurei733/iqb-browser-tools/actions/runs/42218486287"
+      ],
+      "jobsPassed": 12,
+      "jobsTotal": 12,
+      "browser": {
+        "passed": 84,
+        "total": 84,
+        "workflowsPerEngine": 28,
+        "workerChecksPerEngine": 56,
+        "engines": [
+          "chromium",
+          "firefox",
+          "webkit"
+        ],
+        "jobURLs": [
+          "https://github.com/jurei733/iqb-browser-tools/actions/runs/42218486461/job/127894352756",
+          "https://github.com/jurei733/iqb-browser-tools/actions/runs/42218486461/job/127894352707",
+          "https://github.com/jurei733/iqb-browser-tools/actions/runs/42218486461/job/127894352540"
+        ]
+      }
+    },
+    "previousVerification": {
+      "node": {
+        "passed": 157,
+        "total": 157
+      },
+      "referenceConverters": {
+        "passed": 15,
+        "total": 15
+      },
+      "referenceFiles": {
+        "passed": 31,
+        "total": 31
+      },
+      "targetedBrowser": {
+        "passed": 12,
+        "total": 12,
+        "engines": [
+          "chromium",
+          "firefox",
+          "webkit"
+        ],
+        "workerChecksPerEngine": 56
+      },
+      "fullBrowser": {
+        "passed": 75,
+        "total": 75,
+        "workflowsPerEngine": 25,
+        "engines": [
+          "chromium",
+          "firefox",
+          "webkit"
+        ],
+        "workerChecksPerEngine": 56
+      },
+      "liveDemoJSON": [
+        {
+          "name": "booklets.json",
+          "bytes": 2,
+          "equal": true,
+          "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+        },
+        {
+          "name": "BROWSER_A.json",
+          "bytes": 7550,
+          "equal": true,
+          "sha256": "a512e72ff8ced1992ab9b688023beb701eaf4b235def376c30557cee65145c85"
+        },
+        {
+          "name": "BROWSER_B.json",
+          "bytes": 7550,
+          "equal": true,
+          "sha256": "3e43b664e7dc91b2d4b3da346e0872c3bdcda4133d9868bc2fe3fa8d2d16d992"
+        }
+      ],
+      "liveDemoExcelCellsEqual": true
+    },
+    "localFirefox": {
+      "state": "launch-failed-before-tests",
+      "error": "Could not find profile folder.",
+      "attempts": "Installed and freshly downloaded official Firefox; default TMPDIR, repository TMPDIR and /tmp all fail before page creation. No application assertion executed."
+    },
+    "nativeSQLite": {
+      "dataTablesCompared": 10,
+      "people": 2,
+      "responses": 28,
+      "equal": true,
+      "byteIdentityClaimed": false,
+      "excluded": "Execution metadata, response_status dictionary population, SQLite page layout and sqlite_sequence are not part of the ten-table equality."
+    },
+    "nativeBookletSizes": {
+      "existingPreserved": true,
+      "added": {
+        "DEMO": 1000000
+      },
+      "allTenDataTablesEqual": true
+    },
+    "nativeJSONImport": {
+      "people": 5,
+      "responses": 34,
+      "allTenDataTablesEqual": true
+    }
+  },
+  "interruption": "Mac locked again after copying the next synthetic fixture pack into Windows Documents. CSV is complete; 15 of the original 34 finite GUI pairs remain incomplete, including the two help-route qualifications."
 }
