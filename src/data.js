@@ -107,13 +107,15 @@ export function peopleFromDTO(responses=[],logs=[],{windows=false}={}) {
   return refreshTimes([...people.values()],{windows});
 }
 export function importCSV(source,delimiter='auto',options={}) {
-  if(options.windows&&String(source).split(/\r\n|\n|\r/,1)[0].replace(/"/g,'').endsWith(';logentry'))return peopleFromDTO([],parseWindowsLogCSV(source,options),options);
+  // PersonList.AddUnitData/AddLogEntry in the native CSV dialog uses the
+  // alias for both fields, even when the CSV parser reads originalUnitId.
+  if(options.windows&&String(source).split(/\r\n|\n|\r/,1)[0].replace(/"/g,'').endsWith(';logentry'))return peopleFromDTO([],parseWindowsLogCSV(source,options).map(d=>({...d,originalUnitId:d.unitname})),options);
   const table=parseCSV(source,delimiter),headers=table.shift().map(h=>h.trim().replace(/^\uFEFF/,'')),data=table.filter(r=>r.some(Boolean)).map((r,i)=>{if(r.length!==headers.length)throw new Error(`CSV-Zeile ${i+2}: ${r.length} statt ${headers.length} Felder.`);return Object.fromEntries(headers.map((h,j)=>[h,r[j]]));});
   for(const h of ['groupname','loginname','bookletname','unitname'])if(!headers.includes(h))throw new Error(`CSV-Kopf „${h}“ fehlt.`);
   if(headers.includes('logentry'))return peopleFromDTO([],data,options);
   if(!headers.includes('responses'))throw new Error('Keine Testcenter-Antwort- oder Log-CSV.');
   if(headers.includes('responseType'))for(const d of data){try{const chunks=JSON.parse(d.responses);if(Array.isArray(chunks)&&chunks.length&&chunks.every(c=>Object.hasOwn(c,'content')))continue;}catch{}d.responses=JSON.stringify([{id:'all',content:d.responses,responseType:d.responseType,ts:d['response-ts']}]);}
-  return peopleFromDTO(data,[],options);
+  return peopleFromDTO(options.windows?data.map(d=>({...d,originalUnitId:d.unitname})):data,[],options);
 }
 export function mergePeople(...groups) {
   const people=new Map();
@@ -127,10 +129,17 @@ export function mergePeople(...groups) {
   }
   return refreshTimes([...people.values()]);
 }
-export async function readDataFiles(files,{encoding='utf-8',delimiter='auto',windows=false,onWarning=()=>{}}={}) {
+export async function readDataFiles(files,{encoding='utf-8',delimiter='auto',windows=false,csvTarget='output',onWarning=()=>{}}={}) {
   const batches=[];for(const f of files){const source=typeof f.text==='string'?f.text:new TextDecoder(encoding,{fatal:true}).decode(f.bytes??await f.arrayBuffer());
     if(/\.json$/i.test(f.name)){const data=parseJSON(source);if(Array.isArray(data)&&data[0]?.booklets!==undefined)batches.push(normalizePeople(data,{windows}));else if(Array.isArray(data)&&data[0]?.groupname!==undefined)batches.push(data[0].logentry!==undefined?peopleFromDTO([],data,{windows}):peopleFromDTO(data,[],{windows}));else if(Array.isArray(data)&&!data.length)batches.push([]);else throw new Error(`${f.name}: Unbekanntes JSON-Format.`);}
-    else batches.push(importCSV(source,delimiter,{windows,onWarning:message=>onWarning(`${f.name}: ${message}`)}));
+    else {
+      const header=source.replace(/^\uFEFF/,'').split(/\r\n|\n|\r/,1)[0].replace(/"/g,'');
+      // LoadDataFromCsvPage2Result skips log files when WriteToXls is false.
+      // Keep this original behaviour limited to Windows database imports.
+      if(windows&&csvTarget==='database'&&['groupname;loginname;code;bookletname;unitname;timestamp;logentry','groupname;loginname;code;bookletname;unitname;originalUnitId;timestamp;logentry'].includes(header)){
+        batches.push([]);onWarning(`${f.name}: Logdatei wie im Windows-SQLite-Import übersprungen.`);
+      }else batches.push(importCSV(source,delimiter,{windows,onWarning:message=>onWarning(`${f.name}: ${message}`)}));
+    }
   }
   if(windows){const map=new Map();for(const [index,batch]of batches.entries())for(const p of batch){const k=p.group+p.login+p.code;if(!map.has(k)){map.set(k,structuredClone(p));continue;}if(/\.json$/i.test(files[index].name)){onWarning(`${files[index].name}: Personenkennung doppelt (${k}); übrige Personen dieser Datei wie im Original übersprungen.`);break;}const target=map.get(k);for(const b of p.booklets){let old=target.booklets.find(v=>v.id===b.id);if(!old){target.booklets.push(structuredClone(b));continue;}old.logs.push(...b.logs);old.sessions.push(...b.sessions);for(const u of b.units){const unit=old.units.find(v=>v.alias===u.alias);if(unit&&!u.subforms.length&&!u.chunks.length&&!u.laststate.length)unit.logs.push(...u.logs);else if(unit&&!unit.subforms.length&&!unit.chunks.length&&!unit.laststate.length)Object.assign(unit,{chunks:u.chunks,laststate:u.laststate,subforms:u.subforms});else old.units.push(structuredClone(u));}}}return refreshTimes([...map].sort(([a],[b])=>a.localeCompare(b,'de')).map(([,p])=>p),{windows});}
   return mergePeople(...batches);

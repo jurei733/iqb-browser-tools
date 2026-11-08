@@ -28,7 +28,9 @@ test('strict Windows API units: preserve chunk order, duplicate subforms, nullab
 test('Windows conversion propagates through raw API JSON files and Testcenter CSV',async()=>{
  const {dto}=pipelineCorpus()[0],expected=responseUnit(dto,{windows:true});
  const fromJSON=await readDataFiles([{name:'raw.json',text:JSON.stringify([dto])}],{windows:true});assert.deepEqual(fromJSON[0].booklets[0].units[0],expected);
- const headers=['groupname','loginname','code','bookletname','unitname','originalUnitId','responses','laststate'];const values=headers.map(name=>name==='responses'?JSON.stringify(dto.responses):dto[name]);const fromCSV=importCSV(csvString([headers,values]),'auto',{windows:true});assert.deepEqual(fromCSV[0].booklets[0].units[0],expected);
+ // Native CSV PersonList.AddUnitData uses the alias as identity (also
+ // captured by the direct CSV GUI fixture from 2026-11-08); API JSON does not.
+ const headers=['groupname','loginname','code','bookletname','unitname','originalUnitId','responses','laststate'];const values=headers.map(name=>name==='responses'?JSON.stringify(dto.responses):dto[name]);const fromCSV=importCSV(csvString([headers,values]),'auto',{windows:true});assert.deepEqual(fromCSV[0].booklets[0].units[0],{...expected,id:dto.unitname});
  const enhanced=await readDataFiles([{name:'raw.json',text:JSON.stringify([dto])}]);assert.equal(enhanced[0].booklets[0].units[0].subforms.length,1);assert.equal(enhanced[0].booklets[0].units[0].subforms[0].responses[0].value,'12.5');
 });
 test('Windows conversion: preserve null in SQLite and original decimal values in Excel',async()=>{
