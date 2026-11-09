@@ -8,12 +8,15 @@
       "windows-gui-login-next-proof.json",
       "windows-gui-fullflags-proof.json",
       "windows-gui-login-boundaries-proof.json",
-      "windows-gui-login-matrix-proof.json"
+      "windows-gui-login-matrix-proof.json",
+      "windows-gui-booklet-matrix-proof.json"
     ],
     "additionalBoundaryWorkbooks": 6,
     "additionalInvalidLoginTexts": 4,
     "loginGenerationCombinations": 128,
-    "loginReopeningCombinations": 128
+    "loginReopeningCombinations": 128,
+    "bookletValidationCombinations": 64,
+    "bookletValidFollowups": 2
   },
   "openFamilies": [
     {
@@ -29,9 +32,10 @@
       "id": "booklet-validation",
       "family": "Booklet-XML und Validierung",
       "dimensions": "64 Kombinationen von Validierungsfehlern sowie Metadaten/Beschreibung, mehrere Booklets und korrigierter Zweitlauf im selben GUI-Ablauf.",
-      "existingEvidence": "64 Fehlerkombinationen und Original-Dateien auf Modulebene; einzelne gültige und fehlerhafte Booklet-GUI-Fälle vorhanden.",
-      "stillOpen": "Vollständige direkte GUI-Fehler-/Optionsmatrix und Wiederholung nach Korrektur.",
-      "status": "partial-direct-gui"
+      "existingEvidence": "64/64 Fehlerkombinationen plus zwei gültige Mehrheft-Folgeläufe direkt über Dateiauswahl, Originaldialog und Texteditor geprüft. Vollständige UTF-16-Meldungen und XML-Element-/Attributbäume gepaart.",
+      "stillOpen": "Das konkrete 64er-Fehlerprodukt und die zwei Metadaten-/Zellvarianten sind abgeschlossen. Beliebige andere Schemafehler sind nicht vollständig abgedeckt.",
+      "status": "completed-finite-direct-gui",
+      "proof": "windows-gui-booklet-matrix-proof.json"
     },
     {
       "id": "word-products",

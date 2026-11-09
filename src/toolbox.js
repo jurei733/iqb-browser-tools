@@ -63,7 +63,7 @@ export async function loadWorkbook(bytes) {
     const target=targets.get(sheet.getAttribute('r:id'));if(!target)continue;
     const parts=[];for(const part of (target.startsWith('/')?target.slice(1):'xl/'+target).split('/')){if(part==='..')parts.pop();else if(part!=='.')parts.push(part);}
     const data=entries[parts.join('/')];if(!data)continue;const kinds=new Map();
-    for(const c of Array.from(parseWorkbookXML(strFromU8(data)).getElementsByTagName('c')))if(c.getAttribute('t')==='s')kinds.set(c.getAttribute('r'),c.getElementsByTagName('v').length?'shared':'shared-missing');
+    for(const c of Array.from(parseWorkbookXML(strFromU8(data)).getElementsByTagName('c')))kinds.set(c.getAttribute('r'),c.getAttribute('t')==='s'?(c.getElementsByTagName('v').length?'shared':'shared-missing'):'plain');
     const worksheet=w.getWorksheet(sheet.getAttribute('name'));if(worksheet)nativeCellKinds.set(worksheet,kinds);
   }
   return w;
@@ -111,7 +111,11 @@ export function bookletXML(workbook,{windows=false}={}) {
   for(const r of rows(tids)) {
     const id=cell(tids,r), list=cell(tunits,r).trim().split(/\s+/).filter(Boolean);
     if(testlets.has(id) || !list.length || list.some(u=>!units.has(u))) throw new Error(`Block ${id}: ID doppelt oder unbekannte/fehlende Units.`);
-    testlets.set(id,{id,label:cell(ttitles,r),units:list.map(u=>units.get(u))});
+    // The SDK returns null for an absent cell, but an empty string for an
+    // existing empty cell. XElement omits only the former label attribute.
+    const kinds=nativeCellKinds.get(ttitles.sheet);
+    const label=windows&&kinds&&!kinds.has(`${ttitles.col}${r}`)?null:cell(ttitles,r);
+    testlets.set(id,{id,label,units:list.map(u=>units.get(u))});
   }
   const bids=named(workbook,'bookletsCol.ID'),btitles=named(workbook,'bookletsCol.Title'),descriptions=named(workbook,'bookletsCol.Description',true),first=named(workbook,'bookletsCol.FirstElement');
   const prefix=cell(named(workbook,'startlock.prefix',true)),suffix=cell(named(workbook,'startlock.suffix',true)),files={};

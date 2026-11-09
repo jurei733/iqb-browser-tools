@@ -1,0 +1,1203 @@
+{
+  "date": "2026-11-09",
+  "original": {
+    "name": "itc-ToolBox",
+    "version": "3.3.0.2",
+    "sha256": "c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1"
+  },
+  "method": "Visible original Windows GUI: file chooser, completed validation dialog, Texteditor command, native Notepad Save As, guest-file transfer. Every input transferred and read back byte-identically first. Preliminary B00/B01 observations were repeated for the retained sequence.",
+  "axes": [
+    "missing-unit-title",
+    "duplicate-unit",
+    "unknown-unit",
+    "duplicate-testlet",
+    "empty-testlet",
+    "repeated-space"
+  ],
+  "cases": [
+    {
+      "id": "B00",
+      "sequence": 0,
+      "input": "Booklet-errors-00.xlsx",
+      "outputs": [
+        "bookletTHETLK.xml"
+      ],
+      "xmlPrefix": "native/",
+      "faults": [],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B01",
+      "sequence": 1,
+      "input": "Booklet-errors-01.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "missing-unit-title"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B02",
+      "sequence": 2,
+      "input": "Booklet-errors-02.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "duplicate-unit"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B03",
+      "sequence": 3,
+      "input": "Booklet-errors-03.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "missing-unit-title",
+        "duplicate-unit"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B04",
+      "sequence": 4,
+      "input": "Booklet-errors-04.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "unknown-unit"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B05",
+      "sequence": 5,
+      "input": "Booklet-errors-05.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "missing-unit-title",
+        "unknown-unit"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B06",
+      "sequence": 6,
+      "input": "Booklet-errors-06.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "duplicate-unit",
+        "unknown-unit"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B07",
+      "sequence": 7,
+      "input": "Booklet-errors-07.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "missing-unit-title",
+        "duplicate-unit",
+        "unknown-unit"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B08",
+      "sequence": 8,
+      "input": "Booklet-errors-08.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "duplicate-testlet"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B09",
+      "sequence": 9,
+      "input": "Booklet-errors-09.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "missing-unit-title",
+        "duplicate-testlet"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B10",
+      "sequence": 10,
+      "input": "Booklet-errors-10.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "duplicate-unit",
+        "duplicate-testlet"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B11",
+      "sequence": 11,
+      "input": "Booklet-errors-11.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "missing-unit-title",
+        "duplicate-unit",
+        "duplicate-testlet"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B12",
+      "sequence": 12,
+      "input": "Booklet-errors-12.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "unknown-unit",
+        "duplicate-testlet"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B13",
+      "sequence": 13,
+      "input": "Booklet-errors-13.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "missing-unit-title",
+        "unknown-unit",
+        "duplicate-testlet"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B14",
+      "sequence": 14,
+      "input": "Booklet-errors-14.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "duplicate-unit",
+        "unknown-unit",
+        "duplicate-testlet"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B15",
+      "sequence": 15,
+      "input": "Booklet-errors-15.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "missing-unit-title",
+        "duplicate-unit",
+        "unknown-unit",
+        "duplicate-testlet"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B16",
+      "sequence": 16,
+      "input": "Booklet-errors-16.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "empty-testlet"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B17",
+      "sequence": 17,
+      "input": "Booklet-errors-17.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "missing-unit-title",
+        "empty-testlet"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B18",
+      "sequence": 18,
+      "input": "Booklet-errors-18.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "duplicate-unit",
+        "empty-testlet"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B19",
+      "sequence": 19,
+      "input": "Booklet-errors-19.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "missing-unit-title",
+        "duplicate-unit",
+        "empty-testlet"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B20",
+      "sequence": 20,
+      "input": "Booklet-errors-20.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "unknown-unit",
+        "empty-testlet"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B21",
+      "sequence": 21,
+      "input": "Booklet-errors-21.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "missing-unit-title",
+        "unknown-unit",
+        "empty-testlet"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B22",
+      "sequence": 22,
+      "input": "Booklet-errors-22.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "duplicate-unit",
+        "unknown-unit",
+        "empty-testlet"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B23",
+      "sequence": 23,
+      "input": "Booklet-errors-23.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "missing-unit-title",
+        "duplicate-unit",
+        "unknown-unit",
+        "empty-testlet"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B24",
+      "sequence": 24,
+      "input": "Booklet-errors-24.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "duplicate-testlet",
+        "empty-testlet"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B25",
+      "sequence": 25,
+      "input": "Booklet-errors-25.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "missing-unit-title",
+        "duplicate-testlet",
+        "empty-testlet"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B26",
+      "sequence": 26,
+      "input": "Booklet-errors-26.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "duplicate-unit",
+        "duplicate-testlet",
+        "empty-testlet"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B27",
+      "sequence": 27,
+      "input": "Booklet-errors-27.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "missing-unit-title",
+        "duplicate-unit",
+        "duplicate-testlet",
+        "empty-testlet"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B28",
+      "sequence": 28,
+      "input": "Booklet-errors-28.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "unknown-unit",
+        "duplicate-testlet",
+        "empty-testlet"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B29",
+      "sequence": 29,
+      "input": "Booklet-errors-29.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "missing-unit-title",
+        "unknown-unit",
+        "duplicate-testlet",
+        "empty-testlet"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B30",
+      "sequence": 30,
+      "input": "Booklet-errors-30.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "duplicate-unit",
+        "unknown-unit",
+        "duplicate-testlet",
+        "empty-testlet"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B31",
+      "sequence": 31,
+      "input": "Booklet-errors-31.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "missing-unit-title",
+        "duplicate-unit",
+        "unknown-unit",
+        "duplicate-testlet",
+        "empty-testlet"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B32",
+      "sequence": 32,
+      "input": "Booklet-errors-32.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "repeated-space"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B33",
+      "sequence": 33,
+      "input": "Booklet-errors-33.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "missing-unit-title",
+        "repeated-space"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B34",
+      "sequence": 34,
+      "input": "Booklet-errors-34.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "duplicate-unit",
+        "repeated-space"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B35",
+      "sequence": 35,
+      "input": "Booklet-errors-35.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "missing-unit-title",
+        "duplicate-unit",
+        "repeated-space"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B36",
+      "sequence": 36,
+      "input": "Booklet-errors-36.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "unknown-unit",
+        "repeated-space"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B37",
+      "sequence": 37,
+      "input": "Booklet-errors-37.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "missing-unit-title",
+        "unknown-unit",
+        "repeated-space"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B38",
+      "sequence": 38,
+      "input": "Booklet-errors-38.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "duplicate-unit",
+        "unknown-unit",
+        "repeated-space"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B39",
+      "sequence": 39,
+      "input": "Booklet-errors-39.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "missing-unit-title",
+        "duplicate-unit",
+        "unknown-unit",
+        "repeated-space"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B40",
+      "sequence": 40,
+      "input": "Booklet-errors-40.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "duplicate-testlet",
+        "repeated-space"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B41",
+      "sequence": 41,
+      "input": "Booklet-errors-41.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "missing-unit-title",
+        "duplicate-testlet",
+        "repeated-space"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B42",
+      "sequence": 42,
+      "input": "Booklet-errors-42.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "duplicate-unit",
+        "duplicate-testlet",
+        "repeated-space"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B43",
+      "sequence": 43,
+      "input": "Booklet-errors-43.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "missing-unit-title",
+        "duplicate-unit",
+        "duplicate-testlet",
+        "repeated-space"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B44",
+      "sequence": 44,
+      "input": "Booklet-errors-44.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "unknown-unit",
+        "duplicate-testlet",
+        "repeated-space"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B45",
+      "sequence": 45,
+      "input": "Booklet-errors-45.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "missing-unit-title",
+        "unknown-unit",
+        "duplicate-testlet",
+        "repeated-space"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B46",
+      "sequence": 46,
+      "input": "Booklet-errors-46.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "duplicate-unit",
+        "unknown-unit",
+        "duplicate-testlet",
+        "repeated-space"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B47",
+      "sequence": 47,
+      "input": "Booklet-errors-47.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "missing-unit-title",
+        "duplicate-unit",
+        "unknown-unit",
+        "duplicate-testlet",
+        "repeated-space"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B48",
+      "sequence": 48,
+      "input": "Booklet-errors-48.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "empty-testlet",
+        "repeated-space"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B49",
+      "sequence": 49,
+      "input": "Booklet-errors-49.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "missing-unit-title",
+        "empty-testlet",
+        "repeated-space"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B50",
+      "sequence": 50,
+      "input": "Booklet-errors-50.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "duplicate-unit",
+        "empty-testlet",
+        "repeated-space"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B51",
+      "sequence": 51,
+      "input": "Booklet-errors-51.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "missing-unit-title",
+        "duplicate-unit",
+        "empty-testlet",
+        "repeated-space"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B52",
+      "sequence": 52,
+      "input": "Booklet-errors-52.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "unknown-unit",
+        "empty-testlet",
+        "repeated-space"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B53",
+      "sequence": 53,
+      "input": "Booklet-errors-53.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "missing-unit-title",
+        "unknown-unit",
+        "empty-testlet",
+        "repeated-space"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B54",
+      "sequence": 54,
+      "input": "Booklet-errors-54.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "duplicate-unit",
+        "unknown-unit",
+        "empty-testlet",
+        "repeated-space"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B55",
+      "sequence": 55,
+      "input": "Booklet-errors-55.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "missing-unit-title",
+        "duplicate-unit",
+        "unknown-unit",
+        "empty-testlet",
+        "repeated-space"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B56",
+      "sequence": 56,
+      "input": "Booklet-errors-56.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "duplicate-testlet",
+        "empty-testlet",
+        "repeated-space"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B57",
+      "sequence": 57,
+      "input": "Booklet-errors-57.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "missing-unit-title",
+        "duplicate-testlet",
+        "empty-testlet",
+        "repeated-space"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B58",
+      "sequence": 58,
+      "input": "Booklet-errors-58.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "duplicate-unit",
+        "duplicate-testlet",
+        "empty-testlet",
+        "repeated-space"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B59",
+      "sequence": 59,
+      "input": "Booklet-errors-59.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "missing-unit-title",
+        "duplicate-unit",
+        "duplicate-testlet",
+        "empty-testlet",
+        "repeated-space"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B60",
+      "sequence": 60,
+      "input": "Booklet-errors-60.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "unknown-unit",
+        "duplicate-testlet",
+        "empty-testlet",
+        "repeated-space"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B61",
+      "sequence": 61,
+      "input": "Booklet-errors-61.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "missing-unit-title",
+        "unknown-unit",
+        "duplicate-testlet",
+        "empty-testlet",
+        "repeated-space"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B62",
+      "sequence": 62,
+      "input": "Booklet-errors-62.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "duplicate-unit",
+        "unknown-unit",
+        "duplicate-testlet",
+        "empty-testlet",
+        "repeated-space"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B63",
+      "sequence": 63,
+      "input": "Booklet-errors-63.xlsx",
+      "outputs": [],
+      "xmlPrefix": "native/",
+      "faults": [
+        "missing-unit-title",
+        "duplicate-unit",
+        "unknown-unit",
+        "duplicate-testlet",
+        "empty-testlet",
+        "repeated-space"
+      ],
+      "scenario": "validation-product"
+    },
+    {
+      "id": "B64",
+      "sequence": 64,
+      "input": "Booklet-errors-64.xlsx",
+      "outputs": [
+        "bookletMETA_A.xml",
+        "bookletMETA_B.xml"
+      ],
+      "xmlPrefix": "native/B64/",
+      "faults": [],
+      "scenario": "multiple-booklets-metadata-recovery"
+    },
+    {
+      "id": "B65",
+      "sequence": 65,
+      "input": "Booklet-errors-65.xlsx",
+      "outputs": [
+        "bookletMETA_A.xml",
+        "bookletMETA_B.xml"
+      ],
+      "xmlPrefix": "native/B65/",
+      "faults": [],
+      "scenario": "absent-versus-empty-label-cells"
+    }
+  ],
+  "files": {
+    "inputs/Booklet-errors-00.xlsx": "75113eb21b1e078ed6a2fe7739c4af2c1b8ee7b3c043a7f13ba59bdda773b8dc",
+    "native/B00.txt": "a9370f8ed82c79557d2e343027e161e7ee4a7c0a967a50c229aa99d7b7033c76",
+    "native/bookletTHETLK.xml": "6a1cdde4ba12b9298474c7a67ed93a125cd3f6c83ed3e168f12daeaca65cc639",
+    "screens/B00-done.jpg": "1e56036ea5fd177f9e41300d44e206abccaf20813d8b6baeb065cdd8ee800f6a",
+    "screens/B00-text.jpg": "df41e95f91af71fe176dc4462b5e6b0fd14548a540919019b8a337f608c64714",
+    "inputs/Booklet-errors-01.xlsx": "47ea24e939e1cdb9238dad3420d0abbc23cb9293d502d9c60efc63e6fd9f003f",
+    "native/B01.txt": "6d51fb5616968bc958fe2fa52bf2b2df3eedcf6a13346035b8249943814dd892",
+    "screens/B01-done.jpg": "0adda9380286d3ee9a3544f7f621409d0c789d5c9eb40380eb9de5da9485147f",
+    "screens/B01-text.jpg": "e75a39a186cfab4176a85d14ff98aff8c0181a64f554a696fb939a5a395b5e32",
+    "inputs/Booklet-errors-02.xlsx": "e4b714cca03b54243e2dd11ab1f25066a13a8761760ba7eaf9c3ab83201f0752",
+    "native/B02.txt": "59034fa19ccd2261f9844b6c4549e6baa79bedd15432c0cca5cb4bcf3f249fbf",
+    "screens/B02-done.jpg": "7466312d67209745800ed1b2326d3b040ff7a8d428354a4efd199ef8b2233d5a",
+    "screens/B02-text.jpg": "6349d4b77b2f8db6fd96c2cb5acf1d548e3289aac6c3b035e574f701ac7e309a",
+    "inputs/Booklet-errors-03.xlsx": "1edb8219547166d581b83e7055b0100eae67dc5cee7bd4612a71add290960f62",
+    "native/B03.txt": "2200d92a6af374b7c514727458997d8410cdac5f4050ea9b4f6e47a2f9eb6662",
+    "screens/B03-done.jpg": "c5c347664247540c6f7ca9308f582c3a6ae1ca26481842df418db6a3ebe79294",
+    "screens/B03-text.jpg": "6cdac0d7c03b11d765256262978999aba1fdff652c6df32a95fbdb2032ed3327",
+    "inputs/Booklet-errors-04.xlsx": "e560f343dde63e74beda33b78246aa301602db458f78d470fc7cd20af59122ac",
+    "native/B04.txt": "2b0d22bd87353787ea5caad57b8fecd48d0f80873348337cc4ae765fc42aaef8",
+    "screens/B04-done.jpg": "746cbe356fe3baa4abb95d7e2780be82a209a3d2095a9940ba56bf5e37228c8f",
+    "screens/B04-text.jpg": "9be9b6a8e1c40646e6e27e9167e32cc477eece23ddd0dc2e2962d110689d3e2d",
+    "inputs/Booklet-errors-05.xlsx": "404e4174c6c8d8b715cc6052efa0b425906acc6e996478bbce850d41368b81b9",
+    "native/B05.txt": "3a763e518d5daa304cb5ef01ad90131b853a9b4141caf2da30b7cc1a10886522",
+    "screens/B05-done.jpg": "e401c14581356999164da3870fdf43b3076f08e40eed26896f70a37f18a4aec7",
+    "screens/B05-text.jpg": "dc4f388631d3ad595de3674d3138a22b848df05c48b6fe1713d29eb708e0a904",
+    "inputs/Booklet-errors-06.xlsx": "ca0970899edf7f3b59c571b4c4f19f4b38b408181554aed9ff1c583c4c6c662e",
+    "native/B06.txt": "c93472847b5dfb79f2326901ad3331ab1c50563529708d98020110189534501e",
+    "screens/B06-done.jpg": "24425177b7e16bb2743269cc961d14ebaeae8154bdd3a67f5e906900d8247aa9",
+    "screens/B06-text.jpg": "76e6b40a26c2a1d8e43126377eb5099abbdb0826e3f3dd67b0e7f0af81cc06ac",
+    "inputs/Booklet-errors-07.xlsx": "2b722b99c12bcd4983e19d99c4d517f700f335691f4b6d9fcdca881baefef287",
+    "native/B07.txt": "ffacac7ca1ee2cc8f74cf5abaa8ba68e164c9b3a2d6cde03e5dd39663356cbab",
+    "screens/B07-done.jpg": "c11b9575529210702efc5059ff3fec1a7f90f26a24e1fceae74b630f5cb45209",
+    "screens/B07-text.jpg": "d396ac14bee6672b9950951150af11dd7879b2b3fda913afd91feedaa65e0c32",
+    "inputs/Booklet-errors-08.xlsx": "3814943ddab1307a820678f08c60efb713cd57ded44171964ac21a5e238d8ca1",
+    "native/B08.txt": "418ddfd687098db0c30cbcc61e6cb121b6bd2330df6e6c2359a38671b601f92b",
+    "screens/B08-done.jpg": "3c7d36dcdc9536d7a5d7c97e98f4eb880d208e22fc9347af1bb33596dd936ed4",
+    "screens/B08-text.jpg": "81bc0614281787257d8b6ff8c21b8052c802584b21c20ceddd1cfffb6282ebbb",
+    "inputs/Booklet-errors-09.xlsx": "40913d501fa94594143865cb0c86bc2472abcc6eb0ba5f1064f901cbe081bf43",
+    "native/B09.txt": "a281748b0d7a87d72ca1113d34762b48ae9c9902553aea016c38d2c9c7105713",
+    "screens/B09-done.jpg": "8f251ee16e7b3a828ec0caed3dc9a0127e999c8ef8c2f07ebac45cf25f4acb94",
+    "screens/B09-text.jpg": "9f57ec99072901b36df8c5af6b45679a496f873b20c94976273fa4a186b75e38",
+    "inputs/Booklet-errors-10.xlsx": "522e9212ea282406aad61fe03301dd3ca240498cd36b81e214814a32b50c8c99",
+    "native/B10.txt": "a1e42f7284a98944b9eebda94e51a54daa2b6ee3eaa9ff25967572156c85b299",
+    "screens/B10-done.jpg": "6028fe5a39750593b22f48151a9a083926a22d971a55ccbbef479f1704be5bac",
+    "screens/B10-text.jpg": "a83e9ae53ae308af0fef6e2638fee55ab87e3a4744f44afcbee94245712ae8c8",
+    "inputs/Booklet-errors-11.xlsx": "cfc91cef911532553b84e21c37062ab7bf67144a1cfbb112214f41eead98be71",
+    "native/B11.txt": "61747d153169b0f557266e90b429fc1d615296bdc9dd84635aab9799c21435f7",
+    "screens/B11-done.jpg": "e5a35cd5c0d03dc59e5ca48ed2bab7ad0fa2e92db563860ba21e7fb34b4155fb",
+    "screens/B11-text.jpg": "bcd1df5815234035e22e6d8c1509c5d25446e9826f56cd8c572dd5f5e69084d0",
+    "inputs/Booklet-errors-12.xlsx": "23f489484cc6306ddb3a50139b7e9d44cef9e4df9535c0d0cbb4ced65871eb40",
+    "native/B12.txt": "fe61aab34b2366b9c40a1b669fd36b59be9a8ca90513577fa9cbb405497f9557",
+    "screens/B12-done.jpg": "d0f6801c06a612d7b1ce8b8eebc547cbc4390958e75fdd6ce30cb77b83102141",
+    "screens/B12-text.jpg": "bdf277829286700358f6660baf7626c5efa4192cd2f202cd53c388608b9affe5",
+    "inputs/Booklet-errors-13.xlsx": "87438d82b73efaefc9836d77dbc2f37d57c9c8e49e4f2b72e3ef7b44ce499620",
+    "native/B13.txt": "9fd4e83ad7073b19ff96bc6708e2f52eaf6bbf2d8a95fc716d2750b847bc3008",
+    "screens/B13-done.jpg": "ea6ec4009f49d3f376e9e2fd135a80f4509a5dfeebd91735e3e902d78881a6ae",
+    "screens/B13-text.jpg": "b5440d9822a3a69e7d4b4e2def75faffc838d2192b8a95b193d520a736a51980",
+    "inputs/Booklet-errors-14.xlsx": "a60b68e9b5433b44111013d7eb8270288394ed4ccbfbdd06526b006115a8459f",
+    "native/B14.txt": "8cd88872a8b21cdb1f831e8e8d6da854690c55a271fba2104bb266685427fc9b",
+    "screens/B14-done.jpg": "84fb0db39f7677a8a22aef7a2dffec6cb1f7f5aeebf4f6098fb00b0111d252b8",
+    "screens/B14-text.jpg": "77dc56bcf682d6aaeafd154a239d13a9a80e5ca1b006090322ea86de5f9d8b34",
+    "inputs/Booklet-errors-15.xlsx": "f8ef92e27e4aab067f1a02e44a1f04aa4424c6c25f10c4f11bb93fa7537c6a23",
+    "native/B15.txt": "00fd4133409aff63b8d28ca89f778d0e6f2a1dd7466526c4c1f54890b5bb9f7c",
+    "screens/B15-done.jpg": "95c7ab173e6394aa3382456266d229d3edd952c94fb5b740d265e1d507e8c990",
+    "screens/B15-text.jpg": "f92d728c01bb1dc2331a96d70ef740cf0f472dcd5fcf7ec010cb4fcb3c51da50",
+    "inputs/Booklet-errors-16.xlsx": "99d26ed6d176c94a0bdd939327d126a34927fc78a800b703dddee4885ba2fbf5",
+    "native/B16.txt": "25b2502319fa20186dea56492851c7b7e49a3ecadd687d85604a87383b158dd0",
+    "screens/B16-done.jpg": "c20311d284f62fda9cae0b17a23b6e0933befdbda85508e09de90a3ac5f71c68",
+    "screens/B16-text.jpg": "539e82885b2dbf8297dd280ebe800edbb0f069808f421cd6ea31c907c48a7d33",
+    "inputs/Booklet-errors-17.xlsx": "d6ef328c218fb55a5214ef10b3fed148931ebce2093e783347b2fcba37c779bf",
+    "native/B17.txt": "6c22049df9032d0087473abc6af9f6ec5fa147da0e9139081c3f1c0280a91f7a",
+    "screens/B17-done.jpg": "3d521f504803f906d66a9a1274888a8bb66666ea8969147b70f9f27869a14f15",
+    "screens/B17-text.jpg": "266e2916e1ec4af052cdcf4fa2a23998eda36f5651584f141d6d968f63b40177",
+    "inputs/Booklet-errors-18.xlsx": "04e86ae10af736f6a7cc0cde8c90e52166a99565fd2202e2d88a9ba050283ef9",
+    "native/B18.txt": "aad526f3e33d35ed507303bb99600dee5f1ca27a43491df574da7b91abb442d9",
+    "screens/B18-done.jpg": "68098bdc194cf3a51e2ef8175bd8fdfc9c983f76c3fefd94e745767e9ad12fab",
+    "screens/B18-text.jpg": "303201bddca61d52d243a86a7b25b5c0c3be6a179c7d36bfae3ed38fbafa8e5c",
+    "inputs/Booklet-errors-19.xlsx": "821a58e66941a866bc4b8fc5849b9f72804fec5bcf9cc681ac1e76237d1d4c0e",
+    "native/B19.txt": "b1f6cf4b5bfad3aa7bb22b275d3a9907e81dd5b61f7cf69de6d93c66c33be2d0",
+    "screens/B19-done.jpg": "ac648d8d9335f6672cd07deedc142d64e96684732675a30ae5d8808cd6feaf08",
+    "screens/B19-text.jpg": "1a6c4674bd0d369dcad95eed68bf55074722a7a7e3034a48264287206b7f49b2",
+    "inputs/Booklet-errors-20.xlsx": "7c740f6a5a28699780cf8b15c0fea8749fbf7f15b1dc2a6e6ae5b9dc0affb154",
+    "native/B20.txt": "ff9beb4770dc074c45fbdd53ccc9d551df1277393e3d81745174184e65184c77",
+    "screens/B20-done.jpg": "a5ea708390617496afce07129717fc34698e35c566e6d9d97de6ccdd090b17e0",
+    "screens/B20-text.jpg": "04a1d83866c562e08c444eb3d730156ea6a8e539e64a6c7f15c4b6c6a42f49ff",
+    "inputs/Booklet-errors-21.xlsx": "20facdd96b6e8a43c54e963c5bc9d88039459c3dfdb78681c6f8f4439d190044",
+    "native/B21.txt": "4b1118b452a1be3d1a9efbed7d1a1d1007fa742a1ce22a15f7a9e1428475a0ff",
+    "screens/B21-done.jpg": "8ff0299c5cc56a89b906a6b5123b7e1885daebe5727f6a13034fe01615d3fece",
+    "screens/B21-text.jpg": "18929c829ff5ca6418ffcc9f2f8bafc002f5636999e8040086429095fc5060c1",
+    "inputs/Booklet-errors-22.xlsx": "62f42365b9cf8c6b32df45a882052eedbf3559a58edfd6fd0b055d80d8721bd9",
+    "native/B22.txt": "e961044efeef01907ea1271d379486ddaf77786405047c8987e63883fc812de6",
+    "screens/B22-done.jpg": "d8254aa3e7cfefd9a017cc3b95b59d81d6946c2497aa3a4ee215d8e9fa36cde6",
+    "screens/B22-text.jpg": "b4d29cd06bc58cfdb5e7ba49ba54122a7e542b44f457162a6241a93cd60c5067",
+    "inputs/Booklet-errors-23.xlsx": "d963fac95a8e40a8c6a55edfcf09523e5efaea6e3b52aa1f012842565ae85c3d",
+    "native/B23.txt": "d85a35a023308de1bc9e48e197df547715479b856e56986c5837ba9eb42ea4f1",
+    "screens/B23-done.jpg": "ee4cf60f35dec5ef062aedadaab42c336bd34d759d3fc7f8aa6798447757f21f",
+    "screens/B23-text.jpg": "9127c8f61a976c148bd913c7887d5c6356e526b76c66f07a5a2d111b4b72c678",
+    "inputs/Booklet-errors-24.xlsx": "2d5033c78a664430e176705708312a43d053cd5a90b68f7a841a7165e955d118",
+    "native/B24.txt": "549cddacb55ddf617ad76d64d4085cc6451bc5f7ef595eefc7725239333b9b66",
+    "screens/B24-done.jpg": "51d1d1b50e904ee39d15cf0ccad267d465c7af0abf58d49a03ede0e83b7650c7",
+    "screens/B24-text.jpg": "4af0ca415cd593138b00119357ea57a65d439686e5a168245e56cdd926772dba",
+    "inputs/Booklet-errors-25.xlsx": "1d306388ddef0bd71874adc4efbd000c7fe01b8d73f4ecd0b1b0d565903d36ae",
+    "native/B25.txt": "1335cdaca7b0fd1a3a8587c1555f25926edbc6203f5c351155839cf58d57c85d",
+    "screens/B25-done.jpg": "cb0116062327241132ea3a667a7664cbcdb5c721656c09288fcabd4bb2b28985",
+    "screens/B25-text.jpg": "1d8a8394e9bdff280fdcf66abde56900dc27bc88642b421797581d2feb0549a2",
+    "inputs/Booklet-errors-26.xlsx": "350803f3a394a69aeed4f38a026ec4e86d2173e2728b09c7741b365811cadeed",
+    "native/B26.txt": "2fd52766700d33458c2c6e8632babe1b327cb7386bf4a7e1246319848a47e052",
+    "screens/B26-done.jpg": "ae6d775b2bc58d3ae80323c37578fb0b05c581410e665f0bff0e210cc36ea96d",
+    "screens/B26-text.jpg": "3d9b9289f5cae79b40256910cc5825fec9b6edbad1d738b88be9b0911123be62",
+    "inputs/Booklet-errors-27.xlsx": "c8403ce4f4f69a80c94645623b4861e8e30a89dc04f45419fcb646be2b0eb770",
+    "native/B27.txt": "daa90c154b997059c9fc244d8c3dae59ce82e22b7b0bcd6ef2b347206b92c967",
+    "screens/B27-done.jpg": "e087d96c5de28a2cb5504bff588d21784441c4eeb5e9b432b40f2b602dd7f8de",
+    "screens/B27-text.jpg": "1b1998b9eff4ee2886963400f03ac85f4ed2e0a20b23c0faad0fc4a5540326c3",
+    "inputs/Booklet-errors-28.xlsx": "d4041f4418b78300770a505cf9c49d46dbcf102c3d4e258becfe2a31a2f978a7",
+    "native/B28.txt": "34ce60fd0a66233a3d272777f490d44c16a0d7c0eea7b2a64143c2d3d5ff3015",
+    "screens/B28-done.jpg": "57d829994abb43d181bf21c9f80c649dc933a4595c26cf83158a76bab8bf7122",
+    "screens/B28-text.jpg": "053e80f30050647919f99212b705d3d19c06e7ff1971010dc4b5e9471eab50fa",
+    "inputs/Booklet-errors-29.xlsx": "da97e6c8f4b658ec15468c547f1ce15d4fe2b07e2403453be570d377d31de4ab",
+    "native/B29.txt": "77feb6683fac0b952d2f7225b7c8b1281b3a27a40caa0ddc9a93d98b05a789bb",
+    "screens/B29-done.jpg": "29bd892f444a29008b869cb77613f26d97e5ad114e8d727741208de7af625e55",
+    "screens/B29-text.jpg": "14a5d19f66f273663f565a8827f278cb9c335242e1f68bba694534df837981d7",
+    "inputs/Booklet-errors-30.xlsx": "458de5792ab9d9c4cc1455ac92dcc44fb71a4405fd7086f3a2a4b1395735bdac",
+    "native/B30.txt": "6324f92789917596766c176864c930efca92a8f743643a09e02440ba2701be68",
+    "screens/B30-done.jpg": "35befb833e23eeff5fa2f45f602619d1bf1d52d84f5c4112ea0b3ee54e655e0b",
+    "screens/B30-text.jpg": "cc2f08dbeb907e2868cfb65181c8b0f1ff6d77c77f74d1c1f8de8ce16ddde955",
+    "inputs/Booklet-errors-31.xlsx": "2e917753d3ffcc807a46b19a4bd0f6a4ee0a4e16d602f7d16d17b3e5f9247688",
+    "native/B31.txt": "6756eef4f72fec9daf427b3f2b17a91d8de37b625caec7de3cddb97ad89da13c",
+    "screens/B31-done.jpg": "a92d7d6f55ad225df906ee11e83b6af17f893ff2ad4f98d585a8e140d2ce19e3",
+    "screens/B31-text.jpg": "65ac24b27aab478b57147386414e987a9d82505f9da366a1d60a2e3482703815",
+    "inputs/Booklet-errors-32.xlsx": "e17e1fa4c56a73894a23fe893f00eaec7da295ab588025d17131897f0031e048",
+    "native/B32.txt": "bc2ca06c7687a208c81637097fa06eac02616dfdac7b1cbb65ffabef6dce5f66",
+    "screens/B32-done.jpg": "241ee49ee2558baf47509c163e22b546b221f49d1d498b84bd1e9453c830d9c2",
+    "screens/B32-text.jpg": "b64c4e401b7225fcf7407e7625cfc26427ea95707df8c1b6c8968f8ed58afcb4",
+    "inputs/Booklet-errors-33.xlsx": "914747d8fd3448da9cbd6fac41372a8794e77db0bace20c8bc01fede22541d17",
+    "native/B33.txt": "daee83b1fd4c52db4b856a41aa5cd7add1ab81e62a370fd404b6e17cbcb11052",
+    "screens/B33-done.jpg": "f6cf6274393cc4f049178e963f00b4ef100769466e5362c0c82cdab2dc6cbcb7",
+    "screens/B33-text.jpg": "3b7530eb156beb204a2242bb7c3d2ea97665fcc88ba6c26d1a58467c5cc9ef70",
+    "inputs/Booklet-errors-34.xlsx": "56bbb7fb8831c2a771d2cab0eadb0671b8dfcb2ccfed041e14fc7f149d5fb3b9",
+    "native/B34.txt": "06ef8afc7fe879e37fbc78353209612d5b89a89cec3ce24a5f4585ef1b1cc03e",
+    "screens/B34-done.jpg": "89802e8f4be2304e221eb3e55e83575b6eb957282de98be2b2763857893cc635",
+    "screens/B34-text.jpg": "8e2489cb6af44753b6b4edf80577ce44de8943d44a6647e968695d61afdd182c",
+    "inputs/Booklet-errors-35.xlsx": "650fef743177e14e163cf41157e63ddb61065ebfd624e982d00b9fc9e29f4fe2",
+    "native/B35.txt": "9d9e2cb6b3dd87cc408a33742a6e2dd540f84b078a8e7ecd507cc3d64d018dc9",
+    "screens/B35-done.jpg": "c92894678ce6a9d8baddf3b29fe6871af3866af1e867007c0e8ee4414d2119a8",
+    "screens/B35-text.jpg": "406c6d589bbb438e172cca1f2d65f406b5f545d958a0c8de60a747956ab0239e",
+    "inputs/Booklet-errors-36.xlsx": "c53c59ad0f3b5a7569b5bd2d540cb2f45d7c6724fd929258529a52501da4460c",
+    "native/B36.txt": "83e37ca12129396e8177d8e0b61c9dba47e5063923ad5fadafa8fa1c355091fb",
+    "screens/B36-done.jpg": "39bb6f03b214837c5a1f1ead5e1102bc4c01e1b8d2e86a11f5e1cf02ce2435c1",
+    "screens/B36-text.jpg": "036a53c87ff3a0e8829cc05ae1a8bbee16c8de367826097f30dc39d289d19c12",
+    "inputs/Booklet-errors-37.xlsx": "51c4d2fc1b0cb46d1ff23f849195a47890b28c416bf9390c8b61ce967d6d82d7",
+    "native/B37.txt": "d9957cc51dd600b4246360af746fa079d3c5d2e60e84770a0f1e6c2efab1e8f2",
+    "screens/B37-done.jpg": "cd6f5715a1cff2e7f77bdafb437dbb19bacd551ba65e8e6e1361923a836ec363",
+    "screens/B37-text.jpg": "f250b0dd40b4090f596c5ba785913ca1725aa305b92a9739ce5f4e25ddce5274",
+    "inputs/Booklet-errors-38.xlsx": "6095a201c084ceef5c544c1da5f1f7c6b25b399f21fd3f8354567c607106fe3e",
+    "native/B38.txt": "44bdedacdd738961127c41ede46589250907f04282053c28b8c0407fe6c6c4ec",
+    "screens/B38-done.jpg": "2b7a3afc243abdb7dad6f9b796f05ca63369194678532acf82a7c4efa162f8ef",
+    "screens/B38-text.jpg": "63a99dd05892cba07be73e78bf60cbee3a8266dfd0c478ddcc515425d3a7f6ec",
+    "inputs/Booklet-errors-39.xlsx": "951a97410a85e97f9afd79ad01300be232b6d3e54085466e4d948a3c4b22bad8",
+    "native/B39.txt": "8765eda02e2a029a20f5f4fc5961b3dba8f00167b21537e15181851440c71baf",
+    "screens/B39-done.jpg": "d92905b5c597bf64686750ea8e1f82cdf70ad3288e83486f1c5c9a7bbdba16ea",
+    "screens/B39-text.jpg": "242700da8307a2274ca630d6e6f4980b5f463b728c58f383f60ddc79ebe1d3f9",
+    "inputs/Booklet-errors-40.xlsx": "c26a2f3d8171fbdf74fac0441407f0fd101981e6e8a4b66b508f194b2bc8db24",
+    "native/B40.txt": "983d8c27ccbf3dc3e11138767d3ce4957c5343a42d1575eaf3e0c0a0ae13f3b5",
+    "screens/B40-done.jpg": "ec0fca2edae7c6420ad1d80b7e05703c87d8e03f61ea8f344aca7716f8952e6f",
+    "screens/B40-text.jpg": "040478372afab5fb29db16d9dbc0eff56124f663a05f36857490ebd6669feb08",
+    "inputs/Booklet-errors-41.xlsx": "9a1e813f623d791d2474f9430ebdfb595b71d6a7104cf9a969653bcf5c0c938e",
+    "native/B41.txt": "9f971125e26387fe3508a0879446f24ec4006100918dda15ddd579afaba22e1d",
+    "screens/B41-done.jpg": "ac4bd414d00200376b03e788c4f91a6a735f1acb4b152aebbc224b64145beaa9",
+    "screens/B41-text.jpg": "884da01c5cd5388ad68b46d8e7ac2b27e176d2b20bfa13b6497325ad9c8c465f",
+    "inputs/Booklet-errors-42.xlsx": "743db2df5eb31cda02c10146581dd93344c57ef261216f706d991dfe8caf1116",
+    "native/B42.txt": "83654371ad308459819b2139d4ea607a3234789a032aed36a8f1627d8e5dca8c",
+    "screens/B42-done.jpg": "2c7845962915b5e96d2bb9136a63ecf46f49b0502722656d37ef82c265f1c09b",
+    "screens/B42-text.jpg": "585f29c5ecc0deca370082dfda2dec78453059461ba2fec589d81279733dc92a",
+    "inputs/Booklet-errors-43.xlsx": "a202a3b400ac011d2c3f9d704dd0fd2ddbe8b2c00f3ad2b197fd5fd3afdc0587",
+    "native/B43.txt": "afa86ee45dfb77e9921380747d65ed85550e1177835553e816b0ab13e608698d",
+    "screens/B43-done.jpg": "2ba5967bbd6d4e99cdc464ce559bf624be822d6c9d3a191569d4034e5c998ccc",
+    "screens/B43-text.jpg": "7b7dc55accfac1bf4173c384c6a5f433257de3332e2acbbe2618398783173552",
+    "inputs/Booklet-errors-44.xlsx": "fca4079ee7964e3750f6eafc5bf998b5ae91215896706aba45b6ac87dc02969a",
+    "native/B44.txt": "2b8402116433081ced1e6cedee068d63be25220389aa61377643ecb03ebe393a",
+    "screens/B44-done.jpg": "33519e16b9d95058d09dd10472c528bad1110a13d194eb5b8c84c397156ff4db",
+    "screens/B44-text.jpg": "70efe7851a323feea376d0f54a5c10d5d7197e0bc578715d65caf0833e72d26d",
+    "inputs/Booklet-errors-45.xlsx": "697b87590a9dde0742e263c0a566021877c32c92ab902698d0672494b85b1e17",
+    "native/B45.txt": "1d3d5ffa538f936c8fab988895e1764ed842b26f4bd9e34e65aa690a8ad4c879",
+    "screens/B45-done.jpg": "2a3ebd06a889bb3b445d7de0f1124a0014d1b79a681aca575c070c11748cf3fa",
+    "screens/B45-text.jpg": "1878aa758f804f3370457a89ce73919c5f7adbbbfe8fb1596d4310f4880ca108",
+    "inputs/Booklet-errors-46.xlsx": "15d35388b06377c19eb10f96b01e485dd3d4d7c96f3a128d0e8cc7e12ece3ce8",
+    "native/B46.txt": "9c14adf2e25f7593d0bb4238d6c6bec71a358330f352e0622707b0f7300a4a75",
+    "screens/B46-done.jpg": "224af97ae9e307cbd407c2fc53331b2148073e78d0f8fc5560d72c2190372a7a",
+    "screens/B46-text.jpg": "f6d1d90ec8bcac21bcb2bfc4883ba7d49c5cf2e9eaa60fa15d43d8bd90d89f29",
+    "inputs/Booklet-errors-47.xlsx": "3229bd8d65ca15d698819d5df922f9ee166415ef4bfd4c6ebb27b4f6278423de",
+    "native/B47.txt": "e8aea459124ade53119a1394096b0c50be4e802d9d4cf0f03388d3dcc3df3fd1",
+    "screens/B47-done.jpg": "2bc16654f7f0d851ae3d46697f63d46b2f9e400b94e214ef4de6bc167fc5b5ef",
+    "screens/B47-text.jpg": "ea682ac16976b64200830267e0240a0a55ea154a523e09540acaef1c753a563d",
+    "inputs/Booklet-errors-48.xlsx": "a11c3399a5c25e4a65fb368696296895148d586d465af98463ba6dfbd59094a8",
+    "native/B48.txt": "ef16d00a969ab1d22d9013314b2f2c9f625f319467e44d6d5bf0dc0193448d40",
+    "screens/B48-done.jpg": "7d3f217983bc5337fe1ea77bcb2d97badb70af46946d8eda13f9156b58bc9a13",
+    "screens/B48-text.jpg": "1d7e5bf7729dcb4616d1e02567685dd4c1fbdfbf8bced5ef56c1d984fed3d865",
+    "inputs/Booklet-errors-49.xlsx": "12cc60361578257183492bda331e41b0a0e3e3ccd726d0e5c44ac4ee1c8cfa47",
+    "native/B49.txt": "93a5c0a2687e1660fc8f2cb78bba06e7fd71cd657162ab1b517f13b51d688894",
+    "screens/B49-done.jpg": "75bdac20e7097b3166df1ac52d5fade37670edbb8e9c62d323924481d6147cf7",
+    "screens/B49-text.jpg": "3ae56f4c5214d4d5544d5d6c18c3699c7eed260e4092b8ff75aa9272f40d3ed4",
+    "inputs/Booklet-errors-50.xlsx": "a17a8aa9a72c4d123ec60b18d25fd3aa31255cd050c43a254a17e3ea144c99b0",
+    "native/B50.txt": "7f2a360ac531619afbf9fb2ff9d69cd448189c7282e1fb0d89f60e857899cd55",
+    "screens/B50-done.jpg": "ef32fdadf27ee95bd3e50a6b516502da05c3b01c2f9686ace3d66afaebd0a307",
+    "screens/B50-text.jpg": "b2f264beb8604b1be4e9ef178fc002a58835a0940ddfd08391cabd3efc7a8773",
+    "inputs/Booklet-errors-51.xlsx": "536d4d473067b763a10cf3a35e94bdbb77f2ebc1c4eb86475bf2152cff018a76",
+    "native/B51.txt": "9106d676fb6e2921e2c79d35bc48a2241495a231f842d6d80698f1779b85198a",
+    "screens/B51-done.jpg": "e81b6fed814e1dfa16f82251a6400cb82fd6d835660c28f423faffb9680755b5",
+    "screens/B51-text.jpg": "8c3e8b09874eb68ec649f14586a7f83504cca813005db7c439834ce0a2c5c0a5",
+    "inputs/Booklet-errors-52.xlsx": "dad1c6d4be69ffeb2fbe8828d4a60985130fd6274f712eae04a83baf4505c972",
+    "native/B52.txt": "fd2cbce38b12cab2a47ab150355dc84eeea400683cb95820f48bb002f768b9e4",
+    "screens/B52-done.jpg": "b391e0531840a6a4e814c53680d2b91a0b595703081b3ed48cb49f9b37e384d7",
+    "screens/B52-text.jpg": "8032f9b319377ec4dd745ff362248879e6b364cf0066f66bc2a0216d7858e2d7",
+    "inputs/Booklet-errors-53.xlsx": "5917654e1d98478d962147de9a19df1a2825630da1b38cf42a5478de36c2f8c0",
+    "native/B53.txt": "721fcd183bfb42a2e69896eca3986ddf26b1545c98fd0d359639459659cd40b9",
+    "screens/B53-done.jpg": "da133b5e4f080e2b25439521838c1afacbcf256ca29dc1b8e6150c7ed032fb06",
+    "screens/B53-text.jpg": "cddbcf5ab18e18af3d210956ff5667f6a44241f1860a8adc25ab3d1c428be580",
+    "inputs/Booklet-errors-54.xlsx": "0e1bb0cc7c7c7d36f584e3859f3e0700f333597af4afd2e36d4602d56d4e94ec",
+    "native/B54.txt": "7733e8f5c21d2e7bfb106af3d2bf6752c6d8c38c8b990c36d8b07005b83907fb",
+    "screens/B54-done.jpg": "42e7cbab0b864036993a67dad7583c1d76e17e470b47d3ff17c68feb3418520a",
+    "screens/B54-text.jpg": "4fb46d738421dbcb4d23260eef03be1083b58b85c744fa85919f9685d6a144bc",
+    "inputs/Booklet-errors-55.xlsx": "eab98be4c27fd3e003a9a821ce0f8a2cb6f0d17791eca759afccca3b624c69c7",
+    "native/B55.txt": "a0d88198f1e24ade070377349a579e9da127489855e29f70299fb5787f1e4925",
+    "screens/B55-done.jpg": "c7d8a3e051f831ee17dc42fc282cb68bdfc49d30ab146e2e37ca2c6a95a85a30",
+    "screens/B55-text.jpg": "519664164b361e8ad0857cb6ccbb4b07206f2e6614821e13bb106332dbfdd92e",
+    "inputs/Booklet-errors-56.xlsx": "2d3a025e8c766bbf3c0e38ce0334e8abe1a93fc94a07fe87c0846beb360f69e8",
+    "native/B56.txt": "4fb5d40ed38c7c684890eb3ac4da55898a7277a48761c3f9f8278b84317875e6",
+    "screens/B56-done.jpg": "53119ec07713e6214c6a4430b899a98079b093f3c2bba100737b348df6199677",
+    "screens/B56-text.jpg": "f10b40450656ff4a226fc9a1ed47b5c649ca4fd795a6c2af4cd795633194bc8f",
+    "inputs/Booklet-errors-57.xlsx": "3f66d5ac428712b5898ca07b85f881d4ceb1f06a4f8c72e054a2bd773464b445",
+    "native/B57.txt": "042a51f3f71d3fd0194e883ed397456bb2c1d2381dc26b07a767725c16fae31a",
+    "screens/B57-done.jpg": "2d7da399f283b72f35c826f2cb514106586bb850ee413d7bfbc2e7595a4ba324",
+    "screens/B57-text.jpg": "7150c510447f7150ac96b691a54ae102c496c0bd33a06faa1f11e14eb887088d",
+    "inputs/Booklet-errors-58.xlsx": "e1bad173dc670ac25e7595c49740f278b21b495b81f48da323a3bcf6b97bffdc",
+    "native/B58.txt": "c4f0346468078f0111a5a8e26263abf060189c021918d95439ce52b9de8bf051",
+    "screens/B58-done.jpg": "7e5b6f347b45a4a6cf5c0a6aa393b7f12835f251f0ceb858d1aa00c5e247bba8",
+    "screens/B58-text.jpg": "30d872abd47e20ccd0c24f545221372ceb285186b2a38d9d0e3d64fc96afbfca",
+    "inputs/Booklet-errors-59.xlsx": "eb29df86fcca3d8b597a346f575eb35f808352612e4a46c752c20b2fb4bf025d",
+    "native/B59.txt": "1a5ba5cb6bcaf28c0d0070bfc0e866998a3fb27a5f44fb22b159d4fb94fdf8f6",
+    "screens/B59-done.jpg": "e0fa8544acda7b093192c0739abcfd171c4930992b9d7af6357c09133d59d964",
+    "screens/B59-text.jpg": "f744767714042e9b388c57575d1052927f85b377bdd03a35bb9892f8d95f364c",
+    "inputs/Booklet-errors-60.xlsx": "2a8a21b432037d1e61ef9e391256985ab965f5775b185ba1ccc17638dca2b8df",
+    "native/B60.txt": "7d5ed46dcc2cc185e87d3e4d8e0d259d57e5e2b316824d942ab94255e335d0fb",
+    "screens/B60-done.jpg": "8ae64d9f6e126e0475a1a549dbb0f653127ab7d4237cecc98bd0ef11b0c254b0",
+    "screens/B60-text.jpg": "e0cdc07fb0c9ad970e49dd072e33b02d50f6d8687bbbab6f88271d07b5c7d74c",
+    "inputs/Booklet-errors-61.xlsx": "d34d2f85f31ef9e1a4753596cf52cfaca49406e58714cce9f9f0d3d8b824f870",
+    "native/B61.txt": "442dcb0e8dfb391c54dac464363e2ef3e5157369b599583c2303ac0c89ff1fb7",
+    "screens/B61-done.jpg": "cd94a7eb49bd180434611144908ad2ccaf15d74f04f3faf527a8e631ac1efe14",
+    "screens/B61-text.jpg": "837fb9e92bdc823c0037898d8558856a4630ee0925af044c90d87f984548e868",
+    "inputs/Booklet-errors-62.xlsx": "96b89a656bfa787b0cb7632a8fcbe2f57b01fdae412eefd8d0085525fee29037",
+    "native/B62.txt": "542df1afed8579d8df8a0f7f75aa94205c2c08c7c853706151a58baf446b0300",
+    "screens/B62-done.jpg": "dfba1feccc2c65a2ef6a50c644a035ddf2cc22da6f402930fa5b50d4cb8ee692",
+    "screens/B62-text.jpg": "027cfc6d482b2dec1dca37ac467a22c746a6695798aa6ce433743092aaca29f9",
+    "inputs/Booklet-errors-63.xlsx": "837b02f47481f3c4ba88b7c8370950d66a8b0c561b9bd7f492c5f92d17701bff",
+    "native/B63.txt": "a6080105953262f9376b625f8f6cc7c3dc9158f7f1171ac05b1c83e41e8706b4",
+    "screens/B63-done.jpg": "aec1e6f1f59b7b7ad9249515b172f670ca18159658bf6c05943371196403044e",
+    "screens/B63-text.jpg": "77124590c5dcaa16ecfa951243dc8ac051a20fd1f0190c0ca07a391785802fac",
+    "inputs/Booklet-errors-64.xlsx": "3c7f26b93ef2ebbbc883aa92123fabe8c31f937acef1182d3fcec3d0476b5caa",
+    "native/B64.txt": "02cd4a2c84a76ee127bc4e59599fa3541b22986f39abc74775ca3446ee54d615",
+    "native/B64/bookletMETA_A.xml": "036eeec281f86fb3023aa0ed878288eed0f6fad23ac9447aa145873e7d5b2251",
+    "native/B64/bookletMETA_B.xml": "abefb19a7049be5bea3ed8494e4360e97b958ede2c7e340520fa79958321c09e",
+    "screens/B64-done.jpg": "edc09119df76e107acc7f9f77c9bdeff31352644170b96f4ac7ea4a1d6e938ad",
+    "screens/B64-text.jpg": "5e800290c318449b72dfe7a8522566d184a526fa295a40ccaeee4fd99cd3a8af",
+    "inputs/Booklet-errors-65.xlsx": "5924569ca6c9da640df09d962c8e02dda13a92ba8e61aa7640cb96c2ca6c6974",
+    "native/B65.txt": "a3165171ff87f0b189cc2d57456ed3b8cb04a39551f3b5ae2102f311d9898c98",
+    "native/B65/bookletMETA_A.xml": "4f3a200eec25438a3787d443ee20eb23a06610e2e07e930628188bb9e9790d8a",
+    "native/B65/bookletMETA_B.xml": "cecafd0e253e43113c6586efdeee3229fc72b568f55ca8f367ac1d3bfa3b8f46",
+    "screens/B65-done.jpg": "94036b6c5d07df2cb1c5e00c78714708bf3cb4036710947fb2d8759396c4652a",
+    "screens/B65-text.jpg": "4def56fd3c657b5a01892517fbbd04f036ea43f8e03954fbba09ed9d518f3cb0"
+  },
+  "bundles": [
+    {
+      "file": "cases-00.zip",
+      "sha256": "94a434ae54191ed136bca05963dee2b22e35afaad6176a528bca6c0f36285001",
+      "bytes": 2683328
+    },
+    {
+      "file": "cases-01.zip",
+      "sha256": "30e242c673d61d9b4ef1d8e42644ff27785d5604256dc5978682c60bee7c6e01",
+      "bytes": 2687302
+    },
+    {
+      "file": "cases-02.zip",
+      "sha256": "c3467fc9f2e420ed4aeb8b680ad7bc541d52d5451dfbed2a4ae461e8b2ed50b4",
+      "bytes": 2711868
+    },
+    {
+      "file": "cases-03.zip",
+      "sha256": "078635f21408414716caef7bb582a9b414061623af9f26d2fe1c8bdfefab6ffa",
+      "bytes": 2730374
+    },
+    {
+      "file": "cases-04.zip",
+      "sha256": "e9a9e5bd786c8ecb9e2207cc723d8bc16fe824b96866d3e2fd1c4cc666fb1325",
+      "bytes": 2720863
+    },
+    {
+      "file": "cases-05.zip",
+      "sha256": "485ba8a9d56d09608c91b844453b8c53d187a373c81b9c218add7f15b11ec1eb",
+      "bytes": 2739734
+    },
+    {
+      "file": "cases-06.zip",
+      "sha256": "32684c5f29ce2385fff809e8ed9ad9bc8913c23b1fa6c8f05786b67525486a04",
+      "bytes": 2763583
+    },
+    {
+      "file": "cases-07.zip",
+      "sha256": "9facfbef85057913c38817a244d4a2e70ce9723f2acf770ea5be46227291c696",
+      "bytes": 2779953
+    },
+    {
+      "file": "cases-08.zip",
+      "sha256": "b3ade4e0bdf20745b9eabd6b55ad13081f6d112cdd7cb92c26e06c0df09aa333",
+      "bytes": 672905
+    }
+  ],
+  "comparison": "Complete UTF-16LE/CRLF message export including BOM; only the native directory prefix is removed. Full XML element/attribute trees, retaining the distinction between absent and empty attributes. Error/output decisions match.",
+  "correction": "Retain XML cell presence: absent Testlet title cells omit label; existing empty cells emit label=\"\". The extended mode remains unchanged.",
+  "recovery": "After all six faults in B63, B64 and B65 succeed in the same original process with corrected copies, two booklets, distinct descriptions, Unicode/XML escaping, and inverted absent/empty title cells.",
+  "screenshots": "Two native full-desktop screenshots per case, resized to 1512 pixels; completed Booklet dialog and full message text in Notepad. Long text is also retained as its complete UTF-16LE file.",
+  "limits": [
+    "All data synthetic, no empirical study files.",
+    "64 combinations of six specific validation faults plus two valid follow-ups; not every possible Workbook schema or failure.",
+    "Other GUI families remain separately listed."
+  ]
+}
