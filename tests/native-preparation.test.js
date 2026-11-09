@@ -23,6 +23,8 @@ if(proof.matrix){
  assert.equal(proof.matrix.cases.length,128);
  const expected=[];for(const length of [5,8])for(const password of [0,4])for(const monitor of [false,true])for(const separate of [false,true])for(let prefix=0;prefix<8;prefix++)expected.push(`matrix-${length}-${password}-${+monitor}-${+separate}-${prefix}`);
  assert.deepEqual(proof.matrix.cases.map(c=>c.id),expected);
+ for(const c of proof.matrix.cases){const [,length,password,monitor,separate,prefix]=c.id.split('-').map((v,i)=>i?Number(v):v);assert.deepEqual(c,{id:c.id,source:'Logins-wide',renew:true,xml:true,length,password,monitor:!!monitor,separate:!!separate,testee:!!(prefix&1),reserve:!!(prefix&2),review:!!(prefix&4)});assert.deepEqual(proof.results.find(r=>r.id===c.id).options,c);}
+
  assert.deepEqual(proof.results.filter(c=>c.options?.reopenOf).map(c=>c.options.reopenOf),expected);
 }
 function bytes(capture){const raw=Buffer.from(capture.base64,'base64');assert.equal(raw.length,capture.bytes);assert.equal(createHash('sha256').update(raw).digest('hex'),capture.sha256);return raw;}

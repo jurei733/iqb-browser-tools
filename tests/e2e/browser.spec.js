@@ -1,6 +1,7 @@
 import {test, expect} from '@playwright/test';
 
 test('original templates, image decoders, workers, exports and browser storage', async({page}, testInfo)=>{
+  test.setTimeout(300_000);
   const errors=[];
   page.on('pageerror', error=>errors.push(error.message));
   // Collect the existing browser harness report without adding a public report endpoint.

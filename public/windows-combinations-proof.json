@@ -1,0 +1,135 @@
+{
+  "checkedOn": "2026-11-09",
+  "status": "passed-listed-native-matrices",
+  "completeEquivalence": false,
+  "empiricalStudyDataTested": false,
+  "originals": {
+    "IQB-Kodieren": "4.3.0.3",
+    "itc-ToolBox": "3.3.0.2"
+  },
+  "method": "Fresh Windows x64 runner executing hash-pinned, unchanged original assemblies. Dialog workers, actual Coding CaseList constructor and file serializers are distinct from retained visible GUI comparisons.",
+  "scope": {
+    "loginGeneration": {
+      "cases": 128,
+      "axes": {
+        "length": [
+          5,
+          8
+        ],
+        "passwordLength": [
+          0,
+          4
+        ],
+        "monitor": [
+          false,
+          true
+        ],
+        "separateXml": [
+          false,
+          true
+        ],
+        "prefixMask": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "reopenCases": 128,
+      "randomNormalization": "Only generated code bodies and group suffixes; prefixes, lengths, uniqueness, passwords, modes, counts and preserved identities compared."
+    },
+    "bookletValidation": {
+      "cases": 64,
+      "binaryAxes": [
+        "missing-unit-title",
+        "duplicate-unit",
+        "unknown-unit",
+        "duplicate-testlet",
+        "empty-testlet",
+        "repeated-space"
+      ],
+      "comparison": "Complete progress/error messages, failure outcome and all generated XML fields."
+    },
+    "codingResults": {
+      "additionalStateCases": 216,
+      "people": 3,
+      "variablesPerPerson": 2,
+      "states": [
+        "blank",
+        "code 0",
+        "code 1",
+        "comment only",
+        "code 0 and comment",
+        "whitespace comment"
+      ],
+      "originalReopenCases": 216,
+      "comparison": "All decoded result header fields, global comments, codes, comments, timestamps and entry order. Export and original constructor reload/re-export."
+    },
+    "excel": {
+      "cases": 90,
+      "fieldSelections": 15,
+      "subformModes": [
+        "none",
+        "rows",
+        "columns"
+      ],
+      "sources": [
+        "original in-memory store",
+        "original SQLite connector"
+      ],
+      "input": "Three synthetic people with empty/A/B subforms; every sheet and cell compared, styles and ZIP metadata excluded."
+    }
+  },
+  "fixes": [
+    {
+      "issue": "Empty shared-string passwords were repaired by ExcelJS when saving Windows-mode login workbooks; a subsequent XML export changed login modes.",
+      "initialFailingReopenCases": 64,
+      "change": "Windows-mode workbook output retains the original cell representation; repeated reopen/export matches the original."
+    }
+  ],
+  "referenceRuns": {
+    "preparationCapture": 42616986133,
+    "excelCapture": 42617341111,
+    "finalNative": 42618461622,
+    "testsAndBuild": 42618461627
+  },
+  "limitations": [
+    "Finite products over the listed dimensions, not all possible files or option values.",
+    "Synthetic data and official templates only; no empirical study files supplied.",
+    "These new worker/file comparisons do not add visible Windows-GUI pairs for every combination.",
+    "The three existing GUI qualifications and pure-online operating-system limits remain documented in release.json.",
+    "Actual random login values, workbook styles and archive metadata are not required to match byte-for-byte.",
+    "Absent and empty Testlet label attributes are treated as the same empty label.",
+    "The two invalid XML string cases compare rejection outcomes; their exception messages are not asserted identical.",
+    "Coding constructor pairs compare serialized results; the newly generated matrices do not assert identical native case-list counts or GUI selection for every synthetic state."
+  ],
+  "verifiedCommit": "41752fc4ff79260fff69cd12b21bd09d5acb3bd9",
+  "nativeVerification": {
+    "coding": {
+      "passed": 240,
+      "total": 240,
+      "bidirectional": 238,
+      "errorDetection": 2,
+      "originalConstructorReopen": 216
+    },
+    "preparation": {
+      "passed": 334,
+      "total": 334
+    },
+    "studies": {
+      "passed": 399,
+      "total": 399,
+      "includedExcelOptionCases": 90
+    }
+  },
+  "regressionFiles": [
+    "tests/fixtures/native-combinations-20261109/preparation.json.gz",
+    "tests/fixtures/native-combinations-20261109/preparation-source.json",
+    "tests/fixtures/native-combinations-20261109/excel.json.gz",
+    "tests/fixtures/native-combinations-20261109/coding.json.gz"
+  ]
+}

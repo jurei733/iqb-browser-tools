@@ -1,3 +1,4 @@
+import {registerNativeCombinations} from './browser-combinations.js';
 import {DOMParser as PortableParser} from '@xmldom/xmldom';
 import {unzipSync,zipSync,gunzipSync,strToU8,strFromU8} from 'fflate';
 import {parseJSON,stringifyJSON} from '../src/json.js';
@@ -188,6 +189,7 @@ check('Windows Testcenter GUI: original group JSON bytes through the production 
  assert(Object.keys(entries).length===p.testcenter.json.length,'Fehlende Originaldatei');
  for(const c of p.testcenter.json)assert(sameBytes(entries[c.name],captureBytes(c.capture)),c.name+' weicht vom Windows-Dialog ab');
 });
+registerNativeCombinations({check,get,assert,canonical,sha256,task});
 $('#run').onclick=async()=>{const button=$('#run');button.disabled=true;$('#results').replaceChildren();const report={userAgent:navigator.userAgent,started:new Date().toISOString(),checks:[]};let passed=0;for(const {name,fn}of checks){$('#status').textContent=name;const li=document.createElement('li');try{await fn();passed++;li.className='ok';li.textContent='✓ '+name;report.checks.push({name,passed:true});}catch(e){li.className='fail';li.textContent='✗ '+name+' — '+e.message;report.checks.push({name,passed:false,error:e.message,stack:e.stack});}$('#results').append(li);}report.passed=passed;report.total=checks.length;report.finished=new Date().toISOString();$('#status').textContent=`${passed} / ${checks.length} erfolgreich`;$('#download').href=URL.createObjectURL(new Blob([JSON.stringify(report,null,2)],{type:'application/json'}));$('#download').download='Browser-Pruefbericht.json';$('#download').hidden=false;try{await fetch('/__report__',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(report)});}catch{}button.disabled=false;};
 // Test-only entry point for installed browsers whose native UI cannot press the button.
 if(new URLSearchParams(location.search).get('run')==='1')$('#run').click();

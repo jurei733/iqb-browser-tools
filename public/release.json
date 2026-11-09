@@ -68,5 +68,12 @@
     "Automatisches Überschreiben in jedem Browser",
     "Dauerhafte echte Dateipfade ohne lokalen Starter"
   ],
-  "realMobileHardwareTested": false
+  "realMobileHardwareTested": false,
+  "additionalVerification": {
+    "proof": "windows-combinations-proof.json",
+    "report": "windows-combinations.html",
+    "verifiedCommit": "41752fc4ff79260fff69cd12b21bd09d5acb3bd9",
+    "nativeRun": 42618461622,
+    "fixedFailingLoginReopenCases": 64
+  }
 }
