@@ -1,0 +1,35 @@
+{
+  "checkedOn": "2026-11-09",
+  "original": "itc-ToolBox 3.3.0.2",
+  "mode": "Direct Testcenter response/log CSV downloads",
+  "server": "Retained local Testcenter 19.0.1 demo, Sample Workspace, BROWSER_A and BROWSER_B",
+  "cases": [
+    {
+      "kind": "responses",
+      "capture": "docs/evidence/gui-final-20261109/native-testcenter-response-csv.png",
+      "path": "tests/fixtures/gui-final-20261109/native-tc-responses.csv",
+      "bytes": 3919,
+      "sha256": "32ee4ba572c776b6e0fffa78cebb5ce8f8ab9be13b6ca71f68c00884f3d4afc8",
+      "LF": 4,
+      "CRLF": 0
+    },
+    {
+      "kind": "logs",
+      "capture": "docs/evidence/gui-final-20261109/native-testcenter-log-csv.png",
+      "path": "tests/fixtures/gui-final-20261109/native-tc-logs.csv",
+      "bytes": 2264,
+      "sha256": "2524fbd1fdfdcc42c086cf29360be12525d977f70838c50d7ef8c466f2366a74",
+      "LF": 18,
+      "CRLF": 0
+    }
+  ],
+  "limitations": [
+    "Synthetic local Testcenter sessions, not empirical study data.",
+    "Byte equality requires the explicitly selected Windows profile. The extended profile continues normalizing CSV.",
+    "Native CSV concatenation retains the first server report and appends each following report from its first LF, including the original BOM and line endings."
+  ],
+  "serverReports": {
+    "path": "tests/fixtures/gui-final-20261109/testcenter-reports.json",
+    "sha256": "4c5e98d6625c7b20fb5ef560fb6bd40eecafe0f7f3b122ce3c2fbe75d772950d"
+  }
+}

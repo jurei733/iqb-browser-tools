@@ -49,7 +49,22 @@ export class TestcenterClient {
   report(kind,group,csv=false){if(!['response','log','review'].includes(kind))throw new Error('Unbekannter Berichtstyp.');return this.request(this.route('/report/'+kind+'?dataIds='+encode(group)+(csv?'&useNewVersion=false':'')),{format:csv?'text':'json',accept:csv?'text/csv':'application/json'});}
   async results(groups){const responses=[],logs=[];for(const [i,g]of groups.entries()){this.onProgress(i/groups.length,`Gruppe ${g}`);logs.push(...await this.report('log',g));responses.push(...await this.report('response',g));}return {responses,logs};}
   async reviews(groups){const rows=[];for(const g of groups)rows.push(...await this.report('review',g));return rows;}
-  async rawCSV(kind,groups){let header,rows=[];for(const g of groups){const data=parseCSV(await this.report(kind,g,true));if(!header)header=data.shift();else {const current=data.shift();if(JSON.stringify(current)!==JSON.stringify(header))throw new Error('Die Gruppen liefern unterschiedliche CSV-Köpfe.');}rows.push(...data);}return strToU8(csvString([header||[],...rows]));}
+  async rawCSV(kind,groups,{windows=false}={}){
+    if(!windows){let header,rows=[];for(const g of groups){const data=parseCSV(await this.report(kind,g,true));if(!header)header=data.shift();else {const current=data.shift();if(JSON.stringify(current)!==JSON.stringify(header))throw new Error('Die Gruppen liefern unterschiedliche CSV-Köpfe.');}rows.push(...data);}return strToU8(csvString([header||[],...rows]));}
+    let header,output='';
+    for(const g of groups){
+      const source=(await this.report(kind,g,true)).replace(/^\uFEFF/,''),newline=source.indexOf('\n');
+      const current=parseCSV(newline<0?source:source.slice(0,newline))[0];
+      if(header===undefined){header=current;output=source;}
+      else{
+        if(JSON.stringify(current)!==JSON.stringify(header))throw new Error('Die Gruppen liefern unterschiedliche CSV-Köpfe.');
+        // The original appends the next server report starting at its LF,
+        // keeping every body byte rather than decoding/re-encoding CSV rows.
+        if(newline>0)output+=source.slice(newline);
+      }
+    }
+    return strToU8('\uFEFF'+output);
+  }
   async bookletSizes(){const all=await this.files(),dependencies=await this.dependencies(all.filter(f=>f.type==='Booklet').map(f=>f.name)),sizes=new Map(all.map(f=>[f.name,Number(f.size)||0])),result={};for(const b of dependencies){result[b.id]=Number(b.size)||0;const seen=new Set();for(const d of b.dependencies||[])if(['containsUnit','usesPlayer','isDefinedBy'].includes(d.relationship_type)&&!seen.has(d.object_name)){result[b.id]+=sizes.get(d.object_name)||0;seen.add(d.object_name);}}return result;}
   async content(){const files=await this.files(),units=await this.dependencies(files.filter(f=>f.type==='Unit').map(f=>f.name)),indexFiles=[...files.filter(f=>f.type!=='Unit'),...units],entries={};for(const [i,file]of files.entries()){this.onProgress(i/files.length,file.name);const name=String(file.name).replace(/\\/g,'/');if(name.startsWith('/')||name.split('/').includes('..'))throw new Error('Der Server liefert einen ungültigen Dateinamen.');const bytes=await this.file(file);const time=new Date(Math.max(Date.UTC(1980,0,1),Number(file.modificationTime||0)*1000));entries[name]=[bytes,{mtime:time}];}entries['index.html']=strToU8(contentIndex(indexFiles));return zipSync(entries);}
 }

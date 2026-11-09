@@ -1,0 +1,302 @@
+{
+  "workspace": {
+    "id": "1",
+    "name": "Sample Workspace"
+  },
+  "groups": [
+    {
+      "groupName": "BROWSER_A",
+      "groupLabel": "Demo A – Umlaute",
+      "bookletsStarted": 1,
+      "numUnitsMin": 2,
+      "numUnitsMax": 2,
+      "numUnitsTotal": 2,
+      "numUnitsAvg": 2,
+      "lastChange": 1792766520
+    },
+    {
+      "groupName": "BROWSER_B",
+      "groupLabel": "Demo B – zweiter Import",
+      "bookletsStarted": 1,
+      "numUnitsMin": 2,
+      "numUnitsMax": 2,
+      "numUnitsTotal": 2,
+      "numUnitsAvg": 2,
+      "lastChange": 1792766521
+    }
+  ],
+  "report": {
+    "BROWSER_A": {
+      "responseJSON": "[{\"groupname\":\"BROWSER_A\",\"loginname\":\"001\",\"code\":\"\",\"bookletname\":\"BOOKLET.SAMPLE-1\",\"unitname\":\"an_alias\",\"laststate\":\"{\\\"RESPONSEPROGRESS\\\": \\\"complete\\\", \\\"PRESENTATIONPROGRESS\\\": \\\"complete\\\"}\",\"originalUnitId\":\"UNIT.SAMPLE\",\"responses\":[{\"id\":\"all\",\"content\":\"[{\\\"id\\\":\\\"text\\\",\\\"value\\\":\\\"Gr\\u00fc\\u00dfe; \\\\\\\"Welt\\\\\\\"\\\\n001\\/an_alias\\\",\\\"status\\\":\\\"CODING_COMPLETE\\\",\\\"code\\\":0,\\\"score\\\":0},{\\\"id\\\":\\\"zero\\\",\\\"value\\\":0,\\\"status\\\":\\\"CODING_COMPLETE\\\",\\\"code\\\":0,\\\"score\\\":0},{\\\"id\\\":\\\"bool\\\",\\\"value\\\":true,\\\"status\\\":\\\"VALUE_CHANGED\\\"},{\\\"id\\\":\\\"null\\\",\\\"value\\\":null,\\\"status\\\":\\\"VALUE_CHANGED\\\"},{\\\"id\\\":\\\"large\\\",\\\"value\\\":9007199254740993,\\\"status\\\":\\\"VALUE_CHANGED\\\"},{\\\"id\\\":\\\"array\\\",\\\"value\\\":[\\\"\\u00e4\\\",0,false],\\\"status\\\":\\\"VALUE_CHANGED\\\"},{\\\"id\\\":\\\"sub\\\",\\\"subform\\\":\\\"01\\\",\\\"value\\\":\\\"Unterformular 001\\\",\\\"status\\\":\\\"CODING_COMPLETE\\\",\\\"code\\\":2,\\\"score\\\":1}]\",\"ts\":1792742403000,\"responseType\":\"iqb-standard@1.1\"}]},{\"groupname\":\"BROWSER_A\",\"loginname\":\"001\",\"code\":\"\",\"bookletname\":\"BOOKLET.SAMPLE-1\",\"unitname\":\"UNIT.SAMPLE\",\"laststate\":\"{\\\"RESPONSEPROGRESS\\\": \\\"complete\\\", \\\"PRESENTATIONPROGRESS\\\": \\\"complete\\\"}\",\"originalUnitId\":\"UNIT.SAMPLE\",\"responses\":[{\"id\":\"all\",\"content\":\"[{\\\"id\\\":\\\"text\\\",\\\"value\\\":\\\"Gr\\u00fc\\u00dfe; \\\\\\\"Welt\\\\\\\"\\\\n001\\/UNIT.SAMPLE\\\",\\\"status\\\":\\\"CODING_COMPLETE\\\",\\\"code\\\":0,\\\"score\\\":0},{\\\"id\\\":\\\"zero\\\",\\\"value\\\":0,\\\"status\\\":\\\"CODING_COMPLETE\\\",\\\"code\\\":0,\\\"score\\\":0},{\\\"id\\\":\\\"bool\\\",\\\"value\\\":true,\\\"status\\\":\\\"VALUE_CHANGED\\\"},{\\\"id\\\":\\\"null\\\",\\\"value\\\":null,\\\"status\\\":\\\"VALUE_CHANGED\\\"},{\\\"id\\\":\\\"large\\\",\\\"value\\\":9007199254740993,\\\"status\\\":\\\"VALUE_CHANGED\\\"},{\\\"id\\\":\\\"array\\\",\\\"value\\\":[\\\"\\u00e4\\\",0,false],\\\"status\\\":\\\"VALUE_CHANGED\\\"},{\\\"id\\\":\\\"sub\\\",\\\"subform\\\":\\\"01\\\",\\\"value\\\":\\\"Unterformular 001\\\",\\\"status\\\":\\\"CODING_COMPLETE\\\",\\\"code\\\":2,\\\"score\\\":1}]\",\"ts\":1792742402000,\"responseType\":\"iqb-standard@1.1\"}]}]",
+      "response": [
+        {
+          "groupname": "BROWSER_A",
+          "loginname": "001",
+          "code": "",
+          "bookletname": "BOOKLET.SAMPLE-1",
+          "unitname": "an_alias",
+          "laststate": "{\"RESPONSEPROGRESS\": \"complete\", \"PRESENTATIONPROGRESS\": \"complete\"}",
+          "originalUnitId": "UNIT.SAMPLE",
+          "responses": [
+            {
+              "id": "all",
+              "content": "[{\"id\":\"text\",\"value\":\"Grüße; \\\"Welt\\\"\\n001/an_alias\",\"status\":\"CODING_COMPLETE\",\"code\":0,\"score\":0},{\"id\":\"zero\",\"value\":0,\"status\":\"CODING_COMPLETE\",\"code\":0,\"score\":0},{\"id\":\"bool\",\"value\":true,\"status\":\"VALUE_CHANGED\"},{\"id\":\"null\",\"value\":null,\"status\":\"VALUE_CHANGED\"},{\"id\":\"large\",\"value\":9007199254740993,\"status\":\"VALUE_CHANGED\"},{\"id\":\"array\",\"value\":[\"ä\",0,false],\"status\":\"VALUE_CHANGED\"},{\"id\":\"sub\",\"subform\":\"01\",\"value\":\"Unterformular 001\",\"status\":\"CODING_COMPLETE\",\"code\":2,\"score\":1}]",
+              "ts": 1792742403000,
+              "responseType": "iqb-standard@1.1"
+            }
+          ]
+        },
+        {
+          "groupname": "BROWSER_A",
+          "loginname": "001",
+          "code": "",
+          "bookletname": "BOOKLET.SAMPLE-1",
+          "unitname": "UNIT.SAMPLE",
+          "laststate": "{\"RESPONSEPROGRESS\": \"complete\", \"PRESENTATIONPROGRESS\": \"complete\"}",
+          "originalUnitId": "UNIT.SAMPLE",
+          "responses": [
+            {
+              "id": "all",
+              "content": "[{\"id\":\"text\",\"value\":\"Grüße; \\\"Welt\\\"\\n001/UNIT.SAMPLE\",\"status\":\"CODING_COMPLETE\",\"code\":0,\"score\":0},{\"id\":\"zero\",\"value\":0,\"status\":\"CODING_COMPLETE\",\"code\":0,\"score\":0},{\"id\":\"bool\",\"value\":true,\"status\":\"VALUE_CHANGED\"},{\"id\":\"null\",\"value\":null,\"status\":\"VALUE_CHANGED\"},{\"id\":\"large\",\"value\":9007199254740993,\"status\":\"VALUE_CHANGED\"},{\"id\":\"array\",\"value\":[\"ä\",0,false],\"status\":\"VALUE_CHANGED\"},{\"id\":\"sub\",\"subform\":\"01\",\"value\":\"Unterformular 001\",\"status\":\"CODING_COMPLETE\",\"code\":2,\"score\":1}]",
+              "ts": 1792742402000,
+              "responseType": "iqb-standard@1.1"
+            }
+          ]
+        }
+      ],
+      "logJSON": "[{\"groupname\":\"BROWSER_A\",\"loginname\":\"001\",\"code\":\"\",\"bookletname\":\"BOOKLET.SAMPLE-1\",\"unitname\":\"UNIT.SAMPLE\",\"originalUnitId\":\"UNIT.SAMPLE\",\"timestamp\":1792742402000,\"logentry\":\"RESPONSEPROGRESS = complete\"},{\"groupname\":\"BROWSER_A\",\"loginname\":\"001\",\"code\":\"\",\"bookletname\":\"BOOKLET.SAMPLE-1\",\"unitname\":\"UNIT.SAMPLE\",\"originalUnitId\":\"UNIT.SAMPLE\",\"timestamp\":1792742402000,\"logentry\":\"PRESENTATIONPROGRESS = complete\"},{\"groupname\":\"BROWSER_A\",\"loginname\":\"001\",\"code\":\"\",\"bookletname\":\"BOOKLET.SAMPLE-1\",\"unitname\":\"UNIT.SAMPLE\",\"originalUnitId\":\"UNIT.SAMPLE\",\"timestamp\":1792742402001,\"logentry\":\"ANSWER = \\\"\\\\u00e4; \\\\\\\"quoted\\\\\\\"\\\\nnext\\\"\"},{\"groupname\":\"BROWSER_A\",\"loginname\":\"001\",\"code\":\"\",\"bookletname\":\"BOOKLET.SAMPLE-1\",\"unitname\":\"an_alias\",\"originalUnitId\":\"UNIT.SAMPLE\",\"timestamp\":1792742403000,\"logentry\":\"RESPONSEPROGRESS = complete\"},{\"groupname\":\"BROWSER_A\",\"loginname\":\"001\",\"code\":\"\",\"bookletname\":\"BOOKLET.SAMPLE-1\",\"unitname\":\"an_alias\",\"originalUnitId\":\"UNIT.SAMPLE\",\"timestamp\":1792742403000,\"logentry\":\"PRESENTATIONPROGRESS = complete\"},{\"groupname\":\"BROWSER_A\",\"loginname\":\"001\",\"code\":\"\",\"bookletname\":\"BOOKLET.SAMPLE-1\",\"unitname\":\"an_alias\",\"originalUnitId\":\"UNIT.SAMPLE\",\"timestamp\":1792742403001,\"logentry\":\"ANSWER = \\\"\\\\u00e4; \\\\\\\"quoted\\\\\\\"\\\\nnext\\\"\"},{\"groupname\":\"BROWSER_A\",\"loginname\":\"001\",\"code\":\"\",\"bookletname\":\"BOOKLET.SAMPLE-1\",\"unitname\":\"\",\"originalUnitId\":\"\",\"timestamp\":1792742400000,\"logentry\":\"status : \\\"running\\\"\"},{\"groupname\":\"BROWSER_A\",\"loginname\":\"001\",\"code\":\"\",\"bookletname\":\"BOOKLET.SAMPLE-1\",\"unitname\":\"\",\"originalUnitId\":\"\",\"timestamp\":1792742401200,\"logentry\":\"LOADCOMPLETE : {\\\"loadTime\\\":1200,\\\"browser\\\":\\\"Demo Browser\\\",\\\"os\\\":\\\"Platform test\\\",\\\"screen\\\":\\\"1280 x 800\\\"}\"},{\"groupname\":\"BROWSER_A\",\"loginname\":\"001\",\"code\":\"\",\"bookletname\":\"BOOKLET.SAMPLE-1\",\"unitname\":\"\",\"originalUnitId\":\"\",\"timestamp\":1792742401300,\"logentry\":\"NOTE : \\\"Gr\\\\u00fc\\\\u00dfe; \\\\\\\"Welt\\\\\\\"\\\\nZeile 2\\\"\"}]",
+      "log": [
+        {
+          "groupname": "BROWSER_A",
+          "loginname": "001",
+          "code": "",
+          "bookletname": "BOOKLET.SAMPLE-1",
+          "unitname": "UNIT.SAMPLE",
+          "originalUnitId": "UNIT.SAMPLE",
+          "timestamp": 1792742402000,
+          "logentry": "RESPONSEPROGRESS = complete"
+        },
+        {
+          "groupname": "BROWSER_A",
+          "loginname": "001",
+          "code": "",
+          "bookletname": "BOOKLET.SAMPLE-1",
+          "unitname": "UNIT.SAMPLE",
+          "originalUnitId": "UNIT.SAMPLE",
+          "timestamp": 1792742402000,
+          "logentry": "PRESENTATIONPROGRESS = complete"
+        },
+        {
+          "groupname": "BROWSER_A",
+          "loginname": "001",
+          "code": "",
+          "bookletname": "BOOKLET.SAMPLE-1",
+          "unitname": "UNIT.SAMPLE",
+          "originalUnitId": "UNIT.SAMPLE",
+          "timestamp": 1792742402001,
+          "logentry": "ANSWER = \"\\u00e4; \\\"quoted\\\"\\nnext\""
+        },
+        {
+          "groupname": "BROWSER_A",
+          "loginname": "001",
+          "code": "",
+          "bookletname": "BOOKLET.SAMPLE-1",
+          "unitname": "an_alias",
+          "originalUnitId": "UNIT.SAMPLE",
+          "timestamp": 1792742403000,
+          "logentry": "RESPONSEPROGRESS = complete"
+        },
+        {
+          "groupname": "BROWSER_A",
+          "loginname": "001",
+          "code": "",
+          "bookletname": "BOOKLET.SAMPLE-1",
+          "unitname": "an_alias",
+          "originalUnitId": "UNIT.SAMPLE",
+          "timestamp": 1792742403000,
+          "logentry": "PRESENTATIONPROGRESS = complete"
+        },
+        {
+          "groupname": "BROWSER_A",
+          "loginname": "001",
+          "code": "",
+          "bookletname": "BOOKLET.SAMPLE-1",
+          "unitname": "an_alias",
+          "originalUnitId": "UNIT.SAMPLE",
+          "timestamp": 1792742403001,
+          "logentry": "ANSWER = \"\\u00e4; \\\"quoted\\\"\\nnext\""
+        },
+        {
+          "groupname": "BROWSER_A",
+          "loginname": "001",
+          "code": "",
+          "bookletname": "BOOKLET.SAMPLE-1",
+          "unitname": "",
+          "originalUnitId": "",
+          "timestamp": 1792742400000,
+          "logentry": "status : \"running\""
+        },
+        {
+          "groupname": "BROWSER_A",
+          "loginname": "001",
+          "code": "",
+          "bookletname": "BOOKLET.SAMPLE-1",
+          "unitname": "",
+          "originalUnitId": "",
+          "timestamp": 1792742401200,
+          "logentry": "LOADCOMPLETE : {\"loadTime\":1200,\"browser\":\"Demo Browser\",\"os\":\"Platform test\",\"screen\":\"1280 x 800\"}"
+        },
+        {
+          "groupname": "BROWSER_A",
+          "loginname": "001",
+          "code": "",
+          "bookletname": "BOOKLET.SAMPLE-1",
+          "unitname": "",
+          "originalUnitId": "",
+          "timestamp": 1792742401300,
+          "logentry": "NOTE : \"Gr\\u00fc\\u00dfe; \\\"Welt\\\"\\nZeile 2\""
+        }
+      ],
+      "reviewJSON": "",
+      "review": [],
+      "responseCSV": "\"groupname\";\"loginname\";\"code\";\"bookletname\";\"unitname\";\"originalUnitId\";\"responses\";\"laststate\"\n\"BROWSER_A\";\"001\";\"\";\"BOOKLET.SAMPLE-1\";\"an_alias\";\"UNIT.SAMPLE\";\"[{\"\"id\"\":\"\"all\"\",\"\"content\"\":\"\"[{\\\"\"id\\\"\":\\\"\"text\\\"\",\\\"\"value\\\"\":\\\"\"Gr\\u00fc\\u00dfe; \\\\\\\"\"Welt\\\\\\\"\"\\\\n001\\/an_alias\\\"\",\\\"\"status\\\"\":\\\"\"CODING_COMPLETE\\\"\",\\\"\"code\\\"\":0,\\\"\"score\\\"\":0},{\\\"\"id\\\"\":\\\"\"zero\\\"\",\\\"\"value\\\"\":0,\\\"\"status\\\"\":\\\"\"CODING_COMPLETE\\\"\",\\\"\"code\\\"\":0,\\\"\"score\\\"\":0},{\\\"\"id\\\"\":\\\"\"bool\\\"\",\\\"\"value\\\"\":true,\\\"\"status\\\"\":\\\"\"VALUE_CHANGED\\\"\"},{\\\"\"id\\\"\":\\\"\"null\\\"\",\\\"\"value\\\"\":null,\\\"\"status\\\"\":\\\"\"VALUE_CHANGED\\\"\"},{\\\"\"id\\\"\":\\\"\"large\\\"\",\\\"\"value\\\"\":9007199254740993,\\\"\"status\\\"\":\\\"\"VALUE_CHANGED\\\"\"},{\\\"\"id\\\"\":\\\"\"array\\\"\",\\\"\"value\\\"\":[\\\"\"\\u00e4\\\"\",0,false],\\\"\"status\\\"\":\\\"\"VALUE_CHANGED\\\"\"},{\\\"\"id\\\"\":\\\"\"sub\\\"\",\\\"\"subform\\\"\":\\\"\"01\\\"\",\\\"\"value\\\"\":\\\"\"Unterformular 001\\\"\",\\\"\"status\\\"\":\\\"\"CODING_COMPLETE\\\"\",\\\"\"code\\\"\":2,\\\"\"score\\\"\":1}]\"\",\"\"ts\"\":1792742403000,\"\"responseType\"\":\"\"iqb-standard@1.1\"\"}]\";\"{\"\"RESPONSEPROGRESS\"\": \"\"complete\"\", \"\"PRESENTATIONPROGRESS\"\": \"\"complete\"\"}\"\n\"BROWSER_A\";\"001\";\"\";\"BOOKLET.SAMPLE-1\";\"UNIT.SAMPLE\";\"UNIT.SAMPLE\";\"[{\"\"id\"\":\"\"all\"\",\"\"content\"\":\"\"[{\\\"\"id\\\"\":\\\"\"text\\\"\",\\\"\"value\\\"\":\\\"\"Gr\\u00fc\\u00dfe; \\\\\\\"\"Welt\\\\\\\"\"\\\\n001\\/UNIT.SAMPLE\\\"\",\\\"\"status\\\"\":\\\"\"CODING_COMPLETE\\\"\",\\\"\"code\\\"\":0,\\\"\"score\\\"\":0},{\\\"\"id\\\"\":\\\"\"zero\\\"\",\\\"\"value\\\"\":0,\\\"\"status\\\"\":\\\"\"CODING_COMPLETE\\\"\",\\\"\"code\\\"\":0,\\\"\"score\\\"\":0},{\\\"\"id\\\"\":\\\"\"bool\\\"\",\\\"\"value\\\"\":true,\\\"\"status\\\"\":\\\"\"VALUE_CHANGED\\\"\"},{\\\"\"id\\\"\":\\\"\"null\\\"\",\\\"\"value\\\"\":null,\\\"\"status\\\"\":\\\"\"VALUE_CHANGED\\\"\"},{\\\"\"id\\\"\":\\\"\"large\\\"\",\\\"\"value\\\"\":9007199254740993,\\\"\"status\\\"\":\\\"\"VALUE_CHANGED\\\"\"},{\\\"\"id\\\"\":\\\"\"array\\\"\",\\\"\"value\\\"\":[\\\"\"\\u00e4\\\"\",0,false],\\\"\"status\\\"\":\\\"\"VALUE_CHANGED\\\"\"},{\\\"\"id\\\"\":\\\"\"sub\\\"\",\\\"\"subform\\\"\":\\\"\"01\\\"\",\\\"\"value\\\"\":\\\"\"Unterformular 001\\\"\",\\\"\"status\\\"\":\\\"\"CODING_COMPLETE\\\"\",\\\"\"code\\\"\":2,\\\"\"score\\\"\":1}]\"\",\"\"ts\"\":1792742402000,\"\"responseType\"\":\"\"iqb-standard@1.1\"\"}]\";\"{\"\"RESPONSEPROGRESS\"\": \"\"complete\"\", \"\"PRESENTATIONPROGRESS\"\": \"\"complete\"\"}\"",
+      "logCSV": "\"groupname\";\"loginname\";\"code\";\"bookletname\";\"unitname\";\"originalUnitId\";\"timestamp\";\"logentry\"\n\"BROWSER_A\";\"001\";\"\";\"BOOKLET.SAMPLE-1\";\"UNIT.SAMPLE\";\"UNIT.SAMPLE\";\"1792742402000\";\"RESPONSEPROGRESS = complete\"\n\"BROWSER_A\";\"001\";\"\";\"BOOKLET.SAMPLE-1\";\"UNIT.SAMPLE\";\"UNIT.SAMPLE\";\"1792742402000\";\"PRESENTATIONPROGRESS = complete\"\n\"BROWSER_A\";\"001\";\"\";\"BOOKLET.SAMPLE-1\";\"UNIT.SAMPLE\";\"UNIT.SAMPLE\";\"1792742402001\";\"ANSWER = \"\"\\u00e4; \\\"\"quoted\\\"\"\\nnext\"\"\"\n\"BROWSER_A\";\"001\";\"\";\"BOOKLET.SAMPLE-1\";\"an_alias\";\"UNIT.SAMPLE\";\"1792742403000\";\"RESPONSEPROGRESS = complete\"\n\"BROWSER_A\";\"001\";\"\";\"BOOKLET.SAMPLE-1\";\"an_alias\";\"UNIT.SAMPLE\";\"1792742403000\";\"PRESENTATIONPROGRESS = complete\"\n\"BROWSER_A\";\"001\";\"\";\"BOOKLET.SAMPLE-1\";\"an_alias\";\"UNIT.SAMPLE\";\"1792742403001\";\"ANSWER = \"\"\\u00e4; \\\"\"quoted\\\"\"\\nnext\"\"\"\n\"BROWSER_A\";\"001\";\"\";\"BOOKLET.SAMPLE-1\";\"\";\"\";\"1792742400000\";\"status : \"\"running\"\"\"\n\"BROWSER_A\";\"001\";\"\";\"BOOKLET.SAMPLE-1\";\"\";\"\";\"1792742401200\";\"LOADCOMPLETE : {\"\"loadTime\"\":1200,\"\"browser\"\":\"\"Demo Browser\"\",\"\"os\"\":\"\"Platform test\"\",\"\"screen\"\":\"\"1280 x 800\"\"}\"\n\"BROWSER_A\";\"001\";\"\";\"BOOKLET.SAMPLE-1\";\"\";\"\";\"1792742401300\";\"NOTE : \"\"Gr\\u00fc\\u00dfe; \\\"\"Welt\\\"\"\\nZeile 2\"\"\""
+    },
+    "BROWSER_B": {
+      "responseJSON": "[{\"groupname\":\"BROWSER_B\",\"loginname\":\"002\",\"code\":\"\",\"bookletname\":\"BOOKLET.SAMPLE-1\",\"unitname\":\"an_alias\",\"laststate\":\"{\\\"RESPONSEPROGRESS\\\": \\\"complete\\\", \\\"PRESENTATIONPROGRESS\\\": \\\"complete\\\"}\",\"originalUnitId\":\"UNIT.SAMPLE\",\"responses\":[{\"id\":\"all\",\"content\":\"[{\\\"id\\\":\\\"text\\\",\\\"value\\\":\\\"Gr\\u00fc\\u00dfe; \\\\\\\"Welt\\\\\\\"\\\\n002\\/an_alias\\\",\\\"status\\\":\\\"CODING_COMPLETE\\\",\\\"code\\\":0,\\\"score\\\":0},{\\\"id\\\":\\\"zero\\\",\\\"value\\\":0,\\\"status\\\":\\\"CODING_COMPLETE\\\",\\\"code\\\":0,\\\"score\\\":0},{\\\"id\\\":\\\"bool\\\",\\\"value\\\":true,\\\"status\\\":\\\"VALUE_CHANGED\\\"},{\\\"id\\\":\\\"null\\\",\\\"value\\\":null,\\\"status\\\":\\\"VALUE_CHANGED\\\"},{\\\"id\\\":\\\"large\\\",\\\"value\\\":9007199254740993,\\\"status\\\":\\\"VALUE_CHANGED\\\"},{\\\"id\\\":\\\"array\\\",\\\"value\\\":[\\\"\\u00e4\\\",0,false],\\\"status\\\":\\\"VALUE_CHANGED\\\"},{\\\"id\\\":\\\"sub\\\",\\\"subform\\\":\\\"01\\\",\\\"value\\\":\\\"Unterformular 002\\\",\\\"status\\\":\\\"CODING_COMPLETE\\\",\\\"code\\\":2,\\\"score\\\":1}]\",\"ts\":1792742463000,\"responseType\":\"iqb-standard@1.1\"}]},{\"groupname\":\"BROWSER_B\",\"loginname\":\"002\",\"code\":\"\",\"bookletname\":\"BOOKLET.SAMPLE-1\",\"unitname\":\"UNIT.SAMPLE\",\"laststate\":\"{\\\"RESPONSEPROGRESS\\\": \\\"complete\\\", \\\"PRESENTATIONPROGRESS\\\": \\\"complete\\\"}\",\"originalUnitId\":\"UNIT.SAMPLE\",\"responses\":[{\"id\":\"all\",\"content\":\"[{\\\"id\\\":\\\"text\\\",\\\"value\\\":\\\"Gr\\u00fc\\u00dfe; \\\\\\\"Welt\\\\\\\"\\\\n002\\/UNIT.SAMPLE\\\",\\\"status\\\":\\\"CODING_COMPLETE\\\",\\\"code\\\":0,\\\"score\\\":0},{\\\"id\\\":\\\"zero\\\",\\\"value\\\":0,\\\"status\\\":\\\"CODING_COMPLETE\\\",\\\"code\\\":0,\\\"score\\\":0},{\\\"id\\\":\\\"bool\\\",\\\"value\\\":true,\\\"status\\\":\\\"VALUE_CHANGED\\\"},{\\\"id\\\":\\\"null\\\",\\\"value\\\":null,\\\"status\\\":\\\"VALUE_CHANGED\\\"},{\\\"id\\\":\\\"large\\\",\\\"value\\\":9007199254740993,\\\"status\\\":\\\"VALUE_CHANGED\\\"},{\\\"id\\\":\\\"array\\\",\\\"value\\\":[\\\"\\u00e4\\\",0,false],\\\"status\\\":\\\"VALUE_CHANGED\\\"},{\\\"id\\\":\\\"sub\\\",\\\"subform\\\":\\\"01\\\",\\\"value\\\":\\\"Unterformular 002\\\",\\\"status\\\":\\\"CODING_COMPLETE\\\",\\\"code\\\":2,\\\"score\\\":1}]\",\"ts\":1792742462000,\"responseType\":\"iqb-standard@1.1\"}]}]",
+      "response": [
+        {
+          "groupname": "BROWSER_B",
+          "loginname": "002",
+          "code": "",
+          "bookletname": "BOOKLET.SAMPLE-1",
+          "unitname": "an_alias",
+          "laststate": "{\"RESPONSEPROGRESS\": \"complete\", \"PRESENTATIONPROGRESS\": \"complete\"}",
+          "originalUnitId": "UNIT.SAMPLE",
+          "responses": [
+            {
+              "id": "all",
+              "content": "[{\"id\":\"text\",\"value\":\"Grüße; \\\"Welt\\\"\\n002/an_alias\",\"status\":\"CODING_COMPLETE\",\"code\":0,\"score\":0},{\"id\":\"zero\",\"value\":0,\"status\":\"CODING_COMPLETE\",\"code\":0,\"score\":0},{\"id\":\"bool\",\"value\":true,\"status\":\"VALUE_CHANGED\"},{\"id\":\"null\",\"value\":null,\"status\":\"VALUE_CHANGED\"},{\"id\":\"large\",\"value\":9007199254740993,\"status\":\"VALUE_CHANGED\"},{\"id\":\"array\",\"value\":[\"ä\",0,false],\"status\":\"VALUE_CHANGED\"},{\"id\":\"sub\",\"subform\":\"01\",\"value\":\"Unterformular 002\",\"status\":\"CODING_COMPLETE\",\"code\":2,\"score\":1}]",
+              "ts": 1792742463000,
+              "responseType": "iqb-standard@1.1"
+            }
+          ]
+        },
+        {
+          "groupname": "BROWSER_B",
+          "loginname": "002",
+          "code": "",
+          "bookletname": "BOOKLET.SAMPLE-1",
+          "unitname": "UNIT.SAMPLE",
+          "laststate": "{\"RESPONSEPROGRESS\": \"complete\", \"PRESENTATIONPROGRESS\": \"complete\"}",
+          "originalUnitId": "UNIT.SAMPLE",
+          "responses": [
+            {
+              "id": "all",
+              "content": "[{\"id\":\"text\",\"value\":\"Grüße; \\\"Welt\\\"\\n002/UNIT.SAMPLE\",\"status\":\"CODING_COMPLETE\",\"code\":0,\"score\":0},{\"id\":\"zero\",\"value\":0,\"status\":\"CODING_COMPLETE\",\"code\":0,\"score\":0},{\"id\":\"bool\",\"value\":true,\"status\":\"VALUE_CHANGED\"},{\"id\":\"null\",\"value\":null,\"status\":\"VALUE_CHANGED\"},{\"id\":\"large\",\"value\":9007199254740993,\"status\":\"VALUE_CHANGED\"},{\"id\":\"array\",\"value\":[\"ä\",0,false],\"status\":\"VALUE_CHANGED\"},{\"id\":\"sub\",\"subform\":\"01\",\"value\":\"Unterformular 002\",\"status\":\"CODING_COMPLETE\",\"code\":2,\"score\":1}]",
+              "ts": 1792742462000,
+              "responseType": "iqb-standard@1.1"
+            }
+          ]
+        }
+      ],
+      "logJSON": "[{\"groupname\":\"BROWSER_B\",\"loginname\":\"002\",\"code\":\"\",\"bookletname\":\"BOOKLET.SAMPLE-1\",\"unitname\":\"UNIT.SAMPLE\",\"originalUnitId\":\"UNIT.SAMPLE\",\"timestamp\":1792742462000,\"logentry\":\"RESPONSEPROGRESS = complete\"},{\"groupname\":\"BROWSER_B\",\"loginname\":\"002\",\"code\":\"\",\"bookletname\":\"BOOKLET.SAMPLE-1\",\"unitname\":\"UNIT.SAMPLE\",\"originalUnitId\":\"UNIT.SAMPLE\",\"timestamp\":1792742462000,\"logentry\":\"PRESENTATIONPROGRESS = complete\"},{\"groupname\":\"BROWSER_B\",\"loginname\":\"002\",\"code\":\"\",\"bookletname\":\"BOOKLET.SAMPLE-1\",\"unitname\":\"UNIT.SAMPLE\",\"originalUnitId\":\"UNIT.SAMPLE\",\"timestamp\":1792742462001,\"logentry\":\"ANSWER = \\\"\\\\u00e4; \\\\\\\"quoted\\\\\\\"\\\\nnext\\\"\"},{\"groupname\":\"BROWSER_B\",\"loginname\":\"002\",\"code\":\"\",\"bookletname\":\"BOOKLET.SAMPLE-1\",\"unitname\":\"an_alias\",\"originalUnitId\":\"UNIT.SAMPLE\",\"timestamp\":1792742463000,\"logentry\":\"RESPONSEPROGRESS = complete\"},{\"groupname\":\"BROWSER_B\",\"loginname\":\"002\",\"code\":\"\",\"bookletname\":\"BOOKLET.SAMPLE-1\",\"unitname\":\"an_alias\",\"originalUnitId\":\"UNIT.SAMPLE\",\"timestamp\":1792742463000,\"logentry\":\"PRESENTATIONPROGRESS = complete\"},{\"groupname\":\"BROWSER_B\",\"loginname\":\"002\",\"code\":\"\",\"bookletname\":\"BOOKLET.SAMPLE-1\",\"unitname\":\"an_alias\",\"originalUnitId\":\"UNIT.SAMPLE\",\"timestamp\":1792742463001,\"logentry\":\"ANSWER = \\\"\\\\u00e4; \\\\\\\"quoted\\\\\\\"\\\\nnext\\\"\"},{\"groupname\":\"BROWSER_B\",\"loginname\":\"002\",\"code\":\"\",\"bookletname\":\"BOOKLET.SAMPLE-1\",\"unitname\":\"\",\"originalUnitId\":\"\",\"timestamp\":1792742460000,\"logentry\":\"status : \\\"running\\\"\"},{\"groupname\":\"BROWSER_B\",\"loginname\":\"002\",\"code\":\"\",\"bookletname\":\"BOOKLET.SAMPLE-1\",\"unitname\":\"\",\"originalUnitId\":\"\",\"timestamp\":1792742461200,\"logentry\":\"LOADCOMPLETE : {\\\"loadTime\\\":1200,\\\"browser\\\":\\\"Demo Browser\\\",\\\"os\\\":\\\"Platform test\\\",\\\"screen\\\":\\\"1280 x 800\\\"}\"},{\"groupname\":\"BROWSER_B\",\"loginname\":\"002\",\"code\":\"\",\"bookletname\":\"BOOKLET.SAMPLE-1\",\"unitname\":\"\",\"originalUnitId\":\"\",\"timestamp\":1792742461300,\"logentry\":\"NOTE : \\\"Gr\\\\u00fc\\\\u00dfe; \\\\\\\"Welt\\\\\\\"\\\\nZeile 2\\\"\"}]",
+      "log": [
+        {
+          "groupname": "BROWSER_B",
+          "loginname": "002",
+          "code": "",
+          "bookletname": "BOOKLET.SAMPLE-1",
+          "unitname": "UNIT.SAMPLE",
+          "originalUnitId": "UNIT.SAMPLE",
+          "timestamp": 1792742462000,
+          "logentry": "RESPONSEPROGRESS = complete"
+        },
+        {
+          "groupname": "BROWSER_B",
+          "loginname": "002",
+          "code": "",
+          "bookletname": "BOOKLET.SAMPLE-1",
+          "unitname": "UNIT.SAMPLE",
+          "originalUnitId": "UNIT.SAMPLE",
+          "timestamp": 1792742462000,
+          "logentry": "PRESENTATIONPROGRESS = complete"
+        },
+        {
+          "groupname": "BROWSER_B",
+          "loginname": "002",
+          "code": "",
+          "bookletname": "BOOKLET.SAMPLE-1",
+          "unitname": "UNIT.SAMPLE",
+          "originalUnitId": "UNIT.SAMPLE",
+          "timestamp": 1792742462001,
+          "logentry": "ANSWER = \"\\u00e4; \\\"quoted\\\"\\nnext\""
+        },
+        {
+          "groupname": "BROWSER_B",
+          "loginname": "002",
+          "code": "",
+          "bookletname": "BOOKLET.SAMPLE-1",
+          "unitname": "an_alias",
+          "originalUnitId": "UNIT.SAMPLE",
+          "timestamp": 1792742463000,
+          "logentry": "RESPONSEPROGRESS = complete"
+        },
+        {
+          "groupname": "BROWSER_B",
+          "loginname": "002",
+          "code": "",
+          "bookletname": "BOOKLET.SAMPLE-1",
+          "unitname": "an_alias",
+          "originalUnitId": "UNIT.SAMPLE",
+          "timestamp": 1792742463000,
+          "logentry": "PRESENTATIONPROGRESS = complete"
+        },
+        {
+          "groupname": "BROWSER_B",
+          "loginname": "002",
+          "code": "",
+          "bookletname": "BOOKLET.SAMPLE-1",
+          "unitname": "an_alias",
+          "originalUnitId": "UNIT.SAMPLE",
+          "timestamp": 1792742463001,
+          "logentry": "ANSWER = \"\\u00e4; \\\"quoted\\\"\\nnext\""
+        },
+        {
+          "groupname": "BROWSER_B",
+          "loginname": "002",
+          "code": "",
+          "bookletname": "BOOKLET.SAMPLE-1",
+          "unitname": "",
+          "originalUnitId": "",
+          "timestamp": 1792742460000,
+          "logentry": "status : \"running\""
+        },
+        {
+          "groupname": "BROWSER_B",
+          "loginname": "002",
+          "code": "",
+          "bookletname": "BOOKLET.SAMPLE-1",
+          "unitname": "",
+          "originalUnitId": "",
+          "timestamp": 1792742461200,
+          "logentry": "LOADCOMPLETE : {\"loadTime\":1200,\"browser\":\"Demo Browser\",\"os\":\"Platform test\",\"screen\":\"1280 x 800\"}"
+        },
+        {
+          "groupname": "BROWSER_B",
+          "loginname": "002",
+          "code": "",
+          "bookletname": "BOOKLET.SAMPLE-1",
+          "unitname": "",
+          "originalUnitId": "",
+          "timestamp": 1792742461300,
+          "logentry": "NOTE : \"Gr\\u00fc\\u00dfe; \\\"Welt\\\"\\nZeile 2\""
+        }
+      ],
+      "reviewJSON": "",
+      "review": [],
+      "responseCSV": "\"groupname\";\"loginname\";\"code\";\"bookletname\";\"unitname\";\"originalUnitId\";\"responses\";\"laststate\"\n\"BROWSER_B\";\"002\";\"\";\"BOOKLET.SAMPLE-1\";\"an_alias\";\"UNIT.SAMPLE\";\"[{\"\"id\"\":\"\"all\"\",\"\"content\"\":\"\"[{\\\"\"id\\\"\":\\\"\"text\\\"\",\\\"\"value\\\"\":\\\"\"Gr\\u00fc\\u00dfe; \\\\\\\"\"Welt\\\\\\\"\"\\\\n002\\/an_alias\\\"\",\\\"\"status\\\"\":\\\"\"CODING_COMPLETE\\\"\",\\\"\"code\\\"\":0,\\\"\"score\\\"\":0},{\\\"\"id\\\"\":\\\"\"zero\\\"\",\\\"\"value\\\"\":0,\\\"\"status\\\"\":\\\"\"CODING_COMPLETE\\\"\",\\\"\"code\\\"\":0,\\\"\"score\\\"\":0},{\\\"\"id\\\"\":\\\"\"bool\\\"\",\\\"\"value\\\"\":true,\\\"\"status\\\"\":\\\"\"VALUE_CHANGED\\\"\"},{\\\"\"id\\\"\":\\\"\"null\\\"\",\\\"\"value\\\"\":null,\\\"\"status\\\"\":\\\"\"VALUE_CHANGED\\\"\"},{\\\"\"id\\\"\":\\\"\"large\\\"\",\\\"\"value\\\"\":9007199254740993,\\\"\"status\\\"\":\\\"\"VALUE_CHANGED\\\"\"},{\\\"\"id\\\"\":\\\"\"array\\\"\",\\\"\"value\\\"\":[\\\"\"\\u00e4\\\"\",0,false],\\\"\"status\\\"\":\\\"\"VALUE_CHANGED\\\"\"},{\\\"\"id\\\"\":\\\"\"sub\\\"\",\\\"\"subform\\\"\":\\\"\"01\\\"\",\\\"\"value\\\"\":\\\"\"Unterformular 002\\\"\",\\\"\"status\\\"\":\\\"\"CODING_COMPLETE\\\"\",\\\"\"code\\\"\":2,\\\"\"score\\\"\":1}]\"\",\"\"ts\"\":1792742463000,\"\"responseType\"\":\"\"iqb-standard@1.1\"\"}]\";\"{\"\"RESPONSEPROGRESS\"\": \"\"complete\"\", \"\"PRESENTATIONPROGRESS\"\": \"\"complete\"\"}\"\n\"BROWSER_B\";\"002\";\"\";\"BOOKLET.SAMPLE-1\";\"UNIT.SAMPLE\";\"UNIT.SAMPLE\";\"[{\"\"id\"\":\"\"all\"\",\"\"content\"\":\"\"[{\\\"\"id\\\"\":\\\"\"text\\\"\",\\\"\"value\\\"\":\\\"\"Gr\\u00fc\\u00dfe; \\\\\\\"\"Welt\\\\\\\"\"\\\\n002\\/UNIT.SAMPLE\\\"\",\\\"\"status\\\"\":\\\"\"CODING_COMPLETE\\\"\",\\\"\"code\\\"\":0,\\\"\"score\\\"\":0},{\\\"\"id\\\"\":\\\"\"zero\\\"\",\\\"\"value\\\"\":0,\\\"\"status\\\"\":\\\"\"CODING_COMPLETE\\\"\",\\\"\"code\\\"\":0,\\\"\"score\\\"\":0},{\\\"\"id\\\"\":\\\"\"bool\\\"\",\\\"\"value\\\"\":true,\\\"\"status\\\"\":\\\"\"VALUE_CHANGED\\\"\"},{\\\"\"id\\\"\":\\\"\"null\\\"\",\\\"\"value\\\"\":null,\\\"\"status\\\"\":\\\"\"VALUE_CHANGED\\\"\"},{\\\"\"id\\\"\":\\\"\"large\\\"\",\\\"\"value\\\"\":9007199254740993,\\\"\"status\\\"\":\\\"\"VALUE_CHANGED\\\"\"},{\\\"\"id\\\"\":\\\"\"array\\\"\",\\\"\"value\\\"\":[\\\"\"\\u00e4\\\"\",0,false],\\\"\"status\\\"\":\\\"\"VALUE_CHANGED\\\"\"},{\\\"\"id\\\"\":\\\"\"sub\\\"\",\\\"\"subform\\\"\":\\\"\"01\\\"\",\\\"\"value\\\"\":\\\"\"Unterformular 002\\\"\",\\\"\"status\\\"\":\\\"\"CODING_COMPLETE\\\"\",\\\"\"code\\\"\":2,\\\"\"score\\\"\":1}]\"\",\"\"ts\"\":1792742462000,\"\"responseType\"\":\"\"iqb-standard@1.1\"\"}]\";\"{\"\"RESPONSEPROGRESS\"\": \"\"complete\"\", \"\"PRESENTATIONPROGRESS\"\": \"\"complete\"\"}\"",
+      "logCSV": "\"groupname\";\"loginname\";\"code\";\"bookletname\";\"unitname\";\"originalUnitId\";\"timestamp\";\"logentry\"\n\"BROWSER_B\";\"002\";\"\";\"BOOKLET.SAMPLE-1\";\"UNIT.SAMPLE\";\"UNIT.SAMPLE\";\"1792742462000\";\"RESPONSEPROGRESS = complete\"\n\"BROWSER_B\";\"002\";\"\";\"BOOKLET.SAMPLE-1\";\"UNIT.SAMPLE\";\"UNIT.SAMPLE\";\"1792742462000\";\"PRESENTATIONPROGRESS = complete\"\n\"BROWSER_B\";\"002\";\"\";\"BOOKLET.SAMPLE-1\";\"UNIT.SAMPLE\";\"UNIT.SAMPLE\";\"1792742462001\";\"ANSWER = \"\"\\u00e4; \\\"\"quoted\\\"\"\\nnext\"\"\"\n\"BROWSER_B\";\"002\";\"\";\"BOOKLET.SAMPLE-1\";\"an_alias\";\"UNIT.SAMPLE\";\"1792742463000\";\"RESPONSEPROGRESS = complete\"\n\"BROWSER_B\";\"002\";\"\";\"BOOKLET.SAMPLE-1\";\"an_alias\";\"UNIT.SAMPLE\";\"1792742463000\";\"PRESENTATIONPROGRESS = complete\"\n\"BROWSER_B\";\"002\";\"\";\"BOOKLET.SAMPLE-1\";\"an_alias\";\"UNIT.SAMPLE\";\"1792742463001\";\"ANSWER = \"\"\\u00e4; \\\"\"quoted\\\"\"\\nnext\"\"\"\n\"BROWSER_B\";\"002\";\"\";\"BOOKLET.SAMPLE-1\";\"\";\"\";\"1792742460000\";\"status : \"\"running\"\"\"\n\"BROWSER_B\";\"002\";\"\";\"BOOKLET.SAMPLE-1\";\"\";\"\";\"1792742461200\";\"LOADCOMPLETE : {\"\"loadTime\"\":1200,\"\"browser\"\":\"\"Demo Browser\"\",\"\"os\"\":\"\"Platform test\"\",\"\"screen\"\":\"\"1280 x 800\"\"}\"\n\"BROWSER_B\";\"002\";\"\";\"BOOKLET.SAMPLE-1\";\"\";\"\";\"1792742461300\";\"NOTE : \"\"Gr\\u00fc\\u00dfe; \\\"\"Welt\\\"\"\\nZeile 2\"\"\""
+    }
+  }
+}
