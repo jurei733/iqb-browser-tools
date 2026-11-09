@@ -1,17 +1,17 @@
 {
-  "checkedOn": "2026-11-08",
-  "applicationCommit": "a7178097e4d638bf91b2f7bbf6bb54bda514f301",
+  "checkedOn": "2026-11-09",
+  "applicationCommit": "d265ba5719e9db706c3524044a4d50e4ad0d3664",
   "completeEquivalence": false,
   "completeGUIAcceptance": false,
   "empiricalStudyDataTested": false,
   "previousReport": "tests/results/windows-gui-remaining-20261106.json",
-  "scope": "Direct Windows GUI CSV completion and readback; About and F1 observations. All three browser engines checked in CI. Remaining GUI work interrupted by a renewed Mac lock.",
+  "scope": "Direct original legacy folder import, package switching and scan-source observations; all four case-list columns sorted in both directions with nonblank comments and a selected-row jump. Original result file read back through guest Edge. Further native GUI work interrupted by another Mac lock during the historical CSV run.",
   "counts": {
     "initialRemaining": 34,
-    "previousFinitePairs": 18,
-    "additionalFinitePairsThisResume": 1,
-    "newFinitePairs": 19,
-    "stillWithoutCompleteDirectPair": 15
+    "previousFinitePairs": 19,
+    "additionalFinitePairsThisResume": 3,
+    "newFinitePairs": 22,
+    "stillWithoutCompleteDirectPair": 12
   },
   "fixedDifferences": [
     "Windows answer/session CSV download lacked the original UTF-8 BOM.",
@@ -20,55 +20,56 @@
     "End-of-job feedback lacked the original magenta backdrop.",
     "Native Testcenter SQLite stores missing browser/os/screen session fields as empty strings; the browser Windows import now does the same while native-dialog JSON keeps null.",
     "Windows CSV database import skips log files before parsing, as the native GUI does.",
-    "Windows CSV graph uses the unit alias for both name and alias, matching the original PersonList mapper."
+    "Windows CSV graph uses the unit alias for both name and alias, matching the original PersonList mapper.",
+    "Loose legacy scan folders are sorted by ordinal filename so APFS/browser input order matches the observed NTFS order. Explicit Cases and ZIP order remain unchanged.",
+    "Loose legacy packages in the same folder share stored results by job ID, matching the original package switch; the first saved package supplies the overlapping codes and comments."
   ],
   "verification": {
     "node": {
-      "passed": 162,
-      "total": 162
+      "passed": 163,
+      "total": 163
     },
     "targetedBrowser": {
-      "passed": 6,
-      "total": 6,
+      "passed": 2,
+      "total": 2,
       "engines": [
         "chromium",
         "webkit"
       ],
-      "workflowsPerEngine": 3
+      "workflowsPerEngine": 1,
+      "scope": "Legacy folder workflow, native result export fields, eight sort directions, selected-row jump and shared package results."
     },
     "ci": {
       "state": "success",
-      "applicationCommit": "a7178097e4d638bf91b2f7bbf6bb54bda514f301",
+      "applicationCommit": "d265ba5719e9db706c3524044a4d50e4ad0d3664",
       "runs": [
-        "https://github.com/jurei733/iqb-browser-tools/actions/runs/42519834046",
-        "https://github.com/jurei733/iqb-browser-tools/actions/runs/42519834165"
+        "https://github.com/jurei733/iqb-browser-tools/actions/runs/42582276099",
+        "https://github.com/jurei733/iqb-browser-tools/actions/runs/42582276058"
       ],
       "jobsPassed": 12,
       "jobsTotal": 12,
       "browser": {
-        "passed": 93,
-        "total": 93,
-        "workflowsPerEngine": 31,
-        "workerChecksPerEngine": 56,
+        "passed": 96,
+        "total": 96,
+        "workflowsPerEngine": 32,
         "engines": [
           "chromium",
           "firefox",
           "webkit"
         ]
-      },
-      "freshWindowsStudyComparisons": {
-        "passed": 216,
-        "total": 216
       }
     },
-    "nativeCSVSQLite": {
-      "people": 3,
-      "responses": 6,
-      "dataTablesCompared": 10,
-      "allEqual": true,
-      "byteIdentityClaimed": false,
-      "fixture": "tests/fixtures/gui-final-20261108.json",
-      "excluded": "Execution metadata, response_status dictionary population, SQLite page layout and sqlite_sequence."
+    "nativeLegacy": {
+      "fixture": "tests/fixtures/gui-legacy-20261109.json",
+      "people": 2,
+      "packages": 2,
+      "caseCounts": [
+        4,
+        2
+      ],
+      "nativeResultEntries": 4,
+      "resultFieldsEqual": true,
+      "excluded": "Actual coding wall-clock times. No equality claim for malformed legacy XML, empirical files, or all filesystem edge cases."
     }
   },
   "supplementalCtrlDrag": {
@@ -106,9 +107,10 @@
         "line": 223,
         "sha256": "2ab9129636e99d3bf21a8105d92d6d277e35730c14c63e18c75a2eb0532c9578"
       },
-      "state": "pending-native-comparison",
-      "nativeCapture": null,
-      "pairedBrowserCapture": null
+      "state": "paired-finite-native",
+      "nativeCapture": "docs/evidence/gui-final-20261109/native-legacy-package-list.png",
+      "pairedBrowserCapture": "tests/e2e/gui-legacy.spec.js",
+      "observation": "Original loose legacy directory loads two packages: legacy A B (four cases) and legacy B (two cases). Both old variable encodings work. Native 4-entry result read back and paired in browser. The original crashes if old definitions omit id attributes because its second parser receives a null key; the separate functional fixture adds id=A/B. The browser deliberately retains its ability to read the crash fixture."
     },
     {
       "id": "K-04",
@@ -120,9 +122,10 @@
         "line": 223,
         "sha256": "2ab9129636e99d3bf21a8105d92d6d277e35730c14c63e18c75a2eb0532c9578"
       },
-      "state": "pending-native-comparison",
-      "nativeCapture": null,
-      "pairedBrowserCapture": null
+      "state": "paired-finite-native",
+      "nativeCapture": "docs/evidence/gui-final-20261109/native-legacy-b-folder-scan.png",
+      "pairedBrowserCapture": "tests/e2e/gui-legacy.spec.js",
+      "observation": "Four-character ABCD/WXYZ filename prefixes become people 001/002. Package A B uses folder A for both variables; package B uses folder B (native image shows 001 Seite 2). Both applications reuse alpha/gamma and codes 0/0 from the first package result with the same job ID. Browser directory input and actual result fields paired."
     },
     {
       "id": "K-09",
@@ -179,10 +182,10 @@
         "line": 23,
         "sha256": "a1bfdf68d9c0beb5be0563e7428c41f1068043da1a69fea21a8301b810e5b4a9"
       },
-      "state": "native-observation-partial",
-      "nativeCapture": null,
-      "pairedBrowserCapture": null,
-      "observation": "Original F3 variable sort and jump observed. Remaining original sort columns need direct comparison."
+      "state": "paired-finite-native",
+      "nativeCapture": "docs/evidence/gui-final-20261109/native-sort-jump-case2.png",
+      "pairedBrowserCapture": "tests/e2e/gui-legacy.spec.js",
+      "observation": "All four original columns sorted ascending and descending with comments zeta/alpha/beta/gamma. Eight observed row orders match the browser. Selecting row 3 in number-descending order jumps to original case 2, variable B, code 0, comment alpha; browser repeats the same jump."
     },
     {
       "id": "K-25",
@@ -242,7 +245,7 @@
       "state": "native-observation-partial",
       "nativeCapture": "docs/evidence/gui-final-20261108/native-coding-f1.png",
       "pairedBrowserCapture": "tests/e2e/gui-final.spec.js",
-      "observation": "Native F1 opens About 4.3.0.3 with matching purpose text; close works. Browser F1, help button and close pass in all three engines. Mouse help did not visibly reopen the original modal on the empty job window; that native route remains open."
+      "observation": "Native F1 opens About 4.3.0.3 with matching purpose text; close works. Browser F1, help button and close pass in all three engines. Mouse help did not visibly reopen the original modal on the empty job window; that native route remains open. On 9 November, the mouse About button also did not visibly open a dialog with a loaded legacy job. No new identical mouse/F1 route claim."
     },
     {
       "id": "K-37",
@@ -919,5 +922,54 @@
       "allTenDataTablesEqual": true
     }
   },
-  "interruption": "Mac locked again after copying the next synthetic fixture pack into Windows Documents. CSV is complete; 15 of the original 34 finite GUI pairs remain incomplete, including the two help-route qualifications."
+  "interruption": "Mac locked again during the original eleven-column CSV conversion after Weiter. Detection of one response file observed; final native conversion output not yet inspected. Twelve of the original 34 finite GUI pairs remain incomplete.",
+  "previousVerification20261108": {
+    "node": {
+      "passed": 162,
+      "total": 162
+    },
+    "targetedBrowser": {
+      "passed": 6,
+      "total": 6,
+      "engines": [
+        "chromium",
+        "webkit"
+      ],
+      "workflowsPerEngine": 3
+    },
+    "ci": {
+      "state": "success",
+      "applicationCommit": "a7178097e4d638bf91b2f7bbf6bb54bda514f301",
+      "runs": [
+        "https://github.com/jurei733/iqb-browser-tools/actions/runs/42519834046",
+        "https://github.com/jurei733/iqb-browser-tools/actions/runs/42519834165"
+      ],
+      "jobsPassed": 12,
+      "jobsTotal": 12,
+      "browser": {
+        "passed": 93,
+        "total": 93,
+        "workflowsPerEngine": 31,
+        "workerChecksPerEngine": 56,
+        "engines": [
+          "chromium",
+          "firefox",
+          "webkit"
+        ]
+      },
+      "freshWindowsStudyComparisons": {
+        "passed": 216,
+        "total": 216
+      }
+    },
+    "nativeCSVSQLite": {
+      "people": 3,
+      "responses": 6,
+      "dataTablesCompared": 10,
+      "allEqual": true,
+      "byteIdentityClaimed": false,
+      "fixture": "tests/fixtures/gui-final-20261108.json",
+      "excluded": "Execution metadata, response_status dictionary population, SQLite page layout and sqlite_sequence."
+    }
+  }
 }
