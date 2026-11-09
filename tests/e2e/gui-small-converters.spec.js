@@ -1,0 +1,18 @@
+import {test,expect} from '@playwright/test';import {readFile} from 'node:fs/promises';
+import {smallConvertersRoot,smallConverterFiles,normalizedCodeWorkbook,converterWorkbookCells} from '../helpers/gui-small-converters.js';
+const proof=JSON.parse(await readFile(new URL('proof.json',smallConvertersRoot))),csv=proof.cases.filter(c=>c.kind!=='codes');
+async function open(page,tool){await page.goto('/');await page.locator('[data-module=toolbox]').click();await page.locator('button[data-tool='+tool+']').click();}
+async function download(page,info,name){const waiting=page.waitForEvent('download');await page.locator('[data-download]').click();const d=await waiting,path=info.outputPath(name);await d.saveAs(path);return readFile(path);}
+async function input(page,c,files){await page.locator('#tool-file').setInputFiles({name:c.input,mimeType:'text/csv',buffer:Buffer.from(files['inputs/'+c.input])});}
+test('native Codes GUI: both saved workbooks match every normalized cell and all 2800 unique codes',async({page},info)=>{
+ await open(page,'codes');for(const c of proof.cases.filter(c=>c.kind==='codes')){await page.locator('#run-tool').click();await expect(page.locator('[data-download]')).toHaveCount(1);const files=await smallConverterFiles(c);expect(await normalizedCodeWorkbook(await download(page,info,c.id+'.xlsx'))).toEqual(await normalizedCodeWorkbook(files['native/'+c.file]));}
+});
+for(let start=0;start<csv.length;start+=8)test(`native SysCheck GUI cases ${start}–${Math.min(start+7,csv.length-1)}`,async({page},info)=>{
+ await open(page,'csv');await page.locator('#csv-format').selectOption('windows');await expect(page.locator('#encoding')).toBeDisabled();await expect(page.locator('#delimiter')).toBeDisabled();
+ for(const c of csv.slice(start,start+8)){const files=await smallConverterFiles(c);await input(page,c,files);await page.locator('#run-tool').click();await expect(page.locator('#run-tool')).toBeEnabled();if(c.kind==='native-crash'){await expect(page.locator('#notice')).toHaveText(c.browserMessage);await expect(page.locator('[data-download]')).toHaveCount(0);continue;}await expect(page.locator('[data-download]')).toHaveCount(1);expect(await converterWorkbookCells(await download(page,info,c.id+'.xlsx'))).toEqual(await converterWorkbookCells(files['native/'+c.file]));}
+});
+test('native SysCheck errors recover in the same browser form; extended parser remains available',async({page},info)=>{
+ await open(page,'csv');await page.locator('#csv-format').selectOption('windows');
+ for(const id of ['SC28','SC29','SC32']){const c=csv.find(c=>c.id===id),files=await smallConverterFiles(c);await input(page,c,files);await page.locator('#run-tool').click();await expect(page.locator('#run-tool')).toBeEnabled();if(c.kind==='native-crash'){await expect(page.locator('#notice')).toHaveText(c.browserMessage);await expect(page.locator('[data-download]')).toHaveCount(0);}else{await expect(page.locator('[data-download]')).toHaveCount(1);expect(await converterWorkbookCells(await download(page,info,'recovered.xlsx'))).toEqual(await converterWorkbookCells(files['native/'+c.file]));}}
+ await page.locator('#csv-format').selectOption('extended');await expect(page.locator('#encoding')).toBeEnabled();await expect(page.locator('#delimiter')).toBeEnabled();const c=csv.find(c=>c.id==='SC02'),files=await smallConverterFiles(c);await input(page,c,files);await page.locator('#run-tool').click();await expect(page.locator('[data-download]')).toHaveCount(1);expect(JSON.stringify(await converterWorkbookCells(await download(page,info,'extended.xlsx')))).toContain(JSON.stringify('Zeile A\nZeile B').slice(1,-1));
+});

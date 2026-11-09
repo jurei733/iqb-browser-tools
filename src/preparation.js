@@ -61,7 +61,7 @@ export async function prepare(kind,args={},onProgress=()=>{}){
   if(kind==='codes'){outputs={'Codes.xlsx':await T.codeWorkbook()};summary='2.800 eindeutige Codes in vier Spalten erzeugt.';}
   else{
     const file=args.file;if(!file)throw new Error('Bitte eine Eingabedatei auswählen.');
-    if(kind==='csv'){const rows=T.parseCSV(new TextDecoder(args.encoding||'utf-8',{fatal:true}).decode(file.bytes),args.delimiter==='tab'?'\t':args.delimiter||'auto');onProgress(`${rows.length-1} Datenzeilen eingelesen.`);outputs={[file.name.replace(/\.[^.]+$/,'')+'.xlsx']:await T.tableWorkbook(rows)};summary=`${rows.length-1} Datenzeilen verarbeitet.`;}
+    if(kind==='csv'){const rows=args.windows?T.parseWindowsSyscheck(file.bytes):T.parseCSV(new TextDecoder(args.encoding||'utf-8',{fatal:true}).decode(file.bytes),args.delimiter==='tab'?'\t':args.delimiter||'auto');onProgress(`${rows.length-1} Datenzeilen eingelesen.`);outputs={[file.name.replace(/\.[^.]+$/,'')+'.xlsx']:await T.tableWorkbook(rows)};summary=`${rows.length-1} Datenzeilen verarbeitet.`;}
     else{
       const w=await T.loadWorkbook(file.bytes);onProgress(`Excel-Datei ${file.name} eingelesen.`);
       if(kind==='booklets'){const messages=validateBooklets(w);if(messages.length){const error=new Error(messages.join('\n'));error.messages=messages;throw error;}outputs=T.bookletXML(w,{windows:args.windows});summary=`${Object.keys(outputs).length} Testheft(e) erzeugt.`;}

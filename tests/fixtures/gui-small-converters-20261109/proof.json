@@ -1,0 +1,816 @@
+{
+  "date": "2026-11-09",
+  "original": {
+    "name": "itc-ToolBox",
+    "version": "3.3.0.2",
+    "sha256": "c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1"
+  },
+  "method": "Visible original Codes-Xlsx and SysCheck dialogs. Source/target picker cancellations, actual saves and post-crash restarts executed through native UI. Input bytes pushed and read back before opening. Export files pulled after the native command returned.",
+  "cases": [
+    {
+      "id": "C00",
+      "file": "CodesGui.xlsx",
+      "sha256": "f450f433ca4b32d4af1cff4a187872609456363759e1ec22f0d530a35f3329cc",
+      "cancelledTargetThenRetried": true,
+      "kind": "codes",
+      "sequence": 0,
+      "screens": [
+        "screens/C00-after-save.jpg",
+        "screens/C00-cancelled-target.jpg",
+        "screens/C00-choose-target.jpg"
+      ]
+    },
+    {
+      "id": "C01",
+      "file": "CodesGui2.xlsx",
+      "sha256": "3fc8c4e145bc94c66567e76377ac7b48bae565256138ff830c9132b62efddc26",
+      "kind": "codes",
+      "sequence": 1,
+      "screens": [
+        "screens/C01-after-save.jpg"
+      ]
+    },
+    {
+      "delimiter": ",",
+      "encoding": "utf-8",
+      "form": "normal",
+      "id": "SC00",
+      "input": "SC00.csv",
+      "sha256": "4b452c545f66efef89f1e05df45b926597359f551e3c228917b3665d8f223303",
+      "file": "SC00.xlsx",
+      "cancelledSourceAndTargetThenRetried": true,
+      "kind": "csv",
+      "sequence": 2,
+      "screens": [
+        "screens/SC00-after-save.jpg",
+        "screens/SC00-cancelled-source.jpg",
+        "screens/SC00-cancelled-target.jpg",
+        "screens/SC00-choose-source.jpg",
+        "screens/SC00-choose-target.jpg"
+      ]
+    },
+    {
+      "delimiter": ",",
+      "encoding": "utf-8",
+      "form": "quotes",
+      "id": "SC01",
+      "input": "SC01.csv",
+      "sha256": "ef55fd125a426427a7b67905739d5ee115cb2b4e53ce3de846b565ffadc05e89",
+      "file": "SC01.xlsx",
+      "kind": "csv",
+      "sequence": 3,
+      "screens": [
+        "screens/SC01-after-save.jpg",
+        "screens/SC01-source.jpg",
+        "screens/SC01-target.jpg"
+      ]
+    },
+    {
+      "delimiter": ",",
+      "encoding": "utf-8",
+      "form": "multiline",
+      "id": "SC02",
+      "input": "SC02.csv",
+      "sha256": "84c96c458ed428183e9f6edfe86d44e01cd9fbfbac0ce5cfcae8023a58ca2ce4",
+      "file": "SC02.xlsx",
+      "kind": "csv",
+      "sequence": 4,
+      "screens": [
+        "screens/SC02-after-save.jpg",
+        "screens/SC02-source.jpg",
+        "screens/SC02-target.jpg"
+      ]
+    },
+    {
+      "delimiter": ",",
+      "encoding": "utf-8",
+      "form": "unquoted",
+      "id": "SC03",
+      "input": "SC03.csv",
+      "sha256": "d9657a02b58f9aa9b046d94b8eae24cba5b91b7dfe2bdcc7a09fb73173d4825a",
+      "file": "SC03.xlsx",
+      "kind": "csv",
+      "sequence": 5,
+      "screens": [
+        "screens/SC03-after-save.jpg",
+        "screens/SC03-source.jpg",
+        "screens/SC03-target.jpg"
+      ]
+    },
+    {
+      "delimiter": ",",
+      "encoding": "utf-16le",
+      "form": "normal",
+      "id": "SC04",
+      "input": "SC04.csv",
+      "sha256": "972e40660d1b623a8918bb43e1958a2958ef9080ddd16660b14329fb64b2451b",
+      "file": "SC04.xlsx",
+      "kind": "csv",
+      "sequence": 6,
+      "screens": [
+        "screens/SC04-after-save.jpg",
+        "screens/SC04-source.jpg",
+        "screens/SC04-target.jpg"
+      ]
+    },
+    {
+      "delimiter": ",",
+      "encoding": "utf-16le",
+      "form": "quotes",
+      "id": "SC05",
+      "input": "SC05.csv",
+      "sha256": "109b3c10c59a7ca48d6e6a7a127a2ba3f4ce18ff15e0c732bc80f1c1f81dd279",
+      "file": "SC05.xlsx",
+      "kind": "csv",
+      "sequence": 7,
+      "screens": [
+        "screens/SC05-after-save.jpg",
+        "screens/SC05-source.jpg",
+        "screens/SC05-target.jpg"
+      ]
+    },
+    {
+      "delimiter": ",",
+      "encoding": "utf-16le",
+      "form": "multiline",
+      "id": "SC06",
+      "input": "SC06.csv",
+      "sha256": "a540e651d2e93fce358d10bef177a5bc7b585093ffed088bb3ac72c632a21c5d",
+      "file": "SC06.xlsx",
+      "kind": "csv",
+      "sequence": 8,
+      "screens": [
+        "screens/SC06-after-save.jpg",
+        "screens/SC06-source.jpg",
+        "screens/SC06-target.jpg"
+      ]
+    },
+    {
+      "delimiter": ",",
+      "encoding": "utf-16le",
+      "form": "unquoted",
+      "id": "SC07",
+      "input": "SC07.csv",
+      "sha256": "d2373dd0aa49bbc90a21a47232a4184d1e3d6fada3036b784b9fc18a0d8396fc",
+      "file": "SC07.xlsx",
+      "kind": "csv",
+      "sequence": 9,
+      "screens": [
+        "screens/SC07-after-save.jpg",
+        "screens/SC07-source.jpg",
+        "screens/SC07-target.jpg"
+      ]
+    },
+    {
+      "delimiter": ",",
+      "encoding": "windows-1252",
+      "form": "normal",
+      "id": "SC08",
+      "input": "SC08.csv",
+      "sha256": "f3588926c108eac9c9a60766fd22a013c5209fc8f0d48f39d410fd403d887dcc",
+      "file": "SC08.xlsx",
+      "kind": "csv",
+      "sequence": 10,
+      "screens": [
+        "screens/SC08-after-save.jpg",
+        "screens/SC08-source.jpg",
+        "screens/SC08-target.jpg"
+      ]
+    },
+    {
+      "delimiter": ",",
+      "encoding": "windows-1252",
+      "form": "quotes",
+      "id": "SC09",
+      "input": "SC09.csv",
+      "sha256": "47695a3bdd6cffb9cadbaf13c8744ea7f031725ed7275ab3676ad30d637e8f02",
+      "file": "SC09.xlsx",
+      "kind": "csv",
+      "sequence": 11,
+      "screens": [
+        "screens/SC09-after-save.jpg",
+        "screens/SC09-source.jpg",
+        "screens/SC09-target.jpg"
+      ]
+    },
+    {
+      "delimiter": ",",
+      "encoding": "windows-1252",
+      "form": "multiline",
+      "id": "SC10",
+      "input": "SC10.csv",
+      "sha256": "73b629d8efc9d56f61176efa42021c0e564beaa25b0c475f361c2fa4e374b99b",
+      "file": "SC10.xlsx",
+      "kind": "csv",
+      "sequence": 12,
+      "screens": [
+        "screens/SC10-after-save.jpg",
+        "screens/SC10-source.jpg",
+        "screens/SC10-target.jpg"
+      ]
+    },
+    {
+      "delimiter": ",",
+      "encoding": "windows-1252",
+      "form": "unquoted",
+      "id": "SC11",
+      "input": "SC11.csv",
+      "sha256": "a3ad3c41a6ba236e9e98fc61805b6be48e4f9208c07e9dedacbff79b568740b3",
+      "file": "SC11.xlsx",
+      "kind": "csv",
+      "sequence": 13,
+      "screens": [
+        "screens/SC11-after-save.jpg",
+        "screens/SC11-source.jpg",
+        "screens/SC11-target.jpg"
+      ]
+    },
+    {
+      "delimiter": ";",
+      "encoding": "utf-8",
+      "form": "normal",
+      "id": "SC12",
+      "input": "SC12.csv",
+      "sha256": "dde0f73d63121a651c1bff2a679b93cff5132f6568672e73459205a677562eb2",
+      "file": "SC12.xlsx",
+      "kind": "csv",
+      "sequence": 14,
+      "screens": [
+        "screens/SC12-after-save.jpg",
+        "screens/SC12-source.jpg",
+        "screens/SC12-target.jpg"
+      ]
+    },
+    {
+      "delimiter": ";",
+      "encoding": "utf-8",
+      "form": "quotes",
+      "id": "SC13",
+      "input": "SC13.csv",
+      "sha256": "4033d4e43bf9d69ee4af747e534b0dd1eb3696e20d9ca931e94c49c19dc52644",
+      "file": "SC13.xlsx",
+      "kind": "csv",
+      "sequence": 15,
+      "screens": [
+        "screens/SC13-after-save.jpg",
+        "screens/SC13-source.jpg",
+        "screens/SC13-target.jpg"
+      ]
+    },
+    {
+      "delimiter": ";",
+      "encoding": "utf-8",
+      "form": "multiline",
+      "id": "SC14",
+      "input": "SC14.csv",
+      "sha256": "f1a8e682dee6298e0dac0c60ae175214c34f09e63c2f46caa89a67922769c37e",
+      "file": "SC14.xlsx",
+      "kind": "csv",
+      "sequence": 16,
+      "screens": [
+        "screens/SC14-after-save.jpg",
+        "screens/SC14-source.jpg",
+        "screens/SC14-target.jpg"
+      ]
+    },
+    {
+      "delimiter": ";",
+      "encoding": "utf-8",
+      "form": "unquoted",
+      "id": "SC15",
+      "input": "SC15.csv",
+      "sha256": "a0f3c9249631ac7e1b6f54aa36bbdcbeb8a9f1e69f06aadb37b1861a93f98358",
+      "file": "SC15.xlsx",
+      "kind": "csv",
+      "sequence": 17,
+      "screens": [
+        "screens/SC15-after-save.jpg",
+        "screens/SC15-source.jpg",
+        "screens/SC15-target.jpg"
+      ]
+    },
+    {
+      "delimiter": ";",
+      "encoding": "utf-16le",
+      "form": "normal",
+      "id": "SC16",
+      "input": "SC16.csv",
+      "sha256": "5feb22473c682ddb467a2db2e696a27eab78b17d7c39bcdd3a2b051bdc74c7f1",
+      "file": "SC16.xlsx",
+      "kind": "csv",
+      "sequence": 18,
+      "screens": [
+        "screens/SC16-after-save.jpg",
+        "screens/SC16-source.jpg",
+        "screens/SC16-target.jpg"
+      ]
+    },
+    {
+      "delimiter": ";",
+      "encoding": "utf-16le",
+      "form": "quotes",
+      "id": "SC17",
+      "input": "SC17.csv",
+      "sha256": "87e2efc012b2c0da906cc71337c5b0a0a166de36b7f794c710a41d4d7adfc0c7",
+      "file": "SC17.xlsx",
+      "kind": "csv",
+      "sequence": 19,
+      "screens": [
+        "screens/SC17-after-save.jpg",
+        "screens/SC17-source.jpg",
+        "screens/SC17-target.jpg"
+      ]
+    },
+    {
+      "delimiter": ";",
+      "encoding": "utf-16le",
+      "form": "multiline",
+      "id": "SC18",
+      "input": "SC18.csv",
+      "sha256": "337b5511121e160650ee02fde16531bfc59be2f95cc2ab7b9beeac4dbd27b249",
+      "file": "SC18.xlsx",
+      "kind": "csv",
+      "sequence": 20,
+      "screens": [
+        "screens/SC18-after-save.jpg",
+        "screens/SC18-source.jpg",
+        "screens/SC18-target.jpg"
+      ]
+    },
+    {
+      "delimiter": ";",
+      "encoding": "utf-16le",
+      "form": "unquoted",
+      "id": "SC19",
+      "input": "SC19.csv",
+      "sha256": "a613b647ffcac053d18e8198a9b216fc3add7654932b94ad80e9679079b313de",
+      "file": "SC19.xlsx",
+      "kind": "csv",
+      "sequence": 21,
+      "screens": [
+        "screens/SC19-after-save.jpg",
+        "screens/SC19-source.jpg",
+        "screens/SC19-target.jpg"
+      ]
+    },
+    {
+      "delimiter": ";",
+      "encoding": "windows-1252",
+      "form": "normal",
+      "id": "SC20",
+      "input": "SC20.csv",
+      "sha256": "f600ccb5d512d8673ab39754d1c1b1d5db4ca771e9d4dd7f192d9e05251c30e0",
+      "file": "SC20.xlsx",
+      "kind": "csv",
+      "sequence": 22,
+      "screens": [
+        "screens/SC20-after-save.jpg",
+        "screens/SC20-source.jpg",
+        "screens/SC20-target.jpg"
+      ]
+    },
+    {
+      "delimiter": ";",
+      "encoding": "windows-1252",
+      "form": "quotes",
+      "id": "SC21",
+      "input": "SC21.csv",
+      "sha256": "0d48eda93319e1a53a89d34f7d75dbbc4e4676e6187cbc9d96d5e6120e5ca9ff",
+      "file": "SC21.xlsx",
+      "kind": "csv",
+      "sequence": 23,
+      "screens": [
+        "screens/SC21-after-save.jpg",
+        "screens/SC21-source.jpg",
+        "screens/SC21-target.jpg"
+      ]
+    },
+    {
+      "delimiter": ";",
+      "encoding": "windows-1252",
+      "form": "multiline",
+      "id": "SC22",
+      "input": "SC22.csv",
+      "sha256": "a4ba38778ff79f226ea96d2c8acb82c1777ddb83bcc5eb97836e1a80dcfd154d",
+      "file": "SC22.xlsx",
+      "kind": "csv",
+      "sequence": 24,
+      "screens": [
+        "screens/SC22-after-save.jpg",
+        "screens/SC22-source.jpg",
+        "screens/SC22-target.jpg"
+      ]
+    },
+    {
+      "delimiter": ";",
+      "encoding": "windows-1252",
+      "form": "unquoted",
+      "id": "SC23",
+      "input": "SC23.csv",
+      "sha256": "be62a2b18f4f3d43671d93ce598ea5b39f3add4dd903cf47626fbf1ee68e8f19",
+      "file": "SC23.xlsx",
+      "kind": "csv",
+      "sequence": 25,
+      "screens": [
+        "screens/SC23-after-save.jpg",
+        "screens/SC23-source.jpg",
+        "screens/SC23-target.jpg"
+      ]
+    },
+    {
+      "encoding": "utf-8-bom",
+      "delimiter": ",",
+      "form": "normal",
+      "id": "SC24",
+      "input": "SC24.csv",
+      "sha256": "490c394c9f75dbea05ca718933ac71d170651e0423973398c426d975206faac1",
+      "file": "SC24.xlsx",
+      "kind": "csv",
+      "sequence": 26,
+      "screens": [
+        "screens/SC24-after-save.jpg",
+        "screens/SC24-source.jpg",
+        "screens/SC24-target.jpg"
+      ]
+    },
+    {
+      "encoding": "utf-16be-bom",
+      "delimiter": ",",
+      "form": "normal",
+      "id": "SC25",
+      "input": "SC25.csv",
+      "sha256": "2a8465960ffdeb57b91326cca8b4b83e7a051e3dea9e3f06e7fc9ef4ecfb9cf4",
+      "file": "SC25.xlsx",
+      "kind": "csv",
+      "sequence": 27,
+      "screens": [
+        "screens/SC25-after-save.jpg",
+        "screens/SC25-source.jpg",
+        "screens/SC25-target.jpg"
+      ]
+    },
+    {
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "form": "ragged",
+      "id": "SC26",
+      "input": "SC26.csv",
+      "sha256": "f94f9391d32136f5f490ba956ebc6fcf7081e158d6d3395bba89aa88db327706",
+      "file": "SC26.xlsx",
+      "kind": "csv",
+      "sequence": 28,
+      "screens": [
+        "screens/SC26-after-save.jpg",
+        "screens/SC26-source.jpg",
+        "screens/SC26-target.jpg"
+      ]
+    },
+    {
+      "encoding": "utf-8",
+      "delimiter": ";",
+      "form": "ragged",
+      "id": "SC27",
+      "input": "SC27.csv",
+      "sha256": "c222d1d51f7252458a98b276462db7ecad8a6cbb368fdcef9c137a8d345faf8e",
+      "file": "SC27.xlsx",
+      "kind": "csv",
+      "sequence": 29,
+      "screens": [
+        "screens/SC27-after-save.jpg",
+        "screens/SC27-source.jpg",
+        "screens/SC27-target.jpg"
+      ]
+    },
+    {
+      "encoding": "utf-8",
+      "form": "too-short-line",
+      "qualifiedError": true,
+      "id": "SC28",
+      "input": "SC28.csv",
+      "sha256": "ef53dcc237c0687eae5421a4c666a0ea793c05280c017aedc3f7acf500044fd9",
+      "time": "2026-11-09T22:26:11.539Z",
+      "phase": "read",
+      "nativeTitle": "Absturz itc-ToolBox",
+      "nativeMessage": "Die Länge darf nicht kleiner als 0 (null) sein. Parametername: length",
+      "nativeLocation": "System.String.Substring -> transformCsv2Xlsx..ctor -> MainWindow.BtnSysCheck_Click",
+      "browserMessage": "Eine SysCheck-CSV-Zeile ist kürzer als zwei Zeichen.",
+      "qualifiedDifference": true,
+      "kind": "native-crash",
+      "sequence": 30,
+      "screens": [
+        "screens/SC28-after-read.jpg",
+        "screens/SC28-source.jpg"
+      ]
+    },
+    {
+      "encoding": "utf-8",
+      "form": "empty",
+      "qualifiedError": true,
+      "id": "SC29",
+      "input": "SC29.csv",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "time": "2026-11-09T22:27:14.344Z",
+      "phase": "write",
+      "nativeTitle": "Absturz itc-ToolBox",
+      "nativeMessage": "Der Objektverweis wurde nicht auf eine Objektinstanz festgelegt.",
+      "nativeLocation": "transformCsv2Xlsx.ToXlsx -> MainWindow.BtnSysCheck_Click",
+      "partialFile": "SC29-partial.xlsx",
+      "partialSHA256": "c7b9f4dfa1e45a63b3f085c618e0a8ba545f2961bd7bb83f29c1d87043f2eb52",
+      "browserMessage": "Die CSV-Datei enthält keine Daten.",
+      "qualifiedDifference": true,
+      "kind": "native-crash",
+      "sequence": 31,
+      "screens": [
+        "screens/SC29-after-save.jpg",
+        "screens/SC29-source.jpg",
+        "screens/SC29-target.jpg"
+      ]
+    },
+    {
+      "id": "SC30",
+      "input": "SC30.csv",
+      "encoding": "utf-32le-bom",
+      "form": "normal",
+      "delimiter": ",",
+      "sha256": "6292a05dfb89f458a2edb00ad331dfb906de5c634ce298dda5eb5e345de35f47",
+      "file": "SC30.xlsx",
+      "kind": "csv",
+      "sequence": 32,
+      "screens": [
+        "screens/SC30-after-save.jpg",
+        "screens/SC30-source.jpg",
+        "screens/SC30-target.jpg"
+      ]
+    },
+    {
+      "id": "SC31",
+      "input": "SC31.csv",
+      "encoding": "utf-32be-bom",
+      "form": "normal",
+      "delimiter": ",",
+      "sha256": "a81b6919e88a2f4b24da598ed9cfef1971e2c176f499ab38a0e97f713038d54b",
+      "file": "SC31.xlsx",
+      "kind": "csv",
+      "sequence": 33,
+      "screens": [
+        "screens/SC31-after-save.jpg",
+        "screens/SC31-source.jpg",
+        "screens/SC31-target.jpg"
+      ]
+    },
+    {
+      "id": "SC32",
+      "input": "SC32.csv",
+      "encoding": "utf-8-recovery",
+      "form": "normal",
+      "delimiter": ",",
+      "sha256": "d59ac5f0c89f396d69b81d1272119471f80630c5e0769ed3ad3352eb90f63e6f",
+      "file": "SC32.xlsx",
+      "kind": "csv",
+      "sequence": 34,
+      "screens": [
+        "screens/SC32-after-save.jpg",
+        "screens/SC32-source.jpg",
+        "screens/SC32-target.jpg"
+      ]
+    }
+  ],
+  "files": {
+    "native/CodesGui.xlsx": "f450f433ca4b32d4af1cff4a187872609456363759e1ec22f0d530a35f3329cc",
+    "screens/C00-after-save.jpg": "9dfd6e12328cd43d4cdf271700adcd6037dca944a262d86ebd390c274791644e",
+    "screens/C00-cancelled-target.jpg": "8f02a08beaf902a2f383fa3de30f6a087fb187720987d8dff8da2f46d8340c19",
+    "screens/C00-choose-target.jpg": "bb42b9ad0a7c3e1d91bfc2ffa9bb40adf6fb0dd99de796335069958e433521af",
+    "native/CodesGui2.xlsx": "3fc8c4e145bc94c66567e76377ac7b48bae565256138ff830c9132b62efddc26",
+    "screens/C01-after-save.jpg": "498a088d3a968965287be7990e958f66a16ce39c73e3e8ee1507421ec252f1a8",
+    "inputs/SC00.csv": "ab346201494164aa748829376e94b9c4ac39a2500180a43ed689e591da51a102",
+    "native/SC00.xlsx": "4b452c545f66efef89f1e05df45b926597359f551e3c228917b3665d8f223303",
+    "screens/SC00-after-save.jpg": "ca16b71ad886f3781ef90839f54770e568b6bd55d3198593fd0ea41a8c42328a",
+    "screens/SC00-cancelled-source.jpg": "99d2c9342ea3c89af33e53daaccae85d325d22681e12da1dee02514d42c17eec",
+    "screens/SC00-cancelled-target.jpg": "05d2d49297e7146042a9a03cda77282e8251ba17681db3542f99f3d524409d16",
+    "screens/SC00-choose-source.jpg": "a0b8aa424ff5be5a7834121aab2756827a07249ee26a4f782fd64c70556ced29",
+    "screens/SC00-choose-target.jpg": "5a652be713f55c774cc400ad0ffe3b0ebf6a8b2e95e2d1d86125a3f7f9123f27",
+    "inputs/SC01.csv": "3190a493545b2b99bb5b3117f4766694e3d8214e418801e80abfbe7aeb776e20",
+    "native/SC01.xlsx": "ef55fd125a426427a7b67905739d5ee115cb2b4e53ce3de846b565ffadc05e89",
+    "screens/SC01-after-save.jpg": "937f0d587dcf39f5ddadbf2d7797ee820adfc3d448c84d99f28cc0ff711e190c",
+    "screens/SC01-source.jpg": "9d4e96d4f538dff4bb6d87fe4ee93a74d5eec84d3c0d720d7b16d1bb01e7a54d",
+    "screens/SC01-target.jpg": "f2e5b138fcd775ecf59b8d01a0839d19b73b83b6d1733f9b9430cc506baf0df2",
+    "inputs/SC02.csv": "359f7617d9884e9ea9d9b4fa7d0b254cd2b4fa010c3d58ec6173f72597b03ee8",
+    "native/SC02.xlsx": "84c96c458ed428183e9f6edfe86d44e01cd9fbfbac0ce5cfcae8023a58ca2ce4",
+    "screens/SC02-after-save.jpg": "42270fa2b820ce8e08d92835bd5514b8a796ef06f7e154428d4f1c1e41329a68",
+    "screens/SC02-source.jpg": "170f0f70765f9f90a6e677a0171835c70afac873db5f2e0fcb4d3e6f1dfc639f",
+    "screens/SC02-target.jpg": "80efed75f46ae4508249b20d0aadf4ac3b4c4beee32e4b21a3beb4ca2816d722",
+    "inputs/SC03.csv": "dabb5d92758fa37103eb5deb02bd28aed7eb2a4e43095a3aa64d6b794b7ec79e",
+    "native/SC03.xlsx": "d9657a02b58f9aa9b046d94b8eae24cba5b91b7dfe2bdcc7a09fb73173d4825a",
+    "screens/SC03-after-save.jpg": "4f54fa70410e7a52eccc79665ffd6423792fbc1d789fd9d034632df7ac94918e",
+    "screens/SC03-source.jpg": "bca30537eed9948d9f4b9c50ce81ab2eddc5c78a711599957a2f240cc4ecc330",
+    "screens/SC03-target.jpg": "2cc256ded20d57c9121bec585b7e3f82503bf69e76cfaa1de61b25a432d5f01f",
+    "inputs/SC04.csv": "142553b63e0029077a8fe0e512ac3e673d677dc9e21e07b1f212e3633fde61f7",
+    "native/SC04.xlsx": "972e40660d1b623a8918bb43e1958a2958ef9080ddd16660b14329fb64b2451b",
+    "screens/SC04-after-save.jpg": "42270fa2b820ce8e08d92835bd5514b8a796ef06f7e154428d4f1c1e41329a68",
+    "screens/SC04-source.jpg": "1d042ff6d9fdcbe6154bc082df64de4cee1fabbb6130d90df6dca9636e147c52",
+    "screens/SC04-target.jpg": "fbfcd850cf296c0afd30a170e2e1b91cdeb89e96afb52f0a530cb60789f1aa1b",
+    "inputs/SC05.csv": "3cc572584dbf375ab7b6a0ba6d139aa05e4c7f8efe76c1df97f61522d5c02dd7",
+    "native/SC05.xlsx": "109b3c10c59a7ca48d6e6a7a127a2ba3f4ce18ff15e0c732bc80f1c1f81dd279",
+    "screens/SC05-after-save.jpg": "22d43b32ce279f8907b6fb59ac46f41babe391549d64bc7da54cbd265d7140ac",
+    "screens/SC05-source.jpg": "b27cf31fa1b6aad902663e6a56d072a1fb2333632208f40bd0471bd9a780f860",
+    "screens/SC05-target.jpg": "59a76107d9f02bd9851114d8167dc12ad6464cfc097c26dda8472aae278d2436",
+    "inputs/SC06.csv": "c04cc4f1f0739e32f0d8288114866508afd3311462a3f6989d07b2b9a5050104",
+    "native/SC06.xlsx": "a540e651d2e93fce358d10bef177a5bc7b585093ffed088bb3ac72c632a21c5d",
+    "screens/SC06-after-save.jpg": "ee5f57e4608d23fdf30ace4d1b92fc0da7a2541719fcbbc6ea11b7a69f47d82f",
+    "screens/SC06-source.jpg": "fee4f6182e51cb1fcde69faf02fc0430148a460536ba560884b152b259865959",
+    "screens/SC06-target.jpg": "56d73c64df332a16b55d3b23a9e3e49cabe517109f6541625c9f92f642c2f1df",
+    "inputs/SC07.csv": "d5bb4bb1625f00eb4b05d06d3c6c570bdfb0c31f33825efef21895a505678cd6",
+    "native/SC07.xlsx": "d2373dd0aa49bbc90a21a47232a4184d1e3d6fada3036b784b9fc18a0d8396fc",
+    "screens/SC07-after-save.jpg": "5c878406e536614e4274ed3de5c8f92ec076a33188483f6d3679a9a3df34b403",
+    "screens/SC07-source.jpg": "d806aed5d7117916fc375b322763009cea1943d957ca5dc098ac12acb7eb9d91",
+    "screens/SC07-target.jpg": "f993f8793500626ac27fba041938bab2b7a126c1b786635dac65e50ca9c355a6",
+    "inputs/SC08.csv": "65f5d9c50b929fb180b62e1e1c90ae7f8afcbdbc169f6fa59203b5958539f977",
+    "native/SC08.xlsx": "f3588926c108eac9c9a60766fd22a013c5209fc8f0d48f39d410fd403d887dcc",
+    "screens/SC08-after-save.jpg": "d5acd9e78938c7884ec3223f32040b6ca8c685691b8d999a9362ab124094bfc1",
+    "screens/SC08-source.jpg": "6e53b6b8241523e2a0754b87f2951fb2a9b2a5b6be02c8037ce9bfed885cbb90",
+    "screens/SC08-target.jpg": "782ad7d373c9c433a87990d3108e1fd794cc7bd238a0e7c571efd5d1537ea86d",
+    "inputs/SC09.csv": "3190a493545b2b99bb5b3117f4766694e3d8214e418801e80abfbe7aeb776e20",
+    "native/SC09.xlsx": "47695a3bdd6cffb9cadbaf13c8744ea7f031725ed7275ab3676ad30d637e8f02",
+    "screens/SC09-after-save.jpg": "22d43b32ce279f8907b6fb59ac46f41babe391549d64bc7da54cbd265d7140ac",
+    "screens/SC09-source.jpg": "9202a214c11a842c159ecfb813369da9803aea928988ef935cd691d68245fc5d",
+    "screens/SC09-target.jpg": "d6f2f3be96969ea12e3f303b7fb54f4696ff26bdfd474008e8c9fe70f6ea7c28",
+    "inputs/SC10.csv": "359f7617d9884e9ea9d9b4fa7d0b254cd2b4fa010c3d58ec6173f72597b03ee8",
+    "native/SC10.xlsx": "73b629d8efc9d56f61176efa42021c0e564beaa25b0c475f361c2fa4e374b99b",
+    "screens/SC10-after-save.jpg": "93391e5ec77ee5a4d26b297006aa39b333ef81aa8db9a22dd7841d382920623c",
+    "screens/SC10-source.jpg": "589dcf57936afdca8b8bdc9b087ab4b86a6fef9897d6618e53c5a1ed5c659bfb",
+    "screens/SC10-target.jpg": "82620859f0af2c934b1ac0a06b3bd5b2d193785f040b53f1aab55c29f3537293",
+    "inputs/SC11.csv": "1bc15cd7c772e8abd7392d01aa187cc6468f36359eb769aee1f8774100b92951",
+    "native/SC11.xlsx": "a3ad3c41a6ba236e9e98fc61805b6be48e4f9208c07e9dedacbff79b568740b3",
+    "screens/SC11-after-save.jpg": "93391e5ec77ee5a4d26b297006aa39b333ef81aa8db9a22dd7841d382920623c",
+    "screens/SC11-source.jpg": "4ed94cee75c77463fdb213de8695256c394a11cb4fdfdfe94d6da20804250893",
+    "screens/SC11-target.jpg": "ab3be14653feb3da2b1e925e08b16321bf72308de7c8d8e8e498708c5476160d",
+    "inputs/SC12.csv": "ecd344df49f7e76b95abd064de354710e7454970d5db6ae52c7d09804d8f145d",
+    "native/SC12.xlsx": "dde0f73d63121a651c1bff2a679b93cff5132f6568672e73459205a677562eb2",
+    "screens/SC12-after-save.jpg": "8d231a72c7698f357d7e555238a71b9425154868e09706618a02c710abdb9503",
+    "screens/SC12-source.jpg": "0f5e2cc287f789b8350e44df694b37f4104fc182df3d412dbf0e34bf629cdf30",
+    "screens/SC12-target.jpg": "f35f9170e3bd6fb971172f3ec714241e0083e28225424829a5c8a74a1dc5dba6",
+    "inputs/SC13.csv": "57a694735599413c4021caddaca3a77e65f0bbc6472bfb94944145fdb39662fa",
+    "native/SC13.xlsx": "4033d4e43bf9d69ee4af747e534b0dd1eb3696e20d9ca931e94c49c19dc52644",
+    "screens/SC13-after-save.jpg": "8d231a72c7698f357d7e555238a71b9425154868e09706618a02c710abdb9503",
+    "screens/SC13-source.jpg": "37580655d8cc99c2aa2b8a2aa705b29a2335b3941f2c01c67301f05b68923023",
+    "screens/SC13-target.jpg": "5b0110933d9621ac2f0dfc71a39c1e11c2ed819d86c6035c644562f2c2a1988e",
+    "inputs/SC14.csv": "b51c1bcb2ad0b322b6705e5dab2199eaf4cfb867066aa35247dee1b4b5b94bc1",
+    "native/SC14.xlsx": "f1a8e682dee6298e0dac0c60ae175214c34f09e63c2f46caa89a67922769c37e",
+    "screens/SC14-after-save.jpg": "8d231a72c7698f357d7e555238a71b9425154868e09706618a02c710abdb9503",
+    "screens/SC14-source.jpg": "c7e0f1c2ac56252959a5e5229f4b884d45b7b3515ada5fad579df9c9a65f4536",
+    "screens/SC14-target.jpg": "814c61acc87852b1ab8d35ec32726b02e0e83bd289f2d9fef6c518a4f0c24b32",
+    "inputs/SC15.csv": "863e6532cd939801a7633c0d207a358723d1de6e4063bc9949fc13c48215c582",
+    "native/SC15.xlsx": "a0f3c9249631ac7e1b6f54aa36bbdcbeb8a9f1e69f06aadb37b1861a93f98358",
+    "screens/SC15-after-save.jpg": "49840b809908862c3b338373b7b9be98463e93c02e82b013abe23a529b350009",
+    "screens/SC15-source.jpg": "8f6fd8cee9e85debb5a69db53d866bd41026f203296f8278a78c16414b639eec",
+    "screens/SC15-target.jpg": "4d243ac7a3d025e9c5c66e50218ae2c01a80e58d9ce426e0ce7e8f10be5a93f1",
+    "inputs/SC16.csv": "d8dc3b74c1d39467837c3083e9ce05013b4a149941dd77491ca825bbcbb6c35c",
+    "native/SC16.xlsx": "5feb22473c682ddb467a2db2e696a27eab78b17d7c39bcdd3a2b051bdc74c7f1",
+    "screens/SC16-after-save.jpg": "326ef5da89c5e4aa5ba6d9ecbdd0bf7fed0ef5abc75050670dbce108c1fcd2ed",
+    "screens/SC16-source.jpg": "1ef9f98e05130e6d068977d96875581f05b2c5739b36a5e3693d01709498b072",
+    "screens/SC16-target.jpg": "1e14c8a68ec991b8af201536871c2c6e8a7f7fbe3d8fd025cb95f3e6b7cc5aee",
+    "inputs/SC17.csv": "2b65151164d817eb7fa7a4fe883cfcd24fb0989432c3dc5b0e766180e3d693e6",
+    "native/SC17.xlsx": "87e2efc012b2c0da906cc71337c5b0a0a166de36b7f794c710a41d4d7adfc0c7",
+    "screens/SC17-after-save.jpg": "78fdc3f6553afbb509c7371d5a575d00d7aceae398eb555406f334ce6f13592a",
+    "screens/SC17-source.jpg": "9298f0369fd848a555d6514738273bdd31db8a652b0cef81c56c74b097a19d38",
+    "screens/SC17-target.jpg": "f8b5227e0c626009c2d0dc87a61d4eecb4cae3c3b637111df00edc1ef74fb042",
+    "inputs/SC18.csv": "bb352c20f46cd90e1897f2251f8261da9cdeebc604655b1304be249cf680a5cc",
+    "native/SC18.xlsx": "337b5511121e160650ee02fde16531bfc59be2f95cc2ab7b9beeac4dbd27b249",
+    "screens/SC18-after-save.jpg": "20ad9910c9ba0469dc4a040fa57082906c16bbdf096ea660b2d0caeeef0686ca",
+    "screens/SC18-source.jpg": "2512e8081653b27f0a8a2bffae65080ced3d0cc469bc5103915a48916250d1aa",
+    "screens/SC18-target.jpg": "d3b0a559c2e7a4f897b63dd87251d0c074d4e760b8a71e6852df1e819f5cf71d",
+    "inputs/SC19.csv": "ba3816d92678891b1e09870928f4bbe33c554aca1a49575433c913c9b09f4ff0",
+    "native/SC19.xlsx": "a613b647ffcac053d18e8198a9b216fc3add7654932b94ad80e9679079b313de",
+    "screens/SC19-after-save.jpg": "49840b809908862c3b338373b7b9be98463e93c02e82b013abe23a529b350009",
+    "screens/SC19-source.jpg": "4695d5bcc559d2d1f804fbab1da6aa9a7ef565d527a114e8832ab03e75245365",
+    "screens/SC19-target.jpg": "d5501c59734dfcd331d94a6d21ff4c8b3106b75e65421986a75320ecb814d9bc",
+    "inputs/SC20.csv": "e6fe275a0ea8567dc4e4380482e8bc354e94e7cd1659b81da862e1d9c01ec9a8",
+    "native/SC20.xlsx": "f600ccb5d512d8673ab39754d1c1b1d5db4ca771e9d4dd7f192d9e05251c30e0",
+    "screens/SC20-after-save.jpg": "139962641afd5590559e8d0359c039ef7765e040095e326e5ec7652dfeaabeb9",
+    "screens/SC20-source.jpg": "03f8e3c78fd331a8bd28cf8df17114f17d3c0cb3d0694f079b73cf0ff8f102aa",
+    "screens/SC20-target.jpg": "5cc246300c3e1488c682057c8775bb29c0170948db62aeae7d252194c707c2d3",
+    "inputs/SC21.csv": "57a694735599413c4021caddaca3a77e65f0bbc6472bfb94944145fdb39662fa",
+    "native/SC21.xlsx": "0d48eda93319e1a53a89d34f7d75dbbc4e4676e6187cbc9d96d5e6120e5ca9ff",
+    "screens/SC21-after-save.jpg": "78fdc3f6553afbb509c7371d5a575d00d7aceae398eb555406f334ce6f13592a",
+    "screens/SC21-source.jpg": "2f1a71d7b92f76a46e18ad372300bad12e008f10e8a37879b9b223766f1fb9cf",
+    "screens/SC21-target.jpg": "da80e61df2704e55c8471c5d153a72adc14a24bd9f4bcd9f4a04206417d3933a",
+    "inputs/SC22.csv": "b51c1bcb2ad0b322b6705e5dab2199eaf4cfb867066aa35247dee1b4b5b94bc1",
+    "native/SC22.xlsx": "a4ba38778ff79f226ea96d2c8acb82c1777ddb83bcc5eb97836e1a80dcfd154d",
+    "screens/SC22-after-save.jpg": "78fdc3f6553afbb509c7371d5a575d00d7aceae398eb555406f334ce6f13592a",
+    "screens/SC22-source.jpg": "19cd7d7a535aa92491869816c8036d82166d2f66709d8885b31571ee58f0cb33",
+    "screens/SC22-target.jpg": "ea1c7ee7193d694c38bc1877955f6272db0eb17ddb1bd12ee9a7ad8b42c1046b",
+    "inputs/SC23.csv": "5ad2bcb0ea9d39975fd28a3791e1c299f7cd30cf28753f3c025d97462c054258",
+    "native/SC23.xlsx": "be62a2b18f4f3d43671d93ce598ea5b39f3add4dd903cf47626fbf1ee68e8f19",
+    "screens/SC23-after-save.jpg": "c715c354c39a0df176c138f26a58f5b1d670b96833c5e500361eef95547df8f6",
+    "screens/SC23-source.jpg": "44aa6eff1b42a30ecbc14b8ac90b5230f46b61a81afebe0dca051daba3e97f82",
+    "screens/SC23-target.jpg": "0f2196e5cb87f54110fa6b9b7635360dcf77997b6e4b9d586de347b92858333f",
+    "inputs/SC24.csv": "0fd1d8489beaa8f6c5f46392544b349841f88c6a8a4142adbef91a8904bc46ec",
+    "native/SC24.xlsx": "490c394c9f75dbea05ca718933ac71d170651e0423973398c426d975206faac1",
+    "screens/SC24-after-save.jpg": "5c878406e536614e4274ed3de5c8f92ec076a33188483f6d3679a9a3df34b403",
+    "screens/SC24-source.jpg": "e052231e8c85fc58d0ff096fa7bb93a720e8dbffad65ab19aa5a8c77beba4056",
+    "screens/SC24-target.jpg": "6b52fd67d0e7857429b24b606a2d961d745a7a3aa269e49e6837e7d306e86b9e",
+    "inputs/SC25.csv": "9ff44348474706e3b6b36954a8aadbd98f7c4d626eb4ecd56419ff48d94eede0",
+    "native/SC25.xlsx": "2a8465960ffdeb57b91326cca8b4b83e7a051e3dea9e3f06e7fc9ef4ecfb9cf4",
+    "screens/SC25-after-save.jpg": "ee5f57e4608d23fdf30ace4d1b92fc0da7a2541719fcbbc6ea11b7a69f47d82f",
+    "screens/SC25-source.jpg": "ecdaccea4ca7d36f572aa022d75e17578bd7205306ecf27deaf78c636034b746",
+    "screens/SC25-target.jpg": "6903b3a46cd06abcdc4829e7e46e0e160c3cf69014428ab25b26ed58ef94d9a1",
+    "inputs/SC26.csv": "0219282ba84cec7255b5b2ce35694cd568c1c4813e76b005d71f1d1f3d194bfb",
+    "native/SC26.xlsx": "f94f9391d32136f5f490ba956ebc6fcf7081e158d6d3395bba89aa88db327706",
+    "screens/SC26-after-save.jpg": "84e4915e553af4f5b2babe6679450d4ad87bf9d02e922dcf7e711c08269777f2",
+    "screens/SC26-source.jpg": "0e81b7db35d7d973c84d16f10edcee14a7b02091d66e676d1a900177b0994fb5",
+    "screens/SC26-target.jpg": "41cdbd0e0bdbece8b68bf3b76198add28de867c3020e1dc4ee2743540b242f0a",
+    "inputs/SC27.csv": "f99deeff9abf595a40fb0454aeab503299221eca15997fd0bb0f5804bb0e4062",
+    "native/SC27.xlsx": "c222d1d51f7252458a98b276462db7ecad8a6cbb368fdcef9c137a8d345faf8e",
+    "screens/SC27-after-save.jpg": "78fdc3f6553afbb509c7371d5a575d00d7aceae398eb555406f334ce6f13592a",
+    "screens/SC27-source.jpg": "0cec5ae5cc5f27c9864b818c27033c0b06e2df9d060d520aa69207b309658fcc",
+    "screens/SC27-target.jpg": "3bb8c5b42a02088a736cdb7254550e0dd2e9884908e2b2bad73bdf7ea277b286",
+    "inputs/SC28.csv": "ef53dcc237c0687eae5421a4c666a0ea793c05280c017aedc3f7acf500044fd9",
+    "screens/SC28-after-read.jpg": "3109bb7342b31f810a7998ea8ba06b368382af6ad7b2ae86f77397b903de986a",
+    "screens/SC28-source.jpg": "cf4d7b6f7fae4f126e4342ce0bea6a253307b3c40fa7a518109e3e30c0c737e5",
+    "inputs/SC29.csv": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native/SC29-partial.xlsx": "c7b9f4dfa1e45a63b3f085c618e0a8ba545f2961bd7bb83f29c1d87043f2eb52",
+    "screens/SC29-after-save.jpg": "2823374d5cf0ba7d8506b85a3acc77abbaf2f33f40c793b89413f7e3ebd14b9c",
+    "screens/SC29-source.jpg": "e73d6138f8d6f772266b193660ea89b1a7c0f988aea07a6948fb0c4995ba6ae0",
+    "screens/SC29-target.jpg": "040d5abe764deef075c4b126aecc75c62d2f49b2c0c03a64a6137d47e4f1209c",
+    "inputs/SC30.csv": "69beb2442c9d54c0a491b54eaab9e7e49b9e27a0b4db276e7626697a4c181538",
+    "native/SC30.xlsx": "6292a05dfb89f458a2edb00ad331dfb906de5c634ce298dda5eb5e345de35f47",
+    "screens/SC30-after-save.jpg": "8d231a72c7698f357d7e555238a71b9425154868e09706618a02c710abdb9503",
+    "screens/SC30-source.jpg": "f89af7567af8cfca2d5a8490b650dbcd342cf3c736ad046e4708ef8b1449532f",
+    "screens/SC30-target.jpg": "82af4ab533e32b9aee1d3c9e26080c53c8ca652df5fe30475c2acc7b589bcddb",
+    "inputs/SC31.csv": "794ed3618c9d93176f8b8f790c17eb969c748acb7a90a8b39527f10761f02ab3",
+    "native/SC31.xlsx": "a81b6919e88a2f4b24da598ed9cfef1971e2c176f499ab38a0e97f713038d54b",
+    "screens/SC31-after-save.jpg": "796e9d0bdbacaef67adce5ee8548445da805b0df2cb42b077e28bd0d360058f2",
+    "screens/SC31-source.jpg": "21dffe85a5c56b0ea1385266e6cbd6aa8a0c0cc623d4ecdb2dd42445e1230d48",
+    "screens/SC31-target.jpg": "a79ad9d7471dcd865471f036254ce473d966aa4016ded17f0ea9e854563fd220",
+    "inputs/SC32.csv": "ab346201494164aa748829376e94b9c4ac39a2500180a43ed689e591da51a102",
+    "native/SC32.xlsx": "d59ac5f0c89f396d69b81d1272119471f80630c5e0769ed3ad3352eb90f63e6f",
+    "screens/SC32-after-save.jpg": "4337c31d3744c26235b51c52bce4eb3c9df6db4a408b1a6b95bee0eadbc8b995",
+    "screens/SC32-source.jpg": "b990c50383584fa96d336a46d74c02830ac5be011d2c9baa80167a61fcfe7433",
+    "screens/SC32-target.jpg": "6b70013e72fcd45c076b362319cf3ce8fe2f90ad97b69743ab9069db29b245e3"
+  },
+  "bundles": [
+    {
+      "file": "cases-00.zip",
+      "bytes": 2276539,
+      "sha256": "37ba9999abbcd9e259a4a2e255af834eb433d45ab36788689b946fbbf7f29387"
+    },
+    {
+      "file": "cases-01.zip",
+      "bytes": 2233481,
+      "sha256": "0324943526be113b6ade0d60c617e20ad32645c9f5f4f8d314eb45fa01e14eda"
+    },
+    {
+      "file": "cases-02.zip",
+      "bytes": 2236766,
+      "sha256": "db1845f1949ae9e46991b4167fa4b850938c65ec57bfb8c00347e5a29602ea86"
+    },
+    {
+      "file": "cases-03.zip",
+      "bytes": 2236688,
+      "sha256": "41e07c3ecc90f2f501b614d0660e20a841e6b7637113afff35c73e41821adba0"
+    },
+    {
+      "file": "cases-04.zip",
+      "bytes": 2236732,
+      "sha256": "09de8a80351ce605381c99f117e5c7030fead85ba02570e337d370affe8d5d65"
+    },
+    {
+      "file": "cases-05.zip",
+      "bytes": 2236532,
+      "sha256": "558f2237803b0f9701885c894466eea9f1e04bba5af713feb58a43d85e27f6b4"
+    },
+    {
+      "file": "cases-06.zip",
+      "bytes": 2236708,
+      "sha256": "79da5c5e31e42d618a34f5b6c2a7251bbeb93a0ccf38c07f5526e136f7a62103"
+    },
+    {
+      "file": "cases-07.zip",
+      "bytes": 2065057,
+      "sha256": "e224148638d9775c3be5c01ad9552ca8399c752a305bbdb1d209e3a535f71738"
+    },
+    {
+      "file": "cases-08.zip",
+      "bytes": 1688280,
+      "sha256": "20dd07351420c3bfc555f28097dbbeabf7883dbaeb5369d81afad0d9ae88da24"
+    }
+  ],
+  "comparison": "All Excel sheet names, dimensions and cell text values. Code exports additionally validate per-column counts, alternating alphabet and uniqueness before normalizing random draws. CSV exports compared without value normalization.",
+  "product": "24 cases: comma/semicolon × UTF-8/UTF-16LE-BOM/Windows-1252 × normal/escaped-quotes/multiline/unquoted. UTF-8 BOM, UTF-16BE BOM, two ragged-row cases, UTF-32LE/BE BOM and a valid recovery input add seven successful cases. Two deliberately invalid files expose original crashes.",
+  "correction": "Explicit Windows SysCheck CSV mode reproduces File.ReadAllLines BOM decoding/default UTF-8 replacement and the original per-line quote-delimiter splitting. The existing extended CSV mode remains default and preserves proper CSV semantics.",
+  "qualifiedDifferences": [
+    "SC28: original crashes in String.Substring on a line shorter than two characters. Browser rejects it in the current form.",
+    "SC29: original crashes in ToXlsx for an empty file and leaves a partial workbook. Browser rejects it without offering a partial export. SC32 proves native recovery after restarting."
+  ],
+  "scopeNotes": [
+    "Codes generator has no command to reopen its own output; saved XLSX files are parsed and compared, not claimed opened in a nonexistent native command.",
+    "Native OS file-dialog cancellations are captured. Browser download-dialog behavior remains controlled by each browser.",
+    "An initial forward-slash absolute filename attempt was rejected by the Windows file dialog; final Codes path selected through actual folders. That attempt is not an export pair.",
+    "A guest-file pull returning zero bytes was not treated as proof of file existence; captured exports require ZIP signature, checksum and successful workbook parsing."
+  ],
+  "limits": [
+    "Synthetic files only; no empirical study data.",
+    "No universal equivalence of arbitrary malformed CSV encodings or Excel visual rendering.",
+    "Known original crashes are documented, not reproduced in the browser."
+  ]
+}

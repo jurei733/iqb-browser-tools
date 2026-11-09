@@ -1,0 +1,6 @@
+import {readFile} from 'node:fs/promises';import {unzipSync} from 'fflate';import assert from 'node:assert/strict';
+import {loadWorkbook} from '../../src/toolbox.js';import {workbookCells} from '../../scripts/testcenter-study.mjs';import {codeShape} from './native-logins.js';
+export const smallConvertersRoot=new URL('../fixtures/gui-small-converters-20261109/',import.meta.url);const cache=new Map();
+export async function smallConverterFiles(c){const id=String(Math.floor(c.sequence/4)).padStart(2,'0');if(!cache.has(id))cache.set(id,unzipSync(await readFile(new URL('cases-'+id+'.zip',smallConvertersRoot))));return cache.get(id);}
+export async function normalizedCodeWorkbook(bytes){const w=await loadWorkbook(bytes);assert.equal(w.worksheets.length,1);const sheet=w.worksheets[0];for(let col=1;col<=4;col++){const codes=[];for(let row=2;row<=sheet.rowCount;row++){const cell=sheet.getCell(row,col);if(cell.text){codes.push(cell.text);cell.value=codeShape(cell.text,col+1);}}assert.equal(codes.length,[100,200,500,2000][col-1]);assert.equal(new Set(codes).size,codes.length);}return workbookCells(w);}
+export async function converterWorkbookCells(bytes){return workbookCells(await loadWorkbook(bytes));}

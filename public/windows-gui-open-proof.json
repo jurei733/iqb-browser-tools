@@ -10,7 +10,8 @@
       "windows-gui-login-boundaries-proof.json",
       "windows-gui-login-matrix-proof.json",
       "windows-gui-booklet-matrix-proof.json",
-      "windows-gui-word-products-proof.json"
+      "windows-gui-word-products-proof.json",
+      "windows-gui-small-converters-proof.json"
     ],
     "additionalBoundaryWorkbooks": 6,
     "additionalInvalidLoginTexts": 4,
@@ -18,7 +19,8 @@
     "loginReopeningCombinations": 128,
     "bookletValidationCombinations": 64,
     "bookletValidFollowups": 2,
-    "wordGuiScenarios": 17
+    "wordGuiScenarios": 17,
+    "smallConverterGuiScenarios": 35
   },
   "openFamilies": [
     {
@@ -52,9 +54,10 @@
       "id": "small-converters",
       "family": "Codes-Xlsx und SysCheck-CSV",
       "dimensions": "Erzeugen/Speichern/erneut öffnen und abgebrochene Zieldateiauswahl; SysCheck-Dateivarianten einschließlich Zeichensätzen und fehlerhaften Zeilen.",
-      "existingEvidence": "Originaldateien, Code-Alphabete/-Anzahlen und CSV-Konvertierung in Datei-/Modultests verglichen. Kein vollständiger zusätzlicher direkter GUI-Produktnachweis aus diesen Tests ableitbar.",
-      "stillOpen": "Befehls- und Dateidialogfolgen im Original explizit erfassen.",
-      "status": "partial-direct-gui"
+      "existingEvidence": "35 native Szenarien: zwei Codes-Exporte mit sämtlichen normalisierten Zellen, Alphabeten und Anzahlen; 31 SysCheck-Exportpaare, zwei Originalabstürze, Quell-/Zieldialogabbruch und erfolgreiche Wiederherstellung. 24er-Dateiprodukt plus BOM-, Zeilen- und Wiederholungsfälle.",
+      "stillOpen": "Das konkrete Dateiprodukt ist abgeschlossen. Codes-Generator hat keinen eigenen Wiederöffnen-Befehl. Bei zu kurzer Zeile/leerer Datei stürzt das Original ab; Browser meldet den Fehler und bleibt bedienbar. Beliebige weitere CSV-Fehler und Excel-Darstellung nicht pauschal geprüft.",
+      "status": "completed-finite-direct-gui-with-qualified-original-errors",
+      "proof": "windows-gui-small-converters-proof.json"
     },
     {
       "id": "excel-sources-capabilities",
@@ -121,6 +124,10 @@
     {
       "id": "T-word-invalid-template",
       "reason": "W14: Original kopiert beschädigte DOCX unverändert und meldet beendet; Browser bietet keine ungültige Datei als erfolgreichen Export an. W15: nativer gültiger Folgelauf direkt nachgewiesen."
+    },
+    {
+      "id": "T-syscheck-malformed-and-empty",
+      "reason": "SC28: nativer Absturz in String.Substring beim Lesen einer zu kurzen Zeile. SC29: nativer Absturz beim Schreiben einer leeren Datei, partielle Arbeitsmappe bleibt. Browser weist beide ab; SC32 belegt nativen gültigen Folgelauf nach Neustart."
     }
   ],
   "outsideFiniteGuiProof": [

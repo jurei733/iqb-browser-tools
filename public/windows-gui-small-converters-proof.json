@@ -1,0 +1,80 @@
+{
+  "date": "2026-11-09",
+  "original": {
+    "name": "itc-ToolBox",
+    "version": "3.3.0.2",
+    "sha256": "c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1"
+  },
+  "method": "Visible original Codes-Xlsx and SysCheck dialogs. Source/target picker cancellations, actual saves and post-crash restarts executed through native UI. Input bytes pushed and read back before opening. Export files pulled after the native command returned.",
+  "bundles": [
+    {
+      "file": "cases-00.zip",
+      "bytes": 2276539,
+      "sha256": "37ba9999abbcd9e259a4a2e255af834eb433d45ab36788689b946fbbf7f29387"
+    },
+    {
+      "file": "cases-01.zip",
+      "bytes": 2233481,
+      "sha256": "0324943526be113b6ade0d60c617e20ad32645c9f5f4f8d314eb45fa01e14eda"
+    },
+    {
+      "file": "cases-02.zip",
+      "bytes": 2236766,
+      "sha256": "db1845f1949ae9e46991b4167fa4b850938c65ec57bfb8c00347e5a29602ea86"
+    },
+    {
+      "file": "cases-03.zip",
+      "bytes": 2236688,
+      "sha256": "41e07c3ecc90f2f501b614d0660e20a841e6b7637113afff35c73e41821adba0"
+    },
+    {
+      "file": "cases-04.zip",
+      "bytes": 2236732,
+      "sha256": "09de8a80351ce605381c99f117e5c7030fead85ba02570e337d370affe8d5d65"
+    },
+    {
+      "file": "cases-05.zip",
+      "bytes": 2236532,
+      "sha256": "558f2237803b0f9701885c894466eea9f1e04bba5af713feb58a43d85e27f6b4"
+    },
+    {
+      "file": "cases-06.zip",
+      "bytes": 2236708,
+      "sha256": "79da5c5e31e42d618a34f5b6c2a7251bbeb93a0ccf38c07f5526e136f7a62103"
+    },
+    {
+      "file": "cases-07.zip",
+      "bytes": 2065057,
+      "sha256": "e224148638d9775c3be5c01ad9552ca8399c752a305bbdb1d209e3a535f71738"
+    },
+    {
+      "file": "cases-08.zip",
+      "bytes": 1688280,
+      "sha256": "20dd07351420c3bfc555f28097dbbeabf7883dbaeb5369d81afad0d9ae88da24"
+    }
+  ],
+  "comparison": "All Excel sheet names, dimensions and cell text values. Code exports additionally validate per-column counts, alternating alphabet and uniqueness before normalizing random draws. CSV exports compared without value normalization.",
+  "product": "24 cases: comma/semicolon × UTF-8/UTF-16LE-BOM/Windows-1252 × normal/escaped-quotes/multiline/unquoted. UTF-8 BOM, UTF-16BE BOM, two ragged-row cases, UTF-32LE/BE BOM and a valid recovery input add seven successful cases. Two deliberately invalid files expose original crashes.",
+  "correction": "Explicit Windows SysCheck CSV mode reproduces File.ReadAllLines BOM decoding/default UTF-8 replacement and the original per-line quote-delimiter splitting. The existing extended CSV mode remains default and preserves proper CSV semantics.",
+  "qualifiedDifferences": [
+    "SC28: original crashes in String.Substring on a line shorter than two characters. Browser rejects it in the current form.",
+    "SC29: original crashes in ToXlsx for an empty file and leaves a partial workbook. Browser rejects it without offering a partial export. SC32 proves native recovery after restarting."
+  ],
+  "scopeNotes": [
+    "Codes generator has no command to reopen its own output; saved XLSX files are parsed and compared, not claimed opened in a nonexistent native command.",
+    "Native OS file-dialog cancellations are captured. Browser download-dialog behavior remains controlled by each browser.",
+    "An initial forward-slash absolute filename attempt was rejected by the Windows file dialog; final Codes path selected through actual folders. That attempt is not an export pair.",
+    "A guest-file pull returning zero bytes was not treated as proof of file existence; captured exports require ZIP signature, checksum and successful workbook parsing."
+  ],
+  "limits": [
+    "Synthetic files only; no empirical study data.",
+    "No universal equivalence of arbitrary malformed CSV encodings or Excel visual rendering.",
+    "Known original crashes are documented, not reproduced in the browser."
+  ],
+  "scenarios": 35,
+  "codesExports": 2,
+  "syscheckExports": 31,
+  "nativeCrashes": 2,
+  "retainedFiles": 171,
+  "fullManifest": "https://github.com/jurei733/iqb-browser-tools/blob/main/tests/fixtures/gui-small-converters-20261109/proof.json"
+}

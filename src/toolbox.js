@@ -261,6 +261,23 @@ export function parseCSV(source,delimiter='auto') {
   if(!rows.length || !rows[0].length)throw new Error('Die CSV-Datei enthält keine Daten.');
   return rows;
 }
+export function parseWindowsSyscheck(bytes){
+  const data=bytes instanceof Uint8Array?bytes:new Uint8Array(bytes);let source;
+  const utf32LE=data[0]===255&&data[1]===254&&data[2]===0&&data[3]===0,utf32BE=data[0]===0&&data[1]===0&&data[2]===254&&data[3]===255;
+  if(utf32LE||utf32BE){
+    const view=new DataView(data.buffer,data.byteOffset,data.byteLength),chars=[];
+    for(let i=4;i<data.length;i+=4){const code=i+4<=data.length?view.getUint32(i,utf32LE):0xfffd;chars.push(String.fromCodePoint(code>0x10ffff||code>=0xd800&&code<=0xdfff?0xfffd:code));}source=chars.join('');
+  }else{
+    const encoding=data[0]===255&&data[1]===254?'utf-16le':data[0]===254&&data[1]===255?'utf-16be':'utf-8';
+    source=new TextDecoder(encoding).decode(data);
+  }
+  if(!source)throw new Error('Die CSV-Datei enthält keine Daten.');
+  const lines=source.split(/\r\n|\r|\n/);if(lines.at(-1)==='')lines.pop();
+  const content=line=>{if(line.length<2)throw new Error('Eine SysCheck-CSV-Zeile ist kürzer als zwei Zeichen.');return line.slice(1,-1);};
+  const header=content(lines.shift());let separator='","',columns=header.split(separator).filter(Boolean);
+  if(columns.length===1){separator='";"';columns=header.split(separator).filter(Boolean);}
+  return [columns,...lines.map(line=>content(line).split(separator))];
+}
 export function csvString(rows) {return '\uFEFF'+rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(';')).join('\r\n');}
 export async function tableWorkbook(rows,sheetName='Syscheck-Daten') {
   const w=new Excel.Workbook(),s=w.addWorksheet(sheetName);for(const r of rows)s.addRow(r.map(v=>String(v??'')));style(s);return new Uint8Array(await w.xlsx.writeBuffer());
