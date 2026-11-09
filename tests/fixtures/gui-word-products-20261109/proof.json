@@ -1,0 +1,382 @@
+{
+  "date": "2026-11-09",
+  "original": {
+    "name": "itc-ToolBox",
+    "version": "3.3.0.2",
+    "sha256": "c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1"
+  },
+  "method": "Visible native Windows file, template and output dialogs; generated DOCX files pulled through UTM guest-file transfer. Every source/template first transferred and read back byte-identically. No native assembly invocation replaces these GUI runs.",
+  "cases": [
+    {
+      "id": "W00",
+      "input": "Word.xlsx",
+      "template": "T1.docx",
+      "server": "https://tc.example.test",
+      "file": "W00.docx",
+      "sha256": "7626b66422bf1305c1bcd6299dcd230fe0b4b5a5fc1382256d4761491cacb084",
+      "cancelledTargetThenRetried": true,
+      "count": 9,
+      "kind": "export",
+      "sequence": 0,
+      "screens": [
+        "screens/W00-cancelled-target.jpg",
+        "screens/W00-done.jpg"
+      ]
+    },
+    {
+      "id": "W01",
+      "input": "Word.xlsx",
+      "template": "T1.docx",
+      "server": "http://tc.example.test",
+      "count": 9,
+      "file": "W01.docx",
+      "sha256": "626b112e1f1b5ac65cd600f3eb9d9cf4076632c6685e65be05e0732b8b5be63f",
+      "kind": "export",
+      "sequence": 1,
+      "screens": [
+        "screens/W01-done.jpg",
+        "screens/W01-options.jpg"
+      ]
+    },
+    {
+      "id": "W02",
+      "input": "Word.xlsx",
+      "template": "T1.docx",
+      "server": "https://tc.example.test/path/",
+      "count": 9,
+      "file": "W02.docx",
+      "sha256": "6ccfe12f4c8a566549ce85b30f0e14998602015daf8c7baf8911d3727d427c87",
+      "kind": "export",
+      "sequence": 2,
+      "screens": [
+        "screens/W02-done.jpg",
+        "screens/W02-options.jpg"
+      ]
+    },
+    {
+      "id": "W03",
+      "input": "Word.xlsx",
+      "template": "T1.docx",
+      "server": "https://tc.example.test:8443/path",
+      "count": 9,
+      "file": "W03.docx",
+      "sha256": "4522741704f27f73ce14f18f7c346ffc8d25d7d49e84550fdde1bbf997c8dbb3",
+      "kind": "export",
+      "sequence": 3,
+      "screens": [
+        "screens/W03-done.jpg",
+        "screens/W03-options.jpg"
+      ]
+    },
+    {
+      "id": "W04",
+      "input": "Word.xlsx",
+      "template": "T2.docx",
+      "server": "https://tc.example.test",
+      "count": 9,
+      "file": "W04.docx",
+      "sha256": "b2b8f38a424c84f6e6861db88318b9cedfd6da26369328a96751052637ed5f95",
+      "kind": "export",
+      "sequence": 4,
+      "screens": [
+        "screens/W04-done.jpg",
+        "screens/W04-options.jpg"
+      ]
+    },
+    {
+      "id": "W05",
+      "input": "Word.xlsx",
+      "template": "T2.docx",
+      "server": "http://tc.example.test",
+      "count": 9,
+      "file": "W05.docx",
+      "sha256": "f03af058eb1d7da3b0d6cf3e4763708b8670a0aa112056fe0ba2646e2c844cdf",
+      "kind": "export",
+      "sequence": 5,
+      "screens": [
+        "screens/W05-done.jpg",
+        "screens/W05-options.jpg"
+      ]
+    },
+    {
+      "id": "W06",
+      "input": "Word.xlsx",
+      "template": "T2.docx",
+      "server": "https://tc.example.test/path/",
+      "count": 9,
+      "file": "W06.docx",
+      "sha256": "f043c9c4315603fed5ba7fda751b8288c2901bc77dd0be4b131029f6ae5fc34e",
+      "kind": "export",
+      "sequence": 6,
+      "screens": [
+        "screens/W06-done.jpg",
+        "screens/W06-options.jpg"
+      ]
+    },
+    {
+      "id": "W07",
+      "input": "Word.xlsx",
+      "template": "T2.docx",
+      "server": "https://tc.example.test:8443/path",
+      "count": 9,
+      "file": "W07.docx",
+      "sha256": "b647f59672e4cc6a19c9ac935708eb24a5710473d81db079f83f7b91bfcd2101",
+      "kind": "export",
+      "sequence": 7,
+      "screens": [
+        "screens/W07-done.jpg",
+        "screens/W07-options.jpg"
+      ]
+    },
+    {
+      "id": "W08",
+      "input": "Wmissing.xlsx",
+      "template": "T1.docx",
+      "server": "https://tc.example.test",
+      "count": 2,
+      "file": "W08.docx",
+      "sha256": "ba29c0ceb04754c69db7d54d37939f93e6b9acc7b0dcfdca4062bb3aebc1ace6",
+      "kind": "export",
+      "sequence": 8,
+      "screens": [
+        "screens/W08-done.jpg",
+        "screens/W08-options.jpg"
+      ]
+    },
+    {
+      "id": "W09",
+      "input": "Winterleaved.xlsx",
+      "template": "T2.docx",
+      "server": "https://tc.example.test",
+      "count": 9,
+      "file": "W09.docx",
+      "sha256": "fe6b2788c99dfc51c91c91d646d84b926d61635de80a3a6c26680c51df5e86aa",
+      "kind": "export",
+      "sequence": 9,
+      "screens": [
+        "screens/W09-done.jpg",
+        "screens/W09-options.jpg"
+      ]
+    },
+    {
+      "id": "W10",
+      "input": "Word.xlsx",
+      "template": "Tnotags.docx",
+      "server": "https://tc.example.test",
+      "count": 9,
+      "checkNames": false,
+      "paragraphs": 63,
+      "file": "W10.docx",
+      "sha256": "f3199f35c8a42575e34afe748f5af0c45fe1bc45d5dc34d8cc7621deae901787",
+      "kind": "export",
+      "sequence": 10,
+      "screens": [
+        "screens/W10-done.jpg",
+        "screens/W10-options.jpg"
+      ]
+    },
+    {
+      "id": "W11",
+      "input": "Word.xlsx",
+      "template": "Tempty.docx",
+      "server": "https://tc.example.test",
+      "count": 9,
+      "checkNames": false,
+      "paragraphs": 0,
+      "file": "W11.docx",
+      "sha256": "a15960b0c160b8050335e57323c34856bbc100c703cd9efcf4606d1acfde9e57",
+      "kind": "export",
+      "sequence": 11,
+      "screens": [
+        "screens/W11-done.jpg",
+        "screens/W11-options.jpg"
+      ]
+    },
+    {
+      "id": "W12",
+      "input": "Wempty.xlsx",
+      "scenario": "zero logins, zero groups, no Continue button",
+      "screens": [
+        "screens/W12-empty-input.jpg"
+      ],
+      "kind": "empty-input",
+      "sequence": 12
+    },
+    {
+      "id": "W13",
+      "input": "Word.xlsx",
+      "template": "T1.docx",
+      "server": "https://tc.example.test",
+      "count": 9,
+      "invalidServer": "abcd",
+      "errorMessage": "Bitte eine Server-Url angeben.",
+      "sameDialogRecovery": true,
+      "cancelledTemplateThenRetried": true,
+      "file": "W13.docx",
+      "sha256": "e84f2b39a0d388090d70c2e3a97c7a6ea3b24aafb819e1e3bee71a9066a38c40",
+      "kind": "export",
+      "sequence": 13,
+      "screens": [
+        "screens/W13-cancelled-template.jpg",
+        "screens/W13-done.jpg",
+        "screens/W13-invalid-server.jpg",
+        "screens/W13-options.jpg"
+      ]
+    },
+    {
+      "id": "W14",
+      "input": "Word.xlsx",
+      "template": "Tbad.docx",
+      "scenario": "Original reports completed and copies invalid template without a valid DOCX; browser explicitly rejects it",
+      "file": "W14.docx",
+      "sha256": "f60279f7e11cdbb911993b0735490fc1488ef32b3c5c7da41b656ab7c046293e",
+      "intentionalDifference": true,
+      "kind": "invalid-template",
+      "sequence": 14,
+      "screens": [
+        "screens/W14-after-export.jpg",
+        "screens/W14-done.jpg",
+        "screens/W14-options.jpg"
+      ]
+    },
+    {
+      "id": "W15",
+      "input": "Word.xlsx",
+      "template": "T2.docx",
+      "server": "https://tc.example.test",
+      "count": 9,
+      "recoveryAfterInvalidTemplate": true,
+      "file": "W15.docx",
+      "sha256": "f0a34582b08b5a0d226a32ec2548405fcd679c008e6ee7adf59c8ab8f2659ccb",
+      "kind": "export",
+      "sequence": 15,
+      "screens": [
+        "screens/W15-done.jpg",
+        "screens/W15-options.jpg"
+      ]
+    },
+    {
+      "id": "W16",
+      "input": "Wnames.xlsx",
+      "template": "T1.docx",
+      "server": "https://tc.example.test",
+      "count": 9,
+      "scenario": "reuse first group labels when later rows change them",
+      "file": "W16.docx",
+      "sha256": "85b288599056af874e375d303cd2e74f7d469a317e367c3ec946968036e60621",
+      "kind": "export",
+      "sequence": 16,
+      "screens": [
+        "screens/W16-done.jpg",
+        "screens/W16-options.jpg"
+      ]
+    }
+  ],
+  "files": {
+    "inputs/Word.xlsx": "13ee2687ed923f28048112649fb1df69868228c5338f3ad8c6a0e48d35a09b90",
+    "inputs/T1.docx": "4a22acfdaee2bd4b78fad52688cb55aa2f5b2bd97e9ced75a30ca5d7fbbfd571",
+    "native/W00.docx": "7626b66422bf1305c1bcd6299dcd230fe0b4b5a5fc1382256d4761491cacb084",
+    "screens/W00-cancelled-target.jpg": "0e61683bf67e3f51a00f0a521b489a2d6b011bf39bf2a902a06cf09f36f2d144",
+    "screens/W00-done.jpg": "90a27715136604ace4b94d2070af741007825195e48830a136bb6807a6b670c9",
+    "native/W01.docx": "626b112e1f1b5ac65cd600f3eb9d9cf4076632c6685e65be05e0732b8b5be63f",
+    "screens/W01-done.jpg": "5eddfc6d25c8a8d43abec08ad716160de9acf93160cdf249ee6bf557316daa8c",
+    "screens/W01-options.jpg": "644c87ec67c720de1c3a340c0300c504a192cecc9831a4b2288981c15b6e0635",
+    "native/W02.docx": "6ccfe12f4c8a566549ce85b30f0e14998602015daf8c7baf8911d3727d427c87",
+    "screens/W02-done.jpg": "cb08cf9cc7e248005013ec668e90182c3e3a79d6d345b988d5624f5bbe6f8f56",
+    "screens/W02-options.jpg": "8d1c7d083fb64a1f15c7c9ce41a1169d4205405dbab213d69991fd8c122c53c1",
+    "native/W03.docx": "4522741704f27f73ce14f18f7c346ffc8d25d7d49e84550fdde1bbf997c8dbb3",
+    "screens/W03-done.jpg": "0af214189857468ef205bca2f0943496ed08049aacbdcfc09914bc5fa1786b7f",
+    "screens/W03-options.jpg": "4065775874172924c57194b3a3317eeb24f0e2153f9a5ba4eca1766b4120ef18",
+    "inputs/T2.docx": "e735252b62c1837647db47f316ba3d84ba91b4603761fbb48ec2e6955e023b8c",
+    "native/W04.docx": "b2b8f38a424c84f6e6861db88318b9cedfd6da26369328a96751052637ed5f95",
+    "screens/W04-done.jpg": "491e45bf01fa50c6a165558d671e392f893b46b94b97bf92fe575e374ffd955b",
+    "screens/W04-options.jpg": "e8924b40797aef6cc028537746779af86e132d6d331777bd97d567ae8fcd2c81",
+    "native/W05.docx": "f03af058eb1d7da3b0d6cf3e4763708b8670a0aa112056fe0ba2646e2c844cdf",
+    "screens/W05-done.jpg": "b0c8378b896d95f08fe943a36d120ff6efee935674415df9789c80bd542afe4d",
+    "screens/W05-options.jpg": "96bb9df0c76257de9e89361ec5aba1f59544c850f4ad076d8d2c57850df1aa9d",
+    "native/W06.docx": "f043c9c4315603fed5ba7fda751b8288c2901bc77dd0be4b131029f6ae5fc34e",
+    "screens/W06-done.jpg": "bccc64656085be39a71575e576fce5f2cab1df83fbfa788c27c9e05360fee0ba",
+    "screens/W06-options.jpg": "636e17dae16bfba814186f2bfba5b48371e783eac61863f7b922f9c6382a09fe",
+    "native/W07.docx": "b647f59672e4cc6a19c9ac935708eb24a5710473d81db079f83f7b91bfcd2101",
+    "screens/W07-done.jpg": "0301f3ea6e523d7e3564e778056107e3631547d231769379847d9f0fefb43045",
+    "screens/W07-options.jpg": "5a34ccd221fdd10700f96f3c44d9e3a6f6594ee36025dd2af89f95165098d123",
+    "inputs/Wmissing.xlsx": "6a306ec98bf20465fb4d1f574d47c9f8ba5e36424adcdeab5b4de0360d25bf59",
+    "native/W08.docx": "ba29c0ceb04754c69db7d54d37939f93e6b9acc7b0dcfdca4062bb3aebc1ace6",
+    "screens/W08-done.jpg": "607ed03d01b175ac597b0b1fa6e0af9e13cfa7b09540ec16ac434446508ea84e",
+    "screens/W08-options.jpg": "2165c47ae7b388ac547c1118dd25941d14d8740998fd7ba4a302b010d50252f6",
+    "inputs/Winterleaved.xlsx": "98ef936ee1e75f02d361e93866ffa317be0f7915ca81b80376f92ed6267d8abf",
+    "native/W09.docx": "fe6b2788c99dfc51c91c91d646d84b926d61635de80a3a6c26680c51df5e86aa",
+    "screens/W09-done.jpg": "03312d0db889a0274e1d6ba476badd8dfc0b1a9e26d14d7a19329f658a55a7bb",
+    "screens/W09-options.jpg": "48290faafb0adbf7386926e8180b06340a95c47ca48767c6b934eddfc20b0398",
+    "inputs/Tnotags.docx": "aca19d874410eddc9d140ee1835b9d3fa954210542fa633d5c011589c1481f9f",
+    "native/W10.docx": "f3199f35c8a42575e34afe748f5af0c45fe1bc45d5dc34d8cc7621deae901787",
+    "screens/W10-done.jpg": "076cb98529079cb2888dc639858ac2f462e95ccccc418778130f9cb315c780f5",
+    "screens/W10-options.jpg": "61579ec2ecc0e14d9ea91d2aaf4add8c6948d763fe1a3846c6a656e2abbca6bb",
+    "inputs/Tempty.docx": "9a0ed84265ee571bf5b2cf214cb29c16b9dc3eea448d59c55bca07a2bdacf550",
+    "native/W11.docx": "a15960b0c160b8050335e57323c34856bbc100c703cd9efcf4606d1acfde9e57",
+    "screens/W11-done.jpg": "157447a787340afd1081e0f769e0eb2b5e290b99b59c0713e7d1bbea800280f4",
+    "screens/W11-options.jpg": "4a2bd2a5e6df0c151f72c1bd90d5676b5f5513f62a64bf4b320cb602d1295805",
+    "inputs/Wempty.xlsx": "78859e194828a8f4757fb01c6a19bf06632d31e6b22f90a929b56119c487ab45",
+    "screens/W12-empty-input.jpg": "519865e52aca3ff2db0df4465a5200eec3a28d24b94e02c4deeab84d8ca0b518",
+    "native/W13.docx": "e84f2b39a0d388090d70c2e3a97c7a6ea3b24aafb819e1e3bee71a9066a38c40",
+    "screens/W13-cancelled-template.jpg": "e2abbb6ecf1bf79d03aa3103e2d176721e45145874d8a16e86f4eac6cc412d92",
+    "screens/W13-done.jpg": "30d1ca09046f2e4d12b0213386657285eac219fb2fe1159c42545b46e58a5868",
+    "screens/W13-invalid-server.jpg": "f393d9f4029af45122b55d97e1811d0f6e9622d60ddeb3877256a96e1e85ecbf",
+    "screens/W13-options.jpg": "30fef667f7624aa81bb97f4d756071b81c00e831ce4d9371e582e980cc574a79",
+    "inputs/Tbad.docx": "f60279f7e11cdbb911993b0735490fc1488ef32b3c5c7da41b656ab7c046293e",
+    "native/W14.docx": "f60279f7e11cdbb911993b0735490fc1488ef32b3c5c7da41b656ab7c046293e",
+    "screens/W14-after-export.jpg": "8e39dd17e77bb094731c371f41b7e7e7fb3e4bdfe55dc59ac596d36b9af9d7b7",
+    "screens/W14-done.jpg": "d638ac1364b72a4d8eaf199770acccda669e19a2b55cfc537b67198c4348931e",
+    "screens/W14-options.jpg": "f3f6f11d16a1cb7abac0e71c5b3c5d09ecb4e3f26578706ee4eb05e919d325af",
+    "native/W15.docx": "f0a34582b08b5a0d226a32ec2548405fcd679c008e6ee7adf59c8ab8f2659ccb",
+    "screens/W15-done.jpg": "3f8ea6e6f0df56a02f441fbfd6c290095d1e0547279fc831b37723fd3340f596",
+    "screens/W15-options.jpg": "2bf2317c679b1d49019764b6cbf198b362dd2faa538fa17c455d02c68fca538f",
+    "inputs/Wnames.xlsx": "f7fc0a083698a2f9e77a83be2c16eab5e910d7ce1b41380f39621c75ab0c5c13",
+    "native/W16.docx": "85b288599056af874e375d303cd2e74f7d469a317e367c3ec946968036e60621",
+    "screens/W16-done.jpg": "d1f18f0b60cd871624f3ad68785d478a36f167fba2c0b9de03c14282b16c54a9",
+    "screens/W16-options.jpg": "af6a068b63e84450c7b3358a471032b5c138015f4a6f2ac84d9b7f3ff22f6a25"
+  },
+  "bundles": [
+    {
+      "file": "cases-00.zip",
+      "bytes": 1380928,
+      "sha256": "ea750aa9b4751c7accc14cb1be3cf3a40f4dda83c0e2c7ac9e6098b90a144c85"
+    },
+    {
+      "file": "cases-01.zip",
+      "bytes": 1417877,
+      "sha256": "c11d01aa8470c2c1fcda21dbd48762b2aab3dbbe05ce8c81751e4ba121f304c6"
+    },
+    {
+      "file": "cases-02.zip",
+      "bytes": 1462874,
+      "sha256": "848e8a05dd8c4dd0ae7dc18bba58984ebbd4e18b34fc392ed0101822af758c4c"
+    },
+    {
+      "file": "cases-03.zip",
+      "bytes": 1700614,
+      "sha256": "ac051c41f3d0e5ccad688420afff88b0bf6e1234eb982e777307f0da86fb7e3c"
+    },
+    {
+      "file": "cases-04.zip",
+      "bytes": 366084,
+      "sha256": "3b8a11ecbbe5b86193ab91bdcdfcffcf5178d6e3475a0446f5689bdc4afd7997"
+    }
+  ],
+  "comparison": "Full Word document XML element/attribute/text trees and BMP payload hashes. Namespace declarations and internal identifier values normalized; image relationships resolved to their exact BMP SHA256. All paragraph content, order, section placement, geometry, picture-frame properties and control structure retained.",
+  "corrections": [
+    "Shared-string password read failure clears mode in Windows Word output.",
+    "Stop at first missing group and emit groups in first-seen order, retaining their first labels.",
+    "Preserve natural QR size with a 4 cm maximum and native Single DPI arithmetic.",
+    "Use QRCoder 1.4.3 mask penalty/tie behavior; QR BMP bytes match.",
+    "Permit empty/no-tag templates in Windows mode; preserve section order and original picture-frame properties.",
+    "Match minimum server-address message and disable Word export for zero readable logins."
+  ],
+  "qualifiedDifference": "W14: original reports completed and copies a corrupt template unchanged; browser explicitly rejects invalid DOCX rather than offering a corrupt file as successful output. W15 proves native recovery after that original failure.",
+  "limits": [
+    "Synthetic data only; no empirical study files.",
+    "17 finite GUI scenarios: two original templates × four server variants plus group, template, validation, cancellation and recovery cases.",
+    "Not an exhaustive proof of arbitrary DOCX files, Word rendering engines, Unicode QR payloads or every link length.",
+    "ZIP bytes, volatile IDs and namespace spelling are not claimed byte-identical."
+  ]
+}

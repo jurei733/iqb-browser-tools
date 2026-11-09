@@ -147,9 +147,16 @@ export function bookletXML(workbook,{windows=false}={}) {
   }
   if(!Object.keys(files).length)throw new Error('Keine Testhefte in der Vorlage gefunden.');return files;
 }
-export function loginRows(workbook) {
+export function loginRows(workbook,{windows=false,stopAtMissingGroup=false}={}) {
   const name=named(workbook,'loginsCol.Name'),group=named(workbook,'loginsCol.GroupID'),pw=named(workbook,'loginsCol.Password'),mode=named(workbook,'loginsCol.Mode'),n1=named(workbook,'loginsCol.GroupName1'),n2=named(workbook,'loginsCol.GroupName2');
-  return rows(name).map(r=>({name:cell(name,r),group:cell(group,r),password:cell(pw,r),mode:cell(mode,r),name1:cell(n1,r),name2:cell(n2,r)}));
+  const result=[];
+  for(const r of rows(name)){
+    const row={name:cell(name,r),group:cell(group,r),password:cell(pw,r),mode:cell(mode,r),name1:cell(n1,r),name2:cell(n2,r)};
+    if(stopAtMissingGroup&&!row.group)break;
+    if(windows&&!row.password&&nativeCellKinds.get(pw.sheet)?.get(`${pw.col}${r}`)==='shared-missing')row.mode='';
+    result.push(row);
+  }
+  return result;
 }
 export function prepareLoginGroups(workbook,suffix){
   const name=named(workbook,'groupsCol.Name1'),name2=named(workbook,'groupsCol.Name2'),id=named(workbook,'groupsCol.ID');

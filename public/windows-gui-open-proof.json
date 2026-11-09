@@ -9,14 +9,16 @@
       "windows-gui-fullflags-proof.json",
       "windows-gui-login-boundaries-proof.json",
       "windows-gui-login-matrix-proof.json",
-      "windows-gui-booklet-matrix-proof.json"
+      "windows-gui-booklet-matrix-proof.json",
+      "windows-gui-word-products-proof.json"
     ],
     "additionalBoundaryWorkbooks": 6,
     "additionalInvalidLoginTexts": 4,
     "loginGenerationCombinations": 128,
     "loginReopeningCombinations": 128,
     "bookletValidationCombinations": 64,
-    "bookletValidFollowups": 2
+    "bookletValidFollowups": 2,
+    "wordGuiScenarios": 17
   },
   "openFamilies": [
     {
@@ -41,9 +43,10 @@
       "id": "word-products",
       "family": "Word-Handzettel und QR",
       "dimensions": "Beide Vorlagen × QR-/Linkvarianten × mehrere/fehlende Gruppen, leere und fehlerhafte Vorlage; Abbrechen und erneuter Export.",
-      "existingEvidence": "Original-Dateivergleiche und Browser-/Modultests; kein vollständiges direktes GUI-Produkt für diese Dimensionen.",
-      "stillOpen": "Vorlagen- und Linkwechsel im Original samt erzeugten DOCX-Dateien paaren.",
-      "status": "partial-direct-gui"
+      "existingEvidence": "17 direkte GUI-Szenarien, davon 15 DOCX-Exportpaare: beide Vorlagen × vier Servervarianten, fehlende/verschachtelte Gruppen, spätere Gruppenbezeichnungen, leere/fehlgetaggte/beschädigte Vorlagen, URL-Fehler und Dialogabbruch mit Wiederholung. Vollständige normalisierte Dokument-XMLs und BMP-Bilddaten verglichen.",
+      "stillOpen": "Das dokumentierte endliche Produkt ist abgeschlossen. Beschädigte Vorlage: Browser meldet den Fehler ausdrücklich; Original kopiert die ungültige Datei und meldet nur beendet. Beliebige weitere Word-/QR-Eingaben bleiben außerhalb des Nachweises.",
+      "status": "completed-finite-direct-gui-with-qualified-original-error",
+      "proof": "windows-gui-word-products-proof.json"
     },
     {
       "id": "small-converters",
@@ -114,6 +117,10 @@
     {
       "id": "T-64",
       "reason": "Historischer Dokumentationslink führt auf eine fehlende Drittseite; Ziel direkt geprüft, aktuelle Dokumentation zusätzlich vorhanden."
+    },
+    {
+      "id": "T-word-invalid-template",
+      "reason": "W14: Original kopiert beschädigte DOCX unverändert und meldet beendet; Browser bietet keine ungültige Datei als erfolgreichen Export an. W15: nativer gültiger Folgelauf direkt nachgewiesen."
     }
   ],
   "outsideFiniteGuiProof": [

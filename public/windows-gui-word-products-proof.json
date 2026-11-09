@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-09",
+  "original": {
+    "name": "itc-ToolBox",
+    "version": "3.3.0.2",
+    "sha256": "c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1"
+  },
+  "method": "Visible native Windows file, template and output dialogs; generated DOCX files pulled through UTM guest-file transfer. Every source/template first transferred and read back byte-identically. No native assembly invocation replaces these GUI runs.",
+  "bundles": [
+    {
+      "file": "cases-00.zip",
+      "bytes": 1380928,
+      "sha256": "ea750aa9b4751c7accc14cb1be3cf3a40f4dda83c0e2c7ac9e6098b90a144c85"
+    },
+    {
+      "file": "cases-01.zip",
+      "bytes": 1417877,
+      "sha256": "c11d01aa8470c2c1fcda21dbd48762b2aab3dbbe05ce8c81751e4ba121f304c6"
+    },
+    {
+      "file": "cases-02.zip",
+      "bytes": 1462874,
+      "sha256": "848e8a05dd8c4dd0ae7dc18bba58984ebbd4e18b34fc392ed0101822af758c4c"
+    },
+    {
+      "file": "cases-03.zip",
+      "bytes": 1700614,
+      "sha256": "ac051c41f3d0e5ccad688420afff88b0bf6e1234eb982e777307f0da86fb7e3c"
+    },
+    {
+      "file": "cases-04.zip",
+      "bytes": 366084,
+      "sha256": "3b8a11ecbbe5b86193ab91bdcdfcffcf5178d6e3475a0446f5689bdc4afd7997"
+    }
+  ],
+  "comparison": "Full Word document XML element/attribute/text trees and BMP payload hashes. Namespace declarations and internal identifier values normalized; image relationships resolved to their exact BMP SHA256. All paragraph content, order, section placement, geometry, picture-frame properties and control structure retained.",
+  "corrections": [
+    "Shared-string password read failure clears mode in Windows Word output.",
+    "Stop at first missing group and emit groups in first-seen order, retaining their first labels.",
+    "Preserve natural QR size with a 4 cm maximum and native Single DPI arithmetic.",
+    "Use QRCoder 1.4.3 mask penalty/tie behavior; QR BMP bytes match.",
+    "Permit empty/no-tag templates in Windows mode; preserve section order and original picture-frame properties.",
+    "Match minimum server-address message and disable Word export for zero readable logins."
+  ],
+  "qualifiedDifference": "W14: original reports completed and copies a corrupt template unchanged; browser explicitly rejects invalid DOCX rather than offering a corrupt file as successful output. W15 proves native recovery after that original failure.",
+  "limits": [
+    "Synthetic data only; no empirical study files.",
+    "17 finite GUI scenarios: two original templates × four server variants plus group, template, validation, cancellation and recovery cases.",
+    "Not an exhaustive proof of arbitrary DOCX files, Word rendering engines, Unicode QR payloads or every link length.",
+    "ZIP bytes, volatile IDs and namespace spelling are not claimed byte-identical."
+  ],
+  "scenarios": 17,
+  "successfulDOCX": 15,
+  "retainedFiles": 62,
+  "fullManifest": "https://github.com/jurei733/iqb-browser-tools/blob/main/tests/fixtures/gui-word-products-20261109/proof.json"
+}
