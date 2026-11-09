@@ -1,0 +1,72 @@
+{
+  "version": "0.4.8",
+  "date": "2026-11-09",
+  "status": "released-for-documented-workflows",
+  "claim": "Windows-kompatibel für die dokumentierten Abläufe",
+  "completeEquivalence": false,
+  "empiricalAcceptance": {
+    "status": "awaiting-data",
+    "empiricalStudyDataTested": false,
+    "plan": "docs/EMPIRISCHE-ABNAHME.md"
+  },
+  "requiredProfile": "Passendes Windows-Profil; erweiterter Standardmodus enthält bewusste Abweichungen.",
+  "referenceBaselineCommit": "1cacb4e97493e429e2efe7a8023ad24f06d70c34",
+  "baselineVerification": {
+    "moduleTests": {
+      "passed": 175,
+      "total": 175
+    },
+    "browserWorkflows": {
+      "passed": 129,
+      "total": 129,
+      "engines": [
+        "chromium",
+        "firefox",
+        "webkit"
+      ]
+    },
+    "ciJobs": {
+      "passed": 12,
+      "total": 12
+    },
+    "runs": [
+      42604603255,
+      42604603004
+    ]
+  },
+  "gui": {
+    "paired": 31,
+    "investigated": 34,
+    "qualified": 3,
+    "proof": "windows-gui-remaining-proof.json"
+  },
+  "qualifications": [
+    {
+      "id": "K-36",
+      "classification": "original-installation-limitation",
+      "disposition": "investigated-and-documented",
+      "directCompletePair": false,
+      "summary": "Native Hilfe mit geladenem Job ohne sichtbare Reaktion; funktionierende Browserhilfe bleibt erhalten."
+    },
+    {
+      "id": "T-36",
+      "classification": "unreachable-historical-original-dialog",
+      "disposition": "investigated-and-documented",
+      "directCompletePair": false,
+      "summary": "Historischer Statusfilterdialog ohne erreichbaren Hauptfenster-Befehl; Browser-/Modulnachweise gesondert."
+    },
+    {
+      "id": "T-64",
+      "classification": "intentional-documentation-extension",
+      "disposition": "investigated-and-documented",
+      "directCompletePair": false,
+      "summary": "Historischer Original-Link bleibt erhalten; aktuelle Dokumentation wird zusätzlich getrennt angeboten."
+    }
+  ],
+  "platformLimits": [
+    "Windows-Domänenidentität in der reinen Onlinefassung",
+    "Automatisches Überschreiben in jedem Browser",
+    "Dauerhafte echte Dateipfade ohne lokalen Starter"
+  ],
+  "realMobileHardwareTested": false
+}
