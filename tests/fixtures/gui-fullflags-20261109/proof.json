@@ -1,0 +1,710 @@
+{
+  "date": "2026-11-09",
+  "synthetic": true,
+  "original": "IQB-Kodieren 4.3.0.3",
+  "originalSHA256": "7b8fdb074669c5e0ba267c2e924b484a322abb32cb733bae2c659b38191d3407",
+  "method": "32 newly transferred/read-back ZIPs selected sequentially in actual native job combobox. Each native initial view captured and manually checked. Three visible control states observed across all five boolean flags. Retained screenshots cropped to the complete native application window; original full captures remain in the working evidence directory.",
+  "dimensions": [
+    "showScore",
+    "enableComments",
+    "suppressDescription",
+    "anonym",
+    "training"
+  ],
+  "cases": [
+    {
+      "id": "G00",
+      "input": "G00.zip",
+      "sha256": "0a682abe9b092046d9d22230acc159b8455b6cf3b2cf195b7b84001c422a133e",
+      "showScore": false,
+      "enableComments": false,
+      "suppressDescription": false,
+      "anonym": false,
+      "training": false,
+      "screenshot": "G00-native.jpg",
+      "screenshotSHA256": "9b6a76b9c6a1ad01f1789feb9860265d2544529dad25fc84ef512c8b25f36516",
+      "observed": {
+        "selectedVariable": "V1",
+        "position": 1,
+        "total": 6,
+        "scoreValues": null,
+        "commentField": false,
+        "instructionVisible": true
+      }
+    },
+    {
+      "id": "G01",
+      "input": "G01.zip",
+      "sha256": "11507152d8a390e14da429f9e8f9b254377e6cc0e9f402f099228746a109ab6d",
+      "showScore": true,
+      "enableComments": false,
+      "suppressDescription": false,
+      "anonym": false,
+      "training": false,
+      "screenshot": "G01-native.jpg",
+      "screenshotSHA256": "6dca744f64ce9f266db4f526a858113ae722c8a710d55908d79e8e4f070480bf",
+      "observed": {
+        "selectedVariable": "V1",
+        "position": 1,
+        "total": 6,
+        "scoreValues": [
+          0,
+          2
+        ],
+        "commentField": false,
+        "instructionVisible": true
+      }
+    },
+    {
+      "id": "G02",
+      "input": "G02.zip",
+      "sha256": "a6c3138c6dee59d62a738d828d7e2fef69ad5235ec54ace95b62c43a7c8788d3",
+      "showScore": false,
+      "enableComments": true,
+      "suppressDescription": false,
+      "anonym": false,
+      "training": false,
+      "screenshot": "G02-native.jpg",
+      "screenshotSHA256": "843e02d3b8adddb1dca75cdd918f23c9af3ed99c7a1f5b3b89c701d515a63fa7",
+      "observed": {
+        "selectedVariable": "V1",
+        "position": 1,
+        "total": 6,
+        "scoreValues": null,
+        "commentField": true,
+        "instructionVisible": true
+      }
+    },
+    {
+      "id": "G03",
+      "input": "G03.zip",
+      "sha256": "32612dd24ffc7688637fd71fec0bfcba9b0ed0c5332a1430378cea1a8cfd7da9",
+      "showScore": true,
+      "enableComments": true,
+      "suppressDescription": false,
+      "anonym": false,
+      "training": false,
+      "screenshot": "G03-native.jpg",
+      "screenshotSHA256": "fa7c32fe3695951e79eb5224f92ac35d4d461f697125bd96d51fd34c3ac67d27",
+      "observed": {
+        "selectedVariable": "V1",
+        "position": 1,
+        "total": 6,
+        "scoreValues": [
+          0,
+          2
+        ],
+        "commentField": true,
+        "instructionVisible": true
+      }
+    },
+    {
+      "id": "G04",
+      "input": "G04.zip",
+      "sha256": "24d91eb5684a85abb706247bddf6a1e2c64d9325adc209e6e4de2202e6b5c95d",
+      "showScore": false,
+      "enableComments": false,
+      "suppressDescription": true,
+      "anonym": false,
+      "training": false,
+      "screenshot": "G04-native.jpg",
+      "screenshotSHA256": "031a301449e5157f92f5162397369138bb100df1b992ce0c7616b105c6348e7a",
+      "observed": {
+        "selectedVariable": "V1",
+        "position": 1,
+        "total": 6,
+        "scoreValues": null,
+        "commentField": false,
+        "instructionVisible": false
+      }
+    },
+    {
+      "id": "G05",
+      "input": "G05.zip",
+      "sha256": "4d1e6369fc4ffd1ac2bbdc555117ad40bdbd4c9b08b4d85ad9f5ab9f71c8dc4b",
+      "showScore": true,
+      "enableComments": false,
+      "suppressDescription": true,
+      "anonym": false,
+      "training": false,
+      "screenshot": "G05-native.jpg",
+      "screenshotSHA256": "067ecf68b03d7f2504e2d76aaf0a3c5bef22e5078a6d186916abf1039856197e",
+      "observed": {
+        "selectedVariable": "V1",
+        "position": 1,
+        "total": 6,
+        "scoreValues": [
+          0,
+          2
+        ],
+        "commentField": false,
+        "instructionVisible": false
+      }
+    },
+    {
+      "id": "G06",
+      "input": "G06.zip",
+      "sha256": "b5867b88b631b3ad636201b6e82afe984f4d7912607db400e25ed782f55a1360",
+      "showScore": false,
+      "enableComments": true,
+      "suppressDescription": true,
+      "anonym": false,
+      "training": false,
+      "screenshot": "G06-native.jpg",
+      "screenshotSHA256": "5b5a3ae604dca753ca670e9e203d408d0d45a5e6363c91ad466d806869c6dd07",
+      "observed": {
+        "selectedVariable": "V1",
+        "position": 1,
+        "total": 6,
+        "scoreValues": null,
+        "commentField": true,
+        "instructionVisible": false
+      }
+    },
+    {
+      "id": "G07",
+      "input": "G07.zip",
+      "sha256": "ce942693f1a71268ff0bea5076de1c05d99a6db38b70b5928d1fa74229002f16",
+      "showScore": true,
+      "enableComments": true,
+      "suppressDescription": true,
+      "anonym": false,
+      "training": false,
+      "screenshot": "G07-native.jpg",
+      "screenshotSHA256": "a7b020cadb62235a350ebd3632c36fecfbef2bca784915b651983f1c45797e3c",
+      "observed": {
+        "selectedVariable": "V1",
+        "position": 1,
+        "total": 6,
+        "scoreValues": [
+          0,
+          2
+        ],
+        "commentField": true,
+        "instructionVisible": false
+      }
+    },
+    {
+      "id": "G08",
+      "input": "G08.zip",
+      "sha256": "008ae7d600aa73060d6b2cb806bf560727a2d55b047e6b8e7e60045cc58b7dee",
+      "showScore": false,
+      "enableComments": false,
+      "suppressDescription": false,
+      "anonym": true,
+      "training": false,
+      "screenshot": "G08-native.jpg",
+      "screenshotSHA256": "31184d00cb74995229d3cfb75c206780f74189cf65ffe95c001b2754e20d6dcd",
+      "observed": {
+        "selectedVariable": "V1",
+        "position": 1,
+        "total": 6,
+        "scoreValues": null,
+        "commentField": false,
+        "instructionVisible": true
+      }
+    },
+    {
+      "id": "G09",
+      "input": "G09.zip",
+      "sha256": "4cad3cfc3bcf99a863ec5f37086e26cd1a4fc1eae60e1bad4dec2d499e19fdef",
+      "showScore": true,
+      "enableComments": false,
+      "suppressDescription": false,
+      "anonym": true,
+      "training": false,
+      "screenshot": "G09-native.jpg",
+      "screenshotSHA256": "85da559263a23386bee20e21b324cf1f7772bdc065b6f57b87637ee7d655cdc8",
+      "observed": {
+        "selectedVariable": "V1",
+        "position": 1,
+        "total": 6,
+        "scoreValues": [
+          0,
+          2
+        ],
+        "commentField": false,
+        "instructionVisible": true
+      }
+    },
+    {
+      "id": "G10",
+      "input": "G10.zip",
+      "sha256": "e173d5e3062e06f169d370351c32215506fae458a265dc5ddd09561d7d893f76",
+      "showScore": false,
+      "enableComments": true,
+      "suppressDescription": false,
+      "anonym": true,
+      "training": false,
+      "screenshot": "G10-native.jpg",
+      "screenshotSHA256": "3da36198d0e4dbf4bba670f5d4e81c83dcbf98956a4dce6fc29c66334cfb0570",
+      "observed": {
+        "selectedVariable": "V1",
+        "position": 1,
+        "total": 6,
+        "scoreValues": null,
+        "commentField": true,
+        "instructionVisible": true
+      }
+    },
+    {
+      "id": "G11",
+      "input": "G11.zip",
+      "sha256": "ff831aafea5e2667dcb34a28d080e41947232167af48b78b5a9c94d4c2bc3cef",
+      "showScore": true,
+      "enableComments": true,
+      "suppressDescription": false,
+      "anonym": true,
+      "training": false,
+      "screenshot": "G11-native.jpg",
+      "screenshotSHA256": "33cffc5f2ef30c91f977e7242d6e74ab1b3f18b19fdc57d4336918f42536a038",
+      "observed": {
+        "selectedVariable": "V1",
+        "position": 1,
+        "total": 6,
+        "scoreValues": [
+          0,
+          2
+        ],
+        "commentField": true,
+        "instructionVisible": true
+      }
+    },
+    {
+      "id": "G12",
+      "input": "G12.zip",
+      "sha256": "03f16c4cdb89b596c245ab95c1e8af068d215e16a1f0ad25301235fbc2461ad4",
+      "showScore": false,
+      "enableComments": false,
+      "suppressDescription": true,
+      "anonym": true,
+      "training": false,
+      "screenshot": "G12-native.jpg",
+      "screenshotSHA256": "65ced9302fcd4d0c73e6f6fad0f2a3bdae4fc2deafc6bcd4a2ed205da7f30c60",
+      "observed": {
+        "selectedVariable": "V1",
+        "position": 1,
+        "total": 6,
+        "scoreValues": null,
+        "commentField": false,
+        "instructionVisible": false
+      }
+    },
+    {
+      "id": "G13",
+      "input": "G13.zip",
+      "sha256": "1e26063bae3cd372372668477a81f63d4ed66537b521a7a5709fbe45493462df",
+      "showScore": true,
+      "enableComments": false,
+      "suppressDescription": true,
+      "anonym": true,
+      "training": false,
+      "screenshot": "G13-native.jpg",
+      "screenshotSHA256": "e144a5f8bab72dbafbdfd3b60f1891ce02a595dbfc09fe487ec4114c726ebc15",
+      "observed": {
+        "selectedVariable": "V1",
+        "position": 1,
+        "total": 6,
+        "scoreValues": [
+          0,
+          2
+        ],
+        "commentField": false,
+        "instructionVisible": false
+      }
+    },
+    {
+      "id": "G14",
+      "input": "G14.zip",
+      "sha256": "22198447e1fe73c7098e1ab3661de921c5c0696ba116cf9421944e5b0ad0d362",
+      "showScore": false,
+      "enableComments": true,
+      "suppressDescription": true,
+      "anonym": true,
+      "training": false,
+      "screenshot": "G14-native.jpg",
+      "screenshotSHA256": "a7b3e5f68f3e6436cd8918a74b2b59e71d4f27d3542f98b48e887150563c1463",
+      "observed": {
+        "selectedVariable": "V1",
+        "position": 1,
+        "total": 6,
+        "scoreValues": null,
+        "commentField": true,
+        "instructionVisible": false
+      }
+    },
+    {
+      "id": "G15",
+      "input": "G15.zip",
+      "sha256": "264ac00e9e0153a7bba11c5c6eafc81c0ac0324bd2c9725eaa5bc8083c36f666",
+      "showScore": true,
+      "enableComments": true,
+      "suppressDescription": true,
+      "anonym": true,
+      "training": false,
+      "screenshot": "G15-native.jpg",
+      "screenshotSHA256": "e0fb3341709e6b3d8375bf5b4b49e11f6abb48ad5674f7309f08a9716139fb32",
+      "observed": {
+        "selectedVariable": "V1",
+        "position": 1,
+        "total": 6,
+        "scoreValues": [
+          0,
+          2
+        ],
+        "commentField": true,
+        "instructionVisible": false
+      }
+    },
+    {
+      "id": "G16",
+      "input": "G16.zip",
+      "sha256": "abd39894e78b760859673e0bf7b5e886d466a94bd68d91f8ebb083fcbbdbc3d1",
+      "showScore": false,
+      "enableComments": false,
+      "suppressDescription": false,
+      "anonym": false,
+      "training": true,
+      "screenshot": "G16-native.jpg",
+      "screenshotSHA256": "7059d536172cbcc0b5391479814662c51cbb5e1d86a69749c7259d39257020c6",
+      "observed": {
+        "selectedVariable": "V1",
+        "position": 1,
+        "total": 6,
+        "scoreValues": null,
+        "commentField": false,
+        "instructionVisible": true
+      }
+    },
+    {
+      "id": "G17",
+      "input": "G17.zip",
+      "sha256": "fa7c30a06fd1cc045fc649c7abdc4b531f8a3543099a519c6922081ca42cd080",
+      "showScore": true,
+      "enableComments": false,
+      "suppressDescription": false,
+      "anonym": false,
+      "training": true,
+      "screenshot": "G17-native.jpg",
+      "screenshotSHA256": "3b850509fd448b653029c81a9222f9a750b4d462d193c57529b9e4cb4de1d20d",
+      "observed": {
+        "selectedVariable": "V1",
+        "position": 1,
+        "total": 6,
+        "scoreValues": [
+          0,
+          2
+        ],
+        "commentField": false,
+        "instructionVisible": true
+      }
+    },
+    {
+      "id": "G18",
+      "input": "G18.zip",
+      "sha256": "8aa235ace8aa07e16292c38b2e4a8322013a45fa40e8b684dbd19643e8276ec7",
+      "showScore": false,
+      "enableComments": true,
+      "suppressDescription": false,
+      "anonym": false,
+      "training": true,
+      "screenshot": "G18-native.jpg",
+      "screenshotSHA256": "d77d0f5035b61a09040802175b701a1071d507fa2fc28d00189dde6daf09447b",
+      "observed": {
+        "selectedVariable": "V1",
+        "position": 1,
+        "total": 6,
+        "scoreValues": null,
+        "commentField": true,
+        "instructionVisible": true
+      }
+    },
+    {
+      "id": "G19",
+      "input": "G19.zip",
+      "sha256": "82239977f04f300a477ba9916418d906b436bfa26c6d81bc61a3d10786e87d6d",
+      "showScore": true,
+      "enableComments": true,
+      "suppressDescription": false,
+      "anonym": false,
+      "training": true,
+      "screenshot": "G19-native.jpg",
+      "screenshotSHA256": "ba8364e3570be042a0d13c0d8d296cfeeb5d36e56dd8930eeda854e93fe44611",
+      "observed": {
+        "selectedVariable": "V1",
+        "position": 1,
+        "total": 6,
+        "scoreValues": [
+          0,
+          2
+        ],
+        "commentField": true,
+        "instructionVisible": true
+      }
+    },
+    {
+      "id": "G20",
+      "input": "G20.zip",
+      "sha256": "74d639e49758e6023db02c72e2085aac69105b78b2a9150418fd8c0d28ee7b6d",
+      "showScore": false,
+      "enableComments": false,
+      "suppressDescription": true,
+      "anonym": false,
+      "training": true,
+      "screenshot": "G20-native.jpg",
+      "screenshotSHA256": "445084aa1c4d1de2074f1b29e805fbdeddf6f79e35308702dff859ece360440b",
+      "observed": {
+        "selectedVariable": "V1",
+        "position": 1,
+        "total": 6,
+        "scoreValues": null,
+        "commentField": false,
+        "instructionVisible": false
+      }
+    },
+    {
+      "id": "G21",
+      "input": "G21.zip",
+      "sha256": "29f46ba8eb85a4b84a96818958ae33a2d52c0d6acbd3296a58e8f6040073f4c5",
+      "showScore": true,
+      "enableComments": false,
+      "suppressDescription": true,
+      "anonym": false,
+      "training": true,
+      "screenshot": "G21-native.jpg",
+      "screenshotSHA256": "6ca8a74fd40c903ddf92174cc877f8d05c7495d4b731d84e2edf68ba1028e3fd",
+      "observed": {
+        "selectedVariable": "V1",
+        "position": 1,
+        "total": 6,
+        "scoreValues": [
+          0,
+          2
+        ],
+        "commentField": false,
+        "instructionVisible": false
+      }
+    },
+    {
+      "id": "G22",
+      "input": "G22.zip",
+      "sha256": "a59ff1722f87d98525f6ed12cfc4ee17fcccc56082c15067049f4b9dc9aedd4b",
+      "showScore": false,
+      "enableComments": true,
+      "suppressDescription": true,
+      "anonym": false,
+      "training": true,
+      "screenshot": "G22-native.jpg",
+      "screenshotSHA256": "efde2e1593da30c5356318232a9c9607ae91a905a28f9c5adc22dbeb2def4e5a",
+      "observed": {
+        "selectedVariable": "V1",
+        "position": 1,
+        "total": 6,
+        "scoreValues": null,
+        "commentField": true,
+        "instructionVisible": false
+      }
+    },
+    {
+      "id": "G23",
+      "input": "G23.zip",
+      "sha256": "793e7f61134de45c4e1acbc4267b1ccadf53732db5c5b21e45d9555c33f66d54",
+      "showScore": true,
+      "enableComments": true,
+      "suppressDescription": true,
+      "anonym": false,
+      "training": true,
+      "screenshot": "G23-native.jpg",
+      "screenshotSHA256": "4c8e5a32244615e2029063debdfd8b35ea7b3516a842a7970f894f2492bd0372",
+      "observed": {
+        "selectedVariable": "V1",
+        "position": 1,
+        "total": 6,
+        "scoreValues": [
+          0,
+          2
+        ],
+        "commentField": true,
+        "instructionVisible": false
+      }
+    },
+    {
+      "id": "G24",
+      "input": "G24.zip",
+      "sha256": "a5f833d2d32c92101093423b1042dc62b206400de3d48133eb1de5db0516a78b",
+      "showScore": false,
+      "enableComments": false,
+      "suppressDescription": false,
+      "anonym": true,
+      "training": true,
+      "screenshot": "G24-native.jpg",
+      "screenshotSHA256": "a590e55d9d0adb975cc13c23ca58c20fb98143872b899f8487238916c8712096",
+      "observed": {
+        "selectedVariable": "V1",
+        "position": 1,
+        "total": 6,
+        "scoreValues": null,
+        "commentField": false,
+        "instructionVisible": true
+      }
+    },
+    {
+      "id": "G25",
+      "input": "G25.zip",
+      "sha256": "7e8a99ed1fccb35a128c8ae60cdee9ed148d7e1b8aaee2438ee30018ead87d29",
+      "showScore": true,
+      "enableComments": false,
+      "suppressDescription": false,
+      "anonym": true,
+      "training": true,
+      "screenshot": "G25-native.jpg",
+      "screenshotSHA256": "96c9693b23ec575175fbd735d777d8e57ca476fbe1c4400d380d0c7639354c59",
+      "observed": {
+        "selectedVariable": "V1",
+        "position": 1,
+        "total": 6,
+        "scoreValues": [
+          0,
+          2
+        ],
+        "commentField": false,
+        "instructionVisible": true
+      }
+    },
+    {
+      "id": "G26",
+      "input": "G26.zip",
+      "sha256": "39f834a04ad9bba0ab0b3e36134e492ae84540ae07849337ea994c9333193a9e",
+      "showScore": false,
+      "enableComments": true,
+      "suppressDescription": false,
+      "anonym": true,
+      "training": true,
+      "screenshot": "G26-native.jpg",
+      "screenshotSHA256": "36ee927adb6ee908d0f24c95413d2819df64cedd315b60c68d7f09fde2254cbf",
+      "observed": {
+        "selectedVariable": "V1",
+        "position": 1,
+        "total": 6,
+        "scoreValues": null,
+        "commentField": true,
+        "instructionVisible": true
+      }
+    },
+    {
+      "id": "G27",
+      "input": "G27.zip",
+      "sha256": "b77dbe60d3b4eabe018e09946bc04a8b4b01d23a8b9b6a0a7987d5b52debf87b",
+      "showScore": true,
+      "enableComments": true,
+      "suppressDescription": false,
+      "anonym": true,
+      "training": true,
+      "screenshot": "G27-native.jpg",
+      "screenshotSHA256": "a4247b9e5b52dd5521417a9a57f19ac9e82491d8f8a75406b27ad84f3f99917b",
+      "observed": {
+        "selectedVariable": "V1",
+        "position": 1,
+        "total": 6,
+        "scoreValues": [
+          0,
+          2
+        ],
+        "commentField": true,
+        "instructionVisible": true
+      }
+    },
+    {
+      "id": "G28",
+      "input": "G28.zip",
+      "sha256": "4ba4d024b203db4000f649b41b52cdc76e3fbae15518f17cd81d2575aa0f51d6",
+      "showScore": false,
+      "enableComments": false,
+      "suppressDescription": true,
+      "anonym": true,
+      "training": true,
+      "screenshot": "G28-native.jpg",
+      "screenshotSHA256": "b52a33c6cfec0e64593d82c3680e77c76c3cd52cc25a0f97912d635531c1bd65",
+      "observed": {
+        "selectedVariable": "V1",
+        "position": 1,
+        "total": 6,
+        "scoreValues": null,
+        "commentField": false,
+        "instructionVisible": false
+      }
+    },
+    {
+      "id": "G29",
+      "input": "G29.zip",
+      "sha256": "bda7f206ad905c0b5ea42a554415445ca1541669ec653db5eb7b4e046db39af3",
+      "showScore": true,
+      "enableComments": false,
+      "suppressDescription": true,
+      "anonym": true,
+      "training": true,
+      "screenshot": "G29-native.jpg",
+      "screenshotSHA256": "b4fc8ae286d53c521e8ebd0c0590ec7ca9497cb181944c5d7c957ddaba54cf08",
+      "observed": {
+        "selectedVariable": "V1",
+        "position": 1,
+        "total": 6,
+        "scoreValues": [
+          0,
+          2
+        ],
+        "commentField": false,
+        "instructionVisible": false
+      }
+    },
+    {
+      "id": "G30",
+      "input": "G30.zip",
+      "sha256": "347168afbe73fc7136593e95e456ff05cf1acced98b566fcafafdf347873d8b1",
+      "showScore": false,
+      "enableComments": true,
+      "suppressDescription": true,
+      "anonym": true,
+      "training": true,
+      "screenshot": "G30-native.jpg",
+      "screenshotSHA256": "d35c34933606557e7e080e9c5432db66d9fb98fc95bd04de7d87ec1c6b76bb32",
+      "observed": {
+        "selectedVariable": "V1",
+        "position": 1,
+        "total": 6,
+        "scoreValues": null,
+        "commentField": true,
+        "instructionVisible": false
+      }
+    },
+    {
+      "id": "G31",
+      "input": "G31.zip",
+      "sha256": "744d11ce77df79a8a1fb81cb9ab215b2d1f2ea6a364f5415c09837bdbe0f184d",
+      "showScore": true,
+      "enableComments": true,
+      "suppressDescription": true,
+      "anonym": true,
+      "training": true,
+      "screenshot": "G31-native.jpg",
+      "screenshotSHA256": "32bc04c28b98c7b6eb8c9a9d7a6232e401509d89c0a54549a03d56e11d387711",
+      "observed": {
+        "selectedVariable": "V1",
+        "position": 1,
+        "total": 6,
+        "scoreValues": [
+          0,
+          2
+        ],
+        "commentField": true,
+        "instructionVisible": false
+      }
+    }
+  ],
+  "limits": [
+    "Initial view/control states on the same synthetic scans and six cases; no fresh coding or comments entered in these 32 captures.",
+    "No separate training dialog or different control state from anonym/training observed in this fixture. This does not assert pixel redaction or every training behavior.",
+    "The browser additionally labels the testperson; that extra label is not claimed as an identical native GUI element.",
+    "Existing result/gesture/training edit pairs remain separately documented."
+  ]
+}
