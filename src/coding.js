@@ -114,7 +114,11 @@ export async function readCodingFiles(files) {
       if(legacy){const defs=descendants(root,'VariablenPaket');packages=defs.length?defs.map(p=>children(p,'Variable').map(v=>lookup.get(attr(v,'bezeichner').toUpperCase())).filter(Boolean)):variables.map(v=>[v]);}
       for(const selected of packages){if(!selected.length)continue;let scope=images;
         const dirname=p=>p.includes('/')?p.slice(0,p.lastIndexOf('/')):'',folder=(name)=>images.filter(i=>dirname(i.path).toUpperCase()===(xmlDir+name).replace(/\/$/,'').toUpperCase());
-        if(legacy){scope=folder(selected[0].id);if(!scope.length)scope=folder('scans');if(!scope.length)scope=images.filter(i=>dirname(i.path).toUpperCase()===xmlDir.replace(/\/$/,'').toUpperCase());}
+        if(legacy){scope=folder(selected[0].id);if(!scope.length)scope=folder('scans');if(!scope.length)scope=images.filter(i=>dirname(i.path).toUpperCase()===xmlDir.replace(/\/$/,'').toUpperCase());
+          // The native loose-folder GUI enumerates NTFS names in ordinal order.
+          // Browser directory inputs can arrive in APFS order instead.
+          if(!bundle.zipped)scope=scope.slice().sort((a,b)=>a.path.toUpperCase()<b.path.toUpperCase()?-1:a.path.toUpperCase()>b.path.toUpperCase()?1:0);
+        }
         const normalizedStem=image=>{let name=stem(image.path).toUpperCase();if(options.personPrefix){const i=name.lastIndexOf('_');if(i>=0)name=name.slice(0,i+1)+name.slice(i+5);}return name;};
         const explicit=(descendants(root,'Cases')[0]?.textContent||'').trim().split(/\s+/).filter(Boolean);
         if(new Set(explicit).size!==explicit.length)throw new Error(`${path}: Doppelte Testperson in Cases.`);
@@ -135,7 +139,7 @@ export async function readCodingFiles(files) {
         if(!cases.length){warnings.push(`${path}: Keine passenden Scans gefunden.`);continue;}
         const xmlName=path.split('/').at(-1);
         const label=legacy?`${stem(path)} ${selected.map(v=>v.id).join(' ')}`:bundle.zipped?`${bundle.name} ${xmlName}`:xmlName;
-        const job={id:attr(root,'id'),label,resultLabel:label,settings:{...options},variables:selected,cases};if(!job.id)throw new Error(`Job-ID fehlt in ${path}.`);jobs.push(job);
+        const job={id:attr(root,'id'),label,resultLabel:label,settings:{...options},variables:selected,cases};if(legacy&&!bundle.zipped)job.legacyResultGroup=xmlDir;if(!job.id)throw new Error(`Job-ID fehlt in ${path}.`);jobs.push(job);
       }
     }
   }

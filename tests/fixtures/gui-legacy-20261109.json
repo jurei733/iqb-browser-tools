@@ -1,0 +1,136 @@
+{
+  "checkedOn": "2026-11-09",
+  "synthetic": true,
+  "empiricalStudyData": false,
+  "originalVersion": "4.3.0.3",
+  "legacy": {
+    "folder": "tests/fixtures/gui-final-20261109/legacy-valid",
+    "cases": [
+      [
+        "001",
+        "A"
+      ],
+      [
+        "001",
+        "B"
+      ],
+      [
+        "002",
+        "A"
+      ],
+      [
+        "002",
+        "B"
+      ]
+    ],
+    "packages": [
+      [
+        "legacy A B",
+        4
+      ],
+      [
+        "legacy B",
+        2
+      ]
+    ],
+    "comments": [
+      "zeta",
+      "alpha",
+      "beta",
+      "gamma"
+    ],
+    "codes": [
+      "1",
+      "0",
+      "1",
+      "0"
+    ],
+    "firstPackageScanFolder": "A",
+    "secondPackageScanFolder": "B",
+    "sharedID": "legacy-native-20261108",
+    "sharedResults": "Selecting legacy B after coding legacy A B reuses alpha/gamma and codes 0/0; opens case 2 of 2. First B scan visibly shows 001 Seite 2.",
+    "sort": {
+      "number": [
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          4,
+          3,
+          2,
+          1
+        ]
+      ],
+      "variable": [
+        [
+          1,
+          3,
+          2,
+          4
+        ],
+        [
+          2,
+          4,
+          1,
+          3
+        ]
+      ],
+      "code": [
+        [
+          2,
+          4,
+          1,
+          3
+        ],
+        [
+          1,
+          3,
+          2,
+          4
+        ]
+      ],
+      "comment": [
+        [
+          2,
+          3,
+          4,
+          1
+        ],
+        [
+          1,
+          4,
+          3,
+          2
+        ]
+      ]
+    },
+    "sortedJump": {
+      "sort": "number-desc",
+      "row": 3,
+      "case": 2,
+      "comment": "alpha",
+      "code": "0"
+    },
+    "inputHashes": {
+      "legacy-missing-ids.xml": "ce4e7cc03dfdce52457700df38902d349e27457f70388e84a158ec6c556272fe",
+      "legacy-valid/legacy.xml": "e3c5b01df2a8f1c7b1cbe1b258c7c5ab7d362ce3b62fb21426156736ac848272",
+      "legacy-valid/A/B-1_ABCD002.png": "9492a01561b1f518e8eb9fd158e3ba3f26a626f6144030d42bce37237c5ddd4d",
+      "legacy-valid/A/B-1_ABCD001.png": "4212e78ea3f373c222652293927d75c0b09a9e965984f239397d523953890edf",
+      "legacy-valid/B/B-1_WXYZ002.png": "99ef52042331d753978fd53254d58534586685a25ad8f80d96b806c5f09ede8f",
+      "legacy-valid/B/B-1_WXYZ001.png": "c2ef66c96e91b7dc01f179f99236edad5e5967c4127effffae142ee01819ff7d"
+    },
+    "nativeResult": {
+      "name": "legacy A B.result",
+      "bytes": 220,
+      "sha256": "b841e436d7c77eb64e461cdc089f0250d4ece6c70c9b6081868bfbe339e1d176",
+      "base64": "H4sIAAAAAAAEAIWQSwrCMBBA94J3GGYfnQT/JBXryqXiBWKNtZBWsbGoV3PhkbyCUaw/KO7CkPfeMNfzRQ4PqYXC7PJkkynkDUIwWbRZJlmscO9WrIfDoF6T48doZvK9dfkbaCMkS4XWxDo6sky7pDBMkOhwTj0ELzI7hZNpiGD1wtjyK4wgRO8FkBEUCkcIbquQiPtHqvCuYJwz6s+pO2h3BtTyNr8gBifjtGxGH3D4D+biARMG2m7XP/QrLSpoQWV6UZ2uhLtlOtZp+qRl8+ucwQ1fiiOQiQEAAA=="
+    }
+  },
+  "nativeLimitations": [
+    "The original crashes on old Variable elements without id attributes in its second loose XML parser. A separate fixture with added id=A/B makes the functional comparison possible. Original malformed/crashing fixture retained.",
+    "Mouse About button did not visibly open a dialog in the loaded job. F1 worked in the earlier empty-job capture; no new identical help-route claim."
+  ]
+}
