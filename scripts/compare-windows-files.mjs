@@ -96,7 +96,7 @@ await check('Coding navigation: first open case, boundaries and atomic person ba
  job.cases[index].code='0';index=C.navigationIndex(job,index+1);positions.push(index+1);
  const batchCount=job.cases.filter(c=>c.testee===job.cases[index].testee).length;
  index=C.batchCode(job,index,'1');positions.push(index+1);
- const before=job.cases.map(c=>c.code);assert.throws(()=>C.batchCode(job,index,'8'),/eindeutig/);assert.deepEqual(job.cases.map(c=>c.code),before);
+ const before=job.cases.map(c=>c.code);assert.throws(()=>C.batchCode(job,index,'8'),/Es wurde kein Code gesetzt\./);assert.deepEqual(job.cases.map(c=>c.code),before);
  C.batchCode(job,index,'0');index=C.navigationIndex(job,100);positions.push(index+1);
  index=C.navigationIndex(job,index-1);positions.push(index+1);
  index=C.navigationIndex(job,-1);positions.push(index+1);
