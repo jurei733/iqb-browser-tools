@@ -1,0 +1,63 @@
+{
+  "checkedOn": "2026-11-09",
+  "app": "itc-ToolBox 3.3.0.2",
+  "originalSha256": "c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1",
+  "method": "Direct original GUI: Output direkt / Antworten CSV -> Xlsx, one separate input folder per schema; outputs read back through guest Edge to the local Mac.",
+  "options": {
+    "subformMode": "none",
+    "values": true,
+    "status": false,
+    "codes": false,
+    "scores": false
+  },
+  "cases": [
+    {
+      "schema": 2011,
+      "input": {
+        "path": "tests/fixtures/gui-final-20261109/csv2011.csv",
+        "bytes": 1027,
+        "sha256": "0d6f581113c32f542e0eb62b0bc0244a694aaabaf278e39cebe804a0017dab92"
+      },
+      "nativeOutput": {
+        "path": "tests/fixtures/gui-final-20261109/native-csv2011.xlsx",
+        "bytes": 3334,
+        "sha256": "a9945836d9c538101a3320863935cfd3fad27161424e0b5a1945b1e8ca7388c1"
+      },
+      "capture": "docs/evidence/gui-final-20261109/native-csv2011-finished.png"
+    },
+    {
+      "schema": 2019,
+      "input": {
+        "path": "tests/fixtures/gui-final-20261109/csv2019.csv",
+        "bytes": 1215,
+        "sha256": "e4922897f0a197637a67537745f3c6daa8fd553e871250fa8ef08196032a696c"
+      },
+      "nativeOutput": {
+        "path": "tests/fixtures/gui-final-20261109/native-csv2019.xlsx",
+        "bytes": 2985,
+        "sha256": "934eec14d587659de49eb4960c828d1499e4b69a1bbf1f8b48a94d8cba2eb494"
+      },
+      "capture": "docs/evidence/gui-final-20261109/native-csv2019-finished.png"
+    },
+    {
+      "schema": 2024,
+      "input": {
+        "path": "tests/fixtures/gui-final-20261109/csv2024.csv",
+        "bytes": 1262,
+        "sha256": "df7215ae6dc7a7fa37998ab92250264f9481102aab08122ee7a938fefa635a70"
+      },
+      "nativeOutput": {
+        "path": "tests/fixtures/gui-final-20261109/native-csv2024.xlsx",
+        "bytes": 2984,
+        "sha256": "aacbb6dfccab83f7b181eec31c5a2146552956d3f0729fba7de5e6b1d0007c3b"
+      },
+      "capture": "docs/evidence/gui-final-20261109/native-csv2024-finished.png"
+    }
+  ],
+  "limitations": [
+    "Synthetic CSV inputs derived from the retained local Testcenter demo, not empirical study data.",
+    "Compares worksheet names, row/column order and cell text; ZIP metadata, styles and blank-cell storage differ.",
+    "The eleven-column header is recognized by the original, whose worker nevertheless sends all middle columns to its chunk-list converter. This fixture therefore produces MATHE_ERROR, rather than the extended browser interpretation.",
+    "This evidence is for the direct CSV-to-Excel workflow; it does not prove every historical database import or malformed CSV."
+  ]
+}

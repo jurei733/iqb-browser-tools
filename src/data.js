@@ -3,7 +3,7 @@ import {parseCSV,csvString} from './toolbox.js';
 import {parseJSON,stringifyJSON} from './json.js';
 import {parseWindowsChunk} from './windows-responses.js';
 import {parseWindowsJSON,isContainer,orderedEntries,windowsTokenText} from './windows-tokens.js';
-import {parseWindowsLogCSV,splitWindowsLog} from './windows-csv.js';
+import {parseWindowsLogCSV,parseWindowsLegacyResponses,splitWindowsLog} from './windows-csv.js';
 import {exactTime,compareTime,maxTime,minTime} from './timestamps.js';
 
 export const STATUS=['UNSET','NOT_REACHED','DISPLAYED','VALUE_CHANGED','DERIVE_ERROR','CODING_COMPLETE','NO_CODING','INVALID','CODING_INCOMPLETE','CODING_ERROR','PARTLY_DISPLAYED','DERIVE_PENDING','INTENDED_INCOMPLETE','CODE_SELECTION_PENDING'];
@@ -110,6 +110,7 @@ export function importCSV(source,delimiter='auto',options={}) {
   // PersonList.AddUnitData/AddLogEntry in the native CSV dialog uses the
   // alias for both fields, even when the CSV parser reads originalUnitId.
   if(options.windows&&String(source).split(/\r\n|\n|\r/,1)[0].replace(/"/g,'').endsWith(';logentry'))return peopleFromDTO([],parseWindowsLogCSV(source,options).map(d=>({...d,originalUnitId:d.unitname})),options);
+  if(options.windows&&String(source).split(/\r\n|\n|\r/,1)[0].replace(/^\uFEFF/,'').replace(/"/g,'')==='groupname;loginname;code;bookletname;unitname;responses;restorePoint;responseType;response-ts;restorePoint-ts;laststate')return peopleFromDTO(parseWindowsLegacyResponses(source),[],options);
   const table=parseCSV(source,delimiter),headers=table.shift().map(h=>h.trim().replace(/^\uFEFF/,'')),data=table.filter(r=>r.some(Boolean)).map((r,i)=>{if(r.length!==headers.length)throw new Error(`CSV-Zeile ${i+2}: ${r.length} statt ${headers.length} Felder.`);return Object.fromEntries(headers.map((h,j)=>[h,r[j]]));});
   for(const h of ['groupname','loginname','bookletname','unitname'])if(!headers.includes(h))throw new Error(`CSV-Kopf „${h}“ fehlt.`);
   if(headers.includes('logentry'))return peopleFromDTO([],data,options);

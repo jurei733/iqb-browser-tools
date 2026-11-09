@@ -11,6 +11,9 @@ function int32(value){
 export function parseWindowsChunk(content,type='',{bits=32}={}){
   const family=standardTypes.has(type)?'iqb-standard':type==='unknown'?'Abi':type==='IQBVisualUnitPlayerV2.1.0'?'Dan':type==='iqb-simple-player@1.0.0'?'SimplePlayerLegacy':'KeyValue';
   const failed=message=>[{id:'',responses:[{id:'ERROR',value:`Converter ${family} failed: ${message}`,status:'ERROR',code:0,score:0}]}];
+  // Newtonsoft checks the first token against Dictionary before parsing its
+  // contents. This also applies to the malformed middle fields of 2011 CSVs.
+  if(family==='KeyValue'&&typeof content==='string'&&content.startsWith('['))return failed('Cannot deserialize the current JSON array (e.g. [1,2,3]) into type \'System.Collections.Generic.Dictionary`2[System.String,Newtonsoft.Json.Linq.JToken]\' because the type requires a JSON object (e.g. {"name":"value"}) to deserialize correctly.\nTo fix this error either change the JSON to a JSON object (e.g. {"name":"value"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.\nPath \'\', line 1, position 1.');
   let data;try{data=typeof content==='string'?(content.trim()==='undefined'?null:parseWindowsJSON(content,{stringsOnly:type==='unknown',bits})):content;}catch(error){return failed(error.message);}
   const forms=new Map();
   const add=(form,id,value,status='UNSET',code=0,score=0)=>{if(form===null||isContainer(form))throw new Error('Windows-Konvertierung: Ein Unterformular muss ein skalarer Wert sein.');form=invariantToken(form);if(!forms.has(form))forms.set(form,[]);forms.get(form).push({id,value,status,code,score});};

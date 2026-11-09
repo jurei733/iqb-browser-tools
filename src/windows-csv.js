@@ -1,6 +1,25 @@
 // itc-ToolBox 3.3.0.2 uses physical lines and String.Split here, rather than
 // an RFC CSV reader. Keep its lossy behaviour confined to Windows mode.
 import {compactInteger} from './timestamps.js';
+import {parseJSON} from './json.js';
+
+export function parseWindowsLegacyResponses(source) {
+  const lines=String(source).replace(/^\uFEFF/,'').split(/\r\n|\n|\r/);lines.shift();
+  const separator='";"',rows=[];
+  for(const line of lines){
+    const fields=line.split(separator);if(fields.length<=5)continue;
+    // The original recognizes the 2011 header, but still passes all middle
+    // columns to its chunk-list converter. Do not autodetect newer content.
+    const tail=line.slice(fields.slice(0,5).reduce((n,f)=>n+f.length,0)+5*separator.length),at=tail.lastIndexOf(separator);
+    const content=(at>0?tail.slice(0,at):tail).replace(/""/g,'"');
+    const laststate=at>0?tail.slice(at+separator.length,-1).replace(/""/g,'"'):'';
+    let responses;
+    try{responses=parseJSON(content);if(!Array.isArray(responses))throw new Error();}
+    catch{responses=[{id:'all-error',content,responseType:'?',ts:'?'}];}
+    rows.push({groupname:fields[0].slice(1),loginname:fields[1],code:fields[2],bookletname:fields[3],unitname:fields[4],laststate,responses});
+  }
+  return rows;
+}
 export function splitWindowsLog(value) {
   const text=String(value??'');let at=text.indexOf(' : ');
   if(at>0){let parameter=text.slice(at+3);if(parameter.startsWith('"')&&parameter.endsWith('"'))parameter=parameter.slice(1,-1).replace(/""/g,'"').replace(/\\\\/g,'\\');return {key:text.slice(0,at),parameter};}
