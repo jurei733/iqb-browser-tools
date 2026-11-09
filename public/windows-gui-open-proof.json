@@ -1,6 +1,6 @@
 {
   "date": "2026-11-09",
-  "scope": "Zusätzliche direkte GUI-Produkte und Zustandsfolgen. Jede Funktion kann einzelne direkte Paare haben, ohne dass ihr vollständiges Optionsprodukt nachgewiesen ist. Diese acht Familien sind eine konkrete priorisierte Prüfliste, keine erschöpfende Aufzählung jeder möglichen Eingabe.",
+  "scope": "Zusätzliche direkte GUI-Produkte und Zustandsfolgen. Jede Funktion kann einzelne direkte Paare haben, ohne dass ihr vollständiges Optionsprodukt nachgewiesen ist. Diese zehn Familien sind eine konkrete priorisierte Prüfliste, keine erschöpfende Aufzählung jeder möglichen Eingabe.",
   "completedThisBatch": {
     "loginScenarios": 6,
     "codingInitialFlagCombinations": 32,
