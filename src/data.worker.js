@@ -6,6 +6,7 @@ import {windowsTestcenterGUI,windowsGUIJSON} from './windows-testcenter-gui.js';
 import {prepare} from './preparation.js';
 import {appendWindowsDirect} from './windows-direct-store.js';
 import {OutputDatabase} from './database.js';
+import {importDatabaseFiles} from './database-import.js';
 import {databasePage} from './database-view.js';
 import {readDataFiles,normalizePeople,wideWorkbook,longCSV,sessionTable,reviewsWorkbook,peopleFromDTO} from './data.js';
 import {readCodingFiles} from './coding.js';
@@ -27,7 +28,7 @@ async function run(op,args,progress) {
     case 'open-db':case 'new-db':{SQL??=await initSqlJs({locateFile:()=>wasmURL});const next=new OutputDatabase(SQL,op==='open-db'?args.bytes:null,args.creator);db?.close();db=next;return db.summary();}
     case 'db-summary':return requireDB().summary();
     case 'db-page':return databasePage(requireDB().people(args.group||null),args);
-    case 'db-import':{const windows=args.windows==='64'?'64':args.windows===true;const data=args.files?await readDataFiles(args.files,{...args.options,windows,csvTarget:'database',onWarning:progress}):args.people?normalizePeople(args.people,{windows}):people;return requireDB().import(data,{merge:args.merge!==false,windows});}
+    case 'db-import':{const windows=args.windows==='64'?'64':args.windows===true;if(args.files)return importDatabaseFiles(requireDB(),args.files,{windows,merge:args.merge!==false,options:args.options,onWarning:progress});const data=args.people?normalizePeople(args.people,{windows}):people;return requireDB().import(data,{merge:args.merge!==false,windows});}
     case 'db-sizes':return requireDB().setSizes(args.sizes);
     case 'db-check':return requireDB().check();
     case 'db-save':return args.format==='windows'?requireDB().exportWindows():args.format==='coding-box'?requireDB().exportCodingBox({allowCodingChanges:args.allowCodingChanges}):args.format==='browser'?requireDB().exportBrowser():requireDB().export();

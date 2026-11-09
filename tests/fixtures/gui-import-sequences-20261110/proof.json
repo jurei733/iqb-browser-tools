@@ -1,0 +1,263 @@
+{
+  "date": "2026-11-10",
+  "method": "Visible native SQLite JSON and CSV import, conflicting values with the same/different end timestamps, an additional person, both orders of the same two selected files, saved database checkpoints and reopening. Inputs synthetic. Actual GUI completion required before final multi-file checkpoints.",
+  "cases": [
+    {
+      "id": "IM01",
+      "inputs": [
+        "im01.json"
+      ]
+    },
+    {
+      "id": "IM02",
+      "inputs": [
+        "im02.json"
+      ]
+    },
+    {
+      "id": "IM03",
+      "inputs": [
+        "im03.json"
+      ]
+    },
+    {
+      "id": "IM04",
+      "inputs": [
+        "im04.json"
+      ]
+    },
+    {
+      "id": "IM05",
+      "inputs": [
+        "im05.json",
+        "im06.json"
+      ]
+    },
+    {
+      "id": "IM06",
+      "inputs": [
+        "im06.json",
+        "im05.json"
+      ]
+    },
+    {
+      "id": "IC0",
+      "folder": "IMCSVA",
+      "generation": 2011,
+      "kind": "answers",
+      "files": [
+        "IMCSVA/answers.csv"
+      ],
+      "inputs": [
+        "IMCSVA/answers.csv"
+      ],
+      "qualifiedOriginalError": "Native silent partial import at invalid historical chunk timestamp; browser rejects the bad CSV block before changing it."
+    },
+    {
+      "id": "IC1",
+      "folder": "IMCSVB",
+      "generation": 2011,
+      "kind": "logs",
+      "files": [
+        "IMCSVB/logs.csv"
+      ],
+      "inputs": [
+        "IMCSVB/logs.csv"
+      ]
+    },
+    {
+      "id": "IC2",
+      "folder": "IMCSVC",
+      "generation": 2011,
+      "kind": "both",
+      "files": [
+        "IMCSVC/answers.csv",
+        "IMCSVC/logs.csv"
+      ],
+      "inputs": [
+        "IMCSVC/answers.csv",
+        "IMCSVC/logs.csv"
+      ],
+      "qualifiedOriginalError": "Native silent partial import at invalid historical chunk timestamp; browser rejects the bad CSV block before changing it."
+    },
+    {
+      "id": "IC3",
+      "folder": "IMCSVD",
+      "generation": 2019,
+      "kind": "answers",
+      "files": [
+        "IMCSVD/answers.csv"
+      ],
+      "inputs": [
+        "IMCSVD/answers.csv"
+      ]
+    },
+    {
+      "id": "IC4",
+      "folder": "IMCSVE",
+      "generation": 2019,
+      "kind": "logs",
+      "files": [
+        "IMCSVE/logs.csv"
+      ],
+      "inputs": [
+        "IMCSVE/logs.csv"
+      ]
+    },
+    {
+      "id": "IC5",
+      "folder": "IMCSVF",
+      "generation": 2019,
+      "kind": "both",
+      "files": [
+        "IMCSVF/answers.csv",
+        "IMCSVF/logs.csv"
+      ],
+      "inputs": [
+        "IMCSVF/answers.csv",
+        "IMCSVF/logs.csv"
+      ]
+    },
+    {
+      "id": "IC6",
+      "folder": "IMCSVG",
+      "generation": 2024,
+      "kind": "answers",
+      "files": [
+        "IMCSVG/answers.csv"
+      ],
+      "inputs": [
+        "IMCSVG/answers.csv"
+      ]
+    },
+    {
+      "id": "IC7",
+      "folder": "IMCSVH",
+      "generation": 2024,
+      "kind": "logs",
+      "files": [
+        "IMCSVH/logs.csv"
+      ],
+      "inputs": [
+        "IMCSVH/logs.csv"
+      ]
+    },
+    {
+      "id": "IC8",
+      "folder": "IMCSVI",
+      "generation": 2024,
+      "kind": "both",
+      "files": [
+        "IMCSVI/answers.csv",
+        "IMCSVI/logs.csv"
+      ],
+      "inputs": [
+        "IMCSVI/answers.csv",
+        "IMCSVI/logs.csv"
+      ]
+    }
+  ],
+  "files": {
+    "inputs/im01.json": "69c64b31efa863f46dcf3bdb9513ccbf17231d6290d8f4be8c03ca37b8bc8bd7",
+    "native/IM01.sqlite": "dd31d94ed88437ddd9d349f3feedc8432b60ac3fdc96c38ff0b75471cf9167ea",
+    "screens/IM01-imported.jpg": "6349a2d458a027204d01736900b7e168e89315665842c4a23222e8cacbeb40e2",
+    "screens/IM01-reopened.jpg": "b29dd2e6d9a2ad70a041e2f55755eb6e7fc5a607d6d670bf5ddd11a90442ccb8",
+    "inputs/im02.json": "e23b489a5d6b17fcd4e7a02df22f8c637cfd5a5826aea2d0af3bb976fa0dfd99",
+    "native/IM02.sqlite": "af8b5429ed4670565289c528c92878f17c6819bd2e8d056b9f04884a1c998e71",
+    "screens/IM02-imported.jpg": "5fe4c4252ff11668910f02d1d57d91d3d8e023c68ec07112598859843e81013c",
+    "screens/IM02-reopened.jpg": "c1a19feaea7517b2e91d17280436a7b326a87751686eccdee7e409931d030579",
+    "inputs/im03.json": "1277a7053cf2c770fba0d8b76ba4f29839e5cae550b2e445ec9a8db6a4c2e2b4",
+    "native/IM03.sqlite": "30ef896bbc41f1b1235eb6d263229e0a562a3b4a675d39a38ff692c21de061c0",
+    "screens/IM03-closed.jpg": "64c6927016f0494903a56e187e35e11bcf3c9ac12f54aede13fbdff2849949de",
+    "screens/IM03-imported.jpg": "63087fcf919ef73fce66755025489bb5f40cfdebc4e4dea7af1ea5200927762d",
+    "screens/IM03-reopened-after-restart.jpg": "94e4bbe1d9020e3ba95eb9bad765e720177c55f2e98e525854973801fc1d39e2",
+    "screens/IM03-reopened-confirmed.jpg": "d5b09edc115838359c6ffdedcedd240824450118c53e57185fa6566f65a6bf62",
+    "inputs/im04.json": "aaca0729f808da27086a44a0706303f19f1a43c6d5f8c9ea711c5bdd5e23e596",
+    "native/IM04.sqlite": "12f8feb1df52c0b6df57d77142049b645d9906bc5b873865a746db83d2a53d72",
+    "screens/IM04-closed.jpg": "a25f0beca6eff73ea3adcc4d881119b9a579c73b1a34871a238e75aabb3c66aa",
+    "screens/IM04-imported.jpg": "9828b8726295e1d242588d6783ba4c1d561803edd9012ebcab19374ba11d0f5e",
+    "screens/IM04-reopened-confirmed.jpg": "2a5735ae80e9c46ac9a1af55ad2095307b9ab63a2f46c7f2d96d4aef6cff6881",
+    "inputs/im05.json": "f870b240e489996f17ca501d7cba31db70a7c2051d54f9c4042704ada1ca96c4",
+    "inputs/im06.json": "f896c8654c2e931e19e3550924022da6c4352bb15a8875c160cb2949caa9da27",
+    "native/IM05.sqlite": "4422acc6155c83fc5faa4c53c7ad18245007bc4d32adda157c32913ffc68a518",
+    "screens/IM05-closed-confirmed.jpg": "f8ff06772737761049c47092499b0424d1f1054fb92f98120ff88da8c54a350d",
+    "screens/IM05-closed.jpg": "5f18b0933d86d54ae4e11585dacb2f5ab1f48b4d9f03f78459bd496efab5dabf",
+    "screens/IM05-finished.jpg": "4c1e1e3df46492be761b135baed277474abcbd58bd2e59450e2224087d794b2c",
+    "screens/IM05-imported.jpg": "a362662ee514baef8b03489694ef9a58df58d1914ee8501804305c078758fc27",
+    "screens/IM05-reopened-final.jpg": "9d8319bd41d679026a90651e000183b7f31d06e9bdc8d6eb05b1039a05111c6f",
+    "screens/IM05-selected.jpg": "2d3df5e4bc7bd88ef326740752a28ce8e1ff1fc83b8013f754b51e4e8dc365d2",
+    "native/IM06.sqlite": "671928dfacda25192f7517150668f67148316acccc662c4bcff6183bde765bc6",
+    "screens/IM06-finished.jpg": "a99fb87eae927592d3078e97a48185923ee05f41eb4efb8a5c8134cbf61b2c86",
+    "screens/IM06-reopened-final.jpg": "d6a0451d9fbf3ba18af538f3a281b40fcb3cefbcca21d5686279cc360566771e",
+    "screens/IM06-selected.jpg": "d18cc10670f5723f06b1a0d1cc93b2503487cdd5d3e05716ab0360008c3362f7",
+    "inputs/IMCSVA/answers.csv": "0d6f581113c32f542e0eb62b0bc0244a694aaabaf278e39cebe804a0017dab92",
+    "native/IC0.sqlite": "ee8b60646a2a27e21e88faaf247896f217ea78b17cc6eeeaf2f886b66541c4d6",
+    "screens/IC0-detected.jpg": "a277afb5e29932de568bce20b25a796cc8ecf04ce4cceba6afc7146c8a299ad4",
+    "screens/IC0-finished.jpg": "76d4db7e6df2aeef9f8ba7562f68d3f55ac76acf5a5c5cbced902629fb872214",
+    "screens/IC0-folder.jpg": "aee55b1ec530dd7464645632da58a6e97d122efa2ab5e6ddffcd0b92bacf18f7",
+    "screens/IC0-reopened.jpg": "b75f8bc338b53d50fd46a8ca4bc54a226b7c571902da5ef008696837dbff8603",
+    "inputs/IMCSVB/logs.csv": "8bcdcf3d2998264c96d2b5ef6a218857fb839512d0683f71635e2012d5b76682",
+    "native/IC1.sqlite": "cf7e24b0dee2939c638e557336ffd7ab6e6d4849bf8e56f65990996765d2a4b2",
+    "screens/IC1-detected.jpg": "d1bdcbc9de25815cf63aba1e696aa12931dfee6ea977304293de252e1d999dd2",
+    "screens/IC1-finished.jpg": "688cfceb7f78a14f3d6045767a1b7d45a5c7e9c0dcdac7875c66bbc47d667530",
+    "screens/IC1-reopened.jpg": "0e5a7c74b561583a4ca86599b872ba5d9deac77e3139f69a2834d5d2d8aad100",
+    "inputs/IMCSVC/answers.csv": "0d6f581113c32f542e0eb62b0bc0244a694aaabaf278e39cebe804a0017dab92",
+    "inputs/IMCSVC/logs.csv": "8bcdcf3d2998264c96d2b5ef6a218857fb839512d0683f71635e2012d5b76682",
+    "native/IC2.sqlite": "cf7e24b0dee2939c638e557336ffd7ab6e6d4849bf8e56f65990996765d2a4b2",
+    "screens/IC2-detected.jpg": "823ce13d441610a90f3ca2dd00d923d97772e8e0e5b14683e28670a956c55eb4",
+    "screens/IC2-excluded-preparation-attempt-closed.jpg": "7dedc221f1a600f65087a2b759089780e7b0f6eb7dc0dd06994d9e0c487c902f",
+    "screens/IC2-finished.jpg": "6bcd1ddb2cffc21c6ad64ab97a439c931f95a19996671288adc48341e3aafaac",
+    "screens/IC2-reopened.jpg": "1a4196fd6c3b82a21dab0ec7c1d7210e50f0e50565daf2969170088f0da166eb",
+    "inputs/IMCSVD/answers.csv": "e4922897f0a197637a67537745f3c6daa8fd553e871250fa8ef08196032a696c",
+    "native/IC3.sqlite": "c85967c2c49127404e53d57d7491c7d7cebefae4f68e87a92eab4ea24ac76bd8",
+    "screens/IC3-detected.jpg": "3baa6f472744fe3961387c0ff75917e6d9cebad6f2846302786b93ab552ac3bf",
+    "screens/IC3-finished.jpg": "73fe8fc1eb48e7a863d0cb375b8dcdfe1003927913666c32b4be45aee36182e8",
+    "screens/IC3-reopened.jpg": "8f06eb48618e0ad6f9435e3e254ab6b641496977a6e9d89b1ba1e7d4f1592c52",
+    "inputs/IMCSVE/logs.csv": "8bcdcf3d2998264c96d2b5ef6a218857fb839512d0683f71635e2012d5b76682",
+    "native/IC4.sqlite": "a6fe0a59bbe36deff3350ce90d23a9e14f5eba62b8a6b30bf7fe812410b8a506",
+    "screens/IC4-detected.jpg": "98765ea8808ffa2447f34c11019cccf2135ac8d2699496289e039f73050aa979",
+    "screens/IC4-finished.jpg": "1bbef5b14c170ec087d078a3291bf281f640be9afa0b1ec8721645faddc66b6b",
+    "screens/IC4-reopened.jpg": "897a85eb78e6a2c50d1703896a148bf8f1810d7b7ec201d2c88f67ae8dd8097f",
+    "inputs/IMCSVF/answers.csv": "e4922897f0a197637a67537745f3c6daa8fd553e871250fa8ef08196032a696c",
+    "inputs/IMCSVF/logs.csv": "8bcdcf3d2998264c96d2b5ef6a218857fb839512d0683f71635e2012d5b76682",
+    "native/IC5.sqlite": "cfc9bee06a90f711bd91c8e747741e35d9fdf68f8aba0d45e46c46c5421c7f07",
+    "screens/IC5-detected.jpg": "7f4f3a3e389431b119fa2d4e8c1c998e93ec02e7f6c84e3b5c8345e06e4fddd1",
+    "screens/IC5-finished.jpg": "1643cbe575c6a6cd825a42cfe707e9ab133951f3d4c34baf4fc4db26cbfd2099",
+    "screens/IC5-reopened.jpg": "72fee2c905a86d87208d3ac7acc0369a8828d8a59372c05b787ad1a5318b49a3",
+    "inputs/IMCSVG/answers.csv": "df7215ae6dc7a7fa37998ab92250264f9481102aab08122ee7a938fefa635a70",
+    "native/IC6.sqlite": "69dc211f54d8674a0b65435bb36dae0670ffc1861177ef774449b42c787dcd64",
+    "screens/IC6-detected.jpg": "2bd4238b8b5f69c6efff92900d80c0b6294d912cbed8b139041ef3e2335bbd1d",
+    "screens/IC6-finished.jpg": "d2a32eb05d69d17fb25271abf753a5b68c62d1cdd64501a8b33de2f6a50f0b19",
+    "screens/IC6-reopened.jpg": "ca5a7ca2a7298617bd5f44e219997d3fa8675e837f0ceb8cfbcb74c2e4b85097",
+    "inputs/IMCSVH/logs.csv": "8bcdcf3d2998264c96d2b5ef6a218857fb839512d0683f71635e2012d5b76682",
+    "native/IC7.sqlite": "e13a3bafcd2638695190bf2b9b355e15afb85d2b7ddd9b53545515d0e8ecd8bf",
+    "screens/IC7-detected.jpg": "29efffcf5a4bd9702232b14b79035884b655641db230be176672e630a8836ddf",
+    "screens/IC7-finished.jpg": "074493ad1cc22217913c0baca08b9feca7ac36b2dd28c2eb4618bdaebceeca98",
+    "screens/IC7-reopened.jpg": "6c0b78818a253ccf5508861dfd66abb2fb4d8ef4b6ba0f176eb5420b0fef3d05",
+    "inputs/IMCSVI/answers.csv": "df7215ae6dc7a7fa37998ab92250264f9481102aab08122ee7a938fefa635a70",
+    "inputs/IMCSVI/logs.csv": "8bcdcf3d2998264c96d2b5ef6a218857fb839512d0683f71635e2012d5b76682",
+    "native/IC8.sqlite": "8931a94787e67fb3e9748e71e116b52b68acb6abb3a5403a5a0dfcea52a02fea",
+    "screens/IC8-detected.jpg": "3c68c8247bb4a5420899f2ec23be9d684f14181ded672c674306ea6f1133d885",
+    "screens/IC8-finished.jpg": "dd33466b99e183631a0f3a94e454e5a90e533942a3ff1e1ba325d3f9985507e8",
+    "screens/IC8-reopened-final.jpg": "9e8b193432049202b69bf504acdfcfda3a73cc38d3d54b1e7c6cd534378e45ac",
+    "screens/IC8-reopened.jpg": "c75fbf5e066350fe704f055ee3f1872f2bd59383208a2ebfdb57dc7e87978c04"
+  },
+  "bundle": {
+    "file": "evidence.zip",
+    "sha256": "eecbd8814806df05e2d464d029fa2dfc9ced0e8285a737d083a1a93b297b108c",
+    "bytes": 8627317
+  },
+  "correction": "Windows SQLite JSON imports apply files and persons sequentially. They must not use the unique-identity collection of the direct-output command.",
+  "matrix": "Six JSON conflict/order checkpoints and three CSV generations × answers/logs/both: twelve full active-data pairs, one unchanged-data delta after a native partial import, and two qualified native partial failures.",
+  "comparison": "Every active person/booklet/unit/response/laststate/chunk/log/session field and booklet sizes after each checkpoint; database serial IDs and creator/clock metadata excluded.",
+  "qualifiedOriginalLimits": [
+    "IC0/IC2: the 2011 header passes its extra middle fields to the chunk-list parser; its error chunk has an invalid timestamp. Native SQLite stops after adding the first empty person, yet says Beendet. Browser rejects that CSV block explicitly and preserves its prior database. IC1 logs-only changes neither prior state; valid IC3 restores agreement.",
+    "Native replacement deletes the booklet without removing its old unit/response records. Raw row counts can exceed the active records. Browser maintains referential integrity instead of manufacturing unreachable data.",
+    "An IC2 fixture-preparation attempt had a duplicate BOM and is excluded; final IC2 repeats the byte-verified original 2011 input. Preliminary IM05 attempt was not waited to visible completion and is excluded. Final IM05 and IM06 show both filenames and beendet before closing.",
+    "Early screenshots after opening can still show the previous counts while the native connection loads. Final checkpoints are parsed actual saved SQLite files."
+  ],
+  "limits": [
+    "No empirical study data.",
+    "No universal proof of arbitrary import histories."
+  ]
+}

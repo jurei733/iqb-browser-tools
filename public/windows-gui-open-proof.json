@@ -12,7 +12,8 @@
       "windows-gui-booklet-matrix-proof.json",
       "windows-gui-word-products-proof.json",
       "windows-gui-small-converters-proof.json",
-      "windows-gui-excel-sources-proof.json"
+      "windows-gui-excel-sources-proof.json",
+      "windows-gui-import-sequences-proof.json"
     ],
     "additionalBoundaryWorkbooks": 6,
     "additionalInvalidLoginTexts": 4,
@@ -23,7 +24,8 @@
     "wordGuiScenarios": 17,
     "smallConverterGuiScenarios": 35,
     "mixedDatabaseExcelPairs": 26,
-    "directSourceExportPairs": 3
+    "directSourceExportPairs": 3,
+    "importSequenceGuiScenarios": 15
   },
   "openFamilies": [
     {
@@ -74,10 +76,11 @@
     {
       "id": "imports-sequences",
       "family": "Import, Zusammenführen und Wiederöffnen",
-      "dimensions": "CSV-Generationen/JSON/Rohberichte × Antworten/Logs/beide × Ergänzen/Ersetzen; mehrere Dateien mit Konflikten, dann SQLite speichern und neu öffnen.",
-      "existingEvidence": "Einzelne native CSV-/JSON-/Testcenter- und SQLite-Paare sowie Modulkorpora; kein vollständiges GUI-Produkt dieser Sequenzen.",
-      "stillOpen": "Konflikt-, Reihenfolge- und Wiederöffnungsfolgen mit gleichen Dateien prüfen.",
-      "status": "partial-direct-gui"
+      "dimensions": "Sechs JSON-Konflikt-/Reihenfolgefolgen und neun CSV-Kombinationen (2011/2019/2024 × Antworten/Logs/beide), jeweils gespeicherter SQLite-Stand und Wiederöffnen.",
+      "existingEvidence": "Zwölf vollständige aktive Datenpaare, ein unveränderter Log-Deltafall nach nativem Teilabbruch und zwei ausdrücklich eingeschränkte historische Originalfehler. JSON-Dateien/Personen werden jetzt wie im nativen SQLite-Dialog einzeln und in Auswahlreihenfolge angewandt.",
+      "stillOpen": "Das konkrete 15er-Produkt ist abgeschlossen. Native CSV-2011-Fehler hinterlassen eine leere Person; Browser weist diese Daten ausdrücklich ab. Native Ersetzungen hinterlassen verwaiste Zeilen; Browser erhält referenzielle Integrität. Die erweiterten Merge-/Replace-Optionen haben keinen wählbaren nativen Gegenpart. Weitere beliebige Importgeschichten sind nicht nachgewiesen.",
+      "status": "completed-finite-direct-gui-with-qualified-original-errors",
+      "proof": "windows-gui-import-sequences-proof.json"
     },
     {
       "id": "coding-edits",
@@ -136,6 +139,14 @@
     {
       "id": "T-direct-repeat",
       "reason": "Erneuter direkter Testcenter-Excel-Lauf im selben Assistenten stoppt bei doppelter Personenkennung, meldet beendet und lässt die alte Ausgabedatei bytegleich. Browser meldet den Konflikt ausdrücklich und bietet Reset."
+    },
+    {
+      "id": "T-sqlite-orphans",
+      "reason": "Das Original löscht beim Ersetzen nur das Testheft; alte Unit-/Antwortzeilen bleiben verwaist und erhöhen rohe Zähler. Aktive Daten werden gepaart; Browser erzeugt keine verwaisten Zeilen."
+    },
+    {
+      "id": "T-sqlite-legacy-partial",
+      "reason": "Historische CSV-2011-Konvertierungsfehler führen im nativen SQLite-Dialog zu stillem Teilabbruch nach Anlage der ersten Person. Browser weist den fehlerhaften CSV-Block vor Übernahme ab."
     }
   ],
   "outsideFiniteGuiProof": [
