@@ -18,6 +18,11 @@ function Model($doc){
  $root=$doc.Root;$entries=@($root.Elements('c')|ForEach-Object{@{testee=[string]$_.Attribute('tp').Value;variable=[string]$_.Attribute('v').Value;code=[string]$_.Attribute('c').Value;time=[string]$_.Attribute('tm').Value;comment=$_.Value}})
  return @{id=[string]$root.Attribute('id').Value;label=[string]$root.Attribute('label').Value;coder=[string]$root.Attribute('coder').Value;globalComment=if($root.Element('globalcomment')){$root.Element('globalcomment').Value}else{''};entries=$entries}
 }
+function Raw-Arguments([object[]]$Values){
+ $raw=[object[]]::new($Values.Length)
+ for($i=0;$i -lt $Values.Length;$i++){if($null -ne $Values[$i]){$raw[$i]=$Values[$i].PSObject.BaseObject}}
+ return ,$raw
+}
 function ErrorText($error){$e=$error.Exception;while($e.InnerException){$e=$e.InnerException};return @{exceptionType=$e.GetType().FullName;message=$e.Message}}
 $results=New-Object Collections.Generic.List[object]
 foreach($case in [Newtonsoft.Json.Linq.JArray]::Parse([IO.File]::ReadAllText($InputFile))){
@@ -41,7 +46,7 @@ foreach($case in [Newtonsoft.Json.Linq.JArray]::Parse([IO.File]::ReadAllText($In
   $doc=$cl.GetMethod('ResultsToXDoc').Invoke($list,$null)
   $bytes=$write.Invoke($null,[object[]]@($doc));$result.nativeBase64=[Convert]::ToBase64String($bytes)
   $decoded=$read.Invoke($null,[object[]]@(,$bytes));$result.nativeModel=Model $decoded
-  if(([string]$case['id']).StartsWith('state-')){
+  if(([string]$case['id']).StartsWith('state-')){try{
    # Reopen the saved file through the real original CaseList constructor.
    # Empty PageImageSets satisfy the job definition; no image/GUI claim.
    $definitionType=$Scans.GetType('HUBerlin.IQB.Scans.jobDef');$pageType=$Scans.GetType('HUBerlin.IQB.Scans.PageImageSet')
@@ -53,15 +58,15 @@ foreach($case in [Newtonsoft.Json.Linq.JArray]::Parse([IO.File]::ReadAllText($In
     $person=[string]$item['testee'];$variable=[string]$item['variable']['id']
     if(!$definition.Variables.ContainsKey($variable)){$element=New-Object Xml.Linq.XElement ([Xml.Linq.XName]::Get('v'));$element.SetAttributeValue('id',$variable);$definition.Variables.Add($variable,$element)}
     if(!$definition.Testees.ContainsKey($person)){$definition.Testees.Add($person,[Activator]::CreateInstance($pageMapType))}
-    $definition.Testees[$person].Add($variable,[Activator]::CreateInstance($pageType,[object[]]@($variable)))
+    $definition.Testees[$person].Add($variable,[Activator]::CreateInstance($pageType,(Raw-Arguments ([object[]]@($variable)))))
    }
    $folder=Join-Path ([IO.Path]::GetDirectoryName($OutputFile)) ('reopen-'+[string]$case['id']);[IO.Directory]::CreateDirectory($folder)|Out-Null
    [IO.File]::WriteAllBytes((Join-Path $folder 'saved.result'),$bytes)
-   $restored=$cl.GetConstructors()[0].Invoke([object[]]@($definition,$folder))
+   $restored=$cl.GetConstructors()[0].Invoke((Raw-Arguments ([object[]]@($definition,$folder))))
    $again=$cl.GetMethod('ResultsToXDoc').Invoke($restored,$null);$againBytes=$write.Invoke($null,[object[]]@($again));$againDecoded=$read.Invoke($null,[object[]]@(,$againBytes))
    $result.reopenedNativeModel=Model $againDecoded
    $result.reopenedNativeBase64=[Convert]::ToBase64String($againBytes)
-  }
+  }catch{$result.reopenError=ErrorText $_}}
  }catch{$result.nativeError=ErrorText $_}
  if($null -ne $case['browserBase64']){try{$browserBytes=[Convert]::FromBase64String([string]$case['browserBase64']);$doc=$read.Invoke($null,[object[]]@(,$browserBytes));$result.browserModel=Model $doc}catch{$result.browserError=ErrorText $_}}
  $results.Add($result)

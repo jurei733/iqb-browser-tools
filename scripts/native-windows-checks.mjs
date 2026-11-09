@@ -37,7 +37,7 @@ export async function verifyNativeWindows(bundle,codingInputBytes){
   if(found.nativeError)return {id:input.id,proof:'error-detection-only',passed:rejected};
   const nativeToBrowser=same(decodeResult(bytes(found.nativeBase64)),found.nativeModel),browserToNative=same(found.browserModel,found.nativeModel),currentXML=!rejected&&same(gunzipSync(exported),gunzipSync(bytes(input.browserBase64)));
   let reopened=true;if(input.id.startsWith('state-')){
-   ensure(found.reopenedNativeModel,'Missing original save/reopen capture '+input.id);
+   ensure(found.reopenedNativeModel,'Missing original save/reopen capture '+input.id+': '+JSON.stringify(found.reopenError));
    const job=structuredClone(input.job);job.cases.forEach(c=>{Object.assign(c,{code:'',comment:'',time:''});c.variable.codes=[{id:'0'},{id:'1'}];});
    const original=decodeResult(bytes(found.nativeBase64));applyResult(job,original);
    reopened=same(decodeResult(encodeResult(job,original.coder,original.globalComment,{windows:true})),found.reopenedNativeModel);
