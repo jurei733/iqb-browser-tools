@@ -107,9 +107,18 @@ $cases=@(
  @{id='renew-prefix-reserve-review';source='Logins-wide';renew=$true;xml=$true;separate=$false;length=5;password=3;monitor=$false;testee=$false;reserve=$true;review=$true},
  @{id='renew-no-xml';source='Logins-wide';renew=$true;xml=$false;separate=$true;length=5;password=0;monitor=$true;testee=$false;reserve=$false;review=$false}
 )
-foreach($case in $cases){
+$matrix=Get-Content -Raw (Join-Path (Join-Path $Root 'inputs') 'login-matrix.json')|ConvertFrom-Json
+if($matrix.schema -ne 1 -or $matrix.cases.Count -ne 128){throw 'Incomplete login matrix'}
+$cases+=@($matrix.cases|ForEach-Object{$item=@{};foreach($property in $_.PSObject.Properties){$item[$property.Name]=$property.Value};$item})
+$queue=New-Object Collections.Generic.List[object]
+foreach($case in $cases){$queue.Add($case)}
+for($caseIndex=0;$caseIndex -lt $queue.Count;$caseIndex++){
+ $case=$queue[$caseIndex]
  $folder=Join-Path $Out $case.id;[IO.Directory]::CreateDirectory($folder)|Out-Null
- $source=Join-Path $folder 'Logins.xlsx';[IO.File]::Copy((Join-Path (Join-Path $Root 'inputs') ($case.source+'.xlsx')),$source,$true)
+ $source=Join-Path $folder 'Logins.xlsx'
+ $originalSource=if($case.reopenOf){Join-Path (Join-Path $Out $case.reopenOf) 'Logins.xlsx'}else{Join-Path (Join-Path $Root 'inputs') ($case.source+'.xlsx')}
+ [IO.File]::Copy($originalSource,$source,$true)
+ $inputFiles=Capture-Files $folder
  $settings.lastfile_LoginXlsx=$source;$obj=New-BackendObject 'LoginsTemplateXlsxDialog';$t=$obj.GetType();$instance=[Reflection.BindingFlags]'NonPublic,Instance';$static=[Reflection.BindingFlags]'NonPublic,Static'
  $t.GetField('sourceFileName',$instance).SetValue($obj,$source);$t.GetField('renewLogins',$instance).SetValue($obj,$case.renew);$t.GetField('generateXml',$instance).SetValue($obj,$case.xml)
  foreach($pair in @(@('loginLength',$case.length),@('passwordLength',$case.password),@('addProctor',$case.monitor),@('addPrefixTestee',$case.testee),@('addPrefixPlus',$case.reserve),@('addPrefixReview',$case.review),@('separateXmlFiles',$case.separate),@('bookletName','DEMO'))){$t.GetField($pair[0],$static).SetValue($null,$pair[1])}
@@ -118,9 +127,13 @@ foreach($case in $cases){
   foreach($field in @('ErrorMessages','Warnings','Testgroups')){$t.GetField($field,$instance).GetValue($obj).Clear()}
   $messages+=Invoke-OriginalWorker $obj 'Process2_bw_DoWork'
  }catch{$err=$_.Exception;while($err.InnerException){$err=$err.InnerException};$errorText=$err.ToString()}
- $Results.Add(@{id=$case.id;options=$case;error=$errorText;messages=$messages;state=(Fields $obj);files=(Capture-Files $folder)})
+ $Results.Add(@{id=$case.id;options=$case;inputFiles=$inputFiles;error=$errorText;messages=$messages;state=(Fields $obj);files=(Capture-Files $folder)})
+ if($case.id.StartsWith('matrix-')){
+  if($errorText){throw ('Cannot reopen failed generation '+$case.id)}
+  $again=$case.Clone();$again.id='reopen-'+$case.id;$again.renew=$false;$again.reopenOf=$case.id;$queue.Add($again)
+ }
 }
 $hashes=@{};foreach($path in @((Join-Path $ToolPath 'itc-Toolbox.exe'),(Join-Path $CodePath 'IQB-Kodieren.exe'),(Join-Path $CodePath 'IQB-Scans.dll'),(Join-Path $CodePath 'IQB-Common.dll'))){$hashes[[IO.Path]::GetFileName($path)]=(Get-FileHash $path -Algorithm SHA256).Hash.ToLowerInvariant()}
 $inputs=@{};foreach($file in Get-ChildItem (Join-Path $Root 'inputs') -File){$inputs[$file.Name]=(Get-FileHash $file.FullName -Algorithm SHA256).Hash.ToLowerInvariant()}
-@{finished=[DateTime]::UtcNow.ToString('o');bits=[IntPtr]::Size*8;culture=[Threading.Thread]::CurrentThread.CurrentCulture.Name;hashes=$hashes;inputs=$inputs;inputFiles=(Capture-Files (Join-Path $Root 'inputs'));results=$Results.ToArray();method='Unchanged original dialog business workers; separate manual GUI captures recorded independently.'}|ConvertTo-Json -Depth 60|Set-Content -Encoding UTF8 (Join-Path $Out 'results.json')
+@{finished=[DateTime]::UtcNow.ToString('o');bits=[IntPtr]::Size*8;culture=[Threading.Thread]::CurrentThread.CurrentCulture.Name;hashes=$hashes;inputs=$inputs;inputFiles=(Capture-Files (Join-Path $Root 'inputs'));results=$Results.ToArray();matrix=$matrix;method='Unchanged original dialog business workers; separate manual GUI captures recorded independently.'}|ConvertTo-Json -Depth 60|Set-Content -Encoding UTF8 (Join-Path $Out 'results.json')
 Write-Output 'Native extended reference finished'

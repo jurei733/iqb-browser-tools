@@ -1,10 +1,14 @@
-import {mkdir,writeFile,readFile} from 'node:fs/promises';
+import {mkdir,writeFile} from 'node:fs/promises';
+import {windowsCodingCorpus} from './windows-coding-corpus.mjs';
+import {encodeResult} from '../src/coding.js';
 import {resolve} from 'node:path';
 import {windowsNumericProbes} from './windows-numeric-probes.mjs';
 import {nativeConverterCorpus,nativePipelineCases} from './windows-native-corpus.mjs';
 const directory=resolve(process.argv[2]||'work/native-windows');await mkdir(directory,{recursive:true});
 await writeFile(directory+'/inputs.json',JSON.stringify(nativeConverterCorpus()));
-await writeFile(directory+'/coding-inputs.json',await readFile('tests/fixtures/windows-edge/coding-inputs.json'));
+const coding=windowsCodingCorpus({states:true}).map(input=>{let browserBase64;try{browserBase64=Buffer.from(encodeResult(input.job,input.coder,input.globalComment,{windows:true})).toString('base64');}catch{}return {...input,...(browserBase64?{browserBase64}:{})};});
+await writeFile(directory+'/coding-inputs.json',JSON.stringify(coding));
+console.log('Fresh bidirectional coding inputs:',coding.length);
 await writeFile(directory+'/pipeline-inputs.json',JSON.stringify(nativePipelineCases()));
 console.log('Native Windows input count:',nativeConverterCorpus().length);
 await writeFile(directory+'/numeric-inputs.json',JSON.stringify(windowsNumericProbes()));
