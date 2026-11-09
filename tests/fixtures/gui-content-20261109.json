@@ -1,0 +1,16 @@
+{
+ "checkedOn":"2026-11-09",
+ "original":"itc-ToolBox 3.3.0.2",
+ "data":"Synthetic local Testcenter 19.0.1, Sample Workspace",
+ "nativeGUI":"Input -> Download Content -> Sample Workspace -> existing tc-content-20261109 folder; 12 files downloaded and index written; compressed with Windows Explorer and read back through guest browser.",
+ "contentFiles":12,
+ "allTwelveContentFilesByteEqual":true,
+ "htmlIndex":"Exact native HTML bytes with fixed reference wall clock and same source URL. Selected Windows mode; extended index keeps linked modern presentation.",
+ "bookletSizes":{"BOOKLET.SAMPLE-1":60853,"BOOKLET.SAMPLE-2":45409,"BOOKLET.SAMPLE-3":60801},
+ "sizeReference":"Original GUI booklets.json captured in tests/fixtures/gui-remaining-20261106.json:testcenter.bookletSizes",
+ "regression":"Original metadata, SHA256 manifest and HTML retained. Ten credential-free file bodies retained for routed browser download. Two Testtakers bodies replaced with explicit credential-free transport placeholders in automated regression only; all twelve actual native bodies compared locally before sanitization.",
+ "originalDefect":"Renaming a newly created target folder while the native folder picker was open left the old path cached and caused all writes to fail. Retried with the existing folder. Browser ZIP workflow does not expose that Windows folder-picker failure.",
+ "nodeTest":"tests/gui-content.test.js",
+ "browserTest":"tests/e2e/gui-content.spec.js",
+ "limits":["Download wall clock is normalized for comparison","Browser ZIP container and native Explorer ZIP bytes are not expected equal","No empirical study data or exhaustive filesystem cases"]
+}

@@ -19,3 +19,6 @@ tests/fixtures/windows-native/*.json -text
 public/equivalence-proof.json linguist-generated=true
 docs/function-audit.json linguist-generated=true
 tests/fixtures/windows-native/*.json linguist-generated=true
+
+# Preserve native HTML reference line endings.
+tests/fixtures/gui-final-20261109/native-content-index.html -text

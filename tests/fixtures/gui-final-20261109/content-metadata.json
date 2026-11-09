@@ -1,0 +1,423 @@
+{
+  "files": [
+    {
+      "name": "SAMPLE_UNITCONTENTS.HTM",
+      "size": 15746,
+      "modificationTime": 1792766238,
+      "type": "Resource",
+      "id": "SAMPLE_UNITCONTENTS.HTM",
+      "report": [],
+      "dependencies": [],
+      "info": {
+        "label": "",
+        "description": ""
+      }
+    },
+    {
+      "name": "coding-scheme.vocs.json",
+      "size": 5187,
+      "modificationTime": 1792766238,
+      "type": "Resource",
+      "id": "CODING-SCHEME.VOCS.JSON",
+      "report": [],
+      "dependencies": [],
+      "info": {
+        "label": "",
+        "description": ""
+      }
+    },
+    {
+      "name": "sample_resource_package.itcr.zip",
+      "size": 412,
+      "modificationTime": 1792766238,
+      "type": "Resource",
+      "id": "SAMPLE_RESOURCE_PACKAGE.ITCR.ZIP",
+      "report": {
+        "info": [
+          "Contains 1 files."
+        ]
+      },
+      "dependencies": [],
+      "info": {
+        "label": "",
+        "description": ""
+      }
+    },
+    {
+      "name": "verona-player-simple-6.0.html",
+      "size": 40152,
+      "modificationTime": 1792766238,
+      "type": "Resource",
+      "id": "VERONA-PLAYER-SIMPLE-6.0",
+      "report": {
+        "info": [
+          "Verona-Version: 6.0"
+        ],
+        "warning": []
+      },
+      "dependencies": [],
+      "info": {
+        "label": "Simple HTML Player",
+        "description": "This is a simple, dependency-less, vanilla-js-written, but full-featured unit player, mainly as showcase for developers and for software-testing. It does implement the Verona 4.0.0-Standard and can be used for units containing simple any content in HTML-format. Unit Description ist the <code>form-content as HTML. Just give some names to the form element, and the player does the rest. Use some special Ids for some special buttons.",
+        "veronaModuleType": "player",
+        "veronaVersion": "6.0",
+        "version": "6.0.5"
+      }
+    },
+    {
+      "name": "SAMPLE_UNIT.XML",
+      "size": 1501,
+      "modificationTime": 1792766238,
+      "type": "Unit",
+      "id": "UNIT.SAMPLE",
+      "report": {
+        "info": [
+          "`1` attachment(s) requested."
+        ]
+      },
+      "dependencies": [],
+      "info": {
+        "label": "A sample unit",
+        "description": "This is a sample unit showing the possibilities of the sample player."
+      }
+    },
+    {
+      "name": "SAMPLE_UNIT2.XML",
+      "size": 2146,
+      "modificationTime": 1792766238,
+      "type": "Unit",
+      "id": "UNIT.SAMPLE-2",
+      "report": {
+        "warning": [
+          "Element `/Unit/Definition/@type` is deprecated."
+        ]
+      },
+      "dependencies": [],
+      "info": {
+        "label": "A sample unit",
+        "description": "This is an Unit"
+      }
+    },
+    {
+      "name": "SAMPLE_BOOKLET.XML",
+      "size": 1308,
+      "modificationTime": 1792766238,
+      "type": "Booklet",
+      "id": "BOOKLET.SAMPLE-1",
+      "report": [],
+      "dependencies": [],
+      "info": {
+        "label": "Sample booklet",
+        "description": "This a sample booklet for testing/development/showcase purposes."
+      }
+    },
+    {
+      "name": "SAMPLE_BOOKLET2.XML",
+      "size": 3111,
+      "modificationTime": 1792766238,
+      "type": "Booklet",
+      "id": "BOOKLET.SAMPLE-2",
+      "report": [],
+      "dependencies": [],
+      "info": {
+        "label": "Adaptive Booklet",
+        "description": "This Booklet demonstrates the adaptivity features."
+      }
+    },
+    {
+      "name": "SAMPLE_BOOKLET3.XML",
+      "size": 1256,
+      "modificationTime": 1792766238,
+      "type": "Booklet",
+      "id": "BOOKLET.SAMPLE-3",
+      "report": [],
+      "dependencies": [],
+      "info": {
+        "label": "Similar Booklet to Sample 1",
+        "description": "\n      This booklet has the same species as sample Booklet 1. The term booklet species indicates that both booklets can\n      be controlled by the group-monitor as if they where the same.\n      The species is currently defined as having the same number of testlets on the first level (called blocks). This\n      definition may change later.\n    "
+      }
+    },
+    {
+      "name": "Browser-Demo.xml",
+      "size": 630,
+      "modificationTime": 1792766520,
+      "type": "Testtakers",
+      "id": "BROWSER-DEMO.XML",
+      "report": [],
+      "dependencies": [],
+      "info": {
+        "label": "",
+        "description": "Synthetische Browser-Integration, keine echten Testpersonen",
+        "testtakers": 2
+      }
+    },
+    {
+      "name": "SAMPLE_TESTTAKERS.XML",
+      "size": 4494,
+      "modificationTime": 1792766238,
+      "type": "Testtakers",
+      "id": "SAMPLE_TESTTAKERS.XML",
+      "report": [],
+      "dependencies": [],
+      "info": {
+        "label": "",
+        "description": "This file contains some logins for testing and works a sample for developers.",
+        "testtakers": 16
+      }
+    },
+    {
+      "name": "SAMPLE_SYSCHECK.XML",
+      "size": 1216,
+      "modificationTime": 1792766238,
+      "type": "SysCheck",
+      "id": "SYSCHECK.SAMPLE",
+      "report": [],
+      "dependencies": [],
+      "info": {
+        "label": "System-Check Beispiel",
+        "description": "Beschreibungstext für den Systemcheck"
+      }
+    }
+  ],
+  "deps": [
+    {
+      "name": "SAMPLE_UNIT.XML",
+      "size": 1501,
+      "modificationTime": 1792766238,
+      "type": "Unit",
+      "id": "UNIT.SAMPLE",
+      "report": {
+        "info": [
+          "`1` attachment(s) requested."
+        ]
+      },
+      "dependencies": [
+        {
+          "object_name": "sample_resource_package.itcr.zip",
+          "relationship_type": "usesPlayerResource"
+        },
+        {
+          "object_name": "SAMPLE_UNITCONTENTS.HTM",
+          "relationship_type": "isDefinedBy"
+        },
+        {
+          "object_name": "verona-player-simple-6.0.html",
+          "relationship_type": "usesPlayer"
+        }
+      ],
+      "info": {
+        "label": "A sample unit",
+        "description": "This is a sample unit showing the possibilities of the sample player."
+      }
+    },
+    {
+      "name": "SAMPLE_UNIT2.XML",
+      "size": 2146,
+      "modificationTime": 1792766238,
+      "type": "Unit",
+      "id": "UNIT.SAMPLE-2",
+      "report": {
+        "warning": [
+          "Element `/Unit/Definition/@type` is deprecated."
+        ]
+      },
+      "dependencies": [
+        {
+          "object_name": "coding-scheme.vocs.json",
+          "relationship_type": "usesScheme"
+        },
+        {
+          "object_name": "verona-player-simple-6.0.html",
+          "relationship_type": "usesPlayer"
+        }
+      ],
+      "info": {
+        "label": "A sample unit",
+        "description": "This is an Unit"
+      }
+    }
+  ],
+  "sizes": {
+    "BOOKLET.SAMPLE-1": 60853,
+    "BOOKLET.SAMPLE-2": 45409,
+    "BOOKLET.SAMPLE-3": 60801
+  },
+  "nativeManifest": [
+    {
+      "name": "Browser-Demo.xml",
+      "bytes": 630,
+      "sha256": "f13493dd6866f9829a6015610709e2149d3cf188bfef81f686eda3b01ab02177",
+      "equal": true
+    },
+    {
+      "name": "coding-scheme.vocs.json",
+      "bytes": 5187,
+      "sha256": "0a0685f337e0cdf136795a467ecba92f05c8a4a2c4e142cd56e407f8827d322f",
+      "equal": true
+    },
+    {
+      "name": "SAMPLE_BOOKLET.XML",
+      "bytes": 1308,
+      "sha256": "31a6b8cbcad9fd7c27165949fbf2abdc6a458ec74f21cc2646904b6f9c078780",
+      "equal": true
+    },
+    {
+      "name": "SAMPLE_BOOKLET2.XML",
+      "bytes": 3111,
+      "sha256": "c3e05941047b1d4d6bdc688bdc9fad57356ee61c9384d12d2690fa6e7679e360",
+      "equal": true
+    },
+    {
+      "name": "SAMPLE_BOOKLET3.XML",
+      "bytes": 1256,
+      "sha256": "af3f5e57a81af63aa06536ee8b158ec6921afb7a59fe6a44125e932788cb627e",
+      "equal": true
+    },
+    {
+      "name": "sample_resource_package.itcr.zip",
+      "bytes": 412,
+      "sha256": "da2ae859b77f8a6ba09b3f61cab38ea0c5d6de5f08b9fcefef9d263aef187f4e",
+      "equal": true
+    },
+    {
+      "name": "SAMPLE_SYSCHECK.XML",
+      "bytes": 1216,
+      "sha256": "de11e774f2d0226609658a9b54a382e3896b4fd593464c6b4d43460443c10a83",
+      "equal": true
+    },
+    {
+      "name": "SAMPLE_TESTTAKERS.XML",
+      "bytes": 4494,
+      "sha256": "cdc2fdc790e37981258813138f2ad368a681f5101022c2490d0142e23842c23c",
+      "equal": true
+    },
+    {
+      "name": "SAMPLE_UNIT.XML",
+      "bytes": 1501,
+      "sha256": "672563543f1a9ec153161393baf8b152135f6f270af85328876953e7ced0178b",
+      "equal": true
+    },
+    {
+      "name": "SAMPLE_UNIT2.XML",
+      "bytes": 2146,
+      "sha256": "6c16e655a4520480866c9e0a697e1d4d9834ac2a606be54cbe59fda4802315f1",
+      "equal": true
+    },
+    {
+      "name": "SAMPLE_UNITCONTENTS.HTM",
+      "bytes": 15746,
+      "sha256": "532310b1f4bf1eab6eaaa1603962a39566919b5669974f7b1a7dc2de4316d202",
+      "equal": true
+    },
+    {
+      "name": "verona-player-simple-6.0.html",
+      "bytes": 40152,
+      "sha256": "bece3e969e4267a5690620b4a9b056c5245c02697628b1306dca630423a7b2d3",
+      "equal": true
+    }
+  ],
+  "bookletDependencies": [
+    {
+      "name": "SAMPLE_BOOKLET.XML",
+      "size": 1308,
+      "modificationTime": 1792766238,
+      "type": "Booklet",
+      "id": "BOOKLET.SAMPLE-1",
+      "report": [],
+      "dependencies": [
+        {
+          "object_name": "SAMPLE_UNIT2.XML",
+          "relationship_type": "containsUnit"
+        },
+        {
+          "object_name": "coding-scheme.vocs.json",
+          "relationship_type": "usesScheme"
+        },
+        {
+          "object_name": "sample_resource_package.itcr.zip",
+          "relationship_type": "usesPlayerResource"
+        },
+        {
+          "object_name": "SAMPLE_UNIT.XML",
+          "relationship_type": "containsUnit"
+        },
+        {
+          "object_name": "SAMPLE_UNITCONTENTS.HTM",
+          "relationship_type": "isDefinedBy"
+        },
+        {
+          "object_name": "verona-player-simple-6.0.html",
+          "relationship_type": "usesPlayer"
+        }
+      ],
+      "info": {
+        "label": "Sample booklet",
+        "description": "This a sample booklet for testing/development/showcase purposes."
+      }
+    },
+    {
+      "name": "SAMPLE_BOOKLET2.XML",
+      "size": 3111,
+      "modificationTime": 1792766238,
+      "type": "Booklet",
+      "id": "BOOKLET.SAMPLE-2",
+      "report": [],
+      "dependencies": [
+        {
+          "object_name": "SAMPLE_UNIT2.XML",
+          "relationship_type": "containsUnit"
+        },
+        {
+          "object_name": "coding-scheme.vocs.json",
+          "relationship_type": "usesScheme"
+        },
+        {
+          "object_name": "verona-player-simple-6.0.html",
+          "relationship_type": "usesPlayer"
+        }
+      ],
+      "info": {
+        "label": "Adaptive Booklet",
+        "description": "This Booklet demonstrates the adaptivity features."
+      }
+    },
+    {
+      "name": "SAMPLE_BOOKLET3.XML",
+      "size": 1256,
+      "modificationTime": 1792766238,
+      "type": "Booklet",
+      "id": "BOOKLET.SAMPLE-3",
+      "report": [],
+      "dependencies": [
+        {
+          "object_name": "SAMPLE_UNIT2.XML",
+          "relationship_type": "containsUnit"
+        },
+        {
+          "object_name": "coding-scheme.vocs.json",
+          "relationship_type": "usesScheme"
+        },
+        {
+          "object_name": "sample_resource_package.itcr.zip",
+          "relationship_type": "usesPlayerResource"
+        },
+        {
+          "object_name": "SAMPLE_UNIT.XML",
+          "relationship_type": "containsUnit"
+        },
+        {
+          "object_name": "SAMPLE_UNITCONTENTS.HTM",
+          "relationship_type": "isDefinedBy"
+        },
+        {
+          "object_name": "verona-player-simple-6.0.html",
+          "relationship_type": "usesPlayer"
+        }
+      ],
+      "info": {
+        "label": "Similar Booklet to Sample 1",
+        "description": "\n      This booklet has the same species as sample Booklet 1. The term booklet species indicates that both booklets can\n      be controlled by the group-monitor as if they where the same.\n      The species is currently defined as having the same number of testlets on the first level (called blocks). This\n      definition may change later.\n    "
+      }
+    }
+  ]
+}
