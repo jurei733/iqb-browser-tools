@@ -109,5 +109,11 @@
     "Keine empirischen Original-Studiendateien verfügbar.",
     "Reine Onlinefassung kann Betriebssystemkonto, beliebiges automatisches Überschreiben und dauerhafte echte Dateipfade nicht selbst übernehmen; lokaler Starter gesondert.",
     "Keine universelle Gleichheit beliebiger Dateien, Größen, Reihenfolgen oder Netzwerkzustände behauptet."
-  ]
+  ],
+  "additionalBrowserRegression": {
+    "scope": "Local starter file-reference lifetime; separate from direct native GUI pairs",
+    "correction": "Retain application-owned File objects independently of native FileList wrappers; invalidate on user replacement or clearing",
+    "unitTest": "tests/local-file-reference.test.js",
+    "browserTest": "tests/e2e/local-starter.spec.js"
+  }
 }

@@ -1,5 +1,6 @@
 // The optional starter serves this app and its API on the same loopback origin.
 // Hosted pages never probe or connect to a separate local service.
+import {inputFiles,setInputFiles} from './file-inputs.js';
 export async function discoverLocalConnection(){
   if(globalThis.location?.hostname!=='127.0.0.1')return null;
   try{const response=await fetch('/api/local/config',{cache:'no-store'});if(!response.ok)return null;const config=await response.json();if(config.protocol!=='iqb-local-v1'||typeof config.token!=='string')return null;return new LocalConnection(config);}catch{return null;}
@@ -29,10 +30,10 @@ export class LocalWorkspace {
   }
 }
 export async function refreshLocalInputs(panel,connection){
-  const inputs=Array.from(panel.querySelectorAll('input[type=file]')).filter(input=>Array.from(input.files||[]).some(file=>file.iqbLocalReference));
+  const inputs=Array.from(panel.querySelectorAll('input[type=file]')).filter(input=>inputFiles(input).some(file=>file.iqbLocalReference));
   try{
-    const replacements=await Promise.all(inputs.map(async input=>[input,await Promise.all(Array.from(input.files).map(file=>{const ref=file.iqbLocalReference;if(!ref)return file;if(ref.workspace!==connection.config.workspace?.path)throw new Error('Der gespeicherte Dateipfad gehört zu einem anderen Arbeitsordner. Bitte die Datei neu auswählen.');return connection.file(ref.path);}))]));
-    for(const [input,files]of replacements){const transfer=new DataTransfer();files.forEach(file=>transfer.items.add(file));input.files=transfer.files;input.dispatchEvent(new Event('change',{bubbles:true}));}
+    const replacements=await Promise.all(inputs.map(async input=>[input,await Promise.all(inputFiles(input).map(file=>{const ref=file.iqbLocalReference;if(!ref)return file;if(ref.workspace!==connection.config.workspace?.path)throw new Error('Der gespeicherte Dateipfad gehört zu einem anderen Arbeitsordner. Bitte die Datei neu auswählen.');return connection.file(ref.path);}))]));
+    for(const [input,files]of replacements){setInputFiles(input,files);input.dispatchEvent(new Event('change',{bubbles:true}));}
   }catch(error){for(const input of inputs)input.value='';throw error;}
 }
 export function installLocalFileInputs(connection,{notify}){
@@ -46,9 +47,9 @@ export function installLocalFileInputs(connection,{notify}){
       const description=document.createElement('p');description.textContent=connection.config.workspace.path;dialog.append(description);const list=document.createElement('div');list.className='local-file-list';dialog.append(list);
       for(const entry of available){const label=document.createElement('label'),field=document.createElement('input');field.type=input.multiple?'checkbox':'radio';field.name='local-file';field.value=entry.path;label.append(field,document.createTextNode(entry.path));list.append(label);}
       const apply=document.createElement('button');apply.type='button';apply.className='primary';apply.textContent='Ausgewählte Dateien öffnen';const cancel=document.createElement('button');cancel.type='button';cancel.textContent='Abbrechen';dialog.append(apply,cancel);
-      cancel.onclick=()=>dialog.close();dialog.addEventListener('close',()=>dialog.remove());apply.onclick=async()=>{apply.disabled=true;try{const paths=Array.from(list.querySelectorAll('input:checked')).map(el=>el.value);if(!paths.length)throw new Error('Bitte mindestens eine Datei auswählen.');const files=await Promise.all(paths.map(path=>connection.file(path))),transfer=new DataTransfer();files.forEach(file=>transfer.items.add(file));input.files=transfer.files;input.dispatchEvent(new Event('change',{bubbles:true}));dialog.close();}catch(e){notify(e.message,true);}finally{apply.disabled=false;}};document.body.append(dialog);dialog.showModal();
+      cancel.onclick=()=>dialog.close();dialog.addEventListener('close',()=>dialog.remove());apply.onclick=async()=>{apply.disabled=true;try{const paths=Array.from(list.querySelectorAll('input:checked')).map(el=>el.value);if(!paths.length)throw new Error('Bitte mindestens eine Datei auswählen.');const files=await Promise.all(paths.map(path=>connection.file(path)));setInputFiles(input,files);input.dispatchEvent(new Event('change',{bubbles:true}));dialog.close();}catch(e){notify(e.message,true);}finally{apply.disabled=false;}};document.body.append(dialog);dialog.showModal();
     }catch(e){notify(e.message,true);}
   }
-  function enhance(){for(const input of document.querySelectorAll('.tool-main input[type=file]')){if(enhanced.has(input))continue;enhanced.add(input);const button=document.createElement('button');button.type='button';button.className='local-file-button secondary';button.dataset.localInput=input.id;button.textContent='Aus Arbeitsordner wählen';button.onclick=()=>choose(input);const reference=document.createElement('small');reference.className='local-file-reference';const show=()=>{reference.textContent=Array.from(input.files||[]).map(file=>file.iqbLocalReference).filter(Boolean).map(ref=>ref.workspace+'/'+ref.path).join(' · ');};input.addEventListener('change',show);input.closest('label')?.after(button,reference);show();}}
+  function enhance(){for(const input of document.querySelectorAll('.tool-main input[type=file]')){if(enhanced.has(input))continue;enhanced.add(input);const button=document.createElement('button');button.type='button';button.className='local-file-button secondary';button.dataset.localInput=input.id;button.textContent='Aus Arbeitsordner wählen';button.onclick=()=>choose(input);const reference=document.createElement('small');reference.className='local-file-reference';const show=()=>{reference.textContent=inputFiles(input).map(file=>file.iqbLocalReference).filter(Boolean).map(ref=>ref.workspace+'/'+ref.path).join(' · ');};input.addEventListener('change',show);input.closest('label')?.after(button,reference);show();}}
   const observer=new MutationObserver(enhance);observer.observe(document.querySelector('#app'),{childList:true,subtree:true});enhance();return()=>observer.disconnect();
 }
