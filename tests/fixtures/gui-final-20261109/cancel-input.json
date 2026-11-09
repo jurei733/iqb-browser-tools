@@ -1,0 +1,16 @@
+{
+  "header": "\"groupname\";\"loginname\";\"code\";\"bookletname\";\"unitname\";\"originalUnitId\";\"responses\";\"laststate\"",
+  "row": "\"DEMO\";\"cancel0\";\"001\";\"DEMO\";\"MATHE_\";\"MATHE01\";\"[{\"\"id\"\":\"\"all\"\",\"\"ts\"\":1792663206000,\"\"responseType\"\":\"\"iqb-standard@1.1\"\",\"\"content\"\":\"\"[{\\\"\"id\\\"\":\\\"\"summe\\\"\",\\\"\"value\\\"\":\\\"\"13\\\"\",\\\"\"status\\\"\":\\\"\"CODING_COMPLETE\\\"\",\\\"\"code\\\"\":1,\\\"\"score\\\"\":1},{\\\"\"id\\\"\":\\\"\"begruendung\\\"\",\\\"\"value\\\"\":\\\"\"8 + 5 = 13\\\"\",\\\"\"status\\\"\":\\\"\"VALUE_CHANGED\\\"\",\\\"\"subform\\\"\":\\\"\"1\\\"\"}]\"\"}]\";\"{\"\"currentPage\"\":\"\"1\"\"}\"",
+  "count": 20000,
+  "bom": true,
+  "separator": "\r\n",
+  "trailingNewline": true,
+  "sha256": "5d5cc577e195d77ce59d891d8c3e18dc0bdbb16c364a25a05c2dc0fc581f1df0",
+  "checkedOn": "2026-11-09",
+  "original": "itc-ToolBox 3.3.0.2",
+  "nativeGUI": "Output direkt -> Antworten CSV -> Xlsx, Cancel folder; 20000 rows, early cancellation immediately after save selection. Explicit original log: Bitte warten! / Abbruch - bitte warten! / Lese answers.csv / beendet. / Beendet.",
+  "nativeCapture": "docs/evidence/gui-final-20261109/native-csv-cancelled.png",
+  "nativeProgressCapture": "docs/evidence/gui-final-20261109/native-csv-progress.png",
+  "browserTest": "tests/e2e/gui-cancel.spec.js",
+  "scope": "Finite early CSV cancellation and reusable browser importer; not every native cancellation phase. First later attempt produced a workbook and is not counted as confirmed cancellation."
+}

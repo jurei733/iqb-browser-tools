@@ -1,0 +1,30 @@
+{
+  "checkedOn": "2026-11-09",
+  "scope": "Qualifications discovered when resolving remaining GUI comparisons; these are not direct native GUI pairs.",
+  "training": {
+    "id": "K-10",
+    "finding": "All training references in recovered original Coding and Scans assemblies are field/property initialization, XML parse and XML serialization in jobOptions. No distinct GUI behavior or running-value readback is exposed. The training=true native job opens and codes; browser parser tests prove its flag only."
+  },
+  "jsonStatusFilters": {
+    "id": "T-36",
+    "finding": "DISPLAYED/NOT_REACHED controls exist in readJsonFilesDialog. Its only main-window instantiation is in BtnDataLoadJson_Click, which has no connection in recovered MainWindow IComponentConnector.Connect (IDs 1-18) or command registration. The visible native GUI has Input, Output direkt and DB tabs. DB JSON import uses the different readJsonFilesToDbDialog. No accessible native GUI control has been found; source/module proof remains separate."
+  },
+  "documentation": {
+    "id": "T-64",
+    "finding": "Native About/F1/close observed; original online documentation URL returned Page not found. Browser intentionally keeps maintained documentation; no identical external-page claim."
+  },
+  "sources": [
+    {
+      "path": "IQB-Scans/HUBerlin/IQB/Scans/jobOptions.cs",
+      "sha256": "c8bb7d1e2fa319489c8060ca731b2fde84e8670e450fdd144bdcb7e45aabdb5e"
+    },
+    {
+      "path": "IQB-Kodieren/HUBerlin/IQB/Kodieren/MainWindow.xaml.cs",
+      "sha256": "05098ca438c3738f0a8d2e2bf7325bd7157e8965089ede984583afe3dda56003"
+    },
+    {
+      "path": "itc-ToolBox/iqb/testcenter/toolbox/MainWindow.xaml.cs",
+      "sha256": "077a847eda6eb1b0292c2f9e30b4de2fd5bd587cb5b51391df19f2bf063fc4c7"
+    }
+  ]
+}
