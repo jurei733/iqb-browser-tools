@@ -1,0 +1,113 @@
+{
+  "date": "2026-11-09",
+  "scope": "Zusätzliche direkte GUI-Produkte und Zustandsfolgen. Jede Funktion kann einzelne direkte Paare haben, ohne dass ihr vollständiges Optionsprodukt nachgewiesen ist. Diese acht Familien sind eine konkrete priorisierte Prüfliste, keine erschöpfende Aufzählung jeder möglichen Eingabe.",
+  "completedThisBatch": {
+    "loginScenarios": 6,
+    "codingInitialFlagCombinations": 32,
+    "proofs": [
+      "windows-gui-login-next-proof.json",
+      "windows-gui-fullflags-proof.json"
+    ]
+  },
+  "openFamilies": [
+    {
+      "id": "login-products",
+      "family": "Login-Generierung",
+      "dimensions": "Vollständiges 128er-Produkt aus Länge 5/8, Kennwort 0/4, Testleitung, XML-Gruppierung und drei unabhängigen Präfixen. Zusätzlich nichtnumerische Eingaben und Längen oberhalb 12.",
+      "existingEvidence": "128 Kombinationen plus Wiederöffnen mit Original-Assembly geprüft; direkte GUI-Startwerte und einzelne Generierungen vorhanden, jetzt N0–N5 einschließlich Fehlerkorrektur.",
+      "stillOpen": "Weitere direkte Generierungen und Grenzfälle; nicht erneut alle 128 als GUI-Paare nachgewiesen.",
+      "status": "partial-direct-gui"
+    },
+    {
+      "id": "booklet-validation",
+      "family": "Booklet-XML und Validierung",
+      "dimensions": "64 Kombinationen von Validierungsfehlern sowie Metadaten/Beschreibung, mehrere Booklets und korrigierter Zweitlauf im selben GUI-Ablauf.",
+      "existingEvidence": "64 Fehlerkombinationen und Original-Dateien auf Modulebene; einzelne gültige und fehlerhafte Booklet-GUI-Fälle vorhanden.",
+      "stillOpen": "Vollständige direkte GUI-Fehler-/Optionsmatrix und Wiederholung nach Korrektur.",
+      "status": "partial-direct-gui"
+    },
+    {
+      "id": "word-products",
+      "family": "Word-Handzettel und QR",
+      "dimensions": "Beide Vorlagen × QR-/Linkvarianten × mehrere/fehlende Gruppen, leere und fehlerhafte Vorlage; Abbrechen und erneuter Export.",
+      "existingEvidence": "Original-Dateivergleiche und Browser-/Modultests; kein vollständiges direktes GUI-Produkt für diese Dimensionen.",
+      "stillOpen": "Vorlagen- und Linkwechsel im Original samt erzeugten DOCX-Dateien paaren.",
+      "status": "partial-direct-gui"
+    },
+    {
+      "id": "small-converters",
+      "family": "Codes-Xlsx und SysCheck-CSV",
+      "dimensions": "Erzeugen/Speichern/erneut öffnen und abgebrochene Zieldateiauswahl; SysCheck-Dateivarianten einschließlich Zeichensätzen und fehlerhaften Zeilen.",
+      "existingEvidence": "Originaldateien, Code-Alphabete/-Anzahlen und CSV-Konvertierung in Datei-/Modultests verglichen. Kein vollständiger zusätzlicher direkter GUI-Produktnachweis aus diesen Tests ableitbar.",
+      "stillOpen": "Befehls- und Dateidialogfolgen im Original explizit erfassen.",
+      "status": "partial-direct-gui"
+    },
+    {
+      "id": "excel-sources-capabilities",
+      "family": "Excel-Quellen und Datenbankzustände",
+      "dimensions": "Die 45 nichtleeren Auswahlen zusätzlich aus direkten Datei-/Testcenter-Quellen; gemischte Zustände nur Codes/keine Subforms und nur Subforms/keine Codes; leere Auswahl in Zeilen-/Spaltenmodus.",
+      "existingEvidence": "45/45 direkte Datenbank-GUI-Exporte auf gemeinsamer synthetischer Datei; beide Metadaten vorhanden bzw. beide abwesend direkt geprüft. 90 Quellenkombinationen auf Modulebene.",
+      "stillOpen": "Quellenwechsel und die zwei gemischten Fähigkeitszustände direkt paaren.",
+      "status": "partial-direct-gui"
+    },
+    {
+      "id": "imports-sequences",
+      "family": "Import, Zusammenführen und Wiederöffnen",
+      "dimensions": "CSV-Generationen/JSON/Rohberichte × Antworten/Logs/beide × Ergänzen/Ersetzen; mehrere Dateien mit Konflikten, dann SQLite speichern und neu öffnen.",
+      "existingEvidence": "Einzelne native CSV-/JSON-/Testcenter- und SQLite-Paare sowie Modulkorpora; kein vollständiges GUI-Produkt dieser Sequenzen.",
+      "stillOpen": "Konflikt-, Reihenfolge- und Wiederöffnungsfolgen mit gleichen Dateien prüfen.",
+      "status": "partial-direct-gui"
+    },
+    {
+      "id": "coding-edits",
+      "family": "Kodierzustände und Gruppengesten",
+      "dimensions": "Mehrdeutiger Zifferncode (mehrere passende Codes), bereits teilweise/vollständig kodierte Person, Kommentare vor/nach Codewechsel und erneutem Import; Kombinationen mit allen Anzeigeoptionen.",
+      "existingEvidence": "32/32 initiale Anzeigezustände nun direkt erfasst; atomarer fehlender/gültiger Gruppencode, Teilstände, Training und Ergebnisdateien separat in endlichen Paaren vorhanden.",
+      "stillOpen": "Weitere Bearbeitungsfolgen; die 32 neuen Flag-Captures enthalten keine neu vergebenen Codes.",
+      "status": "partial-direct-gui"
+    },
+    {
+      "id": "images-products",
+      "family": "Scanformate, DPI und Schablonen",
+      "dimensions": "PNG/JPEG/BMP/GIF/mehrseitiges TIFF × DPI/Crop × Zoom/Rahmen/Schablonenbewegung und Fallwechsel.",
+      "existingEvidence": "Bilddekoder-/Geometrie-Modultests und direkte endliche Scan-/Schablonengesten; kein vollständiges sichtbares Format-/Geometrieprodukt.",
+      "stillOpen": "Weitere Bildformate mit den gleichen physischen Abmessungen im Original anzeigen und paaren.",
+      "status": "partial-direct-gui"
+    },
+    {
+      "id": "testcenter-errors",
+      "family": "Testcenter-Fehler und Auswahlwechsel",
+      "dimensions": "Arbeitsbereich-/Gruppenwechsel bei laufendem Abruf, abgelaufenes Token, HTTP-Fehler, Zeitüberschreitung, fehlerhafte/teilweise Berichte und erneuter erfolgreicher Abruf.",
+      "existingEvidence": "Normale echte Testcenter-Kette, ausgewählte Reviews/fehlende Berichte direkt; weitere Fehlerzustände über API-/Browser-Vertragstests.",
+      "stillOpen": "Gezielte native GUI-Fehlerläufe mit anschließender Wiederherstellung.",
+      "status": "partial-direct-gui"
+    },
+    {
+      "id": "cancellation-files",
+      "family": "Abbruch und Dateidialoge",
+      "dimensions": "Abbruch während Einlesen, Umwandeln, Schreiben und Content-Download; abgebrochene Datei-/Ordnerauswahl, gesperrte Ausgabedatei und Wiederholung.",
+      "existingEvidence": "Ein langer CSV-Lauf frühzeitig im Original abgebrochen und erneut importiert; weitere Phasen nicht vollständig direkt gepaart.",
+      "stillOpen": "Gezielte Abbruchphasen und Dateifehler statt einer pauschalen Abbruchzusage.",
+      "status": "partial-direct-gui"
+    }
+  ],
+  "qualifiedOriginalLimits": [
+    {
+      "id": "K-36",
+      "reason": "Original-Hilfe mit geladenem Job ohne sichtbare Reaktion; Browserhilfe bleibt erreichbar."
+    },
+    {
+      "id": "T-36",
+      "reason": "Historischer JSON-Statusfilterdialog im Hauptfenster nicht gebunden; erreichbarer DB-Import direkt geprüft. Kein erfundener nativer GUI-Zugang."
+    },
+    {
+      "id": "T-64",
+      "reason": "Historischer Dokumentationslink führt auf eine fehlende Drittseite; Ziel direkt geprüft, aktuelle Dokumentation zusätzlich vorhanden."
+    }
+  ],
+  "outsideFiniteGuiProof": [
+    "Keine empirischen Original-Studiendateien verfügbar.",
+    "Reine Onlinefassung kann Betriebssystemkonto, beliebiges automatisches Überschreiben und dauerhafte echte Dateipfade nicht selbst übernehmen; lokaler Starter gesondert.",
+    "Keine universelle Gleichheit beliebiger Dateien, Größen, Reihenfolgen oder Netzwerkzustände behauptet."
+  ]
+}
