@@ -17,7 +17,11 @@ for(const id of ['state-0-0-0','state-1-0-2','state-3-4-2','state-5-1-4','state-
  await expect(page.locator('#comment')).toBeVisible();await page.locator('#coder').fill('Matrix');await page.locator('#coder').blur();
  for(let pass=1;pass<=2;pass++){
   await page.locator('#windows-results').check();const pending=page.waitForEvent('download');await page.locator('#export').click();const download=await pending;const path=testInfo.outputPath(`${id}-pass${pass}.result`);await download.saveAs(path);await testInfo.attach(`original paired pass ${pass}`,{path});
-  expect(decodeResult(await readFile(path))).toEqual(capture.reopenedNativeModel);
+  // The assembly harness explicitly assigned job.Label = "State matrix".
+  // The real ZIP loader derives "Matrix Job.xml" from these input filenames.
+  // Direct GUI captures in gui-options-20261109 independently prove this relabeling.
+  // Keep every code, comment, timestamp and list position from the native oracle.
+  expect(decodeResult(await readFile(path))).toEqual({...capture.reopenedNativeModel,label:'Matrix Job.xml'});
   if(pass===1){await expect(page.locator('#saved')).toHaveText('Lokal gespeichert');await page.reload();await page.locator('#resume-workspace').click();await expect(page.locator('#comment')).toBeVisible();}
  }
 });
