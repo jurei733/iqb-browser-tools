@@ -7,6 +7,7 @@ $CodePath=Join-Path $Root 'originals\IQB-Kodieren'
 [AppDomain]::CurrentDomain.add_AssemblyResolve([ResolveEventHandler]{param($s,$e) foreach($folder in @($ToolPath,$CodePath)){$path=Join-Path $folder (([Reflection.AssemblyName]$e.Name).Name+'.dll');if(Test-Path $path){return [Reflection.Assembly]::LoadFrom($path)}};return $null})
 $Code=[Reflection.Assembly]::LoadFrom((Join-Path $CodePath 'IQB-Kodieren.exe'))
 $Common=[Reflection.Assembly]::LoadFrom((Join-Path $CodePath 'IQB-Common.dll'))
+$Scans=[Reflection.Assembly]::LoadFrom((Join-Path $CodePath 'IQB-Scans.dll'))
 [Reflection.Assembly]::LoadFrom((Join-Path $ToolPath 'Newtonsoft.Json.dll'))|Out-Null
 $t=$Code.GetType('HUBerlin.IQB.Kodieren.Coding');$g=$Code.GetType('HUBerlin.IQB.Kodieren.Codings');$cl=$Code.GetType('HUBerlin.IQB.Kodieren.CaseList')
 $provider=$Common.GetType('HUBerlin.IQB.Common.ZipXDocProvider')
@@ -40,6 +41,27 @@ foreach($case in [Newtonsoft.Json.Linq.JArray]::Parse([IO.File]::ReadAllText($In
   $doc=$cl.GetMethod('ResultsToXDoc').Invoke($list,$null)
   $bytes=$write.Invoke($null,[object[]]@($doc));$result.nativeBase64=[Convert]::ToBase64String($bytes)
   $decoded=$read.Invoke($null,[object[]]@(,$bytes));$result.nativeModel=Model $decoded
+  if(([string]$case['id']).StartsWith('state-')){
+   # Reopen the saved file through the real original CaseList constructor.
+   # Empty PageImageSets satisfy the job definition; no image/GUI claim.
+   $definitionType=$Scans.GetType('HUBerlin.IQB.Scans.jobDef');$pageType=$Scans.GetType('HUBerlin.IQB.Scans.PageImageSet')
+   $definition=[Activator]::CreateInstance($definitionType);$definition.ID=[string]$case['job']['id'];$definition.Label=[string]$case['job']['label']
+   $definition.Variables=New-Object 'Collections.Generic.Dictionary[string,Xml.Linq.XElement]'
+   $pageMapType=[Collections.Generic.Dictionary``2].MakeGenericType([string],$pageType)
+   $definition.Testees=[Activator]::CreateInstance([Collections.Generic.Dictionary``2].MakeGenericType([string],$pageMapType))
+   foreach($item in $case['job']['cases']){
+    $person=[string]$item['testee'];$variable=[string]$item['variable']['id']
+    if(!$definition.Variables.ContainsKey($variable)){$element=New-Object Xml.Linq.XElement ([Xml.Linq.XName]::Get('v'));$element.SetAttributeValue('id',$variable);$definition.Variables.Add($variable,$element)}
+    if(!$definition.Testees.ContainsKey($person)){$definition.Testees.Add($person,[Activator]::CreateInstance($pageMapType))}
+    $definition.Testees[$person].Add($variable,[Activator]::CreateInstance($pageType,[object[]]@($variable)))
+   }
+   $folder=Join-Path ([IO.Path]::GetDirectoryName($OutputFile)) ('reopen-'+[string]$case['id']);[IO.Directory]::CreateDirectory($folder)|Out-Null
+   [IO.File]::WriteAllBytes((Join-Path $folder 'saved.result'),$bytes)
+   $restored=$cl.GetConstructors()[0].Invoke([object[]]@($definition,$folder))
+   $again=$cl.GetMethod('ResultsToXDoc').Invoke($restored,$null);$againBytes=$write.Invoke($null,[object[]]@($again));$againDecoded=$read.Invoke($null,[object[]]@(,$againBytes))
+   $result.reopenedNativeModel=Model $againDecoded
+   $result.reopenedNativeBase64=[Convert]::ToBase64String($againBytes)
+  }
  }catch{$result.nativeError=ErrorText $_}
  if($null -ne $case['browserBase64']){try{$browserBytes=[Convert]::FromBase64String([string]$case['browserBase64']);$doc=$read.Invoke($null,[object[]]@(,$browserBytes));$result.browserModel=Model $doc}catch{$result.browserError=ErrorText $_}}
  $results.Add($result)

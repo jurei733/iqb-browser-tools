@@ -2,12 +2,16 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
+import {gunzipSync} from 'node:zlib';
 import {DOMParser,XMLSerializer} from '@xmldom/xmldom';
 import {prepare} from '../src/preparation.js';
 import * as T from '../src/toolbox.js';
 import {loginRowsShape,loginXMLTree} from './helpers/native-logins.js';
 Object.assign(globalThis,{DOMParser,XMLSerializer});
-const proof=JSON.parse((await readFile(process.env.NATIVE_PREPARATION_REFERENCE||new URL('./fixtures/native-extended-preparation-20261106.json',import.meta.url),'utf8')).replace(/^\ufeff/,''));
+const packed=process.env.NATIVE_PREPARATION_REFERENCE?null:await readFile(new URL('./fixtures/native-combinations-20261109/preparation.json.gz',import.meta.url));
+const raw=packed?gunzipSync(packed):await readFile(process.env.NATIVE_PREPARATION_REFERENCE);
+if(packed){const source=JSON.parse(await readFile(new URL('./fixtures/native-combinations-20261109/preparation-source.json',import.meta.url)));assert.equal(createHash('sha256').update(packed).digest('hex'),source.archiveSHA256);assert.equal(createHash('sha256').update(raw).digest('hex'),source.rawSHA256);}
+const proof=JSON.parse(raw.toString('utf8').replace(/^\ufeff/,''));
 assert.equal(proof.hashes['itc-Toolbox.exe'],'c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1');
 assert.equal(proof.culture,'de-DE');assert.ok([32,64].includes(proof.bits));assert.equal(proof.results.length,proof.matrix?(proof.bookletMatrix?334:270):14);
 if(proof.bookletMatrix){

@@ -68,6 +68,26 @@ export async function loadWorkbook(bytes) {
   }
   return w;
 }
+// Preserve the original SDK's empty shared-string cells in Windows exports.
+// ExcelJS otherwise repairs them on save; that changes the original parser's
+// password/mode error handling after reopening the generated workbook.
+export async function writeWindowsWorkbook(workbook){
+  const entries=unzipSync(new Uint8Array(await workbook.xlsx.writeBuffer()));
+  const parse=source=>new WorkbookDOMParser().parseFromString(source,'application/xml');
+  const book=parse(strFromU8(entries['xl/workbook.xml'])),rels=parse(strFromU8(entries['xl/_rels/workbook.xml.rels']));
+  const targets=new Map(Array.from(rels.getElementsByTagName('Relationship')).map(r=>[r.getAttribute('Id'),r.getAttribute('Target')]));
+  for(const sheet of Array.from(book.getElementsByTagName('sheet'))){
+    const kinds=nativeCellKinds.get(workbook.getWorksheet(sheet.getAttribute('name')));if(!kinds)continue;
+    const target=targets.get(sheet.getAttribute('r:id'));if(!target)continue;
+    const path=target.startsWith('/')?target.slice(1):'xl/'+target;
+    const doc=parse(strFromU8(entries[path]));let changed=false;
+    for(const cell of Array.from(doc.getElementsByTagName('c')))if(kinds.get(cell.getAttribute('r'))==='shared-missing'){
+      cell.setAttribute('t','s');while(cell.firstChild)cell.removeChild(cell.firstChild);changed=true;
+    }
+    if(changed)entries[path]=strToU8(new WorkbookXMLSerializer().serializeToString(doc));
+  }
+  return zipSync(entries);
+}
 export function named(workbook,name,optional=false) {
   const ref=workbook.definedNames.getRanges(name).ranges[0];
   const match=ref?.match(/^(?:'((?:[^']|'')+)'|([^!]+))!\$?([A-Z]+)\$?(\d+)/);

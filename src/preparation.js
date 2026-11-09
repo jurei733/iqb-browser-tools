@@ -41,7 +41,7 @@ export async function prepare(kind,args={},onProgress=()=>{}){
       if(renew){onProgress('Generiere Logins');count=T.generateLogins(w,args.loginOptions);}
       const outputs=args.createXml?T.testtakerXML(w,{...args.xmlOptions,windows:true,filename:file.name.replace(/\.[^.]+$/,'')+'.xml'}):{};
       for(const name of Object.keys(outputs))onProgress(`Habe Datei '${name}' gespeichert`);
-      outputs['Logins-browser.xlsx']=new Uint8Array(await w.xlsx.writeBuffer());
+      outputs['Logins-browser.xlsx']=await T.writeWindowsWorkbook(w);
       return {outputs,summary:`${count} Logins und ${Object.keys(outputs).length-1} XML-Datei(en) erzeugt.`};
     }finally{onProgress('beendet');}
   }

@@ -4,7 +4,7 @@ import {nativeConverterCorpus,nativePipelineCases} from './windows-native-corpus
 import {converterTypes} from './converter-corpus.mjs';
 import {windowsCodingCorpus} from './windows-coding-corpus.mjs';
 import {parseChunk,responseUnit} from '../src/data.js';
-import {encodeResult,decodeResult} from '../src/coding.js';
+import {encodeResult,decodeResult,applyResult} from '../src/coding.js';
 const canonical=value=>JSON.stringify(value,(_key,item)=>item&&typeof item==='object'&&!Array.isArray(item)?Object.fromEntries(Object.keys(item).sort().map(k=>[k,item[k]])):item);
 const bytes=value=>Uint8Array.from(atob(value),c=>c.charCodeAt(0));
 const same=(a,b)=>canonical(a)===canonical(b);
@@ -36,7 +36,13 @@ export async function verifyNativeWindows(bundle,codingInputBytes){
  const codec=codecInputs.map(input=>{const found=nativeCodec.results.find(r=>r.id===input.id);ensure(found,'Missing codec output');let exported,rejected=false;try{exported=encodeResult(input.job,input.coder,input.globalComment,{windows:true});}catch{rejected=true;}
   if(found.nativeError)return {id:input.id,proof:'error-detection-only',passed:rejected};
   const nativeToBrowser=same(decodeResult(bytes(found.nativeBase64)),found.nativeModel),browserToNative=same(found.browserModel,found.nativeModel),currentXML=!rejected&&same(gunzipSync(exported),gunzipSync(bytes(input.browserBase64)));
-  return {id:input.id,proof:'bidirectional-field-values-and-list-order',passed:nativeToBrowser&&browserToNative&&currentXML,...(!(nativeToBrowser&&browserToNative&&currentXML)?{nativeToBrowser,browserToNative,currentXML,native:found.nativeModel,decoded:decodeResult(bytes(found.nativeBase64)),browser:found.browserModel}: {})};
+  let reopened=true;if(input.id.startsWith('state-')){
+   ensure(found.reopenedNativeModel,'Missing original save/reopen capture '+input.id);
+   const job=structuredClone(input.job);job.cases.forEach(c=>{Object.assign(c,{code:'',comment:'',time:''});c.variable.codes=[{id:'0'},{id:'1'}];});
+   const original=decodeResult(bytes(found.nativeBase64));applyResult(job,original);
+   reopened=same(decodeResult(encodeResult(job,original.coder,original.globalComment,{windows:true})),found.reopenedNativeModel);
+  }
+  return {id:input.id,proof:'bidirectional-field-values-and-list-order',passed:nativeToBrowser&&browserToNative&&currentXML&&reopened,reopened,...(!(nativeToBrowser&&browserToNative&&currentXML&&reopened)?{nativeToBrowser,browserToNative,currentXML,native:found.nativeModel,decoded:decodeResult(bytes(found.nativeBase64)),browser:found.browserModel}: {})};
  });
  return {completeEquivalence:false,realProductionDataTested:false,referenceCommit:bundle.commit,referenceRunId:bundle.runId,inputSHA256:inputHash,numericInputSHA256:captures['native-32'].numericInputSHA256||null,summary:{numericDiagnostics:{uniqueInputs:numericChecks.length/2,architectures:[32,64].map(bits=>({bits,passed:numericChecks.filter(c=>c.bits===bits&&c.passed).length,total:numericChecks.filter(c=>c.bits===bits).length,values:numericChecks.filter(c=>c.bits===bits&&c.proof==='binary64-and-G15-G17-R').length,errorOutcomes:numericChecks.filter(c=>c.bits===bits&&c.proof==='error-outcome-only').length}))},uniqueConverterInputs:inputs.length,architectures:[32,64].map(bits=>({bits,passed:checks.filter(c=>c.bits===bits&&c.passed).length,total:inputs.length,values:checks.filter(c=>c.bits===bits&&c.proof==='exact-values-and-list-order').length,valuesPassed:checks.filter(c=>c.bits===bits&&c.proof==='exact-values-and-list-order'&&c.passed).length,errorOutcomes:checks.filter(c=>c.bits===bits&&c.proof==='error-outcome-only').length})),api:{passed:api.filter(c=>c.passed).length,total:api.length,cases:pipelines.length},coding:{passed:codec.filter(c=>c.passed).length,total:codec.length,bidirectional:codec.filter(c=>c.passed&&c.proof==='bidirectional-field-values-and-list-order').length,errorDetection:codec.filter(c=>c.passed&&c.proof==='error-detection-only').length}},checks,api,codec,numericChecks};
 }

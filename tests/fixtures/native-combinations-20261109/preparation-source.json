@@ -1,0 +1,17 @@
+{
+  "capturedOn": "2026-11-09T12:30:14.9091284Z",
+  "runId": 42616986133,
+  "commit": "0491e3831f3ef52cd6dcadbca2588d4cb7bb703f",
+  "method": "Unchanged original dialog business workers; separate manual GUI captures recorded independently.",
+  "originalHashes": {
+    "IQB-Scans.dll": "a4406fb17aa3f37fa97ff479d0bddb410eb295b39012ddc3c4f7247f505c2434",
+    "itc-Toolbox.exe": "c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1",
+    "IQB-Common.dll": "4845bf183b80509f743dc87d6e5b211bd5c9757417a9ff08665278f27fda20a6",
+    "IQB-Kodieren.exe": "7b8fdb074669c5e0ba267c2e924b484a322abb32cb733bae2c659b38191d3407"
+  },
+  "rawSHA256": "cbeeba0f031c97297fdd715e2f83ee2f7ce22e6b8d37d7437746eb058c8ffe16",
+  "archiveSHA256": "22bd857b6287a8a8d12f77ced0e431476e471fb7926ff41f582244ef4d289d1d",
+  "preparationCases": 334,
+  "synthetic": true,
+  "empiricalStudyData": false
+}
