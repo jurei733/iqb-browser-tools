@@ -7,19 +7,23 @@
     "proofs": [
       "windows-gui-login-next-proof.json",
       "windows-gui-fullflags-proof.json",
-      "windows-gui-login-boundaries-proof.json"
+      "windows-gui-login-boundaries-proof.json",
+      "windows-gui-login-matrix-proof.json"
     ],
     "additionalBoundaryWorkbooks": 6,
-    "additionalInvalidLoginTexts": 4
+    "additionalInvalidLoginTexts": 4,
+    "loginGenerationCombinations": 128,
+    "loginReopeningCombinations": 128
   },
   "openFamilies": [
     {
       "id": "login-products",
       "family": "Login-Generierung",
       "dimensions": "Vollständiges 128er-Produkt aus Länge 5/8, Kennwort 0/4, Testleitung, XML-Gruppierung und drei unabhängigen Präfixen. Weitere Int32-Grenzen und Eingabeschreibweisen außerhalb der sechs neuen Grenzfalldateien.",
-      "existingEvidence": "128 Kombinationen plus Wiederöffnen mit Original-Assembly geprüft; direkte GUI-Startwerte und einzelne Generierungen vorhanden, jetzt N0–N5 einschließlich Fehlerkorrektur. Zusätzlich B0–B5: 13/20 Zeichen, vier ungültige Login-Zahlen, ungültige Kennwortzahlen und normalisierte Werte beim Wiederöffnen direkt geprüft.",
-      "stillOpen": "Das vollständige 128er-Produkt weiterhin nur mit Original-Assembly nachgewiesen; zusätzliche endliche GUI-Grenzfälle jetzt direkt gepaart.",
-      "status": "partial-direct-gui"
+      "existingEvidence": "128/128 Kombinationen plus 128/128 Wiederöffnungen direkt über die sichtbaren Windows-Dialoge durchgeführt. Alle Excel-Zellen und XML-Strukturen verglichen; Wiederexporte native byteidentisch, Browser-XML byteidentisch.",
+      "stillOpen": "Das endliche 128er-Produkt ist abgeschlossen. Beliebige weitere Int32-Eingaben und empirische Dateien sind dadurch nicht abgedeckt.",
+      "status": "completed-finite-direct-gui",
+      "proof": "windows-gui-login-matrix-proof.json"
     },
     {
       "id": "booklet-validation",
