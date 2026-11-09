@@ -1,0 +1,48 @@
+{
+  "groups": [
+    {
+      "groupName": "review_group",
+      "groupLabel": "A Group of Reviewers",
+      "bookletsStarted": 1,
+      "numUnitsMin": 1,
+      "numUnitsMax": 1,
+      "numUnitsTotal": 1,
+      "numUnitsAvg": 1,
+      "lastChange": 1794214138
+    },
+    {
+      "groupName": "BROWSER_A",
+      "groupLabel": "Demo A – Umlaute",
+      "bookletsStarted": 1,
+      "numUnitsMin": 2,
+      "numUnitsMax": 2,
+      "numUnitsTotal": 2,
+      "numUnitsAvg": 2,
+      "lastChange": 1792766520
+    },
+    {
+      "groupName": "BROWSER_B",
+      "groupLabel": "Demo B – zweiter Import",
+      "bookletsStarted": 1,
+      "numUnitsMin": 2,
+      "numUnitsMax": 2,
+      "numUnitsTotal": 2,
+      "numUnitsAvg": 2,
+      "lastChange": 1792766521
+    }
+  ],
+  "reports": {
+    "BROWSER_A": {
+      "modern": "",
+      "legacy": ""
+    },
+    "BROWSER_B": {
+      "modern": "",
+      "legacy": ""
+    },
+    "review_group": {
+      "modern": "[{\"groupname\":\"review_group\",\"loginname\":\"test-review\",\"code\":\"\",\"bookletname\":\"BOOKLET.SAMPLE-1\",\"unitname\":\"UNIT.SAMPLE\",\"priority\":2,\"category: GUI-Test\":\"X\",\"reviewtime\":\"2026-11-09 09:45:39\",\"entry\":\"GUI-Referenz 2026-11-09: synthetische Unit-R\\u00fcckmeldung; zweite Zeile\\n001.\",\"page\":1,\"pagelabel\":\"Seite 1\",\"originalUnitId\":\"UNIT.SAMPLE\",\"userAgent\":\"IQB GUI reference test\"},{\"groupname\":\"review_group\",\"loginname\":\"test-review\",\"code\":\"\",\"bookletname\":\"BOOKLET.SAMPLE-1\",\"unitname\":\"\",\"priority\":1,\"category: GUI-Test\":\"X\",\"reviewtime\":\"2026-11-09 09:45:39\",\"entry\":\"GUI-Referenz 2026-11-09: synthetische Testheft-R\\u00fcckmeldung mit \\u00c4\\u00d6\\u00dc und \\\"Zitat\\\".\",\"page\":null,\"pagelabel\":null,\"originalUnitId\":\"\",\"userAgent\":\"IQB GUI reference test\"}]",
+      "legacy": "[{\"groupname\":\"review_group\",\"loginname\":\"test-review\",\"code\":\"\",\"bookletname\":\"BOOKLET.SAMPLE-1\",\"unitname\":\"UNIT.SAMPLE\",\"priority\":2,\"category: GUI-Test\":\"X\",\"reviewtime\":\"2026-11-09 09:45:39\",\"entry\":\"GUI-Referenz 2026-11-09: synthetische Unit-R\\u00fcckmeldung; zweite Zeile\\n001.\",\"page\":1,\"pagelabel\":\"Seite 1\",\"originalUnitId\":\"UNIT.SAMPLE\",\"userAgent\":\"IQB GUI reference test\"},{\"groupname\":\"review_group\",\"loginname\":\"test-review\",\"code\":\"\",\"bookletname\":\"BOOKLET.SAMPLE-1\",\"unitname\":\"\",\"priority\":1,\"category: GUI-Test\":\"X\",\"reviewtime\":\"2026-11-09 09:45:39\",\"entry\":\"GUI-Referenz 2026-11-09: synthetische Testheft-R\\u00fcckmeldung mit \\u00c4\\u00d6\\u00dc und \\\"Zitat\\\".\",\"page\":null,\"pagelabel\":null,\"originalUnitId\":\"\",\"userAgent\":\"IQB GUI reference test\"}]"
+    }
+  }
+}

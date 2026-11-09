@@ -1,0 +1,32 @@
+{
+  "checkedOn": "2026-11-09",
+  "original": "itc-ToolBox 3.3.0.2",
+  "binarySha256": "c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1",
+  "data": "Synthetic local Testcenter 19.0.1; three groups, two reviews (booklet and unit). No empirical study data.",
+  "nativeGUI": "Output direkt -> Reviews Testcenter -> Xlsx; Sample Workspace; all three groups; save file; read back via guest browser.",
+  "nativeFiles": {
+    "native-reviews-standard.xlsx": "68095c8d8f7371af2920f78076425b8b7c55bac303c63b639c8140c268f82e36",
+    "native-reviews-missing-categories.xlsx": "a22197220bc1646bd1246e9db1f5ec33a2dfe5a3587df62457cbd7d14c69163d"
+  },
+  "standard": {
+    "sheets": [
+      "Booklet_BOOKLET.SAMPLE-1",
+      "UNIT.SAMPLE"
+    ],
+    "reviewRows": 2,
+    "allCellValuesAndTypesEqual": true
+  },
+  "missingCategories": "Original skips the whole group if any fixed category key is absent. Empty successful HTTP bodies are zero reviews. Original writes zero worksheets. Windows mode matches; extended mode preserves the rows.",
+  "fixed": [
+    "Empty HTTP 200 response parsing",
+    "Skip incompatible groups only in selected Windows profile",
+    "Zero worksheets for original empty export",
+    "Original string cell types, blank cells and column widths"
+  ],
+  "browserTest": "tests/e2e/gui-reviews.spec.js",
+  "nodeTest": "tests/gui-reviews.test.js",
+  "limits": [
+    "XLSX container bytes and styles are not asserted identical",
+    "No empirical study data or universal file equivalence claim"
+  ]
+}

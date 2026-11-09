@@ -21,7 +21,7 @@ async function run(op,args,progress) {
     case 'dto':people=(args.nativeGUI&&args.windows?windowsTestcenterGUI:peopleFromDTO)(args.responses,args.logs,{windows:args.windows==='64'?'64':args.windows===true});return {people:people.length};
     case 'set-data':people=normalizePeople(args.people);return {people:people.length};
     case 'export-data':return exportData(args.format,people,args.options,args.sizes);
-    case 'reviews':return reviewsWorkbook(args.reviews);
+    case 'reviews':return reviewsWorkbook(args.reviews,args.options);
     case 'open-db':case 'new-db':{SQL??=await initSqlJs({locateFile:()=>wasmURL});const next=new OutputDatabase(SQL,op==='open-db'?args.bytes:null,args.creator);db?.close();db=next;return db.summary();}
     case 'db-summary':return requireDB().summary();
     case 'db-page':return databasePage(requireDB().people(args.group||null),args);
