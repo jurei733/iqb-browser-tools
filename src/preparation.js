@@ -33,12 +33,12 @@ export async function prepare(kind,args={},onProgress=()=>{}){
     onProgress('Öffne Datei');const w=await T.loadWorkbook(file.bytes);onProgress(`Lese Datei ${file.name}`);onProgress('h:Lese Gruppen');
     const groups=T.named(w,'groupsCol.Name1');let groupCount=0;for(let r=groups.row+1;r<=groups.sheet.rowCount&&groups.sheet.getCell(`${groups.col}${r}`).text;r++)groupCount++;
     let count=T.loginRows(w).length;onProgress(`${groupCount} Gruppen gefunden`);onProgress(`${count} Logins gefunden`);onProgress('beendet');
-    if(count&&!args.renew&&!args.createXml)throw new Error('Bitte Logins neu erzeugen oder Login-XML auswählen.');
+    if(count&&!args.renew&&!args.createXml)return {outputs:{},summary:'beendet',noOperation:true};
     const renew=args.renew||!count;if(renew&&(args.loginOptions?.length??5)<5)throw new Error('Die Länge des Benutzernamens muss mindestens 5 sein.');
     onProgress('Öffne Datei');onProgress(`Lese Datei ${file.name}`);onProgress('h:Lese Gruppen');
     try{
       T.prepareLoginGroups(w,args.loginOptions?.suffix);
-      if(renew){onProgress('Generiere Logins');count=T.generateLogins(w,args.loginOptions);}
+      if(renew){onProgress('Generiere Logins');const options={...args.loginOptions};if(Number.isInteger(options.passwordLength)&&options.passwordLength<0)options.passwordLength=0;count=T.generateLogins(w,options);}
       const outputs=args.createXml?T.testtakerXML(w,{...args.xmlOptions,windows:true,filename:file.name.replace(/\.[^.]+$/,'')+'.xml'}):{};
       for(const name of Object.keys(outputs))onProgress(`Habe Datei '${name}' gespeichert`);
       outputs['Logins-browser.xlsx']=await T.writeWindowsWorkbook(w);

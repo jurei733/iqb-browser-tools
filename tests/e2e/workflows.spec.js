@@ -90,8 +90,9 @@ test('coding: upload a job and move, rotate and reset its template',async({page}
   await expect(overlay).toHaveCSS('transform','matrix(1, 0, 0, 1, 0, 0)');
 });
 
-test('Toolbox: retain login inputs and downloads, then create QR Word handouts',async({page},testInfo)=>{
+test('Toolbox: extended mode retains login drafts and downloads, then creates QR Word handouts',async({page},testInfo)=>{
   await page.goto('/');await module(page,'toolbox');await tool(page,'logins');
+  await page.locator('#login-format').selectOption('extended');
   await page.locator('#tool-file').setInputFiles(example('Logins-Beispiel.xlsx'));
   await page.locator('#renew').check();await page.locator('#monitor').check();await page.locator('#create-xml').check();await page.locator('#separate').uncheck();
   await page.locator('#booklet-id').fill('BOOKLET.CI');await page.locator('#prefix-testee').check();
@@ -309,6 +310,6 @@ test('parity: original result boundary is selectable and the completed job flash
  for(const n of [1,2,4]){await page.locator('#case-number').fill(String(n));await page.locator('#case-number').dispatchEvent('change');await page.locator('[data-code="0"]').click();}await expect(page.locator('.progress')).toContainText('4 von 4 kodiert');const animated=page.waitForFunction(()=>document.querySelector('#scans').getAnimations().some(a=>a.effect.getTiming().duration===1000),undefined,{polling:'raf'});await page.locator('#next').click();await animated;await expect(page.locator('#case-number')).toHaveValue('4');
 });
 
-test('parity: selected Toolbox input files and options survive closing and reopening the page',async({page})=>{
- await page.goto('/');await module(page,'toolbox');await tool(page,'logins');await page.locator('#tool-file').setInputFiles(example('Logins-Beispiel.xlsx'));await page.locator('#renew').check();await page.locator('#password-length').fill('4');await page.locator('#create-xml').check();await page.locator('#booklet-id').fill('PERSISTED');await page.locator('#booklet-id').blur();await expect.poll(()=>page.evaluate(()=>new Promise(resolve=>{const r=indexedDB.open('iqb-browser');r.onsuccess=()=>{const q=r.result.transaction('progress').objectStore('progress').get('form:logins');q.onsuccess=()=>resolve(q.result?.find(v=>v.id==='booklet-id')?.value);};}))).toBe('PERSISTED');await page.reload();await module(page,'toolbox');await tool(page,'logins');await expect(page.locator('#booklet-id')).toHaveValue('PERSISTED');await expect(page.locator('#password-length')).toHaveValue('4');await expect.poll(()=>page.locator('#tool-file').evaluate(el=>el.files[0]?.name)).toBe('Logins-Beispiel.xlsx');await expect(page.locator('#renew')).toBeChecked();
+test('extended mode: selected Toolbox input files and drafts survive closing and reopening the page',async({page})=>{
+ await page.goto('/');await module(page,'toolbox');await tool(page,'logins');await page.locator('#login-format').selectOption('extended');await page.locator('#tool-file').setInputFiles(example('Logins-Beispiel.xlsx'));await page.locator('#renew').check();await page.locator('#password-length').fill('4');await page.locator('#create-xml').check();await page.locator('#booklet-id').fill('PERSISTED');await page.locator('#booklet-id').blur();await expect.poll(()=>page.evaluate(()=>new Promise(resolve=>{const r=indexedDB.open('iqb-browser');r.onsuccess=()=>{const q=r.result.transaction('progress').objectStore('progress').get('form:logins');q.onsuccess=()=>resolve(q.result?.find(v=>v.id==='booklet-id')?.value);};}))).toBe('PERSISTED');await page.reload();await module(page,'toolbox');await tool(page,'logins');await expect(page.locator('#booklet-id')).toHaveValue('PERSISTED');await expect(page.locator('#password-length')).toHaveValue('4');await expect.poll(()=>page.locator('#tool-file').evaluate(el=>el.files[0]?.name)).toBe('Logins-Beispiel.xlsx');await expect(page.locator('#renew')).toBeChecked();
 });

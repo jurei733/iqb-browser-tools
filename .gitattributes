@@ -22,3 +22,6 @@ tests/fixtures/windows-native/*.json linguist-generated=true
 
 # Preserve native HTML reference line endings.
 tests/fixtures/gui-final-20261109/native-content-index.html -text
+
+# Preserve native login XML bytes (UTF-8 BOM and CRLF).
+tests/fixtures/gui-login-next-20261109/**/*.xml -text

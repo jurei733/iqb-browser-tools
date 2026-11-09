@@ -180,8 +180,22 @@ export function generateLogins(workbook,{length=5,passwordLength=3,monitor=true,
   }
   return total;
 }
+function windowsLoginDocument(body){
+  const root=new WorkbookDOMParser().parseFromString(body,'text/xml').documentElement;
+  const escaped=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const content=s=>escaped(s).replace(/\r\n|\r|\n/g,'\r\n');
+  const attribute=s=>escaped(s).replace(/"/g,'&quot;').replace(/\r/g,'&#xD;').replace(/\n/g,'&#xA;').replace(/\t/g,'&#x9;');
+  const element=(el,depth)=>{
+    const open='<'+el.nodeName+Array.from(el.attributes,a=>' '+a.name+'="'+attribute(a.value)+'"').join('')+'>',close='</'+el.nodeName+'>';
+    const nodes=Array.from(el.childNodes),children=nodes.filter(n=>n.nodeType===1);
+    if(!children.length)return open+content(el.textContent||'')+close;
+    // The generated Testtaker tree has element-only containers and text leaves.
+    return open+'\r\n'+children.map(child=>'  '.repeat(depth+1)+element(child,depth+1)).join('\r\n')+'\r\n'+'  '.repeat(depth)+close;
+  };
+  return '\uFEFF<?xml version="1.0" encoding="utf-8"?>\r\n'+element(root,0);
+}
 export function testtakerXML(workbook,{booklet='Booklet1',separate=false,windows=false,filename:outputName='Testtaker.xml'}={}) {
-  if(!booklet.trim())throw new Error('Bitte eine Testheft-ID angeben.');
+  if(!windows&&!booklet.trim())throw new Error('Bitte eine Testheft-ID angeben.');
   const groups=new Map(),seen=new Set();
   const passwordRef=named(workbook,'loginsCol.Password');let rowIndex=passwordRef.row;
   for(const original of loginRows(workbook)) {
@@ -198,7 +212,7 @@ export function testtakerXML(workbook,{booklet='Booklet1',separate=false,windows
   let custom='';const key=named(workbook,'customText.Key',true),val=named(workbook,'customText.Value',true);
   if(key&&val)for(const r of rows(key))custom+=node('CustomText',{key:cell(key,r)},text(cell(val,r)));
   const groupXML=([id,g])=>node('Group',{id,label:g.label},g.rows.map(row=>node('Login',{mode:row.mode,name:row.name,pw:row.password||null},row.mode==='monitor-group'?'':node('Booklet',{},text(booklet)))).join(''));
-  const document=body=>strToU8(documentXML(node('Testtakers',{},node('Metadata')+(custom?node('CustomTexts',{},custom):'')+body)));
+  const document=body=>{const root=node('Testtakers',{},node('Metadata')+(custom?node('CustomTexts',{},custom):'')+body);return strToU8(windows?windowsLoginDocument(root):documentXML(root));};
   if(!groups.size)throw new Error('Keine Logins vorhanden.');
   return separate?Object.fromEntries([...groups].map(g=>[`${filename(g[0])}.xml`,document(groupXML(g))])):{[filename(outputName)]:document([...groups].map(groupXML).join(''))};
 }

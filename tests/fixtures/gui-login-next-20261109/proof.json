@@ -1,0 +1,193 @@
+{
+  "date": "2026-11-09",
+  "synthetic": true,
+  "original": "itc-ToolBox 3.3.0.2",
+  "originalSHA256": "c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1",
+  "method": "Visible original Windows GUI via UTM/CUA. Six disposable copies of L6.xlsx. Actual Continue confirmed with calibrated tab order; XML and Excel files pulled through guest agent. Initial attempts closed via Close and are excluded from the retained action proof. Retained screenshots cropped to the native dialog and parent window.",
+  "input": "existing.xlsx",
+  "inputSHA256": "13ee2687ed923f28048112649fb1df69868228c5338f3ad8c6a0e48d35a09b90",
+  "noOperation": {
+    "id": "N0",
+    "renew": false,
+    "xml": false,
+    "observed": "Continue closes without error or file modification",
+    "afterSHA256": "13ee2687ed923f28048112649fb1df69868228c5338f3ad8c6a0e48d35a09b90"
+  },
+  "exports": [
+    {
+      "id": "N1",
+      "inputName": "N1.xlsx",
+      "separate": true,
+      "booklet": "Booklet1",
+      "renew": false,
+      "files": [
+        {
+          "file": "N1/DEMO.xml",
+          "sha256": "a7b5381479d5dd368375dcad91b9fa5ad5a3e24ffca63d33adab75bd8a758a70"
+        },
+        {
+          "file": "N1/N1.xlsx",
+          "sha256": "13ee2687ed923f28048112649fb1df69868228c5338f3ad8c6a0e48d35a09b90"
+        },
+        {
+          "file": "N1/TESTS2_v4f2.xml",
+          "sha256": "e78d9e92ffce978a277fbdd453928244fe5025ffbfd491c90ee3dc2efd9a18f9"
+        },
+        {
+          "file": "N1/TESTS_v4f2.xml",
+          "sha256": "94a65fd075d593cac37923d60e2a6c8921cad95d3647abb9c698e8496fc8c50e"
+        }
+      ]
+    },
+    {
+      "id": "N2",
+      "inputName": "N2.xlsx",
+      "separate": false,
+      "booklet": "Booklet1",
+      "renew": false,
+      "files": [
+        {
+          "file": "N2/N2.xlsx",
+          "sha256": "13ee2687ed923f28048112649fb1df69868228c5338f3ad8c6a0e48d35a09b90"
+        },
+        {
+          "file": "N2/N2.xml",
+          "sha256": "bf03076ca8afcb3ea956c1048b35fe3d358fe883a3c0351e9348802c32c4c38a"
+        }
+      ]
+    },
+    {
+      "id": "N3",
+      "inputName": "N3.xlsx",
+      "separate": false,
+      "booklet": "",
+      "renew": false,
+      "files": [
+        {
+          "file": "N3/N3.xlsx",
+          "sha256": "13ee2687ed923f28048112649fb1df69868228c5338f3ad8c6a0e48d35a09b90"
+        },
+        {
+          "file": "N3/N3.xml",
+          "sha256": "4a1662f75af3d361478821ebbbe3b8d4f8bec1b25a57094f00b3d2bf4de009f9"
+        }
+      ]
+    },
+    {
+      "id": "N4",
+      "inputName": "N4.xlsx",
+      "separate": false,
+      "booklet": "",
+      "renew": true,
+      "files": [
+        {
+          "file": "N4/N4.xlsx",
+          "sha256": "6951e40b3224baee0b0e00ab0b097c854448ef1bb19605ab3cb421d9c3a91418"
+        },
+        {
+          "file": "N4/N4.xml",
+          "sha256": "5505d96f9236eeab702fa790ba564d9d23475915f29341431acb28bc97ed124b"
+        }
+      ]
+    }
+  ],
+  "state": {
+    "id": "N5",
+    "submitted": {
+      "length": 5,
+      "passwordLength": -1,
+      "monitor": true,
+      "prefixTestee": true,
+      "prefixReserve": true,
+      "prefixReview": true,
+      "booklet": "",
+      "separate": false
+    },
+    "draft": {
+      "booklet": "draft",
+      "separate": true,
+      "createXml": true
+    },
+    "reopenedOperations": {
+      "renew": false,
+      "createXml": false
+    },
+    "observed": "Submitted parameters retained. Unsubmitted draft discarded. Operation checkboxes reset on each dialog."
+  },
+  "screenshots": [
+    {
+      "file": "N0-before-continue.jpg",
+      "sha256": "fa1500e1d7833276f84db027c4d57cb495705e0d17d167d6ed79ff1744c61cd6"
+    },
+    {
+      "file": "N0-after-continue.jpg",
+      "sha256": "8dfc386a0acc4fb4e9eb170d04828090e502e018dd0703bb2b0afdf0d99da8a7"
+    },
+    {
+      "file": "N1-completed.jpg",
+      "sha256": "c17922a43be0590a0ade07c13de69d6b152c4d429102de5817cadbc8e0eb6104"
+    },
+    {
+      "file": "N2-options.jpg",
+      "sha256": "5e393172c29e9ace97c0759d9e253f9dbdc4660d4cae346dddb522f79ec6422c"
+    },
+    {
+      "file": "N2-completed.jpg",
+      "sha256": "0271ca7ca0ab54397fa5e88acd329d557ea3b37bd88392b590dc3ca5c842de0d"
+    },
+    {
+      "file": "N3-options.jpg",
+      "sha256": "299dddfa2a75fa4eb2ff49e05069b73e47ce11cbdf56e3d8ddd645a8c0ed1277"
+    },
+    {
+      "file": "N3-completed.jpg",
+      "sha256": "a9919cf2fa214de9fc3e9ebb5f221aed2eb6cd49cec7dc4bb97a20d835a7ce09"
+    },
+    {
+      "file": "N4-invalid-options.jpg",
+      "sha256": "268baba9630ab8f85e0844609c1f1da0460fa3f6bc245db8cc4fc11f56510ebd"
+    },
+    {
+      "file": "N4-error.jpg",
+      "sha256": "c4af36d41c57a80a0f35bc41233d80a00350ee6bc134692cac3f47bf433c6e74"
+    },
+    {
+      "file": "N4-corrected-options.jpg",
+      "sha256": "886a4b98470c8c2a4b504abe9c31f31e6dc1d60d767696c0b192c465c6a65549"
+    },
+    {
+      "file": "N4-completed.jpg",
+      "sha256": "5fa44eb5e9e59eec72fdd6ba819fac2956f473953b9ef6edf99e81788c437f2d"
+    },
+    {
+      "file": "N5-confirmed-reopened.jpg",
+      "sha256": "27a064a8a60631281891529c13638712f14d331c08893de2b63dd2a07973291a"
+    },
+    {
+      "file": "N5-cancelled-draft.jpg",
+      "sha256": "6806eb2e5fea31b68ce65febcb89eb556d2ddf65df5c483117e98645d0a4f193"
+    },
+    {
+      "file": "N5-after-cancel.jpg",
+      "sha256": "939dafebfd19032ef6e34dd6b23aa0e52d40a96756eb0d2c9c3feac44fb1f94e"
+    }
+  ],
+  "limits": [
+    "One synthetic existing-login workbook with 3 groups and 9 existing rows.",
+    "Generated random code values are compared by validated length/alphabet, prefix, uniqueness, group, mode and ordering, not equal random draws.",
+    "Bytewise XML equality is asserted for deterministic N1/N2/N3; N4 XML uses the explicitly documented random-code shape comparison.",
+    "Other native GUI option products remain in public/windows-gui-open-proof.json."
+  ],
+  "generation": {
+    "id": "N4",
+    "invalidLoginLength": 4,
+    "error": "Die Länge des Benutzernamens muss mindestens 5 sein.",
+    "unchangedAfterInvalid": true,
+    "recoveredLoginLength": 5,
+    "passwordLength": -1,
+    "passwordBehavior": "empty",
+    "allPrefixes": true,
+    "monitor": true,
+    "rows": 12
+  }
+}

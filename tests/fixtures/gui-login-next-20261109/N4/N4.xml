@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Testtakers>
+  <Metadata></Metadata>
+  <Group id="DEMO" label="Beispielschule - Klasse 7">
+    <Login mode="" name="T01_r6t7s">
+      <Booklet></Booklet>
+    </Login>
+    <Login mode="" name="T02_h9d3a">
+      <Booklet></Booklet>
+    </Login>
+    <Login mode="" name="RS_h5y3q">
+      <Booklet></Booklet>
+    </Login>
+    <Login mode="run-review" name="RV_h2e5y">
+      <Booklet></Booklet>
+    </Login>
+    <Login mode="monitor-group" name="TL_r9c5e"></Login>
+  </Group>
+  <Group id="TESTS_v4f2" label="TEST Schule - Klasse 8">
+    <Login mode="run-hot-return" name="T01_z2b9r">
+      <Booklet></Booklet>
+    </Login>
+    <Login mode="run-hot-return" name="RS_r7g4z">
+      <Booklet></Booklet>
+    </Login>
+    <Login mode="run-review" name="RV_u3e4q">
+      <Booklet></Booklet>
+    </Login>
+    <Login mode="monitor-group" name="TL_t2z6q"></Login>
+  </Group>
+  <Group id="TESTS2_v4f2" label="TEST Schule - Klasse 9">
+    <Login mode="run-hot-return" name="T01_p6y5d">
+      <Booklet></Booklet>
+    </Login>
+    <Login mode="run-review" name="RV_t4y2z">
+      <Booklet></Booklet>
+    </Login>
+    <Login mode="monitor-group" name="TL_d7e3g"></Login>
+  </Group>
+</Testtakers>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Testtakers>
+  <Metadata></Metadata>
+  <Group id="TESTS2_v4f2" label="TEST Schule - Klasse 9">
+    <Login mode="run-hot-return" name="T01_d5g4r">
+      <Booklet>Booklet1</Booklet>
+    </Login>
+    <Login mode="run-review" name="r5u9v">
+      <Booklet>Booklet1</Booklet>
+    </Login>
+  </Group>
+</Testtakers>
