@@ -54,6 +54,24 @@ class StudyReference {
   Save("native-int64-probe.json",new JObject(new JProperty("api",api),new JProperty("csv",csv),new JProperty("browserSqlite",stored)));
   report["int64Probes"]=input.Count;
  }
+ static void ExcelOptionMatrix(){
+  var people=(IList)JsonConvert.DeserializeObject(File.ReadAllText(Path.Combine(root,"excel-matrix-people.json")),typeof(List<>).MakeGenericType(T("Person")));
+  Static("globalOutputStore","clear");var store=T("globalOutputStore").GetField("personDataFull").GetValue(null);
+  foreach(var person in people){var id=String.Concat(new[]{"group","login","code"}.Select(k=>(string)person.GetType().GetField(k).GetValue(person)).ToArray());Call(store,"Add",id,person);}
+  var database=Activator.CreateInstance(T("SQLiteConnector"),new object[]{Path.Combine(root,"native-matrix.sqlite"),true});var captures=new JArray();
+  try{
+   foreach(var person in people)Call(database,"addPerson",person);Call(database,"WriteDbInfoData",false);
+   foreach(var source in new[]{"memory","sqlite"})foreach(var mode in new[]{"None","Rows","Columns"})for(int mask=1;mask<16;mask++){
+    var id=source+"-"+mode.ToLowerInvariant()+"-"+mask;var name="native-matrix-"+id+".xlsx";var config=Activator.CreateInstance(T("WriteXlsxConfig"));
+    config.GetType().GetField("targetXlsxFilename").SetValue(config,Path.Combine(root,name));config.GetType().GetField("subformMode").SetValue(config,Enum.Parse(T("SubformMode"),mode));
+    if(source=="sqlite")config.GetType().GetField("sourceDatabase").SetValue(config,database);
+    var fields=new[]{"writeResponsesValues","writeResponsesStatus","writeResponsesCodes","writeResponsesScores"};for(int i=0;i<fields.Length;i++)config.GetType().GetField(fields[i]).SetValue(config,(mask&(1<<i))!=0);
+    var worker=new BackgroundWorker();worker.WorkerReportsProgress=true;Static("WriteOutputToXlsx","Write",File.ReadAllBytes(Path.Combine(root,"blank-native.xlsx")),worker,new DoWorkEventArgs(null),config);
+    captures.Add(new JObject(new JProperty("id",id),new JProperty("source",source),new JProperty("subformMode",mode.ToLowerInvariant()),new JProperty("mask",mask),new JProperty("file",name),new JProperty("sha256",Hash(Path.Combine(root,name)))));
+   }
+  }finally{Call(database,"CloseConnection");}
+  Save("native-excel-matrix.json",new JObject(new JProperty("inputSHA256",Hash(Path.Combine(root,"excel-matrix-people.json"))),new JProperty("cases",captures)));
+ }
  static List<object> ReadDB(string filename){var db=Activator.CreateInstance(T("SQLiteConnector"),new object[]{Path.Combine(root,filename),false});try{var ids=Call(db,"getPeopleList");var result=new List<object>();foreach(var id in Items(ids.GetType().GetProperty("Values").GetValue(ids,null)))result.Add(Call(db,"getPersonResponses",id));return result;}finally{Call(db,"CloseConnection");}}
  [STAThread] static int Main(string[] args){
   originals=args[0];root=args[1];toolPath=Path.Combine(originals,"itc-ToolBox");
@@ -73,6 +91,7 @@ class StudyReference {
   Step("toolbox-read-browser-sqlite",()=>{Save("native-browser-db-people.json",ReadDB("browser.sqlite"));});
   Step("toolbox-write-sqlite",()=>{var path=Path.Combine(root,"native.sqlite");if(File.Exists(path))throw new Exception("Refusing to replace an existing native database");var db=Activator.CreateInstance(T("SQLiteConnector"),new object[]{path,true});try{foreach(var p in apiPeople)Call(db,"addPerson",p);Call(db,"WriteDbInfoData",false);}finally{Call(db,"CloseConnection");}Save("native-own-db-people.json",ReadDB("native.sqlite"));});
   Step("toolbox-excel-export",()=>{Static("globalOutputStore","clear");var data=T("globalOutputStore").GetField("personDataFull").GetValue(null);foreach(var p in apiPeople){var id=String.Concat(new[]{"group","login","code"}.Select(k=>(string)p.GetType().GetField(k).GetValue(p)).ToArray());Call(data,"Add",id,p);}var config=Activator.CreateInstance(T("WriteXlsxConfig"));config.GetType().GetField("targetXlsxFilename").SetValue(config,Path.Combine(root,"native-wide.xlsx"));foreach(var key in new[]{"writeResponsesValues","writeResponsesStatus","writeResponsesCodes","writeResponsesScores"})config.GetType().GetField(key).SetValue(config,true);config.GetType().GetField("subformMode").SetValue(config,Enum.Parse(T("SubformMode"),"Rows"));var worker=new BackgroundWorker();worker.WorkerReportsProgress=true;Static("WriteOutputToXlsx","Write",File.ReadAllBytes(Path.Combine(root,"blank-native.xlsx")),worker,new DoWorkEventArgs(null),config);});
+  if(root.Replace('\\','/').EndsWith("/pilot84/x64",StringComparison.OrdinalIgnoreCase))Step("toolbox-excel-option-matrix",ExcelOptionMatrix);
   Step("coding-original-archive-codec",()=>{var path=Path.Combine(originals,"IQB-Kodieren","IQB-Common.dll");if(Hash(path)!="4845bf183b80509f743dc87d6e5b211bd5c9757417a9ff08665278f27fda20a6")throw new Exception("Changed CodingResults library");var common=Assembly.LoadFrom(path);var type=common.GetType("HUBerlin.IQB.Common.ZipXDocProvider");var doc=type.GetMethod("ZipXDocFromFile").Invoke(null,new object[]{Path.Combine(root,"browser.result")});if(doc==null)throw new Exception("Original archive reader rejected browser result");type.GetMethod("ZipXDocToFile").Invoke(null,new object[]{Path.Combine(root,"native-codec.result"),doc});});
   report["finished"]=DateTime.UtcNow.ToString("o");File.WriteAllText(Path.Combine(root,"native-report.json"),report.ToString());
  }

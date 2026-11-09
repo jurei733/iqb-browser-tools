@@ -53,7 +53,10 @@ async function prepare(root){
    const probes=int64LogCorpus(),probePeople=peopleFromDTO([],probes,{windows}),probeDB=new OutputDatabase(SQL);let probeBytes,probeTables;
    try{probeDB.import(probePeople,{windows});probeBytes=probeDB.exportWindows();probeTables=tableModels(probeDB);}finally{probeDB.close();}
    const int64={count:probes.length,timestamps:probes.map(r=>String(r.timestamp)),fullGraphSHA256:modelHash(probePeople),sqlTables:probeTables};
-   const files={'existing-responses.json':raw['existing-responses.json'],'responses.csv':raw['responses.csv'],'logs.csv':raw['logs.csv'],'logs-api.json':raw['logs-api.json']||stringifyJSON(logs),'blank-native.xlsx':template,'browser.sqlite':sqlite,'browser-wide.xlsx':xlsx,'browser.result':result,'int64-input.json':stringifyJSON(probes),'browser-int64.sqlite':probeBytes};
+   const matrixPeople=structuredClone(people.slice(0,3));
+   for(const person of matrixPeople){const unit=person.booklets[0].units.find(u=>u.subforms.some(sf=>sf.responses.length));assert(unit,'Matrix needs a response-bearing unit');const base=structuredClone(unit.subforms.find(sf=>sf.responses.length));for(const id of ['A','B'])unit.subforms.push({...structuredClone(base),id,responses:base.responses.map(r=>({...r,value:'matrix-'+id,status:'VALUE_CHANGED'}))});}
+   assert.deepEqual([...new Set(responseRecords(matrixPeople).map(r=>r.responseSubform))].sort(),['','A','B']);
+   const files={'excel-matrix-people.json':stringifyJSON(matrixPeople),'existing-responses.json':raw['existing-responses.json'],'responses.csv':raw['responses.csv'],'logs.csv':raw['logs.csv'],'logs-api.json':raw['logs-api.json']||stringifyJSON(logs),'blank-native.xlsx':template,'browser.sqlite':sqlite,'browser-wide.xlsx':xlsx,'browser.result':result,'int64-input.json':stringifyJSON(probes),'browser-int64.sqlite':probeBytes};
    for(const [name,bytes]of Object.entries(files))await writeFile(join(dir,name),bytes);
    await writeFile(join(dir,'expected.json'),stringifyJSON({study:study.id,arch,counts:meta.counts,int64,fullGraphSHA256:modelHash(people),csvGraphSHA256:modelHash(csvPeople),csvSkippedLogRows,sqlTables,excelSheets,codingModelSHA256:modelHash(decoded),inputSHA256:Object.fromEntries(Object.entries(files).filter(([n])=>n!=='browser-wide.xlsx').map(([n,b])=>[n,sha256(b)]))},null,2)+'\n');
   }
@@ -89,6 +92,18 @@ async function compare(root){
   const db=new OutputDatabase(SQL,await readFile(join(dir,'native.sqlite')));let actualTables;
   try{check(study.id,arch,'original database integrity',db.check().ok,true);check(study.id,arch,'browser reads full original database',modelHash(db.people()),expected.fullGraphSHA256);actualTables=tableModels(db);for(const [i,t]of actualTables.entries())check(study.id,arch,'SQLite all fields '+t.name,t,expected.sqlTables[i]);}finally{db.close();}
   const sheets=await sheetModels(await readFile(join(dir,'native-wide.xlsx')));check(study.id,arch,'Excel all sheets and cells',sheets,expected.excelSheets);
+  if(study.id==='pilot84'&&arch==='x64'){
+   check(study.id,arch,'native Excel matrix completed',report['toolbox-excel-option-matrix'],'passed');
+   const matrix=await json(join(dir,'native-excel-matrix.json')),matrixBytes=await readFile(join(dir,'excel-matrix-people.json')),matrixPeople=parseJSON(matrixBytes.toString());
+   check(study.id,arch,'Excel matrix input hash',matrix.inputSHA256,sha256(matrixBytes));
+   const ids=[];for(const source of ['memory','sqlite'])for(const mode of ['none','rows','columns'])for(let mask=1;mask<16;mask++)ids.push(`${source}-${mode}-${mask}`);
+   check(study.id,arch,'all 90 Excel source/options combinations present',matrix.cases.map(c=>c.id),ids);
+   for(const c of matrix.cases){
+    const raw=await readFile(join(dir,c.file));check(study.id,arch,'Excel file integrity '+c.id,sha256(raw),c.sha256);
+    const opts={subformMode:c.subformMode,...Object.fromEntries(['values','status','codes','scores'].map((field,i)=>[field,!!(c.mask&(1<<i))]))};
+    check(study.id,arch,'Excel option cells '+c.id,await sheetModels(raw),await sheetModels(await wideWorkbook(matrixPeople,opts)));
+   }
+  }
   const codec=decodeResult(await readFile(join(dir,'native-codec.result')));check(study.id,arch,'unscored comment archive',modelHash(codec),expected.codingModelSHA256);
   captures.push({study:study.id,arch,counts:expected.counts,report,fullGraphSHA256:modelHash(graph),csvGraphSHA256:modelHash(csvGraph),sqlTables:actualTables,excelSheets:sheets,codingModelSHA256:modelHash(codec)});
   }catch(error){checks.push({study:study.id,arch,name:'native capture files readable',passed:false,error:error.message});}
