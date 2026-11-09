@@ -2,20 +2,23 @@
   "date": "2026-11-09",
   "scope": "Zusätzliche direkte GUI-Produkte und Zustandsfolgen. Jede Funktion kann einzelne direkte Paare haben, ohne dass ihr vollständiges Optionsprodukt nachgewiesen ist. Diese zehn Familien sind eine konkrete priorisierte Prüfliste, keine erschöpfende Aufzählung jeder möglichen Eingabe.",
   "completedThisBatch": {
-    "loginScenarios": 6,
+    "loginScenarios": 12,
     "codingInitialFlagCombinations": 32,
     "proofs": [
       "windows-gui-login-next-proof.json",
-      "windows-gui-fullflags-proof.json"
-    ]
+      "windows-gui-fullflags-proof.json",
+      "windows-gui-login-boundaries-proof.json"
+    ],
+    "additionalBoundaryWorkbooks": 6,
+    "additionalInvalidLoginTexts": 4
   },
   "openFamilies": [
     {
       "id": "login-products",
       "family": "Login-Generierung",
-      "dimensions": "Vollständiges 128er-Produkt aus Länge 5/8, Kennwort 0/4, Testleitung, XML-Gruppierung und drei unabhängigen Präfixen. Zusätzlich nichtnumerische Eingaben und Längen oberhalb 12.",
-      "existingEvidence": "128 Kombinationen plus Wiederöffnen mit Original-Assembly geprüft; direkte GUI-Startwerte und einzelne Generierungen vorhanden, jetzt N0–N5 einschließlich Fehlerkorrektur.",
-      "stillOpen": "Weitere direkte Generierungen und Grenzfälle; nicht erneut alle 128 als GUI-Paare nachgewiesen.",
+      "dimensions": "Vollständiges 128er-Produkt aus Länge 5/8, Kennwort 0/4, Testleitung, XML-Gruppierung und drei unabhängigen Präfixen. Weitere Int32-Grenzen und Eingabeschreibweisen außerhalb der sechs neuen Grenzfalldateien.",
+      "existingEvidence": "128 Kombinationen plus Wiederöffnen mit Original-Assembly geprüft; direkte GUI-Startwerte und einzelne Generierungen vorhanden, jetzt N0–N5 einschließlich Fehlerkorrektur. Zusätzlich B0–B5: 13/20 Zeichen, vier ungültige Login-Zahlen, ungültige Kennwortzahlen und normalisierte Werte beim Wiederöffnen direkt geprüft.",
+      "stillOpen": "Das vollständige 128er-Produkt weiterhin nur mit Original-Assembly nachgewiesen; zusätzliche endliche GUI-Grenzfälle jetzt direkt gepaart.",
       "status": "partial-direct-gui"
     },
     {

@@ -345,3 +345,5 @@ Reproduzierbare Einrichtung und Prüflauf: [demo/testcenter/README.md](demo/test
 - Lizenz: `LICENSE`. Diese Browserfassung verwendet keine KI-API und benötigt keinen API-Schlüssel.
 
 Direkter GUI-Nachtrag vom 6. November: [Prüfbericht](public/windows-gui-remaining.html) und [Dateihashes](tests/results/windows-gui-remaining-20261106.json). 13 der zuvor 34 offenen Punkte wurden zusätzlich endlich gepaart geprüft; 21 bleiben offen. Der begonnene native SQLite-Import ist wegen deaktivierter lokaler Browsersteuerung noch nicht abschließend beobachtet. 157 Modultests und 75 lokale Browsertests bestehen. Empirische Daten fehlen weiterhin.
+
+Direkte Login-Grenzfälle B0–B5 (09.11.2026): 13/20-stellige Codes, Int32-Eingabeprüfung, vier Fehlerkorrekturen im selben Dialog und normalisierte Werte beim Wiederöffnen. Sechs native XLSX-/XML-Paare und 23 Bildschirmbelege: [Nachweis](tests/fixtures/gui-login-boundaries-20261109/proof.json). Das vollständige 128er-GUI-Produkt bleibt offen.
