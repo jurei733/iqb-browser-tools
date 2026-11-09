@@ -1,17 +1,17 @@
 {
   "checkedOn": "2026-11-09",
-  "applicationCommit": "d265ba5719e9db706c3524044a4d50e4ad0d3664",
+  "applicationCommit": "e984cb2df01a651bdad87c7a0072b50c7dbf4986",
   "completeEquivalence": false,
   "completeGUIAcceptance": false,
   "empiricalStudyDataTested": false,
   "previousReport": "tests/results/windows-gui-remaining-20261106.json",
-  "scope": "Direct original legacy folder import, package switching and scan-source observations; all four case-list columns sorted in both directions with nonblank comments and a selected-row jump. Original result file read back through guest Edge. Further native GUI work interrupted by another Mac lock during the historical CSV run.",
+  "scope": "Direct original GUI comparisons of historical CSV schemas, positive duplicates, Testcenter response/log CSV, booklet and unit reviews, content download/index/resources, login/XML defaults and early CSV cancellation, in addition to retained legacy and earlier native pairs. All data synthetic or original templates; no empirical study files.",
   "counts": {
     "initialRemaining": 34,
-    "previousFinitePairs": 19,
-    "additionalFinitePairsThisResume": 3,
-    "newFinitePairs": 22,
-    "stillWithoutCompleteDirectPair": 12
+    "previousFinitePairs": 22,
+    "additionalFinitePairsThisResume": 8,
+    "newFinitePairs": 30,
+    "stillWithoutCompleteDirectPair": 4
   },
   "fixedDifferences": [
     "Windows answer/session CSV download lacked the original UTF-8 BOM.",
@@ -22,55 +22,62 @@
     "Windows CSV database import skips log files before parsing, as the native GUI does.",
     "Windows CSV graph uses the unit alias for both name and alias, matching the original PersonList mapper.",
     "Loose legacy scan folders are sorted by ordinal filename so APFS/browser input order matches the observed NTFS order. Explicit Cases and ZIP order remain unchanged.",
-    "Loose legacy packages in the same folder share stored results by job ID, matching the original package switch; the first saved package supplies the overlapping codes and comments."
+    "Loose legacy packages in the same folder share stored results by job ID, matching the original package switch; the first saved package supplies the overlapping codes and comments.",
+    "Windows 2011 CSV follows the original whole-middle chunk parser and Newtonsoft error text.",
+    "Direct Testcenter Windows CSV preserves original server bytes and LF joins.",
+    "Review export handles empty successful reports, skips original-incompatible category groups, writes zero-sheet empty files and preserves original string priorities.",
+    "Selected Windows content export now writes original metadata, dependency rows, dates, sizes and original HTML formatting."
   ],
   "verification": {
     "node": {
-      "passed": 163,
-      "total": 163
+      "passed": 174,
+      "total": 174
     },
     "targetedBrowser": {
-      "passed": 2,
-      "total": 2,
+      "passed": 10,
+      "total": 10,
       "engines": [
         "chromium",
         "webkit"
       ],
-      "workflowsPerEngine": 1,
-      "scope": "Legacy folder workflow, native result export fields, eight sort directions, selected-row jump and shared package results."
+      "scope": "Reviews 4, content/defaults 4, 20000-row cancellation/restart 2."
     },
     "ci": {
       "state": "success",
-      "applicationCommit": "d265ba5719e9db706c3524044a4d50e4ad0d3664",
+      "sourceCommit": "d4d263b6ff56aa8cd5c78a46c4d6e089ba445cfb",
       "runs": [
-        "https://github.com/jurei733/iqb-browser-tools/actions/runs/42582276099",
-        "https://github.com/jurei733/iqb-browser-tools/actions/runs/42582276058"
+        "https://github.com/jurei733/iqb-browser-tools/actions/runs/42596703587",
+        "https://github.com/jurei733/iqb-browser-tools/actions/runs/42596703610"
       ],
       "jobsPassed": 12,
       "jobsTotal": 12,
       "browser": {
-        "passed": 96,
-        "total": 96,
-        "workflowsPerEngine": 32,
+        "passed": 120,
+        "total": 120,
+        "workflowsPerEngine": 40,
         "engines": [
           "chromium",
           "firefox",
           "webkit"
         ]
+      },
+      "browserCompatibilityPerEngine": {
+        "passed": 56,
+        "total": 56
       }
     },
-    "nativeLegacy": {
-      "fixture": "tests/fixtures/gui-legacy-20261109.json",
-      "people": 2,
-      "packages": 2,
-      "caseCounts": [
-        4,
-        2
-      ],
-      "nativeResultEntries": 4,
-      "resultFieldsEqual": true,
-      "excluded": "Actual coding wall-clock times. No equality claim for malformed legacy XML, empirical files, or all filesystem edge cases."
-    }
+    "nativeContent": {
+      "files": 12,
+      "allContentBytesEqual": true,
+      "indexBytes": 6111,
+      "indexEqualWithFixedClock": true
+    },
+    "limitations": [
+      "Empirical study files unavailable.",
+      "Finite direct pairs do not prove all files, timing, OS integrations or edge cases.",
+      "Selected Windows profile required; extended profile intentionally preserves improved behavior.",
+      "Four original/source/help limitations remain explicitly unpaired; all 34 listed points have been investigated, 30 have finite direct pairs."
+    ]
   },
   "supplementalCtrlDrag": {
     "id": "K-29",
@@ -152,10 +159,11 @@
         "line": 21,
         "sha256": "c8bb7d1e2fa319489c8060ca731b2fde84e8670e450fdd144bdcb7e45aabdb5e"
       },
-      "state": "native-observation-partial",
+      "state": "qualified-no-distinct-native-gui",
       "nativeCapture": null,
       "pairedBrowserCapture": null,
-      "observation": "The same training=true job opens and codes in the original GUI. Browser flag parsing has module coverage; no distinct native training UI exists. The flag value was not independently read back from the running original."
+      "observation": "Native training=true job opens and codes; all recovered training references belong to flag parsing, storage and serialization. No distinct original GUI effect or running flag readback exists in the inspected source. Module/source proof retained; no direct flag-value GUI pair claimed.",
+      "qualification": "tests/fixtures/gui-source-qualifications-20261109.json"
     },
     {
       "id": "K-12",
@@ -242,10 +250,11 @@
         "line": 161,
         "sha256": "05098ca438c3738f0a8d2e2bf7325bd7157e8965089ede984583afe3dda56003"
       },
-      "state": "native-observation-partial",
-      "nativeCapture": "docs/evidence/gui-final-20261108/native-coding-f1.png",
+      "state": "qualified-native-help-unavailable",
+      "nativeCapture": "docs/evidence/gui-final-20261109/native-coding-help-no-dialog.png",
       "pairedBrowserCapture": "tests/e2e/gui-final.spec.js",
-      "observation": "Native F1 opens About 4.3.0.3 with matching purpose text; close works. Browser F1, help button and close pass in all three engines. Mouse help did not visibly reopen the original modal on the empty job window; that native route remains open. On 9 November, the mouse About button also did not visibly open a dialog with a loaded legacy job. No new identical mouse/F1 route claim."
+      "observation": "Earlier native empty-window F1 About 4.3.0.3 capture is retained. Repeated mouse, focused-button Space and F1 with the loaded LegacyValid job produce no visible dialog. Recovered child HelpProvider routes inherited topic IDs through the .chm help path; the downloaded original package has no .chm file. This explains a plausible original-installation limitation, not a proven identical mouse route. Browser About/F1 remain functional and tested; no complete GUI pair claimed.",
+      "qualification": "tests/fixtures/gui-source-qualifications-20261109.json"
     },
     {
       "id": "K-37",
@@ -272,9 +281,11 @@
         "line": 11,
         "sha256": "58583f8edeb000e6766a7e5b08dd976a668730241d1329b4db043c82b9d18c92"
       },
-      "state": "pending-native-comparison",
-      "nativeCapture": null,
-      "pairedBrowserCapture": null
+      "state": "paired-finite-native",
+      "nativeCapture": "docs/evidence/gui-final-20261109/native-csv2011-finished.png",
+      "pairedBrowserCapture": "tests/e2e/gui-historical-csv.spec.js",
+      "observation": "Original GUI converts 2011/2019/2024 CSV. Every workbook sheet and cell paired. The 2011 original passes the entire middle portion to the newer chunk parser and emits MATHE_ERROR for this fixture; Windows mode now reproduces its exact error. Extended mode retains improved interpretation.",
+      "proof": "tests/fixtures/gui-historical-csv-20261109.json"
     },
     {
       "id": "T-35",
@@ -301,9 +312,11 @@
         "line": 56,
         "sha256": "9ab98a1e2e9c62c29751835dc5a8d93a4bdb4b4ae0df47168db35cd4b62ebd37"
       },
-      "state": "pending-native-comparison",
+      "state": "qualified-unexposed-native-dialog",
       "nativeCapture": null,
-      "pairedBrowserCapture": null
+      "pairedBrowserCapture": null,
+      "observation": "Status-filter dialog exists in recovered code, but its only main-window handler is not bound by original XAML connector or commands. Visible DB JSON import opens a different dialog. Browser/source tests cover filters; no accessible original GUI route found and no direct GUI pair claimed.",
+      "qualification": "tests/fixtures/gui-source-qualifications-20261109.json"
     },
     {
       "id": "T-42",
@@ -360,10 +373,11 @@
         "line": 50,
         "sha256": "cc489893c63c4e7bf5ab2e1d502ba763766bc77e5eba5fa0b76db6f94806073f"
       },
-      "state": "native-observation-partial",
-      "nativeCapture": null,
-      "pairedBrowserCapture": null,
-      "observation": "Clean duplicate check passed in both; positive duplicate detection remains open."
+      "state": "paired-finite-native",
+      "nativeCapture": "docs/evidence/gui-final-20261109/native-positive-duplicates.png",
+      "pairedBrowserCapture": "tests/e2e/gui-duplicates.spec.js",
+      "observation": "Positive original GUI reports person DEMOdemo1001 (2), duplicate unit DEMO / MATHE_ (MATHE01): 2, one affected person and one repeated unit. Same captured SQLite is checked in browser GUI and module tests.",
+      "proof": "tests/fixtures/gui-duplicates-20261109.json"
     },
     {
       "id": "T-48",
@@ -450,9 +464,11 @@
         "line": 4,
         "sha256": "4fb1800ec6d34b2585a372fb5ded6cda871ac9377beb8d3796a03c1c384d168d"
       },
-      "state": "pending-native-comparison",
-      "nativeCapture": null,
-      "pairedBrowserCapture": null
+      "state": "paired-finite-native",
+      "nativeCapture": "docs/evidence/gui-final-20261109/native-testcenter-response-csv.png",
+      "pairedBrowserCapture": "tests/e2e/gui-testcenter-csv.spec.js",
+      "observation": "Both native direct Testcenter CSV files read back: 3919 response bytes and 2264 log bytes. Windows mode preserves server LF, quoting and BOM instead of re-encoding CRLF; every byte paired in both browser downloads.",
+      "proof": "tests/fixtures/gui-testcenter-csv-20261109.json"
     },
     {
       "id": "T-54",
@@ -464,9 +480,11 @@
         "line": 4,
         "sha256": "4fb1800ec6d34b2585a372fb5ded6cda871ac9377beb8d3796a03c1c384d168d"
       },
-      "state": "pending-native-comparison",
-      "nativeCapture": null,
-      "pairedBrowserCapture": null
+      "state": "paired-finite-native",
+      "nativeCapture": "docs/evidence/gui-final-20261109/native-reviews-standard.png",
+      "pairedBrowserCapture": "tests/e2e/gui-reviews.spec.js",
+      "observation": "Original GUI exports two reviews into booklet and unit sheets. All cell values and types match, including string priorities. Empty HTTP 200 bodies mean zero reviews. Missing fixed category columns make the original skip the group and write zero worksheets; captured negative workbook paired in selected Windows mode.",
+      "proof": "tests/fixtures/gui-reviews-20261109.json"
     },
     {
       "id": "T-55",
@@ -508,9 +526,11 @@
         "line": 4,
         "sha256": "4fb1800ec6d34b2585a372fb5ded6cda871ac9377beb8d3796a03c1c384d168d"
       },
-      "state": "pending-native-comparison",
-      "nativeCapture": null,
-      "pairedBrowserCapture": null
+      "state": "paired-finite-native",
+      "nativeCapture": "docs/evidence/gui-final-20261109/native-content-finished.png",
+      "pairedBrowserCapture": "tests/e2e/gui-content.spec.js",
+      "observation": "Original GUI downloads 12 files and index to an existing folder; Explorer ZIP read back. All 12 actual content files byte-equal locally; original HTML index byte-equal with fixed wall clock/source URL. Retained routed browser test uses ten credential-free original bodies and two explicit credential-free Testtakers placeholders.",
+      "proof": "tests/fixtures/gui-content-20261109.json"
     },
     {
       "id": "T-58",
@@ -522,9 +542,11 @@
         "line": 4,
         "sha256": "4fb1800ec6d34b2585a372fb5ded6cda871ac9377beb8d3796a03c1c384d168d"
       },
-      "state": "pending-native-comparison",
-      "nativeCapture": null,
-      "pairedBrowserCapture": null
+      "state": "paired-finite-native",
+      "nativeCapture": "docs/evidence/gui-final-20261109/native-content-finished.png",
+      "pairedBrowserCapture": "tests/e2e/gui-content.spec.js",
+      "observation": "Unit resources and player shown in captured original HTML; all twelve downloaded resources compared bytewise. Browser dependency sizes 60853/45409/60801 match original GUI booklets.json retained in gui-remaining-20261106.json. Native index dependency rows, file dates and sizes paired exactly.",
+      "proof": "tests/fixtures/gui-content-20261109.json"
     },
     {
       "id": "T-59",
@@ -551,9 +573,11 @@
         "line": 133,
         "sha256": "149c45c6e26d656794f3cdffabb6dd1b84582c12bbd5d70613e471e7b45b8758"
       },
-      "state": "pending-native-comparison",
-      "nativeCapture": null,
-      "pairedBrowserCapture": null
+      "state": "paired-finite-native",
+      "nativeCapture": "docs/evidence/gui-final-20261109/native-csv-cancelled.png",
+      "pairedBrowserCapture": "tests/e2e/gui-cancel.spec.js",
+      "observation": "Same 20000-row CSV, SHA256 5d5cc577e195d77ce59d891d8c3e18dc0bdbb16c364a25a05c2dc0fc581f1df0. Original live row progress observed; early stop explicitly logs Abbruch - bitte warten! and Beendet. Browser cancels same input, emits no output and successfully imports the small file afterwards. No claim for every cancellation phase or identical partial filesystem effects.",
+      "proof": "tests/fixtures/gui-final-20261109/cancel-input.json"
     },
     {
       "id": "T-64",
@@ -565,7 +589,7 @@
         "line": 58,
         "sha256": "2813bfdcda6910ded413482ad2bbf444dd83703485c99a13a18d8e7144eef94c"
       },
-      "state": "native-observation-partial",
+      "state": "qualified-maintained-documentation",
       "nativeCapture": "docs/evidence/gui-final-20261108/native-toolbox-f1.png",
       "pairedBrowserCapture": "tests/e2e/gui-final.spec.js",
       "observation": "Original About button, F1 and close observed; version 3.3.0.2. Browser routes pass in all three engines. Original online documentation opens the obsolete tba-info/Testcenter/toolbox/ URL and shows Page not found. Browser intentionally retains the maintained coding/toolbox/booklet.html URL; no identical online-documentation result is claimed."
@@ -580,10 +604,11 @@
         "line": 16,
         "sha256": "5b1b8d6b68fac18cc9520cf55ba2afddd07bbf20db4cb0d2fc4166a78d6ec752"
       },
-      "state": "native-observation-partial",
-      "nativeCapture": null,
-      "pairedBrowserCapture": null,
-      "observation": "Excel initial values and in-session option reuse observed. Other dialog defaults remain open."
+      "state": "paired-finite-native",
+      "nativeCapture": "docs/evidence/gui-final-20261109/native-login-defaults.png",
+      "pairedBrowserCapture": "tests/e2e/gui-defaults.spec.js",
+      "observation": "Original existing-login workbook: three groups, nine logins. Login length 5, password length 0, no proctor/prefixes, Booklet1 and separate XML per group. Generation/XML initially unchecked and dependent fields disabled; selecting each enables its fields. Browser GUI repeats these values/states. Earlier Excel export defaults and reuse retained; not all persisted Windows settings asserted.",
+      "proof": "tests/fixtures/gui-defaults-20261109.json"
     }
   ],
   "checks": [
@@ -971,5 +996,62 @@
       "fixture": "tests/fixtures/gui-final-20261108.json",
       "excluded": "Execution metadata, response_status dictionary population, SQLite page layout and sqlite_sequence."
     }
-  }
+  },
+  "previousVerification": {
+    "node": {
+      "passed": 163,
+      "total": 163
+    },
+    "targetedBrowser": {
+      "passed": 2,
+      "total": 2,
+      "engines": [
+        "chromium",
+        "webkit"
+      ],
+      "workflowsPerEngine": 1,
+      "scope": "Legacy folder workflow, native result export fields, eight sort directions, selected-row jump and shared package results."
+    },
+    "ci": {
+      "state": "success",
+      "applicationCommit": "d265ba5719e9db706c3524044a4d50e4ad0d3664",
+      "runs": [
+        "https://github.com/jurei733/iqb-browser-tools/actions/runs/42582276099",
+        "https://github.com/jurei733/iqb-browser-tools/actions/runs/42582276058"
+      ],
+      "jobsPassed": 12,
+      "jobsTotal": 12,
+      "browser": {
+        "passed": 96,
+        "total": 96,
+        "workflowsPerEngine": 32,
+        "engines": [
+          "chromium",
+          "firefox",
+          "webkit"
+        ]
+      }
+    },
+    "nativeLegacy": {
+      "fixture": "tests/fixtures/gui-legacy-20261109.json",
+      "people": 2,
+      "packages": 2,
+      "caseCounts": [
+        4,
+        2
+      ],
+      "nativeResultEntries": 4,
+      "resultFieldsEqual": true,
+      "excluded": "Actual coding wall-clock times. No equality claim for malformed legacy XML, empirical files, or all filesystem edge cases."
+    }
+  },
+  "verifiedSourceCommit": "d4d263b6ff56aa8cd5c78a46c4d6e089ba445cfb",
+  "qualificationCount": 4,
+  "unresolvedGUI": [],
+  "unpairedGUIQualifications": [
+    "K-10",
+    "K-36",
+    "T-36",
+    "T-64"
+  ]
 }

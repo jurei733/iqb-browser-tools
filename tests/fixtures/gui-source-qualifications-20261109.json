@@ -26,5 +26,11 @@
       "path": "itc-ToolBox/iqb/testcenter/toolbox/MainWindow.xaml.cs",
       "sha256": "077a847eda6eb1b0292c2f9e30b4de2fd5bd587cb5b51391df19f2bf063fc4c7"
     }
-  ]
+  ],
+  "codingHelp": {
+    "id": "K-36",
+    "capture": "docs/evidence/gui-final-20261109/native-coding-help-no-dialog.png",
+    "observed": "Repeated mouse, focused-button Space and F1 with loaded LegacyValid job: no visible dialog. Earlier empty-window F1 About capture retained. Browser remains functional.",
+    "sourceInference": "ButtonHelp uses ApplicationCommands.Help. Child FrameworkElement HelpProvider consumes inherited topic ID 1000 and calls Help.ShowHelp on IQB-Kodieren.chm; no .chm in downloaded original package. This is a plausible explanation of the native no-dialog result, not independent native internal-state proof."
+  }
 }
