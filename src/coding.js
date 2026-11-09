@@ -73,7 +73,7 @@ export function adjustFrame(frame,crop=null,dpiX=96,dpiY=96) {
 }
 export function batchCode(job,index,digit) {
   const current=job.cases[index],cases=job.cases.filter(c=>c.testee===current.testee),matches=cases.map(c=>c.variable.codes.filter(code=>code.id.includes(digit)));
-  if(matches.some(list=>list.length!==1))throw new Error('Der Code ist nicht für alle Variablen dieser Testperson eindeutig. Es wurde nichts geändert.');
+  if(matches.some(list=>list.length!==1))throw new Error('Es wurde kein Code gesetzt.');
   const advance=!current.code,time=localTimestamp();cases.forEach((c,i)=>{c.code=matches[i][0].id;c.time=time;});const next=job.cases.findIndex(c=>!c.code);return advance&&next>=0?next:index;
 }
 export function cycleCode(c,direction){const i=c.variable.codes.findIndex(v=>v.id===c.code);return c.variable.codes[i<0?0:(i+direction+c.variable.codes.length)%c.variable.codes.length].id;}

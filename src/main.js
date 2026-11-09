@@ -178,7 +178,7 @@ document.addEventListener('keydown',e=>{if(e.key==='F1'){e.preventDefault();$('#
   if(e.key==='F4'){e.preventDefault();const details=$('#global-comment').closest('details');details.open=true;$('#global-comment').focus();return;}
   if(['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName)){if(e.key==='Escape')e.target.blur();return;}
   const c=state.job.cases[state.index];
-  if((e.ctrlKey||e.metaKey)&&/^\d$/.test(e.key)){e.preventDefault();action(async()=>{state.index=Coding.batchCode(state.job,state.index,e.key);renderCoding();await saveProgress();});return;}
+  if((e.ctrlKey||e.metaKey)&&/^\d$/.test(e.key)){e.preventDefault();action(async()=>{const person=state.job.cases[state.index].testee,count=state.job.cases.filter(c=>c.testee===person).length;state.index=Coding.batchCode(state.job,state.index,e.key);renderCoding();await saveProgress();notify(`Es wurden ${count} Variablen mit dem gleichen Code gesetzt.`);});return;}
   if(e.ctrlKey||e.metaKey||e.altKey)return;
   if(['ArrowRight','Enter','PageDown'].includes(e.key)){e.preventDefault();navigate(1);}else if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();navigate(-1);}
   else if(['ArrowUp','ArrowDown'].includes(e.key)){e.preventDefault();action(()=>chooseCode(Coding.cycleCode(c,e.key==='ArrowUp'?-1:1)));}

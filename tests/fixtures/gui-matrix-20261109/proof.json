@@ -1,0 +1,780 @@
+{
+  "date": "2026-11-09",
+  "synthetic": true,
+  "original": "itc-ToolBox 3.3.0.2",
+  "originalSHA256": "c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1",
+  "input": "public/examples/Beispiel.sqlite",
+  "inputSHA256": "b4ccc03c425185c1b6fdea9c0b26ab4f862e552e879ab1dbd92eaffc6595a6bc",
+  "method": "Actual original Windows GUI: 37 additional ToXlsxDialog runs through visible native UTM, keyboard tab navigation; unmodified exported files transferred using the UTM guest agent. Eight earlier original GUI exports retained verbatim. No assembly-harness substitution.",
+  "cases": [
+    {
+      "id": "columns01",
+      "file": "columns01.xlsx",
+      "options": {
+        "subformMode": "columns",
+        "values": true,
+        "status": false,
+        "codes": false,
+        "scores": false
+      },
+      "sha256": "c63424e3b57714a87605c36b74bed656730a7a71857a30aea21553de6aaec258",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\s01.xlsx"
+    },
+    {
+      "id": "columns02",
+      "file": "columns02.xlsx",
+      "options": {
+        "subformMode": "columns",
+        "values": false,
+        "status": true,
+        "codes": false,
+        "scores": false
+      },
+      "sha256": "79edcdcd34f36d25da95de42a1f071042acc8547155e7b07fa37f34eee678c41",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\s02.xlsx"
+    },
+    {
+      "id": "columns03",
+      "file": "columns03.xlsx",
+      "options": {
+        "subformMode": "columns",
+        "values": true,
+        "status": true,
+        "codes": false,
+        "scores": false
+      },
+      "sha256": "e68e7e2a76c2f937c4a77bf9c5b66000930ee197ad1aad6a67e710f9ed0b6556",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\s03.xlsx"
+    },
+    {
+      "id": "columns04",
+      "file": "columns04.xlsx",
+      "options": {
+        "subformMode": "columns",
+        "values": false,
+        "status": false,
+        "codes": true,
+        "scores": false
+      },
+      "sha256": "77710e8d7cbb7ba3b22bd92589a0d30f583769b309d288bb8fdcc137ad23cd8a",
+      "source": "gui-remaining-20261106",
+      "guest": "C:\\c6.xlsx"
+    },
+    {
+      "id": "columns05",
+      "file": "columns05.xlsx",
+      "options": {
+        "subformMode": "columns",
+        "values": true,
+        "status": false,
+        "codes": true,
+        "scores": false
+      },
+      "sha256": "cd8fdc91370b8893906d75ea575b3003a73697cee09008606b1c02dbf4b3ab83",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\s05.xlsx"
+    },
+    {
+      "id": "columns06",
+      "file": "columns06.xlsx",
+      "options": {
+        "subformMode": "columns",
+        "values": false,
+        "status": true,
+        "codes": true,
+        "scores": false
+      },
+      "sha256": "7d7c8803b39770af13027b056167ef9bed6676b24067662179781e07549fd915",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\s06.xlsx"
+    },
+    {
+      "id": "columns07",
+      "file": "columns07.xlsx",
+      "options": {
+        "subformMode": "columns",
+        "values": true,
+        "status": true,
+        "codes": true,
+        "scores": false
+      },
+      "sha256": "4dcfb2fdd3b0bdcd43fd21c66163611de60c3fb7fe0f3e6ed136165a56a27136",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\s07.xlsx"
+    },
+    {
+      "id": "columns08",
+      "file": "columns08.xlsx",
+      "options": {
+        "subformMode": "columns",
+        "values": false,
+        "status": false,
+        "codes": false,
+        "scores": true
+      },
+      "sha256": "c27f84799f244aee3d56a4046c846baa147e6430f24bb65fdd0e189f9a82f5b8",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\s08.xlsx"
+    },
+    {
+      "id": "columns09",
+      "file": "columns09.xlsx",
+      "options": {
+        "subformMode": "columns",
+        "values": true,
+        "status": false,
+        "codes": false,
+        "scores": true
+      },
+      "sha256": "3f643d1747d64c58f7653aa748b6eda3224457187793da5de2679e17b9dadd0a",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\s09.xlsx"
+    },
+    {
+      "id": "columns10",
+      "file": "columns10.xlsx",
+      "options": {
+        "subformMode": "columns",
+        "values": false,
+        "status": true,
+        "codes": false,
+        "scores": true
+      },
+      "sha256": "f42aceacac9a27e0c09e3f419b766db8bb0b245a53773b4a74531ef91352de43",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\s10.xlsx"
+    },
+    {
+      "id": "columns11",
+      "file": "columns11.xlsx",
+      "options": {
+        "subformMode": "columns",
+        "values": true,
+        "status": true,
+        "codes": false,
+        "scores": true
+      },
+      "sha256": "2af08989328ca339abc72b2a36ef541d04e435c5d8f2ed209135e7943e5a4cb0",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\s11.xlsx"
+    },
+    {
+      "id": "columns12",
+      "file": "columns12.xlsx",
+      "options": {
+        "subformMode": "columns",
+        "values": false,
+        "status": false,
+        "codes": true,
+        "scores": true
+      },
+      "sha256": "458754a7c85405d9c0afa99e2d0adb87c71d57d2e65b5525c743d8e808862031",
+      "source": "gui-options-20261109",
+      "guest": "C:\\g702.xlsx"
+    },
+    {
+      "id": "columns13",
+      "file": "columns13.xlsx",
+      "options": {
+        "subformMode": "columns",
+        "values": true,
+        "status": false,
+        "codes": true,
+        "scores": true
+      },
+      "sha256": "94b93ef8adb7b18767347dd377ed159ac1bffbd2be38ce7a5817132886265e57",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\s13.xlsx"
+    },
+    {
+      "id": "columns14",
+      "file": "columns14.xlsx",
+      "options": {
+        "subformMode": "columns",
+        "values": false,
+        "status": true,
+        "codes": true,
+        "scores": true
+      },
+      "sha256": "7284192e2be9dbf6a53c05f1dc4b6029b7c8ce6d011e95f64bd41ce2bc50f811",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\s14.xlsx"
+    },
+    {
+      "id": "columns15",
+      "file": "columns15.xlsx",
+      "options": {
+        "subformMode": "columns",
+        "values": true,
+        "status": true,
+        "codes": true,
+        "scores": true
+      },
+      "sha256": "18ea593c79b62fdddcb8831b22822a9c25813f4fc7ed9365d5fdcbc7e38d7bfb",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\s15.xlsx"
+    },
+    {
+      "id": "none01",
+      "file": "none01.xlsx",
+      "options": {
+        "subformMode": "none",
+        "values": true,
+        "status": false,
+        "codes": false,
+        "scores": false
+      },
+      "sha256": "cbac11e1e77e9dfb5e7f766840bacb33684ad9f0e8c3aed68c7d98a0bf8cd4cc",
+      "source": "gui-remaining-20261106",
+      "guest": "C:\\x6.xlsx"
+    },
+    {
+      "id": "none02",
+      "file": "none02.xlsx",
+      "options": {
+        "subformMode": "none",
+        "values": false,
+        "status": true,
+        "codes": false,
+        "scores": false
+      },
+      "sha256": "2dff75ecf89ac60aad8aaba86b768adfb0e45bc6ffbc0a49566ee5a063852902",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\m02.xlsx"
+    },
+    {
+      "id": "none03",
+      "file": "none03.xlsx",
+      "options": {
+        "subformMode": "none",
+        "values": true,
+        "status": true,
+        "codes": false,
+        "scores": false
+      },
+      "sha256": "88e2ff0900b066d0d0028206b2927a9f51f5ab39a4914522cb6bce08905b1da2",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\m03.xlsx"
+    },
+    {
+      "id": "none04",
+      "file": "none04.xlsx",
+      "options": {
+        "subformMode": "none",
+        "values": false,
+        "status": false,
+        "codes": true,
+        "scores": false
+      },
+      "sha256": "8a622dc540949c2ca7270c4e7a44719ae2e203722d465bfffb3a279b26215540",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\m04.xlsx"
+    },
+    {
+      "id": "none05",
+      "file": "none05.xlsx",
+      "options": {
+        "subformMode": "none",
+        "values": true,
+        "status": false,
+        "codes": true,
+        "scores": false
+      },
+      "sha256": "d4aea9229954255d1bc409d1798cb3059add12da8af7675bcfc526365183e146",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\m05.xlsx"
+    },
+    {
+      "id": "none06",
+      "file": "none06.xlsx",
+      "options": {
+        "subformMode": "none",
+        "values": false,
+        "status": true,
+        "codes": true,
+        "scores": false
+      },
+      "sha256": "6f5c2d84e42bd6b125a5c43050b2d331dcd4ee4cfda8eb932896792b7624c9d4",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\m06.xlsx"
+    },
+    {
+      "id": "none07",
+      "file": "none07.xlsx",
+      "options": {
+        "subformMode": "none",
+        "values": true,
+        "status": true,
+        "codes": true,
+        "scores": false
+      },
+      "sha256": "4a9e602b8cbed25a4ef7c56a534492f1e182d265835b5b1c7a2baa1f915a03c1",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\m07.xlsx"
+    },
+    {
+      "id": "none08",
+      "file": "none08.xlsx",
+      "options": {
+        "subformMode": "none",
+        "values": false,
+        "status": false,
+        "codes": false,
+        "scores": true
+      },
+      "sha256": "1bf2a0573097951f6e18b02730dd3c1fc68e18df268921e62c2d2f99753c8eca",
+      "source": "gui-remaining-20261106",
+      "guest": "C:\\p6.xlsx"
+    },
+    {
+      "id": "none09",
+      "file": "none09.xlsx",
+      "options": {
+        "subformMode": "none",
+        "values": true,
+        "status": false,
+        "codes": false,
+        "scores": true
+      },
+      "sha256": "2060af0571bb23d49fc23d3a938a24303805683724d088fc98622fee6763a9ee",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\m09.xlsx"
+    },
+    {
+      "id": "none10",
+      "file": "none10.xlsx",
+      "options": {
+        "subformMode": "none",
+        "values": false,
+        "status": true,
+        "codes": false,
+        "scores": true
+      },
+      "sha256": "8757b7f0cd8fdb83fbdf619209f353b90d863fac27dee824894793f6d8c3f7e4",
+      "source": "gui-options-20261109",
+      "guest": "C:\\g703.xlsx"
+    },
+    {
+      "id": "none11",
+      "file": "none11.xlsx",
+      "options": {
+        "subformMode": "none",
+        "values": true,
+        "status": true,
+        "codes": false,
+        "scores": true
+      },
+      "sha256": "d7d39b7dae3a2ce407e86300b7d10ea92f15bac8acb294c71f8da9498bc834c3",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\m11.xlsx"
+    },
+    {
+      "id": "none12",
+      "file": "none12.xlsx",
+      "options": {
+        "subformMode": "none",
+        "values": false,
+        "status": false,
+        "codes": true,
+        "scores": true
+      },
+      "sha256": "0f18305c485d0a7cceab7b78c2ab83ff342087b96484c99cd61aa2522292c67b",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\m12.xlsx"
+    },
+    {
+      "id": "none13",
+      "file": "none13.xlsx",
+      "options": {
+        "subformMode": "none",
+        "values": true,
+        "status": false,
+        "codes": true,
+        "scores": true
+      },
+      "sha256": "51a79b717a0a7f86352f071291d0d3ef0824cfa13fcde3dc0641755d559ef249",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\m13.xlsx"
+    },
+    {
+      "id": "none14",
+      "file": "none14.xlsx",
+      "options": {
+        "subformMode": "none",
+        "values": false,
+        "status": true,
+        "codes": true,
+        "scores": true
+      },
+      "sha256": "677880a123f79afeec58cfc98f81836c811e4761e301a0f482492574a683ee58",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\m14.xlsx"
+    },
+    {
+      "id": "none15",
+      "file": "none15.xlsx",
+      "options": {
+        "subformMode": "none",
+        "values": true,
+        "status": true,
+        "codes": true,
+        "scores": true
+      },
+      "sha256": "d3036f5c31f5ee1200aa9cc75fdfa62bad957fef9c158dd99d35a21bb973b80c",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\m15.xlsx"
+    },
+    {
+      "id": "rows01",
+      "file": "rows01.xlsx",
+      "options": {
+        "subformMode": "rows",
+        "values": true,
+        "status": false,
+        "codes": false,
+        "scores": false
+      },
+      "sha256": "3f06ded28d8e6730514fd1f2e32b24c28d3e9254eff75e4e2ba6c5e71db763b2",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\r01.xlsx"
+    },
+    {
+      "id": "rows02",
+      "file": "rows02.xlsx",
+      "options": {
+        "subformMode": "rows",
+        "values": false,
+        "status": true,
+        "codes": false,
+        "scores": false
+      },
+      "sha256": "8288c7f42f683cdb94139a2afb544644535d21e561e176967194ba1b522336f8",
+      "source": "gui-remaining-20261106",
+      "guest": "C:\\s6.xlsx"
+    },
+    {
+      "id": "rows03",
+      "file": "rows03.xlsx",
+      "options": {
+        "subformMode": "rows",
+        "values": true,
+        "status": true,
+        "codes": false,
+        "scores": false
+      },
+      "sha256": "052fab9d59c2a55a1f062a6ad115b50720c922a8809c3c978af7028b58376f2e",
+      "source": "gui-options-20261109",
+      "guest": "C:\\Users\\IQB\\Documents\\gui-none.xlsx"
+    },
+    {
+      "id": "rows04",
+      "file": "rows04.xlsx",
+      "options": {
+        "subformMode": "rows",
+        "values": false,
+        "status": false,
+        "codes": true,
+        "scores": false
+      },
+      "sha256": "d9013bb7d6f7b966c2393c6075e5f984c893ccd4448e87d122c169a6b8bd00fc",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\r04.xlsx"
+    },
+    {
+      "id": "rows05",
+      "file": "rows05.xlsx",
+      "options": {
+        "subformMode": "rows",
+        "values": true,
+        "status": false,
+        "codes": true,
+        "scores": false
+      },
+      "sha256": "8cd5702eff56ef3d7056f0513f52e793ecf45a08eaabc1f053b87aa9bd708485",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\r05.xlsx"
+    },
+    {
+      "id": "rows06",
+      "file": "rows06.xlsx",
+      "options": {
+        "subformMode": "rows",
+        "values": false,
+        "status": true,
+        "codes": true,
+        "scores": false
+      },
+      "sha256": "71caa695bb998412a5ceead798afb2b3cd76ad980abddb3ac996b3da4c789e18",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\r06.xlsx"
+    },
+    {
+      "id": "rows07",
+      "file": "rows07.xlsx",
+      "options": {
+        "subformMode": "rows",
+        "values": true,
+        "status": true,
+        "codes": true,
+        "scores": false
+      },
+      "sha256": "29cc958e195b29e43ad10fbee8652b506b8155e6977c51aa40b0ee990b85c5e6",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\r07.xlsx"
+    },
+    {
+      "id": "rows08",
+      "file": "rows08.xlsx",
+      "options": {
+        "subformMode": "rows",
+        "values": false,
+        "status": false,
+        "codes": false,
+        "scores": true
+      },
+      "sha256": "f2f19924bbd3aeab5cf357404e050871a2febf4767612b72f67f7922b353c204",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\r08.xlsx"
+    },
+    {
+      "id": "rows09",
+      "file": "rows09.xlsx",
+      "options": {
+        "subformMode": "rows",
+        "values": true,
+        "status": false,
+        "codes": false,
+        "scores": true
+      },
+      "sha256": "0a8556f0eee44411988e6f873a0ae65969df8d3d545dc78ec76846a94813ebeb",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\r09.xlsx"
+    },
+    {
+      "id": "rows10",
+      "file": "rows10.xlsx",
+      "options": {
+        "subformMode": "rows",
+        "values": false,
+        "status": true,
+        "codes": false,
+        "scores": true
+      },
+      "sha256": "1683a40298a7d58b51b7813d75921e466c5863dbf288cb13193eee0ea122c86d",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\r10.xlsx"
+    },
+    {
+      "id": "rows11",
+      "file": "rows11.xlsx",
+      "options": {
+        "subformMode": "rows",
+        "values": true,
+        "status": true,
+        "codes": false,
+        "scores": true
+      },
+      "sha256": "dbaf2fdeaabf72fbb0252dd3db66eae9b5c88f931cce1cefb4da293d8196f690",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\r11.xlsx"
+    },
+    {
+      "id": "rows12",
+      "file": "rows12.xlsx",
+      "options": {
+        "subformMode": "rows",
+        "values": false,
+        "status": false,
+        "codes": true,
+        "scores": true
+      },
+      "sha256": "65b404f7cdc027b30d0320a932646ad45ff8687f64fb8b7d7f1b8449dfb6fd2c",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\r12.xlsx"
+    },
+    {
+      "id": "rows13",
+      "file": "rows13.xlsx",
+      "options": {
+        "subformMode": "rows",
+        "values": true,
+        "status": false,
+        "codes": true,
+        "scores": true
+      },
+      "sha256": "d9ef8ef3b1a2ec3065de4d02203e8c3848e95babd34c574f2c9a134b5f8379d0",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\r13.xlsx"
+    },
+    {
+      "id": "rows14",
+      "file": "rows14.xlsx",
+      "options": {
+        "subformMode": "rows",
+        "values": false,
+        "status": true,
+        "codes": true,
+        "scores": true
+      },
+      "sha256": "d225afae7ef6081a429e6e347fafb4cb2c08c3243c5a42a07c1edf4c08528df0",
+      "source": "new-native-GUI-20261109",
+      "guest": "C:\\r14.xlsx"
+    },
+    {
+      "id": "rows15",
+      "file": "rows15.xlsx",
+      "options": {
+        "subformMode": "rows",
+        "values": true,
+        "status": true,
+        "codes": true,
+        "scores": true
+      },
+      "sha256": "abe3b9d62c88e1a0971e1df6d5fbb41c5844957eca5da68a480fda95a762ea92",
+      "source": "gui-remaining-20261106",
+      "guest": "C:\\a6.xlsx"
+    }
+  ],
+  "stateObservations": {
+    "cancelledDraft": {
+      "subformMode": "rows",
+      "values": false,
+      "status": true,
+      "codes": false,
+      "scores": false
+    },
+    "reopenedAfterCancel": {
+      "subformMode": "columns",
+      "values": true,
+      "status": true,
+      "codes": true,
+      "scores": true
+    },
+    "afterMainTabSwitch": "same as reopenedAfterCancel",
+    "plainDatabase": {
+      "input": "plain.sqlite",
+      "inputSHA256": "eaf49ae5737c8d549f1e0d96e7dd9e3187eea01f82d1cf04e7fe15e434a71480",
+      "native": "plain.xlsx",
+      "nativeSHA256": "9d576af772bed8fca96a5054018f693f7cbb8bdfcb7a0f5258eea267b4feada6",
+      "options": {
+        "subformMode": "none",
+        "values": true,
+        "status": true,
+        "codes": false,
+        "scores": false
+      },
+      "disabled": [
+        "subform",
+        "codes",
+        "scores"
+      ]
+    }
+  },
+  "limits": [
+    "Cell contents, worksheet names and dimensions compared; workbook styling and ZIP binary identity are not asserted.",
+    "All 45 combinations use one synthetic database; empirical files and every data/option cross-product remain unproved."
+  ],
+  "coding": {
+    "original": "IQB-Kodieren 4.3.0.3",
+    "originalSHA256": "7b8fdb074669c5e0ba267c2e924b484a322abb32cb733bae2c659b38191d3407",
+    "method": "Original GUI, F0..F8 selected using actual job combobox; visible score/comment/description controls captured separately; Ctrl+1 and Ctrl+0 on F8, Ctrl+S and guest-agent file readback, switching away and back confirmed 3/6 with four cases left.",
+    "cases": [
+      {
+        "id": "F0",
+        "input": "F0.zip",
+        "sha256": "56fb6ec98a6f8ce0d1033e22ba705f65aa0aa99b786b5347127e1bdbe97221e9",
+        "showScore": false,
+        "enableComments": false,
+        "suppressDescription": false,
+        "screenshot": "F0-native.png"
+      },
+      {
+        "id": "F1",
+        "input": "F1.zip",
+        "sha256": "b5b7ccdb4ca41b7922de2454fd39318e0f7a548ee5ad4ebb47c20d7b0a2a10ed",
+        "showScore": true,
+        "enableComments": false,
+        "suppressDescription": false,
+        "screenshot": "F1-native.png"
+      },
+      {
+        "id": "F2",
+        "input": "F2.zip",
+        "sha256": "1f1958b6fb5eb97e2502f5a85c0cb377a921aeadb6df5b87a98dd42d1ff128e2",
+        "showScore": false,
+        "enableComments": true,
+        "suppressDescription": false,
+        "screenshot": "F2-native.png"
+      },
+      {
+        "id": "F3",
+        "input": "F3.zip",
+        "sha256": "9049158d8878f755237c930073fbc9b5dc8a4c2e1f10facaf00984c60e403d9f",
+        "showScore": true,
+        "enableComments": true,
+        "suppressDescription": false,
+        "screenshot": "F3-native.png"
+      },
+      {
+        "id": "F4",
+        "input": "F4.zip",
+        "sha256": "72d18a13e95e0b3fe70299b98646ef4806b2098ac7d1f59a3277b4e6ca9fa9a9",
+        "showScore": false,
+        "enableComments": false,
+        "suppressDescription": true,
+        "screenshot": "F4-native.png"
+      },
+      {
+        "id": "F5",
+        "input": "F5.zip",
+        "sha256": "1c66b03083337835d17b51e88d9b996e746064f920239e843c4ad57900b35dcd",
+        "showScore": true,
+        "enableComments": false,
+        "suppressDescription": true,
+        "screenshot": "F5-native.png"
+      },
+      {
+        "id": "F6",
+        "input": "F6.zip",
+        "sha256": "3b0009e1d07eb70168a689203d6371ec8cbf10c463b21f2ad8b96164fe71466f",
+        "showScore": false,
+        "enableComments": true,
+        "suppressDescription": true,
+        "screenshot": "F6-native.png"
+      },
+      {
+        "id": "F7",
+        "input": "F7.zip",
+        "sha256": "81665116980f0a4a936a93ba73d055f90d6e80b0f19d41a6a9f7720a666bb71c",
+        "showScore": true,
+        "enableComments": true,
+        "suppressDescription": true,
+        "screenshot": "F7-native.png"
+      }
+    ],
+    "group": {
+      "input": "F8.zip",
+      "inputSHA256": "2a22a1b04ea5c429c33af030f1d8f27ac0cd27ed44bf383f99e784db1d5a866e",
+      "invalid": {
+        "gesture": "Ctrl+1",
+        "message": "Es wurde kein Code gesetzt.",
+        "position": 1,
+        "native": "F8-invalid.result",
+        "sha256": "7ff497a4c47a938c8e25f4ed489336d332a6748fe3567e89a2693bd86d10fbd2"
+      },
+      "valid": {
+        "gesture": "Ctrl+0",
+        "message": "Es wurden 2 Variablen mit dem gleichen Code gesetzt.",
+        "position": 3,
+        "remainingAfterReopen": 4,
+        "clock": "2026-11-09T17:10:01Z",
+        "timezone": "Europe/Berlin",
+        "native": "F8-valid.result",
+        "sha256": "bf28c92a8e7c32e58096bb81fb40ef0a061c25bca95cbda49a541d280cdd32d3"
+      }
+    }
+  }
+}
