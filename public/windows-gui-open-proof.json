@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-09",
+  "date": "2026-11-10",
   "scope": "Zusätzliche direkte GUI-Produkte und Zustandsfolgen. Jede Funktion kann einzelne direkte Paare haben, ohne dass ihr vollständiges Optionsprodukt nachgewiesen ist. Diese zehn Familien sind eine konkrete priorisierte Prüfliste, keine erschöpfende Aufzählung jeder möglichen Eingabe.",
   "completedThisBatch": {
     "loginScenarios": 12,
@@ -11,7 +11,8 @@
       "windows-gui-login-matrix-proof.json",
       "windows-gui-booklet-matrix-proof.json",
       "windows-gui-word-products-proof.json",
-      "windows-gui-small-converters-proof.json"
+      "windows-gui-small-converters-proof.json",
+      "windows-gui-excel-sources-proof.json"
     ],
     "additionalBoundaryWorkbooks": 6,
     "additionalInvalidLoginTexts": 4,
@@ -20,7 +21,9 @@
     "bookletValidationCombinations": 64,
     "bookletValidFollowups": 2,
     "wordGuiScenarios": 17,
-    "smallConverterGuiScenarios": 35
+    "smallConverterGuiScenarios": 35,
+    "mixedDatabaseExcelPairs": 26,
+    "directSourceExportPairs": 3
   },
   "openFamilies": [
     {
@@ -62,10 +65,11 @@
     {
       "id": "excel-sources-capabilities",
       "family": "Excel-Quellen und Datenbankzustände",
-      "dimensions": "Die 45 nichtleeren Auswahlen zusätzlich aus direkten Datei-/Testcenter-Quellen; gemischte Zustände nur Codes/keine Subforms und nur Subforms/keine Codes; leere Auswahl in Zeilen-/Spaltenmodus.",
-      "existingEvidence": "45/45 direkte Datenbank-GUI-Exporte auf gemeinsamer synthetischer Datei; beide Metadaten vorhanden bzw. beide abwesend direkt geprüft. 90 Quellenkombinationen auf Modulebene.",
-      "stillOpen": "Quellenwechsel und die zwei gemischten Fähigkeitszustände direkt paaren.",
-      "status": "partial-direct-gui"
+      "dimensions": "15 nichtleere Auswahlen nur mit Codes; neun Auswahlen mit Unterformularen ohne Codes; leere Auswahl in Zeilen-/Spaltenmodus; direkte CSV-/Testcenter-Quellen und Neustart.",
+      "existingEvidence": "26 neue gemischte Datenbank-GUI-Exportpaare einschließlich zweier Fehlerkorrekturen im selben Dialog; drei direkte Quellfolgen (CSV, CSV → Testcenter mit Zwischenstand, Testcenter nach Neustart). Alle Excel-Zellen verglichen. Zusätzlich Wiederholung im Assistenten direkt geprüft.",
+      "stillOpen": "Das konkrete erreichbare Produkt ist abgeschlossen. Direkte CSV-/Testcenter-Quellen bieten im Original keinen 45er-Optionsdialog. Wiederholter Abruf stoppt im Original still bei doppelter Personenkennung; Browser meldet den Fehler und ermöglicht Reset.",
+      "status": "completed-finite-direct-gui-with-qualified-original-error",
+      "proof": "windows-gui-excel-sources-proof.json"
     },
     {
       "id": "imports-sequences",
@@ -128,6 +132,10 @@
     {
       "id": "T-syscheck-malformed-and-empty",
       "reason": "SC28: nativer Absturz in String.Substring beim Lesen einer zu kurzen Zeile. SC29: nativer Absturz beim Schreiben einer leeren Datei, partielle Arbeitsmappe bleibt. Browser weist beide ab; SC32 belegt nativen gültigen Folgelauf nach Neustart."
+    },
+    {
+      "id": "T-direct-repeat",
+      "reason": "Erneuter direkter Testcenter-Excel-Lauf im selben Assistenten stoppt bei doppelter Personenkennung, meldet beendet und lässt die alte Ausgabedatei bytegleich. Browser meldet den Konflikt ausdrücklich und bietet Reset."
     }
   ],
   "outsideFiniteGuiProof": [

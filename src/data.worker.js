@@ -4,6 +4,7 @@ import {DOMParser,XMLSerializer} from '@xmldom/xmldom';
 import {windowsLongCSV,windowsSessionCSV} from './windows-compatibility.js';
 import {windowsTestcenterGUI,windowsGUIJSON} from './windows-testcenter-gui.js';
 import {prepare} from './preparation.js';
+import {appendWindowsDirect} from './windows-direct-store.js';
 import {OutputDatabase} from './database.js';
 import {databasePage} from './database-view.js';
 import {readDataFiles,normalizePeople,wideWorkbook,longCSV,sessionTable,reviewsWorkbook,peopleFromDTO} from './data.js';
@@ -12,13 +13,14 @@ import {stringifyJSON} from './json.js';
 import {strToU8,zipSync} from 'fflate';
 import {tableWorkbook,csvString} from './toolbox.js';
 globalThis.DOMParser=DOMParser;globalThis.XMLSerializer=XMLSerializer;
-let SQL,db,people=[];
+let SQL,db,people=[],windowsDirectPeople=[];
 async function run(op,args,progress) {
   switch(op){
     case 'prepare':return prepare(args.kind,args,progress);
     case 'coding':return readCodingFiles(args.files.map(f=>({name:f.name,webkitRelativePath:f.relativePath||'',arrayBuffer:async()=>f.bytes.buffer.slice(f.bytes.byteOffset,f.bytes.byteOffset+f.bytes.byteLength)})));
-    case 'load-data':people=await readDataFiles(args.files,{...args.options,onWarning:progress});return {people:people.length,responses:people.reduce((n,p)=>n+p.booklets.reduce((n,b)=>n+b.units.reduce((n,u)=>n+u.subforms.reduce((n,s)=>n+s.responses.length,0),0),0),0)};
-    case 'dto':people=(args.nativeGUI&&args.windows?windowsTestcenterGUI:peopleFromDTO)(args.responses,args.logs,{windows:args.windows==='64'?'64':args.windows===true});return {people:people.length};
+    case 'load-data':people=await readDataFiles(args.files,{...args.options,onWarning:progress});if(args.options?.windows)windowsDirectPeople=people;return {people:people.length,responses:people.reduce((n,p)=>n+p.booklets.reduce((n,b)=>n+b.units.reduce((n,u)=>n+u.subforms.reduce((n,s)=>n+s.responses.length,0),0),0),0)};
+    case 'dto':{const next=(args.nativeGUI&&args.windows?windowsTestcenterGUI:peopleFromDTO)(args.responses,args.logs,{windows:args.windows==='64'?'64':args.windows===true});people=args.directXlsx&&args.appendDirect?appendWindowsDirect(windowsDirectPeople,next):next;if(args.directXlsx)windowsDirectPeople=people;return {people:people.length};}
+    case 'clear-direct':windowsDirectPeople=[];return null;
     case 'set-data':people=normalizePeople(args.people);return {people:people.length};
     case 'export-data':return exportData(args.format,people,args.options,args.sizes);
     case 'reviews':return reviewsWorkbook(args.reviews,args.options);

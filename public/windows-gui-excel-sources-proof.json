@@ -1,0 +1,767 @@
+{
+  "date": "2026-11-10",
+  "original": {
+    "name": "itc-ToolBox",
+    "version": "3.3.0.2",
+    "sha256": "c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1"
+  },
+  "method": "Visible native database file selection, all reachable mixed-capability Excel choices, actual writes, empty-choice error and correction in the same dialog, direct CSV wizard, real local synthetic Testcenter selection and export, then application restart and the same Testcenter export.",
+  "cases": [
+    {
+      "id": "EC01",
+      "kind": "OnlyCodes",
+      "mask": 1,
+      "mode": "none",
+      "file": "ec01.xlsx",
+      "sequence": 0,
+      "options": {
+        "subformMode": "none",
+        "values": true,
+        "status": false,
+        "codes": false,
+        "scores": false
+      },
+      "screens": [
+        "screens/EC01-complete.jpg",
+        "screens/EC01-options.jpg"
+      ]
+    },
+    {
+      "id": "EC02",
+      "kind": "OnlyCodes",
+      "mask": 2,
+      "mode": "none",
+      "file": "ec02.xlsx",
+      "sequence": 1,
+      "options": {
+        "subformMode": "none",
+        "values": false,
+        "status": true,
+        "codes": false,
+        "scores": false
+      },
+      "screens": [
+        "screens/EC02-complete.jpg",
+        "screens/EC02-initial.jpg",
+        "screens/EC02-options.jpg",
+        "screens/EC02-post.jpg"
+      ]
+    },
+    {
+      "id": "EC03",
+      "kind": "OnlyCodes",
+      "mask": 3,
+      "mode": "none",
+      "file": "ec03.xlsx",
+      "sequence": 2,
+      "options": {
+        "subformMode": "none",
+        "values": true,
+        "status": true,
+        "codes": false,
+        "scores": false
+      },
+      "screens": [
+        "screens/EC03-complete.jpg",
+        "screens/EC03-initial.jpg",
+        "screens/EC03-options.jpg"
+      ]
+    },
+    {
+      "id": "EC04",
+      "kind": "OnlyCodes",
+      "mask": 4,
+      "mode": "none",
+      "file": "ec04.xlsx",
+      "sequence": 3,
+      "options": {
+        "subformMode": "none",
+        "values": false,
+        "status": false,
+        "codes": true,
+        "scores": false
+      },
+      "screens": [
+        "screens/EC04-complete.jpg",
+        "screens/EC04-initial.jpg",
+        "screens/EC04-options.jpg"
+      ]
+    },
+    {
+      "id": "EC05",
+      "kind": "OnlyCodes",
+      "mask": 5,
+      "mode": "none",
+      "file": "ec05.xlsx",
+      "sequence": 4,
+      "options": {
+        "subformMode": "none",
+        "values": true,
+        "status": false,
+        "codes": true,
+        "scores": false
+      },
+      "screens": [
+        "screens/EC05-complete.jpg",
+        "screens/EC05-initial.jpg",
+        "screens/EC05-options.jpg"
+      ]
+    },
+    {
+      "id": "EC06",
+      "kind": "OnlyCodes",
+      "mask": 6,
+      "mode": "none",
+      "file": "ec06.xlsx",
+      "sequence": 5,
+      "options": {
+        "subformMode": "none",
+        "values": false,
+        "status": true,
+        "codes": true,
+        "scores": false
+      },
+      "screens": [
+        "screens/EC06-complete.jpg",
+        "screens/EC06-initial.jpg",
+        "screens/EC06-options.jpg"
+      ]
+    },
+    {
+      "id": "EC07",
+      "kind": "OnlyCodes",
+      "mask": 7,
+      "mode": "none",
+      "file": "ec07.xlsx",
+      "sequence": 6,
+      "options": {
+        "subformMode": "none",
+        "values": true,
+        "status": true,
+        "codes": true,
+        "scores": false
+      },
+      "screens": [
+        "screens/EC07-complete.jpg",
+        "screens/EC07-initial.jpg",
+        "screens/EC07-options.jpg"
+      ]
+    },
+    {
+      "id": "EC08",
+      "kind": "OnlyCodes",
+      "mask": 8,
+      "mode": "none",
+      "file": "ec08.xlsx",
+      "sequence": 7,
+      "options": {
+        "subformMode": "none",
+        "values": false,
+        "status": false,
+        "codes": false,
+        "scores": true
+      },
+      "screens": [
+        "screens/EC08-complete.jpg",
+        "screens/EC08-initial.jpg",
+        "screens/EC08-options.jpg"
+      ]
+    },
+    {
+      "id": "EC09",
+      "kind": "OnlyCodes",
+      "mask": 9,
+      "mode": "none",
+      "file": "ec09.xlsx",
+      "sequence": 8,
+      "options": {
+        "subformMode": "none",
+        "values": true,
+        "status": false,
+        "codes": false,
+        "scores": true
+      },
+      "screens": [
+        "screens/EC09-complete.jpg",
+        "screens/EC09-initial.jpg",
+        "screens/EC09-options.jpg"
+      ]
+    },
+    {
+      "id": "EC10",
+      "kind": "OnlyCodes",
+      "mask": 10,
+      "mode": "none",
+      "file": "ec10.xlsx",
+      "sequence": 9,
+      "options": {
+        "subformMode": "none",
+        "values": false,
+        "status": true,
+        "codes": false,
+        "scores": true
+      },
+      "screens": [
+        "screens/EC10-complete.jpg",
+        "screens/EC10-initial.jpg",
+        "screens/EC10-options.jpg"
+      ]
+    },
+    {
+      "id": "EC11",
+      "kind": "OnlyCodes",
+      "mask": 11,
+      "mode": "none",
+      "file": "ec11.xlsx",
+      "sequence": 10,
+      "options": {
+        "subformMode": "none",
+        "values": true,
+        "status": true,
+        "codes": false,
+        "scores": true
+      },
+      "screens": [
+        "screens/EC11-complete.jpg",
+        "screens/EC11-initial.jpg",
+        "screens/EC11-options.jpg"
+      ]
+    },
+    {
+      "id": "EC12",
+      "kind": "OnlyCodes",
+      "mask": 12,
+      "mode": "none",
+      "file": "ec12.xlsx",
+      "sequence": 11,
+      "options": {
+        "subformMode": "none",
+        "values": false,
+        "status": false,
+        "codes": true,
+        "scores": true
+      },
+      "screens": [
+        "screens/EC12-complete.jpg",
+        "screens/EC12-initial.jpg",
+        "screens/EC12-options.jpg"
+      ]
+    },
+    {
+      "id": "EC13",
+      "kind": "OnlyCodes",
+      "mask": 13,
+      "mode": "none",
+      "file": "ec13.xlsx",
+      "sequence": 12,
+      "options": {
+        "subformMode": "none",
+        "values": true,
+        "status": false,
+        "codes": true,
+        "scores": true
+      },
+      "screens": [
+        "screens/EC13-complete.jpg",
+        "screens/EC13-initial.jpg",
+        "screens/EC13-options.jpg"
+      ]
+    },
+    {
+      "id": "EC14",
+      "kind": "OnlyCodes",
+      "mask": 14,
+      "mode": "none",
+      "file": "ec14.xlsx",
+      "sequence": 13,
+      "options": {
+        "subformMode": "none",
+        "values": false,
+        "status": true,
+        "codes": true,
+        "scores": true
+      },
+      "screens": [
+        "screens/EC14-complete.jpg",
+        "screens/EC14-initial.jpg",
+        "screens/EC14-options.jpg"
+      ]
+    },
+    {
+      "id": "EC15",
+      "kind": "OnlyCodes",
+      "mask": 15,
+      "mode": "none",
+      "file": "ec15.xlsx",
+      "sequence": 14,
+      "options": {
+        "subformMode": "none",
+        "values": true,
+        "status": true,
+        "codes": true,
+        "scores": true
+      },
+      "screens": [
+        "screens/EC15-complete.jpg",
+        "screens/EC15-initial.jpg",
+        "screens/EC15-options.jpg"
+      ]
+    },
+    {
+      "id": "ES01",
+      "kind": "OnlySubforms",
+      "mask": 1,
+      "mode": "none",
+      "file": "es01.xlsx",
+      "sequence": 15,
+      "options": {
+        "subformMode": "none",
+        "values": true,
+        "status": false,
+        "codes": false,
+        "scores": false
+      },
+      "screens": [
+        "screens/ES01-initial.jpg",
+        "screens/ES01-options-corrected.jpg"
+      ]
+    },
+    {
+      "id": "ES02",
+      "kind": "OnlySubforms",
+      "mask": 2,
+      "mode": "none",
+      "file": "es02.xlsx",
+      "sequence": 16,
+      "options": {
+        "subformMode": "none",
+        "values": false,
+        "status": true,
+        "codes": false,
+        "scores": false
+      },
+      "screens": [
+        "screens/ES02-complete.jpg",
+        "screens/ES02-initial.jpg",
+        "screens/ES02-options-corrected.jpg"
+      ]
+    },
+    {
+      "id": "ES03",
+      "kind": "OnlySubforms",
+      "mask": 3,
+      "mode": "none",
+      "file": "es03.xlsx",
+      "sequence": 17,
+      "options": {
+        "subformMode": "none",
+        "values": true,
+        "status": true,
+        "codes": false,
+        "scores": false
+      },
+      "screens": [
+        "screens/ES03-complete.jpg",
+        "screens/ES03-initial.jpg",
+        "screens/ES03-options.jpg"
+      ]
+    },
+    {
+      "id": "ES04",
+      "kind": "OnlySubforms",
+      "mask": 1,
+      "mode": "rows",
+      "file": "es04.xlsx",
+      "sequence": 18,
+      "options": {
+        "subformMode": "rows",
+        "values": true,
+        "status": false,
+        "codes": false,
+        "scores": false
+      },
+      "screens": [
+        "screens/ES04-complete.jpg",
+        "screens/ES04-initial.jpg",
+        "screens/ES04-options.jpg"
+      ]
+    },
+    {
+      "id": "ES05",
+      "kind": "OnlySubforms",
+      "mask": 2,
+      "mode": "rows",
+      "file": "es05.xlsx",
+      "sequence": 19,
+      "options": {
+        "subformMode": "rows",
+        "values": false,
+        "status": true,
+        "codes": false,
+        "scores": false
+      },
+      "screens": [
+        "screens/ES05-complete.jpg",
+        "screens/ES05-initial.jpg",
+        "screens/ES05-options.jpg"
+      ]
+    },
+    {
+      "id": "ES06",
+      "kind": "OnlySubforms",
+      "mask": 3,
+      "mode": "rows",
+      "file": "es06.xlsx",
+      "sequence": 20,
+      "options": {
+        "subformMode": "rows",
+        "values": true,
+        "status": true,
+        "codes": false,
+        "scores": false
+      },
+      "screens": [
+        "screens/ES06-complete.jpg",
+        "screens/ES06-initial.jpg",
+        "screens/ES06-options.jpg"
+      ]
+    },
+    {
+      "id": "ES07",
+      "kind": "OnlySubforms",
+      "mask": 1,
+      "mode": "columns",
+      "file": "es07.xlsx",
+      "sequence": 21,
+      "options": {
+        "subformMode": "columns",
+        "values": true,
+        "status": false,
+        "codes": false,
+        "scores": false
+      },
+      "screens": [
+        "screens/ES07-complete.jpg",
+        "screens/ES07-initial.jpg",
+        "screens/ES07-options.jpg"
+      ]
+    },
+    {
+      "id": "ES08",
+      "kind": "OnlySubforms",
+      "mask": 2,
+      "mode": "columns",
+      "file": "es08.xlsx",
+      "sequence": 22,
+      "options": {
+        "subformMode": "columns",
+        "values": false,
+        "status": true,
+        "codes": false,
+        "scores": false
+      },
+      "screens": [
+        "screens/ES08-complete.jpg",
+        "screens/ES08-initial.jpg",
+        "screens/ES08-options.jpg"
+      ]
+    },
+    {
+      "id": "ES09",
+      "kind": "OnlySubforms",
+      "mask": 3,
+      "mode": "columns",
+      "file": "es09.xlsx",
+      "sequence": 23,
+      "options": {
+        "subformMode": "columns",
+        "values": true,
+        "status": true,
+        "codes": false,
+        "scores": false
+      },
+      "screens": [
+        "screens/ES09-complete.jpg",
+        "screens/ES09-initial.jpg",
+        "screens/ES09-options.jpg"
+      ]
+    },
+    {
+      "id": "EZR",
+      "kind": "OnlySubforms",
+      "mask": 1,
+      "mode": "rows",
+      "file": "ezrows.xlsx",
+      "emptySelectionRecovered": true,
+      "sequence": 24,
+      "options": {
+        "subformMode": "rows",
+        "values": true,
+        "status": false,
+        "codes": false,
+        "scores": false
+      },
+      "screens": [
+        "screens/EZR-empty.jpg",
+        "screens/EZR-recovered.jpg"
+      ]
+    },
+    {
+      "id": "EZC",
+      "kind": "OnlySubforms",
+      "mask": 1,
+      "mode": "columns",
+      "file": "ezcols.xlsx",
+      "emptySelectionRecovered": true,
+      "sequence": 25,
+      "options": {
+        "subformMode": "columns",
+        "values": true,
+        "status": false,
+        "codes": false,
+        "scores": false
+      },
+      "screens": [
+        "screens/EZC-empty.jpg",
+        "screens/EZC-recovered.jpg"
+      ]
+    },
+    {
+      "id": "EDCSV",
+      "kind": "direct-csv",
+      "file": "edcsv.xlsx",
+      "sequence": 26,
+      "options": {
+        "subformMode": "none",
+        "values": true,
+        "status": false,
+        "codes": false,
+        "scores": false
+      },
+      "screens": [
+        "screens/EDCSV-complete.jpg",
+        "screens/EDCSV-source.jpg"
+      ]
+    },
+    {
+      "id": "EDTC",
+      "kind": "csv-then-testcenter",
+      "file": "edtc.xlsx",
+      "sequence": 27,
+      "options": {
+        "subformMode": "none",
+        "values": true,
+        "status": false,
+        "codes": false,
+        "scores": false
+      },
+      "screens": [
+        "screens/EDTC-complete.jpg",
+        "screens/EDTC-groups.jpg"
+      ]
+    },
+    {
+      "id": "EDTCF",
+      "kind": "fresh-testcenter",
+      "file": "edtcfresh.xlsx",
+      "sequence": 28,
+      "options": {
+        "subformMode": "none",
+        "values": true,
+        "status": false,
+        "codes": false,
+        "scores": false
+      },
+      "screens": [
+        "screens/EDTCF-complete.jpg",
+        "screens/EDTCF-finished.jpg"
+      ]
+    }
+  ],
+  "files": {
+    "inputs/OnlyCodes.sqlite": "13f7e158af3156dfc41dd8d7fd71f881892cbca94d4f70986e9c34571075bd41",
+    "inputs/OnlySubforms.sqlite": "62d913e4111694678fd88aa615ffc031d527de68359d927b03bddd098c65c5a8",
+    "inputs/direct-answers.csv": "df7215ae6dc7a7fa37998ab92250264f9481102aab08122ee7a938fefa635a70",
+    "inputs/direct-testcenter.json": "4e76a8067a6f96ff74a30f7e833aaa1baa0de384b739e24473534f2f2f98caac",
+    "observations/duplicate-retry.json": "ac0e3dad7c5a3fce2147e23a0314886bf3b3dcc91fa5e423db8b5a5f02e433a3",
+    "screens/EDTCR-duplicate-retry.jpg": "8266113a10ca2411d9dba694462ac49a7e3fc358d9cd9f1abf65d968a15cecd5",
+    "native/ec01.xlsx": "f2b5840d75da12bb4da89cc86f60dd5a1b099f8f268fab36ba6f602dec0cddf5",
+    "screens/EC01-complete.jpg": "b025c9157df31372d62cb6ea332551acdef59097e81a97a41e5c5e0fb34ab70d",
+    "screens/EC01-options.jpg": "8d677240ced03d0838b2258383f2f32969cc59219d4274d9d458262a23c7f076",
+    "native/ec02.xlsx": "3e4dad8aa7fee8c5204a097bbf0b274c1d26f53d231ce20d2a2ac3abe29f4472",
+    "screens/EC02-complete.jpg": "fd2ec3baa697e4b87ca3240f0b500dc03fd2252db654522e1ab82e3f55bf4980",
+    "screens/EC02-initial.jpg": "56421e5b59d7547d11ec8e4665bcc48ae6eca966cb144748f9130fbb5b0f9207",
+    "screens/EC02-options.jpg": "f0d44cc4a417079070afd1208bff84095e85eee19092c38d998dca5276adfc35",
+    "screens/EC02-post.jpg": "655046b3c0cebd4f76b20055c618c35a1d46d80fbf2ed98964f41f00ca174c9a",
+    "native/ec03.xlsx": "1c1f1a6de79d1e3d9454edc89e47e0d1533715509b87708117ca97d7c68a51e5",
+    "screens/EC03-complete.jpg": "d2643464ca7e33a947f04e56ad85349c4889bca86ab72202362c2c768f39eae2",
+    "screens/EC03-initial.jpg": "3877c69e6a5de968019a67161a94e683f57a1efb8308f99e416bd7a4c4d0c060",
+    "screens/EC03-options.jpg": "d472c8f756c3a07206e4ea5b5463b95eeb143717e2affa0d4ac90a503daf7682",
+    "native/ec04.xlsx": "4340c7b01e7d1d85addb60e102e9aa1eb842a4a3887e88c1aa65531aa1c9b9ab",
+    "screens/EC04-complete.jpg": "94af78f25aad03e6638b2b67d313ecae0fde151bc7b5e9eb538b726133a66bb7",
+    "screens/EC04-initial.jpg": "84c6477ab4a54900f65cbad4a9920e44cd51b42a37bceb7037461dd0089e767f",
+    "screens/EC04-options.jpg": "e8591974c14f6e78e3d48bc46ea469bb6941cbc309e855a77454c920e9b1d639",
+    "native/ec05.xlsx": "3448624749c159d889e0a3d4773b31cc3bdaaae557f04822e3df2eae48ee7d48",
+    "screens/EC05-complete.jpg": "a0b2aa21b54bf56503ec5ce65456aaf3365df05eb7d4931142b273cba0cea356",
+    "screens/EC05-initial.jpg": "d679ee86a3cba90c0e3894fabf14be0ecb70526f8dc8baaacb9b91ad9cfb8e60",
+    "screens/EC05-options.jpg": "eaf1f39d324a62be411aae736dd7a8ca1d1ed33eba8286fe4d71f59c23236770",
+    "native/ec06.xlsx": "e6e80fba480ce630a40df35e7503691aa71b228600f84b72fbee04c51d7d71f9",
+    "screens/EC06-complete.jpg": "6f5edc5fedd1576bdf22e0007df048b9aa3fdb09b29e55a9553f310ed6ea2876",
+    "screens/EC06-initial.jpg": "58bc90088864d4748d537ff8cdfc108e242d2ae8104ea4bfc97651ee5026b532",
+    "screens/EC06-options.jpg": "14ffaf1ac191a0781a5b1cbb2e942c5c72c67ca852c775f0c2989881270fce41",
+    "native/ec07.xlsx": "0ac295a41d673dcab20a77c15e0383d18e649eea5ad24dfc2f70b1cc7a148446",
+    "screens/EC07-complete.jpg": "3da10f8fc673369becf119f4f955daf0debe5aeffe154306f3194552d715a750",
+    "screens/EC07-initial.jpg": "6a7e4ce9bfaedb7baac480d7ce7d0f510399e88113bfc2636d3ea8feb90dfb8f",
+    "screens/EC07-options.jpg": "a0a1e9fda4485fbf8c3e212c903e80bd2cbe3976130f19acb9d1cf0d216d7bee",
+    "native/ec08.xlsx": "b1bd3cca28fdb2f8673752dec40c8ac7be0e6332adb06af8c769be75e0732581",
+    "screens/EC08-complete.jpg": "f60796050658df86f873d067ca849f88a3e9a6d09939cf8f3944db4805cd819c",
+    "screens/EC08-initial.jpg": "b162addbc0a979d5b2ba09f18a9fd7a7b3133955f70e0a69db6643a859079005",
+    "screens/EC08-options.jpg": "ad18a2c977c4dd7a55650272fdde6b2b38db4832f82602b3e2f8b7aeced90d5d",
+    "native/ec09.xlsx": "495efe44e7be8f9d9fddb744e0169014a2ce18c2b3e7548867ac1959e74696cd",
+    "screens/EC09-complete.jpg": "42a2efe0aafd158c585eccf19e878b702c3132bad19436fc8b5ccd30c9281c2f",
+    "screens/EC09-initial.jpg": "f5c863abdf450372a545db76f0f28e1a145fdc53c0d0726421b9f06510271302",
+    "screens/EC09-options.jpg": "c5f26a6341e196ad3a03200922dd39c720078de0c6891749e9355461eedcf4db",
+    "native/ec10.xlsx": "99e2795de5a898269f1edf5419a0fd54a3910c12559deec55b5cac4b8163efd1",
+    "screens/EC10-complete.jpg": "7a3f89febff5eae3e4cbf0bb602b2905a5e11d33bb10bce891b57cd37dd19e4e",
+    "screens/EC10-initial.jpg": "674819403ce72a4b209d83ea0a5abf32437cbcbcbd05156c1a87a750cad7506c",
+    "screens/EC10-options.jpg": "5b7b15a4400e3474ba7875fefa81970c70a4ac905a9714eeb23e9b8c1deaf218",
+    "native/ec11.xlsx": "3645c59f88de46f8fac3fb913b5ffd134725743f0a5a44b4aceba7f56c823041",
+    "screens/EC11-complete.jpg": "16cdb344dbeaf74a01c7100f745bb3337c604633c2a0b284610925286d808b1d",
+    "screens/EC11-initial.jpg": "b062969364c3f2451b0f26232d681130e668fa4cfb07c2bf67836d1b1bd48387",
+    "screens/EC11-options.jpg": "f7fff2e5ddf3eb5a525ef7721899c521e8428406d4f5673646121bb6ca6e2c0f",
+    "native/ec12.xlsx": "60dd9ebcd400660c4a8ad000aca8b035894b93c02ea1a42e2961ad17786aaad5",
+    "screens/EC12-complete.jpg": "38b7ea662832fe92f2735c4727a9ed920de77d511b8c9ea51cad3c9b3796249a",
+    "screens/EC12-initial.jpg": "a074a3de3b32f0ac01c1dcb115491463cbd547a86b56a8eab211b2653491ad23",
+    "screens/EC12-options.jpg": "983bffce8b3f10e103b2fff79bd7869a23c745c787234e1389f9003dd975736f",
+    "native/ec13.xlsx": "c0fcc05a9024187e23c97a933ae42fd897b0ac22bc99e9ccacf34677df91bc8b",
+    "screens/EC13-complete.jpg": "696d88394aee581a2b0e3b1e6ccdaa004d43e16a6faaba62b4b54a4ccbe76970",
+    "screens/EC13-initial.jpg": "23405e47ef0b197f631268d4a9000a9fd9ef0e73aa5f5be740fe794b06d5f14c",
+    "screens/EC13-options.jpg": "5481320b826c7ea042a9f26123a4a52b86464240f335f147caa9bcfdbcb1b70d",
+    "native/ec14.xlsx": "1b14d06efd1905a6dd114cd3ae7b19e7911f45f09618d44fb4651103c5d147cf",
+    "screens/EC14-complete.jpg": "861c60173d19f93383b4f975bdad5cf2e457d34b7bc5f396ef8e6d49bc95508e",
+    "screens/EC14-initial.jpg": "bbffed0c1b106e457b0840aeccd87d6caef2e2a29d20befbf29a867f0bb91292",
+    "screens/EC14-options.jpg": "c9a187a84d74b8fb5ecb7bd2224d50ea5b2fe5aec49b0524ea12c1689486f6a0",
+    "native/ec15.xlsx": "61d892dabd498ebb32659a85f8eec3aebed31e3929b6877265c9a5d1d4067fa2",
+    "screens/EC15-complete.jpg": "2b22537673767aabad16e303189361f2fc83e669a4a0b33e4ff7ae9d19cb1a9c",
+    "screens/EC15-initial.jpg": "ec3f1b62699b33e80cab764526eed4775c892281c55819e7e3e193fa90f293bb",
+    "screens/EC15-options.jpg": "127635104722e7c05bd69c20e686196f1b38459ae376bb2fe01d43451c5d9915",
+    "native/es01.xlsx": "d6b41be37f1bd4f0d510bed28bf82013ea566a3cc49d062857aa06796abc8c3a",
+    "screens/ES01-initial.jpg": "c2c733155af88f3d22963f05f7645b66f72dabcdda8d001bab9775891020a00c",
+    "screens/ES01-options-corrected.jpg": "564fcbda0a7f4148a085fd5ceca4c4858dbd40712e86af143ddda1bfc26d6768",
+    "native/es02.xlsx": "2fc46ebc6678c9d027d4371d1bc1b2213c0808ee96084323c04270b6ceae1341",
+    "screens/ES02-complete.jpg": "9ffc77c1c09118bde8a206b9a4337b04d9926484c318c3b576c6d82808fd4973",
+    "screens/ES02-initial.jpg": "30d64c4975566abe984183f6540b7cd3c32cf61227cd615d485d5bb23ab98980",
+    "screens/ES02-options-corrected.jpg": "51247784246dfa3c09de200c6fbfed9f9972fa97277d464adea9e7111670d64d",
+    "native/es03.xlsx": "2e553ad995284c9a2417390c82aa04b75071b335c4b8e9bdf388437bd1e95683",
+    "screens/ES03-complete.jpg": "6d7312237b64aede31d949cc1e0be372d146d59ed97ff4956c0faf080b31f416",
+    "screens/ES03-initial.jpg": "23ae1a9a740519b41ce5118edf5a5664d78844f69d186437b77a09a91e5e9e03",
+    "screens/ES03-options.jpg": "87d3de69423baa1c323f89a508e04f7850cb18b9bbbc9c4086f23f337bb0c670",
+    "native/es04.xlsx": "8ab109c2283e86c9ffe29bc192eb87bdbc78de55be54be1af552e5c90ebbdc46",
+    "screens/ES04-complete.jpg": "b5d8577dd2663fca02bad05af8ede5bcb7f7acaaed2e96938afd1dfc1c8f9cc3",
+    "screens/ES04-initial.jpg": "ce0ca3874e18d08192646734b8fb3b7ee842a99551e654017b02a19dfa419afe",
+    "screens/ES04-options.jpg": "d4aeb13c65c21b665b55813d7b523f0435a40e9b902a0ad448f5437b89ddc6eb",
+    "native/es05.xlsx": "56adf44714196b7b9d8176727e9dc7bf12ec33db7c7fd72a625d56e3276c3332",
+    "screens/ES05-complete.jpg": "f556052c5feef6f612599ff016ec80ad518bd88167c8b61dcd2c2532397c84dc",
+    "screens/ES05-initial.jpg": "aa69fb1ba5afe3dc0da701e55819e1575710871b4241887257e2293717db26d7",
+    "screens/ES05-options.jpg": "fd8063e8aaf62fb81fe3e580eab574e1e84177b62cea9ef544a85716298e06f9",
+    "native/es06.xlsx": "19895b7c9902db17208a6df3dbf5857c44367a9c3f5a01aee97b78308dc7c1fd",
+    "screens/ES06-complete.jpg": "9e12ae75d1695f18639798a7e0658d70aaceafddfcc58cace8a6f0f96cffc9bb",
+    "screens/ES06-initial.jpg": "8e4b9b240369069a70108843bf55594ada35d4fa9f34eef9c79b60d1a6ce24bb",
+    "screens/ES06-options.jpg": "834f629549ffaa03b9f1c6e9bcf2def5dc38284a941232117b6679fc351ec55d",
+    "native/es07.xlsx": "220de75a82b30735325e8e3d85251034bd3f69ece957df1852e0eb8d66da9b8f",
+    "screens/ES07-complete.jpg": "ea41fa4d0351dc912394a39989a58e09768e1d3aa91918eec31456bfc549a8f7",
+    "screens/ES07-initial.jpg": "0ebf37ec9249959571dbe96d967d17058003e9b900122d7729dd78c045ab0e49",
+    "screens/ES07-options.jpg": "33d3a8170ee3b5756e750af02c0d68f68bcd7e37c3099ce461820e91de7c655e",
+    "native/es08.xlsx": "2f5ee3f8b31ccd43916f6c92b33b1f5aef434332586839e74a798202466aa74b",
+    "screens/ES08-complete.jpg": "414b268cca31e66dfbcb5eee0ccaf9c6ee3f4ac7c0249c3971e08432eac817a1",
+    "screens/ES08-initial.jpg": "68797c89a8d90c991bdcd69e99ce29db8729e45d1b9d5465c7af14a559df5677",
+    "screens/ES08-options.jpg": "6b66198e81c50d1d6f1c3bfb21bdfb041ba30b97e088578157798e29fc3419e5",
+    "native/es09.xlsx": "2abb37ef81130eb243bb9875af1257213c8e185c8a46333c87689ccae433fa3c",
+    "screens/ES09-complete.jpg": "222d2fce0676b6a6d660d02a03fa31698e05b5ef8ecdb2021e5e073d737d731f",
+    "screens/ES09-initial.jpg": "e6426711c93642b99248d5f667a9b18d3e39446c171155ba07886b56243b4c3e",
+    "screens/ES09-options.jpg": "6de7384e6034e3bd5a5c8fdce1dabd7fb560cb667b1142b72559df3d4308281b",
+    "native/ezrows.xlsx": "c56c739b38fdefe461934985a237d8e524ca1984b73d70ab0e77e38fc9e9bdc3",
+    "screens/EZR-empty.jpg": "8e0b79349c6d9bf21329178f6ab0b91eaaf6d99d09bb9dbc6351649315cc1859",
+    "screens/EZR-recovered.jpg": "37c8d59e9a1ae0f0aac4b44c19fe1c7a9c65057523a265e0893cf64da304357b",
+    "native/ezcols.xlsx": "e233532e1085f308f305359409f763c4fea804058ce131bd70c1f62636095a73",
+    "screens/EZC-empty.jpg": "78ec2438e962c0f1d56cf898205cd134948677a074a12eecdebd53b690da7c75",
+    "screens/EZC-recovered.jpg": "014ce5fac7043b29d894fb421949f67ad684e3c85b2ac4e63bdad1428f0dc777",
+    "native/edcsv.xlsx": "5882ae00c329ede4f0819b519a939d7fa5d1a162e7ce27bcb9b76d1102a5fa41",
+    "screens/EDCSV-complete.jpg": "6c3eb6b3316a9783a0d66786f9868c46302b1b89ed0d8226ee075e76b7b00be1",
+    "screens/EDCSV-source.jpg": "9bc80a0b162971abddc8bb528ac3f978e97d71f392416fd4e70cb396b8076ac1",
+    "native/edtc.xlsx": "38d3409c38420c85e5d5d6dbc6f78c839237abf867d1f052fd197cbf603360e0",
+    "screens/EDTC-complete.jpg": "dfece71daadcbb9a1e02262065fc17554fbe5f5f44a17e001ac218d786b9738c",
+    "screens/EDTC-groups.jpg": "fa62a8913e0791e4ee1f3cf1b7ebf81b014747c8103f8bcf9232100594b97c85",
+    "native/edtcfresh.xlsx": "13ee35722fce5874b00b8e3aad8a7dcf642428b1c948298689816fec5560cb30",
+    "screens/EDTCF-complete.jpg": "308d6856203e8891c61869329c04651b3fd584802c191ad8c6476a666b2de216",
+    "screens/EDTCF-finished.jpg": "15fd59443c217cf3cfecd71d36e2ef99be59e2cf75f35b7268bed70365cdd74e"
+  },
+  "bundles": [
+    {
+      "file": "inputs.zip",
+      "bytes": 162048,
+      "sha256": "5d71c42661944a3429d3cf04826b48b193c8e58080d9ffb911a713b06c587670"
+    },
+    {
+      "file": "cases-00.zip",
+      "bytes": 2006751,
+      "sha256": "68e8573083bfcdb515704b1157c8cf2653d286621eda4e3cd8e9d37cd9e78f25"
+    },
+    {
+      "file": "cases-01.zip",
+      "bytes": 1976634,
+      "sha256": "728d1d7ad4cd7da4538ecdd228f5c487a41cec3f86a905f46a8b00d3f37294f8"
+    },
+    {
+      "file": "cases-02.zip",
+      "bytes": 1976482,
+      "sha256": "fab1fd4a4c45c43b7b3b56f249b62f3d5b8c440a1027b703cec171ca9882a5a3"
+    },
+    {
+      "file": "cases-03.zip",
+      "bytes": 1810441,
+      "sha256": "fa3d06bf952d0cad3dc37ca753acd20464b79d92c1e698bd073016c18ed9253f"
+    },
+    {
+      "file": "cases-04.zip",
+      "bytes": 1975688,
+      "sha256": "b84b4ab87b7290d128ecfc17ea3ccd532fae96b8c9984db7bf9f5095e9bd12ee"
+    },
+    {
+      "file": "cases-05.zip",
+      "bytes": 1976257,
+      "sha256": "ec3fca74266f64d05ac42375d6640c00df9a68640917c1c9ab2593b6230bf936"
+    },
+    {
+      "file": "cases-06.zip",
+      "bytes": 1312738,
+      "sha256": "95c2d86d202e9d963efc24fff96de9f51068f7fb9b14f48d6c3ce6ecfff108b6"
+    },
+    {
+      "file": "cases-07.zip",
+      "bytes": 315640,
+      "sha256": "2409184afad7107697ef6faff6e3fb2f5f11221347aa59b48cba710874d08096"
+    }
+  ],
+  "products": {
+    "onlyCodes": 15,
+    "onlySubforms": 9,
+    "emptyChoiceRecovery": 2,
+    "directSourceSequences": 3
+  },
+  "qualifiedOriginalError": "Repeating the Testcenter export in the same wizard stops after the first duplicate identity, says beendet and leaves the prior workbook byte-identical. Browser gives an explicit duplicate-state error and offers a reset.",
+  "sourceAvailability": "The original 45-choice ToXlsx dialog is reachable only for SQLite. Direct CSV and Testcenter commands have fixed values-only / no-subform output. The previously proposed 45-choice products for those direct sources are not reachable native GUI paths.",
+  "comparison": "All sheet names, dimensions and cell values without normalization. Database inputs have actual mixed capabilities. Testcenter input is a read-only snapshot of the real local synthetic server, including an empty-report group.",
+  "corrections": [
+    "Empty successful response/log report bodies mean zero records, as in the native dialog.",
+    "Windows direct-Xlsx mode retains the prior direct CSV intermediate data; explicit checkbox and reset make the original cross-source state visible. A restarted application has an empty intermediate store. Extended exports remain independent."
+  ],
+  "excludedAttempts": [
+    "Initial ES01/ES02 keyboard navigation did not account for independently tabbable enabled radio buttons. No workbook was produced in those attempts. Corrected final selections and exports are retained; those attempts are not passing cases."
+  ],
+  "limits": [
+    "Synthetic files and local demo server only; no empirical data.",
+    "Does not claim 45 inaccessible native choices for direct sources.",
+    "Arbitrary import histories and network failures are outside these 29 pairs."
+  ]
+}
