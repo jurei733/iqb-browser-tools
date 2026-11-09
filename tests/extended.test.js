@@ -46,7 +46,7 @@ test('responses and logs merge by tuple, retain original IDs and choose latest r
 test('wide workbooks implement all three subform modes and the four original sheets',async()=>{
   const d=dto();d.responses=[chunk('plain'),chunk('one',3000,'1'),chunk('two',4000,'2')];const data=D.peopleFromDTO([d]);
   for(const mode of ['rows','columns','none']){const w=await T.loadWorkbook(await D.wideWorkbook(data,{subformMode:mode}));assert.deepEqual(w.worksheets.map(s=>s.name),['Antworten','Status','Codes','Scores']);const s=w.worksheets[0];assert.equal(s.rowCount,mode==='rows'?4:2);assert.deepEqual(s.getRow(1).values.slice(1,4),['ID','Group','Login+Code']);assert.equal(s.getCell(2,3).text,'00100');if(mode==='columns')assert.deepEqual(s.getRow(1).values.slice(4),['U_v','U_v##1','U_v##2']);else assert.equal(s.getCell(2,4).text,'plain');}
-  await assert.rejects(()=>D.wideWorkbook(data,{values:false,status:false,codes:false,scores:false}),/mindestens/);
+  await assert.rejects(()=>D.wideWorkbook(data,{values:false,status:false,codes:false,scores:false}),/Bitte Optionen wählen/);
 });
 test('long and multi-session exports retain original headers, quotes, milliseconds and Mbit/s',()=>{
   const data=persons(),b=data[0].booklets[0];b.sessions.push({...b.sessions[0],ts:10000});b.units.push({...structuredClone(b.units[0]),id:'Second',alias:'V_',chunks:[{id:'all',type:'',ts:'12000',variables:['v']}]});

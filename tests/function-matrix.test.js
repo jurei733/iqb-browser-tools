@@ -87,7 +87,7 @@ test('matrix: every Excel sheet toggle and both response-status filters affect a
     assert.deepEqual(w.worksheets.map(s=>s.name),[sheet]);
     const contents=w.worksheets[0].getSheetValues().flat().join(' ');assert.ok(!contents.includes('DISPLAYED_ONLY')&&!contents.includes('NOT_REACHED_ONLY'));
   }
-  await assert.rejects(D.wideWorkbook(people,{values:false,status:false,codes:false,scores:false}),/mindestens eine Excel-Ausgabe/);
+  await assert.rejects(D.wideWorkbook(people,{values:false,status:false,codes:false,scores:false}),/Bitte Optionen wählen/);
 });
 
 test('matrix: SQLite checks duplicate units, preserves unrelated groups and exports group subsets',async()=>{

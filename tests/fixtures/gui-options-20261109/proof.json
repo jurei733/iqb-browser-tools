@@ -1,0 +1,127 @@
+{
+  "date": "2026-11-09",
+  "synthetic": true,
+  "method": "Mouse-driven original itc-ToolBox 3.3.0.2 GUI in Windows VM; collected the three actual exported workbooks. No assembly harness substitution.",
+  "originalSHA256": "c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1",
+  "input": "public/examples/Beispiel.sqlite",
+  "inputSHA256": "b4ccc03c425185c1b6fdea9c0b26ab4f862e552e879ab1dbd92eaffc6595a6bc",
+  "emptySelection": {
+    "message": "Bitte Optionen wählen",
+    "staysInDialog": true,
+    "recovery": "native-dialog-0"
+  },
+  "retention": "Each successful export retained subform mode and field selection on reopening the next native dialog.",
+  "cases": [
+    {
+      "id": "native-dialog-0",
+      "file": "excel-0.xlsx",
+      "sha256": "052fab9d59c2a55a1f062a6ad115b50720c922a8809c3c978af7028b58376f2e",
+      "options": {
+        "subformMode": "rows",
+        "values": true,
+        "status": true,
+        "codes": false,
+        "scores": false
+      }
+    },
+    {
+      "id": "native-dialog-1",
+      "file": "excel-1.xlsx",
+      "sha256": "458754a7c85405d9c0afa99e2d0adb87c71d57d2e65b5525c743d8e808862031",
+      "options": {
+        "subformMode": "columns",
+        "values": false,
+        "status": false,
+        "codes": true,
+        "scores": true
+      }
+    },
+    {
+      "id": "native-dialog-2",
+      "file": "excel-2.xlsx",
+      "sha256": "8757b7f0cd8fdb83fbdf619209f353b90d863fac27dee824894793f6d8c3f7e4",
+      "options": {
+        "subformMode": "none",
+        "values": false,
+        "status": true,
+        "codes": false,
+        "scores": true
+      }
+    }
+  ],
+  "coding": {
+    "originalSHA256": "7b8fdb074669c5e0ba267c2e924b484a322abb32cb733bae2c659b38191d3407",
+    "method": "Original IQB-Kodieren 4.3.0.3, real ZIP loader, folder dialog, F3 list, Ctrl+S; actual result files transferred through the guest browser. All result fields including timestamps compared without exclusions.",
+    "cases": [
+      {
+        "id": "Partial",
+        "input": "Partial/Job.zip",
+        "inputSHA256": "0605181b14bdf49b586c5e3ea2fa7ac34f867cc09b3e56f0ee8b7bb5a7b7c533",
+        "result": "Partial/saved.result",
+        "resultSHA256": "5bce99499d25366c14d0ea1454a83ccec2a7cb9e27f95d8f90ba8d6c4ea9f53a",
+        "native": "Partial/native.result",
+        "nativeSHA256": "345a3d0f980607d06a6d9c45ff2eb1452101a15be6ab6f74998c483dabaded6c",
+        "caseCount": 6,
+        "selectedCase": 2,
+        "variable": "V2",
+        "code": "",
+        "comment": "",
+        "list": [
+          {
+            "number": 1,
+            "variable": "V1",
+            "code": "0",
+            "comment": ""
+          }
+        ],
+        "nativeLabel": "Job Job.xml"
+      },
+      {
+        "id": "Comment",
+        "input": "Comment/Job.zip",
+        "inputSHA256": "0605181b14bdf49b586c5e3ea2fa7ac34f867cc09b3e56f0ee8b7bb5a7b7c533",
+        "result": "Comment/saved.result",
+        "resultSHA256": "75cc5b63454713e089594395b856f06e937d5a9e474810798d61252c9b780a8a",
+        "native": "Comment/native.result",
+        "nativeSHA256": "f45977960b85b1fcd56555426414da5ccf96479cdbed1e6ede8120e5e22b5960",
+        "caseCount": 6,
+        "selectedCase": 1,
+        "variable": "V1",
+        "code": "",
+        "comment": "comment",
+        "list": [
+          {
+            "number": 1,
+            "variable": "V1",
+            "code": "",
+            "comment": "comment"
+          }
+        ],
+        "nativeLabel": "Job Job.xml"
+      },
+      {
+        "id": "Whitespace",
+        "input": "Whitespace/Job.zip",
+        "inputSHA256": "0605181b14bdf49b586c5e3ea2fa7ac34f867cc09b3e56f0ee8b7bb5a7b7c533",
+        "result": "Whitespace/saved.result",
+        "resultSHA256": "54f5496045407149af834b80f060515611a9538a93afec3757a67ebded27d9bd",
+        "native": "Whitespace/native.result",
+        "nativeSHA256": "47e90780f86bf59e5ccc1046eac1ad20bd664afe5480855a8dbe49e5d678eedb",
+        "caseCount": 6,
+        "selectedCase": 1,
+        "variable": "V1",
+        "code": "",
+        "comment": "",
+        "list": [],
+        "nativeLabel": "Job Job.xml"
+      }
+    ],
+    "originalCrash": {
+      "input": "Partial/Job.zip",
+      "result": "irregular.result",
+      "resultSHA256": "15dc9fc2fbc494a7fa0e5d1511894584cb6e31fa17d2be7aa7c06070fbe64b54",
+      "observed": "Original process terminates when opening the folder with three people each having V1 only. Windows Event Viewer Application/.NET Runtime, event 1026 at 2026-11-09 15:41:34: System.ArgumentOutOfRangeException in System.Linq.Enumerable.ElementAt, CaseList.get_SelectedCase, MainWindow.CBJobs_SelectionChanged.",
+      "browser": "Six cases retained; all three codes present; first empty case selected. Intentional recovery behavior, not identical to the crashing original."
+    }
+  }
+}

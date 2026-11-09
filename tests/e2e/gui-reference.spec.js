@@ -37,7 +37,8 @@ test('Windows GUI workflow: paired codes and comment, restart, then exact native
   const imported=await context.newPage();await imported.goto('/');
   await imported.locator('#coding-files').setInputFiles([{name:'modern.zip',mimeType:'application/zip',buffer:await readFile(job)},{name:'Job.xml.result',mimeType:'application/gzip',buffer:Buffer.from(reference.coding.capture.base64,'base64')}]);
   await expect(imported.locator('#case-number')).toHaveValue('3');
-  expect(await result(imported,testInfo,'native-roundtrip.result')).toEqual(native);
+  // Opening a renamed ZIP in Windows relabels the result with the current job label.
+  expect(await result(imported,testInfo,'native-roundtrip.result')).toEqual({...native,label:'modern Job.xml'});
  }finally{await context.close();}
 });
 test('Windows ZIP GUI: all cases, F4 comment, zero and arrow codes, sorted jump and complete resume',async({page},testInfo)=>{
