@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Testtakers>
+  <Metadata></Metadata>
+  <Group id="DEMO" label="Beispielschule - Klasse 7">
+    <Login mode="run-hot-return" name="u6r3t4f9s5a6s" pw="x6r9b3t9c9t3c">
+      <Booklet>Booklet1</Booklet>
+    </Login>
+    <Login mode="run-hot-return" name="p4z4r9q2y2r5r" pw="e6f7h7q4f5r2r">
+      <Booklet>Booklet1</Booklet>
+    </Login>
+    <Login mode="run-hot-return" name="x4q3q2v7v9v7s" pw="r3d3r3x2q9c2q">
+      <Booklet>Booklet1</Booklet>
+    </Login>
+    <Login mode="run-review" name="d2d9u4e2c9h9r" pw="p2c5v7v5p4h9v">
+      <Booklet>Booklet1</Booklet>
+    </Login>
+  </Group>
+  <Group id="TESTS_v4f2" label="TEST Schule - Klasse 8">
+    <Login mode="run-hot-return" name="a2q4t3d7t5u4f" pw="y3s7e9q2d2u3q">
+      <Booklet>Booklet1</Booklet>
+    </Login>
+    <Login mode="run-hot-return" name="f6g9z9z4z4b6a" pw="f3g3s2v6f2y6g">
+      <Booklet>Booklet1</Booklet>
+    </Login>
+    <Login mode="run-review" name="v3t7r2s6h5y6c" pw="g2d2b6z6r5t7t">
+      <Booklet>Booklet1</Booklet>
+    </Login>
+  </Group>
+  <Group id="TESTS2_v4f2" label="TEST Schule - Klasse 9">
+    <Login mode="run-hot-return" name="c2a4t2z9r6v4a" pw="u6c9y3g9p9d6s">
+      <Booklet>Booklet1</Booklet>
+    </Login>
+    <Login mode="run-review" name="p5g2a4a9t6p3g" pw="u2s7p6f4a5f6t">
+      <Booklet>Booklet1</Booklet>
+    </Login>
+  </Group>
+</Testtakers>

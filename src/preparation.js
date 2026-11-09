@@ -1,4 +1,5 @@
 import * as T from './toolbox.js';
+import {windowsLoginInteger} from './windows-login-options.js';
 import {strToU8} from 'fflate';
 // The original dialog reports validation in phases. Keep later diagnostics even
 // when an earlier row is invalid; otherwise the text export loses useful errors.
@@ -34,11 +35,12 @@ export async function prepare(kind,args={},onProgress=()=>{}){
     const groups=T.named(w,'groupsCol.Name1');let groupCount=0;for(let r=groups.row+1;r<=groups.sheet.rowCount&&groups.sheet.getCell(`${groups.col}${r}`).text;r++)groupCount++;
     let count=T.loginRows(w).length;onProgress(`${groupCount} Gruppen gefunden`);onProgress(`${count} Logins gefunden`);onProgress('beendet');
     if(count&&!args.renew&&!args.createXml)return {outputs:{},summary:'beendet',noOperation:true};
-    const renew=args.renew||!count;if(renew&&(args.loginOptions?.length??5)<5)throw new Error('Die Länge des Benutzernamens muss mindestens 5 sein.');
+    const options={...args.loginOptions,windows:true,length:windowsLoginInteger(args.loginOptions?.length??5),passwordLength:Math.max(0,windowsLoginInteger(args.loginOptions?.passwordLength??0))};
+    const renew=args.renew||!count;if(renew&&options.length<5)throw new Error('Die Länge des Benutzernamens muss mindestens 5 sein.');
     onProgress('Öffne Datei');onProgress(`Lese Datei ${file.name}`);onProgress('h:Lese Gruppen');
     try{
       T.prepareLoginGroups(w,args.loginOptions?.suffix);
-      if(renew){onProgress('Generiere Logins');const options={...args.loginOptions};if(Number.isInteger(options.passwordLength)&&options.passwordLength<0)options.passwordLength=0;count=T.generateLogins(w,options);}
+      if(renew){onProgress('Generiere Logins');count=T.generateLogins(w,options);}
       const outputs=args.createXml?T.testtakerXML(w,{...args.xmlOptions,windows:true,filename:file.name.replace(/\.[^.]+$/,'')+'.xml'}):{};
       for(const name of Object.keys(outputs))onProgress(`Habe Datei '${name}' gespeichert`);
       outputs['Logins-browser.xlsx']=await T.writeWindowsWorkbook(w);

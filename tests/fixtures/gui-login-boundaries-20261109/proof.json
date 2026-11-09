@@ -1,0 +1,245 @@
+{
+  "date": "2026-11-09",
+  "synthetic": true,
+  "original": "itc-ToolBox 3.3.0.2",
+  "originalSHA256": "c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1",
+  "method": "Visible unchanged original Windows GUI via CUA/UTM. Six copies B0..B5 of the prior existing-login workbook; each input pushed and read back byte-identical before GUI use. XML/XLSX outputs pulled after GUI completion. Retained screenshots crop the complete native login dialog. USB-attachment prompts were cancelled; interrupted input batches excluded and final parameter states verified before Continue.",
+  "input": "existing.xlsx",
+  "inputSHA256": "13ee2687ed923f28048112649fb1df69868228c5338f3ad8c6a0e48d35a09b90",
+  "cases": [
+    {
+      "id": "B0",
+      "length": "13",
+      "passwordLength": "13",
+      "parsedLength": 13,
+      "parsedPasswordLength": 13,
+      "monitor": false,
+      "allPrefixes": false,
+      "separate": false,
+      "booklet": "Booklet1",
+      "files": [
+        {
+          "file": "B0/B0.xlsx",
+          "sha256": "14fe3b79ef76d4ca76ab1517677ffb07aa7a62078d8ee4d3c03273cae9735910"
+        },
+        {
+          "file": "B0/B0.xml",
+          "sha256": "444e1edede9157977d6a3ea9fc9c4de3344aaacf7ff6be7d9547d54bf41533d7"
+        }
+      ]
+    },
+    {
+      "id": "B1",
+      "length": "20",
+      "passwordLength": "20",
+      "parsedLength": 20,
+      "parsedPasswordLength": 20,
+      "monitor": true,
+      "allPrefixes": true,
+      "separate": false,
+      "booklet": "Booklet1",
+      "files": [
+        {
+          "file": "B1/B1.xlsx",
+          "sha256": "96019445eac2f5dbb173a27771acdbeed751a43d630c7249455fdbf84b0a9d79"
+        },
+        {
+          "file": "B1/B1.xml",
+          "sha256": "3de2f5a5f56d48db4e13ae150742cf9d888833fd9fc47e360fb2af56071c49af"
+        }
+      ]
+    },
+    {
+      "id": "B2",
+      "length": "5",
+      "passwordLength": "abc",
+      "parsedLength": 5,
+      "parsedPasswordLength": 0,
+      "monitor": true,
+      "allPrefixes": true,
+      "separate": false,
+      "booklet": "Booklet1",
+      "files": [
+        {
+          "file": "B2/B2.xlsx",
+          "sha256": "6f56ff8a273ee17fa641af9394205b9fa89a990ff1c09f7a255b33c2f08fdf24"
+        },
+        {
+          "file": "B2/B2.xml",
+          "sha256": "617e7577f6318e820466950bbb24cf3e22f300667406d068c7af97ab29a59b04"
+        }
+      ]
+    },
+    {
+      "id": "B3",
+      "length": "5",
+      "passwordLength": "5.5",
+      "parsedLength": 5,
+      "parsedPasswordLength": 0,
+      "monitor": true,
+      "allPrefixes": true,
+      "separate": false,
+      "booklet": "Booklet1",
+      "files": [
+        {
+          "file": "B3/B3.xlsx",
+          "sha256": "e4fe62d27ce594c744a007e6c4551e48beb67fab45ce1c7ee832a1e5cd4a7feb"
+        },
+        {
+          "file": "B3/B3.xml",
+          "sha256": "7b231b9737bf1576dc123dd9c14baf502ff9f09be244063685f99d068d0ce2ae"
+        }
+      ]
+    },
+    {
+      "id": "B4",
+      "length": "5",
+      "passwordLength": "5e0",
+      "parsedLength": 5,
+      "parsedPasswordLength": 0,
+      "monitor": true,
+      "allPrefixes": true,
+      "separate": false,
+      "booklet": "Booklet1",
+      "files": [
+        {
+          "file": "B4/B4.xlsx",
+          "sha256": "1df616bcc4a4669e5322686ce35cba4f1a0ea1645d08df091e6a680c4a9857bb"
+        },
+        {
+          "file": "B4/B4.xml",
+          "sha256": "d29df00d378bbc2392b17cdd1cd5e3a28c86f6b5ab9740c7773cfab9f17c6b4e"
+        }
+      ]
+    },
+    {
+      "id": "B5",
+      "length": "5",
+      "passwordLength": "2147483648",
+      "parsedLength": 5,
+      "parsedPasswordLength": 0,
+      "monitor": true,
+      "allPrefixes": true,
+      "separate": false,
+      "booklet": "Booklet1",
+      "files": [
+        {
+          "file": "B5/B5.xlsx",
+          "sha256": "9aeeddc594a4763da224cb76c3502eb5816a0e944c3c1fb4b7d57fd35c97130d"
+        },
+        {
+          "file": "B5/B5.xml",
+          "sha256": "68b8140659f8ac3c41cb5eb9977cc73ec881097d888c42811c88452792203570"
+        }
+      ]
+    }
+  ],
+  "invalidLoginValues": [
+    "abc",
+    "5.5",
+    "5e0",
+    "2147483648"
+  ],
+  "invalidLoginMessage": "Die Länge des Benutzernamens muss mindestens 5 sein.",
+  "recovery": "B2 corrected to login length 5 with password abc in the same dialog, then generated successfully.",
+  "reopen": "B3/B4/B5 reopen with parsed static password length 0; renew/XML reset false.",
+  "screenshots": [
+    {
+      "file": "B0-options.jpg",
+      "sha256": "3c704f9086866ddb572160c06e9a368b031ca169702f231fcd5904da7f79563c"
+    },
+    {
+      "file": "B0-completed.jpg",
+      "sha256": "2b7dcc8160d111d7a1062b6cd820d8dc4eb4dd7190af338632021e68dcd720f8"
+    },
+    {
+      "file": "B1-options.jpg",
+      "sha256": "86d2f52718c4f1d87c001567a3c4b0e3f6e6154f122d0c553ef0ed098422512c"
+    },
+    {
+      "file": "B1-completed.jpg",
+      "sha256": "48b9847cffdb092fde3babadcb36a2932ea62a67b5bfdf3a7ed856258862aeef"
+    },
+    {
+      "file": "B2-invalid-options.jpg",
+      "sha256": "288527b78c6a37d29edcf420f861b06eaa177d2554e1eed034a7c49e0cbaabcb"
+    },
+    {
+      "file": "B2-error-abc.jpg",
+      "sha256": "e29ab0492f2cd0991d337cb669443246311fe8a7720977845c8a8e295fecb63b"
+    },
+    {
+      "file": "B2-decimal-options.jpg",
+      "sha256": "b69868fa4c6d957f633536d70b221de05be4c57dfbcdf6ad364c45cab5b9b7b9"
+    },
+    {
+      "file": "B2-error-decimal.jpg",
+      "sha256": "34ae35dff57b0a6e0e251961e8bfa99a408ab048c5d8b60f55dea7774a014397"
+    },
+    {
+      "file": "B2-exponent-options.jpg",
+      "sha256": "2c591a997e425f297e345b448fbd7e67b37f74896d2f5746b9fd4a757665a494"
+    },
+    {
+      "file": "B2-error-exponent.jpg",
+      "sha256": "34ae35dff57b0a6e0e251961e8bfa99a408ab048c5d8b60f55dea7774a014397"
+    },
+    {
+      "file": "B2-overflow-options.jpg",
+      "sha256": "60f39894525a91ce8f604d62e15ceef0da189091e378b31c913fe6ed173498b4"
+    },
+    {
+      "file": "B2-error-overflow.jpg",
+      "sha256": "34ae35dff57b0a6e0e251961e8bfa99a408ab048c5d8b60f55dea7774a014397"
+    },
+    {
+      "file": "B2-recovered-options.jpg",
+      "sha256": "57a63b96fe0beb9a22d45f61749cf07056a308900545d1683764350f1d53ffc0"
+    },
+    {
+      "file": "B2-completed.jpg",
+      "sha256": "fce276a22d56e0c56236355e2e46ccde7e23369d77c546ff9fbfcdb571b65325"
+    },
+    {
+      "file": "B3-open.jpg",
+      "sha256": "2abf44dc21309d4ae78b6e33ec97c1054c2a76390adddc5d86fbe0d0f480cd9a"
+    },
+    {
+      "file": "B3-options.jpg",
+      "sha256": "29d27fe21b9ee1a4a142ef32737a4df273409f033d3395a999032f071fb9f5d4"
+    },
+    {
+      "file": "B3-completed.jpg",
+      "sha256": "6335976c52e0196d336738c79a920bb42dd884f21525335b5928843c28cf4d0a"
+    },
+    {
+      "file": "B4-open.jpg",
+      "sha256": "aef0d3efd8b7eb8aef8649ec95a3e5f7537776b053939fbcdd0012728a813b60"
+    },
+    {
+      "file": "B4-options.jpg",
+      "sha256": "01a50a75867b0d932b1e19fc187f4526e9fb279576503cd14d1b937cb1465240"
+    },
+    {
+      "file": "B4-completed.jpg",
+      "sha256": "06964792cc3874444a15aa63cbcbef808d010273848a902d97acd29a3f7a1040"
+    },
+    {
+      "file": "B5-open.jpg",
+      "sha256": "dab608d39fe8e1d30fd6db389860ea788622893da7385999867d505c9abfffe7"
+    },
+    {
+      "file": "B5-options.jpg",
+      "sha256": "ad4a6db35d1420b4a3f3c2e3fa4abb980c2c367d9c91012d6e580b51e98b1450"
+    },
+    {
+      "file": "B5-completed.jpg",
+      "sha256": "861e7352d1fae6b9c469c463787f6811a2ef1671d9ed58af783e550e5552f10d"
+    }
+  ],
+  "limits": [
+    "Random values compared by length, alternating alphabet, uniqueness, prefixes, group, mode, row order and XML structure; equal random draws not asserted.",
+    "No exhaustive native GUI 128-product or all Int32 values established.",
+    "No empirical study data."
+  ]
+}

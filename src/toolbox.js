@@ -160,12 +160,30 @@ export function prepareLoginGroups(workbook,suffix){
   }
   return groups;
 }
-export function generateLogins(workbook,{length=5,passwordLength=3,monitor=true,prefix,prefixTestee,prefixReserve,prefixReview,suffix}={}) {
+function windowsLoginCodes(length,count){
+  if(length<=12)return generateCodes(length,count);
+  if(!Number.isInteger(length)||length>2147483647||!Number.isInteger(count)||count<0||count>100000)throw new Error('Anzahl oder Länge der Codes ist ungültig oder übersteigt den möglichen Vorrat.');
+  // Long code spaces exceed exact Number arithmetic. Sample characters instead
+  // of converting a rounded numeric index, retaining uniqueness in the batch.
+  const codes=new Set(),value=new Uint32Array(1);
+  while(codes.size<count){
+    let code='';
+    for(let i=0;i<length;i++){
+      const alphabet=i%2?NUMBERS:LETTERS,ceiling=Math.floor(2**32/alphabet.length)*alphabet.length;
+      do{crypto.getRandomValues(value);}while(value[0]>=ceiling);
+      code+=alphabet[value[0]%alphabet.length];
+    }
+    codes.add(code);
+  }
+  return [...codes];
+}
+export function generateLogins(workbook,{length=5,passwordLength=3,monitor=true,prefix,prefixTestee,prefixReserve,prefixReview,suffix,windows=false}={}) {
   const groups=prepareLoginGroups(workbook,suffix);
-  const total=groups.reduce((n,g)=>n+g.numbers.reduce((a,b)=>a+b,0)+(monitor?1:0),0),codes=generateCodes(length,total);
+  const generate=windows?windowsLoginCodes:generateCodes;
+  const total=groups.reduce((n,g)=>n+g.numbers.reduce((a,b)=>a+b,0)+(monitor?1:0),0),codes=generate(length,total);
   if(!total)throw new Error('Keine Logins angefordert.');
-  if(!Number.isInteger(passwordLength)||passwordLength<0||passwordLength>12)throw new Error('Ungültige Kennwortlänge.');
-  const passwords=passwordLength?generateCodes(passwordLength,Math.min(total,codeCapacity(passwordLength))):[];
+  if(!Number.isInteger(passwordLength)||passwordLength<0||passwordLength>(windows?2147483647:12))throw new Error('Ungültige Kennwortlänge.');
+  const passwords=passwordLength?generate(passwordLength,Math.min(total,codeCapacity(passwordLength))):[];
   const refs=['GroupName1','GroupName2','GroupID','Name','Password','Mode'].map(k=>named(workbook,`loginsCol.${k}`));
   let r=refs[0].row+1,index=0;
   // Remove stale logins before replacing the table, retaining styles and the header.

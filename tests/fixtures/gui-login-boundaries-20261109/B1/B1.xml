@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Testtakers>
+  <Metadata></Metadata>
+  <Group id="DEMO" label="Beispielschule - Klasse 7">
+    <Login mode="run-hot-return" name="T01_q3a2e6x7u2y5c7f3u4v5" pw="q4g6y7u7d2z9d3a2x6d5">
+      <Booklet>Booklet1</Booklet>
+    </Login>
+    <Login mode="run-hot-return" name="T02_v4d3x9x7e4f4t2r3u2t5" pw="c3b2f6s2g4c6t6e2r4u4">
+      <Booklet>Booklet1</Booklet>
+    </Login>
+    <Login mode="run-hot-return" name="RS_d4p6t3q7f3r5x5s7r9y2" pw="g6c9q6u7y7u5v3c9c6t6">
+      <Booklet>Booklet1</Booklet>
+    </Login>
+    <Login mode="run-review" name="RV_d2p7f5a4z3e9s4r3q6e4" pw="s6d7d7z7u2p9p4t5e4u7">
+      <Booklet>Booklet1</Booklet>
+    </Login>
+    <Login mode="monitor-group" name="TL_r4g2x9y5g5s3s5c7t6u6" pw="h5e5d7a5a5g6d2s2f3x4"></Login>
+  </Group>
+  <Group id="TESTS_v4f2" label="TEST Schule - Klasse 8">
+    <Login mode="run-hot-return" name="T01_e4x4h6h4b4p3q2r5y2h7" pw="y2b7t6y2f7c5t9a6s5y9">
+      <Booklet>Booklet1</Booklet>
+    </Login>
+    <Login mode="run-hot-return" name="RS_q6e6u7p6a9z6u6u9t3h4" pw="d5u2g7s5f2b6d6v3g6c7">
+      <Booklet>Booklet1</Booklet>
+    </Login>
+    <Login mode="run-review" name="RV_h5r5u3g2h9e7p9b5v3v6" pw="b2f2y5f5f3b6y9e5f2p4">
+      <Booklet>Booklet1</Booklet>
+    </Login>
+    <Login mode="monitor-group" name="TL_q5z3u5d7v5s4v5t5e5b2" pw="g6z3v2z5t6p2v5h6h3f9"></Login>
+  </Group>
+  <Group id="TESTS2_v4f2" label="TEST Schule - Klasse 9">
+    <Login mode="run-hot-return" name="T01_q9v9g5g9b2g9q6z7q9g4" pw="r6v7h7b7g2h9v2t2c5v6">
+      <Booklet>Booklet1</Booklet>
+    </Login>
+    <Login mode="run-review" name="RV_y5p6p5c4g7x6q3e4g5f5" pw="y9f9u4u5g6f5p6f5z6h5">
+      <Booklet>Booklet1</Booklet>
+    </Login>
+    <Login mode="monitor-group" name="TL_v5g9g6d7g5q9g7c5u7e6" pw="u2t5x6r5f4r3g6v7c7r2"></Login>
+  </Group>
+</Testtakers>

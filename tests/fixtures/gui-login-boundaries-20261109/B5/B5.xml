@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Testtakers>
+  <Metadata></Metadata>
+  <Group id="DEMO" label="Beispielschule - Klasse 7">
+    <Login mode="" name="T01_d2r4y">
+      <Booklet>Booklet1</Booklet>
+    </Login>
+    <Login mode="" name="T02_a4y2q">
+      <Booklet>Booklet1</Booklet>
+    </Login>
+    <Login mode="" name="RS_g9g7p">
+      <Booklet>Booklet1</Booklet>
+    </Login>
+    <Login mode="run-review" name="RV_t4g9t">
+      <Booklet>Booklet1</Booklet>
+    </Login>
+    <Login mode="monitor-group" name="TL_h2h3p"></Login>
+  </Group>
+  <Group id="TESTS_v4f2" label="TEST Schule - Klasse 8">
+    <Login mode="run-hot-return" name="T01_f7y9y">
+      <Booklet>Booklet1</Booklet>
+    </Login>
+    <Login mode="run-hot-return" name="RS_g9v5e">
+      <Booklet>Booklet1</Booklet>
+    </Login>
+    <Login mode="run-review" name="RV_g9y6s">
+      <Booklet>Booklet1</Booklet>
+    </Login>
+    <Login mode="monitor-group" name="TL_r9b4z"></Login>
+  </Group>
+  <Group id="TESTS2_v4f2" label="TEST Schule - Klasse 9">
+    <Login mode="run-hot-return" name="T01_d7d6r">
+      <Booklet>Booklet1</Booklet>
+    </Login>
+    <Login mode="run-review" name="RV_x3p4q">
+      <Booklet>Booklet1</Booklet>
+    </Login>
+    <Login mode="monitor-group" name="TL_p9q9g"></Login>
+  </Group>
+</Testtakers>
