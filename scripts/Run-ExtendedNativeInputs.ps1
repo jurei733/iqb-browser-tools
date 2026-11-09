@@ -87,7 +87,7 @@ function Fields($obj) {
  };return $result
 }
 $settings=Get-OriginalSettings
-foreach($name in @('Booklet','Booklet-bad-reference','Booklet-empty-title')) {
+foreach($name in @(Get-ChildItem (Join-Path $Root 'inputs') -Filter 'Booklet*.xlsx' -File|Sort-Object Name|ForEach-Object{$_.BaseName})) {
  $folder=Join-Path $Out $name;[IO.Directory]::CreateDirectory($folder)|Out-Null
  $source=Join-Path $folder ($name+'.xlsx');[IO.File]::Copy((Join-Path (Join-Path $Root 'inputs') ($name+'.xlsx')),$source,$true)
  $settings.lastfile_BookletXlsx=$source;$obj=New-BackendObject 'BookletXlsxDialog';$errorText=$null;$messages=@()
@@ -135,5 +135,5 @@ for($caseIndex=0;$caseIndex -lt $queue.Count;$caseIndex++){
 }
 $hashes=@{};foreach($path in @((Join-Path $ToolPath 'itc-Toolbox.exe'),(Join-Path $CodePath 'IQB-Kodieren.exe'),(Join-Path $CodePath 'IQB-Scans.dll'),(Join-Path $CodePath 'IQB-Common.dll'))){$hashes[[IO.Path]::GetFileName($path)]=(Get-FileHash $path -Algorithm SHA256).Hash.ToLowerInvariant()}
 $inputs=@{};foreach($file in Get-ChildItem (Join-Path $Root 'inputs') -File){$inputs[$file.Name]=(Get-FileHash $file.FullName -Algorithm SHA256).Hash.ToLowerInvariant()}
-@{finished=[DateTime]::UtcNow.ToString('o');bits=[IntPtr]::Size*8;culture=[Threading.Thread]::CurrentThread.CurrentCulture.Name;hashes=$hashes;inputs=$inputs;inputFiles=(Capture-Files (Join-Path $Root 'inputs'));results=$Results.ToArray();matrix=$matrix;method='Unchanged original dialog business workers; separate manual GUI captures recorded independently.'}|ConvertTo-Json -Depth 60|Set-Content -Encoding UTF8 (Join-Path $Out 'results.json')
+@{finished=[DateTime]::UtcNow.ToString('o');bits=[IntPtr]::Size*8;culture=[Threading.Thread]::CurrentThread.CurrentCulture.Name;hashes=$hashes;inputs=$inputs;inputFiles=(Capture-Files (Join-Path $Root 'inputs'));results=$Results.ToArray();matrix=$matrix;bookletMatrix=(Get-Content -Raw (Join-Path (Join-Path $Root 'inputs') 'booklet-matrix.json')|ConvertFrom-Json);method='Unchanged original dialog business workers; separate manual GUI captures recorded independently.'}|ConvertTo-Json -Depth 60|Set-Content -Encoding UTF8 (Join-Path $Out 'results.json')
 Write-Output 'Native extended reference finished'

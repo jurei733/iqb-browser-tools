@@ -9,7 +9,12 @@ import {loginRowsShape,loginXMLTree} from './helpers/native-logins.js';
 Object.assign(globalThis,{DOMParser,XMLSerializer});
 const proof=JSON.parse((await readFile(process.env.NATIVE_PREPARATION_REFERENCE||new URL('./fixtures/native-extended-preparation-20261106.json',import.meta.url),'utf8')).replace(/^\ufeff/,''));
 assert.equal(proof.hashes['itc-Toolbox.exe'],'c6da2bb894fcdc5b220f8c8fd222d8fe8da6dbdeafa3e71a55f2afa4878186f1');
-assert.equal(proof.culture,'de-DE');assert.ok([32,64].includes(proof.bits));assert.equal(proof.results.length,proof.matrix?270:14);
+assert.equal(proof.culture,'de-DE');assert.ok([32,64].includes(proof.bits));assert.equal(proof.results.length,proof.matrix?(proof.bookletMatrix?334:270):14);
+if(proof.bookletMatrix){
+ assert.equal(proof.bookletMatrix.cases.length,64);
+ assert.deepEqual(proof.bookletMatrix.cases.map(c=>c.id),Array.from({length:64},(_,mask)=>'Booklet-errors-'+String(mask).padStart(2,'0')));
+ assert.equal(proof.results.filter(c=>c.id.startsWith('Booklet-errors-')).length,64);
+}
 if(proof.matrix){
  assert.equal(proof.matrix.cases.length,128);
  const expected=[];for(const length of [5,8])for(const password of [0,4])for(const monitor of [false,true])for(const separate of [false,true])for(let prefix=0;prefix<8;prefix++)expected.push(`matrix-${length}-${password}-${+monitor}-${+separate}-${prefix}`);

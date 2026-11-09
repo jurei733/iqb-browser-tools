@@ -18,3 +18,14 @@ for(const length of [5,8])for(const password of [0,4])for(const monitor of [fals
 }
 await writeFile(join(out,'login-matrix.json'),JSON.stringify({schema:1,axes:{length:[5,8],password:[0,4],monitor:[false,true],separate:[false,true],prefixMask:[0,1,2,3,4,5,6,7]},cases},null,2)+'\n');
 console.log('Prepared 128 full-factorial login options, each followed by a native save/reopen pass.');
+
+// Full product of six independent validation faults, including the clean case.
+const faults=[['missing-unit-title',w=>w.getWorksheet('Units').getCell('C3').value=''],['duplicate-unit',w=>w.getWorksheet('Units').getCell('A4').value='EL632'],['unknown-unit',w=>w.getWorksheet('Blöcke').getCell('D4').value='UNKNOWN'],['duplicate-testlet',w=>w.getWorksheet('Blöcke').getCell('A5').value='EL1'],['empty-testlet',w=>w.getWorksheet('Blöcke').getCell('D6').value=''],['repeated-space',w=>w.getWorksheet('Blöcke').getCell('D7').value='Instr_Read  FC_Read']];
+const booklets=[];
+for(let mask=0;mask<64;mask++){
+ const w=new Excel.Workbook();await w.xlsx.readFile(base+'Booklet-Template.xlsx');
+ const selected=faults.filter((_,i)=>mask&(1<<i));for(const [,edit]of selected)edit(w);
+ const id='Booklet-errors-'+String(mask).padStart(2,'0');await w.xlsx.writeFile(join(out,id+'.xlsx'));booklets.push({id,faults:selected.map(([name])=>name)});
+}
+await writeFile(join(out,'booklet-matrix.json'),JSON.stringify({schema:1,axes:faults.map(([name])=>name),cases:booklets},null,2)+'\n');
+console.log('Prepared all 64 combinations of six Booklet validation faults.');
