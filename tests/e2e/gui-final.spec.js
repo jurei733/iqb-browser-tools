@@ -7,7 +7,7 @@ for(const module of ['coding','toolbox'])test('Native '+module+' help GUI: butto
  await page.goto('/');await page.locator('[data-module="'+module+'"]').click();await page.locator('#scope').click();
  await expect(page.locator('#about')).toBeVisible();await expect(page.locator('#about')).toContainText('itc-ToolBox 3.3.0.2');await expect(page.locator('#about')).toContainText('Input, Reviews, System-Check, Antworten und Logs');
  await expect(page.locator('#about')).toContainText('IQB-Kodieren 4.3.0.3: Mit dieser Anwendung werden Scans von Testinstrumenten kodiert. Voraussetzung ist jeweils ein spezielles Dateipaket vom IQB.');
- await expect(page.locator('#about a', {hasText:'Originale Online-Dokumentation'})).toHaveAttribute('href','https://iqb-berlin.github.io/tba-info/coding/toolbox/booklet.html');
+ await expect(page.locator('#toolbox-current-docs')).toHaveAttribute('href','https://iqb-berlin.github.io/tba-info/coding/toolbox/booklet.html');
  await page.locator('#close-about').click();await expect(page.locator('#about')).not.toBeVisible();
  await page.keyboard.press('F1');await expect(page.locator('#about')).toBeVisible();await page.keyboard.press('Escape');await expect(page.locator('#about')).not.toBeVisible();
 });

@@ -1,0 +1,64 @@
+{
+  "checkedOn": "2026-11-09",
+  "original": "IQB-Kodieren 4.3.0.3 / itc-ToolBox 3.3.0.2",
+  "method": "Unmodified Windows executables operated visibly through GUI. Synthetic inputs only.",
+  "training": {
+    "scope": "Two otherwise identical four-case jobs differing only in jobOpts training True/False; open, code, comment, next, F3 list and native result capture. Internal flag value has no separate GUI readback.",
+    "codes": [
+      "1",
+      "0",
+      "0",
+      "1"
+    ],
+    "firstComment": "training-pair",
+    "excluded": [
+      "Actual wall-clock coding times",
+      "All possible training-dependent behavior beyond this finite path"
+    ],
+    "variants": [
+      {
+        "training": false,
+        "input": "tests/fixtures/gui-qualified-20261109/training-off.zip",
+        "inputSHA256": "ded188978bd7744c4460faeccad004520243dea46723798229fafa6631e558e6",
+        "nativeResult": "tests/fixtures/gui-qualified-20261109/training-off.result",
+        "nativeResultSHA256": "b0a08f01274e4bfd41f07fc7c8f1d3f0bc3c8d0169db9d76b38d5dc00be4a011",
+        "nativeDirectory": "C:\\Users\\IQB\\Documents\\TrainingOff"
+      },
+      {
+        "training": true,
+        "input": "tests/fixtures/gui-qualified-20261109/training-on.zip",
+        "inputSHA256": "a5196dabe89d9b58d470e2e97fefacbb95b6ddbde26f0d461ebd1fc9e25cd8db",
+        "nativeResult": "tests/fixtures/gui-qualified-20261109/training-on.result",
+        "nativeResultSHA256": "5917d71ae5a11e3bd2a367f1fe26ae94a418d638801cfcc0666bdf255ccef0fb",
+        "nativeDirectory": "C:\\Users\\IQB\\Documents\\TrainingOn"
+      }
+    ]
+  },
+  "help": {
+    "codingEmptyF1": "Fresh launch, cancel automatic folder picker, F1 opens About 4.3.0.3; close button returns to empty window.",
+    "codingLoaded": "Earlier repeated mouse/Space/F1 no visible dialog with LegacyValid; functional browser About remains an intentional fallback.",
+    "toolbox": "Help button opens About 3.3.0.2; close returns to main window.",
+    "originalURL": "https://iqb-berlin.github.io/tba-info/Testcenter/toolbox/",
+    "nativeLinkResult": "Clicking actual Toolbox Online-Dokumentation opens this exact URL in Edge and renders Seite nicht gefunden.",
+    "maintainedURL": "https://iqb-berlin.github.io/tba-info/coding/toolbox/booklet.html",
+    "browserFix": "Preserve historical destination as a separately labelled link; label current documentation accurately."
+  },
+  "jsonFilters": {
+    "scope": "Visible Input commands rechecked; DB Antworten+Logs > Hinzufügen > Einlesen von JSON followed using existing synthetic duplicates.sqlite and J6.json.",
+    "observed": "Actual bound DB importer immediately reads six answers from four people and finishes; no DISPLAYED/NOT_REACHED options.",
+    "databaseSideEffect": "The synthetic duplicates.sqlite was used for this native import; no empirical or production data.",
+    "remaining": "Historical readJsonFilesDialog still has no accessible main-window command. Source analysis proves missing binding, not a native run of that unused dialog."
+  },
+  "captures": [
+    "docs/evidence/gui-qualified-20261109/coding-f1-empty-about.png",
+    "docs/evidence/gui-qualified-20261109/toolbox-about.png",
+    "docs/evidence/gui-qualified-20261109/toolbox-db-json-command.png",
+    "docs/evidence/gui-qualified-20261109/toolbox-db-json-no-status-dialog.png",
+    "docs/evidence/gui-qualified-20261109/toolbox-input-commands.png",
+    "docs/evidence/gui-qualified-20261109/toolbox-original-docs-not-found.png",
+    "docs/evidence/gui-qualified-20261109/training-off-coded.png",
+    "docs/evidence/gui-qualified-20261109/training-off-start.png",
+    "docs/evidence/gui-qualified-20261109/training-on-coded.png",
+    "docs/evidence/gui-qualified-20261109/training-on-start.png"
+  ]
+}
