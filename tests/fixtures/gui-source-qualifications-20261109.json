@@ -1,6 +1,6 @@
 {
   "checkedOn": "2026-11-09",
-  "scope": "Qualifications discovered when resolving remaining GUI comparisons; these are not direct native GUI pairs.",
+  "scope": "Original qualifications plus subsequent direct GUI recheck; recheck supersedes earlier missing evidence where explicitly stated.",
   "training": {
     "id": "K-10",
     "finding": "All training references in recovered original Coding and Scans assemblies are field/property initialization, XML parse and XML serialization in jobOptions. No distinct GUI behavior or running-value readback is exposed. The training=true native job opens and codes; browser parser tests prove its flag only."
@@ -32,5 +32,12 @@
     "capture": "docs/evidence/gui-final-20261109/native-coding-help-no-dialog.png",
     "observed": "Repeated mouse, focused-button Space and F1 with loaded LegacyValid job: no visible dialog. Earlier empty-window F1 About capture retained. Browser remains functional.",
     "sourceInference": "ButtonHelp uses ApplicationCommands.Help. Child FrameworkElement HelpProvider consumes inherited topic ID 1000 and calls Help.ShowHelp on IQB-Kodieren.chm; no .chm in downloaded original package. This is a plausible explanation of the native no-dialog result, not independent native internal-state proof."
+  },
+  "recheck": {
+    "fixture": "tests/fixtures/gui-qualified-20261109.json",
+    "training": "Finite native true/false behavior and result pair now added. Separate internal-value GUI readback remains unavailable.",
+    "codingHelp": "Fresh empty F1 About route re-observed; loaded-job failure retained.",
+    "jsonStatusFilters": "Bound DB JSON import directly rechecked; it finishes without historical status options.",
+    "documentation": "Native exact historical URL confirmed; browser exposes both historical and accurately labelled current destinations."
   }
 }
