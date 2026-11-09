@@ -1,0 +1,45 @@
+{
+  "checkedOn": "2026-11-09",
+  "original": "itc-ToolBox 3.3.0.2",
+  "input": {
+    "path": "tests/fixtures/gui-final-20261109/duplicates.sqlite",
+    "sha256": "5f9c996ea269a7d0792262f16408dbe613f74a1c4418172023372c596cdbb17a",
+    "bytes": 65536
+  },
+  "capture": "docs/evidence/gui-final-20261109/native-positive-duplicates.png",
+  "nativeObserved": {
+    "person": "DEMOdemo1001",
+    "personCount": 2,
+    "unitPerson": "DEMOdemo1001",
+    "booklet": "DEMO",
+    "unitAlias": "MATHE_",
+    "unitName": "MATHE01",
+    "unitCount": 2,
+    "peopleWithRepeatedUnits": 1,
+    "repeatedUnitsTotal": 1,
+    "finished": true
+  },
+  "browserExpected": {
+    "duplicates": [
+      {
+        "group": "DEMO",
+        "login": "demo1",
+        "code": "001",
+        "count": 2
+      }
+    ],
+    "units": [
+      {
+        "bookletId": 1,
+        "name": "MATHE01",
+        "alias": "MATHE_",
+        "count": 2
+      }
+    ]
+  },
+  "limitations": [
+    "One synthetic positive duplicate case; clean negative comparison was recorded previously.",
+    "GUI presentation differs; the comparison is of the identified person/unit and multiplicity.",
+    "Native summary counters are stored metadata and are not recomputed when this synthetic input is edited."
+  ]
+}
