@@ -28,7 +28,7 @@ async function reopenNativeLoginOptions(panel){
   if(panel.querySelector('#login-format')?.value!=='windows')return;
   restoreNativeLoginOptions(panel);const ticket=panel.loginInputTicket=(panel.loginInputTicket||0)+1,file=panel.querySelector('#tool-file').files[0];
   if(!file)return;
-  try{const workbook=await Toolbox.loadWorkbook(new Uint8Array(await file.arrayBuffer()));if(ticket!==panel.loginInputTicket)return;
+  try{const workbook=await Toolbox.loadWorkbook(new Uint8Array(await file.arrayBuffer()));if(ticket!==panel.loginInputTicket||panel.querySelector('#login-format').value!=='windows')return;
     if(!Toolbox.loginRows(workbook).length){panel.querySelector('#renew').checked=true;panel.updateLoginOptions?.();}
   }catch{/* The preparation worker reports malformed files when the action is submitted. */}
 }
