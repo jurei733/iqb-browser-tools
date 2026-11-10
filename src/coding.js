@@ -48,6 +48,14 @@ export function applyResult(job, result) {
     const c = cases.get(JSON.stringify([e.testee,e.variable.toUpperCase()]));
     if (c) Object.assign(c,{code:e.code,comment:e.comment,time:e.time});
   }
+  // CaseList counts restored entries (including comment-only entries) before
+  // selecting its next case. Incomplete earlier persons crash the original;
+  // retain the existing first-gap recovery for those malformed result files.
+  const groups=[];for(const c of job.cases){let group=groups.find(g=>g.testee===c.testee);if(!group){group={testee:c.testee,cases:[]};groups.push(group);}group.cases.push(c);}
+  const restored=new Map();for(const e of result.entries)if(cases.has(JSON.stringify([e.testee,e.variable.toUpperCase()]))){if(!restored.has(e.testee))restored.set(e.testee,[]);restored.get(e.testee).push(e);}
+  const restoredGroups=[...restored];
+  const safe=restoredGroups.every(([testee,entries],i)=>groups[i]?.testee===testee&&(i===restoredGroups.length-1||entries.length===groups[i].cases.length));
+  if(safe&&restoredGroups.length){const entries=restoredGroups.flatMap(([,entries])=>entries);job.nativeFrontier=Math.max(0,entries.length-(entries.at(-1).code?0:1));}else delete job.nativeFrontier;
   if(result.label!==undefined)job.resultLabel=result.label;
   return ignored;
 }
@@ -74,10 +82,11 @@ export function adjustFrame(frame,crop=null,dpiX=96,dpiY=96) {
 export function batchCode(job,index,digit) {
   const current=job.cases[index],cases=job.cases.filter(c=>c.testee===current.testee),matches=cases.map(c=>c.variable.codes.filter(code=>code.id.includes(digit)));
   if(matches.some(list=>list.length!==1))throw new Error('Es wurde kein Code gesetzt.');
-  const advance=!current.code,time=localTimestamp();cases.forEach((c,i)=>{c.code=matches[i][0].id;c.time=time;});const next=job.cases.findIndex(c=>!c.code);return advance&&next>=0?next:index;
+  const advance=!current.code,time=localTimestamp();cases.forEach((c,i)=>{c.code=matches[i][0].id;c.time=time;});const next=Number.isInteger(job.nativeFrontier)?initialCaseIndex(job):job.cases.findIndex(c=>!c.code);return advance&&next>=0?next:index;
 }
 export function cycleCode(c,direction){const i=c.variable.codes.findIndex(v=>v.id===c.code);return c.variable.codes[i<0?0:(i+direction+c.variable.codes.length)%c.variable.codes.length].id;}
-export function initialCaseIndex(job){const first=job.cases.findIndex(c=>!c.code);return first<0?Math.max(0,job.cases.length-1):first;}
+export function initialCaseIndex(job){if(Number.isInteger(job.nativeFrontier)){while(job.nativeFrontier<job.cases.length&&job.cases[job.nativeFrontier].code)job.nativeFrontier++;return Math.max(0,Math.min(job.cases.length-1,job.nativeFrontier));}const first=job.cases.findIndex(c=>!c.code);return first<0?Math.max(0,job.cases.length-1):first;}
+export function progressCount(job){if(Number.isInteger(job.nativeFrontier)){initialCaseIndex(job);return job.nativeFrontier;}return job.cases.filter(c=>c.code).length;}
 export function navigationIndex(job,index,{free=false}={}){
   const maximum=free?job.cases.length-1:initialCaseIndex(job);
   return Math.max(0,Math.min(maximum,Number.isFinite(index)?Math.trunc(index):0));

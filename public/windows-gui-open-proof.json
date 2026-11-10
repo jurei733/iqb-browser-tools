@@ -13,7 +13,8 @@
       "windows-gui-word-products-proof.json",
       "windows-gui-small-converters-proof.json",
       "windows-gui-excel-sources-proof.json",
-      "windows-gui-import-sequences-proof.json"
+      "windows-gui-import-sequences-proof.json",
+      "windows-gui-coding-edits-proof.json"
     ],
     "additionalBoundaryWorkbooks": 6,
     "additionalInvalidLoginTexts": 4,
@@ -25,7 +26,8 @@
     "smallConverterGuiScenarios": 35,
     "mixedDatabaseExcelPairs": 26,
     "directSourceExportPairs": 3,
-    "importSequenceGuiScenarios": 15
+    "importSequenceGuiScenarios": 15,
+    "codingEditCombinations": 32
   },
   "openFamilies": [
     {
@@ -86,9 +88,10 @@
       "id": "coding-edits",
       "family": "Kodierzustände und Gruppengesten",
       "dimensions": "Mehrdeutiger Zifferncode (mehrere passende Codes), bereits teilweise/vollständig kodierte Person, Kommentare vor/nach Codewechsel und erneutem Import; Kombinationen mit allen Anzeigeoptionen.",
-      "existingEvidence": "32/32 initiale Anzeigezustände nun direkt erfasst; atomarer fehlender/gültiger Gruppencode, Teilstände, Training und Ergebnisdateien separat in endlichen Paaren vorhanden.",
-      "stillOpen": "Weitere Bearbeitungsfolgen; die 32 neuen Flag-Captures enthalten keine neu vergebenen Codes.",
-      "status": "partial-direct-gui"
+      "existingEvidence": "32/32 Bearbeitungsfolgen direkt im Original: mehrdeutiger Gruppencode, neue/bestehende Codes über Pfeiltasten, Kommentare vor/nach Codewechsel, globaler Kommentar, Speichern und Wiederöffnen; alle Ergebnisfelder gepaart.",
+      "stillOpen": "Das konkrete 32er-Bearbeitungsprodukt ist abgeschlossen. Enter im nativen Kommentardialog löst einen zusätzlichen Fallwechsel aus; Browser nutzt einen Inline-Editor. Beliebige weitere Bearbeitungsgeschichten bleiben außerhalb des Nachweises.",
+      "status": "completed-finite-direct-gui-with-qualified-ui-difference",
+      "proof": "windows-gui-coding-edits-proof.json"
     },
     {
       "id": "images-products",
