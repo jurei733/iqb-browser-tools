@@ -1,0 +1,35 @@
+{
+  "date": "2026-11-10",
+  "case": "TE14",
+  "method": "Visible native GUI: keep workspace 1 response BROWSER_A blocked, navigate back, uncheck all groups, navigate back again and select workspace 2, release the original request. Only the task-owned synthetic Testcenter was used.",
+  "observed": [
+    "The native GUI allows both group and workspace changes while its old request is pending.",
+    "The old worker then continues its remaining report requests against workspace 2 although it started in workspace 1.",
+    "The old target XLSX is still written in the background and contains the one workspace-1 BROWSER_A person; all cells are reconstructed."
+  ],
+  "browserBehaviour": "Existing request guard freezes workspace/group inputs and module/tool navigation. A cancellation restores controls; a subsequent request can use a new selection. This deliberately prevents the native source-mixing behaviour.",
+  "comparison": "All cells of the original background workbook; ordered metadata-only endpoint log, retained pending-request path, and visible selections. No authentication headers, credentials or response bodies logged.",
+  "bundle": {
+    "file": "evidence.zip",
+    "sha256": "2932b9d8ab86e11bd3aa3094197dc80a54f34e4fa4e48a516edee92e57b994d4",
+    "bytes": 1720658
+  },
+  "files": {
+    "screens/TE14-after-old-request-completed.png": "8aa69a32ab918d879c6fb88a84c7867c6a02a20fb09e37d5f3189b9c3d36a7db",
+    "screens/TE14-back-during-request.png": "fb6e5af5b716ca0167ac39d6244bba78f81cfe07810830100c4c317649735c2c",
+    "screens/TE14-blocked-request-start.png": "2d4d2c2ebe64e14312cd1953d9cd423ef356d5ddd8999ecc3ffcf0eebb366bef",
+    "screens/TE14-groups-before-run.png": "775702f56f4bf25d33a344c794a6cf94b1b06ec325d86bb593d4d60f31646f9e",
+    "screens/TE14-groups-changed-during-request.png": "e6104d1b62d0bd0453c422147bdec907d2f770075b35bea1f268f0897e0c0147",
+    "screens/TE14-login-start.png": "da8e30576b169e2984a32a0235bb578ea6342d89c58c2b59c73995d71ee2d5d8",
+    "screens/TE14-released-after-selection-change.png": "aea7fd4e3f2271864116976d847155fc5a6ab4e93c9f6b601763a5b57ee9b328",
+    "screens/TE14-workspace-changed-during-request.png": "df2e28a0db02706704bcef9d3920c247909155abbb10f57d911def6f2c3a2cae",
+    "native/TE14.xlsx": "60e6f951457561b43b2c77b1c9abe970ee7e283f72a049dd76af599970730800",
+    "inputs/waiting.json": "418f2dc34bc2b1495c42be14c46600f44f5eb310442025505fe6bc2cd78ae7f5",
+    "inputs/snapshot.json": "12c3cb3953eb3015760794346523ef58b98027760e6f27188697be10804ffe7b",
+    "inputs/events.json": "80b20c381c9d370f8b0f8975f37bf383f828f42449a65e3ed6821157b0498a47"
+  },
+  "limits": [
+    "Synthetic local data only.",
+    "Native unsafe source mixing is documented, not reproduced as successful browser equivalence."
+  ]
+}

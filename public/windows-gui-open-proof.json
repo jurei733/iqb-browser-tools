@@ -16,7 +16,8 @@
       "windows-gui-import-sequences-proof.json",
       "windows-gui-coding-edits-proof.json",
       "windows-gui-image-products-proof.json",
-      "windows-gui-network-cancellation-proof.json"
+      "windows-gui-network-cancellation-proof.json",
+      "windows-gui-busy-selection-proof.json"
     ],
     "additionalBoundaryWorkbooks": 6,
     "additionalInvalidLoginTexts": 4,
@@ -31,7 +32,7 @@
     "importSequenceGuiScenarios": 15,
     "codingEditCombinations": 32,
     "imageDisplayCombinations": 30,
-    "networkAndCancellationScenarios": 13
+    "networkAndCancellationScenarios": 14
   },
   "openFamilies": [
     {
@@ -110,10 +111,11 @@
       "id": "testcenter-errors",
       "family": "Testcenter-Fehler und Auswahlwechsel",
       "dimensions": "Arbeitsbereich-/Gruppenwechsel bei laufendem Abruf, abgelaufenes Token, HTTP-Fehler, Zeitüberschreitung, fehlerhafte/teilweise Berichte und erneuter erfolgreicher Abruf.",
-      "existingEvidence": "Zehn direkte native Netzwerk-/Auswahlfolgen: Login-401 und Wiederanmeldung, Gruppen-500/401, Arbeitsbereichwechsel, Bericht-500, ungültiges JSON, leere Berichte, blockierter Abruf mit Abbruch, tatsächlich abgelaufenes Timeout und frischer A-erfolgreich/B-503-Lauf. Unvollständige native Excel-Ausgabe vollständig erklärt.",
-      "stillOpen": "Die konkreten Fehlerfolgen sind abgeschlossen. Browser meldet ungültige Sitzungen und Serverfehler ausdrücklich und verhindert Teil-Downloads; native stille Leerlisten/Teilergebnisse werden nicht als sinnvolle Gleichheit nachgebaut. Beliebige Netzwerkfehler bleiben außerhalb des Nachweises.",
+      "existingEvidence": "Zehn direkte native Netzwerk-/Auswahlfolgen: Login-401 und Wiederanmeldung, Gruppen-500/401, Arbeitsbereichwechsel, Bericht-500, ungültiges JSON, leere Berichte, blockierter Abruf mit Abbruch, tatsächlich abgelaufenes Timeout und frischer A-erfolgreich/B-503-Lauf. Unvollständige native Excel-Ausgabe vollständig erklärt. Zusätzlich TE14: Während blockierter Antwort Gruppen und Arbeitsbereich im Original gewechselt; der alte Hintergrundlauf fragt danach im neuen Bereich weiter ab und schreibt weiterhin die alte Zieldatei. Browser-Auswahlsperren sind ausdrücklich gepaart.",
+      "stillOpen": "Die konkreten Fehlerfolgen sind abgeschlossen. Browser meldet ungültige Sitzungen und Serverfehler ausdrücklich und verhindert Teil-Downloads; native stille Leerlisten/Teilergebnisse werden nicht als sinnvolle Gleichheit nachgebaut. Beliebige Netzwerkfehler bleiben außerhalb des Nachweises. Der Browser verhindert den direkt beobachteten nativen Quellenwechsel während des Abrufs.",
       "status": "completed-finite-direct-gui-with-qualified-error-behaviour",
-      "proof": "windows-gui-network-cancellation-proof.json"
+      "proof": "windows-gui-network-cancellation-proof.json",
+      "additionalProof": "windows-gui-busy-selection-proof.json"
     },
     {
       "id": "cancellation-files",
