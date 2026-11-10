@@ -25,14 +25,22 @@ export async function solveChallenge(challenge,{signal,onProgress=()=>{}}={}) {
   throw new Error('Die Anmelde-Challenge konnte nicht gelöst werden.');
 }
 export class TestcenterClient {
-  constructor(url,{fetch:fetcher=(...args)=>globalThis.fetch(...args),signal,onProgress}={}){this.base=apiBase(url);this.fetch=fetcher;this.signal=signal;this.onProgress=onProgress||(()=>{});this.token='';this.workspace=null;}
+  constructor(url,{fetch:fetcher=(...args)=>globalThis.fetch(...args),signal,onProgress,requestTimeout=100000}={}){this.requestTimeout=requestTimeout;this.base=apiBase(url);this.fetch=fetcher;this.signal=signal;this.onProgress=onProgress||(()=>{});this.token='';this.workspace=null;}
   disconnect(){this.token='';this.workspace=null;}
   async logout(){try{if(this.token)await this.request('/session',{method:'DELETE'});}finally{this.disconnect();}}
   async request(path,{method='GET',body,format='json',accept='application/json'}={}) {
     const headers={Accept:accept};if(body!==undefined)headers['Content-Type']='application/json';if(this.token)headers.AuthToken=this.token;
-    let response;try{response=await this.fetch(this.base+path,{method,headers,body:body===undefined?undefined:JSON.stringify(body),signal:this.signal,credentials:'omit',redirect:'error'});}catch(error){if(error.name==='AbortError')throw error;throw new Error('Testcenter nicht erreichbar. Prüfe Adresse und Verbindung. Bei einem anderen Server muss dieser Browserzugriffe von dieser Anwendung erlauben (CORS für Content-Type und AuthToken). Alternativ die Browserfassung auf demselben Server bereitstellen.');}
-    if(!response.ok){const message=await response.text();const error=new Error(`Testcenter-Anfrage fehlgeschlagen (HTTP ${response.status}).`);error.status=response.status;error.challengeRequired=response.status===400&&/Challenge|Brute Force/i.test(message);throw error;}
-    if(format==='bytes')return new Uint8Array(await response.arrayBuffer());if(format==='text')return response.text();if([204,205].includes(response.status))return null;return parseJSON(await response.text());
+    const control=new AbortController(),upstream=this.signal,relay=()=>control.abort(upstream?.reason);let timedOut=false;
+    if(upstream?.aborted)relay();else upstream?.addEventListener('abort',relay,{once:true});
+    const timer=setTimeout(()=>{timedOut=true;control.abort();},this.requestTimeout);
+    try {
+      let response;
+      try{response=await this.fetch(this.base+path,{method,headers,body:body===undefined?undefined:JSON.stringify(body),signal:control.signal,credentials:'omit',redirect:'error'});}
+      catch(error){if(error.name==='AbortError')throw error;throw new Error('Testcenter nicht erreichbar. Prüfe Adresse und Verbindung. Bei einem anderen Server muss dieser Browserzugriffe von dieser Anwendung erlauben (CORS für Content-Type und AuthToken). Alternativ die Browserfassung auf demselben Server bereitstellen.');}
+      if(!response.ok){const message=await response.text();if(response.status===401)this.disconnect();const error=new Error(`Testcenter-Anfrage fehlgeschlagen (HTTP ${response.status}).`+(response.status===401?' Bitte erneut anmelden.':''));error.status=response.status;error.challengeRequired=response.status===400&&/Challenge|Brute Force/i.test(message);throw error;}
+      if(format==='bytes')return new Uint8Array(await response.arrayBuffer());if(format==='text')return await response.text();if([204,205].includes(response.status))return null;return parseJSON(await response.text());
+    } catch(error){if(timedOut){const timeout=new Error('Zeitüberschreitung der Testcenter-Anfrage. Bitte Verbindung prüfen und erneut versuchen.');timeout.name='TimeoutError';throw timeout;}throw error;}
+    finally{clearTimeout(timer);upstream?.removeEventListener('abort',relay);}
   }
   async login(name,password) {
     this.disconnect();let session;

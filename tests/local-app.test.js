@@ -46,3 +46,13 @@ test('local starter: actual OS account is available on this platform',async()=>{
   if(process.platform==='win32'){const {execFileSync}=await import('node:child_process');const account=execFileSync('whoami.exe',[],{encoding:'utf8'}).trim();assert.equal(identity.account,account);assert.equal(identity.name,account.slice(account.indexOf('\\')+1));assert.equal(identity.source,'Windows-Anmeldekonto');}
   else{const {userInfo}=await import('node:os');assert.equal(identity.name,userInfo().username);assert.equal(identity.account,userInfo().username);}
 });
+
+test('local starter on Windows: an exclusive output lock preserves the prior result and retry succeeds',{skip:process.platform!=='win32',timeout:30000},async t=>{
+  const f=await fixture(t),target=join(f.workspace,'Locked.result');await writeFile(target,'prior-result');const {spawn}=await import('node:child_process'),{once}=await import('node:events');
+  const script=`$s=[IO.File]::Open('${target.replaceAll("'","''")}',[IO.FileMode]::Open,[IO.FileAccess]::ReadWrite,[IO.FileShare]::None);try{[Console]::WriteLine('LOCKED');[Console]::ReadLine()|Out-Null}finally{$s.Dispose()}`;
+  const child=spawn('powershell.exe',['-NoProfile','-NonInteractive','-EncodedCommand',Buffer.from(script,'utf16le').toString('base64')],{windowsHide:true,stdio:['pipe','pipe','pipe']});t.after(()=>{if(child.exitCode===null)child.kill();});
+  const exited=once(child,'exit');await Promise.race([once(child.stdout,'data').then(([data])=>assert.match(data.toString(),/LOCKED/)),exited.then(()=>{throw Error('Lock helper exited before acquiring the file');})]);
+  const endpoint='result?path=Locked.result&'+f.suffix;
+  try{assert.equal((await f.request(endpoint,{method:'PUT',body:'new-result'})).status,500);}finally{child.stdin.end('release\n');await exited;}
+  assert.equal(await readFile(target,'utf8'),'prior-result');assert.equal((await f.request(endpoint,{method:'PUT',body:'new-result'})).status,200);assert.equal(await readFile(target,'utf8'),'new-result');
+});

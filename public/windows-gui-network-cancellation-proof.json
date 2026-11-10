@@ -1,0 +1,245 @@
+{
+  "date": "2026-11-10",
+  "method": "Visible unchanged Windows Toolbox GUI against the existing local synthetic Testcenter through a task-owned fault proxy. Native GUI actions only through computer use; CLI used solely for synthetic task-file exchange and exclusive filesystem lock. No credentials, tokens or request bodies logged or packaged.",
+  "cases": [
+    {
+      "id": "TE01",
+      "flow": "Login HTTP 401 and successful same-wizard retry",
+      "screens": [
+        "screens/TE01-login-recovered.png",
+        "screens/TE01-login-retry.png",
+        "screens/TE01-login401-result.png",
+        "screens/TE01-login401.png"
+      ]
+    },
+    {
+      "id": "TE02",
+      "flow": "Groups HTTP 500; native empty selection",
+      "screens": [
+        "screens/TE02-groups500-result.png",
+        "screens/TE02-groups500-start.png"
+      ]
+    },
+    {
+      "id": "TE03",
+      "flow": "Groups HTTP 401; native empty selection",
+      "screens": [
+        "screens/TE03-token401-result.png",
+        "screens/TE03-token401-start.png"
+      ]
+    },
+    {
+      "id": "TE04",
+      "flow": "Other workspace and return to Sample Workspace; group list replaced",
+      "screens": [
+        "screens/TE04-other-workspace-groups.png",
+        "screens/TE04-other-workspace-start.png",
+        "screens/TE04-sample-workspace-start.png"
+      ]
+    },
+    {
+      "id": "TE05",
+      "flow": "Response HTTP 500; error and zero-row finish",
+      "screens": [
+        "screens/TE05-report500-result.png",
+        "screens/TE05-report500-start.png"
+      ]
+    },
+    {
+      "id": "TE06",
+      "flow": "Malformed nonempty JSON response; parse error and finish",
+      "screens": [
+        "screens/TE06-back-to-groups.png",
+        "screens/TE06-malformed-result.png",
+        "screens/TE06-malformed-start.png"
+      ]
+    },
+    {
+      "id": "TE07",
+      "flow": "Empty successful reports in all three groups",
+      "screens": [
+        "screens/TE07-empty-result.png",
+        "screens/TE07-empty-start.png"
+      ]
+    },
+    {
+      "id": "TE08",
+      "flow": "Cancel a genuinely stalled response; native waits for current network call",
+      "screens": [
+        "screens/TE08-cancel-button.png",
+        "screens/TE08-cancel-finished.png",
+        "screens/TE08-cancel-requested.png",
+        "screens/TE08-slow-request-start.png"
+      ]
+    },
+    {
+      "id": "TE09",
+      "flow": "Uncancelled stalled response reaches native timeout; waiting at 49 seconds, timeout observed by 115 seconds",
+      "screens": [
+        "screens/TE09-timeout-observed.png",
+        "screens/TE09-timeout-result.png",
+        "screens/TE09-timeout-start.png"
+      ]
+    },
+    {
+      "id": "TE10F",
+      "flow": "Fresh-process A-success/B-HTTP503 yields partial XLSX, including a log-only B person",
+      "screens": [
+        "screens/TE10F-groups.png",
+        "screens/TE10F-login-start.png",
+        "screens/TE10F-partial503-result.png",
+        "screens/TE10F-partial503-start.png"
+      ]
+    },
+    {
+      "id": "TC11",
+      "flow": "Cancel first content file; then retry downloads 12 files and writes index",
+      "screens": [
+        "screens/TC11-cancel-finished.png",
+        "screens/TC11-cancel-requested.png",
+        "screens/TC11-content-retry-result.png",
+        "screens/TC11-content-retry-start.png",
+        "screens/TC11-content-start.png",
+        "screens/TC11-login-start.png",
+        "screens/TC11-workspace-selected.png"
+      ]
+    },
+    {
+      "id": "CF12",
+      "flow": "Exclusive target file lock: native write error preserves sentinel; unlock and retry succeeds",
+      "screens": [
+        "screens/CF12-locked-error.png",
+        "screens/CF12-locked-target.png",
+        "screens/CF12-retry-result.png",
+        "screens/CF12-retry-start.png"
+      ]
+    },
+    {
+      "id": "CF13",
+      "flow": "5000 persons/150000 responses: completed baseline, cancel during cell conversion, prior workbook complete, successful same-process retry",
+      "screens": [
+        "screens/CF13-final-retry-result.png",
+        "screens/CF13-final-retry-start.png",
+        "screens/CF13-late-cancel-requested.png",
+        "screens/CF13-phase-observed.png",
+        "screens/CF13-read-convert-start.png",
+        "screens/CF13-second-phase.png",
+        "screens/CF13-second-read-start.png",
+        "screens/CF13-selected-source-folder.png",
+        "screens/CF13-third-phase-1.png",
+        "screens/CF13-third-start.png",
+        "screens/CF13-valid-file-recognized.png"
+      ]
+    }
+  ],
+  "files": {
+    "native/CF12-retry.xlsx": "abec9c73c9e3339e0ebc737dfee229ff01184a3288a6c3cce830d8c4eec4fa63",
+    "native/CF12-unchanged.bin": "10e1cf2fa2d6e02950e90fc853d5cee277014f01870884bdf7b026171539274c",
+    "native/CF13-after-cancel.xlsx": "b2d1811c2cc4d13462708d69f1135510f0694b44eed0b6b073c2ad269ad2d3e8",
+    "native/CF13-final-retry.xlsx": "f6f27d4ac1728b4a0a69485719d24f8389d7e35fbda4d4843028f00a51f4fb2e",
+    "native/CF13-full-before.xlsx": "bffa30071472569304a34e49b924290a78093617099978254a48605bd6756fcf",
+    "native/TE10F.xlsx": "bd4133e901f7568e0adc866e7b496cebba70bc0231aaadec3a463cb3f99326c6",
+    "native/content/Browser-Demo.xml": "f13493dd6866f9829a6015610709e2149d3cf188bfef81f686eda3b01ab02177",
+    "native/content/SAMPLE_BOOKLET.XML": "31a6b8cbcad9fd7c27165949fbf2abdc6a458ec74f21cc2646904b6f9c078780",
+    "native/content/SAMPLE_BOOKLET2.XML": "c3e05941047b1d4d6bdc688bdc9fad57356ee61c9384d12d2690fa6e7679e360",
+    "native/content/SAMPLE_BOOKLET3.XML": "af3f5e57a81af63aa06536ee8b158ec6921afb7a59fe6a44125e932788cb627e",
+    "native/content/SAMPLE_SYSCHECK.XML": "de11e774f2d0226609658a9b54a382e3896b4fd593464c6b4d43460443c10a83",
+    "native/content/SAMPLE_TESTTAKERS.XML": "cdc2fdc790e37981258813138f2ad368a681f5101022c2490d0142e23842c23c",
+    "native/content/SAMPLE_UNIT.XML": "672563543f1a9ec153161393baf8b152135f6f270af85328876953e7ced0178b",
+    "native/content/SAMPLE_UNIT2.XML": "6c16e655a4520480866c9e0a697e1d4d9834ac2a606be54cbe59fda4802315f1",
+    "native/content/SAMPLE_UNITCONTENTS.HTM": "532310b1f4bf1eab6eaaa1603962a39566919b5669974f7b1a7dc2de4316d202",
+    "native/content/coding-scheme.vocs.json": "0a0685f337e0cdf136795a467ecba92f05c8a4a2c4e142cd56e407f8827d322f",
+    "native/content/index.html": "ae088b457c7f12602a311b98112de85c484ab657c0932f13cb46db2b14bcc9d2",
+    "native/content/sample_resource_package.itcr.zip": "da2ae859b77f8a6ba09b3f61cab38ea0c5d6de5f08b9fcefef9d263aef187f4e",
+    "native/content/verona-player-simple-6.0.html": "bece3e969e4267a5690620b4a9b056c5245c02697628b1306dca630423a7b2d3",
+    "screens/CF12-locked-error.png": "1f818136be60a074a0b6b3e2ba029e42fa5cffad029831e258ce15858a05fbfc",
+    "screens/CF12-locked-target.png": "395a4a73673b7c65ca8ec0bdfc6c506f7731a0db61432ad74755eefd00f8254a",
+    "screens/CF12-retry-result.png": "2bb09bf49a4c6bfc03d96d6ec308215555cff5fbf4a7890ba3e799fe21e958e2",
+    "screens/CF12-retry-start.png": "61c58ff4a6e0e531b6e36f315a389ed6f1753642c59931f05963ee345ed23a1d",
+    "screens/CF13-final-retry-result.png": "5c829cec561c7ac29caac301f491035ff12a5b8ef9ba38c505b06aca9fcd24b5",
+    "screens/CF13-final-retry-start.png": "2d68fbfe531d0c1e5badf9df09c9468ca97a527023f6b6bba59099fe4d41fc9b",
+    "screens/CF13-late-cancel-requested.png": "829d3a9c7fdf622debe234eff5c7e34e4b00336be8779e07c2097f908e934c68",
+    "screens/CF13-phase-observed.png": "5a4631bc67b62e414a4104a90dd0b7c6eae437bdfc6967b1b3bc99dfeb8f4789",
+    "screens/CF13-read-convert-start.png": "5f533331c2fb715695d51951c51c4db61e0780628e46b809dff325d429de0550",
+    "screens/CF13-second-phase.png": "899787c6e628a24d6a941b2678a49b22771d675b0ef41b2f16b65be42af4ead0",
+    "screens/CF13-second-read-start.png": "01ce77105fd2fd122b4c5ef60c559e34ca13ccad940e4531ee451abec30cea47",
+    "screens/CF13-selected-source-folder.png": "357288fb3a8635d0e0716f55bf64b9fc698d183d3bec829cb2b78f91099dec7b",
+    "screens/CF13-third-phase-1.png": "a68acc3c2a0e80e4a295871b856476bcf8bc75a16451737ced3521225d7d8fe6",
+    "screens/CF13-third-start.png": "b526558bfa491b9a84f7dbbfea39b531179fbda34f9c7f7ea07a3c11099178f2",
+    "screens/CF13-valid-file-recognized.png": "bfd1abaf5706a767c72b3eab186dd013a2e9c65bdc9ebc9ec18d55d7d44b9bb7",
+    "screens/TC11-cancel-finished.png": "4d19d3ff3d3fb23592af13e2ce9f75bbcbb25e744d45c23d1b9a58f8d77b3168",
+    "screens/TC11-cancel-requested.png": "ad2969073b8b3ad503592cc91aee385ac13b43b3fc1b36a346b564425e442102",
+    "screens/TC11-content-retry-result.png": "37108f73a53279ba2871fe322bea9b440e5e85b9d610819c3fa39408179ba840",
+    "screens/TC11-content-retry-start.png": "5a0f843cbe0cd8f0fde2b22d403b514adb0c16244bbdead4c48bb88191ce702b",
+    "screens/TC11-content-start.png": "b9d5147f2d9119c7c646cc343aafa8bb8a8303dd8cf9209bc583fe3ed74f1c39",
+    "screens/TC11-login-start.png": "6177b6e304efe6cdc3b8301bb7402525c5941965251bc73f9dbfb497021487ff",
+    "screens/TC11-workspace-selected.png": "8bb017dcc987d0164c9368eedf873415b7e7a85eb394cb0d29aceaa44e60e667",
+    "screens/TE01-login-recovered.png": "9de7c1a849575a201a3640034be94901051637577a0ace061a7b9b94f28def4d",
+    "screens/TE01-login-retry.png": "2b879ad8270098c5fc8951795e52418fe68d2ccbaeeb62cd42d5aebdd54e5c0d",
+    "screens/TE01-login401-result.png": "2c3267cc339413b6d4cd03ffa35f94fa560b8bacc6cb430966d475df3a954e89",
+    "screens/TE01-login401.png": "3d9c7d7fed4a9b388454eb395b6fd55ec62684da7b9782b034ad9686f5fb7091",
+    "screens/TE02-groups500-result.png": "6eeedee55c7599f70a8d16238d78ac6c36d0a40bee0d99d266640c8336dd2f6e",
+    "screens/TE02-groups500-start.png": "e4e55b167f79199836e93c046c92357eec56264517f229851cc83f52f9a9e1c4",
+    "screens/TE03-token401-result.png": "70dd176680de0bdbe14a4dfd1b93e2b91fd137d8f851edc63ab1ad5f9419562a",
+    "screens/TE03-token401-start.png": "279b14bc7f1d99f1cdb3c28792f1af852a4297aa3d9399daa97ad0e5faf564a1",
+    "screens/TE04-other-workspace-groups.png": "007b6bb58c157fc523c9ac74497610ac5b92d295e4f49203b1b8606909f553bd",
+    "screens/TE04-other-workspace-start.png": "afd6ca797fd44f6a3fbedf98eca7644ec93380f2293313a1152f8a8b970c2cd1",
+    "screens/TE04-sample-workspace-start.png": "287ae881b2e6e8efaa9067fd81ca7b415d7b9f761272239a498e41e2b1a1aac7",
+    "screens/TE05-report500-result.png": "5eb39322998f4f22f0dbe4fb9dc6900d04da894ea88c87d1b647fb0d3237c044",
+    "screens/TE05-report500-start.png": "7aae33cac0067633d0db6911671887ecad9613362b834e2b1520336eaed9419e",
+    "screens/TE06-back-to-groups.png": "26292cc9b1140c19fa7f50a4320ef2008adfba6e906943085aadf74f825ee0a4",
+    "screens/TE06-malformed-result.png": "9249d803c83c4bb106bb242f470bf776a56546cec79bf59df7cd6a913f122638",
+    "screens/TE06-malformed-start.png": "4729d56ebe5620dbcb1232670992fd75504e3a942534c06b0d4d05dc7dafc416",
+    "screens/TE07-empty-result.png": "3145fe8d123839b1ef0a72632741a76ccc77ce840f096c7f59b5a2fb6870aadc",
+    "screens/TE07-empty-start.png": "13bb00ac2e24311196532fc5bf4b4a9447aeca15f4e409c99e6bec9d678c4cba",
+    "screens/TE08-cancel-button.png": "4984c4264184bbf3b4938ba742cf63fd97599dd5f31f15047c08f4ce43d30527",
+    "screens/TE08-cancel-finished.png": "74d2f5f4247084eb94d40907bbd7493c7ba434cbbaf24c94aa992d26fd7b7e3c",
+    "screens/TE08-cancel-requested.png": "775b3c9468a24c4db5e598eb39f78f8b85129ff5ba5db9bb3acd3c85e5813d3d",
+    "screens/TE08-slow-request-start.png": "d98cd98f08cfd4cbce16bc1a78309ee49b2d469ba3deef5f76afe12916a57213",
+    "screens/TE09-timeout-observed.png": "479d533d662105670058df5388ee3ef8ddca58b4e9f4817e0c7d4b8c2bc43e21",
+    "screens/TE09-timeout-result.png": "532fb252ab3f02bcf5d6a204d14bff5ab01194a9161ac65fb2d67df4febfea3e",
+    "screens/TE09-timeout-start.png": "775b3c9468a24c4db5e598eb39f78f8b85129ff5ba5db9bb3acd3c85e5813d3d",
+    "screens/TE10F-groups.png": "3417796a5368ef09606a3390b45330ee36ea198cb83d1f9ecb0489a007d5853d",
+    "screens/TE10F-login-start.png": "16d39d5368b302d19e3a541d22f0be09a2afa45d466f59e7025d380b39a71fef",
+    "screens/TE10F-partial503-result.png": "9f2a04b478b4081e98748e43ce9eb408e7412e16739581363f5a4fbf1d2d044d",
+    "screens/TE10F-partial503-start.png": "5bd0cbfae84981bd87c0332d08e4defdf089937595680dc4ebf7c5ef56dd8daa",
+    "inputs/testcenter-snapshot.json": "12c3cb3953eb3015760794346523ef58b98027760e6f27188697be10804ffe7b",
+    "inputs/events.jsonl": "d030da4aa85a65591dd9aecc4e478d85032c7179b83cd96c41ec7b2759530926",
+    "inputs/proxy.py": "da16ba6cb2c7740d83bb29f1035f97554006bbac0f5be27e58618879dc94ca0a",
+    "inputs/lock-output.ps1": "e9b17d07d11b1f70999e67c243f1a058da44f9844eca75cadb476ec6cbc4ff8a",
+    "inputs/prepare-late-cancel.mjs": "63d606e717b5d1c1d4f0fd211d1db254543817403ffe78deff2bf862b3ae0c6a",
+    "inputs/late-cancel.csv": "65671e0ccb6b3400af93b6f2da13ea11dee941bd24d33f2201e67b636924fd86"
+  },
+  "bundle": {
+    "file": "evidence.zip",
+    "bytes": 12145232,
+    "sha256": "7c4cf7790aa0fd7de3fc8934642b232049c1841576d8822445651f6e90010a05"
+  },
+  "corrections": [
+    "HTTP 401 clears the browser session and returns to login instead of retaining stale workspace/group controls.",
+    "A 100-second per-request limit covers response headers and body; explicit cancellation remains immediate and recoverable.",
+    "The image E2E proof waits for the exact current scan path and visible layout before measuring; Firefox CI exposed a sample taken during a detached-canvas transition."
+  ],
+  "comparisons": [
+    "All 12 downloaded content files are byte-identical. Complete index text differs only in its captured download-date field, which is the sole normalization.",
+    "All cells of native partial-error XLSX are reconstructed for explanation; the browser deliberately prevents publishing that partial result.",
+    "All cells of three complete 5000-person/150000-response native workbook checkpoints are paired with browser conversion. ZIP metadata is not normalized into a byte-identity claim.",
+    "Code-generator retry validates all 2800 codes, alphabets, uniqueness and normalized workbook cells.",
+    "Exclusive output lock is also tested against the real browser local-file helper on Windows CI; non-Windows runs explicitly skip that OS-specific test."
+  ],
+  "qualifiedDifferences": [
+    "Native groups HTTP 500/401 silently display an empty list. Browser reports the failure and rolls back a failed ordinary selection; an expired session requires new login.",
+    "Native response HTTP 500/503 may finish with zero or partial rows. Browser errors publish no partial download.",
+    "Native cancellation waits for the current response/content file and can retain read data in its process. Browser aborts immediately and restores its prior database state.",
+    "Native small ZIP save has no separately observable GUI cancellation checkpoint. Cell-conversion cancellation and an actual write-time exclusive lock/retry are directly observed; arbitrary interruption inside filesystem/ZIP writes is not claimed."
+  ],
+  "excludedPreparations": [
+    "Initial TE10 reused retained state after cancellation; final TE10F is the isolated partial-failure run.",
+    "First large CSV folder attempt preceded completed file transfer. The next generated input had a duplicate BOM. Both are excluded; final single-BOM input is byte-verified and recognized by the native GUI.",
+    "The initial and repeated full large runs completed before a cancellation could be requested; they are completed baselines. The final cancel is captured while person rows are still being converted."
+  ],
+  "limits": [
+    "Synthetic data, no empirical study files.",
+    "Finite fault cases and phase observations do not establish equality for arbitrary network failures, file sizes, operating systems or gesture histories."
+  ]
+}

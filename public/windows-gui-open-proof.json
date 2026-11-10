@@ -15,7 +15,8 @@
       "windows-gui-excel-sources-proof.json",
       "windows-gui-import-sequences-proof.json",
       "windows-gui-coding-edits-proof.json",
-      "windows-gui-image-products-proof.json"
+      "windows-gui-image-products-proof.json",
+      "windows-gui-network-cancellation-proof.json"
     ],
     "additionalBoundaryWorkbooks": 6,
     "additionalInvalidLoginTexts": 4,
@@ -29,7 +30,8 @@
     "directSourceExportPairs": 3,
     "importSequenceGuiScenarios": 15,
     "codingEditCombinations": 32,
-    "imageDisplayCombinations": 30
+    "imageDisplayCombinations": 30,
+    "networkAndCancellationScenarios": 13
   },
   "openFamilies": [
     {
@@ -108,17 +110,19 @@
       "id": "testcenter-errors",
       "family": "Testcenter-Fehler und Auswahlwechsel",
       "dimensions": "Arbeitsbereich-/Gruppenwechsel bei laufendem Abruf, abgelaufenes Token, HTTP-Fehler, Zeitüberschreitung, fehlerhafte/teilweise Berichte und erneuter erfolgreicher Abruf.",
-      "existingEvidence": "Normale echte Testcenter-Kette, ausgewählte Reviews/fehlende Berichte direkt; weitere Fehlerzustände über API-/Browser-Vertragstests.",
-      "stillOpen": "Gezielte native GUI-Fehlerläufe mit anschließender Wiederherstellung.",
-      "status": "partial-direct-gui"
+      "existingEvidence": "Zehn direkte native Netzwerk-/Auswahlfolgen: Login-401 und Wiederanmeldung, Gruppen-500/401, Arbeitsbereichwechsel, Bericht-500, ungültiges JSON, leere Berichte, blockierter Abruf mit Abbruch, tatsächlich abgelaufenes Timeout und frischer A-erfolgreich/B-503-Lauf. Unvollständige native Excel-Ausgabe vollständig erklärt.",
+      "stillOpen": "Die konkreten Fehlerfolgen sind abgeschlossen. Browser meldet ungültige Sitzungen und Serverfehler ausdrücklich und verhindert Teil-Downloads; native stille Leerlisten/Teilergebnisse werden nicht als sinnvolle Gleichheit nachgebaut. Beliebige Netzwerkfehler bleiben außerhalb des Nachweises.",
+      "status": "completed-finite-direct-gui-with-qualified-error-behaviour",
+      "proof": "windows-gui-network-cancellation-proof.json"
     },
     {
       "id": "cancellation-files",
       "family": "Abbruch und Dateidialoge",
       "dimensions": "Abbruch während Einlesen, Umwandeln, Schreiben und Content-Download; abgebrochene Datei-/Ordnerauswahl, gesperrte Ausgabedatei und Wiederholung.",
-      "existingEvidence": "Ein langer CSV-Lauf frühzeitig im Original abgebrochen und erneut importiert; weitere Phasen nicht vollständig direkt gepaart.",
-      "stillOpen": "Gezielte Abbruchphasen und Dateifehler statt einer pauschalen Abbruchzusage.",
-      "status": "partial-direct-gui"
+      "existingEvidence": "Zusätzlicher nativer Content-Abbruch mit erfolgreichem 12-Dateien-Folgelauf, exklusive Ausgabedateisperre zur tatsächlichen Schreibzeit mit unverändertem Vorinhalt und erfolgreichem Retry, später Abbruch während Excel-Zellkonvertierung für 5000 Personen/150000 Antworten und vollständiger Folgelauf. Vorhandene Dialog- und frühe CSV-Abbrüche bleiben belegt.",
+      "stillOpen": "Konkrete Einlese-/Konvertierungs-/Netzwerk-/Content-Abbrüche sowie Schreibfehler und Wiederholung sind direkt geprüft. Der kurze interne ZIP-/Dateispeicheraufruf besitzt keinen gesondert beobachtbaren GUI-Abbruchpunkt; ein beliebiger Abbruch mitten in diesem atomaren Aufruf ist weiterhin nicht direkt nachgewiesen.",
+      "status": "completed-reachable-phases-with-explicit-write-interruption-limit",
+      "proof": "windows-gui-network-cancellation-proof.json"
     }
   ],
   "qualifiedOriginalLimits": [
@@ -165,5 +169,10 @@
     "correction": "Retain application-owned File objects independently of native FileList wrappers; invalidate on user replacement or clearing",
     "unitTest": "tests/local-file-reference.test.js",
     "browserTest": "tests/e2e/local-starter.spec.js"
-  }
+  },
+  "remainingScopeLimits": [
+    "Keine empirischen Studiendateien.",
+    "Kein universeller Nachweis sämtlicher Dateiinhalte, Größen, Import-/Gestenfolgen oder Netzwerkkombinationen.",
+    "Kein gezielter nativer GUI-Abbruch innerhalb des nicht separat beobachtbaren kurzen ZIP-/Dateispeicheraufrufs."
+  ]
 }
