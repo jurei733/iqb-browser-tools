@@ -14,7 +14,8 @@
       "windows-gui-small-converters-proof.json",
       "windows-gui-excel-sources-proof.json",
       "windows-gui-import-sequences-proof.json",
-      "windows-gui-coding-edits-proof.json"
+      "windows-gui-coding-edits-proof.json",
+      "windows-gui-image-products-proof.json"
     ],
     "additionalBoundaryWorkbooks": 6,
     "additionalInvalidLoginTexts": 4,
@@ -27,7 +28,8 @@
     "mixedDatabaseExcelPairs": 26,
     "directSourceExportPairs": 3,
     "importSequenceGuiScenarios": 15,
-    "codingEditCombinations": 32
+    "codingEditCombinations": 32,
+    "imageDisplayCombinations": 30
   },
   "openFamilies": [
     {
@@ -97,9 +99,10 @@
       "id": "images-products",
       "family": "Scanformate, DPI und Schablonen",
       "dimensions": "PNG/JPEG/BMP/GIF/mehrseitiges TIFF × DPI/Crop × Zoom/Rahmen/Schablonenbewegung und Fallwechsel.",
-      "existingEvidence": "Bilddekoder-/Geometrie-Modultests und direkte endliche Scan-/Schablonengesten; kein vollständiges sichtbares Format-/Geometrieprodukt.",
-      "stillOpen": "Weitere Bildformate mit den gleichen physischen Abmessungen im Original anzeigen und paaren.",
-      "status": "partial-direct-gui"
+      "existingEvidence": "30/30 native Anzeigefälle: PNG/JPEG/BMP/GIF/TIFF × 96/192-DPI-Anlage × drei Rahmen-/crop-Varianten. Rahmen an/aus, Kodieren/Fallwechsel, Schablonengröße und erstes GIF-/TIFF-Bild erfasst; 270 gemessene Maskenpunkte im Browser gepaart.",
+      "stillOpen": "Das konkrete 30er-Anzeigeprodukt ist abgeschlossen. Scan-/Schablonengesten bleiben durch frühere direkte Einzelpaare belegt; kein Nachweis sämtlicher Gestenfolgen in jedem Format.",
+      "status": "completed-finite-display-product",
+      "proof": "windows-gui-image-products-proof.json"
     },
     {
       "id": "testcenter-errors",

@@ -1,0 +1,6625 @@
+{
+  "date": "2026-11-10",
+  "method": "Visible unchanged Windows Coding GUI: 5 formats × 2 requested resolutions × 3 crop/frame offsets. Frame on/off, code then case change, 100% reset on I01–I29 clamped to native minimum. Actual screenshots measured with color marker landmarks; nine native masked/unmasked probe pairs per case. Synthetic files.",
+  "cases": [
+    {
+      "id": "I00",
+      "format": "PNG",
+      "dpi": 96,
+      "crop": "none",
+      "variable": "VI00",
+      "imageSHA256": "a0a1343ccf468713db41095c67ad934a4c4ed1bb0ec39651993f9dbabbf1c8bf",
+      "pixels": [
+        320,
+        240
+      ],
+      "multiFrame": false,
+      "nativeRedPixels": [
+        250,
+        342,
+        943,
+        818
+      ],
+      "nativeScalePerDesignUnit": 5.95,
+      "nativeOriginPixels": [
+        12,
+        163.5
+      ],
+      "probes": [
+        {
+          "design": [
+            15,
+            12
+          ],
+          "nativePixel": [
+            101,
+            235
+          ],
+          "unmaskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "maskedRGB": [
+            121,
+            183,
+            108
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            30,
+            25
+          ],
+          "nativePixel": [
+            190,
+            312
+          ],
+          "unmaskedRGB": [
+            176,
+            223,
+            168
+          ],
+          "maskedRGB": [
+            140,
+            184,
+            133
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            65,
+            45
+          ],
+          "nativePixel": [
+            399,
+            431
+          ],
+          "unmaskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "maskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            90,
+            65
+          ],
+          "nativePixel": [
+            548,
+            550
+          ],
+          "unmaskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "maskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            130,
+            85
+          ],
+          "nativePixel": [
+            786,
+            669
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            150,
+            105
+          ],
+          "nativePixel": [
+            904,
+            788
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            175,
+            125
+          ],
+          "nativePixel": [
+            1053,
+            907
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            230,
+            175
+          ],
+          "nativePixel": [
+            1380,
+            1205
+          ],
+          "unmaskedRGB": [
+            0,
+            0,
+            246
+          ],
+          "maskedRGB": [
+            64,
+            64,
+            186
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            290,
+            215
+          ],
+          "nativePixel": [
+            1738,
+            1443
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        }
+      ]
+    },
+    {
+      "id": "I01",
+      "format": "PNG",
+      "dpi": 96,
+      "crop": "inside",
+      "variable": "VI01",
+      "imageSHA256": "a0a1343ccf468713db41095c67ad934a4c4ed1bb0ec39651993f9dbabbf1c8bf",
+      "pixels": [
+        320,
+        240
+      ],
+      "multiFrame": false,
+      "nativeRedPixels": [
+        250,
+        342,
+        943,
+        818
+      ],
+      "nativeScalePerDesignUnit": 5.95,
+      "nativeOriginPixels": [
+        12,
+        163.5
+      ],
+      "probes": [
+        {
+          "design": [
+            15,
+            12
+          ],
+          "nativePixel": [
+            101,
+            235
+          ],
+          "unmaskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "maskedRGB": [
+            121,
+            183,
+            108
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            30,
+            25
+          ],
+          "nativePixel": [
+            190,
+            312
+          ],
+          "unmaskedRGB": [
+            176,
+            223,
+            168
+          ],
+          "maskedRGB": [
+            176,
+            223,
+            168
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            65,
+            45
+          ],
+          "nativePixel": [
+            399,
+            431
+          ],
+          "unmaskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "maskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            90,
+            65
+          ],
+          "nativePixel": [
+            548,
+            550
+          ],
+          "unmaskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "maskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            130,
+            85
+          ],
+          "nativePixel": [
+            786,
+            669
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            150,
+            105
+          ],
+          "nativePixel": [
+            904,
+            788
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            178,
+            73,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            175,
+            125
+          ],
+          "nativePixel": [
+            1053,
+            907
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            230,
+            175
+          ],
+          "nativePixel": [
+            1380,
+            1205
+          ],
+          "unmaskedRGB": [
+            0,
+            0,
+            246
+          ],
+          "maskedRGB": [
+            64,
+            64,
+            186
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            290,
+            215
+          ],
+          "nativePixel": [
+            1738,
+            1443
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        }
+      ]
+    },
+    {
+      "id": "I02",
+      "format": "PNG",
+      "dpi": 96,
+      "crop": "overlap",
+      "variable": "VI02",
+      "imageSHA256": "a0a1343ccf468713db41095c67ad934a4c4ed1bb0ec39651993f9dbabbf1c8bf",
+      "pixels": [
+        320,
+        240
+      ],
+      "multiFrame": false,
+      "nativeRedPixels": [
+        250,
+        342,
+        943,
+        818
+      ],
+      "nativeScalePerDesignUnit": 5.95,
+      "nativeOriginPixels": [
+        12,
+        163.5
+      ],
+      "probes": [
+        {
+          "design": [
+            15,
+            12
+          ],
+          "nativePixel": [
+            101,
+            235
+          ],
+          "unmaskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "maskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            30,
+            25
+          ],
+          "nativePixel": [
+            190,
+            312
+          ],
+          "unmaskedRGB": [
+            176,
+            223,
+            168
+          ],
+          "maskedRGB": [
+            176,
+            223,
+            168
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            65,
+            45
+          ],
+          "nativePixel": [
+            399,
+            431
+          ],
+          "unmaskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "maskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            90,
+            65
+          ],
+          "nativePixel": [
+            548,
+            550
+          ],
+          "unmaskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "maskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            130,
+            85
+          ],
+          "nativePixel": [
+            786,
+            669
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            178,
+            73,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            150,
+            105
+          ],
+          "nativePixel": [
+            904,
+            788
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            178,
+            73,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            175,
+            125
+          ],
+          "nativePixel": [
+            1053,
+            907
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            230,
+            175
+          ],
+          "nativePixel": [
+            1380,
+            1205
+          ],
+          "unmaskedRGB": [
+            0,
+            0,
+            246
+          ],
+          "maskedRGB": [
+            64,
+            64,
+            186
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            290,
+            215
+          ],
+          "nativePixel": [
+            1738,
+            1443
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        }
+      ]
+    },
+    {
+      "id": "I03",
+      "format": "PNG",
+      "dpi": 192,
+      "crop": "none",
+      "variable": "VI03",
+      "imageSHA256": "f4621a5aff58c10c1f7ac2a393802e837c117e3be1703df4b02c97e5ca8bee28",
+      "pixels": [
+        640,
+        480
+      ],
+      "multiFrame": false,
+      "nativeRedPixels": [
+        250,
+        341,
+        943,
+        818
+      ],
+      "nativeScalePerDesignUnit": 5.9625,
+      "nativeOriginPixels": [
+        11.5,
+        162.125
+      ],
+      "probes": [
+        {
+          "design": [
+            15,
+            12
+          ],
+          "nativePixel": [
+            101,
+            234
+          ],
+          "unmaskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "maskedRGB": [
+            120,
+            184,
+            106
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            30,
+            25
+          ],
+          "nativePixel": [
+            190,
+            311
+          ],
+          "unmaskedRGB": [
+            171,
+            222,
+            163
+          ],
+          "maskedRGB": [
+            133,
+            184,
+            125
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            65,
+            45
+          ],
+          "nativePixel": [
+            399,
+            430
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            90,
+            65
+          ],
+          "nativePixel": [
+            548,
+            550
+          ],
+          "unmaskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "maskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            130,
+            85
+          ],
+          "nativePixel": [
+            787,
+            669
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            150,
+            105
+          ],
+          "nativePixel": [
+            906,
+            788
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            175,
+            125
+          ],
+          "nativePixel": [
+            1055,
+            907
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            230,
+            175
+          ],
+          "nativePixel": [
+            1383,
+            1206
+          ],
+          "unmaskedRGB": [
+            0,
+            0,
+            246
+          ],
+          "maskedRGB": [
+            64,
+            64,
+            186
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            290,
+            215
+          ],
+          "nativePixel": [
+            1741,
+            1444
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        }
+      ]
+    },
+    {
+      "id": "I04",
+      "format": "PNG",
+      "dpi": 192,
+      "crop": "inside",
+      "variable": "VI04",
+      "imageSHA256": "f4621a5aff58c10c1f7ac2a393802e837c117e3be1703df4b02c97e5ca8bee28",
+      "pixels": [
+        640,
+        480
+      ],
+      "multiFrame": false,
+      "nativeRedPixels": [
+        250,
+        341,
+        943,
+        818
+      ],
+      "nativeScalePerDesignUnit": 5.9625,
+      "nativeOriginPixels": [
+        11.5,
+        162.125
+      ],
+      "probes": [
+        {
+          "design": [
+            15,
+            12
+          ],
+          "nativePixel": [
+            101,
+            234
+          ],
+          "unmaskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "maskedRGB": [
+            120,
+            184,
+            106
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            30,
+            25
+          ],
+          "nativePixel": [
+            190,
+            311
+          ],
+          "unmaskedRGB": [
+            171,
+            222,
+            163
+          ],
+          "maskedRGB": [
+            171,
+            222,
+            163
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            65,
+            45
+          ],
+          "nativePixel": [
+            399,
+            430
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            90,
+            65
+          ],
+          "nativePixel": [
+            548,
+            550
+          ],
+          "unmaskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "maskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            130,
+            85
+          ],
+          "nativePixel": [
+            787,
+            669
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            150,
+            105
+          ],
+          "nativePixel": [
+            906,
+            788
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            178,
+            73,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            175,
+            125
+          ],
+          "nativePixel": [
+            1055,
+            907
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            230,
+            175
+          ],
+          "nativePixel": [
+            1383,
+            1206
+          ],
+          "unmaskedRGB": [
+            0,
+            0,
+            246
+          ],
+          "maskedRGB": [
+            64,
+            64,
+            186
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            290,
+            215
+          ],
+          "nativePixel": [
+            1741,
+            1444
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        }
+      ]
+    },
+    {
+      "id": "I05",
+      "format": "PNG",
+      "dpi": 192,
+      "crop": "overlap",
+      "variable": "VI05",
+      "imageSHA256": "f4621a5aff58c10c1f7ac2a393802e837c117e3be1703df4b02c97e5ca8bee28",
+      "pixels": [
+        640,
+        480
+      ],
+      "multiFrame": false,
+      "nativeRedPixels": [
+        250,
+        341,
+        943,
+        818
+      ],
+      "nativeScalePerDesignUnit": 5.9625,
+      "nativeOriginPixels": [
+        11.5,
+        162.125
+      ],
+      "probes": [
+        {
+          "design": [
+            15,
+            12
+          ],
+          "nativePixel": [
+            101,
+            234
+          ],
+          "unmaskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "maskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            30,
+            25
+          ],
+          "nativePixel": [
+            190,
+            311
+          ],
+          "unmaskedRGB": [
+            171,
+            222,
+            163
+          ],
+          "maskedRGB": [
+            171,
+            222,
+            163
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            65,
+            45
+          ],
+          "nativePixel": [
+            399,
+            430
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            90,
+            65
+          ],
+          "nativePixel": [
+            548,
+            550
+          ],
+          "unmaskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "maskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            130,
+            85
+          ],
+          "nativePixel": [
+            787,
+            669
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            178,
+            73,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            150,
+            105
+          ],
+          "nativePixel": [
+            906,
+            788
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            178,
+            73,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            175,
+            125
+          ],
+          "nativePixel": [
+            1055,
+            907
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            230,
+            175
+          ],
+          "nativePixel": [
+            1383,
+            1206
+          ],
+          "unmaskedRGB": [
+            0,
+            0,
+            246
+          ],
+          "maskedRGB": [
+            64,
+            64,
+            186
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            290,
+            215
+          ],
+          "nativePixel": [
+            1741,
+            1444
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        }
+      ]
+    },
+    {
+      "id": "I06",
+      "format": "JPEG",
+      "dpi": 96,
+      "crop": "none",
+      "variable": "VI06",
+      "imageSHA256": "55d522e8d3970173c6732845647b0c8db1e4876edb95ec6f189b6c09ac25df79",
+      "pixels": [
+        320,
+        240
+      ],
+      "multiFrame": false,
+      "nativeRedPixels": [
+        250,
+        342,
+        943,
+        818
+      ],
+      "nativeScalePerDesignUnit": 5.95,
+      "nativeOriginPixels": [
+        12,
+        163.5
+      ],
+      "probes": [
+        {
+          "design": [
+            15,
+            12
+          ],
+          "nativePixel": [
+            101,
+            235
+          ],
+          "unmaskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "maskedRGB": [
+            121,
+            183,
+            108
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            30,
+            25
+          ],
+          "nativePixel": [
+            190,
+            312
+          ],
+          "unmaskedRGB": [
+            176,
+            223,
+            168
+          ],
+          "maskedRGB": [
+            140,
+            184,
+            133
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            65,
+            45
+          ],
+          "nativePixel": [
+            399,
+            431
+          ],
+          "unmaskedRGB": [
+            232,
+            52,
+            35
+          ],
+          "maskedRGB": [
+            232,
+            52,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            90,
+            65
+          ],
+          "nativePixel": [
+            548,
+            550
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            130,
+            85
+          ],
+          "nativePixel": [
+            786,
+            669
+          ],
+          "unmaskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "maskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            150,
+            105
+          ],
+          "nativePixel": [
+            904,
+            788
+          ],
+          "unmaskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "maskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            175,
+            125
+          ],
+          "nativePixel": [
+            1053,
+            907
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            230,
+            175
+          ],
+          "nativePixel": [
+            1380,
+            1205
+          ],
+          "unmaskedRGB": [
+            0,
+            0,
+            244
+          ],
+          "maskedRGB": [
+            64,
+            64,
+            184
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            290,
+            215
+          ],
+          "nativePixel": [
+            1738,
+            1443
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        }
+      ]
+    },
+    {
+      "id": "I07",
+      "format": "JPEG",
+      "dpi": 96,
+      "crop": "inside",
+      "variable": "VI07",
+      "imageSHA256": "55d522e8d3970173c6732845647b0c8db1e4876edb95ec6f189b6c09ac25df79",
+      "pixels": [
+        320,
+        240
+      ],
+      "multiFrame": false,
+      "nativeRedPixels": [
+        250,
+        342,
+        943,
+        818
+      ],
+      "nativeScalePerDesignUnit": 5.95,
+      "nativeOriginPixels": [
+        12,
+        163.5
+      ],
+      "probes": [
+        {
+          "design": [
+            15,
+            12
+          ],
+          "nativePixel": [
+            101,
+            235
+          ],
+          "unmaskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "maskedRGB": [
+            121,
+            183,
+            108
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            30,
+            25
+          ],
+          "nativePixel": [
+            190,
+            312
+          ],
+          "unmaskedRGB": [
+            176,
+            223,
+            168
+          ],
+          "maskedRGB": [
+            176,
+            223,
+            168
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            65,
+            45
+          ],
+          "nativePixel": [
+            399,
+            431
+          ],
+          "unmaskedRGB": [
+            232,
+            52,
+            35
+          ],
+          "maskedRGB": [
+            232,
+            52,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            90,
+            65
+          ],
+          "nativePixel": [
+            548,
+            550
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            130,
+            85
+          ],
+          "nativePixel": [
+            786,
+            669
+          ],
+          "unmaskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "maskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            150,
+            105
+          ],
+          "nativePixel": [
+            904,
+            788
+          ],
+          "unmaskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "maskedRGB": [
+            177,
+            74,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            175,
+            125
+          ],
+          "nativePixel": [
+            1053,
+            907
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            230,
+            175
+          ],
+          "nativePixel": [
+            1380,
+            1205
+          ],
+          "unmaskedRGB": [
+            0,
+            0,
+            244
+          ],
+          "maskedRGB": [
+            64,
+            64,
+            184
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            290,
+            215
+          ],
+          "nativePixel": [
+            1738,
+            1443
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        }
+      ]
+    },
+    {
+      "id": "I08",
+      "format": "JPEG",
+      "dpi": 96,
+      "crop": "overlap",
+      "variable": "VI08",
+      "imageSHA256": "55d522e8d3970173c6732845647b0c8db1e4876edb95ec6f189b6c09ac25df79",
+      "pixels": [
+        320,
+        240
+      ],
+      "multiFrame": false,
+      "nativeRedPixels": [
+        250,
+        342,
+        943,
+        818
+      ],
+      "nativeScalePerDesignUnit": 5.95,
+      "nativeOriginPixels": [
+        12,
+        163.5
+      ],
+      "probes": [
+        {
+          "design": [
+            15,
+            12
+          ],
+          "nativePixel": [
+            101,
+            235
+          ],
+          "unmaskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "maskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            30,
+            25
+          ],
+          "nativePixel": [
+            190,
+            312
+          ],
+          "unmaskedRGB": [
+            176,
+            223,
+            168
+          ],
+          "maskedRGB": [
+            176,
+            223,
+            168
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            65,
+            45
+          ],
+          "nativePixel": [
+            399,
+            431
+          ],
+          "unmaskedRGB": [
+            232,
+            52,
+            35
+          ],
+          "maskedRGB": [
+            232,
+            52,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            90,
+            65
+          ],
+          "nativePixel": [
+            548,
+            550
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            130,
+            85
+          ],
+          "nativePixel": [
+            786,
+            669
+          ],
+          "unmaskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "maskedRGB": [
+            177,
+            74,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            150,
+            105
+          ],
+          "nativePixel": [
+            904,
+            788
+          ],
+          "unmaskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "maskedRGB": [
+            177,
+            74,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            175,
+            125
+          ],
+          "nativePixel": [
+            1053,
+            907
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            230,
+            175
+          ],
+          "nativePixel": [
+            1380,
+            1205
+          ],
+          "unmaskedRGB": [
+            0,
+            0,
+            244
+          ],
+          "maskedRGB": [
+            64,
+            64,
+            184
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            290,
+            215
+          ],
+          "nativePixel": [
+            1738,
+            1443
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        }
+      ]
+    },
+    {
+      "id": "I09",
+      "format": "JPEG",
+      "dpi": 192,
+      "crop": "none",
+      "variable": "VI09",
+      "imageSHA256": "0a5705a9488532bdcbfaab5ff73f943b43bc34b4997442581d818ed1ecd06b03",
+      "pixels": [
+        640,
+        480
+      ],
+      "multiFrame": false,
+      "nativeRedPixels": [
+        250,
+        341,
+        943,
+        818
+      ],
+      "nativeScalePerDesignUnit": 5.9625,
+      "nativeOriginPixels": [
+        11.5,
+        162.125
+      ],
+      "probes": [
+        {
+          "design": [
+            15,
+            12
+          ],
+          "nativePixel": [
+            101,
+            234
+          ],
+          "unmaskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "maskedRGB": [
+            120,
+            184,
+            106
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            30,
+            25
+          ],
+          "nativePixel": [
+            190,
+            311
+          ],
+          "unmaskedRGB": [
+            171,
+            222,
+            163
+          ],
+          "maskedRGB": [
+            133,
+            184,
+            125
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            65,
+            45
+          ],
+          "nativePixel": [
+            399,
+            430
+          ],
+          "unmaskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "maskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            90,
+            65
+          ],
+          "nativePixel": [
+            548,
+            550
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            130,
+            85
+          ],
+          "nativePixel": [
+            787,
+            669
+          ],
+          "unmaskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "maskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            150,
+            105
+          ],
+          "nativePixel": [
+            906,
+            788
+          ],
+          "unmaskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "maskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            175,
+            125
+          ],
+          "nativePixel": [
+            1055,
+            907
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            230,
+            175
+          ],
+          "nativePixel": [
+            1383,
+            1206
+          ],
+          "unmaskedRGB": [
+            0,
+            0,
+            244
+          ],
+          "maskedRGB": [
+            64,
+            64,
+            184
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            290,
+            215
+          ],
+          "nativePixel": [
+            1741,
+            1444
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        }
+      ]
+    },
+    {
+      "id": "I10",
+      "format": "JPEG",
+      "dpi": 192,
+      "crop": "inside",
+      "variable": "VI10",
+      "imageSHA256": "0a5705a9488532bdcbfaab5ff73f943b43bc34b4997442581d818ed1ecd06b03",
+      "pixels": [
+        640,
+        480
+      ],
+      "multiFrame": false,
+      "nativeRedPixels": [
+        250,
+        341,
+        943,
+        818
+      ],
+      "nativeScalePerDesignUnit": 5.9625,
+      "nativeOriginPixels": [
+        11.5,
+        162.125
+      ],
+      "probes": [
+        {
+          "design": [
+            15,
+            12
+          ],
+          "nativePixel": [
+            101,
+            234
+          ],
+          "unmaskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "maskedRGB": [
+            120,
+            184,
+            106
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            30,
+            25
+          ],
+          "nativePixel": [
+            190,
+            311
+          ],
+          "unmaskedRGB": [
+            171,
+            222,
+            163
+          ],
+          "maskedRGB": [
+            171,
+            222,
+            163
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            65,
+            45
+          ],
+          "nativePixel": [
+            399,
+            430
+          ],
+          "unmaskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "maskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            90,
+            65
+          ],
+          "nativePixel": [
+            548,
+            550
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            130,
+            85
+          ],
+          "nativePixel": [
+            787,
+            669
+          ],
+          "unmaskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "maskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            150,
+            105
+          ],
+          "nativePixel": [
+            906,
+            788
+          ],
+          "unmaskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "maskedRGB": [
+            177,
+            74,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            175,
+            125
+          ],
+          "nativePixel": [
+            1055,
+            907
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            230,
+            175
+          ],
+          "nativePixel": [
+            1383,
+            1206
+          ],
+          "unmaskedRGB": [
+            0,
+            0,
+            244
+          ],
+          "maskedRGB": [
+            64,
+            64,
+            184
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            290,
+            215
+          ],
+          "nativePixel": [
+            1741,
+            1444
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        }
+      ]
+    },
+    {
+      "id": "I11",
+      "format": "JPEG",
+      "dpi": 192,
+      "crop": "overlap",
+      "variable": "VI11",
+      "imageSHA256": "0a5705a9488532bdcbfaab5ff73f943b43bc34b4997442581d818ed1ecd06b03",
+      "pixels": [
+        640,
+        480
+      ],
+      "multiFrame": false,
+      "nativeRedPixels": [
+        250,
+        341,
+        943,
+        818
+      ],
+      "nativeScalePerDesignUnit": 5.9625,
+      "nativeOriginPixels": [
+        11.5,
+        162.125
+      ],
+      "probes": [
+        {
+          "design": [
+            15,
+            12
+          ],
+          "nativePixel": [
+            101,
+            234
+          ],
+          "unmaskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "maskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            30,
+            25
+          ],
+          "nativePixel": [
+            190,
+            311
+          ],
+          "unmaskedRGB": [
+            171,
+            222,
+            163
+          ],
+          "maskedRGB": [
+            171,
+            222,
+            163
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            65,
+            45
+          ],
+          "nativePixel": [
+            399,
+            430
+          ],
+          "unmaskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "maskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            90,
+            65
+          ],
+          "nativePixel": [
+            548,
+            550
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            130,
+            85
+          ],
+          "nativePixel": [
+            787,
+            669
+          ],
+          "unmaskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "maskedRGB": [
+            177,
+            74,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            150,
+            105
+          ],
+          "nativePixel": [
+            906,
+            788
+          ],
+          "unmaskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "maskedRGB": [
+            177,
+            74,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            175,
+            125
+          ],
+          "nativePixel": [
+            1055,
+            907
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            230,
+            175
+          ],
+          "nativePixel": [
+            1383,
+            1206
+          ],
+          "unmaskedRGB": [
+            0,
+            0,
+            244
+          ],
+          "maskedRGB": [
+            64,
+            64,
+            184
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            290,
+            215
+          ],
+          "nativePixel": [
+            1741,
+            1444
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        }
+      ]
+    },
+    {
+      "id": "I12",
+      "format": "BMP",
+      "dpi": 96,
+      "crop": "none",
+      "variable": "VI12",
+      "imageSHA256": "12885f0972da6d9e212fb4fd0546864df3a49c54a850d8d37ff45ab590cae1a5",
+      "pixels": [
+        320,
+        240
+      ],
+      "multiFrame": false,
+      "nativeRedPixels": [
+        250,
+        342,
+        943,
+        818
+      ],
+      "nativeScalePerDesignUnit": 5.95,
+      "nativeOriginPixels": [
+        12,
+        163.5
+      ],
+      "probes": [
+        {
+          "design": [
+            15,
+            12
+          ],
+          "nativePixel": [
+            101,
+            235
+          ],
+          "unmaskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "maskedRGB": [
+            121,
+            183,
+            108
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            30,
+            25
+          ],
+          "nativePixel": [
+            190,
+            312
+          ],
+          "unmaskedRGB": [
+            176,
+            223,
+            168
+          ],
+          "maskedRGB": [
+            140,
+            184,
+            133
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            65,
+            45
+          ],
+          "nativePixel": [
+            399,
+            431
+          ],
+          "unmaskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "maskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            90,
+            65
+          ],
+          "nativePixel": [
+            548,
+            550
+          ],
+          "unmaskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "maskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            130,
+            85
+          ],
+          "nativePixel": [
+            786,
+            669
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            150,
+            105
+          ],
+          "nativePixel": [
+            904,
+            788
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            175,
+            125
+          ],
+          "nativePixel": [
+            1053,
+            907
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            230,
+            175
+          ],
+          "nativePixel": [
+            1380,
+            1205
+          ],
+          "unmaskedRGB": [
+            0,
+            0,
+            246
+          ],
+          "maskedRGB": [
+            64,
+            64,
+            186
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            290,
+            215
+          ],
+          "nativePixel": [
+            1738,
+            1443
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        }
+      ]
+    },
+    {
+      "id": "I13",
+      "format": "BMP",
+      "dpi": 96,
+      "crop": "inside",
+      "variable": "VI13",
+      "imageSHA256": "12885f0972da6d9e212fb4fd0546864df3a49c54a850d8d37ff45ab590cae1a5",
+      "pixels": [
+        320,
+        240
+      ],
+      "multiFrame": false,
+      "nativeRedPixels": [
+        250,
+        342,
+        943,
+        818
+      ],
+      "nativeScalePerDesignUnit": 5.95,
+      "nativeOriginPixels": [
+        12,
+        163.5
+      ],
+      "probes": [
+        {
+          "design": [
+            15,
+            12
+          ],
+          "nativePixel": [
+            101,
+            235
+          ],
+          "unmaskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "maskedRGB": [
+            121,
+            183,
+            108
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            30,
+            25
+          ],
+          "nativePixel": [
+            190,
+            312
+          ],
+          "unmaskedRGB": [
+            176,
+            223,
+            168
+          ],
+          "maskedRGB": [
+            176,
+            223,
+            168
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            65,
+            45
+          ],
+          "nativePixel": [
+            399,
+            431
+          ],
+          "unmaskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "maskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            90,
+            65
+          ],
+          "nativePixel": [
+            548,
+            550
+          ],
+          "unmaskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "maskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            130,
+            85
+          ],
+          "nativePixel": [
+            786,
+            669
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            150,
+            105
+          ],
+          "nativePixel": [
+            904,
+            788
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            178,
+            73,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            175,
+            125
+          ],
+          "nativePixel": [
+            1053,
+            907
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            230,
+            175
+          ],
+          "nativePixel": [
+            1380,
+            1205
+          ],
+          "unmaskedRGB": [
+            0,
+            0,
+            246
+          ],
+          "maskedRGB": [
+            64,
+            64,
+            186
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            290,
+            215
+          ],
+          "nativePixel": [
+            1738,
+            1443
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        }
+      ]
+    },
+    {
+      "id": "I14",
+      "format": "BMP",
+      "dpi": 96,
+      "crop": "overlap",
+      "variable": "VI14",
+      "imageSHA256": "12885f0972da6d9e212fb4fd0546864df3a49c54a850d8d37ff45ab590cae1a5",
+      "pixels": [
+        320,
+        240
+      ],
+      "multiFrame": false,
+      "nativeRedPixels": [
+        250,
+        342,
+        943,
+        818
+      ],
+      "nativeScalePerDesignUnit": 5.95,
+      "nativeOriginPixels": [
+        12,
+        163.5
+      ],
+      "probes": [
+        {
+          "design": [
+            15,
+            12
+          ],
+          "nativePixel": [
+            101,
+            235
+          ],
+          "unmaskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "maskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            30,
+            25
+          ],
+          "nativePixel": [
+            190,
+            312
+          ],
+          "unmaskedRGB": [
+            176,
+            223,
+            168
+          ],
+          "maskedRGB": [
+            176,
+            223,
+            168
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            65,
+            45
+          ],
+          "nativePixel": [
+            399,
+            431
+          ],
+          "unmaskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "maskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            90,
+            65
+          ],
+          "nativePixel": [
+            548,
+            550
+          ],
+          "unmaskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "maskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            130,
+            85
+          ],
+          "nativePixel": [
+            786,
+            669
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            178,
+            73,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            150,
+            105
+          ],
+          "nativePixel": [
+            904,
+            788
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            178,
+            73,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            175,
+            125
+          ],
+          "nativePixel": [
+            1053,
+            907
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            230,
+            175
+          ],
+          "nativePixel": [
+            1380,
+            1205
+          ],
+          "unmaskedRGB": [
+            0,
+            0,
+            246
+          ],
+          "maskedRGB": [
+            64,
+            64,
+            186
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            290,
+            215
+          ],
+          "nativePixel": [
+            1738,
+            1443
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        }
+      ]
+    },
+    {
+      "id": "I15",
+      "format": "BMP",
+      "dpi": 192,
+      "crop": "none",
+      "variable": "VI15",
+      "imageSHA256": "e6578a871008ba229debfb7800f65cc57270b294dbe17ae8cab2b7edc6fe6e81",
+      "pixels": [
+        640,
+        480
+      ],
+      "multiFrame": false,
+      "nativeRedPixels": [
+        250,
+        341,
+        943,
+        818
+      ],
+      "nativeScalePerDesignUnit": 5.9625,
+      "nativeOriginPixels": [
+        11.5,
+        162.125
+      ],
+      "probes": [
+        {
+          "design": [
+            15,
+            12
+          ],
+          "nativePixel": [
+            101,
+            234
+          ],
+          "unmaskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "maskedRGB": [
+            120,
+            184,
+            106
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            30,
+            25
+          ],
+          "nativePixel": [
+            190,
+            311
+          ],
+          "unmaskedRGB": [
+            171,
+            222,
+            163
+          ],
+          "maskedRGB": [
+            133,
+            184,
+            125
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            65,
+            45
+          ],
+          "nativePixel": [
+            399,
+            430
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            90,
+            65
+          ],
+          "nativePixel": [
+            548,
+            550
+          ],
+          "unmaskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "maskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            130,
+            85
+          ],
+          "nativePixel": [
+            787,
+            669
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            150,
+            105
+          ],
+          "nativePixel": [
+            906,
+            788
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            175,
+            125
+          ],
+          "nativePixel": [
+            1055,
+            907
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            230,
+            175
+          ],
+          "nativePixel": [
+            1383,
+            1206
+          ],
+          "unmaskedRGB": [
+            0,
+            0,
+            246
+          ],
+          "maskedRGB": [
+            64,
+            64,
+            186
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            290,
+            215
+          ],
+          "nativePixel": [
+            1741,
+            1444
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        }
+      ]
+    },
+    {
+      "id": "I16",
+      "format": "BMP",
+      "dpi": 192,
+      "crop": "inside",
+      "variable": "VI16",
+      "imageSHA256": "e6578a871008ba229debfb7800f65cc57270b294dbe17ae8cab2b7edc6fe6e81",
+      "pixels": [
+        640,
+        480
+      ],
+      "multiFrame": false,
+      "nativeRedPixels": [
+        250,
+        341,
+        943,
+        818
+      ],
+      "nativeScalePerDesignUnit": 5.9625,
+      "nativeOriginPixels": [
+        11.5,
+        162.125
+      ],
+      "probes": [
+        {
+          "design": [
+            15,
+            12
+          ],
+          "nativePixel": [
+            101,
+            234
+          ],
+          "unmaskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "maskedRGB": [
+            120,
+            184,
+            106
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            30,
+            25
+          ],
+          "nativePixel": [
+            190,
+            311
+          ],
+          "unmaskedRGB": [
+            171,
+            222,
+            163
+          ],
+          "maskedRGB": [
+            171,
+            222,
+            163
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            65,
+            45
+          ],
+          "nativePixel": [
+            399,
+            430
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            90,
+            65
+          ],
+          "nativePixel": [
+            548,
+            550
+          ],
+          "unmaskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "maskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            130,
+            85
+          ],
+          "nativePixel": [
+            787,
+            669
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            150,
+            105
+          ],
+          "nativePixel": [
+            906,
+            788
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            178,
+            73,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            175,
+            125
+          ],
+          "nativePixel": [
+            1055,
+            907
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            230,
+            175
+          ],
+          "nativePixel": [
+            1383,
+            1206
+          ],
+          "unmaskedRGB": [
+            0,
+            0,
+            246
+          ],
+          "maskedRGB": [
+            64,
+            64,
+            186
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            290,
+            215
+          ],
+          "nativePixel": [
+            1741,
+            1444
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        }
+      ]
+    },
+    {
+      "id": "I17",
+      "format": "BMP",
+      "dpi": 192,
+      "crop": "overlap",
+      "variable": "VI17",
+      "imageSHA256": "e6578a871008ba229debfb7800f65cc57270b294dbe17ae8cab2b7edc6fe6e81",
+      "pixels": [
+        640,
+        480
+      ],
+      "multiFrame": false,
+      "nativeRedPixels": [
+        250,
+        341,
+        943,
+        818
+      ],
+      "nativeScalePerDesignUnit": 5.9625,
+      "nativeOriginPixels": [
+        11.5,
+        162.125
+      ],
+      "probes": [
+        {
+          "design": [
+            15,
+            12
+          ],
+          "nativePixel": [
+            101,
+            234
+          ],
+          "unmaskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "maskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            30,
+            25
+          ],
+          "nativePixel": [
+            190,
+            311
+          ],
+          "unmaskedRGB": [
+            171,
+            222,
+            163
+          ],
+          "maskedRGB": [
+            171,
+            222,
+            163
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            65,
+            45
+          ],
+          "nativePixel": [
+            399,
+            430
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            90,
+            65
+          ],
+          "nativePixel": [
+            548,
+            550
+          ],
+          "unmaskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "maskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            130,
+            85
+          ],
+          "nativePixel": [
+            787,
+            669
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            178,
+            73,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            150,
+            105
+          ],
+          "nativePixel": [
+            906,
+            788
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            178,
+            73,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            175,
+            125
+          ],
+          "nativePixel": [
+            1055,
+            907
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            230,
+            175
+          ],
+          "nativePixel": [
+            1383,
+            1206
+          ],
+          "unmaskedRGB": [
+            0,
+            0,
+            246
+          ],
+          "maskedRGB": [
+            64,
+            64,
+            186
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            290,
+            215
+          ],
+          "nativePixel": [
+            1741,
+            1444
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        }
+      ]
+    },
+    {
+      "id": "I18",
+      "format": "GIF",
+      "dpi": 96,
+      "crop": "none",
+      "variable": "VI18",
+      "imageSHA256": "25766c731aa05c9dcd9070387afa0ce598f07da16d80d9a5f47082d1941d1768",
+      "pixels": [
+        320,
+        240
+      ],
+      "multiFrame": true,
+      "nativeRedPixels": [
+        250,
+        342,
+        943,
+        818
+      ],
+      "nativeScalePerDesignUnit": 5.95,
+      "nativeOriginPixels": [
+        12,
+        163.5
+      ],
+      "probes": [
+        {
+          "design": [
+            15,
+            12
+          ],
+          "nativePixel": [
+            101,
+            235
+          ],
+          "unmaskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "maskedRGB": [
+            121,
+            183,
+            108
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            30,
+            25
+          ],
+          "nativePixel": [
+            190,
+            312
+          ],
+          "unmaskedRGB": [
+            176,
+            223,
+            168
+          ],
+          "maskedRGB": [
+            140,
+            184,
+            133
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            65,
+            45
+          ],
+          "nativePixel": [
+            399,
+            431
+          ],
+          "unmaskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "maskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            90,
+            65
+          ],
+          "nativePixel": [
+            548,
+            550
+          ],
+          "unmaskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "maskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            130,
+            85
+          ],
+          "nativePixel": [
+            786,
+            669
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            150,
+            105
+          ],
+          "nativePixel": [
+            904,
+            788
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            175,
+            125
+          ],
+          "nativePixel": [
+            1053,
+            907
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            230,
+            175
+          ],
+          "nativePixel": [
+            1380,
+            1205
+          ],
+          "unmaskedRGB": [
+            0,
+            0,
+            246
+          ],
+          "maskedRGB": [
+            64,
+            64,
+            186
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            290,
+            215
+          ],
+          "nativePixel": [
+            1738,
+            1443
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        }
+      ]
+    },
+    {
+      "id": "I19",
+      "format": "GIF",
+      "dpi": 96,
+      "crop": "inside",
+      "variable": "VI19",
+      "imageSHA256": "25766c731aa05c9dcd9070387afa0ce598f07da16d80d9a5f47082d1941d1768",
+      "pixels": [
+        320,
+        240
+      ],
+      "multiFrame": true,
+      "nativeRedPixels": [
+        250,
+        342,
+        943,
+        818
+      ],
+      "nativeScalePerDesignUnit": 5.95,
+      "nativeOriginPixels": [
+        12,
+        163.5
+      ],
+      "probes": [
+        {
+          "design": [
+            15,
+            12
+          ],
+          "nativePixel": [
+            101,
+            235
+          ],
+          "unmaskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "maskedRGB": [
+            121,
+            183,
+            108
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            30,
+            25
+          ],
+          "nativePixel": [
+            190,
+            312
+          ],
+          "unmaskedRGB": [
+            176,
+            223,
+            168
+          ],
+          "maskedRGB": [
+            176,
+            223,
+            168
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            65,
+            45
+          ],
+          "nativePixel": [
+            399,
+            431
+          ],
+          "unmaskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "maskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            90,
+            65
+          ],
+          "nativePixel": [
+            548,
+            550
+          ],
+          "unmaskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "maskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            130,
+            85
+          ],
+          "nativePixel": [
+            786,
+            669
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            150,
+            105
+          ],
+          "nativePixel": [
+            904,
+            788
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            178,
+            73,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            175,
+            125
+          ],
+          "nativePixel": [
+            1053,
+            907
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            230,
+            175
+          ],
+          "nativePixel": [
+            1380,
+            1205
+          ],
+          "unmaskedRGB": [
+            0,
+            0,
+            246
+          ],
+          "maskedRGB": [
+            64,
+            64,
+            186
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            290,
+            215
+          ],
+          "nativePixel": [
+            1738,
+            1443
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        }
+      ]
+    },
+    {
+      "id": "I20",
+      "format": "GIF",
+      "dpi": 96,
+      "crop": "overlap",
+      "variable": "VI20",
+      "imageSHA256": "25766c731aa05c9dcd9070387afa0ce598f07da16d80d9a5f47082d1941d1768",
+      "pixels": [
+        320,
+        240
+      ],
+      "multiFrame": true,
+      "nativeRedPixels": [
+        250,
+        342,
+        943,
+        818
+      ],
+      "nativeScalePerDesignUnit": 5.95,
+      "nativeOriginPixels": [
+        12,
+        163.5
+      ],
+      "probes": [
+        {
+          "design": [
+            15,
+            12
+          ],
+          "nativePixel": [
+            101,
+            235
+          ],
+          "unmaskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "maskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            30,
+            25
+          ],
+          "nativePixel": [
+            190,
+            312
+          ],
+          "unmaskedRGB": [
+            176,
+            223,
+            168
+          ],
+          "maskedRGB": [
+            176,
+            223,
+            168
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            65,
+            45
+          ],
+          "nativePixel": [
+            399,
+            431
+          ],
+          "unmaskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "maskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            90,
+            65
+          ],
+          "nativePixel": [
+            548,
+            550
+          ],
+          "unmaskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "maskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            130,
+            85
+          ],
+          "nativePixel": [
+            786,
+            669
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            178,
+            73,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            150,
+            105
+          ],
+          "nativePixel": [
+            904,
+            788
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            178,
+            73,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            175,
+            125
+          ],
+          "nativePixel": [
+            1053,
+            907
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            230,
+            175
+          ],
+          "nativePixel": [
+            1380,
+            1205
+          ],
+          "unmaskedRGB": [
+            0,
+            0,
+            246
+          ],
+          "maskedRGB": [
+            64,
+            64,
+            186
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            290,
+            215
+          ],
+          "nativePixel": [
+            1738,
+            1443
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        }
+      ]
+    },
+    {
+      "id": "I21",
+      "format": "GIF",
+      "dpi": 192,
+      "crop": "none",
+      "variable": "VI21",
+      "imageSHA256": "bb703cf03f67749e710589088eb14544b40689d72c60b2208efd62baaae9496f",
+      "pixels": [
+        640,
+        480
+      ],
+      "multiFrame": true,
+      "nativeRedPixels": [
+        250,
+        341,
+        961,
+        818
+      ],
+      "nativeScalePerDesignUnit": 5.9625,
+      "nativeOriginPixels": [
+        11.5,
+        162.125
+      ],
+      "probes": [
+        {
+          "design": [
+            15,
+            12
+          ],
+          "nativePixel": [
+            101,
+            234
+          ],
+          "unmaskedRGB": [
+            148,
+            215,
+            136
+          ],
+          "maskedRGB": [
+            118,
+            185,
+            106
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            30,
+            25
+          ],
+          "nativePixel": [
+            190,
+            311
+          ],
+          "unmaskedRGB": [
+            254,
+            254,
+            254
+          ],
+          "maskedRGB": [
+            254,
+            254,
+            254
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            65,
+            45
+          ],
+          "nativePixel": [
+            399,
+            430
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            90,
+            65
+          ],
+          "nativePixel": [
+            548,
+            550
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            178,
+            73,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            130,
+            85
+          ],
+          "nativePixel": [
+            787,
+            669
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            178,
+            73,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            150,
+            105
+          ],
+          "nativePixel": [
+            906,
+            788
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            178,
+            73,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            175,
+            125
+          ],
+          "nativePixel": [
+            1055,
+            907
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            230,
+            175
+          ],
+          "nativePixel": [
+            1383,
+            1206
+          ],
+          "unmaskedRGB": [
+            0,
+            0,
+            246
+          ],
+          "maskedRGB": [
+            64,
+            64,
+            186
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            290,
+            215
+          ],
+          "nativePixel": [
+            1741,
+            1444
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        }
+      ]
+    },
+    {
+      "id": "I22",
+      "format": "GIF",
+      "dpi": 192,
+      "crop": "inside",
+      "variable": "VI22",
+      "imageSHA256": "bb703cf03f67749e710589088eb14544b40689d72c60b2208efd62baaae9496f",
+      "pixels": [
+        640,
+        480
+      ],
+      "multiFrame": true,
+      "nativeRedPixels": [
+        250,
+        341,
+        961,
+        818
+      ],
+      "nativeScalePerDesignUnit": 5.9625,
+      "nativeOriginPixels": [
+        11.5,
+        162.125
+      ],
+      "probes": [
+        {
+          "design": [
+            15,
+            12
+          ],
+          "nativePixel": [
+            101,
+            234
+          ],
+          "unmaskedRGB": [
+            148,
+            215,
+            136
+          ],
+          "maskedRGB": [
+            148,
+            215,
+            136
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            30,
+            25
+          ],
+          "nativePixel": [
+            190,
+            311
+          ],
+          "unmaskedRGB": [
+            254,
+            254,
+            254
+          ],
+          "maskedRGB": [
+            254,
+            254,
+            254
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            65,
+            45
+          ],
+          "nativePixel": [
+            399,
+            430
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            90,
+            65
+          ],
+          "nativePixel": [
+            548,
+            550
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            178,
+            73,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            130,
+            85
+          ],
+          "nativePixel": [
+            787,
+            669
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            178,
+            73,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            150,
+            105
+          ],
+          "nativePixel": [
+            906,
+            788
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            178,
+            73,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            175,
+            125
+          ],
+          "nativePixel": [
+            1055,
+            907
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            230,
+            175
+          ],
+          "nativePixel": [
+            1383,
+            1206
+          ],
+          "unmaskedRGB": [
+            0,
+            0,
+            246
+          ],
+          "maskedRGB": [
+            64,
+            64,
+            186
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            290,
+            215
+          ],
+          "nativePixel": [
+            1741,
+            1444
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        }
+      ]
+    },
+    {
+      "id": "I23",
+      "format": "GIF",
+      "dpi": 192,
+      "crop": "overlap",
+      "variable": "VI23",
+      "imageSHA256": "bb703cf03f67749e710589088eb14544b40689d72c60b2208efd62baaae9496f",
+      "pixels": [
+        640,
+        480
+      ],
+      "multiFrame": true,
+      "nativeRedPixels": [
+        250,
+        341,
+        961,
+        818
+      ],
+      "nativeScalePerDesignUnit": 5.9625,
+      "nativeOriginPixels": [
+        11.5,
+        162.125
+      ],
+      "probes": [
+        {
+          "design": [
+            15,
+            12
+          ],
+          "nativePixel": [
+            101,
+            234
+          ],
+          "unmaskedRGB": [
+            148,
+            215,
+            136
+          ],
+          "maskedRGB": [
+            148,
+            215,
+            136
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            30,
+            25
+          ],
+          "nativePixel": [
+            190,
+            311
+          ],
+          "unmaskedRGB": [
+            254,
+            254,
+            254
+          ],
+          "maskedRGB": [
+            254,
+            254,
+            254
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            65,
+            45
+          ],
+          "nativePixel": [
+            399,
+            430
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            178,
+            73,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            90,
+            65
+          ],
+          "nativePixel": [
+            548,
+            550
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            178,
+            73,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            130,
+            85
+          ],
+          "nativePixel": [
+            787,
+            669
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            178,
+            73,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            150,
+            105
+          ],
+          "nativePixel": [
+            906,
+            788
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            178,
+            73,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            175,
+            125
+          ],
+          "nativePixel": [
+            1055,
+            907
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            230,
+            175
+          ],
+          "nativePixel": [
+            1383,
+            1206
+          ],
+          "unmaskedRGB": [
+            0,
+            0,
+            246
+          ],
+          "maskedRGB": [
+            64,
+            64,
+            186
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            290,
+            215
+          ],
+          "nativePixel": [
+            1741,
+            1444
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        }
+      ]
+    },
+    {
+      "id": "I24",
+      "format": "TIFF",
+      "dpi": 96,
+      "crop": "none",
+      "variable": "VI24",
+      "imageSHA256": "3b42da6eeed746e41660101c760468e122a2c2665d569d1347ef016a9418dba8",
+      "pixels": [
+        320,
+        240
+      ],
+      "multiFrame": true,
+      "nativeRedPixels": [
+        250,
+        342,
+        943,
+        818
+      ],
+      "nativeScalePerDesignUnit": 5.95,
+      "nativeOriginPixels": [
+        12,
+        163.5
+      ],
+      "probes": [
+        {
+          "design": [
+            15,
+            12
+          ],
+          "nativePixel": [
+            101,
+            235
+          ],
+          "unmaskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "maskedRGB": [
+            121,
+            183,
+            108
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            30,
+            25
+          ],
+          "nativePixel": [
+            190,
+            312
+          ],
+          "unmaskedRGB": [
+            176,
+            223,
+            168
+          ],
+          "maskedRGB": [
+            140,
+            184,
+            133
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            65,
+            45
+          ],
+          "nativePixel": [
+            399,
+            431
+          ],
+          "unmaskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "maskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            90,
+            65
+          ],
+          "nativePixel": [
+            548,
+            550
+          ],
+          "unmaskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "maskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            130,
+            85
+          ],
+          "nativePixel": [
+            786,
+            669
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            150,
+            105
+          ],
+          "nativePixel": [
+            904,
+            788
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            175,
+            125
+          ],
+          "nativePixel": [
+            1053,
+            907
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            230,
+            175
+          ],
+          "nativePixel": [
+            1380,
+            1205
+          ],
+          "unmaskedRGB": [
+            0,
+            0,
+            246
+          ],
+          "maskedRGB": [
+            64,
+            64,
+            186
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            290,
+            215
+          ],
+          "nativePixel": [
+            1738,
+            1443
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        }
+      ]
+    },
+    {
+      "id": "I25",
+      "format": "TIFF",
+      "dpi": 96,
+      "crop": "inside",
+      "variable": "VI25",
+      "imageSHA256": "3b42da6eeed746e41660101c760468e122a2c2665d569d1347ef016a9418dba8",
+      "pixels": [
+        320,
+        240
+      ],
+      "multiFrame": true,
+      "nativeRedPixels": [
+        250,
+        342,
+        943,
+        818
+      ],
+      "nativeScalePerDesignUnit": 5.95,
+      "nativeOriginPixels": [
+        12,
+        163.5
+      ],
+      "probes": [
+        {
+          "design": [
+            15,
+            12
+          ],
+          "nativePixel": [
+            101,
+            235
+          ],
+          "unmaskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "maskedRGB": [
+            121,
+            183,
+            108
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            30,
+            25
+          ],
+          "nativePixel": [
+            190,
+            312
+          ],
+          "unmaskedRGB": [
+            176,
+            223,
+            168
+          ],
+          "maskedRGB": [
+            176,
+            223,
+            168
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            65,
+            45
+          ],
+          "nativePixel": [
+            399,
+            431
+          ],
+          "unmaskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "maskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            90,
+            65
+          ],
+          "nativePixel": [
+            548,
+            550
+          ],
+          "unmaskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "maskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            130,
+            85
+          ],
+          "nativePixel": [
+            786,
+            669
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            150,
+            105
+          ],
+          "nativePixel": [
+            904,
+            788
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            178,
+            73,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            175,
+            125
+          ],
+          "nativePixel": [
+            1053,
+            907
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            230,
+            175
+          ],
+          "nativePixel": [
+            1380,
+            1205
+          ],
+          "unmaskedRGB": [
+            0,
+            0,
+            246
+          ],
+          "maskedRGB": [
+            64,
+            64,
+            186
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            290,
+            215
+          ],
+          "nativePixel": [
+            1738,
+            1443
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        }
+      ]
+    },
+    {
+      "id": "I26",
+      "format": "TIFF",
+      "dpi": 96,
+      "crop": "overlap",
+      "variable": "VI26",
+      "imageSHA256": "3b42da6eeed746e41660101c760468e122a2c2665d569d1347ef016a9418dba8",
+      "pixels": [
+        320,
+        240
+      ],
+      "multiFrame": true,
+      "nativeRedPixels": [
+        250,
+        342,
+        943,
+        818
+      ],
+      "nativeScalePerDesignUnit": 5.95,
+      "nativeOriginPixels": [
+        12,
+        163.5
+      ],
+      "probes": [
+        {
+          "design": [
+            15,
+            12
+          ],
+          "nativePixel": [
+            101,
+            235
+          ],
+          "unmaskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "maskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            30,
+            25
+          ],
+          "nativePixel": [
+            190,
+            312
+          ],
+          "unmaskedRGB": [
+            176,
+            223,
+            168
+          ],
+          "maskedRGB": [
+            176,
+            223,
+            168
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            65,
+            45
+          ],
+          "nativePixel": [
+            399,
+            431
+          ],
+          "unmaskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "maskedRGB": [
+            233,
+            52,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            90,
+            65
+          ],
+          "nativePixel": [
+            548,
+            550
+          ],
+          "unmaskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "maskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            130,
+            85
+          ],
+          "nativePixel": [
+            786,
+            669
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            178,
+            73,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            150,
+            105
+          ],
+          "nativePixel": [
+            904,
+            788
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            178,
+            73,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            175,
+            125
+          ],
+          "nativePixel": [
+            1053,
+            907
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            230,
+            175
+          ],
+          "nativePixel": [
+            1380,
+            1205
+          ],
+          "unmaskedRGB": [
+            0,
+            0,
+            246
+          ],
+          "maskedRGB": [
+            64,
+            64,
+            186
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            290,
+            215
+          ],
+          "nativePixel": [
+            1738,
+            1443
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        }
+      ]
+    },
+    {
+      "id": "I27",
+      "format": "TIFF",
+      "dpi": 192,
+      "crop": "none",
+      "variable": "VI27",
+      "imageSHA256": "15a95d91579133114b36fbc747c4e4abbdf83d650db6ff2ffac2113100b09065",
+      "pixels": [
+        640,
+        480
+      ],
+      "multiFrame": true,
+      "nativeRedPixels": [
+        250,
+        341,
+        943,
+        818
+      ],
+      "nativeScalePerDesignUnit": 5.9625,
+      "nativeOriginPixels": [
+        11.5,
+        162.125
+      ],
+      "probes": [
+        {
+          "design": [
+            15,
+            12
+          ],
+          "nativePixel": [
+            101,
+            234
+          ],
+          "unmaskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "maskedRGB": [
+            120,
+            184,
+            106
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            30,
+            25
+          ],
+          "nativePixel": [
+            190,
+            311
+          ],
+          "unmaskedRGB": [
+            171,
+            222,
+            163
+          ],
+          "maskedRGB": [
+            133,
+            184,
+            125
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            65,
+            45
+          ],
+          "nativePixel": [
+            399,
+            430
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            90,
+            65
+          ],
+          "nativePixel": [
+            548,
+            550
+          ],
+          "unmaskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "maskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            130,
+            85
+          ],
+          "nativePixel": [
+            787,
+            669
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            150,
+            105
+          ],
+          "nativePixel": [
+            906,
+            788
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            175,
+            125
+          ],
+          "nativePixel": [
+            1055,
+            907
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            230,
+            175
+          ],
+          "nativePixel": [
+            1383,
+            1206
+          ],
+          "unmaskedRGB": [
+            0,
+            0,
+            246
+          ],
+          "maskedRGB": [
+            64,
+            64,
+            186
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            290,
+            215
+          ],
+          "nativePixel": [
+            1741,
+            1444
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        }
+      ]
+    },
+    {
+      "id": "I28",
+      "format": "TIFF",
+      "dpi": 192,
+      "crop": "inside",
+      "variable": "VI28",
+      "imageSHA256": "15a95d91579133114b36fbc747c4e4abbdf83d650db6ff2ffac2113100b09065",
+      "pixels": [
+        640,
+        480
+      ],
+      "multiFrame": true,
+      "nativeRedPixels": [
+        250,
+        341,
+        943,
+        818
+      ],
+      "nativeScalePerDesignUnit": 5.9625,
+      "nativeOriginPixels": [
+        11.5,
+        162.125
+      ],
+      "probes": [
+        {
+          "design": [
+            15,
+            12
+          ],
+          "nativePixel": [
+            101,
+            234
+          ],
+          "unmaskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "maskedRGB": [
+            120,
+            184,
+            106
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            30,
+            25
+          ],
+          "nativePixel": [
+            190,
+            311
+          ],
+          "unmaskedRGB": [
+            171,
+            222,
+            163
+          ],
+          "maskedRGB": [
+            171,
+            222,
+            163
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            65,
+            45
+          ],
+          "nativePixel": [
+            399,
+            430
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            90,
+            65
+          ],
+          "nativePixel": [
+            548,
+            550
+          ],
+          "unmaskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "maskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            130,
+            85
+          ],
+          "nativePixel": [
+            787,
+            669
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            150,
+            105
+          ],
+          "nativePixel": [
+            906,
+            788
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            178,
+            73,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            175,
+            125
+          ],
+          "nativePixel": [
+            1055,
+            907
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            230,
+            175
+          ],
+          "nativePixel": [
+            1383,
+            1206
+          ],
+          "unmaskedRGB": [
+            0,
+            0,
+            246
+          ],
+          "maskedRGB": [
+            64,
+            64,
+            186
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            290,
+            215
+          ],
+          "nativePixel": [
+            1741,
+            1444
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        }
+      ]
+    },
+    {
+      "id": "I29",
+      "format": "TIFF",
+      "dpi": 192,
+      "crop": "overlap",
+      "variable": "VI29",
+      "imageSHA256": "15a95d91579133114b36fbc747c4e4abbdf83d650db6ff2ffac2113100b09065",
+      "pixels": [
+        640,
+        480
+      ],
+      "multiFrame": true,
+      "nativeRedPixels": [
+        250,
+        341,
+        943,
+        818
+      ],
+      "nativeScalePerDesignUnit": 5.9625,
+      "nativeOriginPixels": [
+        11.5,
+        162.125
+      ],
+      "probes": [
+        {
+          "design": [
+            15,
+            12
+          ],
+          "nativePixel": [
+            101,
+            234
+          ],
+          "unmaskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "maskedRGB": [
+            151,
+            215,
+            139
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            30,
+            25
+          ],
+          "nativePixel": [
+            190,
+            311
+          ],
+          "unmaskedRGB": [
+            171,
+            222,
+            163
+          ],
+          "maskedRGB": [
+            171,
+            222,
+            163
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            65,
+            45
+          ],
+          "nativePixel": [
+            399,
+            430
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            90,
+            65
+          ],
+          "nativePixel": [
+            548,
+            550
+          ],
+          "unmaskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "maskedRGB": [
+            236,
+            50,
+            37
+          ],
+          "insideNativeFrame": true
+        },
+        {
+          "design": [
+            130,
+            85
+          ],
+          "nativePixel": [
+            787,
+            669
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            178,
+            73,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            150,
+            105
+          ],
+          "nativePixel": [
+            906,
+            788
+          ],
+          "unmaskedRGB": [
+            234,
+            51,
+            35
+          ],
+          "maskedRGB": [
+            178,
+            73,
+            69
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            175,
+            125
+          ],
+          "nativePixel": [
+            1055,
+            907
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            230,
+            175
+          ],
+          "nativePixel": [
+            1383,
+            1206
+          ],
+          "unmaskedRGB": [
+            0,
+            0,
+            246
+          ],
+          "maskedRGB": [
+            64,
+            64,
+            186
+          ],
+          "insideNativeFrame": false
+        },
+        {
+          "design": [
+            290,
+            215
+          ],
+          "nativePixel": [
+            1741,
+            1444
+          ],
+          "unmaskedRGB": [
+            255,
+            255,
+            255
+          ],
+          "maskedRGB": [
+            192,
+            192,
+            192
+          ],
+          "insideNativeFrame": false
+        }
+      ]
+    }
+  ],
+  "files": {
+    "inputs/ImageProducts.zip": "5b30dca5c481ad8d0b333e4ebfbae2e2b49886d53de1d237a80fb83dade5c9ff",
+    "screens/I00-case-two.png": "bd6488006d134126b17933cb7aedf78f412de5e76c7b87eee7a85942521fbdab",
+    "screens/I00-frame-off.png": "5ae4f62e71e12b7e0623f161ce5f07e8c8cdaff76050e17169b002569a939bd3",
+    "screens/I00-frame-on.png": "b0492fd8567d2114c78ab5179c8c0cb82a229b83cb122bb799d476c19de8581c",
+    "screens/I00-initial.png": "2b446533ef1d79210f4e314d036bd051a3f927e214a54e9b6d0be7aa1eb415c9",
+    "screens/I01-case-two.png": "03879ce0ab299659f106ad9b83a34d1a14a11fc6770f5e106402ca3fcc257c3a",
+    "screens/I01-frame-off.png": "f7f01684bedf903b06b631063421d3399bcb1cd8b930b2957a344a019d853af2",
+    "screens/I01-frame-on.png": "e30d4a47033332d85af8e79595b8c585685a946ee374dbb28968b6ffd97aefe5",
+    "screens/I01-initial.png": "978db8815658f5d0bfbc4834256f44b4b3584a459890b923f80b976d91d224cd",
+    "screens/I01-zoom100-clamped.png": "bb210ac4579a4d1d47472306b3b54594b025bc7f5fe0bc8249fcfdfc5b343b16",
+    "screens/I02-case-two.png": "09ebbd99d2bab28d108ce1bbffb6388ff54c6f33cc7bb7eae46061b402c8eefe",
+    "screens/I02-frame-off.png": "0a2d51bac8e4d2bca73d2449ac16078dcc16d033c427c1d6bc695edf0a44fda5",
+    "screens/I02-frame-on.png": "a445094e1bb47296c5736318c5514eddc616b964dc91d39db2c1b30ac1e8fdf4",
+    "screens/I02-initial.png": "0e866731d731eb130ef58cef38c989b52475d1a5b6a5833d13b20ce23c845e87",
+    "screens/I02-zoom100-clamped.png": "376e83b4c1dde5919c3c2fd65da1016ca1e84ad4b6798a1aa484f6ae6790c1b7",
+    "screens/I03-case-two.png": "23d4e46406a5ab883f0aa2b59d9536183b1f962f51a14f0de3fc7a2c9591b972",
+    "screens/I03-frame-off.png": "ff3f7fedef7960ab6a74603e7276b5fd78a5896339d6510f926799b7ff7f88b9",
+    "screens/I03-frame-on.png": "f42d37f31777a0739022c0f9dbc03a7b505d9a020d5f0e3022dc8862c8734525",
+    "screens/I03-initial.png": "e0a1878ff74e8c29805e14155b5fe794ffbf8993ad348dc3c6eee583c9905691",
+    "screens/I03-zoom100-clamped.png": "d89c23b8c720980131e2eae2b1c43b0e1e605bf7789d58f7800841fc4d4827e9",
+    "screens/I04-case-two.png": "e6c5411c0e6e6a244cc126dfe517c0aaea04d63a4c46654b72906b88dd46ad8e",
+    "screens/I04-frame-off.png": "288cee7b98903d94b25aad247f92ee1d004f2f3232e7f56eeabc3f6adf9fe89a",
+    "screens/I04-frame-on.png": "3daaca71e382fba81b3ea105eeabe2b3993b308ee7fb8e823f9f77378bf8de9e",
+    "screens/I04-initial.png": "6b4d54489dc46a2088e80c82de54337036e190f043e0e52f0ea867f7042f143b",
+    "screens/I04-zoom100-clamped.png": "bd472324796ca669cd5924a080dca8d8ded652bb61343237a5e3b225d3bfff1e",
+    "screens/I05-case-two.png": "2aa2bc4530ee34383d5ecdebd77f41280920c34f2610684d9d88c070f47d8d9c",
+    "screens/I05-frame-off.png": "4ebe127880b5144b7eb9fa5adc4da3509e6f04f9f26b46569bbf8d6b1008db5e",
+    "screens/I05-frame-on.png": "ada2aa73f4df2147f49b56a58924c77cae09e3c4fd87a4143caf476d4dcf0544",
+    "screens/I05-initial.png": "b50f4051482327e2f537f57e199eec38fdead61372fbbeae25453a4bf2c085a8",
+    "screens/I05-zoom100-clamped.png": "ac65371d413a7b833af0f2e1ef917e0f902c2354cc84492c9e8bbae89c61a189",
+    "screens/I06-case-two.png": "7ac6c8350cda015f358caf8fbffef6f3e89e907ca6a9fd4c46bab3db3c1376c8",
+    "screens/I06-frame-off.png": "ce1b5a6df1c3193eb6616626722d86c6fca9bbdf7f3d37b9a481ad88ef6a5130",
+    "screens/I06-frame-on.png": "4fbd2f57989fb4753e0b82fd4d2dc563a042473661403d80e66c48f9d1f5288d",
+    "screens/I06-initial.png": "cd90d605da92b4d78df5334156435c0c38fd805c4e994199177aaf8e62eef6ac",
+    "screens/I06-zoom100-clamped.png": "bc70894cc8203adfd58b3456ec494d2d404f8fe3274b9bfb097d08425b44dd49",
+    "screens/I07-case-two.png": "f3129c6b48aeacf0aa426a665968c4034a709120226aec2e3fb6372be61fff5d",
+    "screens/I07-frame-off.png": "a1807544933a75f5392ddff66a127d24e8be320047be3a1a87284198a9f1df0c",
+    "screens/I07-frame-on.png": "5bd7ff85cfa212132a35e7306ad786ba472c39b69f809a8ff120d9a3d2fd279a",
+    "screens/I07-initial.png": "e600158c0df738c546e5fdbc86534a2f9493f939969d468cabf8abc96175c2b8",
+    "screens/I07-zoom100-clamped.png": "6c4760508e08599e88e5d83e3d827d9f6c6c2c9efb80caabf5dae0c4b714ddd0",
+    "screens/I08-case-two.png": "35c50a7dfbaafab56653be6b41b9315d14223ae91ee3030681832e448c18ae3c",
+    "screens/I08-frame-off.png": "7c2b07fdb2ab59484a441b1f48b465377312fabe0c7009be13f1a8c0d9fd132e",
+    "screens/I08-frame-on.png": "055726f3890f5cfe1a5fe17b63fda45514745aae32ee554507826ad36438b3b9",
+    "screens/I08-initial.png": "cf738682815a5a240b7a98f3cd42c3e41b10e3e503c991ae7e0cffe6437d1ce6",
+    "screens/I08-zoom100-clamped.png": "0638fb77c9af89b6de71f012d02f83ff0ead5d8f0bf7013b14367152ec83e7e2",
+    "screens/I09-case-two.png": "157e384a2e686748a7b08c3a474bf4ae0ec0567bb2b2f8c44af0df9d59326e6e",
+    "screens/I09-frame-off.png": "5c4c7d810ac79a42492e79b7ee037f58cc1d22a06b3ad248c14664f12912eee2",
+    "screens/I09-frame-on.png": "6dc22370079eeb34a178296c10ba194d5d5239721cc188204b60c5c7dee5f882",
+    "screens/I09-initial.png": "983d6b9d1ca38ed50af6c5338de53f24f648c059e9768ff0c4baf21707c2947b",
+    "screens/I09-zoom100-clamped.png": "b022923c55e9a6b20867a573012b6fac28cfd442dacd9ba912b4ad98b384be71",
+    "screens/I10-case-two.png": "18fff4088fa2e836a7cb80f52a9947cca6a6449b0120b5dcd9466fa18091d0b1",
+    "screens/I10-frame-off.png": "86bc16117e04e1309ab405ae72e11d013f4c165ac0c40ac00c20c7d5a35de207",
+    "screens/I10-frame-on.png": "07ccd070b38581e5290d86715be7016847633ee167c3e645ee69def9452701d0",
+    "screens/I10-initial.png": "c3978e406aa12258b863eadbbed9fecfa07f6e0a7be31eb4f836953ccee56247",
+    "screens/I10-zoom100-clamped.png": "44663acb9054fbcc802ec149f08a887bbd910af8f69fe5bf67a49919a1085c1e",
+    "screens/I11-case-two.png": "1066f2a3bb0ee2e99bd6f15c792562ec363ef1c76a241cbe76752ad691f90d56",
+    "screens/I11-frame-off.png": "64f2897bccdb52569f60051c957e931bd283833fe1c0050c328813c6e8f0cbd3",
+    "screens/I11-frame-on.png": "fbb373fb10c056c0369bffc663ca5da0d5d97f74c362a786faff4a2b761afe75",
+    "screens/I11-initial.png": "b4162f8a48d434d49461f11c23ab26d029069f4ddcd6b47eea8910d9370feab1",
+    "screens/I11-zoom100-clamped.png": "49bc8a81ba6857b834693dd685dd23abcd571cb8f932d2e103a6d0ec35277be6",
+    "screens/I12-case-two.png": "4287fb78bd6ad2a641f49c81d0e7d71eb57df0c718becb2ceb1d97c989546799",
+    "screens/I12-frame-off.png": "234e6db426258bc3b0aed8e80322d8591962fa6507905b615a723c4ecb038a0d",
+    "screens/I12-frame-on.png": "8abad2d30a3f1e9c8d49b84945683a04db3000220407b2875db069add00b7fbc",
+    "screens/I12-initial.png": "3c107f9006248f0e77de4c8f6298483238000e7ab62a51d33d60a42ffd89eafc",
+    "screens/I12-zoom100-clamped.png": "72f73766d3004759970f94751f2fda4794073acbce20782995cce5c6d98cff43",
+    "screens/I13-case-two.png": "e4ac90660b88c04c870472fe895a2448c53915f1f4496f838ce071533d3da784",
+    "screens/I13-frame-off.png": "e6f725586b61b795033d884ed753b04dc62d2d4ec2ff270f61c0b3de228a153d",
+    "screens/I13-frame-on.png": "91fe842981d3c6cd6d7a1f351ef7bf6664fb84d66781d040364f49aeaef11722",
+    "screens/I13-initial.png": "69f2e322dd9f52226517533aabcdfa0f559d09e09af2cbe1562bab5be6555d53",
+    "screens/I13-zoom100-clamped.png": "83c1ab15b7003f9d59510574bdbfadfc4efb2bf5243f5515e020339fbab1a066",
+    "screens/I14-case-two.png": "14a17accec035cacd3608df50a962d3167b06feb1e41244d56acc141381ad251",
+    "screens/I14-frame-off.png": "3b27ab97af64ef7a1e6b1dfd416469bed0e1cc9abeae25bf5f565ef6bec23792",
+    "screens/I14-frame-on.png": "45840b733db056a4427883cf73119e8f489e76865f9209fbcc07654ddc814d9c",
+    "screens/I14-initial.png": "e312951f55bc64aba255f51fbafcf94ed461c2d1fccbb2074f3eed4e39bf9f92",
+    "screens/I14-zoom100-clamped.png": "2acbde72e72da548fd2b42c64a7f0b2b50187d143aa1aafb3fe952969ed1c845",
+    "screens/I15-case-two.png": "e6f6a29d1cc4315f913a485e70600d815ed2399ce2deaddbc0775c7d23e88556",
+    "screens/I15-frame-off.png": "dd430fe4867a7e98ef8605484cd727c3d35ad6435dc85a9e03bcc2391c62b328",
+    "screens/I15-frame-on.png": "b35d491e32358d551cd997b1835279ae54ad606f2d638debe8a6a076eac59ee1",
+    "screens/I15-initial.png": "ab06cf7cefbf662ee79377a11fb9264fc25ebdffffa498b95612d6c425da3d18",
+    "screens/I15-zoom100-clamped.png": "c9722d551e5e99c371290654836b5258dca335c5548e951cc1bc914f8f3b214a",
+    "screens/I16-case-two.png": "66a45a6f1178bbd02431bc308e3767d2ea4b64c65377f815c582e01b3603f732",
+    "screens/I16-frame-off.png": "e70d888f24f642b1d84256b60ce0306bc26c78f01fc5d177d57f80ceabbcfb9c",
+    "screens/I16-frame-on.png": "c97fce5ac893149b46fdab00a2a21743a2204cc6534eda454fb94feb7e1a7f02",
+    "screens/I16-initial.png": "8129e0612632cdf2cc497f5e61091e893985dbe136023f1f71f9e9332763de6f",
+    "screens/I16-zoom100-clamped.png": "d5318e1e2aa5283253392bd423f52fbaad40d69d51d3c96eb289ed2c37341b8f",
+    "screens/I17-case-two.png": "b49ec03d0efc3a4e99be80afab0a4ba29d1073dd0a1e826c94641c07dc0ad664",
+    "screens/I17-frame-off.png": "22f8c2899cd3c06b86cc804f344471e8db0d8c8b83df01e0be9d46654ff54c2e",
+    "screens/I17-frame-on.png": "bbc017d3ed8c3fb10c2e50d7932559ab027c2913fcab47270adf7c5aeb6449b1",
+    "screens/I17-initial.png": "feab7c93a754fadbbb2c9348ecaaa57c8b4e3dc46e7452ac99b5a41c07799320",
+    "screens/I17-zoom100-clamped.png": "85077c995223ea44ee3f09ff4fd8c3b491041ec7288283efe0bb4ba11baea44d",
+    "screens/I18-case-two.png": "14dc789401959e5c3a0aaa83420a57819cec34fadae00757ee27e0f027c4d0f8",
+    "screens/I18-frame-off.png": "90d0cf9f8dba68c4327cffb56c2aabe10d92b1fcef06396dc54cbdf757140a70",
+    "screens/I18-frame-on.png": "dc540f1d853375b5635ae473be6a6fd74a379d70074c6b4a963ab83bf8c13ba2",
+    "screens/I18-initial.png": "58fde942556690763eb62fcb73596d2d02d9b8d80b4b7eae3bcb3cbffe6f7d65",
+    "screens/I18-zoom100-clamped.png": "234ee2e7ad16eb6920b7a04a47bc569e77c3d5f9ad675798d0df4570aa3e4b3c",
+    "screens/I19-case-two.png": "274bae09cb9bd48973ed7ae1f3e6fcfee0f800d11671fec978d0c1a92f23f698",
+    "screens/I19-frame-off.png": "41b7870a8619160231ec4bc8fd628ccff24d34af9243646b2cc6c9936d9b5337",
+    "screens/I19-frame-on.png": "db2ae4fcc64af65a6b8d15b4833fa67485a6fe5866a1606634971c5f9934b951",
+    "screens/I19-initial.png": "79d520cada24b76dc590b3aea21e4b12eabbfde8406de6d6bad33a040e133696",
+    "screens/I19-zoom100-clamped.png": "4f551c10545a0cf5b0193570b6cf0f04bbcfabdcb380a2e0eb426a727d4048e4",
+    "screens/I20-case-two.png": "43afea813531c28b0b22f053c5154ae9f15b23441ff00c30755c69fbd7c14072",
+    "screens/I20-frame-off.png": "029b07df16da1248c3b7e504cc0829f67b160024ae5520f9e0fc09bcc2d28b9d",
+    "screens/I20-frame-on.png": "f63cdc1311735625c4804d4daa51b11101948d00d4ecc29c871ffe9aca2838ea",
+    "screens/I20-initial.png": "221df123387e902473af03c2c346d2eed2217a736216c483086255db0424bb41",
+    "screens/I20-zoom100-clamped.png": "68481248833afe8f9dee8788f59c4b38747dd8267ee702bc3037d5003c8d937a",
+    "screens/I21-case-two.png": "040abb8dc34fb5223912a3be76bf23c7f9470050d6e9dd8fd3175d570d607b9f",
+    "screens/I21-frame-off.png": "10bb23d1d6293cd5ffd6a86abbdd38459fba6835cb2ef3d07577bbe573db2856",
+    "screens/I21-frame-on.png": "21d847662142b532c4a0a2dba9046a8629c4e62dad11597b4fef58d3127080da",
+    "screens/I21-initial.png": "90813d9b6332bec962a9b03b415fd22701bc05c650e9198e02692b4b4b70f3b7",
+    "screens/I21-zoom100-clamped.png": "040abb8dc34fb5223912a3be76bf23c7f9470050d6e9dd8fd3175d570d607b9f",
+    "screens/I22-case-two.png": "7f71a079a0b69c251fecb92d57576ff9c540778d9c785577618347d24e082b30",
+    "screens/I22-frame-off.png": "d203645f0e2b1736f99bd6fda6e1ddb5e83660e14b51de280345b271ed12978c",
+    "screens/I22-frame-on.png": "5e782ac15ebb7eb55b1be9d472bf8339823d047d21f77631fc4ef97dddf7e88a",
+    "screens/I22-initial.png": "baeb8c6109b43aac5d4514081ac31e0d7c526895f451ef179cba64cfca4f9ec0",
+    "screens/I22-zoom100-clamped.png": "c500b650c08feb4e535c625ddaa512df924a2f2bf6e8c2fd06c3e528f12a800f",
+    "screens/I23-case-two.png": "29013539fc016bb7c41ad986042592428646243a33f33c02e2e879d1305f0f77",
+    "screens/I23-frame-off.png": "1ebe91aec91db8d8ebaf9f4400ab1078794fa07bae63789f6b780f6556c3ff04",
+    "screens/I23-frame-on.png": "c22dd9825b421510c37bd9f8aba7c3b7bd02b4b9f1b5b42bf376d7eb4dadba19",
+    "screens/I23-initial.png": "4f1eadf1ebefd1d02e22342db460d21b19b8adb57d2504bec7efcc937ffffd24",
+    "screens/I23-zoom100-clamped.png": "0518e4f08c09fccc0e85073c20f80d1378f1ac20b083b4b7885c6b5fee9e500c",
+    "screens/I24-case-two.png": "2a3fa570ab9458e00c5669d5cef574b0205afca1f4b9d75bc521d1d416a0f21a",
+    "screens/I24-frame-off.png": "9bb0cf31f927a50b2d7e3d41810cc864c389f3213bdaf50b89bb381b71391dd2",
+    "screens/I24-frame-on.png": "3e1c3eb902097d89db774389afe021150710ac93442a41ff5805166637bbeaad",
+    "screens/I24-initial.png": "a6561ad5ce2bfc0632fd8a5092ce14cf62038918f750a2a4de280a241f2bcbca",
+    "screens/I24-zoom100-clamped.png": "88f816581b6e3a08e6dfd9e0ca05e6c585b224848b44027ad0e924a1600f71e4",
+    "screens/I25-case-two.png": "356040c8af6fb6c3ab7e2f5a4d2ef6a5c49a160af3f6a3bbae94df8c7e3360c9",
+    "screens/I25-frame-off.png": "f58e04af4abb2bb64f0e51597384550bc3451bb3a0d3fa98704aada4e654c133",
+    "screens/I25-frame-on.png": "ef41c96ffd4899e36a880678420619e78ee779b05bdad2dc73168b2a31dd40cd",
+    "screens/I25-initial.png": "13fb24a7857bf208a40ff87d4bac103853738d05829b161838111c6a6f061db5",
+    "screens/I25-zoom100-clamped.png": "ec8badcd0a4efbff927e9141b8a37973e8a09a6ce83d582e29efa83c8ed1d33d",
+    "screens/I26-case-two.png": "93d718f8c263aea9a4f8eb4df27213d75b2384b553d121c334d6da31165613cc",
+    "screens/I26-frame-off.png": "567a32fb3227f07312e45389065a2228c59e55c21e3a635f98be35d7d86a9601",
+    "screens/I26-frame-on.png": "0b6a9f5c45bca291f6fe08e4f35c994fed30f1c4ff9cc58f576d7052711e39d6",
+    "screens/I26-initial.png": "485318ae5d24cd66f34df6bf7ca6dad969d45f5539ba339b30beddb297991775",
+    "screens/I26-zoom100-clamped.png": "08a63d2bbfb2bc12fea3bc8362c8e97e7c93384e4d22ab1eb06be63eec44db0f",
+    "screens/I27-case-two.png": "c0bfa079d81b700cee0d1fd5a6ba01739822c7bbf04cf30cacc40316fa7aebc8",
+    "screens/I27-frame-off.png": "8b21df3cc2e77b77ef01f376242ca2e2b4c52b8799f8fb2d1515eedc37bb6a20",
+    "screens/I27-frame-on.png": "67c86a68450b0f5dbe1ca2e7015693292da9bde0a985f004565ea4d053cebdb8",
+    "screens/I27-initial.png": "b5fba0ce38b5dd7711d56f4ae25e7dd4f3d7474d880417081bc547c5f1a9de10",
+    "screens/I27-zoom100-clamped.png": "cfdec1dd3464d6b3566e75b748612cd834cc134919d02904eba317ed8478d1c0",
+    "screens/I28-case-two.png": "4579237b7313060d003e3dad3d0417442e302c37b6739e02ac355a78c9d2ea8c",
+    "screens/I28-frame-off.png": "b8a67e0b8befb5c7d566cbe13520ea3a26bf9fc4f4ef492228b920d42310946d",
+    "screens/I28-frame-on.png": "74ba6de30880c1315d71b457056ced58fdcf419d54b9e5c069c66de7a4826863",
+    "screens/I28-initial.png": "a8a99c4259fc25bbb0e8880fe49f599dba7ac78a1da49ed921b0b68ffb4ee83a",
+    "screens/I28-zoom100-clamped.png": "741b8eb610249c74b195db180c4a5f16ce74ffd69de1189160aaf1744b3db79f",
+    "screens/I29-case-two.png": "e92ebad82af0eddd6a7b24dc6ad0333741a93c90de310ed0eb4ca37f62867217",
+    "screens/I29-frame-off.png": "75d743be8db95c82f3adb4ddff46111d14c5a170b02af7de9b65ad2f44b0bb70",
+    "screens/I29-frame-on.png": "0dd16cb9793222ad2e9412c19ffd68a405669519d21fa4bfe74dbd4a9eec49db",
+    "screens/I29-initial.png": "0f1341a68edc9a2645c29e4127864fd102a0c0b241cefc9839a23a8891255825",
+    "screens/I29-zoom100-clamped.png": "aa800cd0dcf2e524586b9a7bb5326b041b9eb9c9110889fcf644ea3dee135d65"
+  },
+  "bundle": {
+    "file": "evidence.zip",
+    "bytes": 19844037,
+    "sha256": "a16a62dd2d27eea15ec837a6ac6e5496dff1ee7744569772c399f84743923423"
+  },
+  "observations": [
+    "PNG/JPEG/BMP/TIFF preserve physical dimensions through metadata; GIF has no DPI field and uses 96 DPI.",
+    "Animated GIF and multipage TIFF show the first frame/page.",
+    "The crop option shifts the frame; the source bitmap remains intact.",
+    "The native minimum zoom is fit-to-window, which can exceed 100% and even 200% for small images."
+  ],
+  "comparison": "Compare native probe membership to actual rendered browser mask, stored pixels and first-frame colors, physical image/template sizes and case change. Screen RGB values are color-managed; no font or screenshot byte-equality claim.",
+  "limits": [
+    "This 30-case product covers image/frame display and case changes. Previously captured scan/template gestures remain separate evidence; every possible gesture sequence is not implied.",
+    "E00 preliminary focus/capture attempts excluded; only final named screenshots packaged.",
+    "No empirical study images."
+  ]
+}
